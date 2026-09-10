@@ -114,6 +114,8 @@
       }
 
       .book {
+        display: flex;
+        flex-direction: column;
         overflow: hidden;
         border: 1px solid var(--line);
         border-radius: 8px;
@@ -173,7 +175,12 @@
       .badge.library { color: var(--green); }
       .badge.exchange { color: var(--blue); }
 
-      .body { padding: 14px; }
+      .body {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        padding: 14px;
+      }
 
       .title {
         margin: 0 0 5px;
@@ -188,7 +195,7 @@
       }
 
       .meta {
-        margin: 0;
+        margin: 0 0 12px;
         color: var(--muted);
         font-size: 12px;
         line-height: 1.35;
@@ -200,7 +207,7 @@
         justify-content: center;
         width: 100%;
         min-height: 36px;
-        margin-top: 12px;
+        margin-top: auto;
         border: 1px solid var(--blue);
         border-radius: 6px;
         color: var(--blue);
