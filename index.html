@@ -627,6 +627,11 @@
         return `${botUrl}?start=${key}`;
       }
 
+      function googleSearchUrl(book) {
+        const query = [book.title, book.isbn].map(compact).filter(Boolean).join(" ");
+        return `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+      }
+
       function canRequestBook(book) {
         return book.section === "exchange" && book.availability === "available";
       }
@@ -682,11 +687,7 @@
             ? `<a href="${escapeHtml(requestUrl(book))}" target="_blank" rel="noreferrer">Запросить книгу</a>`
             : "",
         ].filter(Boolean).join("");
-        modalLinks.innerHTML = [
-          book.sourceUrl ? `<a href="${escapeHtml(book.sourceUrl)}" target="_blank" rel="noreferrer">Источник</a>` : "",
-          book.livelibUrl ? `<a href="${escapeHtml(book.livelibUrl)}" target="_blank" rel="noreferrer">LiveLib</a>` : "",
-          book.wildberriesUrl ? `<a href="${escapeHtml(book.wildberriesUrl)}" target="_blank" rel="noreferrer">Wildberries</a>` : "",
-        ].filter(Boolean).join("");
+        modalLinks.innerHTML = `<a href="${escapeHtml(googleSearchUrl(book))}" target="_blank" rel="noreferrer">Google</a>`;
 
         controls.hidden = true;
         grid.hidden = true;
