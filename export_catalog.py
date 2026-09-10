@@ -13,6 +13,7 @@ DEFAULT_INDEX = ROOT / "index.html"
 
 BAD_STATUSES = {"bad_photo", "rejected"}
 EXCHANGE_MARKER = "книгообмен"
+INTERNAL_CATALOG_STATUSES = {"На согласовании"}
 
 
 def clean(value):
@@ -37,7 +38,7 @@ def section_for(row):
 
 def catalog_status_for(row, section):
     explicit = clean(row.get("catalog_status"))
-    if explicit:
+    if explicit and explicit not in INTERNAL_CATALOG_STATUSES:
         return explicit
     return "Книгообмен" if section == "exchange" else "Pilar Faus"
 
