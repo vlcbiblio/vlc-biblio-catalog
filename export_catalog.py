@@ -9,6 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 DEFAULT_SOURCE = ROOT.parent / "1.Telegram" / "_obrabotka" / "books.csv"
 DEFAULT_OUTPUT = ROOT / "data" / "books.js"
+DEFAULT_INDEX = ROOT / "index.html"
 
 BAD_STATUSES = {"bad_photo", "rejected"}
 EXCHANGE_MARKER = "книгообмен"
@@ -117,14 +118,31 @@ def write_books(output, books):
     output.write_text(f"window.BIBLIO_BOOKS = {payload};\n", encoding="utf-8")
 
 
+def update_data_cache_buster(index_path):
+    if not index_path.is_file():
+        return
+    version = datetime.now().strftime("%Y%m%d%H%M%S")
+    html = index_path.read_text(encoding="utf-8")
+    updated = re.sub(
+        r'(\./data/books\.js)(?:\?v=[^"]*)?',
+        rf"\1?v={version}",
+        html,
+        count=1,
+    )
+    if updated != html:
+        index_path.write_text(updated, encoding="utf-8")
+
+
 def main():
     parser = argparse.ArgumentParser(description="Export public VLC Biblio catalog data.")
     parser.add_argument("--source", type=Path, default=DEFAULT_SOURCE)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
+    parser.add_argument("--index", type=Path, default=DEFAULT_INDEX)
     args = parser.parse_args()
 
     books = load_books(args.source)
     write_books(args.output, books)
+    update_data_cache_buster(args.index)
     print(f"Exported {len(books)} books to {args.output}")
 
 
