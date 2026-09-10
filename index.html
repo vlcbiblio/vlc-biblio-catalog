@@ -270,7 +270,15 @@
       .dialog-actions .telegram-action span {
         display: block;
         min-width: 0;
-        text-align: left;
+        text-align: center;
+      }
+
+      .card-action.telegram-action,
+      .dialog-actions .telegram-action {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1px;
       }
 
       .empty {
@@ -612,8 +620,10 @@
       }
 
       function actionLabelMarkup(action) {
-        const label = `<span>${escapeHtml(action.label)}</span>`;
-        return action.isTelegram ? `${telegramIcon()}${label}` : label;
+        if (action.isTelegram) {
+          return `<span>Запросить книгу</span><span>через Телеграм</span>`;
+        }
+        return `<span>${escapeHtml(action.label)}</span>`;
       }
 
       function requestUrl(book) {
