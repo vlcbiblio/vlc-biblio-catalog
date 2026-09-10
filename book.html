@@ -280,22 +280,6 @@
         return `https://www.google.com/search?q=${encodeURIComponent(query)}`;
       }
 
-      async function copyText(value) {
-        if (navigator.clipboard && window.isSecureContext) {
-          await navigator.clipboard.writeText(value);
-          return;
-        }
-        const input = document.createElement("textarea");
-        input.value = value;
-        input.setAttribute("readonly", "");
-        input.style.position = "fixed";
-        input.style.opacity = "0";
-        document.body.append(input);
-        input.select();
-        document.execCommand("copy");
-        input.remove();
-      }
-
       function detailsMarkup(book) {
         const details = [
           ["Статус", book.catalogStatus],
@@ -324,8 +308,6 @@
               <dl class="details">${detailsMarkup(book)}</dl>
               <p class="annotation">${escapeHtml(book.annotation || "Описание пока не добавлено.")}</p>
               <div class="actions">
-                ${book.isbn ? `<button type="button" data-copy-isbn="${escapeHtml(book.isbn)}">Скопировать ISBN</button>` : ""}
-                <button type="button" data-copy-url="${escapeHtml(window.location.href)}">Скопировать ссылку</button>
                 ${libraryAction(book) ? `<a href="${escapeHtml(libraryAction(book).href)}" target="_blank" rel="noreferrer">${escapeHtml(libraryAction(book).label)}</a>` : ""}
                 <a href="${escapeHtml(googleSearchUrl(book))}" target="_blank" rel="noreferrer">Google</a>
               </div>
@@ -352,13 +334,6 @@
         event.target.replaceWith(document.createRange().createContextualFragment(fallbackCover(event.target.dataset.fallbackTitle)));
       }, true);
 
-      content.addEventListener("click", async (event) => {
-        const button = event.target.closest("[data-copy-isbn], [data-copy-url]");
-        if (!button) return;
-        const isIsbn = Boolean(button.dataset.copyIsbn);
-        await copyText(button.dataset.copyIsbn || button.dataset.copyUrl);
-        button.textContent = isIsbn ? "ISBN скопирован" : "Ссылка скопирована";
-      });
     </script>
   </body>
 </html>
