@@ -176,46 +176,6 @@
         font-size: 14px;
       }
 
-      .meta {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-        margin-bottom: 12px;
-      }
-
-      .pill {
-        border-radius: 999px;
-        background: #eee7da;
-        color: #5c554b;
-        padding: 4px 8px;
-        font-size: 12px;
-      }
-
-      .annotation {
-        display: -webkit-box;
-        margin: 0 0 12px;
-        overflow: hidden;
-        color: #4d473f;
-        font-size: 13px;
-        line-height: 1.4;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 4;
-      }
-
-      .links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-      }
-
-      .links a {
-        color: var(--blue);
-        font-size: 13px;
-        text-decoration: none;
-      }
-
-      .links a:hover { text-decoration: underline; }
-
       .empty {
         display: none;
         border: 1px dashed var(--line);
@@ -238,7 +198,7 @@
         .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
         .body { padding: 11px; }
         .title { font-size: 14px; }
-        .author, .annotation, .links a { font-size: 12px; }
+        .author { font-size: 12px; }
       }
     </style>
   </head>
@@ -260,7 +220,7 @@
       </section>
 
       <section class="controls" aria-label="Фильтры">
-        <input class="field" id="search" type="search" placeholder="Поиск по названию, автору, ISBN" />
+        <input class="field" id="search" type="search" placeholder="Поиск по названию или автору" />
         <select class="field" id="sectionFilter">
           <option value="">Все разделы</option>
           <option value="library">Для библиотеки</option>
@@ -319,14 +279,6 @@
 
         grid.innerHTML = visible
           .map((book) => {
-            const links = [
-              book.sourceUrl ? `<a href="${escapeHtml(book.sourceUrl)}" target="_blank" rel="noreferrer">Источник</a>` : "",
-              book.livelibUrl ? `<a href="${escapeHtml(book.livelibUrl)}" target="_blank" rel="noreferrer">LiveLib</a>` : "",
-              book.wildberriesUrl ? `<a href="${escapeHtml(book.wildberriesUrl)}" target="_blank" rel="noreferrer">Wildberries</a>` : "",
-            ]
-              .filter(Boolean)
-              .join("");
-
             return `
               <article class="book">
                 <div class="cover">
@@ -340,14 +292,6 @@
                 <div class="body">
                   <h2 class="title">${escapeHtml(book.title || "Без названия")}</h2>
                   <p class="author">${escapeHtml(book.author || "Автор не указан")}</p>
-                  <div class="meta">
-                    ${book.year ? `<span class="pill">${escapeHtml(book.year)}</span>` : ""}
-                    ${book.publisher ? `<span class="pill">${escapeHtml(book.publisher)}</span>` : ""}
-                    ${book.isbn ? `<span class="pill">ISBN ${escapeHtml(book.isbn)}</span>` : ""}
-                    <span class="pill">${escapeHtml(book.catalogStatus || labels[book.section] || "Книга")}</span>
-                  </div>
-                  ${book.annotation ? `<p class="annotation">${escapeHtml(book.annotation)}</p>` : ""}
-                  ${links ? `<div class="links">${links}</div>` : ""}
                 </div>
               </article>
             `;
