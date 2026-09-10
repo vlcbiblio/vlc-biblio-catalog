@@ -50,9 +50,11 @@ def section_for(row):
 
 def catalog_status_for(row, section):
     explicit = clean(row.get("catalog_status"))
+    if section == "exchange" and explicit.lower() == EXCHANGE_MARKER:
+        return "Частная библиотека"
     if explicit and explicit not in INTERNAL_CATALOG_STATUSES:
         return explicit
-    return "Книгообмен" if section == "exchange" else "Pilar Faus"
+    return "Частная библиотека" if section == "exchange" else "Pilar Faus"
 
 
 def availability_for(row, section):

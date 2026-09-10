@@ -413,13 +413,13 @@
           <h1 id="catalog-title">VLC Biblio</h1>
           <p class="subtitle">
             Пополняемый каталог книг для русскоязычного фонда библиотеки Pilar Faus и
-            книгообмена между участниками.
+            частных библиотек участников.
           </p>
         </div>
         <div class="stats" aria-label="Статистика каталога">
           <div class="stat"><strong id="totalCount">0</strong><span>всего</span></div>
           <div class="stat"><strong id="libraryCount">0</strong><span>в библиотеку</span></div>
-          <div class="stat"><strong id="exchangeCount">0</strong><span>к обмену</span></div>
+          <div class="stat"><strong id="exchangeCount">0</strong><span>частные</span></div>
         </div>
       </section>
 
@@ -428,7 +428,7 @@
         <select class="field" id="sectionFilter">
           <option value="">Все разделы</option>
           <option value="library">Библиотека Pilar Faus</option>
-          <option value="exchange">Книгообмен</option>
+          <option value="exchange">Частная библиотека</option>
         </select>
       </section>
 
@@ -453,7 +453,7 @@
       </article>
     </section>
 
-    <script src="./data/books.js?v=20260910212727"></script>
+    <script src="./data/books.js?v=20260910220000"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
       const botUrl = "https://t.me/VLS_Biblio_bot";
@@ -461,7 +461,7 @@
 
       const labels = {
         library: "Библиотека Pilar Faus",
-        exchange: "Книгообмен",
+        exchange: "Частная библиотека",
       };
 
       const state = {
