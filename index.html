@@ -90,7 +90,7 @@
         top: 0;
         z-index: 2;
         display: grid;
-        grid-template-columns: minmax(240px, 1fr) minmax(160px, 220px) minmax(160px, 220px);
+        grid-template-columns: minmax(240px, 1fr) minmax(160px, 220px);
         gap: 10px;
         padding: 16px 0 20px;
         background: rgba(247, 244, 238, 0.94);
@@ -266,9 +266,6 @@
           <option value="library">Для библиотеки</option>
           <option value="exchange">Книгообмен</option>
         </select>
-        <select class="field" id="statusFilter">
-          <option value="">Любой статус</option>
-        </select>
       </section>
 
       <section class="grid" id="grid" aria-label="Книги"></section>
@@ -284,15 +281,9 @@
         exchange: "Книгообмен",
       };
 
-      const statusLabels = {
-        metadata_found: "Данные найдены",
-        processed: "Обработана",
-      };
-
-      const state = { search: "", section: "", status: "" };
+      const state = { search: "", section: "" };
       const grid = document.querySelector("#grid");
       const empty = document.querySelector("#empty");
-      const statusFilter = document.querySelector("#statusFilter");
 
       function escapeHtml(value) {
         return String(value ?? "")
@@ -303,20 +294,6 @@
           .replaceAll("'", "&#039;");
       }
 
-      function getStatusLabel(status) {
-        return statusLabels[status] || status || "Без статуса";
-      }
-
-      function renderStatusOptions() {
-        const statuses = [...new Set(books.map((book) => book.status).filter(Boolean))].sort();
-        statusFilter.innerHTML = [
-          '<option value="">Любой статус</option>',
-          ...statuses.map(
-            (status) => `<option value="${escapeHtml(status)}">${escapeHtml(getStatusLabel(status))}</option>`,
-          ),
-        ].join("");
-      }
-
       function matches(book) {
         const query = state.search.trim().toLocaleLowerCase("ru");
         const text = [book.title, book.author, book.isbn, book.publisher, book.annotation]
@@ -325,8 +302,7 @@
 
         return (
           (!query || text.includes(query)) &&
-          (!state.section || book.section === state.section) &&
-          (!state.status || book.status === state.status)
+          (!state.section || book.section === state.section)
         );
       }
 
@@ -359,7 +335,7 @@
                       ? `<img src="${escapeHtml(book.cover)}" alt="Обложка: ${escapeHtml(book.title)}" loading="lazy" />`
                       : `<div class="cover-placeholder">${escapeHtml(book.title || "Книга")}</div>`
                   }
-                  <span class="badge ${escapeHtml(book.section)}">${escapeHtml(labels[book.section] || "Книга")}</span>
+                  <span class="badge ${escapeHtml(book.section)}">${escapeHtml(book.catalogStatus || labels[book.section] || "Книга")}</span>
                 </div>
                 <div class="body">
                   <h2 class="title">${escapeHtml(book.title || "Без названия")}</h2>
@@ -368,7 +344,7 @@
                     ${book.year ? `<span class="pill">${escapeHtml(book.year)}</span>` : ""}
                     ${book.publisher ? `<span class="pill">${escapeHtml(book.publisher)}</span>` : ""}
                     ${book.isbn ? `<span class="pill">ISBN ${escapeHtml(book.isbn)}</span>` : ""}
-                    <span class="pill">${escapeHtml(getStatusLabel(book.status))}</span>
+                    <span class="pill">${escapeHtml(book.catalogStatus || labels[book.section] || "Книга")}</span>
                   </div>
                   ${book.annotation ? `<p class="annotation">${escapeHtml(book.annotation)}</p>` : ""}
                   ${links ? `<div class="links">${links}</div>` : ""}
@@ -391,12 +367,6 @@
         render();
       });
 
-      statusFilter.addEventListener("change", (event) => {
-        state.status = event.target.value;
-        render();
-      });
-
-      renderStatusOptions();
       render();
     </script>
   </body>
