@@ -426,6 +426,7 @@
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
       const botUrl = "https://t.me/VLS_Biblio_bot";
+      const libraryMapUrl = "https://www.google.com/maps/search/?api=1&query=Biblioteca%20P%C3%BAblica%20de%20Val%C3%A8ncia%20Pilar%20Faus%2039.470374%2C-0.381743";
 
       const labels = {
         library: "Библиотека Pilar Faus",
@@ -524,6 +525,22 @@
         return book.section === "exchange" && book.availability === "available";
       }
 
+      function libraryAction(book) {
+        if (canRequestBook(book)) {
+          return {
+            href: requestUrl(book),
+            label: "Запросить книгу",
+          };
+        }
+        if (book.section === "library") {
+          return {
+            href: libraryMapUrl,
+            label: "Библиотека Pilar Faus",
+          };
+        }
+        return null;
+      }
+
       function bookPageUrl(book) {
         const url = new URL("book.html", window.location.href);
         url.search = "";
@@ -576,8 +593,8 @@
         modalActions.innerHTML = [
           book.isbn ? `<button type="button" data-copy-isbn="${escapeHtml(book.isbn)}">Скопировать ISBN</button>` : "",
           `<button type="button" data-copy-url="${escapeHtml(absoluteBookPageUrl(book))}">Скопировать ссылку</button>`,
-          canRequestBook(book)
-            ? `<a href="${escapeHtml(requestUrl(book))}" target="_blank" rel="noreferrer">Запросить книгу</a>`
+          libraryAction(book)
+            ? `<a href="${escapeHtml(libraryAction(book).href)}" target="_blank" rel="noreferrer">${escapeHtml(libraryAction(book).label)}</a>`
             : "",
         ].filter(Boolean).join("");
         modalLinks.innerHTML = `<a href="${escapeHtml(googleSearchUrl(book))}" target="_blank" rel="noreferrer">Google</a>`;
@@ -628,7 +645,7 @@
                 <h2 class="title">${escapeHtml(book.title || "Без названия")}</h2>
                 <p class="author">${escapeHtml(book.author || "Автор не указан")}</p>
                 <p class="meta">${escapeHtml([book.publisher, book.year].filter(Boolean).join(" · "))}</p>
-                ${canRequestBook(book) ? `<a class="card-action" href="${escapeHtml(requestUrl(book))}" target="_blank" rel="noreferrer">Запросить книгу</a>` : ""}
+                ${libraryAction(book) ? `<a class="card-action" href="${escapeHtml(libraryAction(book).href)}" target="_blank" rel="noreferrer">${escapeHtml(libraryAction(book).label)}</a>` : ""}
               </div>
             </article>
           `)
