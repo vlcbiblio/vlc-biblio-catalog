@@ -249,29 +249,21 @@
       }
 
       .modal {
-        position: fixed;
-        inset: 0;
-        z-index: 10;
         display: none;
-        align-items: center;
-        justify-content: center;
-        padding: 24px;
-        background: rgba(38, 35, 31, 0.52);
+        padding: 24px 0 0;
       }
 
-      .modal.is-open { display: flex; }
+      .modal.is-open { display: block; }
 
       .dialog {
         position: relative;
         display: grid;
         grid-template-columns: minmax(220px, 340px) minmax(0, 1fr);
-        width: min(920px, 100%);
-        max-height: min(780px, calc(100vh - 48px));
-        overflow: auto;
+        width: 100%;
         border: 1px solid var(--line);
         border-radius: 8px;
         background: var(--paper);
-        box-shadow: 0 24px 70px rgba(38, 35, 31, 0.28);
+        box-shadow: var(--shadow);
       }
 
       .dialog-cover {
@@ -299,18 +291,20 @@
       }
 
       .close {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        width: 38px;
-        height: 38px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 38px;
         border: 1px solid var(--line);
-        border-radius: 999px;
+        border-radius: 6px;
         background: rgba(255, 253, 248, 0.96);
         color: var(--ink);
         cursor: pointer;
-        font-size: 24px;
-        line-height: 1;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 18px;
+        padding: 0 12px;
       }
 
       .dialog-title {
@@ -406,7 +400,6 @@
         .body { padding: 11px; }
         .title { font-size: 14px; }
         .author { font-size: 12px; }
-        .modal { padding: 10px; }
         .dialog-body { padding: 20px; }
         .details { grid-template-columns: 1fr; gap: 4px; }
       }
@@ -462,9 +455,9 @@
       <p class="empty" id="empty">Ничего не найдено. Попробуйте убрать часть фильтров.</p>
     </main>
 
-    <div class="modal" id="bookModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <section class="modal" id="bookModal" aria-labelledby="modalTitle">
+      <button class="close" id="modalClose" type="button">← Назад к каталогу</button>
       <article class="dialog">
-        <button class="close" id="modalClose" type="button" aria-label="Закрыть">×</button>
         <div class="dialog-cover" id="modalCover"></div>
         <div class="dialog-body">
           <span class="badge" id="modalStatus"></span>
@@ -477,7 +470,7 @@
           <div class="dialog-links" id="modalLinks"></div>
         </div>
       </article>
-    </div>
+    </section>
 
     <script src="./data/books.js"></script>
     <script>
@@ -510,6 +503,7 @@
       };
 
       const grid = document.querySelector("#grid");
+      const controls = document.querySelector(".controls");
       const empty = document.querySelector("#empty");
       const modal = document.querySelector("#bookModal");
       const modalClose = document.querySelector("#modalClose");
@@ -637,6 +631,22 @@
         return book.section === "exchange" && book.availability === "available";
       }
 
+      function bookPageUrl(book) {
+        const url = new URL(window.location.href);
+        url.searchParams.set("book", book.id);
+        return `${url.pathname}${url.search}${url.hash}`;
+      }
+
+      function absoluteBookPageUrl(book) {
+        return new URL(bookPageUrl(book), window.location.origin).href;
+      }
+
+      function currentBookFromUrl() {
+        const id = new URLSearchParams(window.location.search).get("book");
+        if (!id) return null;
+        return books.find((book) => String(book.id) === String(id)) || null;
+      }
+
       async function copyText(value) {
         if (navigator.clipboard && window.isSecureContext) {
           await navigator.clipboard.writeText(value);
@@ -653,7 +663,9 @@
         input.remove();
       }
 
-      function openBook(book) {
+      function openBook(book, options = {}) {
+        const shouldPush = options.push !== false;
+        modalCover.classList.remove("is-broken");
         modalCover.innerHTML = coverMarkup(book);
         modalStatus.className = `badge ${escapeHtml(book.section)}`;
         modalStatus.textContent = book.catalogStatus || labels[book.section] || "Книга";
@@ -665,6 +677,7 @@
         modalAnnotation.textContent = book.annotation || "Описание пока не добавлено.";
         modalActions.innerHTML = [
           book.isbn ? `<button type="button" data-copy-isbn="${escapeHtml(book.isbn)}">Скопировать ISBN</button>` : "",
+          `<button type="button" data-copy-url="${escapeHtml(absoluteBookPageUrl(book))}">Скопировать ссылку</button>`,
           canRequestBook(book)
             ? `<a href="${escapeHtml(requestUrl(book))}" target="_blank" rel="noreferrer">Запросить книгу</a>`
             : "",
@@ -675,14 +688,26 @@
           book.wildberriesUrl ? `<a href="${escapeHtml(book.wildberriesUrl)}" target="_blank" rel="noreferrer">Wildberries</a>` : "",
         ].filter(Boolean).join("");
 
+        controls.hidden = true;
+        grid.hidden = true;
+        empty.style.display = "none";
         modal.classList.add("is-open");
-        document.body.style.overflow = "hidden";
+        if (shouldPush) history.pushState({ bookId: book.id }, "", bookPageUrl(book));
+        window.scrollTo({ top: 0, behavior: shouldPush ? "smooth" : "auto" });
         modalClose.focus();
       }
 
-      function closeBook() {
+      function closeBook(options = {}) {
+        const shouldPush = options.push !== false;
         modal.classList.remove("is-open");
-        document.body.style.overflow = "";
+        controls.hidden = false;
+        grid.hidden = false;
+        if (shouldPush) {
+          const url = new URL(window.location.href);
+          url.searchParams.delete("book");
+          history.pushState({}, "", `${url.pathname}${url.search}${url.hash}`);
+        }
+        render();
       }
 
       function replaceBrokenCover(image) {
@@ -767,22 +792,33 @@
       }, true);
 
       modalActions.addEventListener("click", async (event) => {
-        const button = event.target.closest("[data-copy-isbn]");
+        const button = event.target.closest("[data-copy-isbn], [data-copy-url]");
         if (!button) return;
-        await copyText(button.dataset.copyIsbn);
-        button.textContent = "ISBN скопирован";
+        const isIsbn = Boolean(button.dataset.copyIsbn);
+        await copyText(button.dataset.copyIsbn || button.dataset.copyUrl);
+        button.textContent = isIsbn ? "ISBN скопирован" : "Ссылка скопирована";
       });
 
       modalClose.addEventListener("click", closeBook);
-      modal.addEventListener("click", (event) => {
-        if (event.target === modal) closeBook();
-      });
       document.addEventListener("keydown", (event) => {
         if (event.key === "Escape" && modal.classList.contains("is-open")) closeBook();
       });
+      window.addEventListener("popstate", () => {
+        const book = currentBookFromUrl();
+        if (book) {
+          openBook(book, { push: false });
+        } else {
+          closeBook({ push: false });
+        }
+      });
 
       hydrateFilters();
-      render();
+      const initialBook = currentBookFromUrl();
+      if (initialBook) {
+        openBook(initialBook, { push: false });
+      } else {
+        render();
+      }
     </script>
   </body>
 </html>

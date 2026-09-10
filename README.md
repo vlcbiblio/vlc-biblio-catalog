@@ -32,3 +32,11 @@ not written to `data/books.js`.
 
 Book covers are loaded from public source URLs. If an external image is unavailable,
 the catalog replaces it with a local text placeholder instead of leaving a broken image.
+
+## Book pages
+
+Each book opens as a catalog detail page with a shareable query URL:
+
+```text
+https://vlcbiblio.github.io/vlc-biblio-catalog/?book=7
+```
