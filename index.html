@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>VLC Biblio</title>
+    <link rel="icon" type="image/png" href="./assets/favicon.png" />
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
     <style>
       :root {
         color-scheme: light;
@@ -66,6 +68,23 @@
         grid-template-columns: repeat(3, minmax(84px, 1fr));
         gap: 8px;
         min-width: 310px;
+      }
+
+      .topbar-media {
+        display: grid;
+        width: min(420px, 42vw);
+        gap: 12px;
+      }
+
+      .catalog-hero {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        object-fit: cover;
+        object-position: 48% 48%;
+        box-shadow: var(--shadow);
       }
 
       .stat {
@@ -358,7 +377,12 @@
 
       @media (max-width: 820px) {
         .topbar { display: block; }
-        .stats { min-width: 0; margin-top: 18px; }
+        .topbar-media {
+          width: 100%;
+          margin-top: 18px;
+        }
+        .catalog-hero { aspect-ratio: 21 / 9; }
+        .stats { min-width: 0; }
         .controls { grid-template-columns: 1fr 1fr; }
         .controls .search { grid-column: 1 / -1; }
         .dialog { grid-template-columns: 1fr; }
@@ -372,6 +396,7 @@
 
       @media (max-width: 560px) {
         .page { width: min(100% - 20px, 1180px); padding-top: 18px; }
+        .catalog-hero { aspect-ratio: 4 / 3; }
         .controls { position: static; grid-template-columns: 1fr; }
         .controls .search { grid-column: auto; }
         .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
@@ -393,10 +418,19 @@
             книгообмена между участниками.
           </p>
         </div>
-        <div class="stats" aria-label="Статистика каталога">
-          <div class="stat"><strong id="totalCount">0</strong><span>всего</span></div>
-          <div class="stat"><strong id="libraryCount">0</strong><span>в библиотеку</span></div>
-          <div class="stat"><strong id="exchangeCount">0</strong><span>к обмену</span></div>
+        <div class="topbar-media">
+          <img
+            class="catalog-hero"
+            src="./assets/vlc-biblio-hero.jpg"
+            alt="Книжная полка VLC Biblio"
+            width="960"
+            height="960"
+          />
+          <div class="stats" aria-label="Статистика каталога">
+            <div class="stat"><strong id="totalCount">0</strong><span>всего</span></div>
+            <div class="stat"><strong id="libraryCount">0</strong><span>в библиотеку</span></div>
+            <div class="stat"><strong id="exchangeCount">0</strong><span>к обмену</span></div>
+          </div>
         </div>
       </section>
 
