@@ -173,18 +173,6 @@
       .badge.library { color: var(--green); }
       .badge.exchange { color: var(--blue); }
 
-      .new-badge {
-        position: absolute;
-        right: 10px;
-        top: 10px;
-        border-radius: 999px;
-        background: var(--gold);
-        color: #fffdf8;
-        padding: 5px 9px;
-        font-size: 12px;
-        font-weight: 700;
-      }
-
       .body { padding: 14px; }
 
       .title {
@@ -485,11 +473,6 @@
         return Number.isNaN(value) ? 0 : value;
       }
 
-      function isNew(book) {
-        const value = bookDate(book);
-        return value > 0 && Date.now() - value < 14 * 24 * 60 * 60 * 1000;
-      }
-
       function matches(book) {
         const query = normalize(state.search);
         const text = normalize([book.title, book.author, book.isbn, book.publisher, book.annotation].join(" "));
@@ -640,7 +623,6 @@
               <div class="cover">
                 ${coverMarkup(book, true)}
                 <span class="badge ${escapeHtml(book.section)}">${escapeHtml(book.catalogStatus || labels[book.section] || "Книга")}</span>
-                ${isNew(book) ? '<span class="new-badge">Новое</span>' : ""}
               </div>
               <div class="body">
                 <h2 class="title">${escapeHtml(book.title || "Без названия")}</h2>
