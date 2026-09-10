@@ -175,6 +175,9 @@
 
       .actions a,
       .actions button {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
         border: 1px solid var(--line);
         border-radius: 6px;
         background: var(--paper);
@@ -187,6 +190,13 @@
       .actions a:hover,
       .actions button:hover {
         border-color: var(--blue);
+      }
+
+      .telegram-icon {
+        width: 15px;
+        height: 15px;
+        flex: 0 0 auto;
+        fill: currentColor;
       }
 
       .empty {
@@ -224,7 +234,7 @@
       <section id="content"></section>
     </main>
 
-    <script src="./data/books.js?v=20260910222600"></script>
+    <script src="./data/books.js?v=20260910224000"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
       const botUrl = "https://t.me/VLS_Biblio_bot";
@@ -257,6 +267,15 @@
         return `<img src="${escapeHtml(book.cover)}" alt="Обложка: ${escapeHtml(book.title)}" decoding="async" referrerpolicy="no-referrer" data-fallback-title="${escapeHtml(book.title || "Книга")}" />`;
       }
 
+      function telegramIcon() {
+        return `<svg class="telegram-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.7 4.3 18.4 20c-.2 1-.8 1.2-1.6.8l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.6-.6-.3L6 13.5l-4.8-1.5c-1-.3-1-1 .2-1.5L20.2 3.2c.9-.3 1.7.2 1.5 1.1Z"/></svg>`;
+      }
+
+      function actionLabelMarkup(action) {
+        const label = `<span>${escapeHtml(action.label)}</span>`;
+        return action.isTelegram ? `${telegramIcon()}${label}` : label;
+      }
+
       function requestUrl(book) {
         const key = encodeURIComponent(`book_${book.requestId || book.id || book.isbn || ""}`.replaceAll("-", ""));
         return `${botUrl}?start=${key}`;
@@ -271,6 +290,7 @@
           return {
             href: requestUrl(book),
             label: "Запросить книгу через Телеграм",
+            isTelegram: true,
           };
         }
         if (book.section === "library") {
@@ -326,7 +346,7 @@
               <p class="annotation">${escapeHtml(book.annotation || "Описание пока не добавлено.")}</p>
               <p class="collection-note">${escapeHtml(collectionNote(book))}</p>
               <div class="actions">
-                ${libraryAction(book) ? `<a href="${escapeHtml(libraryAction(book).href)}" target="_blank" rel="noreferrer">${escapeHtml(libraryAction(book).label)}</a>` : ""}
+                ${libraryAction(book) ? `<a href="${escapeHtml(libraryAction(book).href)}" target="_blank" rel="noreferrer">${actionLabelMarkup(libraryAction(book))}</a>` : ""}
                 <a href="${escapeHtml(googleSearchUrl(book))}" target="_blank" rel="noreferrer">Google</a>
               </div>
             </div>
