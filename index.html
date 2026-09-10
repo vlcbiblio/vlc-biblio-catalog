@@ -28,7 +28,7 @@
         font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       }
 
-      input, select { font: inherit; }
+      input, select, button { font: inherit; }
 
       .page {
         width: min(1180px, calc(100% - 32px));
@@ -90,7 +90,7 @@
         top: 0;
         z-index: 2;
         display: grid;
-        grid-template-columns: minmax(240px, 1fr) minmax(160px, 220px);
+        grid-template-columns: minmax(240px, 1.3fr) repeat(6, minmax(130px, 0.7fr));
         gap: 10px;
         padding: 16px 0 20px;
         background: rgba(247, 244, 238, 0.94);
@@ -133,6 +133,11 @@
         background: #e9e2d4;
       }
 
+      .cover.is-broken,
+      .dialog-cover.is-broken {
+        background: #eee7d8;
+      }
+
       .cover img {
         display: block;
         width: 100%;
@@ -168,6 +173,30 @@
       .badge.library { color: var(--green); }
       .badge.exchange { color: var(--blue); }
 
+      .availability {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        border-radius: 999px;
+        background: rgba(38, 35, 31, 0.82);
+        color: #fffdf8;
+        padding: 5px 9px;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .new-badge {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        border-radius: 999px;
+        background: var(--gold);
+        color: #fffdf8;
+        padding: 5px 9px;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
       .body { padding: 14px; }
 
       .title {
@@ -177,9 +206,36 @@
       }
 
       .author {
-        margin: 0 0 12px;
+        margin: 0 0 10px;
         color: var(--muted);
         font-size: 14px;
+      }
+
+      .meta {
+        margin: 0;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.35;
+      }
+
+      .card-action {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 36px;
+        margin-top: 12px;
+        border: 1px solid var(--blue);
+        border-radius: 6px;
+        color: var(--blue);
+        background: rgba(49, 95, 134, 0.06);
+        font-size: 13px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .card-action:hover {
+        background: rgba(49, 95, 134, 0.12);
       }
 
       .empty {
@@ -203,9 +259,7 @@
         background: rgba(38, 35, 31, 0.52);
       }
 
-      .modal.is-open {
-        display: flex;
-      }
+      .modal.is-open { display: flex; }
 
       .dialog {
         position: relative;
@@ -236,13 +290,12 @@
         object-fit: cover;
       }
 
-      .dialog-body {
-        padding: 28px;
-      }
+      .dialog-body { padding: 28px; }
 
       .dialog-body > .badge {
         position: static;
         display: inline-flex;
+        margin-right: 8px;
       }
 
       .close {
@@ -300,37 +353,44 @@
         line-height: 1.55;
       }
 
-      .dialog-links {
+      .dialog-links,
+      .dialog-actions {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
         margin-top: 22px;
       }
 
-      .dialog-links a {
+      .dialog-links a,
+      .dialog-actions a,
+      .dialog-actions button {
         border: 1px solid var(--line);
         border-radius: 6px;
+        background: var(--paper);
         color: var(--blue);
         padding: 8px 10px;
         text-decoration: none;
+        cursor: pointer;
       }
 
-      .dialog-links a:hover {
+      .dialog-links a:hover,
+      .dialog-actions a:hover,
+      .dialog-actions button:hover {
         border-color: var(--blue);
+      }
+
+      @media (max-width: 1060px) {
+        .controls { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .controls .search { grid-column: 1 / -1; }
       }
 
       @media (max-width: 820px) {
         .topbar { display: block; }
         .stats { min-width: 0; margin-top: 18px; }
-        .controls { grid-template-columns: 1fr; }
-        .dialog {
-          grid-template-columns: 1fr;
-        }
-
-        .dialog-cover {
-          position: relative;
-        }
-
+        .controls { grid-template-columns: 1fr 1fr; }
+        .controls .search { grid-column: 1 / -1; }
+        .dialog { grid-template-columns: 1fr; }
+        .dialog-cover { position: relative; }
         .dialog-cover img,
         .dialog-cover .cover-placeholder {
           min-height: 320px;
@@ -340,7 +400,8 @@
 
       @media (max-width: 560px) {
         .page { width: min(100% - 20px, 1180px); padding-top: 18px; }
-        .controls { position: static; }
+        .controls { position: static; grid-template-columns: 1fr; }
+        .controls .search { grid-column: auto; }
         .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
         .body { padding: 11px; }
         .title { font-size: 14px; }
@@ -369,11 +430,31 @@
       </section>
 
       <section class="controls" aria-label="Фильтры">
-        <input class="field" id="search" type="search" placeholder="Поиск по названию или автору" />
+        <input class="field search" id="search" type="search" placeholder="Поиск по названию, автору, ISBN или издательству" />
         <select class="field" id="sectionFilter">
           <option value="">Все разделы</option>
           <option value="library">Для библиотеки</option>
           <option value="exchange">Книгообмен</option>
+        </select>
+        <select class="field" id="availabilityFilter">
+          <option value="">Все статусы</option>
+        </select>
+        <select class="field" id="publisherFilter">
+          <option value="">Все издательства</option>
+        </select>
+        <select class="field" id="yearFilter">
+          <option value="">Все годы</option>
+        </select>
+        <select class="field" id="coverFilter">
+          <option value="">Все обложки</option>
+          <option value="with">Есть обложка</option>
+          <option value="without">Без обложки</option>
+        </select>
+        <select class="field" id="sortMode">
+          <option value="newest">Сначала новые</option>
+          <option value="title">По названию</option>
+          <option value="author">По автору</option>
+          <option value="year">По году</option>
         </select>
       </section>
 
@@ -387,10 +468,12 @@
         <div class="dialog-cover" id="modalCover"></div>
         <div class="dialog-body">
           <span class="badge" id="modalStatus"></span>
+          <span class="badge" id="modalAvailability"></span>
           <h2 class="dialog-title" id="modalTitle"></h2>
           <p class="dialog-author" id="modalAuthor"></p>
           <dl class="details" id="modalDetails"></dl>
           <p class="dialog-annotation" id="modalAnnotation"></p>
+          <div class="dialog-actions" id="modalActions"></div>
           <div class="dialog-links" id="modalLinks"></div>
         </div>
       </article>
@@ -399,23 +482,45 @@
     <script src="./data/books.js"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
+      const botUrl = "https://t.me/VLS_Biblio_bot";
 
       const labels = {
         library: "В библиотеку",
         exchange: "Книгообмен",
       };
 
-      const state = { search: "", section: "" };
+      const availabilityLabels = {
+        available: "Доступна",
+        reserved: "Зарезервирована",
+        given: "Передана",
+        archived: "Архив",
+        planned: "Запланирована",
+        transferred: "Передано",
+        accepted: "Принято",
+      };
+
+      const state = {
+        search: "",
+        section: "",
+        availability: "",
+        publisher: "",
+        year: "",
+        cover: "",
+        sort: "newest",
+      };
+
       const grid = document.querySelector("#grid");
       const empty = document.querySelector("#empty");
       const modal = document.querySelector("#bookModal");
       const modalClose = document.querySelector("#modalClose");
       const modalCover = document.querySelector("#modalCover");
       const modalStatus = document.querySelector("#modalStatus");
+      const modalAvailability = document.querySelector("#modalAvailability");
       const modalTitle = document.querySelector("#modalTitle");
       const modalAuthor = document.querySelector("#modalAuthor");
       const modalDetails = document.querySelector("#modalDetails");
       const modalAnnotation = document.querySelector("#modalAnnotation");
+      const modalActions = document.querySelector("#modalActions");
       const modalLinks = document.querySelector("#modalLinks");
 
       function escapeHtml(value) {
@@ -427,24 +532,86 @@
           .replaceAll("'", "&#039;");
       }
 
+      function compact(value) {
+        return String(value ?? "").trim();
+      }
+
+      function normalize(value) {
+        return compact(value).toLocaleLowerCase("ru");
+      }
+
+      function bookDate(book) {
+        const value = Date.parse(book.updatedAt || book.addedAt || "");
+        return Number.isNaN(value) ? 0 : value;
+      }
+
+      function isNew(book) {
+        const value = bookDate(book);
+        return value > 0 && Date.now() - value < 14 * 24 * 60 * 60 * 1000;
+      }
+
+      function optionLabel(value) {
+        return availabilityLabels[value] || value;
+      }
+
+      function populateSelect(selector, values, labeler = (value) => value) {
+        const select = document.querySelector(selector);
+        const first = select.querySelector("option");
+        select.innerHTML = "";
+        select.append(first);
+        values.forEach((value) => {
+          const option = document.createElement("option");
+          option.value = value;
+          option.textContent = labeler(value);
+          select.append(option);
+        });
+      }
+
+      function hydrateFilters() {
+        const publishers = [...new Set(books.map((book) => compact(book.publisher)).filter(Boolean))]
+          .sort((a, b) => a.localeCompare(b, "ru"));
+        const years = [...new Set(books.map((book) => compact(book.year)).filter(Boolean))]
+          .sort((a, b) => b.localeCompare(a, "ru"));
+        const statuses = [...new Set(books.map((book) => compact(book.availability)).filter(Boolean))]
+          .sort((a, b) => optionLabel(a).localeCompare(optionLabel(b), "ru"));
+
+        populateSelect("#publisherFilter", publishers);
+        populateSelect("#yearFilter", years);
+        populateSelect("#availabilityFilter", statuses, optionLabel);
+      }
+
       function matches(book) {
-        const query = state.search.trim().toLocaleLowerCase("ru");
-        const text = [book.title, book.author, book.isbn, book.publisher, book.annotation]
-          .join(" ")
-          .toLocaleLowerCase("ru");
+        const query = normalize(state.search);
+        const text = normalize([book.title, book.author, book.isbn, book.publisher, book.annotation].join(" "));
+        const hasCover = Boolean(compact(book.cover));
 
         return (
           (!query || text.includes(query)) &&
-          (!state.section || book.section === state.section)
+          (!state.section || book.section === state.section) &&
+          (!state.availability || book.availability === state.availability) &&
+          (!state.publisher || book.publisher === state.publisher) &&
+          (!state.year || book.year === state.year) &&
+          (!state.cover || (state.cover === "with" ? hasCover : !hasCover))
         );
+      }
+
+      function sorted(list) {
+        return [...list].sort((a, b) => {
+          if (state.sort === "title") return compact(a.title).localeCompare(compact(b.title), "ru");
+          if (state.sort === "author") return compact(a.author).localeCompare(compact(b.author), "ru");
+          if (state.sort === "year") return compact(b.year).localeCompare(compact(a.year), "ru");
+          return bookDate(b) - bookDate(a);
+        });
       }
 
       function renderDetails(book) {
         const details = [
           ["Статус", book.catalogStatus],
+          ["Доступность", optionLabel(book.availability)],
           ["ISBN", book.isbn],
           ["Год выпуска", book.year],
           ["Издательство", book.publisher],
+          ["Обновлено", book.updatedAt ? new Date(book.updatedAt).toLocaleDateString("ru") : ""],
         ].filter(([, value]) => value);
 
         return details
@@ -452,23 +619,61 @@
           .join("");
       }
 
+      function fallbackCover(title) {
+        return `<div class="cover-placeholder">${escapeHtml(title || "Книга")}</div>`;
+      }
+
+      function coverMarkup(book, lazy = false) {
+        if (!book.cover) return fallbackCover(book.title);
+        return `<img src="${escapeHtml(book.cover)}" alt="Обложка: ${escapeHtml(book.title)}"${lazy ? " loading=\"lazy\"" : ""} decoding="async" referrerpolicy="no-referrer" data-fallback-title="${escapeHtml(book.title || "Книга")}" />`;
+      }
+
+      function requestUrl(book) {
+        const key = encodeURIComponent(`book_${book.id || book.isbn || ""}`.replaceAll("-", ""));
+        return `${botUrl}?start=${key}`;
+      }
+
+      function canRequestBook(book) {
+        return book.section === "exchange" && book.availability === "available";
+      }
+
+      async function copyText(value) {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(value);
+          return;
+        }
+        const input = document.createElement("textarea");
+        input.value = value;
+        input.setAttribute("readonly", "");
+        input.style.position = "fixed";
+        input.style.opacity = "0";
+        document.body.append(input);
+        input.select();
+        document.execCommand("copy");
+        input.remove();
+      }
+
       function openBook(book) {
-        modalCover.innerHTML = book.cover
-          ? `<img src="${escapeHtml(book.cover)}" alt="Обложка: ${escapeHtml(book.title)}" />`
-          : `<div class="cover-placeholder">${escapeHtml(book.title || "Книга")}</div>`;
+        modalCover.innerHTML = coverMarkup(book);
         modalStatus.className = `badge ${escapeHtml(book.section)}`;
         modalStatus.textContent = book.catalogStatus || labels[book.section] || "Книга";
+        modalAvailability.className = `badge ${escapeHtml(book.section)}`;
+        modalAvailability.textContent = optionLabel(book.availability);
         modalTitle.textContent = book.title || "Без названия";
         modalAuthor.textContent = book.author || "Автор не указан";
         modalDetails.innerHTML = renderDetails(book);
         modalAnnotation.textContent = book.annotation || "Описание пока не добавлено.";
+        modalActions.innerHTML = [
+          book.isbn ? `<button type="button" data-copy-isbn="${escapeHtml(book.isbn)}">Скопировать ISBN</button>` : "",
+          canRequestBook(book)
+            ? `<a href="${escapeHtml(requestUrl(book))}" target="_blank" rel="noreferrer">Запросить книгу</a>`
+            : "",
+        ].filter(Boolean).join("");
         modalLinks.innerHTML = [
           book.sourceUrl ? `<a href="${escapeHtml(book.sourceUrl)}" target="_blank" rel="noreferrer">Источник</a>` : "",
           book.livelibUrl ? `<a href="${escapeHtml(book.livelibUrl)}" target="_blank" rel="noreferrer">LiveLib</a>` : "",
           book.wildberriesUrl ? `<a href="${escapeHtml(book.wildberriesUrl)}" target="_blank" rel="noreferrer">Wildberries</a>` : "",
-        ]
-          .filter(Boolean)
-          .join("");
+        ].filter(Boolean).join("");
 
         modal.classList.add("is-open");
         document.body.style.overflow = "hidden";
@@ -480,36 +685,36 @@
         document.body.style.overflow = "";
       }
 
+      function replaceBrokenCover(image) {
+        const container = image.closest(".cover, .dialog-cover");
+        if (container) container.classList.add("is-broken");
+        image.replaceWith(document.createRange().createContextualFragment(fallbackCover(image.dataset.fallbackTitle)));
+      }
+
       function render() {
-        const visible = books.filter(matches);
+        const visible = sorted(books.filter(matches));
 
         document.querySelector("#totalCount").textContent = visible.length;
-        document.querySelector("#libraryCount").textContent = visible.filter(
-          (book) => book.section === "library",
-        ).length;
-        document.querySelector("#exchangeCount").textContent = visible.filter(
-          (book) => book.section === "exchange",
-        ).length;
+        document.querySelector("#libraryCount").textContent = visible.filter((book) => book.section === "library").length;
+        document.querySelector("#exchangeCount").textContent = visible.filter((book) => book.section === "exchange").length;
 
         grid.innerHTML = visible
-          .map((book) => {
-            return `
-              <article class="book" tabindex="0" role="button" data-book-id="${escapeHtml(book.id)}" aria-label="Открыть карточку: ${escapeHtml(book.title)}">
-                <div class="cover">
-                  ${
-                    book.cover
-                      ? `<img src="${escapeHtml(book.cover)}" alt="Обложка: ${escapeHtml(book.title)}" loading="lazy" />`
-                      : `<div class="cover-placeholder">${escapeHtml(book.title || "Книга")}</div>`
-                  }
-                  <span class="badge ${escapeHtml(book.section)}">${escapeHtml(book.catalogStatus || labels[book.section] || "Книга")}</span>
-                </div>
-                <div class="body">
-                  <h2 class="title">${escapeHtml(book.title || "Без названия")}</h2>
-                  <p class="author">${escapeHtml(book.author || "Автор не указан")}</p>
-                </div>
-              </article>
-            `;
-          })
+          .map((book) => `
+            <article class="book" tabindex="0" role="button" data-book-id="${escapeHtml(book.id)}" aria-label="Открыть карточку: ${escapeHtml(book.title)}">
+              <div class="cover">
+                ${coverMarkup(book, true)}
+                <span class="badge ${escapeHtml(book.section)}">${escapeHtml(book.catalogStatus || labels[book.section] || "Книга")}</span>
+                ${isNew(book) ? '<span class="new-badge">Новое</span>' : ""}
+                <span class="availability">${escapeHtml(optionLabel(book.availability))}</span>
+              </div>
+              <div class="body">
+                <h2 class="title">${escapeHtml(book.title || "Без названия")}</h2>
+                <p class="author">${escapeHtml(book.author || "Автор не указан")}</p>
+                <p class="meta">${escapeHtml([book.publisher, book.year].filter(Boolean).join(" · "))}</p>
+                ${canRequestBook(book) ? `<a class="card-action" href="${escapeHtml(requestUrl(book))}" target="_blank" rel="noreferrer">Запросить книгу</a>` : ""}
+              </div>
+            </article>
+          `)
           .join("");
 
         empty.style.display = visible.length ? "none" : "block";
@@ -520,12 +725,22 @@
         render();
       });
 
-      document.querySelector("#sectionFilter").addEventListener("change", (event) => {
-        state.section = event.target.value;
-        render();
+      [
+        ["#sectionFilter", "section"],
+        ["#availabilityFilter", "availability"],
+        ["#publisherFilter", "publisher"],
+        ["#yearFilter", "year"],
+        ["#coverFilter", "cover"],
+        ["#sortMode", "sort"],
+      ].forEach(([selector, key]) => {
+        document.querySelector(selector).addEventListener("change", (event) => {
+          state[key] = event.target.value;
+          render();
+        });
       });
 
       grid.addEventListener("click", (event) => {
+        if (event.target.closest("a, button")) return;
         const card = event.target.closest("[data-book-id]");
         if (!card) return;
         const book = books.find((item) => String(item.id) === card.dataset.bookId);
@@ -541,6 +756,23 @@
         if (book) openBook(book);
       });
 
+      grid.addEventListener("error", (event) => {
+        if (event.target.tagName !== "IMG") return;
+        replaceBrokenCover(event.target);
+      }, true);
+
+      modalCover.addEventListener("error", (event) => {
+        if (event.target.tagName !== "IMG") return;
+        replaceBrokenCover(event.target);
+      }, true);
+
+      modalActions.addEventListener("click", async (event) => {
+        const button = event.target.closest("[data-copy-isbn]");
+        if (!button) return;
+        await copyText(button.dataset.copyIsbn);
+        button.textContent = "ISBN скопирован";
+      });
+
       modalClose.addEventListener("click", closeBook);
       modal.addEventListener("click", (event) => {
         if (event.target === modal) closeBook();
@@ -549,6 +781,7 @@
         if (event.key === "Escape" && modal.classList.contains("is-open")) closeBook();
       });
 
+      hydrateFilters();
       render();
     </script>
   </body>
