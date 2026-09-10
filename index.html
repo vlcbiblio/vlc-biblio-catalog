@@ -453,7 +453,7 @@
       </article>
     </section>
 
-    <script src="./data/books.js?v=20260910220000"></script>
+    <script src="./data/books.js?v=20260910221800"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
       const botUrl = "https://t.me/VLS_Biblio_bot";
@@ -522,12 +522,12 @@
 
       function renderDetails(book) {
         const details = [
-          ["Статус", book.catalogStatus],
+          book.section === "exchange" ? null : ["Статус", book.catalogStatus],
           ["ISBN", book.isbn],
           ["Год выпуска", book.year],
           ["Издательство", book.publisher],
           ["Обновлено", book.updatedAt ? new Date(book.updatedAt).toLocaleDateString("ru") : ""],
-        ].filter(([, value]) => value);
+        ].filter((detail) => detail && detail[1]);
 
         return details
           .map(([label, value]) => `<dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd>`)
@@ -580,6 +580,11 @@
         return "Книга в библиотеке Pilar Faus.";
       }
 
+      function badgeMarkup(book) {
+        if (book.section === "exchange") return "";
+        return `<span class="badge ${escapeHtml(book.section)}">${escapeHtml(book.catalogStatus || labels[book.section] || "Книга")}</span>`;
+      }
+
       function bookPageUrl(book) {
         const url = new URL("book.html", window.location.href);
         url.search = "";
@@ -604,7 +609,8 @@
         modalCover.classList.remove("is-broken");
         modalCover.innerHTML = coverMarkup(book);
         modalStatus.className = `badge ${escapeHtml(book.section)}`;
-        modalStatus.textContent = book.catalogStatus || labels[book.section] || "Книга";
+        modalStatus.textContent = book.section === "exchange" ? "" : book.catalogStatus || labels[book.section] || "Книга";
+        modalStatus.hidden = book.section === "exchange";
         modalTitle.textContent = book.title || "Без названия";
         modalAuthor.textContent = book.author || "Автор не указан";
         modalDetails.innerHTML = renderDetails(book);
@@ -657,7 +663,7 @@
             <article class="book" tabindex="0" role="button" data-book-id="${escapeHtml(book.id)}" aria-label="Открыть карточку: ${escapeHtml(book.title)}">
               <div class="cover">
                 ${coverMarkup(book, true)}
-                <span class="badge ${escapeHtml(book.section)}">${escapeHtml(book.catalogStatus || labels[book.section] || "Книга")}</span>
+                ${badgeMarkup(book)}
               </div>
               <div class="body">
                 <h2 class="title">${escapeHtml(book.title || "Без названия")}</h2>
