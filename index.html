@@ -48,15 +48,11 @@
       }
 
       .brand-plaque {
-        display: grid;
-        grid-template-columns: 132px minmax(0, 1fr);
-        align-items: center;
-        gap: 18px;
         width: min(760px, 100%);
         border: 1px solid var(--line);
         border-radius: 8px;
         background: rgba(255, 253, 248, 0.72);
-        padding: 14px;
+        padding: 18px 20px;
         box-shadow: var(--shadow);
       }
 
@@ -74,16 +70,6 @@
         color: var(--muted);
         font-size: 16px;
         line-height: 1.5;
-      }
-
-      .catalog-hero {
-        display: block;
-        width: 100%;
-        aspect-ratio: 1;
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        object-fit: cover;
-        object-position: 30% 52%;
       }
 
       .stats {
@@ -400,9 +386,7 @@
       @media (max-width: 560px) {
         .page { width: min(100% - 20px, 1180px); padding-top: 18px; }
         .brand-plaque {
-          grid-template-columns: 88px minmax(0, 1fr);
-          gap: 12px;
-          padding: 10px;
+          padding: 14px;
         }
         .controls { position: static; grid-template-columns: 1fr; }
         .controls .search { grid-column: auto; }
@@ -419,20 +403,11 @@
     <main class="page">
       <section class="topbar" aria-labelledby="catalog-title">
         <div class="brand-plaque">
-          <img
-            class="catalog-hero"
-            src="./assets/vlc-biblio-hero.jpg"
-            alt="Книжная полка VLC Biblio"
-            width="960"
-            height="960"
-          />
-          <div>
-            <h1 id="catalog-title">VLC Biblio</h1>
-            <p class="subtitle">
-              Пополняемый каталог книг для русскоязычного фонда библиотеки Pilar Faus и
-              книгообмена между участниками.
-            </p>
-          </div>
+          <h1 id="catalog-title">VLC Biblio</h1>
+          <p class="subtitle">
+            Пополняемый каталог книг для русскоязычного фонда библиотеки Pilar Faus и
+            книгообмена между участниками.
+          </p>
         </div>
         <div class="stats" aria-label="Статистика каталога">
           <div class="stat"><strong id="totalCount">0</strong><span>всего</span></div>
