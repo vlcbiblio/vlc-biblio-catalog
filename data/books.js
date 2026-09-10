@@ -1,5 +1,23 @@
 window.BIBLIO_BOOKS = [
   {
+    "id": "18",
+    "title": "Сказки и стихи",
+    "author": "Чуковский, Корней Иванович",
+    "section": "exchange",
+    "catalogStatus": "Книгообмен",
+    "availability": "available",
+    "cover": "https://basket-05.wbbasket.ru/vol775/part77528/77528791/images/big/1.webp",
+    "isbn": "978-5-8138-1477-8",
+    "year": "2023",
+    "publisher": "Русич",
+    "annotation": "В книгу вошли известные сказки Корнея Чуковского: «Айболит», «Мойдодыр», «Телефон», «Тараканище», «Федорино горе», «Муха-Цокотуха», «Путаница», а также стихи и песенки про Бебеку и Барабека, Котауси и Мауси, Федотку и Закаляку. Издание подходит для чтения взрослыми детям и для самостоятельного чтения с 7 лет.",
+    "sourceUrl": "https://www.labirint.ru/books/756292/",
+    "livelibUrl": "https://www.livelib.ru/search?search=978-5-8138-1477-8",
+    "wildberriesUrl": "https://global.wildberries.ru/product?card=77528791",
+    "addedAt": "2026-09-10T20:17:16",
+    "updatedAt": "2026-09-10T20:31:55"
+  },
+  {
     "id": "16",
     "title": "Первоклассные сказки разных народов",
     "author": "Сборник; разные народы",
