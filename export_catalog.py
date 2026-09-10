@@ -14,7 +14,7 @@ DEFAULT_INDEX = ROOT / "index.html"
 DEFAULT_BOOK_PAGE = ROOT / "book.html"
 
 BAD_STATUSES = {"bad_photo", "rejected"}
-EXCHANGE_MARKER = "книгообмен"
+EXCHANGE_MARKER = "каталог"
 INTERNAL_CATALOG_STATUSES = {"На согласовании"}
 
 

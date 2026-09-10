@@ -246,22 +246,31 @@
       .card-action {
         display: inline-flex;
         align-items: center;
-        justify-content: center;
-        gap: 6px;
+        justify-content: flex-start;
+        gap: 9px;
         width: 100%;
-        min-height: 36px;
+        min-height: 52px;
         margin-top: auto;
         border: 1px solid var(--blue);
         border-radius: 6px;
         color: var(--blue);
         background: rgba(49, 95, 134, 0.06);
-        font-size: 13px;
+        font-size: 14px;
         font-weight: 700;
+        line-height: 1.22;
+        padding: 8px 11px;
         text-decoration: none;
       }
 
       .card-action:hover {
         background: rgba(49, 95, 134, 0.12);
+      }
+
+      .card-action span,
+      .dialog-actions .telegram-action span {
+        display: block;
+        min-width: 0;
+        text-align: left;
       }
 
       .empty {
@@ -391,11 +400,15 @@
       .dialog-links a,
       .dialog-actions a,
       .dialog-actions button {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
         border: 1px solid var(--line);
         border-radius: 6px;
         background: var(--paper);
         color: var(--blue);
-        padding: 8px 10px;
+        min-height: 40px;
+        padding: 8px 12px;
         text-decoration: none;
         cursor: pointer;
       }
@@ -404,6 +417,13 @@
       .dialog-actions a:hover,
       .dialog-actions button:hover {
         border-color: var(--blue);
+      }
+
+      .telegram-icon {
+        width: 18px;
+        height: 18px;
+        flex: 0 0 auto;
+        fill: currentColor;
       }
 
       @media (max-width: 820px) {
@@ -567,7 +587,6 @@
 
       function renderDetails(book) {
         const details = [
-          book.section === "exchange" ? null : ["Статус", book.catalogStatus],
           ["ISBN", book.isbn],
           ["Год выпуска", book.year],
           ["Издательство", book.publisher],

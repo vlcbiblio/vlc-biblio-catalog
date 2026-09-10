@@ -177,14 +177,17 @@
       .actions button {
         display: inline-flex;
         align-items: center;
-        gap: 6px;
+        gap: 8px;
         border: 1px solid var(--line);
         border-radius: 6px;
         background: var(--paper);
         color: var(--blue);
-        padding: 8px 10px;
+        min-height: 40px;
+        padding: 8px 12px;
         text-decoration: none;
         cursor: pointer;
+        font-weight: 700;
+        line-height: 1.22;
       }
 
       .actions a:hover,
@@ -193,10 +196,16 @@
       }
 
       .telegram-icon {
-        width: 15px;
-        height: 15px;
+        width: 18px;
+        height: 18px;
         flex: 0 0 auto;
         fill: currentColor;
+      }
+
+      .actions .telegram-action span {
+        display: block;
+        min-width: 0;
+        text-align: left;
       }
 
       .empty {
@@ -316,7 +325,6 @@
 
       function detailsMarkup(book) {
         const details = [
-          book.section === "exchange" ? null : ["Статус", book.catalogStatus],
           ["ISBN", book.isbn],
           ["Год выпуска", book.year],
           ["Издательство", book.publisher],
@@ -346,7 +354,7 @@
               <p class="annotation">${escapeHtml(book.annotation || "Описание пока не добавлено.")}</p>
               <p class="collection-note">${escapeHtml(collectionNote(book))}</p>
               <div class="actions">
-                ${libraryAction(book) ? `<a href="${escapeHtml(libraryAction(book).href)}" target="_blank" rel="noreferrer">${actionLabelMarkup(libraryAction(book))}</a>` : ""}
+                ${libraryAction(book) ? `<a class="${libraryAction(book).isTelegram ? "telegram-action" : ""}" href="${escapeHtml(libraryAction(book).href)}" target="_blank" rel="noreferrer">${actionLabelMarkup(libraryAction(book))}</a>` : ""}
                 <a href="${escapeHtml(googleSearchUrl(book))}" target="_blank" rel="noreferrer">Google</a>
               </div>
             </div>
