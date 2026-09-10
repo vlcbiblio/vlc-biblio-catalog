@@ -342,6 +342,13 @@
         line-height: 1.55;
       }
 
+      .collection-note {
+        margin: 12px 0 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.4;
+      }
+
       .dialog-links,
       .dialog-actions {
         display: flex;
@@ -439,6 +446,7 @@
           <p class="dialog-author" id="modalAuthor"></p>
           <dl class="details" id="modalDetails"></dl>
           <p class="dialog-annotation" id="modalAnnotation"></p>
+          <p class="collection-note" id="modalCollectionNote"></p>
           <div class="dialog-actions" id="modalActions"></div>
           <div class="dialog-links" id="modalLinks"></div>
         </div>
@@ -472,6 +480,7 @@
       const modalAuthor = document.querySelector("#modalAuthor");
       const modalDetails = document.querySelector("#modalDetails");
       const modalAnnotation = document.querySelector("#modalAnnotation");
+      const modalCollectionNote = document.querySelector("#modalCollectionNote");
       const modalActions = document.querySelector("#modalActions");
       const modalLinks = document.querySelector("#modalLinks");
 
@@ -564,6 +573,13 @@
         return null;
       }
 
+      function collectionNote(book) {
+        if (book.section === "exchange") {
+          return "Книга в частной коллекции. Вы можете запросить книгу на время.";
+        }
+        return "Книга в библиотеке Pilar Faus.";
+      }
+
       function bookPageUrl(book) {
         const url = new URL("book.html", window.location.href);
         url.search = "";
@@ -593,6 +609,7 @@
         modalAuthor.textContent = book.author || "Автор не указан";
         modalDetails.innerHTML = renderDetails(book);
         modalAnnotation.textContent = book.annotation || "Описание пока не добавлено.";
+        modalCollectionNote.textContent = collectionNote(book);
         modalActions.innerHTML = [
           libraryAction(book)
             ? `<a href="${escapeHtml(libraryAction(book).href)}" target="_blank" rel="noreferrer">${escapeHtml(libraryAction(book).label)}</a>`
