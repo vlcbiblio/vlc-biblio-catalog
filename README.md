@@ -35,8 +35,8 @@ the catalog replaces it with a local text placeholder instead of leaving a broke
 
 ## Book pages
 
-Each book opens as a catalog detail page with a shareable query URL:
+Each book opens as a standalone detail page with a shareable URL:
 
 ```text
-https://vlcbiblio.github.io/vlc-biblio-catalog/?book=7
+https://vlcbiblio.github.io/vlc-biblio-catalog/book.html?id=7
 ```

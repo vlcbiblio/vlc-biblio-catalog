@@ -637,9 +637,10 @@
       }
 
       function bookPageUrl(book) {
-        const url = new URL(window.location.href);
-        url.searchParams.set("book", book.id);
-        return `${url.pathname}${url.search}${url.hash}`;
+        const url = new URL("book.html", window.location.href);
+        url.search = "";
+        url.searchParams.set("id", book.id);
+        return `${url.pathname}${url.search}`;
       }
 
       function absoluteBookPageUrl(book) {
@@ -669,6 +670,12 @@
       }
 
       function openBook(book, options = {}) {
+        if (options.push === false) {
+          window.location.replace(bookPageUrl(book));
+          return;
+        }
+        window.location.href = bookPageUrl(book);
+        return;
         const shouldPush = options.push !== false;
         modalCover.classList.remove("is-broken");
         modalCover.innerHTML = coverMarkup(book);
