@@ -90,7 +90,7 @@
         top: 0;
         z-index: 2;
         display: grid;
-        grid-template-columns: minmax(240px, 1fr) minmax(150px, 220px) minmax(150px, 220px);
+        grid-template-columns: minmax(240px, 1fr) minmax(150px, 220px);
         gap: 10px;
         padding: 16px 0 20px;
         background: rgba(247, 244, 238, 0.94);
@@ -172,18 +172,6 @@
 
       .badge.library { color: var(--green); }
       .badge.exchange { color: var(--blue); }
-
-      .availability {
-        position: absolute;
-        right: 10px;
-        bottom: 10px;
-        border-radius: 999px;
-        background: rgba(38, 35, 31, 0.82);
-        color: #fffdf8;
-        padding: 5px 9px;
-        font-size: 12px;
-        font-weight: 700;
-      }
 
       .new-badge {
         position: absolute;
@@ -424,9 +412,6 @@
           <option value="library">Для библиотеки</option>
           <option value="exchange">Книгообмен</option>
         </select>
-        <select class="field" id="availabilityFilter">
-          <option value="">Все статусы</option>
-        </select>
       </section>
 
       <section class="grid" id="grid" aria-label="Книги"></section>
@@ -439,7 +424,6 @@
         <div class="dialog-cover" id="modalCover"></div>
         <div class="dialog-body">
           <span class="badge" id="modalStatus"></span>
-          <span class="badge" id="modalAvailability"></span>
           <h2 class="dialog-title" id="modalTitle"></h2>
           <p class="dialog-author" id="modalAuthor"></p>
           <dl class="details" id="modalDetails"></dl>
@@ -460,20 +444,9 @@
         exchange: "Книгообмен",
       };
 
-      const availabilityLabels = {
-        available: "Доступна",
-        reserved: "Зарезервирована",
-        given: "Передана",
-        archived: "Архив",
-        planned: "Запланирована",
-        transferred: "Передано",
-        accepted: "Принято",
-      };
-
       const state = {
         search: "",
         section: "",
-        availability: "",
       };
 
       const grid = document.querySelector("#grid");
@@ -483,7 +456,6 @@
       const modalClose = document.querySelector("#modalClose");
       const modalCover = document.querySelector("#modalCover");
       const modalStatus = document.querySelector("#modalStatus");
-      const modalAvailability = document.querySelector("#modalAvailability");
       const modalTitle = document.querySelector("#modalTitle");
       const modalAuthor = document.querySelector("#modalAuthor");
       const modalDetails = document.querySelector("#modalDetails");
@@ -518,38 +490,13 @@
         return value > 0 && Date.now() - value < 14 * 24 * 60 * 60 * 1000;
       }
 
-      function optionLabel(value) {
-        return availabilityLabels[value] || value;
-      }
-
-      function populateSelect(selector, values, labeler = (value) => value) {
-        const select = document.querySelector(selector);
-        const first = select.querySelector("option");
-        select.innerHTML = "";
-        select.append(first);
-        values.forEach((value) => {
-          const option = document.createElement("option");
-          option.value = value;
-          option.textContent = labeler(value);
-          select.append(option);
-        });
-      }
-
-      function hydrateFilters() {
-        const statuses = [...new Set(books.map((book) => compact(book.availability)).filter(Boolean))]
-          .sort((a, b) => optionLabel(a).localeCompare(optionLabel(b), "ru"));
-
-        populateSelect("#availabilityFilter", statuses, optionLabel);
-      }
-
       function matches(book) {
         const query = normalize(state.search);
         const text = normalize([book.title, book.author, book.isbn, book.publisher, book.annotation].join(" "));
 
         return (
           (!query || text.includes(query)) &&
-          (!state.section || book.section === state.section) &&
-          (!state.availability || book.availability === state.availability)
+          (!state.section || book.section === state.section)
         );
       }
 
@@ -560,7 +507,6 @@
       function renderDetails(book) {
         const details = [
           ["Статус", book.catalogStatus],
-          ["Доступность", optionLabel(book.availability)],
           ["ISBN", book.isbn],
           ["Год выпуска", book.year],
           ["Издательство", book.publisher],
@@ -640,8 +586,6 @@
         modalCover.innerHTML = coverMarkup(book);
         modalStatus.className = `badge ${escapeHtml(book.section)}`;
         modalStatus.textContent = book.catalogStatus || labels[book.section] || "Книга";
-        modalAvailability.className = `badge ${escapeHtml(book.section)}`;
-        modalAvailability.textContent = optionLabel(book.availability);
         modalTitle.textContent = book.title || "Без названия";
         modalAuthor.textContent = book.author || "Автор не указан";
         modalDetails.innerHTML = renderDetails(book);
@@ -697,7 +641,6 @@
                 ${coverMarkup(book, true)}
                 <span class="badge ${escapeHtml(book.section)}">${escapeHtml(book.catalogStatus || labels[book.section] || "Книга")}</span>
                 ${isNew(book) ? '<span class="new-badge">Новое</span>' : ""}
-                <span class="availability">${escapeHtml(optionLabel(book.availability))}</span>
               </div>
               <div class="body">
                 <h2 class="title">${escapeHtml(book.title || "Без названия")}</h2>
@@ -719,7 +662,6 @@
 
       [
         ["#sectionFilter", "section"],
-        ["#availabilityFilter", "availability"],
       ].forEach(([selector, key]) => {
         document.querySelector(selector).addEventListener("change", (event) => {
           state[key] = event.target.value;
@@ -775,7 +717,6 @@
         }
       });
 
-      hydrateFilters();
       const initialBook = currentBookFromUrl();
       if (initialBook) {
         openBook(initialBook, { push: false });

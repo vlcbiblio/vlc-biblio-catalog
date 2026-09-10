@@ -219,15 +219,6 @@
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
       const botUrl = "https://t.me/VLS_Biblio_bot";
-      const availabilityLabels = {
-        available: "Доступна",
-        reserved: "Зарезервирована",
-        given: "Передана",
-        archived: "Архив",
-        planned: "Запланирована",
-        transferred: "Передано",
-        accepted: "Принято",
-      };
       const labels = {
         library: "В библиотеку",
         exchange: "Книгообмен",
@@ -245,10 +236,6 @@
 
       function compact(value) {
         return String(value ?? "").trim();
-      }
-
-      function optionLabel(value) {
-        return availabilityLabels[value] || value;
       }
 
       function fallbackCover(title) {
@@ -293,7 +280,6 @@
       function detailsMarkup(book) {
         const details = [
           ["Статус", book.catalogStatus],
-          ["Доступность", optionLabel(book.availability)],
           ["ISBN", book.isbn],
           ["Год выпуска", book.year],
           ["Издательство", book.publisher],
@@ -313,7 +299,6 @@
             <div class="body">
               <div class="badges">
                 <span class="badge ${escapeHtml(book.section)}">${escapeHtml(book.catalogStatus || labels[book.section] || "Книга")}</span>
-                <span class="badge ${escapeHtml(book.section)}">${escapeHtml(optionLabel(book.availability))}</span>
               </div>
               <h1>${escapeHtml(book.title || "Без названия")}</h1>
               <p class="author">${escapeHtml(book.author || "Автор не указан")}</p>
