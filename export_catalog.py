@@ -1,5 +1,6 @@
 import argparse
 import csv
+import hashlib
 import json
 import re
 from datetime import datetime
@@ -10,6 +11,7 @@ ROOT = Path(__file__).resolve().parent
 DEFAULT_SOURCE = ROOT.parent / "1.Telegram" / "_obrabotka" / "books.csv"
 DEFAULT_OUTPUT = ROOT / "data" / "books.js"
 DEFAULT_INDEX = ROOT / "index.html"
+DEFAULT_BOOK_PAGE = ROOT / "book.html"
 
 BAD_STATUSES = {"bad_photo", "rejected"}
 EXCHANGE_MARKER = "книгообмен"
@@ -29,6 +31,16 @@ def parse_request_timestamp(request_file):
         return datetime.strptime(stamp, "%Y%m%d%H%M%S").isoformat(timespec="seconds")
     except ValueError:
         return ""
+
+
+def public_id_for(row):
+    stable_source = clean(row.get("request_file")) or clean(row.get("isbn"))
+    if stable_source:
+        return "b-" + hashlib.sha1(stable_source.encode("utf-8")).hexdigest()[:12]
+    fallback = "|".join(
+        clean(row.get(field)) for field in ("title", "author", "publication_year")
+    )
+    return "b-" + hashlib.sha1(fallback.encode("utf-8")).hexdigest()[:12]
 
 
 def section_for(row):
@@ -83,7 +95,8 @@ def public_book(row):
     book_number = clean(row.get("book_number"))
     request_file = clean(row.get("request_file"))
     return {
-        "id": book_number or re.sub(r"\W+", "-", request_file).strip("-"),
+        "id": public_id_for(row),
+        "requestId": book_number or re.sub(r"\W+", "-", request_file).strip("-"),
         "title": clean(row.get("title")),
         "author": clean(row.get("author")),
         "section": section,
@@ -119,19 +132,20 @@ def write_books(output, books):
     output.write_text(f"window.BIBLIO_BOOKS = {payload};\n", encoding="utf-8")
 
 
-def update_data_cache_buster(index_path):
-    if not index_path.is_file():
-        return
+def update_data_cache_buster(*html_paths):
     version = datetime.now().strftime("%Y%m%d%H%M%S")
-    html = index_path.read_text(encoding="utf-8")
-    updated = re.sub(
-        r'(\./data/books\.js)(?:\?v=[^"]*)?',
-        rf"\1?v={version}",
-        html,
-        count=1,
-    )
-    if updated != html:
-        index_path.write_text(updated, encoding="utf-8")
+    for html_path in html_paths:
+        if not html_path.is_file():
+            continue
+        html = html_path.read_text(encoding="utf-8")
+        updated = re.sub(
+            r'(\./data/books\.js)(?:\?v=[^"]*)?',
+            rf"\1?v={version}",
+            html,
+            count=1,
+        )
+        if updated != html:
+            html_path.write_text(updated, encoding="utf-8")
 
 
 def main():
@@ -139,11 +153,12 @@ def main():
     parser.add_argument("--source", type=Path, default=DEFAULT_SOURCE)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--index", type=Path, default=DEFAULT_INDEX)
+    parser.add_argument("--book-page", type=Path, default=DEFAULT_BOOK_PAGE)
     args = parser.parse_args()
 
     books = load_books(args.source)
     write_books(args.output, books)
-    update_data_cache_buster(args.index)
+    update_data_cache_buster(args.index, args.book_page)
     print(f"Exported {len(books)} books to {args.output}")
 
 

@@ -453,7 +453,7 @@
       </article>
     </section>
 
-    <script src="./data/books.js?v=20260910203506"></script>
+    <script src="./data/books.js?v=20260910212727"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
       const botUrl = "https://t.me/VLS_Biblio_bot";
@@ -544,7 +544,7 @@
       }
 
       function requestUrl(book) {
-        const key = encodeURIComponent(`book_${book.id || book.isbn || ""}`.replaceAll("-", ""));
+        const key = encodeURIComponent(`book_${book.requestId || book.id || book.isbn || ""}`.replaceAll("-", ""));
         return `${botUrl}?start=${key}`;
       }
 
