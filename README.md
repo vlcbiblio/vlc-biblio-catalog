@@ -24,9 +24,9 @@ Generate the public catalog payload from the Telegram processing table:
 python export_catalog.py
 ```
 
-Only rows with book data and `channel_published_at` are exported. Private Telegram fields
-such as `chat_id`, `user_id`, `username`, source photos, OCR paths, and internal notes are
-not written to `data/books.js`.
+Only rows with book data and either `channel_published_at` or `user_published_at` are
+exported. Private Telegram fields such as `chat_id`, `user_id`, `username`, source photos,
+OCR paths, and internal notes are not written to `data/books.js`.
 
 ## Cover handling
 

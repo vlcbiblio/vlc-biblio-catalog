@@ -72,7 +72,7 @@ def availability_for(row, section):
 def has_public_book_data(row):
     if clean(row.get("status")) in BAD_STATUSES:
         return False
-    if not clean(row.get("channel_published_at")):
+    if not clean(row.get("channel_published_at") or row.get("user_published_at")):
         return False
     return any(clean(row.get(field)) for field in ("isbn", "title", "author"))
 
