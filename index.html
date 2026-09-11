@@ -561,7 +561,7 @@
       </article>
     </section>
 
-    <script src="./data/books.js?v=20260910225200"></script>
+    <script src="./data/books.js?v=20260911112023"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
       const botUrl = "https://t.me/VLS_Biblio_bot";
@@ -614,6 +614,10 @@
         return Number.isNaN(value) ? 0 : value;
       }
 
+      function sectionPriority(book) {
+        return book.section === "library" ? 0 : 1;
+      }
+
       function matches(book) {
         const query = normalize(state.search);
         const text = normalize([book.title, book.author, book.isbn, book.publisher, book.annotation].join(" "));
@@ -625,7 +629,11 @@
       }
 
       function sorted(list) {
-        return [...list].sort((a, b) => bookDate(b) - bookDate(a));
+        return [...list].sort((a, b) => {
+          const sectionOrder = sectionPriority(a) - sectionPriority(b);
+          if (sectionOrder) return sectionOrder;
+          return bookDate(b) - bookDate(a);
+        });
       }
 
       function renderDetails(book) {

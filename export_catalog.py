@@ -117,14 +117,31 @@ def public_book(row):
     }
 
 
+def section_priority(book):
+    return 0 if book.get("section") == "library" else 1
+
+
+def book_timestamp(book):
+    value = book.get("updatedAt") or book.get("addedAt") or ""
+    if not value:
+        return 0
+    try:
+        return datetime.fromisoformat(value).timestamp()
+    except ValueError:
+        return 0
+
+
 def load_books(source):
     with source.open("r", encoding="utf-8-sig", newline="") as handle:
         rows = list(csv.DictReader(handle))
     books = [public_book(row) for row in rows if has_public_book_data(row)]
     return sorted(
         books,
-        key=lambda book: (book.get("updatedAt") or book.get("addedAt") or "", book.get("id") or ""),
-        reverse=True,
+        key=lambda book: (
+            section_priority(book),
+            -book_timestamp(book),
+            book.get("id") or "",
+        ),
     )
 
 
