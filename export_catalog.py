@@ -14,7 +14,7 @@ DEFAULT_INDEX = ROOT / "index.html"
 DEFAULT_BOOK_PAGE = ROOT / "book.html"
 
 BAD_STATUSES = {"bad_photo", "rejected"}
-EXCHANGE_MARKER = "каталог"
+EXCHANGE_MARKERS = ("книгообмен", "каталог")
 INTERNAL_CATALOG_STATUSES = {"На согласовании"}
 
 
@@ -45,12 +45,12 @@ def public_id_for(row):
 
 def section_for(row):
     destination = clean(row.get("destination")).lower()
-    return "exchange" if EXCHANGE_MARKER in destination else "library"
+    return "exchange" if any(marker in destination for marker in EXCHANGE_MARKERS) else "library"
 
 
 def catalog_status_for(row, section):
     explicit = clean(row.get("catalog_status"))
-    if section == "exchange" and explicit.lower() == EXCHANGE_MARKER:
+    if section == "exchange" and explicit.lower() in EXCHANGE_MARKERS:
         return "Частная библиотека"
     if explicit and explicit not in INTERNAL_CATALOG_STATUSES:
         return explicit
