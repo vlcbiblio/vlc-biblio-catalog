@@ -95,6 +95,23 @@
 
       .telegram-link:hover { text-decoration: underline; }
 
+      .site-footer {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 34px;
+        padding-top: 18px;
+        border-top: 1px solid var(--line);
+      }
+
+      .privacy-link {
+        color: var(--blue);
+        font-size: 12px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .privacy-link:hover { text-decoration: underline; }
+
       .telegram-icon {
         width: 15px;
         height: 15px;
@@ -487,6 +504,7 @@
               <svg class="telegram-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.7 4.3 18.4 20c-.2 1-.8 1.2-1.6.8l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.6-.6-.3L6 13.5l-4.8-1.5c-1-.3-1-1 .2-1.5L20.2 3.2c.9-.3 1.7.2 1.5 1.1Z"/></svg>
               <span>@VLS_Biblio_bot бот</span>
             </a>
+            <a class="telegram-link" href="./privacy.html">Конфиденциальность</a>
           </nav>
         </div>
         <div class="stats" aria-label="Статистика каталога">
@@ -507,6 +525,9 @@
 
       <section class="grid" id="grid" aria-label="Книги"></section>
       <p class="empty" id="empty">Ничего не найдено. Попробуйте убрать часть фильтров.</p>
+      <footer class="site-footer">
+        <a class="privacy-link" href="./privacy.html">Конфиденциальность</a>
+      </footer>
     </main>
 
     <section class="modal" id="bookModal" aria-labelledby="modalTitle">

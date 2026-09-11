@@ -215,6 +215,23 @@
         gap: 1px;
       }
 
+      .site-footer {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 34px;
+        padding-top: 18px;
+        border-top: 1px solid var(--line);
+      }
+
+      .privacy-link {
+        color: var(--blue);
+        font-size: 12px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .privacy-link:hover { text-decoration: underline; }
+
       .empty {
         border: 1px dashed var(--line);
         border-radius: 8px;
@@ -248,6 +265,9 @@
     <main class="page">
       <a class="back" href="./">← Назад к каталогу</a>
       <section id="content"></section>
+      <footer class="site-footer">
+        <a class="privacy-link" href="./privacy.html">Конфиденциальность</a>
+      </footer>
     </main>
 
     <script src="./data/books.js?v=20260910224000"></script>
