@@ -319,6 +319,11 @@
         return `${botUrl}?start=${key}`;
       }
 
+      function correctionUrl(book) {
+        const key = encodeURIComponent(`fix_${book.requestId || book.id || book.isbn || ""}`.replaceAll("-", ""));
+        return `${botUrl}?start=${key}`;
+      }
+
       function canRequestBook(book) {
         return book.section === "exchange" && book.availability === "available";
       }
@@ -384,6 +389,7 @@
               <p class="collection-note">${escapeHtml(collectionNote(book))}</p>
               <div class="actions">
                 ${libraryAction(book) ? `<a class="${libraryAction(book).isTelegram ? "telegram-action" : ""}" href="${escapeHtml(libraryAction(book).href)}" target="_blank" rel="noreferrer">${actionLabelMarkup(libraryAction(book))}</a>` : ""}
+                <a href="${escapeHtml(correctionUrl(book))}" target="_blank" rel="noreferrer">Хочу сообщить об ошибке</a>
                 <a href="${escapeHtml(googleSearchUrl(book))}" target="_blank" rel="noreferrer">Google</a>
               </div>
             </div>
