@@ -95,9 +95,16 @@
 
       .telegram-link:hover { text-decoration: underline; }
 
+      .telegram-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
       .telegram-label {
-        color: var(--ink);
-        font-weight: 800;
+        font-weight: 400;
       }
 
       .site-footer {
@@ -497,18 +504,21 @@
             частных библиотек участников.
           </p>
           <nav class="telegram-links" aria-label="Telegram">
-            <a class="telegram-link" href="https://t.me/VLS_Biblio_bot" target="_blank" rel="noreferrer">
+            <span class="telegram-item">
               <svg class="telegram-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.7 4.3 18.4 20c-.2 1-.8 1.2-1.6.8l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.6-.6-.3L6 13.5l-4.8-1.5c-1-.3-1-1 .2-1.5L20.2 3.2c.9-.3 1.7.2 1.5 1.1Z"/></svg>
-              <span><span class="telegram-label">Добавить свою книгу</span> @VLS_Biblio_bot бот</span>
-            </a>
-            <a class="telegram-link" href="https://t.me/VLC_biblio" target="_blank" rel="noreferrer">
+              <span class="telegram-label">Добавить свою книгу</span>
+              <a class="telegram-link" href="https://t.me/VLS_Biblio_bot" target="_blank" rel="noreferrer">@VLS_Biblio_bot бот</a>
+            </span>
+            <span class="telegram-item">
               <svg class="telegram-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.7 4.3 18.4 20c-.2 1-.8 1.2-1.6.8l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.6-.6-.3L6 13.5l-4.8-1.5c-1-.3-1-1 .2-1.5L20.2 3.2c.9-.3 1.7.2 1.5 1.1Z"/></svg>
-              <span><span class="telegram-label">Новости проекта</span> @VLC_biblio канал</span>
-            </a>
-            <a class="telegram-link" href="https://t.me/bibliotecavlc" target="_blank" rel="noreferrer">
+              <span class="telegram-label">Новости проекта</span>
+              <a class="telegram-link" href="https://t.me/VLC_biblio" target="_blank" rel="noreferrer">@VLC_biblio канал</a>
+            </span>
+            <span class="telegram-item">
               <svg class="telegram-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.7 4.3 18.4 20c-.2 1-.8 1.2-1.6.8l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.6-.6-.3L6 13.5l-4.8-1.5c-1-.3-1-1 .2-1.5L20.2 3.2c.9-.3 1.7.2 1.5 1.1Z"/></svg>
-              <span><span class="telegram-label">Обсуждения</span> @bibliotecavlc чат</span>
-            </a>
+              <span class="telegram-label">Обсуждения</span>
+              <a class="telegram-link" href="https://t.me/bibliotecavlc" target="_blank" rel="noreferrer">@bibliotecavlc чат</a>
+            </span>
           </nav>
         </div>
         <div class="stats" aria-label="Статистика каталога">
