@@ -16,6 +16,7 @@ DEFAULT_BOOK_PAGE = ROOT / "book.html"
 BAD_STATUSES = {"bad_photo", "rejected"}
 EXCHANGE_MARKERS = ("книгообмен", "каталог")
 INTERNAL_CATALOG_STATUSES = {"На согласовании"}
+PUBLIC_LIBRARY_STATUSES = {"pilar faus"}
 
 
 def clean(value):
@@ -44,6 +45,9 @@ def public_id_for(row):
 
 
 def section_for(row):
+    explicit = clean(row.get("catalog_status")).lower()
+    if explicit in PUBLIC_LIBRARY_STATUSES:
+        return "library"
     destination = clean(row.get("destination")).lower()
     return "exchange" if any(marker in destination for marker in EXCHANGE_MARKERS) else "library"
 
@@ -84,6 +88,22 @@ def availability_for(row, section):
     return "available" if section == "exchange" else "transferred"
 
 
+def library_key_for(row, section):
+    status = clean(row.get("catalog_status"))
+    if section == "library":
+        return "library:" + (status or "Pilar Faus").lower()
+
+    owner_source = (
+        clean(row.get("user_id"))
+        or clean(row.get("chat_id"))
+        or clean(row.get("username")).lower()
+    )
+    if not owner_source:
+        return ""
+    owner_hash = hashlib.sha1(owner_source.encode("utf-8")).hexdigest()[:12]
+    return f"user:{owner_hash}"
+
+
 def has_public_book_data(row):
     if clean(row.get("status")) in BAD_STATUSES:
         return False
@@ -103,6 +123,7 @@ def public_book(row):
         "author": clean(row.get("author")),
         "section": section,
         "catalogStatus": catalog_status_for(row, section),
+        "libraryKey": library_key_for(row, section),
         "availability": availability_for(row, section),
         "cover": clean(row.get("preview_url")),
         "isbn": clean(row.get("isbn")),

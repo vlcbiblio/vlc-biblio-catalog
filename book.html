@@ -414,7 +414,7 @@
       </footer>
     </main>
 
-    <script src="./data/books.js?v=20260911130754"></script>
+    <script src="./data/books.js?v=20260912115134"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
       const botUrl = "https://t.me/VLS_Biblio_bot";
@@ -444,6 +444,12 @@
 
       function bookIdentity(book) {
         return String(book.id || book.requestId || book.isbn || `${book.title}|${book.author}`);
+      }
+
+      function relatedLibraryKey(book) {
+        if (book.libraryKey) return normalizeText(book.libraryKey);
+        if (normalizeText(book.catalogStatus) === "pilar faus") return "library:pilar faus";
+        return "";
       }
 
       function fallbackCover(title) {
@@ -547,17 +553,16 @@
       function relatedCollections(book) {
         const currentId = bookIdentity(book);
         const currentAuthor = normalizeText(book.author);
-        const currentLibrary = normalizeText(book.catalogStatus || labels[book.section]);
+        const currentLibrary = relatedLibraryKey(book);
         const sameAuthor = currentAuthor
           ? books.filter((item) => bookIdentity(item) !== currentId && normalizeText(item.author) === currentAuthor)
           : [];
         const sameAuthorIds = new Set(sameAuthor.map(bookIdentity));
-        const sameLibrary = book.section === "library" && currentLibrary
+        const sameLibrary = currentLibrary
           ? books.filter(
               (item) =>
                 bookIdentity(item) !== currentId &&
-                item.section === "library" &&
-                normalizeText(item.catalogStatus || labels[item.section]) === currentLibrary &&
+                relatedLibraryKey(item) === currentLibrary &&
                 !sameAuthorIds.has(bookIdentity(item))
             )
           : [];
