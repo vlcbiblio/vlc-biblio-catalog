@@ -45,16 +45,18 @@ def public_id_for(row):
 
 
 def section_for(row):
+    destination = clean(row.get("destination")).lower()
+    if any(marker in destination for marker in EXCHANGE_MARKERS):
+        return "exchange"
     explicit = clean(row.get("catalog_status")).lower()
     if explicit in PUBLIC_LIBRARY_STATUSES:
         return "library"
-    destination = clean(row.get("destination")).lower()
-    return "exchange" if any(marker in destination for marker in EXCHANGE_MARKERS) else "library"
+    return "library"
 
 
 def catalog_status_for(row, section):
     explicit = clean(row.get("catalog_status"))
-    if section == "exchange" and explicit.lower() in EXCHANGE_MARKERS:
+    if section == "exchange":
         return "Частная библиотека"
     if explicit and explicit not in INTERNAL_CATALOG_STATUSES:
         return explicit
