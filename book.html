@@ -226,22 +226,15 @@
       .related-header {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-end;
         gap: 14px;
         margin-bottom: 14px;
-      }
-
-      .related h2 {
-        margin: 0;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 28px;
-        line-height: 1.1;
-        letter-spacing: 0;
       }
 
       .related-tabs {
         display: flex;
         flex-wrap: wrap;
+        justify-content: flex-end;
         gap: 8px;
       }
 
@@ -269,17 +262,14 @@
       }
 
       .related-track {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
         gap: 14px;
-        overflow-x: auto;
-        overscroll-behavior-inline: contain;
-        padding: 2px 2px 12px;
-        scroll-snap-type: x proximity;
+        padding: 2px;
       }
 
       .related-card {
         display: flex;
-        flex: 0 0 190px;
         flex-direction: column;
         overflow: hidden;
         border: 1px solid var(--line);
@@ -287,7 +277,6 @@
         background: var(--paper);
         color: inherit;
         text-decoration: none;
-        scroll-snap-align: start;
       }
 
       .related-card:hover {
@@ -399,9 +388,9 @@
         .body { padding: 20px; }
         .details { grid-template-columns: 1fr; gap: 4px; }
         .related { padding: 14px; }
-        .related-header { align-items: flex-start; flex-direction: column; }
-        .related h2 { font-size: 24px; }
-        .related-card { flex-basis: 150px; }
+        .related-tabs { width: 100%; }
+        .related-tab { flex: 1 1 auto; }
+        .related-track { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
       }
     </style>
   </head>
@@ -599,7 +588,6 @@
         return `
           <section class="related" data-book-id="${escapeHtml(book.id)}" data-related-active="${active}" aria-label="Похожие книги">
             <div class="related-header">
-              <h2>Похожие книги</h2>
               <div class="related-tabs" role="tablist" aria-label="Фильтр похожих книг">
                 <button class="related-tab" type="button" role="tab" data-related-tab="author" aria-selected="${active === "author"}" ${collections.author.length ? "" : "disabled"}>Того же автора</button>
                 <button class="related-tab" type="button" role="tab" data-related-tab="library" aria-selected="${active === "library"}" ${collections.library.length ? "" : "disabled"}>В этой же библиотеке</button>
