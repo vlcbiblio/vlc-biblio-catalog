@@ -226,15 +226,56 @@
       .related-header {
         display: flex;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: space-between;
         gap: 14px;
         margin-bottom: 14px;
+      }
+
+      .related-bulk {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .related-bulk[hidden] {
+        display: none;
+      }
+
+      .related-bulk-action {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 36px;
+        border: 1px solid var(--green);
+        border-radius: 6px;
+        background: var(--green);
+        color: #fff;
+        font-size: 13px;
+        font-weight: 800;
+        line-height: 1.2;
+        padding: 0 12px;
+        text-decoration: none;
+      }
+
+      .related-bulk-action[aria-disabled="true"] {
+        border-color: var(--line);
+        background: #eee7d8;
+        color: var(--muted);
+        pointer-events: none;
+      }
+
+      .related-bulk-note {
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.25;
       }
 
       .related-tabs {
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-end;
+        margin-left: auto;
         gap: 8px;
       }
 
@@ -269,6 +310,7 @@
       }
 
       .related-card {
+        position: relative;
         display: flex;
         flex-direction: column;
         overflow: hidden;
@@ -279,13 +321,53 @@
         text-decoration: none;
       }
 
+      .related-card.is-selected {
+        border-color: var(--green);
+        box-shadow: 0 0 0 2px rgba(47, 111, 94, 0.18);
+      }
+
+      .related-card-link {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        color: inherit;
+        text-decoration: none;
+      }
+
       .related-card:hover {
         border-color: rgba(49, 95, 134, 0.55);
       }
 
-      .related-card:focus-visible {
+      .related-card-link:focus-visible {
         outline: 3px solid rgba(47, 111, 94, 0.35);
-        outline-offset: 3px;
+        outline-offset: -3px;
+      }
+
+      .related-select {
+        position: absolute;
+        z-index: 2;
+        top: 8px;
+        left: 8px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        border: 1px solid rgba(221, 212, 197, 0.96);
+        border-radius: 999px;
+        background: rgba(255, 253, 248, 0.94);
+        color: var(--green);
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 800;
+        line-height: 1;
+        padding: 6px 8px;
+        box-shadow: 0 6px 16px rgba(38, 35, 31, 0.12);
+      }
+
+      .related-select input {
+        width: 15px;
+        height: 15px;
+        margin: 0;
+        accent-color: var(--green);
       }
 
       .related-cover {
@@ -380,6 +462,8 @@
 
         .body { padding: 20px; }
         .details { grid-template-columns: 1fr; gap: 4px; }
+        .related-header { align-items: stretch; flex-direction: column-reverse; }
+        .related-bulk-action { flex: 1 1 auto; }
         .related { padding: 14px; }
         .related-tabs { width: 100%; }
         .related-tab { flex: 1 1 auto; }
@@ -475,6 +559,17 @@
         return `${botUrl}?start=${key}`;
       }
 
+      function requestBookId(book) {
+        return String(book.requestId || "").replace(/\D+/g, "");
+      }
+
+      function bulkRequestUrl(ids) {
+        const cleanIds = ids.map((id) => String(id).replace(/\D+/g, "")).filter(Boolean);
+        if (!cleanIds.length) return "";
+        const key = encodeURIComponent(`books_${cleanIds.join("_")}`);
+        return `${botUrl}?start=${key}`;
+      }
+
       function correctionUrl(book) {
         const key = encodeURIComponent(`fix_${book.requestId || book.id || book.isbn || ""}`.replaceAll("-", ""));
         return `${botUrl}?start=${key}`;
@@ -535,15 +630,28 @@
         return `./book.html?id=${encodeURIComponent(book.id || book.requestId || "")}`;
       }
 
-      function relatedCardMarkup(book) {
+      function relatedCardMarkup(book, kind) {
+        const requestId = requestBookId(book);
+        const selectable = kind === "library" && requestId && canRequestBook(book);
+        const selectMarkup = selectable
+          ? `
+            <label class="related-select">
+              <input class="related-select-input" type="checkbox" data-request-book-id="${escapeHtml(requestId)}" aria-label="Выбрать книгу: ${escapeHtml(book.title || "Без названия")}" />
+              <span>Выбрать</span>
+            </label>
+          `
+          : "";
         return `
-          <a class="related-card" href="${escapeHtml(relatedUrl(book))}">
+          <article class="related-card ${selectable ? "related-card-selectable" : ""}" data-request-book-id="${escapeHtml(requestId)}">
+            ${selectMarkup}
+            <a class="related-card-link" href="${escapeHtml(relatedUrl(book))}">
             <div class="related-cover">${coverMarkup(book)}</div>
             <div class="related-body">
               <h3 class="related-title">${escapeHtml(book.title || "Без названия")}</h3>
               <p class="related-author">${escapeHtml(book.author || "Автор не указан")}</p>
             </div>
-          </a>
+            </a>
+          </article>
         `;
       }
 
@@ -566,8 +674,12 @@
         return { author: sameAuthor, library: sameLibrary };
       }
 
-      function relatedListMarkup(items) {
-        return `<div class="related-track">${items.map(relatedCardMarkup).join("")}</div>`;
+      function hasBulkRequestItems(items, kind) {
+        return kind === "library" && items.some((item) => requestBookId(item) && canRequestBook(item));
+      }
+
+      function relatedListMarkup(items, kind) {
+        return `<div class="related-track">${items.map((item) => relatedCardMarkup(item, kind)).join("")}</div>`;
       }
 
       function relatedSectionMarkup(book) {
@@ -578,14 +690,52 @@
         return `
           <section class="related" data-book-id="${escapeHtml(book.id)}" data-related-active="${active}" aria-label="Похожие книги">
             <div class="related-header">
+              <div class="related-bulk" ${hasBulkRequestItems(activeItems, active) ? "" : "hidden"}>
+                <a class="related-bulk-action" href="#" target="_blank" rel="noreferrer" aria-disabled="true">Запросить выбранные</a>
+                <span class="related-bulk-note">Отметьте несколько книг из этой библиотеки</span>
+              </div>
               <div class="related-tabs" role="tablist" aria-label="Фильтр похожих книг">
                 <button class="related-tab" type="button" role="tab" data-related-tab="author" aria-selected="${active === "author"}" ${collections.author.length ? "" : "disabled"}>Того же автора</button>
                 <button class="related-tab" type="button" role="tab" data-related-tab="library" aria-selected="${active === "library"}" ${collections.library.length ? "" : "disabled"}>В этой же библиотеке</button>
               </div>
             </div>
-            <div class="related-results" aria-live="polite">${relatedListMarkup(activeItems)}</div>
+            <div class="related-results" aria-live="polite">${relatedListMarkup(activeItems, active)}</div>
           </section>
         `;
+      }
+
+      function updateRelatedBulk(section) {
+        const selected = Array.from(section.querySelectorAll(".related-select-input:checked"))
+          .map((input) => input.dataset.requestBookId)
+          .filter(Boolean);
+        const action = section.querySelector(".related-bulk-action");
+        const note = section.querySelector(".related-bulk-note");
+        if (!action || !note) return;
+
+        section.querySelectorAll(".related-card-selectable").forEach((card) => {
+          const input = card.querySelector(".related-select-input");
+          card.classList.toggle("is-selected", Boolean(input?.checked));
+        });
+
+        if (!selected.length) {
+          action.setAttribute("aria-disabled", "true");
+          action.setAttribute("href", "#");
+          note.textContent = "Отметьте несколько книг из этой библиотеки";
+          return;
+        }
+
+        const href = bulkRequestUrl(selected);
+        const deepLinkKey = new URL(href).searchParams.get("start") || "";
+        if (deepLinkKey.length > 64) {
+          action.setAttribute("aria-disabled", "true");
+          action.setAttribute("href", "#");
+          note.textContent = "Слишком много книг для одной ссылки Telegram";
+          return;
+        }
+
+        action.removeAttribute("aria-disabled");
+        action.setAttribute("href", href);
+        note.textContent = `Выбрано: ${selected.length}`;
       }
 
       function setRelatedTab(section, kind) {
@@ -597,7 +747,10 @@
         section.querySelectorAll(".related-tab").forEach((tab) => {
           tab.setAttribute("aria-selected", String(tab.dataset.relatedTab === kind));
         });
-        section.querySelector(".related-results").innerHTML = relatedListMarkup(collections[kind]);
+        section.querySelector(".related-results").innerHTML = relatedListMarkup(collections[kind], kind);
+        const bulk = section.querySelector(".related-bulk");
+        if (bulk) bulk.hidden = !hasBulkRequestItems(collections[kind], kind);
+        updateRelatedBulk(section);
       }
 
       function renderBook(book) {
@@ -637,11 +790,22 @@
       else renderMissing();
 
       content.addEventListener("click", (event) => {
+        const disabledAction = event.target.closest('.related-bulk-action[aria-disabled="true"]');
+        if (disabledAction) {
+          event.preventDefault();
+          return;
+        }
         const tab = event.target.closest(".related-tab");
         if (!tab) return;
         const section = tab.closest(".related");
         if (!section) return;
         setRelatedTab(section, tab.dataset.relatedTab);
+      });
+
+      content.addEventListener("change", (event) => {
+        if (!event.target.matches(".related-select-input")) return;
+        const section = event.target.closest(".related");
+        if (section) updateRelatedBulk(section);
       });
 
       content.addEventListener("error", (event) => {
