@@ -215,6 +215,146 @@
         gap: 1px;
       }
 
+      .related {
+        margin-top: 22px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 253, 248, 0.7);
+        padding: 18px;
+      }
+
+      .related-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        margin-bottom: 14px;
+      }
+
+      .related h2 {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 28px;
+        line-height: 1.1;
+        letter-spacing: 0;
+      }
+
+      .related-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .related-tab {
+        min-height: 36px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--paper);
+        color: var(--ink);
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 800;
+        padding: 0 12px;
+      }
+
+      .related-tab[aria-selected="true"] {
+        border-color: var(--green);
+        background: rgba(47, 111, 94, 0.11);
+        color: var(--green);
+      }
+
+      .related-tab:disabled {
+        cursor: default;
+        opacity: 0.45;
+      }
+
+      .related-track {
+        display: flex;
+        gap: 14px;
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;
+        padding: 2px 2px 12px;
+        scroll-snap-type: x proximity;
+      }
+
+      .related-card {
+        display: flex;
+        flex: 0 0 190px;
+        flex-direction: column;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--paper);
+        color: inherit;
+        text-decoration: none;
+        scroll-snap-align: start;
+      }
+
+      .related-card:hover {
+        border-color: rgba(49, 95, 134, 0.55);
+      }
+
+      .related-card:focus-visible {
+        outline: 3px solid rgba(47, 111, 94, 0.35);
+        outline-offset: 3px;
+      }
+
+      .related-cover {
+        aspect-ratio: 4 / 5.7;
+        background: #e9e2d4;
+      }
+
+      .related-cover.is-broken {
+        background: #eee7d8;
+      }
+
+      .related-cover img,
+      .related-cover .cover-placeholder {
+        display: block;
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        object-fit: cover;
+      }
+
+      .related-cover .cover-placeholder {
+        display: grid;
+        place-items: center;
+        padding: 14px;
+        color: var(--muted);
+        text-align: center;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 18px;
+        line-height: 1.1;
+      }
+
+      .related-body {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        padding: 12px;
+      }
+
+      .related-title {
+        margin: 0 0 6px;
+        font-size: 15px;
+        line-height: 1.2;
+      }
+
+      .related-author {
+        margin: 0 0 10px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.25;
+      }
+
+      .related-meta {
+        margin: auto 0 0;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.3;
+      }
+
       .site-footer {
         display: flex;
         justify-content: flex-end;
@@ -258,6 +398,10 @@
 
         .body { padding: 20px; }
         .details { grid-template-columns: 1fr; gap: 4px; }
+        .related { padding: 14px; }
+        .related-header { align-items: flex-start; flex-direction: column; }
+        .related h2 { font-size: 24px; }
+        .related-card { flex-basis: 150px; }
       }
     </style>
   </head>
@@ -292,6 +436,14 @@
 
       function compact(value) {
         return String(value ?? "").trim();
+      }
+
+      function normalizeText(value) {
+        return compact(value).toLocaleLowerCase("ru").replaceAll("ё", "е").replace(/\s+/g, " ");
+      }
+
+      function bookIdentity(book) {
+        return String(book.id || book.requestId || book.isbn || `${book.title}|${book.author}`);
       }
 
       function fallbackCover(title) {
@@ -375,6 +527,71 @@
         return `<div class="badges"><span class="badge ${escapeHtml(book.section)}">${escapeHtml(book.catalogStatus || labels[book.section] || "Книга")}</span></div>`;
       }
 
+      function relatedUrl(book) {
+        return `./book.html?id=${encodeURIComponent(book.id || book.requestId || "")}`;
+      }
+
+      function relatedCardMarkup(book) {
+        return `
+          <a class="related-card" href="${escapeHtml(relatedUrl(book))}">
+            <div class="related-cover">${coverMarkup(book)}</div>
+            <div class="related-body">
+              <h3 class="related-title">${escapeHtml(book.title || "Без названия")}</h3>
+              <p class="related-author">${escapeHtml(book.author || "Автор не указан")}</p>
+              <p class="related-meta">${escapeHtml([book.publisher, book.year].filter(Boolean).join(" · "))}</p>
+            </div>
+          </a>
+        `;
+      }
+
+      function relatedCollections(book) {
+        const currentId = bookIdentity(book);
+        const currentAuthor = normalizeText(book.author);
+        const sameAuthor = currentAuthor
+          ? books.filter((item) => bookIdentity(item) !== currentId && normalizeText(item.author) === currentAuthor)
+          : [];
+        const sameAuthorIds = new Set(sameAuthor.map(bookIdentity));
+        const sameLibrary = books.filter(
+          (item) => bookIdentity(item) !== currentId && item.section === book.section && !sameAuthorIds.has(bookIdentity(item))
+        );
+        return { author: sameAuthor, library: sameLibrary };
+      }
+
+      function relatedListMarkup(items) {
+        return `<div class="related-track">${items.map(relatedCardMarkup).join("")}</div>`;
+      }
+
+      function relatedSectionMarkup(book) {
+        const collections = relatedCollections(book);
+        if (!collections.author.length && !collections.library.length) return "";
+        const active = collections.author.length ? "author" : "library";
+        const activeItems = collections[active];
+        return `
+          <section class="related" data-book-id="${escapeHtml(book.id)}" data-related-active="${active}" aria-label="Похожие книги">
+            <div class="related-header">
+              <h2>Похожие книги</h2>
+              <div class="related-tabs" role="tablist" aria-label="Фильтр похожих книг">
+                <button class="related-tab" type="button" role="tab" data-related-tab="author" aria-selected="${active === "author"}" ${collections.author.length ? "" : "disabled"}>Того же автора</button>
+                <button class="related-tab" type="button" role="tab" data-related-tab="library" aria-selected="${active === "library"}" ${collections.library.length ? "" : "disabled"}>В этой же библиотеке</button>
+              </div>
+            </div>
+            <div class="related-results" aria-live="polite">${relatedListMarkup(activeItems)}</div>
+          </section>
+        `;
+      }
+
+      function setRelatedTab(section, kind) {
+        const book = books.find((item) => String(item.id) === String(section.dataset.bookId));
+        if (!book) return;
+        const collections = relatedCollections(book);
+        if (!collections[kind]?.length) return;
+        section.dataset.relatedActive = kind;
+        section.querySelectorAll(".related-tab").forEach((tab) => {
+          tab.setAttribute("aria-selected", String(tab.dataset.relatedTab === kind));
+        });
+        section.querySelector(".related-results").innerHTML = relatedListMarkup(collections[kind]);
+      }
+
       function renderBook(book) {
         document.title = `${book.title || "Книга"} | VLC Biblio`;
         content.innerHTML = `
@@ -394,6 +611,7 @@
               </div>
             </div>
           </article>
+          ${relatedSectionMarkup(book)}
         `;
       }
 
@@ -410,9 +628,17 @@
       if (book) renderBook(book);
       else renderMissing();
 
+      content.addEventListener("click", (event) => {
+        const tab = event.target.closest(".related-tab");
+        if (!tab) return;
+        const section = tab.closest(".related");
+        if (!section) return;
+        setRelatedTab(section, tab.dataset.relatedTab);
+      });
+
       content.addEventListener("error", (event) => {
         if (event.target.tagName !== "IMG") return;
-        const cover = event.target.closest(".cover");
+        const cover = event.target.closest(".cover, .related-cover");
         if (cover) cover.classList.add("is-broken");
         event.target.replaceWith(document.createRange().createContextualFragment(fallbackCover(event.target.dataset.fallbackTitle)));
       }, true);
