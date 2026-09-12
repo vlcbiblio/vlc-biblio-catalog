@@ -562,14 +562,12 @@
         const sameAuthor = currentAuthor
           ? sortRelatedBooks(books.filter((item) => bookIdentity(item) !== currentId && normalizeText(item.author) === currentAuthor))
           : [];
-        const sameAuthorIds = new Set(sameAuthor.map(bookIdentity));
         const sameLibrary = currentLibrary
           ? sortRelatedBooks(
               books.filter(
                 (item) =>
                   bookIdentity(item) !== currentId &&
-                  relatedLibraryKey(item) === currentLibrary &&
-                  !sameAuthorIds.has(bookIdentity(item))
+                  relatedLibraryKey(item) === currentLibrary
               )
             )
           : [];
