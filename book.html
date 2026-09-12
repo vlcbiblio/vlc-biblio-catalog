@@ -67,6 +67,7 @@
       }
 
       .cover {
+        position: relative;
         min-height: 100%;
         background: #e9e2d4;
       }
@@ -258,7 +259,8 @@
         text-decoration: none;
       }
 
-      .related-bulk-action[aria-disabled="true"] {
+      .related-bulk-action[aria-disabled="true"],
+      .actions .telegram-action[aria-disabled="true"] {
         border-color: var(--line);
         background: #eee7d8;
         color: var(--muted);
@@ -321,6 +323,7 @@
         text-decoration: none;
       }
 
+      .book.is-selected,
       .related-card.is-selected {
         border-color: var(--green);
         box-shadow: 0 0 0 2px rgba(47, 111, 94, 0.18);
@@ -491,6 +494,7 @@
       };
       const relatedCollator = new Intl.Collator("ru", { numeric: true, sensitivity: "base" });
       const content = document.querySelector("#content");
+      const selectedBookIds = new Set();
 
       function escapeHtml(value) {
         return String(value ?? "")
@@ -630,17 +634,21 @@
         return `./book.html?id=${encodeURIComponent(book.id || book.requestId || "")}`;
       }
 
+      function bookSelectionMarkup(book) {
+        const requestId = requestBookId(book);
+        if (!requestId || !canRequestBook(book)) return "";
+        return `
+            <label class="related-select">
+              <input class="related-select-input" type="checkbox" data-request-book-id="${escapeHtml(requestId)}" aria-label="Выбрать книгу: ${escapeHtml(book.title || "Без названия")}" ${selectedBookIds.has(requestId) ? "checked" : ""} />
+              <span>Выбрать</span>
+            </label>
+          `;
+      }
+
       function relatedCardMarkup(book, kind) {
         const requestId = requestBookId(book);
         const selectable = kind === "library" && requestId && canRequestBook(book);
-        const selectMarkup = selectable
-          ? `
-            <label class="related-select">
-              <input class="related-select-input" type="checkbox" data-request-book-id="${escapeHtml(requestId)}" aria-label="Выбрать книгу: ${escapeHtml(book.title || "Без названия")}" />
-              <span>Выбрать</span>
-            </label>
-          `
-          : "";
+        const selectMarkup = selectable ? bookSelectionMarkup(book) : "";
         return `
           <article class="related-card ${selectable ? "related-card-selectable" : ""}" data-request-book-id="${escapeHtml(requestId)}">
             ${selectMarkup}
@@ -704,38 +712,41 @@
         `;
       }
 
-      function updateRelatedBulk(section) {
-        const selected = Array.from(section.querySelectorAll(".related-select-input:checked"))
-          .map((input) => input.dataset.requestBookId)
-          .filter(Boolean);
-        const action = section.querySelector(".related-bulk-action");
-        const note = section.querySelector(".related-bulk-note");
-        if (!action || !note) return;
+      function updateBulkRequest() {
+        const selected = Array.from(selectedBookIds);
+        const href = bulkRequestUrl(selected);
+        const tooLong = href && (new URL(href).searchParams.get("start") || "").length > 64;
 
-        section.querySelectorAll(".related-card-selectable").forEach((card) => {
-          const input = card.querySelector(".related-select-input");
-          card.classList.toggle("is-selected", Boolean(input?.checked));
+        content.querySelectorAll(".related-select-input").forEach((input) => {
+          input.checked = selectedBookIds.has(input.dataset.requestBookId);
+          input.closest(".book, .related-card").classList.toggle("is-selected", input.checked);
         });
 
-        if (!selected.length) {
-          action.setAttribute("aria-disabled", "true");
-          action.setAttribute("href", "#");
-          note.textContent = "Отметьте несколько книг из этой библиотеки";
-          return;
-        }
+        content.querySelectorAll(".related-bulk-action, .telegram-action").forEach((action) => {
+          const primary = action.classList.contains("telegram-action");
+          const target = primary && !selected.length ? requestUrl(book) : href;
+          if (!target || tooLong) {
+            action.setAttribute("aria-disabled", "true");
+            action.setAttribute("href", "#");
+          } else {
+            action.removeAttribute("aria-disabled");
+            action.setAttribute("href", target);
+          }
+          if (primary) {
+            action.innerHTML = selected.length
+              ? `<span>Запросить выбранные: ${selected.length}</span><span>через Телеграм</span>`
+              : actionLabelMarkup(libraryAction(book));
+          }
+        });
 
-        const href = bulkRequestUrl(selected);
-        const deepLinkKey = new URL(href).searchParams.get("start") || "";
-        if (deepLinkKey.length > 64) {
-          action.setAttribute("aria-disabled", "true");
-          action.setAttribute("href", "#");
-          note.textContent = "Слишком много книг для одной ссылки Telegram";
-          return;
+        const section = content.querySelector(".related");
+        const bulk = section?.querySelector(".related-bulk");
+        if (bulk) {
+          bulk.hidden = !selected.length && !section.querySelector(".related-select-input");
+          bulk.querySelector(".related-bulk-note").textContent = tooLong
+            ? "Слишком много книг для одной ссылки Telegram"
+            : selected.length ? `Выбрано: ${selected.length}` : "Отметьте несколько книг из этой библиотеки";
         }
-
-        action.removeAttribute("aria-disabled");
-        action.setAttribute("href", href);
-        note.textContent = `Выбрано: ${selected.length}`;
       }
 
       function setRelatedTab(section, kind) {
@@ -748,16 +759,14 @@
           tab.setAttribute("aria-selected", String(tab.dataset.relatedTab === kind));
         });
         section.querySelector(".related-results").innerHTML = relatedListMarkup(collections[kind], kind);
-        const bulk = section.querySelector(".related-bulk");
-        if (bulk) bulk.hidden = !hasBulkRequestItems(collections[kind], kind);
-        updateRelatedBulk(section);
+        updateBulkRequest();
       }
 
       function renderBook(book) {
         document.title = `${book.title || "Книга"} | VLC Biblio`;
         content.innerHTML = `
           <article class="book">
-            <div class="cover">${coverMarkup(book)}</div>
+            <div class="cover">${bookSelectionMarkup(book)}${coverMarkup(book)}</div>
             <div class="body">
               ${badgesMarkup(book)}
               <h1>${escapeHtml(book.title || "Без названия")}</h1>
@@ -774,6 +783,7 @@
           </article>
           ${relatedSectionMarkup(book)}
         `;
+        updateBulkRequest();
       }
 
       function renderMissing() {
@@ -790,7 +800,7 @@
       else renderMissing();
 
       content.addEventListener("click", (event) => {
-        const disabledAction = event.target.closest('.related-bulk-action[aria-disabled="true"]');
+        const disabledAction = event.target.closest('.related-bulk-action[aria-disabled="true"], .telegram-action[aria-disabled="true"]');
         if (disabledAction) {
           event.preventDefault();
           return;
@@ -804,8 +814,10 @@
 
       content.addEventListener("change", (event) => {
         if (!event.target.matches(".related-select-input")) return;
-        const section = event.target.closest(".related");
-        if (section) updateRelatedBulk(section);
+        const requestId = event.target.dataset.requestBookId;
+        if (event.target.checked) selectedBookIds.add(requestId);
+        else selectedBookIds.delete(requestId);
+        updateBulkRequest();
       });
 
       content.addEventListener("error", (event) => {
