@@ -547,13 +547,20 @@
       function relatedCollections(book) {
         const currentId = bookIdentity(book);
         const currentAuthor = normalizeText(book.author);
+        const currentLibrary = normalizeText(book.catalogStatus || labels[book.section]);
         const sameAuthor = currentAuthor
           ? books.filter((item) => bookIdentity(item) !== currentId && normalizeText(item.author) === currentAuthor)
           : [];
         const sameAuthorIds = new Set(sameAuthor.map(bookIdentity));
-        const sameLibrary = books.filter(
-          (item) => bookIdentity(item) !== currentId && item.section === book.section && !sameAuthorIds.has(bookIdentity(item))
-        );
+        const sameLibrary = book.section === "library" && currentLibrary
+          ? books.filter(
+              (item) =>
+                bookIdentity(item) !== currentId &&
+                item.section === "library" &&
+                normalizeText(item.catalogStatus || labels[item.section]) === currentLibrary &&
+                !sameAuthorIds.has(bookIdentity(item))
+            )
+          : [];
         return { author: sameAuthor, library: sameLibrary };
       }
 
