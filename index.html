@@ -558,7 +558,7 @@
       </article>
     </section>
 
-    <script src="./data/books.js?v=20260912210957"></script>
+    <script src="./data/books.js?v=20260912230621"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
       const botUrl = "https://t.me/VLS_Biblio_bot";
@@ -661,7 +661,7 @@
 
       function actionLabelMarkup(action) {
         if (action.isTelegram) {
-          return `<span>Запросить книгу</span><span>через Телеграм</span>`;
+          return `<span>${escapeHtml(action.isWaitlist ? "Встать в очередь" : "Запросить книгу")}</span><span>через Телеграм</span>`;
         }
         return `<span>${escapeHtml(action.label)}</span>`;
       }
@@ -685,7 +685,18 @@
         return book.section === "exchange" && book.availability === "available";
       }
 
+      function canJoinWaitlist(book) {
+        return book.section === "exchange" && book.availability === "reserved";
+      }
+
       function libraryAction(book) {
+        if (canJoinWaitlist(book)) {
+          return {
+            href: `${botUrl}?start=wait_${encodeURIComponent(book.requestId)}`,
+            isTelegram: true,
+            isWaitlist: true,
+          };
+        }
         if (canRequestBook(book)) {
           return {
             href: requestUrl(book),
@@ -703,6 +714,9 @@
       }
 
       function collectionNote(book) {
+        if (canJoinWaitlist(book)) {
+          return "Книга зарезервирована. Встаньте в очередь, чтобы получить уведомление, когда подойдёт ваша очередь.";
+        }
         if (book.section === "exchange") {
           return "Книга в частной коллекции. Вы можете запросить книгу на время.";
         }
