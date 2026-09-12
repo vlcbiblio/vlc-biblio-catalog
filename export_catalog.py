@@ -95,9 +95,8 @@ def availability_for(row, section):
 
 def library_key_for(row, section):
     source_kind = source_kind_for(row)
-    status = clean(row.get("catalog_status"))
     if source_kind == "library":
-        return "library:" + (status or "Pilar Faus").lower()
+        return "library:" + catalog_status_for(row, section).lower()
 
     owner_source = (
         clean(row.get("user_id"))
