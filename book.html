@@ -232,34 +232,10 @@
         margin-bottom: 14px;
       }
 
-      .related-bulk {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .related-bulk[hidden] {
+      .actions .telegram-action[hidden] {
         display: none;
       }
 
-      .related-bulk-action {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 36px;
-        border: 1px solid var(--green);
-        border-radius: 6px;
-        background: var(--green);
-        color: #fff;
-        font-size: 13px;
-        font-weight: 800;
-        line-height: 1.2;
-        padding: 0 12px;
-        text-decoration: none;
-      }
-
-      .related-bulk-action[aria-disabled="true"],
       .actions .telegram-action[aria-disabled="true"] {
         border-color: var(--line);
         background: #eee7d8;
@@ -267,7 +243,8 @@
         pointer-events: none;
       }
 
-      .related-bulk-note {
+      .request-note {
+        margin: 12px 0 0;
         color: var(--muted);
         font-size: 12px;
         line-height: 1.25;
@@ -373,6 +350,10 @@
         accent-color: var(--green);
       }
 
+      .related-select[hidden] {
+        display: none;
+      }
+
       .related-cover {
         aspect-ratio: 4 / 5.7;
         background: #e9e2d4;
@@ -466,7 +447,6 @@
         .body { padding: 20px; }
         .details { grid-template-columns: 1fr; gap: 4px; }
         .related-header { align-items: stretch; flex-direction: column-reverse; }
-        .related-bulk-action { flex: 1 1 auto; }
         .related { padding: 14px; }
         .related-tabs { width: 100%; }
         .related-tab { flex: 1 1 auto; }
@@ -634,11 +614,11 @@
         return `./book.html?id=${encodeURIComponent(book.id || book.requestId || "")}`;
       }
 
-      function bookSelectionMarkup(book) {
+      function bookSelectionMarkup(book, hidden = false) {
         const requestId = requestBookId(book);
         if (!requestId || !canRequestBook(book)) return "";
         return `
-            <label class="related-select">
+            <label class="related-select" ${hidden ? "hidden" : ""}>
               <input class="related-select-input" type="checkbox" data-request-book-id="${escapeHtml(requestId)}" aria-label="Выбрать книгу: ${escapeHtml(book.title || "Без названия")}" ${selectedBookIds.has(requestId) ? "checked" : ""} />
               <span>Выбрать</span>
             </label>
@@ -682,10 +662,6 @@
         return { author: sameAuthor, library: sameLibrary };
       }
 
-      function hasBulkRequestItems(items, kind) {
-        return kind === "library" && items.some((item) => requestBookId(item) && canRequestBook(item));
-      }
-
       function relatedListMarkup(items, kind) {
         return `<div class="related-track">${items.map((item) => relatedCardMarkup(item, kind)).join("")}</div>`;
       }
@@ -698,10 +674,6 @@
         return `
           <section class="related" data-book-id="${escapeHtml(book.id)}" data-related-active="${active}" aria-label="Похожие книги">
             <div class="related-header">
-              <div class="related-bulk" ${hasBulkRequestItems(activeItems, active) ? "" : "hidden"}>
-                <a class="related-bulk-action" href="#" target="_blank" rel="noreferrer" aria-disabled="true">Запросить выбранные</a>
-                <span class="related-bulk-note">Отметьте несколько книг из этой библиотеки</span>
-              </div>
               <div class="related-tabs" role="tablist" aria-label="Фильтр похожих книг">
                 <button class="related-tab" type="button" role="tab" data-related-tab="author" aria-selected="${active === "author"}" ${collections.author.length ? "" : "disabled"}>Того же автора</button>
                 <button class="related-tab" type="button" role="tab" data-related-tab="library" aria-selected="${active === "library"}" ${collections.library.length ? "" : "disabled"}>В этой же библиотеке</button>
@@ -722,9 +694,10 @@
           input.closest(".book, .related-card").classList.toggle("is-selected", input.checked);
         });
 
-        content.querySelectorAll(".related-bulk-action, .telegram-action").forEach((action) => {
-          const primary = action.classList.contains("telegram-action");
-          const target = primary && !selected.length ? requestUrl(book) : href;
+        const action = content.querySelector(".telegram-action");
+        if (action) {
+          action.hidden = !selected.length && !canRequestBook(book);
+          const target = selected.length ? href : canRequestBook(book) ? requestUrl(book) : "";
           if (!target || tooLong) {
             action.setAttribute("aria-disabled", "true");
             action.setAttribute("href", "#");
@@ -732,20 +705,15 @@
             action.removeAttribute("aria-disabled");
             action.setAttribute("href", target);
           }
-          if (primary) {
-            action.innerHTML = selected.length
-              ? `<span>Запросить выбранные: ${selected.length}</span><span>через Телеграм</span>`
-              : actionLabelMarkup(libraryAction(book));
-          }
-        });
+          action.innerHTML = selected.length
+            ? `<span>Запросить выбранные: ${selected.length}</span><span>через Телеграм</span>`
+            : actionLabelMarkup({ isTelegram: true });
+        }
 
-        const section = content.querySelector(".related");
-        const bulk = section?.querySelector(".related-bulk");
-        if (bulk) {
-          bulk.hidden = !selected.length && !section.querySelector(".related-select-input");
-          bulk.querySelector(".related-bulk-note").textContent = tooLong
-            ? "Слишком много книг для одной ссылки Telegram"
-            : selected.length ? `Выбрано: ${selected.length}` : "Отметьте несколько книг из этой библиотеки";
+        const note = content.querySelector(".request-note");
+        if (note) {
+          note.hidden = !tooLong;
+          note.textContent = tooLong ? "Слишком много книг для одной ссылки Telegram" : "";
         }
       }
 
@@ -759,6 +727,8 @@
           tab.setAttribute("aria-selected", String(tab.dataset.relatedTab === kind));
         });
         section.querySelector(".related-results").innerHTML = relatedListMarkup(collections[kind], kind);
+        const currentSelection = content.querySelector(".book .related-select");
+        if (currentSelection) currentSelection.hidden = kind !== "library";
         updateBulkRequest();
       }
 
@@ -766,7 +736,7 @@
         document.title = `${book.title || "Книга"} | VLC Biblio`;
         content.innerHTML = `
           <article class="book">
-            <div class="cover">${bookSelectionMarkup(book)}${coverMarkup(book)}</div>
+            <div class="cover">${bookSelectionMarkup(book, true)}${coverMarkup(book)}</div>
             <div class="body">
               ${badgesMarkup(book)}
               <h1>${escapeHtml(book.title || "Без названия")}</h1>
@@ -776,9 +746,11 @@
               <p class="collection-note">${escapeHtml(collectionNote(book))}</p>
               <div class="actions">
                 ${libraryAction(book) ? `<a class="${libraryAction(book).isTelegram ? "telegram-action" : ""}" href="${escapeHtml(libraryAction(book).href)}" target="_blank" rel="noreferrer">${actionLabelMarkup(libraryAction(book))}</a>` : ""}
+                ${!canRequestBook(book) ? '<a class="telegram-action" href="#" target="_blank" rel="noreferrer" hidden></a>' : ""}
                 <a href="${escapeHtml(correctionUrl(book))}" target="_blank" rel="noreferrer">Хочу сообщить об ошибке</a>
                 <a href="${escapeHtml(googleSearchUrl(book))}" target="_blank" rel="noreferrer">Google</a>
               </div>
+              <p class="request-note" role="status" hidden></p>
             </div>
           </article>
           ${relatedSectionMarkup(book)}
@@ -800,7 +772,7 @@
       else renderMissing();
 
       content.addEventListener("click", (event) => {
-        const disabledAction = event.target.closest('.related-bulk-action[aria-disabled="true"], .telegram-action[aria-disabled="true"]');
+        const disabledAction = event.target.closest('.telegram-action[aria-disabled="true"]');
         if (disabledAction) {
           event.preventDefault();
           return;
