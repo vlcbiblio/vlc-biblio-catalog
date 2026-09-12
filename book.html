@@ -337,13 +337,6 @@
         line-height: 1.25;
       }
 
-      .related-meta {
-        margin: auto 0 0;
-        color: var(--muted);
-        font-size: 12px;
-        line-height: 1.3;
-      }
-
       .site-footer {
         display: flex;
         justify-content: flex-end;
@@ -549,7 +542,6 @@
             <div class="related-body">
               <h3 class="related-title">${escapeHtml(book.title || "Без названия")}</h3>
               <p class="related-author">${escapeHtml(book.author || "Автор не указан")}</p>
-              <p class="related-meta">${escapeHtml([book.publisher, book.year].filter(Boolean).join(" · "))}</p>
             </div>
           </a>
         `;

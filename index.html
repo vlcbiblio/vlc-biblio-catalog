@@ -265,13 +265,6 @@
         font-size: 14px;
       }
 
-      .meta {
-        margin: 0 0 12px;
-        color: var(--muted);
-        font-size: 12px;
-        line-height: 1.35;
-      }
-
       .card-action {
         display: inline-flex;
         align-items: center;
@@ -805,7 +798,6 @@
               <div class="body">
                 <h2 class="title">${escapeHtml(book.title || "Без названия")}</h2>
                 <p class="author">${escapeHtml(book.author || "Автор не указан")}</p>
-                <p class="meta">${escapeHtml([book.publisher, book.year].filter(Boolean).join(" · "))}</p>
                 ${libraryAction(book) ? `<a class="card-action ${libraryAction(book).isTelegram ? "telegram-action" : ""}" href="${escapeHtml(libraryAction(book).href)}" target="_blank" rel="noreferrer">${actionLabelMarkup(libraryAction(book))}</a>` : ""}
               </div>
             </article>
