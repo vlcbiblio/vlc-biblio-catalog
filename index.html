@@ -807,7 +807,6 @@
                 <p class="author">${escapeHtml(book.author || "Автор не указан")}</p>
                 <p class="meta">${escapeHtml([book.publisher, book.year].filter(Boolean).join(" · "))}</p>
                 ${libraryAction(book) ? `<a class="card-action ${libraryAction(book).isTelegram ? "telegram-action" : ""}" href="${escapeHtml(libraryAction(book).href)}" target="_blank" rel="noreferrer">${actionLabelMarkup(libraryAction(book))}</a>` : ""}
-                <a class="card-action" href="${escapeHtml(correctionUrl(book))}" target="_blank" rel="noreferrer">Хочу сообщить об ошибке</a>
               </div>
             </article>
           `)
