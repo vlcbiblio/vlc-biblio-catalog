@@ -414,7 +414,7 @@
       </footer>
     </main>
 
-    <script src="./data/books.js?v=20260912122226"></script>
+    <script src="./data/books.js?v=20260912122946"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
       const botUrl = "https://t.me/VLS_Biblio_bot";
@@ -423,6 +423,7 @@
         library: "Библиотека Pilar Faus",
         exchange: "Частная библиотека",
       };
+      const relatedCollator = new Intl.Collator("ru", { numeric: true, sensitivity: "base" });
       const content = document.querySelector("#content");
 
       function escapeHtml(value) {
@@ -450,6 +451,21 @@
         if (book.libraryKey) return normalizeText(book.libraryKey);
         if (normalizeText(book.catalogStatus) === "pilar faus") return "library:pilar faus";
         return "";
+      }
+
+      function bookTime(book) {
+        const time = Date.parse(book.updatedAt || book.addedAt || "");
+        return Number.isFinite(time) ? time : 0;
+      }
+
+      function sortRelatedBooks(items) {
+        return [...items].sort((left, right) => {
+          const authorOrder = relatedCollator.compare(compact(left.author), compact(right.author));
+          if (authorOrder) return authorOrder;
+          const titleOrder = relatedCollator.compare(compact(left.title), compact(right.title));
+          if (titleOrder) return titleOrder;
+          return bookTime(right) - bookTime(left);
+        });
       }
 
       function fallbackCover(title) {
@@ -555,15 +571,17 @@
         const currentAuthor = normalizeText(book.author);
         const currentLibrary = relatedLibraryKey(book);
         const sameAuthor = currentAuthor
-          ? books.filter((item) => bookIdentity(item) !== currentId && normalizeText(item.author) === currentAuthor)
+          ? sortRelatedBooks(books.filter((item) => bookIdentity(item) !== currentId && normalizeText(item.author) === currentAuthor))
           : [];
         const sameAuthorIds = new Set(sameAuthor.map(bookIdentity));
         const sameLibrary = currentLibrary
-          ? books.filter(
-              (item) =>
-                bookIdentity(item) !== currentId &&
-                relatedLibraryKey(item) === currentLibrary &&
-                !sameAuthorIds.has(bookIdentity(item))
+          ? sortRelatedBooks(
+              books.filter(
+                (item) =>
+                  bookIdentity(item) !== currentId &&
+                  relatedLibraryKey(item) === currentLibrary &&
+                  !sameAuthorIds.has(bookIdentity(item))
+              )
             )
           : [];
         return { author: sameAuthor, library: sameLibrary };
