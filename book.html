@@ -6,6 +6,10 @@
     <title>Книга | VLC Biblio</title>
     <link rel="icon" type="image/png" href="./assets/favicon.png" />
     <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
+    <script>
+      // Book links use native history, including the previous book's scroll.
+      if ("scrollRestoration" in history) history.scrollRestoration = "auto";
+    </script>
     <style>
       :root {
         color-scheme: light;

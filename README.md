@@ -73,3 +73,18 @@ Each book opens as a standalone detail page with a shareable URL:
 ```text
 https://vlcbiblio.github.io/vlc-biblio-catalog/book.html?id=7
 ```
+
+Browser Back and Forward follow the visited book pages in order. The explicit
+`← Назад к каталогу` link opens the catalog with the search, section and scroll
+position last saved in that tab. History entries keep their own catalog state;
+refreshing the catalog also restores its position. A visible book acts as a scroll
+anchor if the layout or catalog contents change. A direct book link in a fresh tab
+returns to the top of the unfiltered catalog.
+
+Navigation checks use a local HTTP server and synthetic books:
+
+```powershell
+python -m pip install playwright
+python -m playwright install chromium
+python -X utf8 -m unittest test_catalog_navigation -v
+```

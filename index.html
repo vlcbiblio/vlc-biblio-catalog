@@ -6,6 +6,10 @@
     <title>VLC Biblio</title>
     <link rel="icon" type="image/png" href="./assets/favicon.png" />
     <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
+    <script>
+      // Restore only after the catalog and its filters have been rendered.
+      if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    </script>
     <style>
       :root {
         color-scheme: light;
@@ -569,10 +573,16 @@
         exchange: "Частная библиотека",
       };
 
+      const catalogStorageKey = `vlc-biblio:catalog:v1:${new URL("./", location.href).pathname}`;
+      const storedCatalogState = readCatalogState();
+      // Reload can copy history.state before the outgoing pagehide saves scroll.
+      const isReload = performance.getEntriesByType("navigation")[0]?.type === "reload";
+      const savedCatalogState = (isReload && storedCatalogState) || history.state?.biblioCatalog || storedCatalogState;
       const state = {
-        search: "",
-        section: "",
+        search: typeof savedCatalogState?.search === "string" ? savedCatalogState.search : "",
+        section: ["library", "exchange"].includes(savedCatalogState?.section) ? savedCatalogState.section : "",
       };
+      let catalogReady = false;
 
       const grid = document.querySelector("#grid");
       const controls = document.querySelector(".controls");
@@ -588,6 +598,44 @@
       const modalCollectionNote = document.querySelector("#modalCollectionNote");
       const modalActions = document.querySelector("#modalActions");
       const modalLinks = document.querySelector("#modalLinks");
+
+      function readCatalogState() {
+        try {
+          return JSON.parse(sessionStorage.getItem(catalogStorageKey));
+        } catch {
+          return null;
+        }
+      }
+
+      function saveCatalogState() {
+        if (!catalogReady) return;
+        const visibleTop = Math.max(0, controls.getBoundingClientRect().bottom);
+        const anchor = Array.from(grid.children).find((card) => card.getBoundingClientRect().bottom > visibleTop);
+        const snapshot = {
+          ...state,
+          scrollY: window.scrollY,
+          anchorId: anchor?.dataset.bookId,
+          anchorOffset: anchor?.getBoundingClientRect().top,
+        };
+        // Each history entry keeps its own list; the explicit catalog link uses
+        // the latest list saved in this tab, even after several book pages.
+        history.replaceState({ ...history.state, biblioCatalog: snapshot }, "");
+        try {
+          sessionStorage.setItem(catalogStorageKey, JSON.stringify(snapshot));
+        } catch {
+          // Browser Back still works when session storage is unavailable.
+        }
+      }
+
+      function restoreCatalogPosition(snapshot) {
+        if (!snapshot || !Number.isFinite(snapshot.scrollY)) return;
+        let top = snapshot.scrollY;
+        const anchor = Array.from(grid.children).find((card) => card.dataset.bookId === snapshot.anchorId);
+        if (anchor && Number.isFinite(snapshot.anchorOffset) && top > 0) {
+          top = window.scrollY + anchor.getBoundingClientRect().top - snapshot.anchorOffset;
+        }
+        window.scrollTo({ top: Math.max(0, top), behavior: "instant" });
+      }
 
       function escapeHtml(value) {
         return String(value ?? "")
@@ -746,34 +794,8 @@
           window.location.replace(bookPageUrl(book));
           return;
         }
+        saveCatalogState();
         window.location.href = bookPageUrl(book);
-        return;
-        const shouldPush = options.push !== false;
-        modalCover.classList.remove("is-broken");
-        modalCover.innerHTML = coverMarkup(book);
-        modalStatus.className = `badge ${escapeHtml(book.section)}`;
-        modalStatus.textContent = book.section === "exchange" ? "" : book.catalogStatus || labels[book.section] || "Книга";
-        modalStatus.hidden = book.section === "exchange";
-        modalTitle.textContent = book.title || "Без названия";
-        modalAuthor.textContent = book.author || "Автор не указан";
-        modalDetails.innerHTML = renderDetails(book);
-        modalAnnotation.textContent = book.annotation || "Описание пока не добавлено.";
-        modalCollectionNote.textContent = collectionNote(book);
-        modalActions.innerHTML = [
-          libraryAction(book)
-            ? `<a class="${libraryAction(book).isTelegram ? "telegram-action" : ""}" href="${escapeHtml(libraryAction(book).href)}" target="_blank" rel="noreferrer">${actionLabelMarkup(libraryAction(book))}</a>`
-            : "",
-          `<a href="${escapeHtml(correctionUrl(book))}" target="_blank" rel="noreferrer">Хочу сообщить об ошибке</a>`,
-        ].filter(Boolean).join("");
-        modalLinks.innerHTML = `<a href="${escapeHtml(googleSearchUrl(book))}" target="_blank" rel="noreferrer">Google</a>`;
-
-        controls.hidden = true;
-        grid.hidden = true;
-        empty.style.display = "none";
-        modal.classList.add("is-open");
-        if (shouldPush) history.pushState({ bookId: book.id }, "", bookPageUrl(book));
-        window.scrollTo({ top: 0, behavior: shouldPush ? "smooth" : "auto" });
-        modalClose.focus();
       }
 
       function closeBook(options = {}) {
@@ -866,20 +888,26 @@
       document.addEventListener("keydown", (event) => {
         if (event.key === "Escape" && modal.classList.contains("is-open")) closeBook();
       });
-      window.addEventListener("popstate", () => {
-        const book = currentBookFromUrl();
-        if (book) {
-          openBook(book, { push: false });
-        } else {
-          closeBook({ push: false });
-        }
+      window.addEventListener("pagehide", saveCatalogState);
+      document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "hidden") saveCatalogState();
+      });
+      window.addEventListener("pageshow", () => {
+        if (!catalogReady) return;
+        restoreCatalogPosition(history.state?.biblioCatalog || savedCatalogState);
+        saveCatalogState();
       });
 
       const initialBook = currentBookFromUrl();
       if (initialBook) {
         openBook(initialBook, { push: false });
       } else {
+        document.querySelector("#search").value = state.search;
+        document.querySelector("#sectionFilter").value = state.section;
         render();
+        catalogReady = true;
+        restoreCatalogPosition(savedCatalogState);
+        saveCatalogState();
       }
     </script>
   </body>
