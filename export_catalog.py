@@ -112,7 +112,8 @@ def library_key_for(row, section):
 def has_public_book_data(row):
     if clean(row.get("status")) in BAD_STATUSES:
         return False
-    if not clean(row.get("channel_published_at") or row.get("user_published_at")):
+    if (clean(row.get("catalog_visibility")) != "public"
+            and not clean(row.get("channel_published_at") or row.get("user_published_at"))):
         return False
     return any(clean(row.get(field)) for field in ("isbn", "title", "author"))
 
@@ -139,8 +140,9 @@ def public_book(row):
         "sourceUrl": clean(row.get("metadata_source_url")),
         "livelibUrl": clean(row.get("livelib_url")),
         "wildberriesUrl": clean(row.get("wildberries_url")),
-        "addedAt": parse_request_timestamp(request_file),
-        "updatedAt": clean(row.get("channel_published_at") or row.get("user_published_at")),
+        "addedAt": parse_request_timestamp(request_file) or clean(row.get("catalog_added_at")),
+        "updatedAt": clean(row.get("channel_published_at") or row.get("user_published_at")
+                           or row.get("catalog_added_at")),
     }
 
 

@@ -24,11 +24,22 @@ Generate the public catalog payload from the Telegram processing table:
 python export_catalog.py
 ```
 
-Only rows with book data and either `channel_published_at` or `user_published_at` are
-exported. Private Telegram fields such as `chat_id`, `user_id`, `username`, source photos,
+Rows with book data are exported after Telegram delivery or with an explicit
+`catalog_visibility=public` selection for a catalog batch. Private Telegram fields
+such as `chat_id`, `user_id`, `username`, source photos,
 OCR paths, and internal notes are not written to `data/books.js`.
 
 ## Publication state
+
+Catalog-only batches use `catalog_batch_id` and `catalog_added_at` in the local
+table. Their `telegram_delivery_mode=manual_batch` excludes them from automatic
+admin handoff, user delivery and channel publication. Telegram receipt fields stay
+empty. The private batch manifest records source reviews, backups and the verified
+GitHub Pages deployment. Normal exports retain these explicitly selected books.
+
+Readers can request these books through the bot. If the archive owner has no
+linked Telegram ID, requests stay with the administrator until that account is
+linked; the bot does not attempt to send to an unknown owner.
 
 Catalog visibility and Telegram delivery are different facts. A book exported
 because of `user_published_at` is not necessarily published to the channel. Do not
