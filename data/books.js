@@ -18,7 +18,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-12T16:23:23",
-    "updatedAt": "2026-09-12T21:09:56"
+    "updatedAt": "2026-09-12T21:09:56",
+    "coverImage": {
+      "src": "./assets/covers/optimized/4ee9fea4f04fb7d7e392-200.webp",
+      "srcset": "./assets/covers/optimized/4ee9fea4f04fb7d7e392-200.webp 200w",
+      "width": 200,
+      "height": 287
+    }
   },
   {
     "id": "b-9d65af6b8d5a",
@@ -39,7 +45,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-12T16:21:41",
-    "updatedAt": "2026-09-12T21:09:56"
+    "updatedAt": "2026-09-12T21:09:56",
+    "coverImage": {
+      "src": "./assets/covers/optimized/33b78e40bd49597b10f9-300.webp",
+      "srcset": "./assets/covers/optimized/33b78e40bd49597b10f9-300.webp 300w",
+      "width": 300,
+      "height": 400
+    }
   },
   {
     "id": "b-d52cff9e1d3d",
@@ -60,7 +72,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-12T16:20:11",
-    "updatedAt": "2026-09-12T20:16:31"
+    "updatedAt": "2026-09-12T20:16:31",
+    "coverImage": {
+      "src": "./assets/covers/optimized/2fcaf2c5a0ae62e53d97-720.webp",
+      "srcset": "./assets/covers/optimized/6a23baec32ee5074d1ad-360.webp 360w, ./assets/covers/optimized/2fcaf2c5a0ae62e53d97-720.webp 720w",
+      "width": 720,
+      "height": 802
+    }
   },
   {
     "id": "b-a5b9b565d34d",
@@ -81,7 +99,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=978-5-00169-152-5",
     "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=978-5-00169-152-5",
     "addedAt": "2026-09-12T15:20:44",
-    "updatedAt": "2026-09-12T19:19:02"
+    "updatedAt": "2026-09-12T19:19:02",
+    "coverImage": {
+      "src": "./assets/covers/optimized/b7b3dd82734872c13dda-528.webp",
+      "srcset": "./assets/covers/optimized/7da1fbed653b9fbf3c6b-360.webp 360w, ./assets/covers/optimized/b7b3dd82734872c13dda-528.webp 528w",
+      "width": 528,
+      "height": 699
+    }
   },
   {
     "id": "b-28a60464cdb6",
@@ -102,7 +126,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-12T16:22:26",
-    "updatedAt": "2026-09-12T19:18:56"
+    "updatedAt": "2026-09-12T19:18:56",
+    "coverImage": {
+      "src": "./assets/covers/optimized/e79091cda6105aaf6315-500.webp",
+      "srcset": "./assets/covers/optimized/7236427096414fa54388-360.webp 360w, ./assets/covers/optimized/e79091cda6105aaf6315-500.webp 500w",
+      "width": 500,
+      "height": 500
+    }
   },
   {
     "id": "b-ae9b6a3a39c5",
@@ -123,7 +153,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-12T16:20:46",
-    "updatedAt": "2026-09-12T19:18:45"
+    "updatedAt": "2026-09-12T19:18:45",
+    "coverImage": {
+      "src": "./assets/covers/optimized/2c43e22e0dca6b80c93b-720.webp",
+      "srcset": "./assets/covers/optimized/fcc7987802b6a3bd66e2-360.webp 360w, ./assets/covers/optimized/2c43e22e0dca6b80c93b-720.webp 720w",
+      "width": 720,
+      "height": 950
+    }
   },
   {
     "id": "b-47a97d0bf897",
@@ -144,7 +180,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=978-5-04-117763-8",
     "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=978-5-04-117763-8",
     "addedAt": "2026-09-12T15:14:15",
-    "updatedAt": "2026-09-12T19:18:38"
+    "updatedAt": "2026-09-12T19:18:38",
+    "coverImage": {
+      "src": "./assets/covers/optimized/19ec17229be80219687c-720.webp",
+      "srcset": "./assets/covers/optimized/12d3f80dc59be10dd12f-360.webp 360w, ./assets/covers/optimized/19ec17229be80219687c-720.webp 720w",
+      "width": 720,
+      "height": 947
+    }
   },
   {
     "id": "b-1d9dbd6d7e07",
@@ -165,7 +207,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=978-5-17172-023-0",
     "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=978-5-17172-023-0",
     "addedAt": "2026-09-10T11:40:54",
-    "updatedAt": "2026-09-10T12:21:37"
+    "updatedAt": "2026-09-10T12:21:37",
+    "coverImage": {
+      "src": "./assets/covers/optimized/6773414f46112eba6f6c-400.webp",
+      "srcset": "./assets/covers/optimized/36d0024b09828c786e3e-360.webp 360w, ./assets/covers/optimized/6773414f46112eba6f6c-400.webp 400w",
+      "width": 400,
+      "height": 629
+    }
   },
   {
     "id": "b-0f7d7c73790c",
@@ -186,7 +234,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-09T15:44:35",
-    "updatedAt": "2026-09-09T18:27:39"
+    "updatedAt": "2026-09-09T18:27:39",
+    "coverImage": {
+      "src": "./assets/covers/optimized/6c8c0a4a4a37053c5f77-720.webp",
+      "srcset": "./assets/covers/optimized/107ca30502dd77850ade-360.webp 360w, ./assets/covers/optimized/6c8c0a4a4a37053c5f77-720.webp 720w",
+      "width": 720,
+      "height": 941
+    }
   },
   {
     "id": "b-e007ec3ba605",
@@ -207,7 +261,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-09T15:42:48",
-    "updatedAt": "2026-09-09T18:27:39"
+    "updatedAt": "2026-09-09T18:27:39",
+    "coverImage": {
+      "src": "./assets/covers/optimized/5c5da3b0b47bf8b347b9-642.webp",
+      "srcset": "./assets/covers/optimized/7e4e776e7d016fec460f-360.webp 360w, ./assets/covers/optimized/5c5da3b0b47bf8b347b9-642.webp 642w",
+      "width": 642,
+      "height": 852
+    }
   },
   {
     "id": "b-fb7f878af6b1",
@@ -228,7 +288,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-09T15:44:02",
-    "updatedAt": "2026-09-09T18:27:39"
+    "updatedAt": "2026-09-09T18:27:39",
+    "coverImage": {
+      "src": "./assets/covers/optimized/d463533d41aadf914299-720.webp",
+      "srcset": "./assets/covers/optimized/1d91f256308089c4ec9b-360.webp 360w, ./assets/covers/optimized/d463533d41aadf914299-720.webp 720w",
+      "width": 720,
+      "height": 938
+    }
   },
   {
     "id": "b-2a3b6987dd2d",
@@ -249,7 +315,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=9785040998814",
     "wildberriesUrl": "",
     "addedAt": "2026-09-13T09:36:48",
-    "updatedAt": "2026-09-13T09:36:48"
+    "updatedAt": "2026-09-13T09:36:48",
+    "coverImage": {
+      "src": "./assets/covers/optimized/2d79fb14b1c79c1e535a-484.webp",
+      "srcset": "./assets/covers/optimized/4851e23da956cc448158-360.webp 360w, ./assets/covers/optimized/2d79fb14b1c79c1e535a-484.webp 484w",
+      "width": 484,
+      "height": 756
+    }
   },
   {
     "id": "b-436fc748983f",
@@ -270,7 +342,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=9785080067983",
     "wildberriesUrl": "",
     "addedAt": "2026-09-13T09:36:48",
-    "updatedAt": "2026-09-13T09:36:48"
+    "updatedAt": "2026-09-13T09:36:48",
+    "coverImage": {
+      "src": "./assets/covers/optimized/d5c25665caa8be58e36a-484.webp",
+      "srcset": "./assets/covers/optimized/df93076ba4ee65411953-360.webp 360w, ./assets/covers/optimized/d5c25665caa8be58e36a-484.webp 484w",
+      "width": 484,
+      "height": 760
+    }
   },
   {
     "id": "b-5c0b287e6e1e",
@@ -291,7 +369,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=9785040919017",
     "wildberriesUrl": "",
     "addedAt": "2026-09-13T09:36:48",
-    "updatedAt": "2026-09-13T09:36:48"
+    "updatedAt": "2026-09-13T09:36:48",
+    "coverImage": {
+      "src": "./assets/covers/optimized/c5f3804ea060d323eeeb-484.webp",
+      "srcset": "./assets/covers/optimized/c836fe2a32b2e1fb4aa1-360.webp 360w, ./assets/covers/optimized/c5f3804ea060d323eeeb-484.webp 484w",
+      "width": 484,
+      "height": 761
+    }
   },
   {
     "id": "b-6d119d2ccb53",
@@ -312,7 +396,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=9785906994950",
     "wildberriesUrl": "",
     "addedAt": "2026-09-13T09:36:48",
-    "updatedAt": "2026-09-13T09:36:48"
+    "updatedAt": "2026-09-13T09:36:48",
+    "coverImage": {
+      "src": "./assets/covers/optimized/13944dbddc6e79a45338-484.webp",
+      "srcset": "./assets/covers/optimized/d09d359326a4e5e49308-360.webp 360w, ./assets/covers/optimized/13944dbddc6e79a45338-484.webp 484w",
+      "width": 484,
+      "height": 805
+    }
   },
   {
     "id": "b-6d3090f466eb",
@@ -333,7 +423,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=9785080072536",
     "wildberriesUrl": "",
     "addedAt": "2026-09-13T09:36:48",
-    "updatedAt": "2026-09-13T09:36:48"
+    "updatedAt": "2026-09-13T09:36:48",
+    "coverImage": {
+      "src": "./assets/covers/optimized/a47bb68d32d53f0094f8-484.webp",
+      "srcset": "./assets/covers/optimized/00b06ed9d587ef765b12-360.webp 360w, ./assets/covers/optimized/a47bb68d32d53f0094f8-484.webp 484w",
+      "width": 484,
+      "height": 632
+    }
   },
   {
     "id": "b-726d7dfa3300",
@@ -354,7 +450,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=9785040973521",
     "wildberriesUrl": "",
     "addedAt": "2026-09-13T09:36:48",
-    "updatedAt": "2026-09-13T09:36:48"
+    "updatedAt": "2026-09-13T09:36:48",
+    "coverImage": {
+      "src": "./assets/covers/optimized/400de111dc594870f768-484.webp",
+      "srcset": "./assets/covers/optimized/a96124132381b74c182b-360.webp 360w, ./assets/covers/optimized/400de111dc594870f768-484.webp 484w",
+      "width": 484,
+      "height": 761
+    }
   },
   {
     "id": "b-81b148aa764e",
@@ -375,7 +477,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=9785699881383",
     "wildberriesUrl": "",
     "addedAt": "2026-09-13T09:36:48",
-    "updatedAt": "2026-09-13T09:36:48"
+    "updatedAt": "2026-09-13T09:36:48",
+    "coverImage": {
+      "src": "./assets/covers/optimized/182a0361d6c668998bd7-484.webp",
+      "srcset": "./assets/covers/optimized/4e3b1d663007f180938e-360.webp 360w, ./assets/covers/optimized/182a0361d6c668998bd7-484.webp 484w",
+      "width": 484,
+      "height": 761
+    }
   },
   {
     "id": "b-8b16df7d56a8",
@@ -396,7 +504,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=9785171155063",
     "wildberriesUrl": "",
     "addedAt": "2026-09-13T09:36:48",
-    "updatedAt": "2026-09-13T09:36:48"
+    "updatedAt": "2026-09-13T09:36:48",
+    "coverImage": {
+      "src": "./assets/covers/optimized/1b3ff603ed4713aabdd4-484.webp",
+      "srcset": "./assets/covers/optimized/16d016d273b05ae96868-360.webp 360w, ./assets/covers/optimized/1b3ff603ed4713aabdd4-484.webp 484w",
+      "width": 484,
+      "height": 713
+    }
   },
   {
     "id": "b-b7cea0217bd7",
@@ -417,7 +531,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=978-5-17-109305-1",
     "wildberriesUrl": "",
     "addedAt": "2026-09-13T09:36:48",
-    "updatedAt": "2026-09-13T09:36:48"
+    "updatedAt": "2026-09-13T09:36:48",
+    "coverImage": {
+      "src": "./assets/covers/optimized/33f5ff0de647c965f5f9-484.webp",
+      "srcset": "./assets/covers/optimized/8b7dcbec556cd457778e-360.webp 360w, ./assets/covers/optimized/33f5ff0de647c965f5f9-484.webp 484w",
+      "width": 484,
+      "height": 626
+    }
   },
   {
     "id": "b-c4a30deef770",
@@ -438,7 +558,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=9785171542498",
     "wildberriesUrl": "",
     "addedAt": "2026-09-13T09:36:48",
-    "updatedAt": "2026-09-13T09:36:48"
+    "updatedAt": "2026-09-13T09:36:48",
+    "coverImage": {
+      "src": "./assets/covers/optimized/98a834b6b4b5b94994c0-484.webp",
+      "srcset": "./assets/covers/optimized/803fd95f2c90530fd44e-360.webp 360w, ./assets/covers/optimized/98a834b6b4b5b94994c0-484.webp 484w",
+      "width": 484,
+      "height": 691
+    }
   },
   {
     "id": "b-b823fd18be7f",
@@ -459,7 +585,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=978-5-17-055707-3",
     "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=978-5-17-055707-3",
     "addedAt": "2026-09-12T15:25:55",
-    "updatedAt": "2026-09-12T19:18:51"
+    "updatedAt": "2026-09-12T19:18:51",
+    "coverImage": {
+      "src": "./assets/covers/optimized/98104d2c223fec6568a0-400.webp",
+      "srcset": "./assets/covers/optimized/4d5b12f4608f87de0fe8-360.webp 360w, ./assets/covers/optimized/98104d2c223fec6568a0-400.webp 400w",
+      "width": 400,
+      "height": 500
+    }
   },
   {
     "id": "b-4af30317648b",
@@ -480,7 +612,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-12T16:32:12",
-    "updatedAt": "2026-09-12T19:18:33"
+    "updatedAt": "2026-09-12T19:18:33",
+    "coverImage": {
+      "src": "./assets/covers/optimized/11c8717ab9b0d8bf1071-534.webp",
+      "srcset": "./assets/covers/optimized/7129b4db133e5b4b393e-360.webp 360w, ./assets/covers/optimized/11c8717ab9b0d8bf1071-534.webp 534w",
+      "width": 534,
+      "height": 700
+    }
   },
   {
     "id": "b-a436c83db4a2",
@@ -501,7 +639,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=978-5-8138-1477-8",
     "wildberriesUrl": "https://global.wildberries.ru/product?card=77528791",
     "addedAt": "2026-09-10T20:17:16",
-    "updatedAt": "2026-09-10T20:31:55"
+    "updatedAt": "2026-09-10T20:31:55",
+    "coverImage": {
+      "src": "./assets/covers/optimized/1167b2b322b9e6f3ad95-720.webp",
+      "srcset": "./assets/covers/optimized/d7c7fb2cc70c594c3034-360.webp 360w, ./assets/covers/optimized/1167b2b322b9e6f3ad95-720.webp 720w",
+      "width": 720,
+      "height": 960
+    }
   },
   {
     "id": "b-bf3005b249f5",
@@ -522,7 +666,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=978-5-91971-007-3",
     "wildberriesUrl": "https://www.wildberries.by/catalog/181981941/detail.aspx",
     "addedAt": "2026-09-10T18:30:47",
-    "updatedAt": "2026-09-10T18:57:15"
+    "updatedAt": "2026-09-10T18:57:15",
+    "coverImage": {
+      "src": "./assets/covers/optimized/a5bec83f2c9cc8ea2174-720.webp",
+      "srcset": "./assets/covers/optimized/14a46478da6f6c33e83c-360.webp 360w, ./assets/covers/optimized/a5bec83f2c9cc8ea2174-720.webp 720w",
+      "width": 720,
+      "height": 960
+    }
   },
   {
     "id": "b-083dfb4845d2",
@@ -543,7 +693,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=978-5-00154-995-6",
     "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=978-5-00154-995-6",
     "addedAt": "2026-09-09T22:00:59",
-    "updatedAt": "2026-09-10T13:10:16"
+    "updatedAt": "2026-09-10T13:10:16",
+    "coverImage": {
+      "src": "./assets/covers/optimized/ba9d6a8a0a722862677e-320.webp",
+      "srcset": "./assets/covers/optimized/ba9d6a8a0a722862677e-320.webp 320w",
+      "width": 320,
+      "height": 340
+    }
   },
   {
     "id": "b-2fc63abe2c11",
@@ -564,7 +720,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=978-5-222-46608-7",
     "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=978-5-222-46608-7",
     "addedAt": "2026-09-09T22:01:58",
-    "updatedAt": "2026-09-10T13:10:16"
+    "updatedAt": "2026-09-10T13:10:16",
+    "coverImage": {
+      "src": "./assets/covers/optimized/1faa391650f89159ffef-150.webp",
+      "srcset": "./assets/covers/optimized/1faa391650f89159ffef-150.webp 150w",
+      "width": 150,
+      "height": 189
+    }
   },
   {
     "id": "b-38c5e1eb59c7",
@@ -585,7 +747,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=978-5-00211-510-5",
     "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=978-5-00211-510-5",
     "addedAt": "2026-09-09T22:01:19",
-    "updatedAt": "2026-09-10T13:10:16"
+    "updatedAt": "2026-09-10T13:10:16",
+    "coverImage": {
+      "src": "./assets/covers/optimized/7e82d91be03982386721-720.webp",
+      "srcset": "./assets/covers/optimized/acc5bf8298b6f88b65ef-360.webp 360w, ./assets/covers/optimized/7e82d91be03982386721-720.webp 720w",
+      "width": 720,
+      "height": 761
+    }
   },
   {
     "id": "b-8401fe9705e3",
@@ -606,7 +774,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=978-5-00195-589-4",
     "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=978-5-00195-589-4",
     "addedAt": "2026-09-09T21:59:30",
-    "updatedAt": "2026-09-10T13:10:16"
+    "updatedAt": "2026-09-10T13:10:16",
+    "coverImage": {
+      "src": "./assets/covers/optimized/be4327fd64a678ed612b-128.webp",
+      "srcset": "./assets/covers/optimized/be4327fd64a678ed612b-128.webp 128w",
+      "width": 128,
+      "height": 182
+    }
   },
   {
     "id": "b-86a31103b61d",
@@ -627,7 +801,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=978-5-00211-332-3",
     "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=978-5-00211-332-3",
     "addedAt": "2026-09-09T21:58:23",
-    "updatedAt": "2026-09-10T13:10:16"
+    "updatedAt": "2026-09-10T13:10:16",
+    "coverImage": {
+      "src": "./assets/covers/optimized/55b8c5e673b1d21db5a1-320.webp",
+      "srcset": "./assets/covers/optimized/55b8c5e673b1d21db5a1-320.webp 320w",
+      "width": 320,
+      "height": 400
+    }
   },
   {
     "id": "b-86aa0d917ccb",
@@ -648,7 +828,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=978-5-00211-720-8",
     "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=978-5-00211-720-8",
     "addedAt": "2026-09-09T21:56:50",
-    "updatedAt": "2026-09-10T13:10:16"
+    "updatedAt": "2026-09-10T13:10:16",
+    "coverImage": {
+      "src": "./assets/covers/optimized/b3b497964a2f1d0c4699-600.webp",
+      "srcset": "./assets/covers/optimized/ff4369e0d84e63eee724-360.webp 360w, ./assets/covers/optimized/b3b497964a2f1d0c4699-600.webp 600w",
+      "width": 600,
+      "height": 750
+    }
   },
   {
     "id": "b-af3dd42bc303",
@@ -669,7 +855,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=978-5-222-46974-3",
     "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=978-5-222-46974-3",
     "addedAt": "2026-09-09T22:02:12",
-    "updatedAt": "2026-09-10T13:10:16"
+    "updatedAt": "2026-09-10T13:10:16",
+    "coverImage": {
+      "src": "./assets/covers/optimized/7480f0e86fa4167f66fc-484.webp",
+      "srcset": "./assets/covers/optimized/77d4f6d4890d838a82c0-360.webp 360w, ./assets/covers/optimized/7480f0e86fa4167f66fc-484.webp 484w",
+      "width": 484,
+      "height": 647
+    }
   },
   {
     "id": "b-d35e45950eaa",
@@ -690,7 +882,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=978-5-00211-942-4",
     "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=978-5-00211-942-4",
     "addedAt": "2026-09-09T21:52:07",
-    "updatedAt": "2026-09-10T13:10:16"
+    "updatedAt": "2026-09-10T13:10:16",
+    "coverImage": {
+      "src": "./assets/covers/optimized/c887453bd27e767d3f94-720.webp",
+      "srcset": "./assets/covers/optimized/7b08ca29ec90cae5ea44-360.webp 360w, ./assets/covers/optimized/c887453bd27e767d3f94-720.webp 720w",
+      "width": 720,
+      "height": 900
+    }
   },
   {
     "id": "b-fdf04ed660d5",
@@ -711,6 +909,12 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=978-5-6047517-9-4",
     "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=978-5-6047517-9-4",
     "addedAt": "2026-09-09T22:00:35",
-    "updatedAt": "2026-09-10T13:10:16"
+    "updatedAt": "2026-09-10T13:10:16",
+    "coverImage": {
+      "src": "./assets/covers/optimized/6a5907778b878693aefb-600.webp",
+      "srcset": "./assets/covers/optimized/06b88d53fb75aefb0599-360.webp 360w, ./assets/covers/optimized/6a5907778b878693aefb-600.webp 600w",
+      "width": 600,
+      "height": 612
+    }
   }
 ];

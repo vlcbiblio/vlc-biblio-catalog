@@ -176,7 +176,24 @@ def load_books(source):
 
 def write_books(output, books):
     output.parent.mkdir(parents=True, exist_ok=True)
-    payload = json.dumps(books, ensure_ascii=False, indent=2)
+    root = output.resolve().parent.parent
+    manifest_path = root / "assets/covers/manifest.json"
+    covers = json.loads(manifest_path.read_text(encoding="utf-8")).get("covers", {}) if manifest_path.is_file() else {}
+    public_books = []
+    for book in books:
+        public = {key: value for key, value in book.items() if key != "coverImage"}
+        # Match the exact source URL, so a corrected cover never uses an old image.
+        variants = covers.get(book.get("cover"), {}).get("variants", [])
+        if variants and all((root / image["src"]).is_file() for image in variants):
+            largest = variants[-1]
+            public["coverImage"] = {
+                "src": largest["src"],
+                "srcset": ", ".join(f'{image["src"]} {image["width"]}w' for image in variants),
+                "width": largest["width"],
+                "height": largest["height"],
+            }
+        public_books.append(public)
+    payload = json.dumps(public_books, ensure_ascii=False, indent=2)
     output.write_text(f"window.BIBLIO_BOOKS = {payload};\n", encoding="utf-8")
 
 

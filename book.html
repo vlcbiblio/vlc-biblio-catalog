@@ -467,7 +467,7 @@
       </footer>
     </main>
 
-    <script src="./data/books.js?v=20260913095918"></script>
+    <script src="./data/books.js?v=20260913112308"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
       const botUrl = "https://t.me/VLS_Biblio_bot";
@@ -526,9 +526,16 @@
         return `<div class="cover-placeholder">${escapeHtml(title || "Книга")}</div>`;
       }
 
-      function coverMarkup(book) {
+      function coverMarkup(book, lazy = false) {
         if (!book.cover) return fallbackCover(book.title);
-        return `<img src="${escapeHtml(book.cover)}" alt="Обложка: ${escapeHtml(book.title)}" decoding="async" referrerpolicy="no-referrer" data-fallback-title="${escapeHtml(book.title || "Книга")}" />`;
+        const image = book.coverImage;
+        const sizes = lazy
+          ? "(max-width: 560px) 45vw, 220px"
+          : "(max-width: 560px) calc(100vw - 20px), (max-width: 820px) calc(100vw - 32px), 340px";
+        const responsive = image
+          ? ` srcset="${escapeHtml(image.srcset)}" sizes="${sizes}" width="${image.width}" height="${image.height}"`
+          : "";
+        return `<img src="${escapeHtml(image?.src || book.cover)}"${responsive} alt="Обложка: ${escapeHtml(book.title)}" loading="${lazy ? "lazy" : "eager"}" fetchpriority="${lazy ? "low" : "high"}" decoding="async" referrerpolicy="no-referrer" data-fallback-title="${escapeHtml(book.title || "Книга")}" />`;
       }
 
       function telegramIcon() {
@@ -651,7 +658,7 @@
           <article class="related-card ${selectable ? "related-card-selectable" : ""}" data-request-book-id="${escapeHtml(requestId)}">
             ${selectMarkup}
             <a class="related-card-link" href="${escapeHtml(relatedUrl(book))}">
-            <div class="related-cover">${coverMarkup(book)}</div>
+            <div class="related-cover">${coverMarkup(book, true)}</div>
             <div class="related-body">
               <h3 class="related-title">${escapeHtml(book.title || "Без названия")}</h3>
               <p class="related-author">${escapeHtml(book.author || "Автор не указан")}</p>

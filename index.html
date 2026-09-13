@@ -562,7 +562,7 @@
       </article>
     </section>
 
-    <script src="./data/books.js?v=20260913095918"></script>
+    <script src="./data/books.js?v=20260913112308"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
       const botUrl = "https://t.me/VLS_Biblio_bot";
@@ -700,7 +700,11 @@
 
       function coverMarkup(book, lazy = false) {
         if (!book.cover) return fallbackCover(book.title);
-        return `<img src="${escapeHtml(book.cover)}" alt="Обложка: ${escapeHtml(book.title)}"${lazy ? " loading=\"lazy\"" : ""} decoding="async" referrerpolicy="no-referrer" data-fallback-title="${escapeHtml(book.title || "Книга")}" />`;
+        const image = book.coverImage;
+        const responsive = image
+          ? ` srcset="${escapeHtml(image.srcset)}" sizes="(max-width: 560px) 50vw, 240px" width="${image.width}" height="${image.height}"`
+          : "";
+        return `<img src="${escapeHtml(image?.src || book.cover)}"${responsive} alt="Обложка: ${escapeHtml(book.title)}" loading="${lazy ? "lazy" : "eager"}" decoding="async" referrerpolicy="no-referrer" data-fallback-title="${escapeHtml(book.title || "Книга")}" />`;
       }
 
       function telegramIcon() {
@@ -825,10 +829,10 @@
         document.querySelector("#exchangeCount").textContent = visible.filter((book) => book.section === "exchange").length;
 
         grid.innerHTML = visible
-          .map((book) => `
+          .map((book, index) => `
             <article class="book" tabindex="0" role="button" data-book-id="${escapeHtml(book.id)}" aria-label="Открыть карточку: ${escapeHtml(book.title)}">
               <div class="cover">
-                ${coverMarkup(book, true)}
+                ${coverMarkup(book, index >= 4)}
                 ${badgeMarkup(book)}
               </div>
               <div class="body">

@@ -1,4 +1,5 @@
 import csv
+import json
 import tempfile
 import unittest
 from pathlib import Path
@@ -7,6 +8,33 @@ import export_catalog as export
 
 
 class CatalogOnlyExportTests(unittest.TestCase):
+    def test_export_reuses_optimized_images_only_for_the_matching_source(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            cover = root / "assets/covers/optimized/cover.webp"
+            cover.parent.mkdir(parents=True)
+            cover.write_bytes(b"existing optimized image")
+            manifest = root / "assets/covers/manifest.json"
+            manifest.write_text(json.dumps({"covers": {"https://example.org/original.jpg": {
+                "variants": [{"src": "./assets/covers/optimized/cover.webp", "width": 360, "height": 540}]
+            }}}), encoding="utf-8")
+            output = root / "data/books.js"
+            books = [
+                {"id": "cached", "cover": "https://example.org/original.jpg"},
+                {"id": "corrected", "cover": "https://example.org/corrected.jpg", "coverImage": {"src": "stale.webp"}},
+            ]
+            export.write_books(output, books)
+            result = json.loads(output.read_text(encoding="utf-8").split("=", 1)[1].strip().rstrip(";"))
+            self.assertEqual(result[0]["coverImage"]["src"], "./assets/covers/optimized/cover.webp")
+            self.assertEqual(result[0]["cover"], books[0]["cover"])
+            self.assertNotIn("coverImage", result[1])
+            self.assertNotIn("coverImage", books[0])
+
+            cover.unlink()
+            export.write_books(output, books)
+            result = json.loads(output.read_text(encoding="utf-8").split("=", 1)[1].strip().rstrip(";"))
+            self.assertNotIn("coverImage", result[0])
+
     def test_explicit_catalog_selection_survives_export_without_telegram_receipts(self):
         rows = [
             {"book_number": "1", "title": "Published", "user_published_at": "2026-09-12T12:00:00"},

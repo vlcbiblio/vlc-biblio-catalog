@@ -1,0 +1,547 @@
+{
+  "covers": {
+    "https://basket-05.wbbasket.ru/vol775/part77528/77528791/images/big/1.webp": {
+      "sourceBytes": 59860,
+      "variants": [
+        {
+          "bytes": 23188,
+          "height": 480,
+          "src": "./assets/covers/optimized/d7c7fb2cc70c594c3034-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 57890,
+          "height": 960,
+          "src": "./assets/covers/optimized/1167b2b322b9e6f3ad95-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://basket-12.wbbasket.ru/vol1819/part181981/181981941/images/big/1.webp": {
+      "sourceBytes": 199418,
+      "variants": [
+        {
+          "bytes": 46958,
+          "height": 480,
+          "src": "./assets/covers/optimized/14a46478da6f6c33e83c-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 136148,
+          "height": 960,
+          "src": "./assets/covers/optimized/a5bec83f2c9cc8ea2174-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://books.google.es/books/content?id=0vnVzwEACAAJ&printsec=frontcover&img=1&zoom=1&edge=curl": {
+      "sourceBytes": 16489,
+      "variants": [
+        {
+          "bytes": 8804,
+          "height": 182,
+          "src": "./assets/covers/optimized/be4327fd64a678ed612b-128.webp",
+          "width": 128
+        }
+      ]
+    },
+    "https://cdn.azbooka.ru/cv/w1100/2b0d3151-9254-4d1c-b7b1-9da8fee19b0c.jpg": {
+      "sourceBytes": 850425,
+      "variants": [
+        {
+          "bytes": 54832,
+          "height": 469,
+          "src": "./assets/covers/optimized/1d91f256308089c4ec9b-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 169496,
+          "height": 938,
+          "src": "./assets/covers/optimized/d463533d41aadf914299-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://cdn.eksmo.ru/v2/ITD000000001126869/COVER/cover1__w820.jpg": {
+      "sourceBytes": 201871,
+      "variants": [
+        {
+          "bytes": 48394,
+          "height": 473,
+          "src": "./assets/covers/optimized/12d3f80dc59be10dd12f-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 137048,
+          "height": 947,
+          "src": "./assets/covers/optimized/19ec17229be80219687c-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://cdn.insales-shop.ru/images/products/1/4891/936096539/9785002119424.jpg": {
+      "sourceBytes": 902372,
+      "variants": [
+        {
+          "bytes": 38262,
+          "height": 450,
+          "src": "./assets/covers/optimized/7b08ca29ec90cae5ea44-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 123232,
+          "height": 900,
+          "src": "./assets/covers/optimized/c887453bd27e767d3f94-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://cdn.shopify.com/s/files/1/1056/2678/collections/c77220f95ae9e40f9459e4687d0305e4.jpg?v=1680208366": {
+      "sourceBytes": 133971,
+      "variants": [
+        {
+          "bytes": 47882,
+          "height": 478,
+          "src": "./assets/covers/optimized/7e4e776e7d016fec460f-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 123898,
+          "height": 852,
+          "src": "./assets/covers/optimized/5c5da3b0b47bf8b347b9-642.webp",
+          "width": 642
+        }
+      ]
+    },
+    "https://content.img-gorod.ru/nomenclature/23/011/2301141-1.jpg?fit=bounds&height=1200&width=0": {
+      "sourceBytes": 198489,
+      "variants": [
+        {
+          "bytes": 59860,
+          "height": 471,
+          "src": "./assets/covers/optimized/107ca30502dd77850ade-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 212576,
+          "height": 941,
+          "src": "./assets/covers/optimized/6c8c0a4a4a37053c5f77-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://domigrushek-shop.ru/upload/resize_cache/import/images/500_1000_1/00000155868.jpg": {
+      "sourceBytes": 78778,
+      "variants": [
+        {
+          "bytes": 24660,
+          "height": 360,
+          "src": "./assets/covers/optimized/7236427096414fa54388-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 39476,
+          "height": 500,
+          "src": "./assets/covers/optimized/e79091cda6105aaf6315-500.webp",
+          "width": 500
+        }
+      ]
+    },
+    "https://fantlab.ru/images/editions/big/139381?r=1492544443": {
+      "sourceBytes": 21790,
+      "variants": [
+        {
+          "bytes": 13796,
+          "height": 287,
+          "src": "./assets/covers/optimized/4ee9fea4f04fb7d7e392-200.webp",
+          "width": 200
+        }
+      ]
+    },
+    "https://files.books.ru/pic/5630001-5631000/5630808/005630808.jpg": {
+      "sourceBytes": 12641,
+      "variants": [
+        {
+          "bytes": 9122,
+          "height": 189,
+          "src": "./assets/covers/optimized/1faa391650f89159ffef-150.webp",
+          "width": 150
+        }
+      ]
+    },
+    "https://img.klubok.com/img/used/2021/03/16/29088/29088624_2.jpg": {
+      "sourceBytes": 31503,
+      "variants": [
+        {
+          "bytes": 22332,
+          "height": 400,
+          "src": "./assets/covers/optimized/33b78e40bd49597b10f9-300.webp",
+          "width": 300
+        }
+      ]
+    },
+    "https://imo10.labirint.ru/books/794020/cover.jpg/484-0": {
+      "sourceBytes": 32062,
+      "variants": [
+        {
+          "bytes": 26100,
+          "height": 481,
+          "src": "./assets/covers/optimized/77d4f6d4890d838a82c0-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 34482,
+          "height": 647,
+          "src": "./assets/covers/optimized/7480f0e86fa4167f66fc-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://kniga.lv/_img/product/50/1/72/1717521465/w320_h340_cover_q70.webp": {
+      "sourceBytes": 17372,
+      "variants": [
+        {
+          "bytes": 19464,
+          "height": 340,
+          "src": "./assets/covers/optimized/ba9d6a8a0a722862677e-320.webp",
+          "width": 320
+        }
+      ]
+    },
+    "https://kniga.lv/_img/product/65/2/64/1717521489/w320_h400_cover_q70.webp": {
+      "sourceBytes": 23216,
+      "variants": [
+        {
+          "bytes": 25734,
+          "height": 400,
+          "src": "./assets/covers/optimized/55b8c5e673b1d21db5a1-320.webp",
+          "width": 320
+        }
+      ]
+    },
+    "https://murawei.de/media/catalog/product/cache/4dc18b930b0dff0c603a30cbc24c4481/image/71133a5b4/narodnye-russkie-skazki-2025.jpg": {
+      "sourceBytes": 105974,
+      "variants": [
+        {
+          "bytes": 59468,
+          "height": 472,
+          "src": "./assets/covers/optimized/7129b4db133e5b4b393e-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 94214,
+          "height": 700,
+          "src": "./assets/covers/optimized/11c8717ab9b0d8bf1071-534.webp",
+          "width": 534
+        }
+      ]
+    },
+    "https://pictures.abebooks.com/isbn/9785170557073-us.jpg": {
+      "sourceBytes": 55536,
+      "variants": [
+        {
+          "bytes": 33326,
+          "height": 450,
+          "src": "./assets/covers/optimized/4d5b12f4608f87de0fe8-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 37974,
+          "height": 500,
+          "src": "./assets/covers/optimized/98104d2c223fec6568a0-400.webp",
+          "width": 400
+        }
+      ]
+    },
+    "https://prod-bb-images.akamaized.net/book-covers/coverimage-9785171720230-bookwire-2025-11-14t19-19.jpg?w=400": {
+      "sourceBytes": 106721,
+      "variants": [
+        {
+          "bytes": 44520,
+          "height": 566,
+          "src": "./assets/covers/optimized/36d0024b09828c786e3e-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 52564,
+          "height": 629,
+          "src": "./assets/covers/optimized/6773414f46112eba6f6c-400.webp",
+          "width": 400
+        }
+      ]
+    },
+    "https://resources.cdn-kaspi.kz/img/m/p/h88/hb9/64228433166366.jpg?format=gallery-large": {
+      "sourceBytes": 148397,
+      "variants": [
+        {
+          "bytes": 30760,
+          "height": 477,
+          "src": "./assets/covers/optimized/7da1fbed653b9fbf3c6b-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 53850,
+          "height": 699,
+          "src": "./assets/covers/optimized/b7b3dd82734872c13dda-528.webp",
+          "width": 528
+        }
+      ]
+    },
+    "https://s.f.kz/prod/5461/5460806_1000.jpg": {
+      "sourceBytes": 237822,
+      "variants": [
+        {
+          "bytes": 28886,
+          "height": 380,
+          "src": "./assets/covers/optimized/acc5bf8298b6f88b65ef-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 78936,
+          "height": 761,
+          "src": "./assets/covers/optimized/7e82d91be03982386721-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://static.mnogoknig.com/media/1169628/conversions/1cd9cef6-fec3-498d-9b19-34fd9b4b1c6a-large.webp": {
+      "sourceBytes": 165338,
+      "variants": [
+        {
+          "bytes": 32378,
+          "height": 475,
+          "src": "./assets/covers/optimized/fcc7987802b6a3bd66e2-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 86330,
+          "height": 950,
+          "src": "./assets/covers/optimized/2c43e22e0dca6b80c93b-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://static.richfamily.ru/photo/34/28/342899/1.webp": {
+      "sourceBytes": 86336,
+      "variants": [
+        {
+          "bytes": 34034,
+          "height": 401,
+          "src": "./assets/covers/optimized/6a23baec32ee5074d1ad-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 102630,
+          "height": 802,
+          "src": "./assets/covers/optimized/2fcaf2c5a0ae62e53d97-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-2a3b6987dd2d.webp": {
+      "sourceBytes": 43338,
+      "variants": [
+        {
+          "bytes": 34114,
+          "height": 562,
+          "src": "./assets/covers/optimized/4851e23da956cc448158-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 47756,
+          "height": 756,
+          "src": "./assets/covers/optimized/2d79fb14b1c79c1e535a-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-436fc748983f.webp": {
+      "sourceBytes": 47786,
+      "variants": [
+        {
+          "bytes": 35838,
+          "height": 565,
+          "src": "./assets/covers/optimized/df93076ba4ee65411953-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 53052,
+          "height": 760,
+          "src": "./assets/covers/optimized/d5c25665caa8be58e36a-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-5c0b287e6e1e.webp": {
+      "sourceBytes": 55468,
+      "variants": [
+        {
+          "bytes": 44202,
+          "height": 566,
+          "src": "./assets/covers/optimized/c836fe2a32b2e1fb4aa1-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 60708,
+          "height": 761,
+          "src": "./assets/covers/optimized/c5f3804ea060d323eeeb-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-6d119d2ccb53.webp": {
+      "sourceBytes": 43446,
+      "variants": [
+        {
+          "bytes": 35378,
+          "height": 599,
+          "src": "./assets/covers/optimized/d09d359326a4e5e49308-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 46910,
+          "height": 805,
+          "src": "./assets/covers/optimized/13944dbddc6e79a45338-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-6d3090f466eb.webp": {
+      "sourceBytes": 46432,
+      "variants": [
+        {
+          "bytes": 37206,
+          "height": 470,
+          "src": "./assets/covers/optimized/00b06ed9d587ef765b12-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 51376,
+          "height": 632,
+          "src": "./assets/covers/optimized/a47bb68d32d53f0094f8-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-726d7dfa3300.webp": {
+      "sourceBytes": 44614,
+      "variants": [
+        {
+          "bytes": 35716,
+          "height": 566,
+          "src": "./assets/covers/optimized/a96124132381b74c182b-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 48526,
+          "height": 761,
+          "src": "./assets/covers/optimized/400de111dc594870f768-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-81b148aa764e.webp": {
+      "sourceBytes": 30774,
+      "variants": [
+        {
+          "bytes": 26042,
+          "height": 566,
+          "src": "./assets/covers/optimized/4e3b1d663007f180938e-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 33210,
+          "height": 761,
+          "src": "./assets/covers/optimized/182a0361d6c668998bd7-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-8b16df7d56a8.webp": {
+      "sourceBytes": 56662,
+      "variants": [
+        {
+          "bytes": 45926,
+          "height": 530,
+          "src": "./assets/covers/optimized/16d016d273b05ae96868-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 61956,
+          "height": 713,
+          "src": "./assets/covers/optimized/1b3ff603ed4713aabdd4-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-b7cea0217bd7.webp": {
+      "sourceBytes": 32598,
+      "variants": [
+        {
+          "bytes": 27180,
+          "height": 466,
+          "src": "./assets/covers/optimized/8b7dcbec556cd457778e-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 35080,
+          "height": 626,
+          "src": "./assets/covers/optimized/33f5ff0de647c965f5f9-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-c4a30deef770.webp": {
+      "sourceBytes": 46836,
+      "variants": [
+        {
+          "bytes": 39756,
+          "height": 514,
+          "src": "./assets/covers/optimized/803fd95f2c90530fd44e-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 50434,
+          "height": 691,
+          "src": "./assets/covers/optimized/98a834b6b4b5b94994c0-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://www.moscowbooks.ru/image/book/815/w600/i815533.jpg": {
+      "sourceBytes": 115764,
+      "variants": [
+        {
+          "bytes": 42898,
+          "height": 450,
+          "src": "./assets/covers/optimized/ff4369e0d84e63eee724-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 100928,
+          "height": 750,
+          "src": "./assets/covers/optimized/b3b497964a2f1d0c4699-600.webp",
+          "width": 600
+        }
+      ]
+    },
+    "https://www.moscowbooks.ru/image/book/847/w600/i847915.jpg": {
+      "sourceBytes": 72445,
+      "variants": [
+        {
+          "bytes": 30274,
+          "height": 367,
+          "src": "./assets/covers/optimized/06b88d53fb75aefb0599-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 63686,
+          "height": 612,
+          "src": "./assets/covers/optimized/6a5907778b878693aefb-600.webp",
+          "width": 600
+        }
+      ]
+    }
+  },
+  "version": 1
+}

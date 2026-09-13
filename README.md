@@ -63,8 +63,29 @@ reports out of this public catalog repository.
 
 ## Cover handling
 
-Book covers are loaded from public source URLs. If an external image is unavailable,
-the catalog replaces it with a local text placeholder instead of leaving a broken image.
+The catalog uses local WebP copies of the existing public cover images, with variants
+up to 360 and 720 pixels wide. The browser selects a size for the screen; the main
+book cover loads with high priority, and related covers load near the viewport.
+Content hashes in image filenames let browsers reuse unchanged covers between pages.
+
+Prepare copies after adding or correcting public covers:
+
+```powershell
+python -m pip install Pillow
+python optimize_covers.py
+```
+
+This processes only the existing `data/books.js`, preserving book data and original
+cover URLs. It writes `assets/covers/optimized/`, `assets/covers/manifest.json` and
+the responsive image references in `data/books.js`; publish these assets along with
+the updated HTML/data files. `--refresh` downloads existing URLs again when their
+image content has changed. Downloads have size/time limits, and failed downloads
+retain the original source fallback. Originals are cached in the local temp directory.
+
+Normal exports reuse the manifest without downloading images or requiring Pillow.
+A corrected source URL cannot pick up a previously cached cover. New covers without
+prepared variants use their original URL until the next optimization. Unavailable
+images are replaced by a text placeholder instead of a broken image.
 
 ## Book pages
 
