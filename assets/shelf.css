@@ -147,7 +147,7 @@
 .shelf-author, .shelf-availability { margin: 5px 0; color: var(--muted); font-size: 13px; line-height: 1.4; }
 .shelf-waitlist { color: var(--blue); font-size: 13px; }
 .shelf-checkout { padding: 14px 0 4px; }
-.shelf-primary { background: var(--green); border-color: var(--green); color: white; }
+.shelf-primary { flex-direction: column; gap: 0; background: var(--green); border-color: var(--green); color: white; }
 .shelf-status {
   position: fixed;
   bottom: 16px;

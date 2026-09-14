@@ -153,7 +153,7 @@
       offset += items.length;
       if (payload.length > limits.startLength) return '<p class="shelf-note">Не удалось подготовить ссылку для этой книги.</p>';
       return `<div class="shelf-checkout">${batches.length > 1 ? `<p class="shelf-note">Заказ ${index + 1}: книги ${range}</p>` : ""}
-        <a class="shelf-button shelf-primary" data-shelf-checkout href="https://t.me/VLS_Biblio_bot?start=${payload}" target="_blank" rel="noreferrer">Проверить в боте (${items.length}) →</a></div>`;
+        <a class="shelf-button shelf-primary" data-shelf-checkout href="https://t.me/VLS_Biblio_bot?start=${payload}" target="_blank" rel="noreferrer"><span>${items.length === 1 ? "Запросить книгу" : `Запросить выбранные: ${items.length}`}</span><span>через Телеграм</span></a></div>`;
     }).join("");
   }
 

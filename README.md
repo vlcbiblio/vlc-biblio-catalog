@@ -15,7 +15,8 @@ Favorite buttons use a heart on each cover: outline when unsaved, red and filled
 when saved. Click again to remove the book. The heart in the top navigation opens
 the favorites list. Buttons also work with a keyboard and have accessible labels.
 
-Open the basket to review and remove books before using **Проверить в боте**.
+Open the basket to review and remove books before using **Запросить выбранные: N
+через Телеграм** (or **Запросить книгу через Телеграм** for one book).
 Books are grouped by the existing public `libraryKey`; unknown owners are kept
 separate. Each link opens the bot's existing draft and confirmation flow. Books
 are not reserved by adding them to the basket or favorites. The bot checks
