@@ -402,7 +402,7 @@
         .related-track { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
       }
     </style>
-    <link rel="stylesheet" href="./assets/shelf.css" />
+    <link rel="stylesheet" href="./assets/shelf.css?v=heart-1" />
   </head>
   <body>
     <main class="page">
@@ -415,7 +415,7 @@
     </main>
 
     <script src="./data/books.js?v=a85b9d76467ec2eb"></script>
-    <script src="./assets/shelf.js"></script>
+    <script src="./assets/shelf.js?v=heart-1"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
       const botUrl = "https://t.me/VLS_Biblio_bot";
@@ -562,14 +562,19 @@
       function relatedCardMarkup(book) {
         return `
           <article class="related-card">
+            <div class="related-cover-wrap">
             <a class="related-card-link" href="${escapeHtml(relatedUrl(book))}">
             <div class="related-cover">${coverMarkup(book, true)}</div>
+            </a>
+            ${window.BiblioShelf.favoriteMarkup(book)}
+            </div>
+            <a class="related-card-link" href="${escapeHtml(relatedUrl(book))}">
             <div class="related-body">
               <h3 class="related-title">${escapeHtml(book.title || "Без названия")}</h3>
               <p class="related-author">${escapeHtml(book.author || "Автор не указан")}</p>
             </div>
             </a>
-            ${window.BiblioShelf.controlsMarkup(book)}
+            ${window.BiblioShelf.controlsMarkup(book, false)}
           </article>
         `;
       }
@@ -631,7 +636,7 @@
         document.title = `${book.title || "Книга"} | VLC Biblio`;
         content.innerHTML = `
           <article class="book">
-            <div class="cover">${coverMarkup(book)}</div>
+            <div class="cover">${coverMarkup(book)}${window.BiblioShelf.favoriteMarkup(book)}</div>
             <div class="body">
               ${badgesMarkup(book)}
               <h1>${escapeHtml(book.title || "Без названия")}</h1>
@@ -639,7 +644,7 @@
               <dl class="details">${detailsMarkup(book)}</dl>
               <p class="annotation">${escapeHtml(book.annotation || "Описание пока не добавлено.")}</p>
               <p class="collection-note">${escapeHtml(collectionNote(book))}</p>
-              ${window.BiblioShelf.controlsMarkup(book)}
+              ${window.BiblioShelf.controlsMarkup(book, false)}
               <div class="actions">
                 ${libraryAction(book) ? `<a class="${libraryAction(book).isTelegram ? "telegram-action" : ""}" href="${escapeHtml(libraryAction(book).href)}" target="_blank" rel="noreferrer">${actionLabelMarkup(libraryAction(book))}</a>` : ""}
                 <a href="${escapeHtml(correctionUrl(book))}" target="_blank" rel="noreferrer">Хочу сообщить об ошибке</a>

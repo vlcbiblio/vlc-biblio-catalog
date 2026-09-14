@@ -11,6 +11,10 @@ reload, and reopening the site in this browser. Tabs on the same site share the
 lists. Another browser, browser profile, or device has separate lists; clearing
 site storage removes them. They are not linked to a Telegram account.
 
+Favorite buttons use a heart on each cover: outline when unsaved, red and filled
+when saved. Click again to remove the book. The heart in the top navigation opens
+the favorites list. Buttons also work with a keyboard and have accessible labels.
+
 Open the basket to review and remove books before using **Проверить в боте**.
 Books are grouped by the existing public `libraryKey`; unknown owners are kept
 separate. Each link opens the bot's existing draft and confirmation flow. Books

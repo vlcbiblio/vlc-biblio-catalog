@@ -4,7 +4,14 @@
   gap: 8px;
 }
 .shelf-nav { justify-content: flex-end; padding: 14px 0; }
-.shelf-controls { margin-top: 10px; }
+.catalog-summary .shelf-nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--summary-gap);
+  padding: 0;
+}
+.shelf-controls { margin-top: 10px; align-items: center; }
+.shelf-controls:empty { display: none; }
 .shelf-button {
   display: inline-flex;
   align-items: center;
@@ -42,8 +49,52 @@
   text-align: center;
 }
 .grid .shelf-controls { margin-top: auto; padding-top: 10px; }
-.grid .shelf-button, .related-card .shelf-button { width: 100%; }
+.grid .shelf-button:not(.shelf-favorite), .related-card .shelf-button:not(.shelf-favorite) { width: 100%; }
 .related-card > .shelf-controls { padding: 0 12px 12px; }
+.shelf-heart {
+  width: 22px;
+  height: 22px;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.shelf-button.shelf-favorite {
+  --shelf-heart-active: #d63b3b;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 253, 248, 0.9);
+  color: var(--muted);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+.shelf-button.shelf-favorite:hover {
+  background: var(--paper);
+  color: var(--shelf-heart-active);
+  transform: scale(1.05);
+}
+.shelf-button.shelf-favorite:active { transform: scale(0.94); }
+.shelf-button.shelf-favorite[aria-pressed="true"] { color: var(--shelf-heart-active); }
+.shelf-favorite[aria-pressed="true"] .shelf-heart { fill: currentColor; stroke: none; }
+.cover > .shelf-favorite, .related-cover-wrap > .shelf-favorite {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(38, 35, 31, 0.12);
+}
+.related-cover-wrap { position: relative; }
+.shelf-row .shelf-favorite { background: #f5efe6; }
+@media (prefers-reduced-motion: reduce) {
+  .shelf-button.shelf-favorite { transition: none; }
+}
 .shelf-dialog {
   width: min(720px, calc(100% - 24px));
   max-height: calc(100dvh - 32px);

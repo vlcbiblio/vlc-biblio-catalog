@@ -32,23 +32,36 @@
   }
   readLists();
 
+  function heartMarkup() {
+    return '<svg class="shelf-heart" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>';
+  }
+
+  function buttonLabel(list, selected) {
+    return list === "cart" ? (selected ? "В корзине ✓" : "В корзину")
+      : (selected ? "Убрать из избранного" : "Добавить в избранное");
+  }
+
   function buttonMarkup(list, book) {
     const id = String(book.id);
     const selected = has(list, id);
-    const label = list === "cart" ? (selected ? "В корзине ✓" : "В корзину")
-      : (selected ? "♥ В избранном" : "♡ В избранное");
-    return `<button class="shelf-button" type="button" data-shelf-toggle="${list}" data-shelf-id="${escape(id)}" aria-pressed="${selected}" aria-label="${escape(label + ': ' + (book.title || 'Без названия'))}">${label}</button>`;
+    const label = buttonLabel(list, selected);
+    const favorite = list === "favorites";
+    return `<button class="shelf-button${favorite ? " shelf-favorite" : ""}" type="button" data-shelf-toggle="${list}" data-shelf-id="${escape(id)}" aria-pressed="${selected}" aria-label="${escape(label + ': ' + (book.title || 'Без названия'))}" title="${escape(label)}">${favorite ? heartMarkup() : label}</button>`;
   }
 
-  function controlsMarkup(book) {
-    return `<div class="shelf-controls">${canAdd(book) || has("cart", book.id) ? buttonMarkup("cart", book) : ""}${buttonMarkup("favorites", book)}</div>`;
+  function favoriteMarkup(book) {
+    return buttonMarkup("favorites", book);
+  }
+
+  function controlsMarkup(book, includeFavorite = true) {
+    return `<div class="shelf-controls">${canAdd(book) || has("cart", book.id) ? buttonMarkup("cart", book) : ""}${includeFavorite ? favoriteMarkup(book) : ""}</div>`;
   }
 
   const toolbar = document.querySelector("[data-shelf-toolbar]");
   if (toolbar) {
     toolbar.innerHTML = `<nav class="shelf-nav" aria-label="Мои списки">
       <button class="shelf-button" type="button" data-shelf-open="cart">Корзина <span data-shelf-count="cart">0</span></button>
-      <button class="shelf-button" type="button" data-shelf-open="favorites">♡ Избранное <span data-shelf-count="favorites">0</span></button>
+      <button class="shelf-button shelf-favorites-nav" type="button" data-shelf-open="favorites" title="Избранное">${heartMarkup()} Избранное <span data-shelf-count="favorites">0</span></button>
     </nav>`;
   }
   const dialog = document.createElement("dialog");
@@ -148,7 +161,7 @@
     dialog.querySelector("#shelf-title").textContent = `${activeList === "cart" ? "Корзина" : "Избранное"} · ${lists[activeList].length}`;
     let markup;
     if (!lists[activeList].length) {
-      markup = `<p class="shelf-empty">${activeList === "cart" ? "Корзина пока пуста. Добавляйте книги из каталога, а затем проверьте список перед отправкой в бот." : "Здесь будут книги, которые вы хотите сохранить на потом. Нажмите «В избранное» на карточке книги."}</p>`;
+      markup = `<p class="shelf-empty">${activeList === "cart" ? "Корзина пока пуста. Добавляйте книги из каталога, а затем проверьте список перед отправкой в бот." : "Здесь будут книги, которые вы хотите сохранить на потом. Нажмите на сердечко на карточке книги."}</p>`;
     } else if (activeList === "favorites") {
       markup = `<p class="shelf-note">Сохранённые книги на потом. Доступные книги можно добавить в корзину.</p><ul class="shelf-list">${lists.favorites.map((id) => rowMarkup(id)).join("")}</ul>`;
     } else {
@@ -193,10 +206,11 @@
       if (!book) return;
       const list = button.dataset.shelfToggle;
       const selected = has(list, book.id);
-      const label = list === "cart" ? (selected ? "В корзине ✓" : "В корзину") : (selected ? "♥ В избранном" : "♡ В избранное");
-      button.textContent = label;
+      const label = buttonLabel(list, selected);
+      if (list === "cart") button.textContent = label;
       button.setAttribute("aria-pressed", String(selected));
       button.setAttribute("aria-label", label + ": " + (book.title || "Без названия"));
+      button.setAttribute("title", label);
     });
     if (dialog.open) renderList();
   }
@@ -221,6 +235,6 @@
     if (event.key === null || event.key?.startsWith(prefix)) { readLists(); sync(); }
   });
   window.addEventListener("pageshow", () => { if (storageAvailable) readLists(); sync(); });
-  window.BiblioShelf = Object.freeze({ controlsMarkup });
+  window.BiblioShelf = Object.freeze({ controlsMarkup, favoriteMarkup });
   sync();
 })();
