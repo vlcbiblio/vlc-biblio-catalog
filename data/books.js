@@ -827,7 +827,7 @@ window.BIBLIO_BOOKS = [
     "catalogStatus": "Частная библиотека",
     "libraryKey": "user:29cb368aa115",
     "sourceKind": "user",
-    "availability": "reserved",
+    "availability": "available",
     "cover": "https://books.google.es/books/content?id=0vnVzwEACAAJ&printsec=frontcover&img=1&zoom=1&edge=curl",
     "isbn": "978-5-00195-589-4",
     "year": "2023",
