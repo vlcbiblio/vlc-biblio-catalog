@@ -854,7 +854,7 @@ window.BIBLIO_BOOKS = [
     "catalogStatus": "Частная библиотека",
     "libraryKey": "user:29cb368aa115",
     "sourceKind": "user",
-    "availability": "available",
+    "availability": "reserved",
     "cover": "https://kniga.lv/_img/product/65/2/64/1717521489/w320_h400_cover_q70.webp",
     "isbn": "978-5-00211-332-3",
     "year": "2024",
