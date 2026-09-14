@@ -236,24 +236,6 @@
         margin-bottom: 14px;
       }
 
-      .actions .telegram-action[hidden] {
-        display: none;
-      }
-
-      .actions .telegram-action[aria-disabled="true"] {
-        border-color: var(--line);
-        background: #eee7d8;
-        color: var(--muted);
-        pointer-events: none;
-      }
-
-      .request-note {
-        margin: 12px 0 0;
-        color: var(--muted);
-        font-size: 12px;
-        line-height: 1.25;
-      }
-
       .related-tabs {
         display: flex;
         flex-wrap: wrap;
@@ -304,12 +286,6 @@
         text-decoration: none;
       }
 
-      .book.is-selected,
-      .related-card.is-selected {
-        border-color: var(--green);
-        box-shadow: 0 0 0 2px rgba(47, 111, 94, 0.18);
-      }
-
       .related-card-link {
         display: flex;
         flex: 1;
@@ -325,37 +301,6 @@
       .related-card-link:focus-visible {
         outline: 3px solid rgba(47, 111, 94, 0.35);
         outline-offset: -3px;
-      }
-
-      .related-select {
-        position: absolute;
-        z-index: 2;
-        top: 8px;
-        left: 8px;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        border: 1px solid rgba(221, 212, 197, 0.96);
-        border-radius: 999px;
-        background: rgba(255, 253, 248, 0.94);
-        color: var(--green);
-        cursor: pointer;
-        font-size: 12px;
-        font-weight: 800;
-        line-height: 1;
-        padding: 6px 8px;
-        box-shadow: 0 6px 16px rgba(38, 35, 31, 0.12);
-      }
-
-      .related-select input {
-        width: 15px;
-        height: 15px;
-        margin: 0;
-        accent-color: var(--green);
-      }
-
-      .related-select[hidden] {
-        display: none;
       }
 
       .related-cover {
@@ -457,10 +402,12 @@
         .related-track { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
       }
     </style>
+    <link rel="stylesheet" href="./assets/shelf.css" />
   </head>
   <body>
     <main class="page">
       <a class="back" href="./">← Назад к каталогу</a>
+      <div data-shelf-toolbar></div>
       <section id="content"></section>
       <footer class="site-footer">
         <a class="privacy-link" href="./privacy.html">Конфиденциальность</a>
@@ -468,6 +415,7 @@
     </main>
 
     <script src="./data/books.js?v=a85b9d76467ec2eb"></script>
+    <script src="./assets/shelf.js"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
       const botUrl = "https://t.me/VLS_Biblio_bot";
@@ -478,7 +426,6 @@
       };
       const relatedCollator = new Intl.Collator("ru", { numeric: true, sensitivity: "base" });
       const content = document.querySelector("#content");
-      const selectedBookIds = new Set();
 
       function escapeHtml(value) {
         return String(value ?? "")
@@ -549,29 +496,9 @@
         return `<span>${escapeHtml(action.label)}</span>`;
       }
 
-      function requestUrl(book) {
-        const key = encodeURIComponent(`book_${book.requestId || book.id || book.isbn || ""}`.replaceAll("-", ""));
-        return `${botUrl}?start=${key}`;
-      }
-
-      function requestBookId(book) {
-        return String(book.requestId || "").replace(/\D+/g, "");
-      }
-
-      function bulkRequestUrl(ids) {
-        const cleanIds = ids.map((id) => String(id).replace(/\D+/g, "")).filter(Boolean);
-        if (!cleanIds.length) return "";
-        const key = encodeURIComponent(`books_${cleanIds.join("_")}`);
-        return `${botUrl}?start=${key}`;
-      }
-
       function correctionUrl(book) {
         const key = encodeURIComponent(`fix_${book.requestId || book.id || book.isbn || ""}`.replaceAll("-", ""));
         return `${botUrl}?start=${key}`;
-      }
-
-      function canRequestBook(book) {
-        return book.section === "exchange" && book.availability === "available";
       }
 
       function canJoinWaitlist(book) {
@@ -584,13 +511,6 @@
             href: `${botUrl}?start=wait_${encodeURIComponent(book.requestId)}`,
             isTelegram: true,
             isWaitlist: true,
-          };
-        }
-        if (canRequestBook(book)) {
-          return {
-            href: requestUrl(book),
-            label: "Запросить книгу через Телеграм",
-            isTelegram: true,
           };
         }
         if (book.section === "library") {
@@ -639,24 +559,9 @@
         return `./book.html?id=${encodeURIComponent(book.id || book.requestId || "")}`;
       }
 
-      function bookSelectionMarkup(book, hidden = false) {
-        const requestId = requestBookId(book);
-        if (!requestId || !canRequestBook(book)) return "";
+      function relatedCardMarkup(book) {
         return `
-            <label class="related-select" ${hidden ? "hidden" : ""}>
-              <input class="related-select-input" type="checkbox" data-request-book-id="${escapeHtml(requestId)}" aria-label="Выбрать книгу: ${escapeHtml(book.title || "Без названия")}" ${selectedBookIds.has(requestId) ? "checked" : ""} />
-              <span>Выбрать</span>
-            </label>
-          `;
-      }
-
-      function relatedCardMarkup(book, kind) {
-        const requestId = requestBookId(book);
-        const selectable = kind === "library" && requestId && canRequestBook(book);
-        const selectMarkup = selectable ? bookSelectionMarkup(book) : "";
-        return `
-          <article class="related-card ${selectable ? "related-card-selectable" : ""}" data-request-book-id="${escapeHtml(requestId)}">
-            ${selectMarkup}
+          <article class="related-card">
             <a class="related-card-link" href="${escapeHtml(relatedUrl(book))}">
             <div class="related-cover">${coverMarkup(book, true)}</div>
             <div class="related-body">
@@ -664,6 +569,7 @@
               <p class="related-author">${escapeHtml(book.author || "Автор не указан")}</p>
             </div>
             </a>
+            ${window.BiblioShelf.controlsMarkup(book)}
           </article>
         `;
       }
@@ -687,8 +593,8 @@
         return { author: sameAuthor, library: sameLibrary };
       }
 
-      function relatedListMarkup(items, kind) {
-        return `<div class="related-track">${items.map((item) => relatedCardMarkup(item, kind)).join("")}</div>`;
+      function relatedListMarkup(items) {
+        return `<div class="related-track">${items.map((item) => relatedCardMarkup(item)).join("")}</div>`;
       }
 
       function relatedSectionMarkup(book) {
@@ -704,43 +610,9 @@
                 <button class="related-tab" type="button" role="tab" data-related-tab="library" aria-selected="${active === "library"}" ${collections.library.length ? "" : "disabled"}>В этой же библиотеке</button>
               </div>
             </div>
-            <div class="related-results" aria-live="polite">${relatedListMarkup(activeItems, active)}</div>
+            <div class="related-results" aria-live="polite">${relatedListMarkup(activeItems)}</div>
           </section>
         `;
-      }
-
-      function updateBulkRequest() {
-        const selected = Array.from(selectedBookIds);
-        const href = bulkRequestUrl(selected);
-        const tooLong = href && (new URL(href).searchParams.get("start") || "").length > 64;
-
-        content.querySelectorAll(".related-select-input").forEach((input) => {
-          input.checked = selectedBookIds.has(input.dataset.requestBookId);
-          input.closest(".book, .related-card").classList.toggle("is-selected", input.checked);
-        });
-
-        const action = content.querySelector(".telegram-action");
-        if (action) {
-          const defaultAction = libraryAction(book);
-          action.hidden = !selected.length && !defaultAction?.isTelegram;
-          const target = selected.length ? href : defaultAction?.isTelegram ? defaultAction.href : "";
-          if (!target || tooLong) {
-            action.setAttribute("aria-disabled", "true");
-            action.setAttribute("href", "#");
-          } else {
-            action.removeAttribute("aria-disabled");
-            action.setAttribute("href", target);
-          }
-          action.innerHTML = selected.length
-            ? `<span>Запросить выбранные: ${selected.length}</span><span>через Телеграм</span>`
-            : actionLabelMarkup(defaultAction || { isTelegram: true });
-        }
-
-        const note = content.querySelector(".request-note");
-        if (note) {
-          note.hidden = !tooLong;
-          note.textContent = tooLong ? "Слишком много книг для одной ссылки Telegram" : "";
-        }
       }
 
       function setRelatedTab(section, kind) {
@@ -752,17 +624,14 @@
         section.querySelectorAll(".related-tab").forEach((tab) => {
           tab.setAttribute("aria-selected", String(tab.dataset.relatedTab === kind));
         });
-        section.querySelector(".related-results").innerHTML = relatedListMarkup(collections[kind], kind);
-        const currentSelection = content.querySelector(".book .related-select");
-        if (currentSelection) currentSelection.hidden = kind !== "library";
-        updateBulkRequest();
+        section.querySelector(".related-results").innerHTML = relatedListMarkup(collections[kind]);
       }
 
       function renderBook(book) {
         document.title = `${book.title || "Книга"} | VLC Biblio`;
         content.innerHTML = `
           <article class="book">
-            <div class="cover">${bookSelectionMarkup(book, true)}${coverMarkup(book)}</div>
+            <div class="cover">${coverMarkup(book)}</div>
             <div class="body">
               ${badgesMarkup(book)}
               <h1>${escapeHtml(book.title || "Без названия")}</h1>
@@ -770,18 +639,16 @@
               <dl class="details">${detailsMarkup(book)}</dl>
               <p class="annotation">${escapeHtml(book.annotation || "Описание пока не добавлено.")}</p>
               <p class="collection-note">${escapeHtml(collectionNote(book))}</p>
+              ${window.BiblioShelf.controlsMarkup(book)}
               <div class="actions">
                 ${libraryAction(book) ? `<a class="${libraryAction(book).isTelegram ? "telegram-action" : ""}" href="${escapeHtml(libraryAction(book).href)}" target="_blank" rel="noreferrer">${actionLabelMarkup(libraryAction(book))}</a>` : ""}
-                ${!libraryAction(book)?.isTelegram ? '<a class="telegram-action" href="#" target="_blank" rel="noreferrer" hidden></a>' : ""}
                 <a href="${escapeHtml(correctionUrl(book))}" target="_blank" rel="noreferrer">Хочу сообщить об ошибке</a>
                 <a href="${escapeHtml(googleSearchUrl(book))}" target="_blank" rel="noreferrer">Google</a>
               </div>
-              <p class="request-note" role="status" hidden></p>
             </div>
           </article>
           ${relatedSectionMarkup(book)}
         `;
-        updateBulkRequest();
       }
 
       function renderMissing() {
@@ -798,24 +665,11 @@
       else renderMissing();
 
       content.addEventListener("click", (event) => {
-        const disabledAction = event.target.closest('.telegram-action[aria-disabled="true"]');
-        if (disabledAction) {
-          event.preventDefault();
-          return;
-        }
         const tab = event.target.closest(".related-tab");
         if (!tab) return;
         const section = tab.closest(".related");
         if (!section) return;
         setRelatedTab(section, tab.dataset.relatedTab);
-      });
-
-      content.addEventListener("change", (event) => {
-        if (!event.target.matches(".related-select-input")) return;
-        const requestId = event.target.dataset.requestBookId;
-        if (event.target.checked) selectedBookIds.add(requestId);
-        else selectedBookIds.delete(requestId);
-        updateBulkRequest();
       });
 
       content.addEventListener("error", (event) => {

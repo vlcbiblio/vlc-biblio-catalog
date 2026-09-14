@@ -2,6 +2,44 @@
 
 Static catalog prototype for VLC Biblio.
 
+## Basket and favorites
+
+Both the catalog and book pages have persistent browser-local **Корзина** and
+**Избранное** lists. Available private books can be added to the basket; any book
+can be saved as a favorite. The same lists are available after page navigation,
+reload, and reopening the site in this browser. Tabs on the same site share the
+lists. Another browser, browser profile, or device has separate lists; clearing
+site storage removes them. They are not linked to a Telegram account.
+
+Open the basket to review and remove books before using **Проверить в боте**.
+Books are grouped by the existing public `libraryKey`; unknown owners are kept
+separate. Each link opens the bot's existing draft and confirmation flow. Books
+are not reserved by adding them to the basket or favorites. The bot checks
+current availability, ownership, and duplicate requests before submission.
+
+Orders respect the bot's limit of 30 books and Telegram's
+[64-character `start` parameter limit](https://core.telegram.org/bots/features#deep-linking).
+Larger groups get separate links labeled with the corresponding
+book ranges. Unavailable or removed books stay visible in the basket, but are not
+included in checkout. Reserved books retain their waitlist link. The basket stays
+intact after opening Telegram because the static site cannot know whether the
+reader confirmed the request; readers remove ordered books themselves.
+
+`assets/shelf.js` and `assets/shelf.css` provide the shared behavior and UI.
+Only public book IDs are saved in `localStorage`, under path-scoped
+`vlc-biblio:shelf:v1:` keys. If storage is blocked, the current page remains usable
+and displays a notice that the lists cannot be persisted.
+
+Browser checks use synthetic books and block external requests:
+
+```powershell
+python -X utf8 -m unittest test_shelf test_catalog_navigation test_cover_loading -v
+```
+
+Publish both shared assets together with `index.html`, `book.html`, and
+`privacy.html` to make these features available on GitHub Pages. No bot restart
+is needed for this site change.
+
 ## GitHub Pages
 
 1. Open repository settings.
