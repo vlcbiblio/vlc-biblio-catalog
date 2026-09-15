@@ -83,6 +83,8 @@
 .shelf-button.shelf-favorite:active { transform: scale(0.94); }
 .shelf-button.shelf-favorite[aria-pressed="true"] { color: var(--shelf-heart-active); }
 .shelf-favorite[aria-pressed="true"] .shelf-heart { fill: currentColor; stroke: none; }
+/* Keep cover overlays below the sticky catalog controls. */
+.cover, .related-cover-wrap { isolation: isolate; }
 .cover > .shelf-favorite, .related-cover-wrap > .shelf-favorite {
   position: absolute;
   right: 10px;
