@@ -52,6 +52,8 @@ class CoverLoadingTests(unittest.TestCase):
                     for width in (1280, 390):
                         with self.subTest(width=width):
                             page = browser.new_page(viewport={"width": width, "height": 844})
+                            page.route("https://telegram.org/js/telegram-web-app.js*", lambda route: route.fulfill(
+                                content_type="application/javascript", body=""))
                             requests = []
                             errors = []
                             page.on("request", lambda request: requests.append(request.url) if request.resource_type == "image" else None)

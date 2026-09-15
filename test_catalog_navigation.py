@@ -70,6 +70,8 @@ class CatalogNavigationTests(unittest.TestCase):
 
     def setUp(self):
         self.context = self.browser.new_context(viewport={"width": 1280, "height": 900})
+        self.context.route("https://telegram.org/js/telegram-web-app.js*", lambda route: route.fulfill(
+            content_type="application/javascript", body=""))
         self.page = self.context.new_page()
         self.errors = []
         self.page.on("pageerror", lambda error: self.errors.append(str(error)))

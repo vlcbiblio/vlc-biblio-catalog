@@ -68,7 +68,9 @@ class ShelfTests(unittest.TestCase):
         self.page.goto(self.url)
 
     def route(self, route):
-        if not route.request.url.startswith(self.url):
+        if route.request.url.startswith("https://telegram.org/js/telegram-web-app.js?"):
+            route.fulfill(content_type="application/javascript", body="")
+        elif not route.request.url.startswith(self.url):
             self.external.append(route.request.url)
             route.abort()
         else:
@@ -122,6 +124,114 @@ class ShelfTests(unittest.TestCase):
         row.locator('[data-shelf-toggle="favorites"]').click()
         self.assertEqual(self.page.locator(".shelf-row").count(), 0)
         self.assertTrue(self.page.locator(".shelf-empty").is_visible())
+
+    def mock_telegram(self, platform="android"):
+        self.context.add_init_script("""
+            window.telegramEvents = [];
+            window.Telegram = { WebApp: {
+                platform: PLATFORM, initData: '', version: '8.0',
+                isVersionAtLeast: () => true,
+                ready: () => window.telegramEvents.push(['ready']),
+                openTelegramLink: url => window.telegramEvents.push(['open', url]),
+                close: () => window.telegramEvents.push(['close']),
+            }};
+        """.replace("PLATFORM", json.dumps(platform)))
+        self.page.reload()
+
+    def assert_telegram_handoff(self, expected_url):
+        self.assertEqual(self.page.evaluate("window.telegramEvents"), [
+            ["ready"], ["open", expected_url], ["close"],
+        ])
+        self.assertEqual(len(self.context.pages), 1)
+
+    def test_telegram_checkout_from_catalog_and_book_keeps_full_basket(self):
+        self.mock_telegram()
+        self.button(1).click()
+        self.button(2).click()
+        for path, width in [("", 1280), ("book.html?id=1", 390)]:
+            with self.subTest(path=path, width=width):
+                self.page.set_viewport_size({"width": width, "height": 844})
+                self.page.goto(self.url + path)
+                self.assertEqual(self.page.evaluate("window.telegramEvents"), [["ready"]])
+                self.open_list()
+                link = self.page.locator("[data-shelf-checkout]")
+                self.assertTrue(link.is_visible())
+                self.assertTrue(self.page.locator(".shelf-dialog").evaluate(
+                    "node => node.scrollWidth <= node.clientWidth"))
+                # Exercise both nested-span clicks and keyboard activation.
+                if path:
+                    link.focus()
+                    self.page.keyboard.press("Enter")
+                else:
+                    link.locator("span").first.click()
+                self.assert_telegram_handoff("https://t.me/VLS_Biblio_bot?start=books_1_2")
+                self.assertEqual(self.page.url, self.url + path)
+                self.page.reload()
+                self.assertEqual(self.page.locator('[data-shelf-count="cart"]').inner_text(), "2")
+
+    def test_telegram_waitlist_from_cart_and_book_opens_the_bot(self):
+        self.mock_telegram()
+        self.button(1).click()
+        self.replace_books([
+            {**book, "availability": "reserved"} if book["id"] == "1" else book
+            for book in BOOKS
+        ])
+        self.page.reload()
+        self.open_list()
+        self.page.locator(".shelf-waitlist").click()
+        self.assert_telegram_handoff("https://t.me/VLS_Biblio_bot?start=wait_1")
+        self.page.goto(self.url + "book.html?id=41")
+        self.page.locator('.book a[href$="start=wait_41"]').click()
+        self.assert_telegram_handoff("https://t.me/VLS_Biblio_bot?start=wait_41")
+
+    def assert_browser_checkout(self):
+        # Fulfill the popup locally; never contact Telegram from a test.
+        self.context.route("https://t.me/**", lambda route: route.fulfill(
+            content_type="text/html", body="<title>Telegram link test</title>"))
+        self.button(1).click()
+        self.open_list()
+        with self.page.expect_popup() as opened:
+            self.page.locator("[data-shelf-checkout]").click()
+        popup = opened.value
+        popup.wait_for_load_state()
+        self.assertEqual(popup.url, "https://t.me/VLS_Biblio_bot?start=books_1")
+        popup.close()
+        self.assertEqual(self.page.locator('[data-shelf-count="cart"]').inner_text(), "1")
+
+    def test_checkout_without_telegram_sdk_uses_regular_browser_link(self):
+        self.assert_browser_checkout()
+
+    def test_checkout_with_sdk_in_regular_browser_uses_regular_link(self):
+        self.mock_telegram(platform="unknown")
+        self.assert_browser_checkout()
+        self.assertEqual(self.page.evaluate("window.telegramEvents"), [])
+
+    def test_checkout_with_failed_telegram_bridge_falls_back_to_regular_link(self):
+        self.mock_telegram()
+        self.page.evaluate("""() => {
+            window.Telegram.WebApp.openTelegramLink = () => { throw new Error('bridge unavailable'); };
+        }""")
+        self.assert_browser_checkout()
+        self.assertEqual(self.page.evaluate("window.telegramEvents"), [["ready"]])
+
+    def test_old_telegram_client_uses_regular_link(self):
+        self.mock_telegram()
+        self.page.evaluate("window.Telegram.WebApp.isVersionAtLeast = () => false")
+        self.assert_browser_checkout()
+        self.assertEqual(self.page.evaluate("window.telegramEvents"), [["ready"]])
+
+    def test_failed_close_does_not_open_a_duplicate_checkout(self):
+        self.mock_telegram()
+        self.page.evaluate("""() => {
+            window.Telegram.WebApp.close = () => { throw new Error('close unavailable'); };
+        }""")
+        self.button(1).click()
+        self.open_list()
+        self.page.locator("[data-shelf-checkout]").click()
+        self.assertEqual(self.page.evaluate("window.telegramEvents"), [
+            ["ready"], ["open", "https://t.me/VLS_Biblio_bot?start=books_1"],
+        ])
+        self.assertEqual(len(self.context.pages), 1)
 
     def test_independent_owners_and_unknown_libraries_never_share_checkout(self):
         self.button(1).click()
@@ -181,6 +291,7 @@ class ShelfTests(unittest.TestCase):
         self.button(1).click()
         other.wait_for_function('document.querySelector(\'[data-shelf-count="cart"]\').textContent === "1"')
         with self.browser.new_context() as fresh:
+            fresh.route("**/*", self.route)
             page = fresh.new_page()
             page.goto(self.url)
             self.assertEqual(page.locator('[data-shelf-count="cart"]').inner_text(), "0")

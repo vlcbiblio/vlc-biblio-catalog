@@ -30,6 +30,15 @@ included in checkout. Reserved books retain their waitlist link. The basket stay
 intact after opening Telegram because the static site cannot know whether the
 reader confirmed the request; readers remove ordered books themselves.
 
+When opened from the bot's **Каталог книг** button, the catalog uses the official
+[Telegram Mini App SDK](https://core.telegram.org/bots/webapps#initializing-mini-apps).
+`assets/telegram-links.js` handles Telegram links, including basket checkout and
+waitlists, with `WebApp.openTelegramLink()` and then closes the Mini App to reveal
+the chat. Keyboard-button launches work even when `initData` is empty. Normal
+browsers retain their regular links, as do clients with an unavailable bridge.
+Checkout still opens the existing bot draft; it does not submit an order or clear
+the basket. No bot restart is needed.
+
 `assets/shelf.js` and `assets/shelf.css` provide the shared behavior and UI.
 Only public book IDs are saved in `localStorage`, under path-scoped
 `vlc-biblio:shelf:v1:` keys. If storage is blocked, the current page remains usable
@@ -41,7 +50,7 @@ Browser checks use synthetic books and block external requests:
 python -X utf8 -m unittest test_shelf test_catalog_navigation test_cover_loading -v
 ```
 
-Publish both shared assets together with `index.html`, `book.html`, and
+Publish `shelf.js`, `shelf.css`, and `telegram-links.js` together with `index.html`, `book.html`, and
 `privacy.html` to make these features available on GitHub Pages. No bot restart
 is needed for this site change.
 
