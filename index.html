@@ -857,7 +857,7 @@
       </article>
     </section>
 
-    <script src="./data/books.js?v=20260916132207"></script>
+    <script src="./data/books.js?v=20260916140900"></script>
     <script src="./assets/shelf.js?v=checkout-1"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
@@ -1054,16 +1054,21 @@
       }
 
       function collectionNote(book) {
+        let note;
         if (canJoinWaitlist(book)) {
-          return "Книга зарезервирована. Встаньте в очередь, чтобы получить уведомление, когда подойдёт ваша очередь.";
+          note = "Книга зарезервирована. Встаньте в очередь, чтобы получить уведомление, когда подойдёт ваша очередь.";
+        } else if (book.section === "exchange") {
+          note = "Книга в частной коллекции. Вы можете запросить книгу на время.";
+        } else if (book.availability === "planned") {
+          note = "Книга собирается для передачи в библиотеку Pilar Faus.";
+        } else if (book.availability === "transferred" || book.availability === "given") {
+          note = "Книга передана в библиотеку Pilar Faus.";
+        } else if (book.availability === "accepted") {
+          note = "Книга принята в фонд библиотеки Pilar Faus.";
+        } else {
+          note = "Книга относится к библиотеке Pilar Faus.";
         }
-        if (book.section === "exchange") {
-          return "Книга в частной коллекции. Вы можете запросить книгу на время.";
-        }
-        if (book.availability === "planned") return "Книга собирается для передачи в библиотеку Pilar Faus.";
-        if (book.availability === "transferred" || book.availability === "given") return "Книга передана в библиотеку Pilar Faus.";
-        if (book.availability === "accepted") return "Книга принята в фонд библиотеки Pilar Faus.";
-        return "Книга относится к библиотеке Pilar Faus.";
+        return [note, book.locationNote].filter(Boolean).join(" ");
       }
 
       function statusLabel(book) {

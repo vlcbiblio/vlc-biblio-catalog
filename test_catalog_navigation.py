@@ -31,6 +31,10 @@ BOOKS = [
     }
     for number in range(96)
 ]
+BOOKS[24]["locationNote"] = (
+    "Местоположение: Сагунто. Доступность метро на станциях Colón и Aragón "
+    "в определённые дни и часы."
+)
 
 
 class CatalogHandler(SimpleHTTPRequestHandler):
@@ -180,6 +184,14 @@ class CatalogNavigationTests(unittest.TestCase):
         expect(self.page).to_have_url(f"{self.base_url}book.html?id=test-24")
         self.page.locator("a.back").click()
         self.assert_catalog(0, section="", search="")
+
+    def test_owner_location_note_follows_private_collection_note(self):
+        self.page.goto(f"{self.base_url}book.html?id=test-24")
+        expect(self.page.locator(".collection-note")).to_have_text(
+            "Книга в частной коллекции. Вы можете запросить книгу на время. "
+            "Местоположение: Сагунто. Доступность метро на станциях Colón и Aragón "
+            "в определённые дни и часы."
+        )
 
     def test_legacy_book_link_preserves_saved_catalog(self):
         self.open_catalog()

@@ -16,6 +16,12 @@ DEFAULT_BOOK_PAGE = ROOT / "book.html"
 BAD_STATUSES = {"bad_photo", "rejected"}
 EXCHANGE_MARKERS = ("книгообмен", "каталог")
 INTERNAL_CATALOG_STATUSES = {"На согласовании"}
+OWNER_LOCATION_NOTES = {
+    "irishkakosh": (
+        "Местоположение: Сагунто. Доступность метро на станциях Colón и Aragón "
+        "в определённые дни и часы."
+    ),
+}
 
 # These existing catalog entries were reviewed manually because their metadata
 # does not contain a reliable age marker (or describes young-adult fiction).
@@ -166,6 +172,13 @@ def library_key_for(row, section):
     return f"user:{owner_hash}"
 
 
+def location_note_for(row, section):
+    if section != "exchange":
+        return ""
+    username = clean(row.get("username")).lstrip("@").casefold()
+    return OWNER_LOCATION_NOTES.get(username, "")
+
+
 def has_public_book_data(row):
     if clean(row.get("status")) in BAD_STATUSES:
         return False
@@ -195,6 +208,7 @@ def public_book(row):
         "year": clean(row.get("publication_year")),
         "publisher": clean(row.get("publisher")),
         "annotation": clean(row.get("annotation")),
+        "locationNote": location_note_for(row, section),
         "sourceUrl": clean(row.get("metadata_source_url")),
         "livelibUrl": clean(row.get("livelib_url")),
         "wildberriesUrl": clean(row.get("wildberries_url")),
@@ -239,7 +253,11 @@ def write_books(output, books):
     covers = json.loads(manifest_path.read_text(encoding="utf-8")).get("covers", {}) if manifest_path.is_file() else {}
     public_books = []
     for book in books:
-        public = {key: value for key, value in book.items() if key != "coverImage"}
+        public = {
+            key: value
+            for key, value in book.items()
+            if key != "coverImage" and (key != "locationNote" or value)
+        }
         # Match the exact source URL, so a corrected cover never uses an old image.
         variants = covers.get(book.get("cover"), {}).get("variants", [])
         if variants and all((root / image["src"]).is_file() for image in variants):

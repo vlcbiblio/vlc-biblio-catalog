@@ -8,6 +8,16 @@ import export_catalog as export
 
 
 class CatalogOnlyExportTests(unittest.TestCase):
+    def test_irishkakosh_private_books_get_location_note(self):
+        expected = (
+            "Местоположение: Сагунто. Доступность метро на станциях Colón и Aragón "
+            "в определённые дни и часы."
+        )
+        self.assertEqual(export.location_note_for({"username": "@IrishkaKosh"}, "exchange"), expected)
+        self.assertEqual(export.location_note_for({"username": "irishkakosh"}, "exchange"), expected)
+        self.assertEqual(export.location_note_for({"username": "IrishkaKosh"}, "library"), "")
+        self.assertEqual(export.location_note_for({"username": "another_user"}, "exchange"), "")
+
     def test_audience_uses_metadata_and_reviewed_overrides(self):
         self.assertTrue(export.ADULT_REQUEST_IDS.isdisjoint(export.CHILDREN_REQUEST_IDS))
         self.assertEqual(export.audience_for({
