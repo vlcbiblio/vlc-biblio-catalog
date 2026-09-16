@@ -19,7 +19,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=978-5-488-01240-0",
     "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=978-5-488-01240-0",
     "addedAt": "2026-09-16T15:22:12",
-    "updatedAt": "2026-09-16T17:58:39"
+    "updatedAt": "2026-09-16T17:59:30"
   },
   {
     "id": "b-59438aa1fe58",
