@@ -416,7 +416,7 @@
       </footer>
     </main>
 
-    <script src="./data/books.js?v=20260915230045"></script>
+    <script src="./data/books.js?v=20260916132207"></script>
     <script src="./assets/shelf.js?v=checkout-1"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
@@ -425,6 +425,10 @@
       const labels = {
         library: "Библиотека Pilar Faus",
         exchange: "Частная библиотека",
+      };
+      const audienceLabels = {
+        children: "Детская литература",
+        adult: "Взрослая литература",
       };
       const relatedCollator = new Intl.Collator("ru", { numeric: true, sensitivity: "base" });
       const content = document.querySelector("#content");
@@ -536,7 +540,10 @@
         if (book.section === "exchange") {
           return "Книга в частной коллекции. Вы можете запросить книгу на время.";
         }
-        return "Книга в библиотеке Pilar Faus.";
+        if (book.availability === "planned") return "Книга собирается для передачи в библиотеку Pilar Faus.";
+        if (book.availability === "transferred" || book.availability === "given") return "Книга передана в библиотеку Pilar Faus.";
+        if (book.availability === "accepted") return "Книга принята в фонд библиотеки Pilar Faus.";
+        return "Книга относится к библиотеке Pilar Faus.";
       }
 
       function detailsMarkup(book) {
@@ -544,6 +551,7 @@
           ["ISBN", book.isbn],
           ["Год выпуска", book.year],
           ["Издательство", book.publisher],
+          ["Раздел", audienceLabels[book.audience]],
           ["Обновлено", book.updatedAt ? new Date(book.updatedAt).toLocaleDateString("ru") : ""],
         ].filter((detail) => detail && detail[1]);
 
@@ -552,9 +560,16 @@
           .join("");
       }
 
+      function statusLabel(book) {
+        if (book.section === "exchange") return "🏠 Частная библиотека";
+        if (book.availability === "planned") return "🎁 Собирается для Pilar Faus";
+        if (book.availability === "transferred" || book.availability === "given") return "📦 Передана в Pilar Faus";
+        if (book.availability === "accepted") return "📚 В фонде Pilar Faus";
+        return "📍 Pilar Faus";
+      }
+
       function badgesMarkup(book) {
-        if (book.section === "exchange") return "";
-        return `<div class="badges"><span class="badge ${escapeHtml(book.section)}">${escapeHtml(book.catalogStatus || labels[book.section] || "Книга")}</span></div>`;
+        return `<div class="badges"><span class="badge ${escapeHtml(book.section)}">${escapeHtml(statusLabel(book))}</span></div>`;
       }
 
       function relatedUrl(book) {

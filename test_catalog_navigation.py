@@ -26,6 +26,7 @@ BOOKS = [
         "section": "library" if number < 24 else "exchange",
         "libraryKey": "test-library",
         "availability": "available",
+        "audience": "children" if number % 2 == 0 else "adult",
         "requestId": str(number + 1),
     }
     for number in range(96)
@@ -145,7 +146,7 @@ class CatalogNavigationTests(unittest.TestCase):
         self.page.locator("a.back").click()
         self.assert_catalog(first["scroll"])
         self.page.locator("#sectionFilter").select_option("library")
-        self.page.evaluate("window.scrollTo(0, 700)")
+        self.page.evaluate("window.scrollTo(0, document.querySelector('#grid').offsetTop + 700)")
         second = self.open_visible_book()
         self.page.go_back()
         self.assert_catalog(second["scroll"], section="library")
@@ -196,6 +197,23 @@ class CatalogNavigationTests(unittest.TestCase):
         first = self.open_visible_book()
         self.page.go_back()
         self.assert_catalog(first["scroll"])
+
+    def test_audience_filter_and_public_sections_are_available(self):
+        self.page.goto(self.base_url)
+        expect(self.page.locator("#how-it-works")).to_be_visible()
+        expect(self.page.locator("#business")).to_be_visible()
+        expect(self.page.locator("#faq")).to_be_visible()
+        expect(self.page.locator("#latestGrid .latest-card")).to_have_count(6)
+
+        self.page.locator("#audienceFilter").select_option("children")
+        expect(self.page.locator("#grid .book")).to_have_count(48)
+        self.assertEqual(
+            self.page.locator("#grid .book .badge.exchange").first.inner_text(),
+            "🏠 Частная библиотека",
+        )
+
+        response = self.page.request.get(f"{self.base_url}privacy.html")
+        self.assertEqual(response.status, 200)
 
 
 if __name__ == "__main__":

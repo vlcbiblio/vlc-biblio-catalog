@@ -81,6 +81,12 @@ Rows with book data are exported after Telegram delivery or with an explicit
 such as `chat_id`, `user_id`, `username`, source photos,
 OCR paths, and internal notes are not written to `data/books.js`.
 
+The export also adds the public `audience` value used by the catalog filter.
+Existing books have reviewed request-ID overrides in `export_catalog.py`; a future
+source column named `audience`, `literature_audience`, or `age_group` takes
+precedence, while new rows without one are classified from age wording and book
+metadata. Keep the reviewed sets disjoint when correcting a classification.
+
 ## Publication state
 
 Catalog-only batches use `catalog_batch_id` and `catalog_added_at` in the local

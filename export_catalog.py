@@ -17,6 +17,34 @@ BAD_STATUSES = {"bad_photo", "rejected"}
 EXCHANGE_MARKERS = ("книгообмен", "каталог")
 INTERNAL_CATALOG_STATUSES = {"На согласовании"}
 
+# These existing catalog entries were reviewed manually because their metadata
+# does not contain a reliable age marker (or describes young-adult fiction).
+ADULT_REQUEST_IDS = {
+    "34", "40", "42", "45", "47", "48", "49", "70", "85", "106", "109",
+    "118", "120", "138", "143", "148", "164", "165", "170", "194", "196",
+    "198", "207", "209", "218", "227", "231", "232", "237",
+}
+
+CHILDREN_REQUEST_IDS = set("""
+24 25 23 21 19 17 22 20 16 14 3 1 2 235 95 104 80 44 188 184 180 99 193 212
+107 108 155 78 174 101 176 96 233 89 206 130 149 177 131 162 119 63 52 144
+205 172 221 201 123 214 58 112 102 145 167 128 50 81 190 139 94 234 178 97 113
+86 56 75 28 126 158 219 68 114 134 189 159 141 179 199 43 150 225 72 116 171
+129 79 173 103 73 203 136 140 163 213 181 137 197 67 224 91 98 121 57 187 215
+74 204 220 161 53 39 122 54 236 62 169 151 210 76 222 66 55 146 27 87 93 61 152
+90 186 60 105 82 127 142 51 64 88 200 125 195 208 59 168 230 69 77 115 46 83 175
+124 111 160 153 223 229 185 211 71 183 154 192 166 41 182 147 100 191 92 132 110 117
+133 157 156 202 84 216 135 217 228 226 65 37 36 29 35 30 33 32 38 31 18 26 15 13
+9 11 10 7 6 5 12 4 8
+""".split())
+
+CHILDREN_MARKERS = (
+    "для детей", "детская", "детский", "детей", "ребёнок", "ребенка",
+    "ребёнка", "малыш", "дошколь", "школьник", "школьная", "школьного",
+    "подросток", "подростков", "юный читатель", "юных читателей",
+    "внеклассное чтение", "среднего школьного возраста", "младшего школьного",
+)
+
 
 def clean(value):
     return re.sub(r"\s+", " ", str(value or "")).strip()
@@ -93,6 +121,35 @@ def availability_for(row, section):
     return "available" if section == "exchange" else "transferred"
 
 
+def audience_for(row):
+    explicit = clean(
+        row.get("audience")
+        or row.get("literature_audience")
+        or row.get("age_group")
+    ).lower()
+    if explicit in {"children", "child", "kids", "детская", "дети"}:
+        return "children"
+    if explicit in {"adult", "adults", "взрослая", "взрослые"}:
+        return "adult"
+
+    request_id = clean(row.get("book_number"))
+    if request_id in ADULT_REQUEST_IDS:
+        return "adult"
+    if request_id in CHILDREN_REQUEST_IDS:
+        return "children"
+
+    searchable = " ".join(
+        clean(row.get(field)).lower()
+        for field in ("title", "author", "publisher", "annotation")
+    ).replace("ё", "е")
+    normalized_markers = tuple(marker.replace("ё", "е") for marker in CHILDREN_MARKERS)
+    if any(marker in searchable for marker in normalized_markers):
+        return "children"
+    if re.search(r"(?:^|\D)(?:0|3|6|7|8|10|11|12|14)\s*\+", searchable):
+        return "children"
+    return "adult"
+
+
 def library_key_for(row, section):
     source_kind = source_kind_for(row)
     if source_kind == "library":
@@ -132,6 +189,7 @@ def public_book(row):
         "libraryKey": library_key_for(row, section),
         "sourceKind": source_kind_for(row),
         "availability": availability_for(row, section),
+        "audience": audience_for(row),
         "cover": clean(row.get("preview_url")),
         "isbn": clean(row.get("isbn")),
         "year": clean(row.get("publication_year")),

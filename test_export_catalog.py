@@ -8,6 +8,26 @@ import export_catalog as export
 
 
 class CatalogOnlyExportTests(unittest.TestCase):
+    def test_audience_uses_metadata_and_reviewed_overrides(self):
+        self.assertTrue(export.ADULT_REQUEST_IDS.isdisjoint(export.CHILDREN_REQUEST_IDS))
+        self.assertEqual(export.audience_for({
+            "title": "Приключения котёнка",
+            "annotation": "Для младшего школьного возраста.",
+        }), "children")
+        self.assertEqual(export.audience_for({
+            "title": "Тихий роман",
+            "annotation": "История для взрослого читателя.",
+        }), "adult")
+        self.assertEqual(export.audience_for({
+            "book_number": "42",
+            "title": "Пищеблок",
+            "annotation": "Роман о школьном лагере.",
+        }), "adult")
+        self.assertEqual(export.audience_for({
+            "audience": "детская",
+            "book_number": "42",
+        }), "children")
+
     def test_export_reuses_optimized_images_only_for_the_matching_source(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
