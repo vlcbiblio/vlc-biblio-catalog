@@ -7,6 +7,18 @@
   if (!webApp?.platform || webApp.platform === "unknown") return;
   webApp.ready();
 
+  const externalBrowserButton = document.querySelector("[data-open-external-browser]");
+  if (externalBrowserButton && typeof webApp.openLink === "function" && webApp.isVersionAtLeast("6.1")) {
+    externalBrowserButton.hidden = false;
+    externalBrowserButton.addEventListener("click", () => {
+      const externalUrl = new URL(window.location.href);
+      // Telegram puts Mini App authorization data in the fragment. Never pass it
+      // to an ordinary browser; the catalog state itself lives in the query.
+      externalUrl.hash = "";
+      webApp.openLink(externalUrl.href);
+    });
+  }
+
   document.addEventListener("click", (event) => {
     if (event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
     const link = event.target.closest("a[href]");

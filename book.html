@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="./assets/favicon.png" />
     <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
     <script src="https://telegram.org/js/telegram-web-app.js?63"></script>
-    <script src="./assets/telegram-links.js?v=1" defer></script>
+    <script src="./assets/telegram-links.js?v=2" defer></script>
     <script>
       // Book links use native history, including the previous book's scroll.
       if ("scrollRestoration" in history) history.scrollRestoration = "auto";
@@ -173,6 +173,22 @@
         line-height: 1.4;
         white-space: pre-line;
       }
+
+      .location-note {
+        display: block;
+        margin: 12px 0 0;
+        padding: 12px 14px;
+        border-left: 4px solid var(--gold);
+        border-radius: 4px;
+        background: #fff8e8;
+        color: var(--ink);
+        font-size: 14px;
+        font-weight: 650;
+        line-height: 1.45;
+        white-space: normal;
+      }
+
+      .location-note::before { content: "📍 "; }
 
       .actions {
         display: flex;
@@ -405,7 +421,7 @@
         .related-track { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
       }
     </style>
-    <link rel="stylesheet" href="./assets/shelf.css?v=checkout-1" />
+    <link rel="stylesheet" href="./assets/shelf.css?v=checkout-3" />
   </head>
   <body>
     <main class="page">
@@ -418,7 +434,7 @@
     </main>
 
     <script src="./data/books.js?v=20260916181211"></script>
-    <script src="./assets/shelf.js?v=checkout-1"></script>
+    <script src="./assets/shelf.js?v=checkout-3"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
       const botUrl = "https://t.me/VLS_Biblio_bot";
@@ -549,7 +565,13 @@
         } else {
           note = "Книга относится к библиотеке Pilar Faus.";
         }
-        return [note, book.locationNote].filter(Boolean).join("\n");
+        return note;
+      }
+
+      function locationNoteMarkup(book) {
+        return book.locationNote
+          ? `<strong class="location-note">${escapeHtml(book.locationNote)}</strong>`
+          : "";
       }
 
       function detailsMarkup(book) {
@@ -666,7 +688,7 @@
               <p class="author">${escapeHtml(book.author || "Автор не указан")}</p>
               <dl class="details">${detailsMarkup(book)}</dl>
               <p class="annotation">${escapeHtml(book.annotation || "Описание пока не добавлено.")}</p>
-              <p class="collection-note">${escapeHtml(collectionNote(book))}</p>
+              <div class="collection-note"><span>${escapeHtml(collectionNote(book))}</span>${locationNoteMarkup(book)}</div>
               ${window.BiblioShelf.controlsMarkup(book, false)}
               <div class="actions">
                 ${libraryAction(book) ? `<a class="${libraryAction(book).isTelegram ? "telegram-action" : ""}" href="${escapeHtml(libraryAction(book).href)}" target="_blank" rel="noreferrer">${actionLabelMarkup(libraryAction(book))}</a>` : ""}

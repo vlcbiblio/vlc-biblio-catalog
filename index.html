@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="./assets/favicon.png" />
     <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
     <script src="https://telegram.org/js/telegram-web-app.js?63"></script>
-    <script src="./assets/telegram-links.js?v=1" defer></script>
+    <script src="./assets/telegram-links.js?v=2" defer></script>
     <script>
       // Restore only after the catalog and its filters have been rendered.
       if ("scrollRestoration" in history) history.scrollRestoration = "manual";
@@ -359,6 +359,29 @@
         line-height: 1.25;
       }
 
+      .external-browser-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 40px;
+        padding: 8px 12px;
+        border: 1px solid var(--blue);
+        border-radius: 6px;
+        background: var(--paper);
+        color: var(--blue);
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1.3;
+        cursor: pointer;
+      }
+
+      .external-browser-button[hidden] { display: none; }
+      .external-browser-button:hover { background: rgba(49, 95, 134, 0.07); }
+      .external-browser-button:focus-visible {
+        outline: 3px solid var(--blue);
+        outline-offset: 2px;
+      }
+
       .controls {
         position: sticky;
         top: 0;
@@ -468,6 +491,20 @@
         margin: 0 0 10px;
         color: var(--muted);
         font-size: 14px;
+      }
+
+      .card-location,
+      .location-note {
+        display: block;
+        margin: 0 0 12px;
+        padding: 9px 10px;
+        border-left: 4px solid var(--gold);
+        border-radius: 4px;
+        background: #fff8e8;
+        color: var(--ink);
+        font-size: 13px;
+        font-weight: 650;
+        line-height: 1.4;
       }
 
       .card-action {
@@ -629,6 +666,10 @@
         white-space: pre-line;
       }
 
+      .collection-note .location-note { margin: 12px 0 0; white-space: normal; }
+      .card-location::before,
+      .location-note::before { content: "📍 "; }
+
       .dialog-links,
       .dialog-actions {
         display: flex;
@@ -702,7 +743,7 @@
         .details { grid-template-columns: 1fr; gap: 4px; }
       }
     </style>
-    <link rel="stylesheet" href="./assets/shelf.css?v=checkout-1" />
+    <link rel="stylesheet" href="./assets/shelf.css?v=checkout-3" />
   </head>
   <body>
     <main class="page">
@@ -741,6 +782,9 @@
             <div class="stat"><strong id="libraryCount">0</strong><span>в Библиотеке Pilar Faus</span></div>
             <div class="stat"><strong id="exchangeCount">0</strong><span>частные</span></div>
           </div>
+          <button class="external-browser-button" type="button" data-open-external-browser hidden>
+            🌐 Открыть в браузере
+          </button>
           <div data-shelf-toolbar></div>
         </div>
         <details class="site-menu">
@@ -859,7 +903,7 @@
     </section>
 
     <script src="./data/books.js?v=20260916181211"></script>
-    <script src="./assets/shelf.js?v=checkout-1"></script>
+    <script src="./assets/shelf.js?v=checkout-3"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
       const botUrl = "https://t.me/VLS_Biblio_bot";
@@ -1069,7 +1113,13 @@
         } else {
           note = "Книга относится к библиотеке Pilar Faus.";
         }
-        return [note, book.locationNote].filter(Boolean).join("\n");
+        return note;
+      }
+
+      function locationNoteMarkup(book, className = "location-note") {
+        return book.locationNote
+          ? `<strong class="${className}">${escapeHtml(book.locationNote)}</strong>`
+          : "";
       }
 
       function statusLabel(book) {
@@ -1143,6 +1193,7 @@
               <div class="body">
                 <h2 class="title">${escapeHtml(book.title || "Без названия")}</h2>
                 <p class="author">${escapeHtml(book.author || "Автор не указан")}</p>
+                ${locationNoteMarkup(book, "card-location")}
                 ${libraryAction(book) ? `<a class="card-action ${libraryAction(book).isTelegram ? "telegram-action" : ""}" href="${escapeHtml(libraryAction(book).href)}" target="_blank" rel="noreferrer">${actionLabelMarkup(libraryAction(book))}</a>` : ""}
                 ${window.BiblioShelf.controlsMarkup(book, false)}
               </div>

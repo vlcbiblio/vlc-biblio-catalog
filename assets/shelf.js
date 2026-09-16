@@ -58,11 +58,22 @@
   }
 
   const toolbar = document.querySelector("[data-shelf-toolbar]");
+  let floatingCart;
+  let toolbarCartVisible = true;
   if (toolbar) {
     toolbar.innerHTML = `<nav class="shelf-nav" aria-label="Мои списки">
       <button class="shelf-button" type="button" data-shelf-open="cart">Корзина <span data-shelf-count="cart">0</span></button>
       <button class="shelf-button shelf-favorites-nav" type="button" data-shelf-open="favorites" title="Избранное">${heartMarkup()} Избранное <span data-shelf-count="favorites">0</span></button>
     </nav>`;
+    floatingCart = document.createElement("button");
+    floatingCart.className = "shelf-floating-cart";
+    floatingCart.type = "button";
+    floatingCart.dataset.shelfFloatingOpen = "cart";
+    floatingCart.setAttribute("aria-label", "Открыть корзину");
+    floatingCart.setAttribute("aria-hidden", "true");
+    floatingCart.tabIndex = -1;
+    floatingCart.innerHTML = `<svg class="shelf-floating-cart-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="20" r="1"></circle><circle cx="19" cy="20" r="1"></circle><path d="M3 4h2l2.4 10.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6L21 7H6"></path></svg><span>Корзина</span><span data-shelf-floating-count>0</span>`;
+    document.body.append(floatingCart);
   }
   const dialog = document.createElement("dialog");
   dialog.className = "shelf-dialog";
@@ -76,6 +87,35 @@
   status.setAttribute("role", "status");
   document.body.append(status);
   let statusTimer;
+
+  function syncFloatingCart() {
+    if (!floatingCart) return;
+    const visible = lists.cart.length > 0 && !toolbarCartVisible && !dialog.open;
+    floatingCart.querySelector("[data-shelf-floating-count]").textContent = lists.cart.length;
+    floatingCart.classList.toggle("is-visible", visible);
+    floatingCart.setAttribute("aria-hidden", String(!visible));
+    floatingCart.tabIndex = visible ? 0 : -1;
+    document.documentElement.classList.toggle("has-floating-cart", visible);
+  }
+
+  if (floatingCart) {
+    const toolbarCart = toolbar.querySelector('[data-shelf-open="cart"]');
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(([entry]) => {
+        toolbarCartVisible = entry.isIntersecting;
+        syncFloatingCart();
+      }).observe(toolbarCart);
+    } else {
+      const checkToolbarCart = () => {
+        const rect = toolbarCart.getBoundingClientRect();
+        toolbarCartVisible = rect.bottom > 0 && rect.top < window.innerHeight;
+        syncFloatingCart();
+      };
+      window.addEventListener("scroll", checkToolbarCart, { passive: true });
+      window.addEventListener("resize", checkToolbarCart);
+      checkToolbarCart();
+    }
+  }
 
   function announce(message) {
     if (dialog.open) dialog.querySelector(".shelf-feedback").textContent = message;
@@ -157,6 +197,14 @@
     }).join("");
   }
 
+  function locationMarkup(ids) {
+    const notes = [...new Set(ids.map((id) => byId.get(id)?.locationNote).filter(Boolean))];
+    if (!notes.length) return "";
+    return `<aside class="shelf-location" aria-label="Место передачи книг">
+      ${notes.map((note) => `<p>${escape(note)}</p>`).join("")}
+    </aside>`;
+  }
+
   function renderList() {
     dialog.querySelector("#shelf-title").textContent = `${activeList === "cart" ? "Корзина" : "Избранное"} · ${lists[activeList].length}`;
     let markup;
@@ -177,7 +225,7 @@
       }
       markup = '<p class="shelf-note">Проверьте список и удалите лишнее. Книги разных владельцев оформляются отдельно. Добавление в корзину не резервирует книгу; бот проверит доступность и попросит подтвердить отправку.</p>';
       markup += Array.from(groups.values()).map((ids, index) => `<section class="shelf-group" aria-label="Библиотека ${index + 1}"><h3>Библиотека ${index + 1} · ${ids.length}</h3>
-        <ul class="shelf-list">${ids.map((id, number) => rowMarkup(id, number + 1)).join("")}</ul>${checkoutMarkup(ids)}</section>`).join("");
+        <ul class="shelf-list">${ids.map((id, number) => rowMarkup(id, number + 1)).join("")}</ul>${locationMarkup(ids)}${checkoutMarkup(ids)}</section>`).join("");
       if (unavailable.length) markup += `<section class="shelf-group"><h3>Сейчас недоступны · ${unavailable.length}</h3><p class="shelf-note">Эти книги не включены в запрос. Можно оставить их в избранном или удалить из корзины.</p><ul class="shelf-list">${unavailable.map((id) => rowMarkup(id)).join("")}</ul></section>`;
       if (groups.size) markup += '<p class="shelf-note">После перехода в бот корзина сохраняется. Удалите книги из неё, когда подтвердите заказ.</p>';
     }
@@ -212,22 +260,25 @@
       button.setAttribute("aria-label", label + ": " + (book.title || "Без названия"));
       button.setAttribute("title", label);
     });
+    syncFloatingCart();
     if (dialog.open) renderList();
   }
 
   document.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-shelf-toggle], [data-shelf-open], [data-shelf-close]");
+    const button = event.target.closest("[data-shelf-toggle], [data-shelf-open], [data-shelf-floating-open], [data-shelf-close]");
     if (!button) return;
     if (button.hasAttribute("data-shelf-close")) dialog.close();
-    else if (button.dataset.shelfOpen) {
+    else if (button.dataset.shelfOpen || button.dataset.shelfFloatingOpen) {
       if (storageAvailable) readLists();
-      activeList = button.dataset.shelfOpen;
+      activeList = button.dataset.shelfOpen || button.dataset.shelfFloatingOpen;
       dialog.querySelector(".shelf-feedback").textContent = "";
       renderList();
       dialog.showModal();
       dialog.scrollTop = 0;
+      syncFloatingCart();
     } else toggle(button.dataset.shelfToggle, button.dataset.shelfId);
   });
+  dialog.addEventListener("close", syncFloatingCart);
   dialog.addEventListener("error", (event) => {
     if (event.target.tagName === "IMG") event.target.replaceWith(document.createTextNode("Книга"));
   }, true);

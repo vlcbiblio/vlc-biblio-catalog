@@ -14,7 +14,9 @@ from test_catalog_navigation import sync_playwright
 BOOKS = [
     {"id": str(number), "requestId": str(number), "title": f"Книга {number}",
      "author": "Автор", "section": "exchange", "availability": "available",
-     "libraryKey": "owner-a" if number <= 36 else "owner-b"}
+     "libraryKey": "owner-a" if number <= 36 else "owner-b",
+     "locationNote": ("Местоположение: Сагунто. Доступность метро на станциях Colón и Aragón "
+                      "в определённые дни и часы.") if number <= 36 else ""}
     for number in range(1, 40)
 ] + [
     {"id": "40", "requestId": "40", "title": "В библиотеке", "section": "library"},
@@ -247,6 +249,19 @@ class ShelfTests(unittest.TestCase):
         self.open_list()
         self.assertEqual(self.page.locator("[data-shelf-checkout]").count(), 3)
 
+    def test_cart_shows_transfer_location_before_telegram_checkout(self):
+        self.button(1).click()
+        self.button(2).click()
+        self.open_list()
+        location = self.page.locator(".shelf-location")
+        self.assertEqual(location.count(), 1)
+        self.assertEqual(
+            location.inner_text(),
+            "Местоположение: Сагунто. Доступность метро на станциях Colón и Aragón "
+            "в определённые дни и часы.",
+        )
+        self.assertTrue(location.locator("xpath=following-sibling::div//a[@data-shelf-checkout]").is_visible())
+
     def replace_books(self, books):
         self.page.route("**/data/books.js?*", lambda route: route.fulfill(
             content_type="application/javascript", body=f"window.BIBLIO_BOOKS = {json.dumps(books)};"))
@@ -312,6 +327,20 @@ class ShelfTests(unittest.TestCase):
         self.assertTrue(self.page.locator("[data-shelf-checkout]").is_visible())
         self.assertTrue(self.page.evaluate("document.documentElement.scrollWidth <= innerWidth"))
         self.assertTrue(self.page.locator(".shelf-dialog").evaluate("node => node.scrollWidth <= node.clientWidth"))
+
+    def test_floating_cart_appears_after_toolbar_leaves_view_and_opens_cart(self):
+        floating = self.page.locator("[data-shelf-floating-open]")
+        self.button(1).click()
+        self.assertEqual(floating.get_attribute("aria-hidden"), "true")
+
+        self.page.evaluate("scrollTo(0, document.body.scrollHeight)")
+        self.page.wait_for_function(
+            "document.querySelector('[data-shelf-floating-open]').classList.contains('is-visible')"
+        )
+        self.assertEqual(floating.locator("[data-shelf-floating-count]").inner_text(), "1")
+        floating.click()
+        self.assertTrue(self.page.locator(".shelf-dialog").is_visible())
+        self.assertEqual(floating.get_attribute("aria-hidden"), "true")
 
     def test_corrupt_or_blocked_storage_does_not_break_catalog(self):
         self.page.evaluate("localStorage.setItem('vlc-biblio:shelf:v1:/:cart', '{broken')")

@@ -187,10 +187,11 @@ class CatalogNavigationTests(unittest.TestCase):
 
     def test_owner_location_note_follows_private_collection_note(self):
         self.page.goto(f"{self.base_url}book.html?id=test-24")
-        expect(self.page.locator(".collection-note")).to_have_text(
-            "Книга в частной коллекции. Вы можете запросить книгу на время. "
+        self.assertEqual(
+            self.page.locator(".collection-note").inner_text(),
+            "Книга в частной коллекции. Вы можете запросить книгу на время.\n"
             "Местоположение: Сагунто. Доступность метро на станциях Colón и Aragón "
-            "в определённые дни и часы."
+            "в определённые дни и часы.",
         )
 
     def test_legacy_book_link_preserves_saved_catalog(self):
@@ -212,6 +213,7 @@ class CatalogNavigationTests(unittest.TestCase):
 
     def test_audience_filter_and_public_sections_are_available(self):
         self.page.goto(self.base_url)
+        expect(self.page.locator("[data-open-external-browser]")).to_be_hidden()
         expect(self.page.locator("#how-it-works")).to_be_visible()
         expect(self.page.locator("#business")).to_be_visible()
         expect(self.page.locator("#faq")).to_be_visible()
@@ -226,6 +228,30 @@ class CatalogNavigationTests(unittest.TestCase):
 
         response = self.page.request.get(f"{self.base_url}privacy.html")
         self.assertEqual(response.status, 200)
+
+    def test_telegram_catalog_can_open_a_clean_url_in_external_browser(self):
+        self.page.set_viewport_size({"width": 390, "height": 844})
+        self.context.add_init_script("""
+            window.Telegram = {WebApp: {
+                platform: "android",
+                ready() {},
+                isVersionAtLeast(version) { return version === "6.1"; },
+                openLink(url) { window.openedExternalCatalogUrl = url; },
+            }};
+        """)
+        self.page.goto(f"{self.base_url}?audience=all#tgWebAppData=private-data")
+
+        button = self.page.locator("[data-open-external-browser]")
+        expect(button).to_be_visible()
+        bounds = button.bounding_box()
+        self.assertGreaterEqual(bounds["x"], 0)
+        self.assertLessEqual(bounds["x"] + bounds["width"], 390)
+        button.click()
+
+        self.assertEqual(
+            self.page.evaluate("window.openedExternalCatalogUrl"),
+            f"{self.base_url}?audience=all",
+        )
 
 
 if __name__ == "__main__":
