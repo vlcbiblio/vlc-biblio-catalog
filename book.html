@@ -171,6 +171,7 @@
         color: var(--muted);
         font-size: 14px;
         line-height: 1.4;
+        white-space: pre-line;
       }
 
       .actions {
@@ -416,7 +417,7 @@
       </footer>
     </main>
 
-    <script src="./data/books.js?v=20260916142223"></script>
+    <script src="./data/books.js?v=20260916175839"></script>
     <script src="./assets/shelf.js?v=checkout-1"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
@@ -548,7 +549,7 @@
         } else {
           note = "Книга относится к библиотеке Pilar Faus.";
         }
-        return [note, book.locationNote].filter(Boolean).join(" ");
+        return [note, book.locationNote].filter(Boolean).join("\n");
       }
 
       function detailsMarkup(book) {
