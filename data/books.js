@@ -364,6 +364,34 @@ window.BIBLIO_BOOKS = [
     }
   },
   {
+    "id": "b-aa3b7d292a2f",
+    "requestId": "560",
+    "title": "Чудик-нехочуха",
+    "author": "Веста Васягина",
+    "section": "exchange",
+    "catalogStatus": "Частная библиотека",
+    "libraryKey": "user:c4f090f1125a",
+    "sourceKind": "user",
+    "availability": "available",
+    "audience": "adult",
+    "cover": "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/private/notion-20260916/0679f68c-c2fd-4a04-91d0-5d94fcc15176.jpeg",
+    "isbn": "978-5-222-36025-5",
+    "year": "2021",
+    "publisher": "Феникс-Премьер",
+    "annotation": "Истории о маленьком Чудике, который не любит стричь когти, мыться и есть зелёное, мечтает о собственном драконе и учится быть храбрым, даже когда боится темноты.",
+    "sourceUrl": "https://www.labirint.ru/books/767503/",
+    "livelibUrl": "https://www.livelib.ru/book/1005619219-chudiknehochuha-vesta-vasyagina",
+    "wildberriesUrl": "",
+    "addedAt": "2026-09-16T13:29:14",
+    "updatedAt": "2026-09-16T14:21:11",
+    "coverImage": {
+      "src": "./assets/covers/optimized/667491fbee550be52250-716.webp",
+      "srcset": "./assets/covers/optimized/673c487f56e1839c69e7-360.webp 360w, ./assets/covers/optimized/667491fbee550be52250-716.webp 716w",
+      "width": 716,
+      "height": 925
+    }
+  },
+  {
     "id": "b-45e152304a73",
     "requestId": "559",
     "title": "Маленький красный Трактор и секрет настоящего счастья",
@@ -383,7 +411,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-16T13:28:05",
-    "updatedAt": "2026-09-16T14:20:10"
+    "updatedAt": "2026-09-16T14:21:10"
   },
   {
     "id": "b-009b8b8cdc77",
