@@ -10,7 +10,7 @@ window.BIBLIO_BOOKS = [
     "sourceKind": "library",
     "availability": "transferred",
     "audience": "adult",
-    "cover": "",
+    "cover": "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-27eb7e868205.jpg",
     "isbn": "978-5-488-01240-0",
     "year": "2007",
     "publisher": "Оникс",
