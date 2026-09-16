@@ -364,6 +364,28 @@ window.BIBLIO_BOOKS = [
     }
   },
   {
+    "id": "b-45e152304a73",
+    "requestId": "559",
+    "title": "Маленький красный Трактор и секрет настоящего счастья",
+    "author": "Михаэль Энглер",
+    "section": "exchange",
+    "catalogStatus": "Частная библиотека",
+    "libraryKey": "user:c4f090f1125a",
+    "sourceKind": "user",
+    "availability": "available",
+    "audience": "adult",
+    "cover": "https://booqua.de/images/product_gallery/421642586342_519108.jpg",
+    "isbn": "978-5-04-122789-0",
+    "year": "2022",
+    "publisher": "Эксмодетство",
+    "annotation": "Маленький Трактор много лет живёт и работает на ферме, но однажды ему на смену приходит новая большая машина. Чтобы снова стать полезным и найти друзей, Трум отправляется в незнакомый город. Добрая история о переменах, дружбе и ценности каждого.",
+    "sourceUrl": "https://eksmo.ru/amp/book/trek-malenkiy-traktor-u-n--ITD1175635/",
+    "livelibUrl": "",
+    "wildberriesUrl": "",
+    "addedAt": "2026-09-16T13:28:05",
+    "updatedAt": "2026-09-16T14:20:10"
+  },
+  {
     "id": "b-009b8b8cdc77",
     "requestId": "441",
     "title": "Юникорния. Первый полёт Софии",
