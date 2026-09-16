@@ -331,7 +331,10 @@ class ShelfTests(unittest.TestCase):
     def test_floating_cart_appears_after_toolbar_leaves_view_and_opens_cart(self):
         floating = self.page.locator("[data-shelf-floating-open]")
         self.button(1).click()
-        self.assertEqual(floating.get_attribute("aria-hidden"), "true")
+        self.page.locator('[data-shelf-open="cart"]').scroll_into_view_if_needed()
+        self.page.wait_for_function(
+            "document.querySelector('[data-shelf-floating-open]').getAttribute('aria-hidden') === 'true'"
+        )
 
         self.page.evaluate("scrollTo(0, document.body.scrollHeight)")
         self.page.wait_for_function(
