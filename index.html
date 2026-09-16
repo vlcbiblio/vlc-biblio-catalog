@@ -45,11 +45,12 @@
       }
 
       .topbar {
+        position: relative;
         display: grid;
-        grid-template-columns: minmax(0, 1.7fr) minmax(320px, 1fr);
+        grid-template-columns: minmax(0, 1.7fr) minmax(320px, 1fr) 42px;
         align-items: stretch;
-        gap: 24px;
-        padding-bottom: 22px;
+        gap: 14px;
+        padding-bottom: 10px;
         border-bottom: 1px solid var(--line);
       }
 
@@ -189,12 +190,12 @@
       .site-menu nav a:hover { background: rgba(49, 95, 134, 0.07); }
 
       .content-section {
-        margin-top: 28px;
+        margin-top: 20px;
         scroll-margin-top: 86px;
       }
 
       .section-heading {
-        margin: 0 0 14px;
+        margin: 0 0 10px;
         font-family: Georgia, "Times New Roman", serif;
         font-size: clamp(24px, 4vw, 34px);
         line-height: 1.1;
@@ -209,62 +210,74 @@
       }
 
       .how-it-works {
-        padding: 24px;
+        margin-top: 10px;
+        padding: 16px 18px;
         border: 1px solid var(--line);
         border-radius: 10px;
         background: var(--paper);
       }
 
+      .how-it-works .section-heading { font-size: 24px; }
+
       .steps {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 12px;
-        margin: 18px 0 0;
+        gap: 8px;
+        margin: 10px 0 0;
         padding: 0;
         list-style: none;
       }
 
       .steps li {
-        padding: 16px;
-        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 12px;
+        border-radius: 6px;
         background: #f3eee4;
         font-size: 14px;
         line-height: 1.45;
       }
 
-      .step-icon { display: block; margin-bottom: 8px; font-size: 25px; }
+      .step-icon { flex: 0 0 auto; font-size: 19px; line-height: 1.2; }
 
       .action-cards {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 18px;
+        gap: 10px;
+        margin-top: 12px;
       }
 
       .action-card {
         display: flex;
-        min-height: 230px;
         flex-direction: column;
         align-items: flex-start;
-        padding: 24px;
+        padding: 16px 18px;
         border: 1px solid var(--line);
         border-radius: 10px;
         background: var(--paper);
         box-shadow: var(--shadow);
       }
 
-      .action-card .action-icon { font-size: 32px; }
-      .action-card h3 { margin: 12px 0 8px; font-size: 21px; }
-      .action-card p { margin: 0 0 20px; color: var(--muted); line-height: 1.5; }
+      .action-card h3 {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0 0 5px;
+        font-size: 18px;
+      }
+      .action-card .action-icon { flex: 0 0 auto; font-size: 21px; line-height: 1; }
+      .action-card p { margin: 0 0 12px; color: var(--muted); font-size: 14px; line-height: 1.4; }
 
       .primary-link {
         display: inline-flex;
-        min-height: 42px;
+        min-height: 36px;
         align-items: center;
         margin-top: auto;
         border-radius: 6px;
         background: var(--green);
         color: #fff;
-        padding: 10px 14px;
+        padding: 7px 12px;
         font-weight: 700;
         text-decoration: none;
       }
@@ -654,8 +667,9 @@
 
       @media (max-width: 820px) {
         .topbar { display: block; }
-        .brand-plaque { width: 100%; }
-        .catalog-summary { margin-top: 12px; }
+        .brand-plaque { width: 100%; padding-right: 64px; }
+        .site-menu { position: absolute; top: 0; right: 0; }
+        .catalog-summary { margin-top: 8px; }
         .controls { grid-template-columns: 1fr 1fr; }
         .controls .search { grid-column: 1 / -1; }
         .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -674,7 +688,8 @@
         .brand-plaque {
           padding: 14px;
         }
-        .how-it-works, .action-card, .info-panel { padding: 18px; }
+        .how-it-works, .action-card { padding: 14px; }
+        .info-panel { padding: 18px; }
         .steps, .action-cards { grid-template-columns: 1fr; }
         .controls { position: static; grid-template-columns: 1fr; }
         .controls .search { grid-column: auto; }
@@ -700,18 +715,6 @@
                 частных библиотек участников.
               </p>
             </div>
-            <details class="site-menu">
-              <summary aria-label="Открыть меню">☰</summary>
-              <nav aria-label="Основная навигация">
-                <a href="#catalog">Каталог</a>
-                <a href="#add-book">Подарить книгу</a>
-                <a href="#how-it-works">Как это работает</a>
-                <a href="#business">Для бизнеса</a>
-                <a href="./privacy.html">Конфиденциальность</a>
-                <a href="#about">О проекте</a>
-                <a href="#faq">FAQ</a>
-              </nav>
-            </details>
           </div>
           <nav class="telegram-links" aria-label="Telegram">
             <span class="telegram-item">
@@ -739,6 +742,18 @@
           </div>
           <div data-shelf-toolbar></div>
         </div>
+        <details class="site-menu">
+          <summary aria-label="Открыть меню">☰</summary>
+          <nav aria-label="Основная навигация">
+            <a href="#catalog">Каталог</a>
+            <a href="#add-book">Подарить книгу</a>
+            <a href="#how-it-works">Как это работает</a>
+            <a href="#business">Для бизнеса</a>
+            <a href="./privacy.html">Конфиденциальность</a>
+            <a href="#about">О проекте</a>
+            <a href="#faq">FAQ</a>
+          </nav>
+        </details>
       </section>
 
       <section class="content-section how-it-works" id="how-it-works" aria-labelledby="how-title">
@@ -753,14 +768,12 @@
 
       <section class="content-section action-cards" id="add-book" aria-label="Добавить книгу">
         <article class="action-card">
-          <span class="action-icon" aria-hidden="true">🎁</span>
-          <h3>Подарить книгу библиотеке</h3>
+          <h3><span class="action-icon" aria-hidden="true">🎁</span>Подарить книгу библиотеке</h3>
           <p>Книга будет передана в государственную библиотеку Pilar Faus и станет доступна читателям.</p>
           <a class="primary-link" href="https://t.me/VLS_Biblio_bot" target="_blank" rel="noreferrer">Подарить книгу →</a>
         </article>
         <article class="action-card private">
-          <span class="action-icon" aria-hidden="true">🏠</span>
-          <h3>Добавить в частную библиотеку</h3>
+          <h3><span class="action-icon" aria-hidden="true">🏠</span>Добавить в частную библиотеку</h3>
           <p>Книга остаётся у вас, но другие участники смогут найти её в каталоге и попросить почитать.</p>
           <a class="primary-link" href="https://t.me/VLS_Biblio_bot" target="_blank" rel="noreferrer">Добавить свою книгу →</a>
         </article>
