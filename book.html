@@ -433,7 +433,7 @@
       </footer>
     </main>
 
-    <script src="./data/books.js?v=20260916210821"></script>
+    <script src="./data/books.js?v=20260917083431"></script>
     <script src="./assets/shelf.js?v=checkout-3"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
@@ -554,6 +554,8 @@
         let note;
         if (canJoinWaitlist(book)) {
           note = "Книга зарезервирована. Встаньте в очередь, чтобы получить уведомление, когда подойдёт ваша очередь.";
+        } else if (book.section === "exchange" && book.availability === "unavailable") {
+          note = "Книга пока недоступна для запроса.";
         } else if (book.section === "exchange") {
           note = "Книга в частной коллекции. Вы можете запросить книгу на время.";
         } else if (book.availability === "planned") {
@@ -589,6 +591,7 @@
       }
 
       function statusLabel(book) {
+        if (book.section === "exchange" && book.availability === "unavailable") return "⏸ Пока недоступна";
         if (book.section === "exchange") return "🏠 Частная библиотека";
         if (book.availability === "planned") return "🎁 Собирается для Pilar Faus";
         if (book.availability === "transferred" || book.availability === "given") return "📦 Передана в Pilar Faus";

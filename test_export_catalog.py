@@ -8,6 +8,12 @@ import export_catalog as export
 
 
 class CatalogOnlyExportTests(unittest.TestCase):
+    def test_unavailable_book_keeps_explicit_catalog_state(self):
+        self.assertEqual(export.availability_for({"availability_status": "unavailable"}, "exchange"),
+                         "unavailable")
+        self.assertEqual(export.availability_for({"availability_status": "недоступна"}, "exchange"),
+                         "unavailable")
+
     def test_irishkakosh_private_books_get_location_note(self):
         expected = (
             "Местоположение: Сагунто. Доступность метро на станциях Colón и Aragón "

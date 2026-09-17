@@ -109,6 +109,7 @@ def availability_for(row, section):
     known = {
         "available": "available",
         "reserved": "reserved",
+        "unavailable": "unavailable",
         "given": "given",
         "archived": "archived",
         "planned": "planned",
@@ -116,6 +117,7 @@ def availability_for(row, section):
         "accepted": "accepted",
         "доступна": "available",
         "зарезервирована": "reserved",
+        "недоступна": "unavailable",
         "передана": "given",
         "архив": "archived",
         "запланирована": "planned",
