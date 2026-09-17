@@ -1677,6 +1677,23 @@
         }
       ]
     },
+    "https://booqua.de/images/product_gallery/421642586342_519108.jpg": {
+      "sourceBytes": 644767,
+      "variants": [
+        {
+          "bytes": 34174,
+          "height": 466,
+          "src": "./assets/covers/optimized/ad3c5afd338129ee491b-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 91524,
+          "height": 931,
+          "src": "./assets/covers/optimized/9f441921ae2a50121ae6-720.webp",
+          "width": 720
+        }
+      ]
+    },
     "https://catalog-cdn.detmir.st/media/GHPczEffUBInsl7N4Iv39G4xWXSvgqdpHR2h8OBonmA%3D.jpeg": {
       "sourceBytes": 1530366,
       "variants": [
@@ -3687,6 +3704,3983 @@
           "bytes": 102630,
           "height": 802,
           "src": "./assets/covers/optimized/2fcaf2c5a0ae62e53d97-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-0021bff5db0d.jpg": {
+      "sourceBytes": 366346,
+      "variants": [
+        {
+          "bytes": 47364,
+          "height": 545,
+          "src": "./assets/covers/optimized/bdf0979a0aa8dc5f309c-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 141546,
+          "height": 1090,
+          "src": "./assets/covers/optimized/768cf9ff6bd7425128d3-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-00ec7431c419.jpg": {
+      "sourceBytes": 320261,
+      "variants": [
+        {
+          "bytes": 51258,
+          "height": 492,
+          "src": "./assets/covers/optimized/77a39d8595e8daede603-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 136376,
+          "height": 984,
+          "src": "./assets/covers/optimized/0ff3ee40fcb657c6837c-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-0286253699b6.jpg": {
+      "sourceBytes": 257648,
+      "variants": [
+        {
+          "bytes": 39806,
+          "height": 537,
+          "src": "./assets/covers/optimized/79fbc0084540558c17ac-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 118192,
+          "height": 1074,
+          "src": "./assets/covers/optimized/75816650e73c7662b476-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-02ff20179669.jpg": {
+      "sourceBytes": 333769,
+      "variants": [
+        {
+          "bytes": 41772,
+          "height": 472,
+          "src": "./assets/covers/optimized/66faef796716e8b09b5e-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 125408,
+          "height": 943,
+          "src": "./assets/covers/optimized/377a8a327ecf75067d07-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-034fbabeab3d.jpg": {
+      "sourceBytes": 260072,
+      "variants": [
+        {
+          "bytes": 40152,
+          "height": 494,
+          "src": "./assets/covers/optimized/46a66396694c9c1bc037-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 96352,
+          "height": 989,
+          "src": "./assets/covers/optimized/47c5bd2b380fa97d7cf4-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-03ba16215483.jpg": {
+      "sourceBytes": 339276,
+      "variants": [
+        {
+          "bytes": 49152,
+          "height": 566,
+          "src": "./assets/covers/optimized/51fbcd09fd5a4ebeed65-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 127894,
+          "height": 1133,
+          "src": "./assets/covers/optimized/ebc36a70ea3f72c2491b-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-04edea59e6ef.jpg": {
+      "sourceBytes": 101484,
+      "variants": [
+        {
+          "bytes": 35156,
+          "height": 466,
+          "src": "./assets/covers/optimized/1e696e7604d83c231cb7-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 65396,
+          "height": 699,
+          "src": "./assets/covers/optimized/3f51c0fdcf32b6132735-540.webp",
+          "width": 540
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-08043459d92b.jpg": {
+      "sourceBytes": 106142,
+      "variants": [
+        {
+          "bytes": 20972,
+          "height": 570,
+          "src": "./assets/covers/optimized/bf411a5782ea3c1433df-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 41876,
+          "height": 950,
+          "src": "./assets/covers/optimized/02609aa2a15831e33b33-600.webp",
+          "width": 600
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-0991ae081419.jpg": {
+      "sourceBytes": 356791,
+      "variants": [
+        {
+          "bytes": 59612,
+          "height": 469,
+          "src": "./assets/covers/optimized/db0823e66bac4f4287b3-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 149370,
+          "height": 938,
+          "src": "./assets/covers/optimized/3e30935dfb0d61a3d283-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-0a8b11d38045.jpg": {
+      "sourceBytes": 265279,
+      "variants": [
+        {
+          "bytes": 36868,
+          "height": 537,
+          "src": "./assets/covers/optimized/167e487a206faa3b3402-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 131698,
+          "height": 1074,
+          "src": "./assets/covers/optimized/e9075da9e0e3e7c2962b-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-0c097196d558.jpg": {
+      "sourceBytes": 212366,
+      "variants": [
+        {
+          "bytes": 23408,
+          "height": 495,
+          "src": "./assets/covers/optimized/40bd8c3145d020cc2b80-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 68224,
+          "height": 991,
+          "src": "./assets/covers/optimized/a52c85c607789bcb5f1b-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-0d004056ce08.jpg": {
+      "sourceBytes": 297466,
+      "variants": [
+        {
+          "bytes": 47522,
+          "height": 493,
+          "src": "./assets/covers/optimized/319e0add117c4a97f923-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 139630,
+          "height": 986,
+          "src": "./assets/covers/optimized/a14ed7687800a3e7b5a0-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-0d0b7baba883.jpg": {
+      "sourceBytes": 386214,
+      "variants": [
+        {
+          "bytes": 55096,
+          "height": 464,
+          "src": "./assets/covers/optimized/b1edcfe177493e58b64b-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 163608,
+          "height": 928,
+          "src": "./assets/covers/optimized/7ecba9e691cf4b0314ec-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-0e5caece89af.jpg": {
+      "sourceBytes": 320624,
+      "variants": [
+        {
+          "bytes": 29482,
+          "height": 561,
+          "src": "./assets/covers/optimized/e622661e2613f0d9be3d-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 118984,
+          "height": 1123,
+          "src": "./assets/covers/optimized/62f3fa61cf1b25621b6d-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-0e7e07ca7ce8.jpg": {
+      "sourceBytes": 181162,
+      "variants": [
+        {
+          "bytes": 20874,
+          "height": 561,
+          "src": "./assets/covers/optimized/5d5a965eca0d0466c89e-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 53462,
+          "height": 1122,
+          "src": "./assets/covers/optimized/015cebabc12ca8a9ad06-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-0f16ed4b32a0.jpg": {
+      "sourceBytes": 246850,
+      "variants": [
+        {
+          "bytes": 27930,
+          "height": 454,
+          "src": "./assets/covers/optimized/d88f49a21fe472ff8005-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 79230,
+          "height": 908,
+          "src": "./assets/covers/optimized/439ebfc0c8255ef28d83-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-0f17022f43ec.jpg": {
+      "sourceBytes": 81491,
+      "variants": [
+        {
+          "bytes": 22056,
+          "height": 551,
+          "src": "./assets/covers/optimized/dd7b2dd55fb8b8dcd4f7-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 43212,
+          "height": 826,
+          "src": "./assets/covers/optimized/919603f4c77a9e28131e-540.webp",
+          "width": 540
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-0f62f24d37d9.jpg": {
+      "sourceBytes": 249787,
+      "variants": [
+        {
+          "bytes": 46780,
+          "height": 536,
+          "src": "./assets/covers/optimized/8a53f1e9e648eff792c4-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 107072,
+          "height": 1073,
+          "src": "./assets/covers/optimized/761bf85d49411c8bf363-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-0fd2dc1a9888.jpg": {
+      "sourceBytes": 355275,
+      "variants": [
+        {
+          "bytes": 57842,
+          "height": 469,
+          "src": "./assets/covers/optimized/4eb4290f7c455a31f109-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 150646,
+          "height": 938,
+          "src": "./assets/covers/optimized/3918445f07f022075483-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-11172bbacc1c.jpg": {
+      "sourceBytes": 365742,
+      "variants": [
+        {
+          "bytes": 36636,
+          "height": 562,
+          "src": "./assets/covers/optimized/bd32b5f991d5e84d4ec8-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 140932,
+          "height": 1123,
+          "src": "./assets/covers/optimized/af5df26cde007b4412ef-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-146049b33f84.jpg": {
+      "sourceBytes": 301192,
+      "variants": [
+        {
+          "bytes": 52852,
+          "height": 511,
+          "src": "./assets/covers/optimized/3ea3b32ec4c10e0e407e-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 129986,
+          "height": 1022,
+          "src": "./assets/covers/optimized/cb2b5cf748d9d1aca6eb-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-151ab6b4cf0d.jpg": {
+      "sourceBytes": 220296,
+      "variants": [
+        {
+          "bytes": 18224,
+          "height": 564,
+          "src": "./assets/covers/optimized/82809be53622e714f3f1-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 37216,
+          "height": 1127,
+          "src": "./assets/covers/optimized/ddd3e1afd75e13bd0c64-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-15a02414600e.jpg": {
+      "sourceBytes": 252911,
+      "variants": [
+        {
+          "bytes": 36848,
+          "height": 472,
+          "src": "./assets/covers/optimized/035bf6f6aff68c4a1d5a-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 84224,
+          "height": 944,
+          "src": "./assets/covers/optimized/3501a74b6fad31e30bd8-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-15cc3b039bbe.jpg": {
+      "sourceBytes": 254830,
+      "variants": [
+        {
+          "bytes": 29152,
+          "height": 418,
+          "src": "./assets/covers/optimized/08d05953fcca55acca73-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 69312,
+          "height": 837,
+          "src": "./assets/covers/optimized/2548cc36efb87edb2ae9-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-160aeca1304e.jpg": {
+      "sourceBytes": 259623,
+      "variants": [
+        {
+          "bytes": 51912,
+          "height": 605,
+          "src": "./assets/covers/optimized/d0936390298479a7549d-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 154216,
+          "height": 1209,
+          "src": "./assets/covers/optimized/94cb5ad61358c86fd493-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-1690d42fd82e.jpg": {
+      "sourceBytes": 319640,
+      "variants": [
+        {
+          "bytes": 42220,
+          "height": 545,
+          "src": "./assets/covers/optimized/849e45b2bc37d754d128-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 122022,
+          "height": 1090,
+          "src": "./assets/covers/optimized/39b1089811881cbf0a3b-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-173ceaeb82e8.jpg": {
+      "sourceBytes": 338090,
+      "variants": [
+        {
+          "bytes": 43546,
+          "height": 441,
+          "src": "./assets/covers/optimized/20811421cc5c1d7e388b-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 138180,
+          "height": 882,
+          "src": "./assets/covers/optimized/40e1368a8ba725eddca4-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-181ef4c161a3.jpg": {
+      "sourceBytes": 414301,
+      "variants": [
+        {
+          "bytes": 57870,
+          "height": 449,
+          "src": "./assets/covers/optimized/14eb8d9a8289420a1fe7-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 170368,
+          "height": 898,
+          "src": "./assets/covers/optimized/db32a66cdd109da39d3e-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-191c740b5bd5.jpg": {
+      "sourceBytes": 83008,
+      "variants": [
+        {
+          "bytes": 20924,
+          "height": 568,
+          "src": "./assets/covers/optimized/4ed51293dd8a2f7cdd17-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 25536,
+          "height": 655,
+          "src": "./assets/covers/optimized/893d3afab8a2f111d7a5-415.webp",
+          "width": 415
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-1ea4f60d3522.jpg": {
+      "sourceBytes": 280756,
+      "variants": [
+        {
+          "bytes": 44800,
+          "height": 518,
+          "src": "./assets/covers/optimized/46d4290ad527135c4ae5-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 119230,
+          "height": 1037,
+          "src": "./assets/covers/optimized/5134978eb91ad3560910-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-1f28709eb8bd.jpg": {
+      "sourceBytes": 272419,
+      "variants": [
+        {
+          "bytes": 38050,
+          "height": 475,
+          "src": "./assets/covers/optimized/faa95c9682f21a21fed2-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 102060,
+          "height": 949,
+          "src": "./assets/covers/optimized/e18bc2e4f6be5b63e23a-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-1f5693acf18a.jpg": {
+      "sourceBytes": 302643,
+      "variants": [
+        {
+          "bytes": 38130,
+          "height": 443,
+          "src": "./assets/covers/optimized/daecfcaf95a15bade663-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 121594,
+          "height": 885,
+          "src": "./assets/covers/optimized/f5ac8d8b3228fafcb4dd-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-223c68859d15.jpg": {
+      "sourceBytes": 339324,
+      "variants": [
+        {
+          "bytes": 47742,
+          "height": 453,
+          "src": "./assets/covers/optimized/f1adb4bc9df4cceb7d8f-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 130730,
+          "height": 905,
+          "src": "./assets/covers/optimized/46a1f9d9e736903f3880-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-240f22ab7bfb.jpg": {
+      "sourceBytes": 280512,
+      "variants": [
+        {
+          "bytes": 36902,
+          "height": 509,
+          "src": "./assets/covers/optimized/acc742f4e7c8c2ce04e2-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 119344,
+          "height": 1018,
+          "src": "./assets/covers/optimized/ae17807c3585aca7d063-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-2449967d05e3.jpg": {
+      "sourceBytes": 255967,
+      "variants": [
+        {
+          "bytes": 35714,
+          "height": 409,
+          "src": "./assets/covers/optimized/095b6de4b918934bd0e6-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 78876,
+          "height": 818,
+          "src": "./assets/covers/optimized/fa8ef2d402b5a3090791-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-24b380bfc135.jpg": {
+      "sourceBytes": 36890,
+      "variants": [
+        {
+          "bytes": 14028,
+          "height": 350,
+          "src": "./assets/covers/optimized/e2f6e78a6ec2ce4a50a9-250.webp",
+          "width": 250
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-24f2686e8ac4.jpg": {
+      "sourceBytes": 243079,
+      "variants": [
+        {
+          "bytes": 27052,
+          "height": 483,
+          "src": "./assets/covers/optimized/0427e838bf69582302c8-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 81294,
+          "height": 966,
+          "src": "./assets/covers/optimized/596922de765abb910e93-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-25cac73b0c38.jpg": {
+      "sourceBytes": 339652,
+      "variants": [
+        {
+          "bytes": 52212,
+          "height": 467,
+          "src": "./assets/covers/optimized/479fa3de2fc86ab12fd4-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 133466,
+          "height": 934,
+          "src": "./assets/covers/optimized/d469012014af5f8ea920-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-26ac97c9cd9f.jpg": {
+      "sourceBytes": 305852,
+      "variants": [
+        {
+          "bytes": 56908,
+          "height": 553,
+          "src": "./assets/covers/optimized/112d089efd58e6604e28-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 154668,
+          "height": 1105,
+          "src": "./assets/covers/optimized/9aa618f4e4ef14967557-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-27eb7e868205.jpg": {
+      "sourceBytes": 20576,
+      "variants": [
+        {
+          "bytes": 21762,
+          "height": 386,
+          "src": "./assets/covers/optimized/962ef4a19d24feab6970-300.webp",
+          "width": 300
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-28932ef7ab60.jpg": {
+      "sourceBytes": 281407,
+      "variants": [
+        {
+          "bytes": 47344,
+          "height": 536,
+          "src": "./assets/covers/optimized/8fc314fcb66e5c7f8d56-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 134248,
+          "height": 1072,
+          "src": "./assets/covers/optimized/cdde3a55bae8906fb9ff-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-2a1e47161703.jpg": {
+      "sourceBytes": 348455,
+      "variants": [
+        {
+          "bytes": 55338,
+          "height": 544,
+          "src": "./assets/covers/optimized/0bfbcc4f5f26d9c1583b-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 147500,
+          "height": 1089,
+          "src": "./assets/covers/optimized/c755ac515f801001a9b9-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-2a3b6987dd2d.webp": {
+      "sourceBytes": 43338,
+      "variants": [
+        {
+          "bytes": 34114,
+          "height": 562,
+          "src": "./assets/covers/optimized/4851e23da956cc448158-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 47756,
+          "height": 756,
+          "src": "./assets/covers/optimized/2d79fb14b1c79c1e535a-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-2a684d81be64.jpg": {
+      "sourceBytes": 171860,
+      "variants": [
+        {
+          "bytes": 36504,
+          "height": 541,
+          "src": "./assets/covers/optimized/a7710d3fcf21e8876c11-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 79832,
+          "height": 902,
+          "src": "./assets/covers/optimized/2f62d8373a77babcac8a-600.webp",
+          "width": 600
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-2e0dab56f176.jpg": {
+      "sourceBytes": 267807,
+      "variants": [
+        {
+          "bytes": 39344,
+          "height": 490,
+          "src": "./assets/covers/optimized/0e9b5a19a25b923634ff-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 100972,
+          "height": 979,
+          "src": "./assets/covers/optimized/c679dff08989a8d02d7a-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-2ecb66e4b35d.jpg": {
+      "sourceBytes": 324194,
+      "variants": [
+        {
+          "bytes": 59640,
+          "height": 508,
+          "src": "./assets/covers/optimized/ca70245e7eed7ca3128e-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 146660,
+          "height": 1016,
+          "src": "./assets/covers/optimized/9855ddb117c557a2fb9d-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-2f3a1ce878d5.jpg": {
+      "sourceBytes": 221300,
+      "variants": [
+        {
+          "bytes": 32668,
+          "height": 596,
+          "src": "./assets/covers/optimized/59d883fe2c61845df46c-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 115780,
+          "height": 1192,
+          "src": "./assets/covers/optimized/b9b99684de77623ed62b-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-300db82f394f.jpg": {
+      "sourceBytes": 389447,
+      "variants": [
+        {
+          "bytes": 51264,
+          "height": 451,
+          "src": "./assets/covers/optimized/2350fb13c7dd5ea10ccd-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 156898,
+          "height": 903,
+          "src": "./assets/covers/optimized/de3bab1cd98b90cab78f-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-317f2c6208ce.jpg": {
+      "sourceBytes": 296030,
+      "variants": [
+        {
+          "bytes": 49672,
+          "height": 511,
+          "src": "./assets/covers/optimized/556bdf6dd5a6925509d5-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 121636,
+          "height": 1022,
+          "src": "./assets/covers/optimized/a7e5dd824bcc7cb85c7e-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-34aef7a79c04.jpg": {
+      "sourceBytes": 318886,
+      "variants": [
+        {
+          "bytes": 50900,
+          "height": 485,
+          "src": "./assets/covers/optimized/47effe1f405a01d4a5d0-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 129150,
+          "height": 970,
+          "src": "./assets/covers/optimized/50d1313e9746db53beaf-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-35cb2dfd591a.jpg": {
+      "sourceBytes": 112077,
+      "variants": [
+        {
+          "bytes": 28024,
+          "height": 568,
+          "src": "./assets/covers/optimized/86c93c4a4e35cc21202c-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 37614,
+          "height": 763,
+          "src": "./assets/covers/optimized/cb579277c06e31c66c65-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-381d9747ae44.jpg": {
+      "sourceBytes": 76365,
+      "variants": [
+        {
+          "bytes": 27556,
+          "height": 490,
+          "src": "./assets/covers/optimized/ac7fd39fa5a9a57e67ac-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 32532,
+          "height": 550,
+          "src": "./assets/covers/optimized/01f52d0b677796dc6ed4-404.webp",
+          "width": 404
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-3835c2a4a751.jpg": {
+      "sourceBytes": 311033,
+      "variants": [
+        {
+          "bytes": 47642,
+          "height": 477,
+          "src": "./assets/covers/optimized/1c1b1de918d1885722da-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 126086,
+          "height": 953,
+          "src": "./assets/covers/optimized/d8da0e6bad55398d6f4e-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-394f75f907f8.jpg": {
+      "sourceBytes": 368645,
+      "variants": [
+        {
+          "bytes": 34956,
+          "height": 480,
+          "src": "./assets/covers/optimized/710e1085d9c271edb107-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 108234,
+          "height": 960,
+          "src": "./assets/covers/optimized/760cb8f16ea075abb6d8-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-3a595aa7fd3d.jpg": {
+      "sourceBytes": 1118590,
+      "variants": [
+        {
+          "bytes": 52526,
+          "height": 540,
+          "src": "./assets/covers/optimized/cc6c8f35bf354cb3c87b-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 198886,
+          "height": 1081,
+          "src": "./assets/covers/optimized/c5f7969fc1a00f805d7b-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-3a66eba65f86.jpg": {
+      "sourceBytes": 243361,
+      "variants": [
+        {
+          "bytes": 37486,
+          "height": 550,
+          "src": "./assets/covers/optimized/9a39a6aafa5e661fd7f4-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 105640,
+          "height": 1100,
+          "src": "./assets/covers/optimized/83115139cd527e641cad-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-3aa3b1426952.jpg": {
+      "sourceBytes": 248296,
+      "variants": [
+        {
+          "bytes": 35616,
+          "height": 456,
+          "src": "./assets/covers/optimized/617b2d1fcd1d2f5f2364-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 81658,
+          "height": 912,
+          "src": "./assets/covers/optimized/ae09ae949616dae543a9-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-3c4359f6e184.jpg": {
+      "sourceBytes": 258374,
+      "variants": [
+        {
+          "bytes": 40728,
+          "height": 533,
+          "src": "./assets/covers/optimized/80171061c84262cabac6-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 109402,
+          "height": 1065,
+          "src": "./assets/covers/optimized/a5ab8e92492413af42cc-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-3c6907fbddaf.jpg": {
+      "sourceBytes": 317484,
+      "variants": [
+        {
+          "bytes": 57310,
+          "height": 540,
+          "src": "./assets/covers/optimized/bf4a373e60f8c2efaf1a-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 164298,
+          "height": 1079,
+          "src": "./assets/covers/optimized/73bd0284b5ac41c2943c-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-3d410e1e4589.jpg": {
+      "sourceBytes": 271948,
+      "variants": [
+        {
+          "bytes": 52934,
+          "height": 538,
+          "src": "./assets/covers/optimized/f4685a5fc2c1ec4c97d1-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 126702,
+          "height": 1075,
+          "src": "./assets/covers/optimized/67dd11a6045118e06d64-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-3fb691bf03c2.jpg": {
+      "sourceBytes": 306575,
+      "variants": [
+        {
+          "bytes": 35370,
+          "height": 427,
+          "src": "./assets/covers/optimized/7d5d3560912dd4b3e17e-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 105268,
+          "height": 854,
+          "src": "./assets/covers/optimized/49e17362696eafe6648a-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-402b10c73c02.jpg": {
+      "sourceBytes": 650305,
+      "variants": [
+        {
+          "bytes": 44752,
+          "height": 521,
+          "src": "./assets/covers/optimized/2e3fad33ea27bd8cdfe1-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 126458,
+          "height": 1042,
+          "src": "./assets/covers/optimized/b938788bf7e5d633d261-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-409c0cce7529.jpg": {
+      "sourceBytes": 297210,
+      "variants": [
+        {
+          "bytes": 45888,
+          "height": 487,
+          "src": "./assets/covers/optimized/0a9c385bb3e503839a2f-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 114384,
+          "height": 974,
+          "src": "./assets/covers/optimized/c5ca72b09be68c3866c6-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-428b17ed375b.jpg": {
+      "sourceBytes": 247158,
+      "variants": [
+        {
+          "bytes": 34234,
+          "height": 478,
+          "src": "./assets/covers/optimized/9d81f1be43eb05e42765-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 85372,
+          "height": 956,
+          "src": "./assets/covers/optimized/5edb0bb1e72b81673044-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-42e018d0d4f4.jpg": {
+      "sourceBytes": 277602,
+      "variants": [
+        {
+          "bytes": 28048,
+          "height": 441,
+          "src": "./assets/covers/optimized/94ba95518cafe01b5028-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 82396,
+          "height": 882,
+          "src": "./assets/covers/optimized/adf3099249a4556588ac-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-42fbc80c8eed.jpg": {
+      "sourceBytes": 185972,
+      "variants": [
+        {
+          "bytes": 24632,
+          "height": 562,
+          "src": "./assets/covers/optimized/384464e73b3a6d836a3b-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 53930,
+          "height": 1123,
+          "src": "./assets/covers/optimized/eb33b4de7d4e7d58c02a-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-436489e3f16f.jpg": {
+      "sourceBytes": 141509,
+      "variants": [
+        {
+          "bytes": 34272,
+          "height": 566,
+          "src": "./assets/covers/optimized/e8fa76d79ca3bf7c568b-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 52558,
+          "height": 761,
+          "src": "./assets/covers/optimized/3121543f8b4308e9b34f-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-436fc748983f.webp": {
+      "sourceBytes": 47786,
+      "variants": [
+        {
+          "bytes": 35838,
+          "height": 565,
+          "src": "./assets/covers/optimized/df93076ba4ee65411953-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 53052,
+          "height": 760,
+          "src": "./assets/covers/optimized/d5c25665caa8be58e36a-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-444896f9b436.jpg": {
+      "sourceBytes": 307840,
+      "variants": [
+        {
+          "bytes": 46998,
+          "height": 477,
+          "src": "./assets/covers/optimized/4b0cd4c2140c8b8fdb5f-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 118042,
+          "height": 953,
+          "src": "./assets/covers/optimized/c521e704c047ec355d28-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-4835154dcef9.jpg": {
+      "sourceBytes": 209267,
+      "variants": [
+        {
+          "bytes": 29288,
+          "height": 558,
+          "src": "./assets/covers/optimized/5b0d34243e66843de694-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 86620,
+          "height": 1116,
+          "src": "./assets/covers/optimized/dcc24640533d8bcc9f16-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-4a5551ad9597.jpg": {
+      "sourceBytes": 388681,
+      "variants": [
+        {
+          "bytes": 46912,
+          "height": 492,
+          "src": "./assets/covers/optimized/035b5e05e184060ebe0e-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 112668,
+          "height": 984,
+          "src": "./assets/covers/optimized/ca66d3e4743669a79e6d-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-506279c8a0d6.jpg": {
+      "sourceBytes": 246450,
+      "variants": [
+        {
+          "bytes": 42326,
+          "height": 518,
+          "src": "./assets/covers/optimized/9a57dfb2d0e6343c5815-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 100064,
+          "height": 1037,
+          "src": "./assets/covers/optimized/0e4b04da6e07c91dcb79-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-513d8cb7197c.jpg": {
+      "sourceBytes": 306589,
+      "variants": [
+        {
+          "bytes": 30236,
+          "height": 581,
+          "src": "./assets/covers/optimized/a804b1b83490f1e2cc2f-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 105842,
+          "height": 1163,
+          "src": "./assets/covers/optimized/1a81ac6f5edf7065df1c-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-52303796d24f.jpg": {
+      "sourceBytes": 283757,
+      "variants": [
+        {
+          "bytes": 33580,
+          "height": 346,
+          "src": "./assets/covers/optimized/adc77e75bf6648058688-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 98922,
+          "height": 693,
+          "src": "./assets/covers/optimized/894c629c34ad28c1f8b6-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-5283c0a5a78a.jpg": {
+      "sourceBytes": 279586,
+      "variants": [
+        {
+          "bytes": 30018,
+          "height": 467,
+          "src": "./assets/covers/optimized/7e7b5ff6ed03dd887fca-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 108844,
+          "height": 935,
+          "src": "./assets/covers/optimized/2614ecadcb8eedbc4264-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-52b6b28555e9.jpg": {
+      "sourceBytes": 284357,
+      "variants": [
+        {
+          "bytes": 39066,
+          "height": 506,
+          "src": "./assets/covers/optimized/bc01c1571945c8ff37ed-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 116338,
+          "height": 1012,
+          "src": "./assets/covers/optimized/2fe09870de02fb853ae9-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-541eeda6a729.jpg": {
+      "sourceBytes": 315022,
+      "variants": [
+        {
+          "bytes": 59168,
+          "height": 509,
+          "src": "./assets/covers/optimized/b0e8c88e557ee3ed1b73-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 143824,
+          "height": 1018,
+          "src": "./assets/covers/optimized/0b185f32aeaf32949efa-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-543a56238507.jpg": {
+      "sourceBytes": 328857,
+      "variants": [
+        {
+          "bytes": 55438,
+          "height": 511,
+          "src": "./assets/covers/optimized/4458e9422ec01c77f065-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 146216,
+          "height": 1022,
+          "src": "./assets/covers/optimized/3f917b0c776f4cc9063e-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-563ff16badc8.jpg": {
+      "sourceBytes": 246901,
+      "variants": [
+        {
+          "bytes": 24316,
+          "height": 566,
+          "src": "./assets/covers/optimized/645a1969f97de5069d46-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 82008,
+          "height": 1132,
+          "src": "./assets/covers/optimized/e57272d00df0aeab24dc-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-571a8ac641a9.jpg": {
+      "sourceBytes": 254157,
+      "variants": [
+        {
+          "bytes": 52392,
+          "height": 636,
+          "src": "./assets/covers/optimized/f54e557075c3dbd846a6-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 155214,
+          "height": 1273,
+          "src": "./assets/covers/optimized/35a75d3d1315aa3e5145-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-59eadfadeb01.jpg": {
+      "sourceBytes": 259411,
+      "variants": [
+        {
+          "bytes": 37316,
+          "height": 471,
+          "src": "./assets/covers/optimized/ab5863e261507c35158a-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 94254,
+          "height": 941,
+          "src": "./assets/covers/optimized/e81d873d7d4cf866eaa4-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-5c0b287e6e1e.webp": {
+      "sourceBytes": 55468,
+      "variants": [
+        {
+          "bytes": 44202,
+          "height": 566,
+          "src": "./assets/covers/optimized/c836fe2a32b2e1fb4aa1-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 60708,
+          "height": 761,
+          "src": "./assets/covers/optimized/c5f3804ea060d323eeeb-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-5d0eaf93a005.jpg": {
+      "sourceBytes": 333978,
+      "variants": [
+        {
+          "bytes": 34058,
+          "height": 460,
+          "src": "./assets/covers/optimized/6552040a3501ddb09601-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 136988,
+          "height": 921,
+          "src": "./assets/covers/optimized/aa18a7c31dcbe8af58af-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-5d990a967fab.jpg": {
+      "sourceBytes": 287891,
+      "variants": [
+        {
+          "bytes": 44422,
+          "height": 501,
+          "src": "./assets/covers/optimized/46dd90344a5a738b7af4-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 117280,
+          "height": 1002,
+          "src": "./assets/covers/optimized/0f298a1028af46f91534-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-5ebcade4c5ca.jpg": {
+      "sourceBytes": 304113,
+      "variants": [
+        {
+          "bytes": 44742,
+          "height": 469,
+          "src": "./assets/covers/optimized/1bf20ded870a4f4677bb-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 113530,
+          "height": 938,
+          "src": "./assets/covers/optimized/dde4e95b4cfc982a6c4e-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-5f0a94cf0202.jpg": {
+      "sourceBytes": 299491,
+      "variants": [
+        {
+          "bytes": 49734,
+          "height": 481,
+          "src": "./assets/covers/optimized/e4acedcd46675cc39c4d-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 120410,
+          "height": 961,
+          "src": "./assets/covers/optimized/567a750ec0705f06ce39-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-601ac8374c95.jpg": {
+      "sourceBytes": 260164,
+      "variants": [
+        {
+          "bytes": 31904,
+          "height": 483,
+          "src": "./assets/covers/optimized/96edb0cb86415a4589fa-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 101652,
+          "height": 966,
+          "src": "./assets/covers/optimized/de6adde8b37807c32e74-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-6094916a6005.jpg": {
+      "sourceBytes": 314782,
+      "variants": [
+        {
+          "bytes": 39888,
+          "height": 440,
+          "src": "./assets/covers/optimized/4005e5d52164067aac3f-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 103398,
+          "height": 880,
+          "src": "./assets/covers/optimized/404586b1d2e03a9fbf97-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-626c669c6f9a.jpg": {
+      "sourceBytes": 276581,
+      "variants": [
+        {
+          "bytes": 50830,
+          "height": 555,
+          "src": "./assets/covers/optimized/1afa895dd68486509680-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 131456,
+          "height": 1109,
+          "src": "./assets/covers/optimized/7069123c277644727541-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-633a5f9c302a.jpg": {
+      "sourceBytes": 345583,
+      "variants": [
+        {
+          "bytes": 66436,
+          "height": 509,
+          "src": "./assets/covers/optimized/5448a34c55b2af714b6a-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 158916,
+          "height": 1017,
+          "src": "./assets/covers/optimized/c09c72bf029ae475ba80-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-6342554759ea.jpg": {
+      "sourceBytes": 116363,
+      "variants": [
+        {
+          "bytes": 27438,
+          "height": 574,
+          "src": "./assets/covers/optimized/143179b7d423832855a7-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 39726,
+          "height": 772,
+          "src": "./assets/covers/optimized/545e435a61f45eb33104-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-6399e8c3b9b7.jpg": {
+      "sourceBytes": 317174,
+      "variants": [
+        {
+          "bytes": 43424,
+          "height": 460,
+          "src": "./assets/covers/optimized/249ea566a7935c60e948-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 119738,
+          "height": 921,
+          "src": "./assets/covers/optimized/ecc655c538be3ffa9425-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-64bfb4987025.jpg": {
+      "sourceBytes": 169294,
+      "variants": [
+        {
+          "bytes": 36538,
+          "height": 561,
+          "src": "./assets/covers/optimized/300187d5a0f667d6c6b6-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 73502,
+          "height": 935,
+          "src": "./assets/covers/optimized/8954eb6b553f1bce0c76-600.webp",
+          "width": 600
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-67fbf87fecab.jpg": {
+      "sourceBytes": 280115,
+      "variants": [
+        {
+          "bytes": 23794,
+          "height": 501,
+          "src": "./assets/covers/optimized/9ed8a426e490eb7c1ce9-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 67908,
+          "height": 1002,
+          "src": "./assets/covers/optimized/4993754d80b1dd1a8fa9-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-6819fb0e87a4.jpg": {
+      "sourceBytes": 290475,
+      "variants": [
+        {
+          "bytes": 38894,
+          "height": 437,
+          "src": "./assets/covers/optimized/97c9a8b1656544f7ef30-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 95624,
+          "height": 874,
+          "src": "./assets/covers/optimized/2876efbcc485e148c5b0-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-681f79ac78b9.jpg": {
+      "sourceBytes": 293044,
+      "variants": [
+        {
+          "bytes": 38392,
+          "height": 484,
+          "src": "./assets/covers/optimized/f20f5485d71635daddbd-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 114704,
+          "height": 968,
+          "src": "./assets/covers/optimized/48e376b8378e2af9f31f-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-68baf386cb43.jpg": {
+      "sourceBytes": 232548,
+      "variants": [
+        {
+          "bytes": 30034,
+          "height": 536,
+          "src": "./assets/covers/optimized/cc191e4df37af3fdf018-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 94720,
+          "height": 1073,
+          "src": "./assets/covers/optimized/be6f25f1efe51bf4908f-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-6cf5d7166228.jpg": {
+      "sourceBytes": 300793,
+      "variants": [
+        {
+          "bytes": 55452,
+          "height": 525,
+          "src": "./assets/covers/optimized/75f281aa534284b0d275-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 140098,
+          "height": 1050,
+          "src": "./assets/covers/optimized/54e2e97a43257c9ec4bf-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-6d119d2ccb53.webp": {
+      "sourceBytes": 43446,
+      "variants": [
+        {
+          "bytes": 35378,
+          "height": 599,
+          "src": "./assets/covers/optimized/d09d359326a4e5e49308-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 46910,
+          "height": 805,
+          "src": "./assets/covers/optimized/13944dbddc6e79a45338-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-6d2be82e99fa.jpg": {
+      "sourceBytes": 261123,
+      "variants": [
+        {
+          "bytes": 38454,
+          "height": 500,
+          "src": "./assets/covers/optimized/60de75ba0a0aede25ddf-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 100676,
+          "height": 1000,
+          "src": "./assets/covers/optimized/cac7e835052340f138e7-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-6d3090f466eb.webp": {
+      "sourceBytes": 46432,
+      "variants": [
+        {
+          "bytes": 37206,
+          "height": 470,
+          "src": "./assets/covers/optimized/00b06ed9d587ef765b12-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 51376,
+          "height": 632,
+          "src": "./assets/covers/optimized/a47bb68d32d53f0094f8-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-6d930d3cad0b.jpg": {
+      "sourceBytes": 180649,
+      "variants": [
+        {
+          "bytes": 23842,
+          "height": 465,
+          "src": "./assets/covers/optimized/3c6e870c2f7f660d188c-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 59284,
+          "height": 930,
+          "src": "./assets/covers/optimized/00501b81b89afd934aa1-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-6e62b6287d68.jpg": {
+      "sourceBytes": 146099,
+      "variants": [
+        {
+          "bytes": 19370,
+          "height": 483,
+          "src": "./assets/covers/optimized/ff90d136fd45f9578b6c-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 49956,
+          "height": 966,
+          "src": "./assets/covers/optimized/472f86da92481d16cdf8-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-6f85d9e16f4d.jpg": {
+      "sourceBytes": 264623,
+      "variants": [
+        {
+          "bytes": 48700,
+          "height": 571,
+          "src": "./assets/covers/optimized/8a75a954e86a88d25deb-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 134704,
+          "height": 1142,
+          "src": "./assets/covers/optimized/22a3fa1ba807566e7fd3-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-6fa3af6bf64d.jpg": {
+      "sourceBytes": 254212,
+      "variants": [
+        {
+          "bytes": 24898,
+          "height": 449,
+          "src": "./assets/covers/optimized/e3e0be8aa63c6d675424-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 77330,
+          "height": 898,
+          "src": "./assets/covers/optimized/b75160f3551cd09a10d2-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-6ff9de7408eb.jpg": {
+      "sourceBytes": 211466,
+      "variants": [
+        {
+          "bytes": 24406,
+          "height": 526,
+          "src": "./assets/covers/optimized/d79b563b7e091fef132d-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 79568,
+          "height": 1052,
+          "src": "./assets/covers/optimized/b47a63de5fe6068a048d-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-703d85b56a7c.jpg": {
+      "sourceBytes": 202132,
+      "variants": [
+        {
+          "bytes": 28184,
+          "height": 563,
+          "src": "./assets/covers/optimized/018b24a293856724a000-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 76580,
+          "height": 1000,
+          "src": "./assets/covers/optimized/230f1d67b482b738fe7e-639.webp",
+          "width": 639
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-704ff5b035e1.jpg": {
+      "sourceBytes": 367267,
+      "variants": [
+        {
+          "bytes": 56736,
+          "height": 469,
+          "src": "./assets/covers/optimized/0f99bd5841e361dd114c-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 153840,
+          "height": 938,
+          "src": "./assets/covers/optimized/2b973311bf7eae187805-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-70df092edd83.jpg": {
+      "sourceBytes": 300144,
+      "variants": [
+        {
+          "bytes": 46548,
+          "height": 478,
+          "src": "./assets/covers/optimized/20a71fa368cf74dda191-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 115890,
+          "height": 956,
+          "src": "./assets/covers/optimized/8d8b8f2d93de4f6123d1-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-70e3910e0c9f.jpg": {
+      "sourceBytes": 264212,
+      "variants": [
+        {
+          "bytes": 35900,
+          "height": 471,
+          "src": "./assets/covers/optimized/dfa41c6f8c9d18c0a093-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 90386,
+          "height": 941,
+          "src": "./assets/covers/optimized/73b3e2f46362bcb60d2c-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-71f45278289a.jpg": {
+      "sourceBytes": 267701,
+      "variants": [
+        {
+          "bytes": 46050,
+          "height": 531,
+          "src": "./assets/covers/optimized/13f2d7851c763a5f2667-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 116168,
+          "height": 1062,
+          "src": "./assets/covers/optimized/f633f07cc2c454a1919a-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-726a39726d64.jpg": {
+      "sourceBytes": 265406,
+      "variants": [
+        {
+          "bytes": 46552,
+          "height": 516,
+          "src": "./assets/covers/optimized/4303bec3c55f73237f84-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 106522,
+          "height": 1032,
+          "src": "./assets/covers/optimized/a41671f09c361a3b3822-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-726d7dfa3300.webp": {
+      "sourceBytes": 44614,
+      "variants": [
+        {
+          "bytes": 35716,
+          "height": 566,
+          "src": "./assets/covers/optimized/a96124132381b74c182b-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 48526,
+          "height": 761,
+          "src": "./assets/covers/optimized/400de111dc594870f768-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-747b59a804a8.jpg": {
+      "sourceBytes": 354934,
+      "variants": [
+        {
+          "bytes": 52550,
+          "height": 474,
+          "src": "./assets/covers/optimized/9acbdcc24852c3b6549a-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 142928,
+          "height": 948,
+          "src": "./assets/covers/optimized/78a4b4fb100dc293f9b7-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-7765458fb080.jpg": {
+      "sourceBytes": 261479,
+      "variants": [
+        {
+          "bytes": 50100,
+          "height": 546,
+          "src": "./assets/covers/optimized/f31116c5aeda885c64a1-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 121244,
+          "height": 1092,
+          "src": "./assets/covers/optimized/fa2844685d00960e492c-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-781fdedc4212.jpg": {
+      "sourceBytes": 394606,
+      "variants": [
+        {
+          "bytes": 53276,
+          "height": 441,
+          "src": "./assets/covers/optimized/5cd650e2b5f2feb6ec8c-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 157544,
+          "height": 883,
+          "src": "./assets/covers/optimized/3f9edebd4c3fe16e7e53-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-786608e2987d.jpg": {
+      "sourceBytes": 73293,
+      "variants": [
+        {
+          "bytes": 30572,
+          "height": 550,
+          "src": "./assets/covers/optimized/5d78c0c03f86bd9ffafa-352.webp",
+          "width": 352
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-788648106759.jpg": {
+      "sourceBytes": 268918,
+      "variants": [
+        {
+          "bytes": 46670,
+          "height": 538,
+          "src": "./assets/covers/optimized/5faa54ab3382f7a509ee-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 122412,
+          "height": 1077,
+          "src": "./assets/covers/optimized/95fcce1656f17ad0c8b5-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-789a7a0f0d4b.jpg": {
+      "sourceBytes": 258221,
+      "variants": [
+        {
+          "bytes": 38648,
+          "height": 548,
+          "src": "./assets/covers/optimized/08f11c387f06628a9b18-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 124546,
+          "height": 1096,
+          "src": "./assets/covers/optimized/c848d7ff29845d7a368c-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-79f43eae279d.jpg": {
+      "sourceBytes": 293689,
+      "variants": [
+        {
+          "bytes": 50114,
+          "height": 501,
+          "src": "./assets/covers/optimized/a624e8ea651f69992db7-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 117886,
+          "height": 1003,
+          "src": "./assets/covers/optimized/6ee30f975273a1d3e4a9-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-7f495f776342.jpg": {
+      "sourceBytes": 286038,
+      "variants": [
+        {
+          "bytes": 31924,
+          "height": 566,
+          "src": "./assets/covers/optimized/7f4e70454d64472f80e9-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 99026,
+          "height": 1132,
+          "src": "./assets/covers/optimized/3c161ea3a5ea1338c4e2-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-7f83f85fb002.jpg": {
+      "sourceBytes": 269531,
+      "variants": [
+        {
+          "bytes": 35350,
+          "height": 527,
+          "src": "./assets/covers/optimized/dce59e805a2059767c87-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 127886,
+          "height": 1054,
+          "src": "./assets/covers/optimized/0531b91a9b7882b12058-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-7fe9bda65496.jpg": {
+      "sourceBytes": 264356,
+      "variants": [
+        {
+          "bytes": 38726,
+          "height": 507,
+          "src": "./assets/covers/optimized/38c69ed57d92b021d8a2-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 105962,
+          "height": 1014,
+          "src": "./assets/covers/optimized/13358c206846fe6ff554-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-800ab8010f40.jpg": {
+      "sourceBytes": 169325,
+      "variants": [
+        {
+          "bytes": 49788,
+          "height": 523,
+          "src": "./assets/covers/optimized/c53b8cdcc8747c6668bc-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 70436,
+          "height": 703,
+          "src": "./assets/covers/optimized/b25fd1d28d3239dab8cd-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-81b148aa764e.webp": {
+      "sourceBytes": 30774,
+      "variants": [
+        {
+          "bytes": 26042,
+          "height": 566,
+          "src": "./assets/covers/optimized/4e3b1d663007f180938e-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 33210,
+          "height": 761,
+          "src": "./assets/covers/optimized/182a0361d6c668998bd7-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-81d93f0b2a7c.jpg": {
+      "sourceBytes": 180394,
+      "variants": [
+        {
+          "bytes": 20800,
+          "height": 553,
+          "src": "./assets/covers/optimized/055661e7ffbd61f37d0a-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 68260,
+          "height": 1106,
+          "src": "./assets/covers/optimized/c5b252f67ebc635c406a-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-8213be0d93f7.jpg": {
+      "sourceBytes": 294403,
+      "variants": [
+        {
+          "bytes": 56294,
+          "height": 550,
+          "src": "./assets/covers/optimized/d29100db4c4033b1c36a-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 145664,
+          "height": 1100,
+          "src": "./assets/covers/optimized/db0cf883f87e4502346b-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-83941ce8bc0c.jpg": {
+      "sourceBytes": 300936,
+      "variants": [
+        {
+          "bytes": 48990,
+          "height": 510,
+          "src": "./assets/covers/optimized/9b3833d690634d58a5a0-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 141144,
+          "height": 1019,
+          "src": "./assets/covers/optimized/1b4a84f16ef4b133d780-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-84197566872a.jpg": {
+      "sourceBytes": 325371,
+      "variants": [
+        {
+          "bytes": 48220,
+          "height": 456,
+          "src": "./assets/covers/optimized/ffcd2b35e9efdb7731ea-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 120878,
+          "height": 912,
+          "src": "./assets/covers/optimized/f28dd60b60947ea5087e-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-8579afedbb9d.jpg": {
+      "sourceBytes": 98647,
+      "variants": [
+        {
+          "bytes": 22510,
+          "height": 566,
+          "src": "./assets/covers/optimized/903cdc4e22dd84005753-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 31502,
+          "height": 761,
+          "src": "./assets/covers/optimized/c420b977d3f7fd316d3d-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-85b646a5e2bc.jpg": {
+      "sourceBytes": 315313,
+      "variants": [
+        {
+          "bytes": 53552,
+          "height": 488,
+          "src": "./assets/covers/optimized/dbc97208b55a52deb6ea-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 127478,
+          "height": 975,
+          "src": "./assets/covers/optimized/9ed0602c9d1516370c21-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-86ed676c84ce.jpg": {
+      "sourceBytes": 295248,
+      "variants": [
+        {
+          "bytes": 51550,
+          "height": 581,
+          "src": "./assets/covers/optimized/fd4186cd4b2e100ccf2e-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 170498,
+          "height": 1162,
+          "src": "./assets/covers/optimized/1ffa01b2bbf4a87bf76e-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-86f2134e7116.jpg": {
+      "sourceBytes": 398558,
+      "variants": [
+        {
+          "bytes": 69410,
+          "height": 469,
+          "src": "./assets/covers/optimized/a0e60cf0020c5993ed10-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 176054,
+          "height": 938,
+          "src": "./assets/covers/optimized/b6b99362912ab0a7f69d-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-8791088ba30a.jpg": {
+      "sourceBytes": 66415,
+      "variants": [
+        {
+          "bytes": 34648,
+          "height": 543,
+          "src": "./assets/covers/optimized/bb0014c2182cd0a86911-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 50568,
+          "height": 700,
+          "src": "./assets/covers/optimized/2a96e49787b57a485a60-464.webp",
+          "width": 464
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-879a11800967.jpg": {
+      "sourceBytes": 281918,
+      "variants": [
+        {
+          "bytes": 36416,
+          "height": 486,
+          "src": "./assets/covers/optimized/9ae5acf6c3a9d84a565d-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 103568,
+          "height": 972,
+          "src": "./assets/covers/optimized/3807789a1c65f07911e1-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-897fb9e70a4b.jpg": {
+      "sourceBytes": 183130,
+      "variants": [
+        {
+          "bytes": 18770,
+          "height": 360,
+          "src": "./assets/covers/optimized/ece089c44e3b30b62e8a-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 60890,
+          "height": 720,
+          "src": "./assets/covers/optimized/143c7d7f4003e690bf6b-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-8b16df7d56a8.webp": {
+      "sourceBytes": 56662,
+      "variants": [
+        {
+          "bytes": 45926,
+          "height": 530,
+          "src": "./assets/covers/optimized/16d016d273b05ae96868-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 61956,
+          "height": 713,
+          "src": "./assets/covers/optimized/1b3ff603ed4713aabdd4-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-8eb64c1e9f46.jpg": {
+      "sourceBytes": 308800,
+      "variants": [
+        {
+          "bytes": 53542,
+          "height": 508,
+          "src": "./assets/covers/optimized/46d91687af9e43eee4e8-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 136472,
+          "height": 1016,
+          "src": "./assets/covers/optimized/732af1480cf2ac04d775-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-91bb6c2689ca.jpg": {
+      "sourceBytes": 341690,
+      "variants": [
+        {
+          "bytes": 55190,
+          "height": 513,
+          "src": "./assets/covers/optimized/179d00f0b42de2db854e-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 164046,
+          "height": 1025,
+          "src": "./assets/covers/optimized/7e566af7b19a85969bdb-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-92b06f6eea8d.jpg": {
+      "sourceBytes": 272330,
+      "variants": [
+        {
+          "bytes": 28224,
+          "height": 571,
+          "src": "./assets/covers/optimized/512aa37dcd8c8faa52b1-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 87342,
+          "height": 1143,
+          "src": "./assets/covers/optimized/30237c72b3e01e141d58-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-9652d25e34a8.jpg": {
+      "sourceBytes": 119714,
+      "variants": [
+        {
+          "bytes": 34252,
+          "height": 466,
+          "src": "./assets/covers/optimized/fed192c8fea5a421e03c-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 47028,
+          "height": 626,
+          "src": "./assets/covers/optimized/04ef1a7e56dbe1f79903-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-972573dad38a.jpg": {
+      "sourceBytes": 293244,
+      "variants": [
+        {
+          "bytes": 47094,
+          "height": 457,
+          "src": "./assets/covers/optimized/0123712bcda8aa0d9a20-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 105898,
+          "height": 913,
+          "src": "./assets/covers/optimized/0b7a97f29bd8f1f23077-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-981b076f3015.jpg": {
+      "sourceBytes": 297602,
+      "variants": [
+        {
+          "bytes": 56112,
+          "height": 559,
+          "src": "./assets/covers/optimized/45b01cc69f216173aaef-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 156052,
+          "height": 1118,
+          "src": "./assets/covers/optimized/99c938cdbc93f86bbc7e-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-98228864c63d.jpg": {
+      "sourceBytes": 233118,
+      "variants": [
+        {
+          "bytes": 26376,
+          "height": 515,
+          "src": "./assets/covers/optimized/dd7f03715e498f743bdb-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 91086,
+          "height": 1030,
+          "src": "./assets/covers/optimized/3ab34da22d4482a480dd-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-9850113a424e.jpg": {
+      "sourceBytes": 285208,
+      "variants": [
+        {
+          "bytes": 47208,
+          "height": 521,
+          "src": "./assets/covers/optimized/07120347d00ee82efe5b-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 125352,
+          "height": 1043,
+          "src": "./assets/covers/optimized/9b22e949e83b2001eaaf-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-9958c7034860.jpg": {
+      "sourceBytes": 302028,
+      "variants": [
+        {
+          "bytes": 41984,
+          "height": 485,
+          "src": "./assets/covers/optimized/7715dbcd08f0ea424aea-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 115886,
+          "height": 970,
+          "src": "./assets/covers/optimized/2f616a8b69f62174f088-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-9a0db721bb52.jpg": {
+      "sourceBytes": 1524022,
+      "variants": [
+        {
+          "bytes": 29110,
+          "height": 360,
+          "src": "./assets/covers/optimized/2a294468d8456963ae37-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 96908,
+          "height": 720,
+          "src": "./assets/covers/optimized/9cc013c376579074fc51-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-9ce42c0169a2.jpg": {
+      "sourceBytes": 270994,
+      "variants": [
+        {
+          "bytes": 25142,
+          "height": 571,
+          "src": "./assets/covers/optimized/1b785194de4bc2a4da85-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 83602,
+          "height": 1142,
+          "src": "./assets/covers/optimized/de5d4dcc8e4823f4aed6-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-9d280a71d415.jpg": {
+      "sourceBytes": 191956,
+      "variants": [
+        {
+          "bytes": 29168,
+          "height": 594,
+          "src": "./assets/covers/optimized/e7f220449490cd176310-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 81102,
+          "height": 1188,
+          "src": "./assets/covers/optimized/99114c39a9e6ae0cc678-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-9e7009b540ab.jpg": {
+      "sourceBytes": 329830,
+      "variants": [
+        {
+          "bytes": 53360,
+          "height": 474,
+          "src": "./assets/covers/optimized/5c34b245e364434adf65-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 132882,
+          "height": 948,
+          "src": "./assets/covers/optimized/b9a3527c9345892d76e7-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-a1137ced1235.jpg": {
+      "sourceBytes": 320181,
+      "variants": [
+        {
+          "bytes": 40128,
+          "height": 543,
+          "src": "./assets/covers/optimized/bf171db004af73b14758-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 127382,
+          "height": 1087,
+          "src": "./assets/covers/optimized/9cca8cdce8043a87a6a3-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-a35b4cc536bd.jpg": {
+      "sourceBytes": 293211,
+      "variants": [
+        {
+          "bytes": 53844,
+          "height": 541,
+          "src": "./assets/covers/optimized/f4a7247dc6d0e701801f-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 146182,
+          "height": 1083,
+          "src": "./assets/covers/optimized/c7198cf49226a8a3971e-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-a4199ff70ec0.jpg": {
+      "sourceBytes": 369507,
+      "variants": [
+        {
+          "bytes": 80518,
+          "height": 574,
+          "src": "./assets/covers/optimized/1f89798fbd8924a14f85-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 221670,
+          "height": 1148,
+          "src": "./assets/covers/optimized/98d7d7ef1f6a8e85ddb2-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-a6786c922564.jpg": {
+      "sourceBytes": 311262,
+      "variants": [
+        {
+          "bytes": 60478,
+          "height": 561,
+          "src": "./assets/covers/optimized/f567911272892d15151e-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 165886,
+          "height": 1121,
+          "src": "./assets/covers/optimized/a57663d5181a801a8972-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-a6b25616cf9f.jpg": {
+      "sourceBytes": 295088,
+      "variants": [
+        {
+          "bytes": 27116,
+          "height": 566,
+          "src": "./assets/covers/optimized/fe64e1b4c64e396414de-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 98576,
+          "height": 1132,
+          "src": "./assets/covers/optimized/08beb55b5a4bf7e13f0c-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-a7678299353d.jpg": {
+      "sourceBytes": 261775,
+      "variants": [
+        {
+          "bytes": 40526,
+          "height": 508,
+          "src": "./assets/covers/optimized/4351abf7ba177caa1586-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 105356,
+          "height": 1016,
+          "src": "./assets/covers/optimized/f59d5225ffcd3540bf0e-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-a7b793af433e.jpg": {
+      "sourceBytes": 268667,
+      "variants": [
+        {
+          "bytes": 29606,
+          "height": 420,
+          "src": "./assets/covers/optimized/e973aa7713b2e58ae2e7-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 81486,
+          "height": 840,
+          "src": "./assets/covers/optimized/47c0e97ed6b57cf2ba9e-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-a8d153ac4694.jpg": {
+      "sourceBytes": 240761,
+      "variants": [
+        {
+          "bytes": 40632,
+          "height": 558,
+          "src": "./assets/covers/optimized/ee5a6aabf42368a9e1a4-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 108684,
+          "height": 1116,
+          "src": "./assets/covers/optimized/96a16562c9242d53f1f0-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-a9b8556ec6cb.jpg": {
+      "sourceBytes": 323106,
+      "variants": [
+        {
+          "bytes": 42404,
+          "height": 450,
+          "src": "./assets/covers/optimized/82225cbcaa660e4b7b17-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 114574,
+          "height": 899,
+          "src": "./assets/covers/optimized/5a5f5ad0189ba9714ada-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-aaec1cc25794.jpg": {
+      "sourceBytes": 264393,
+      "variants": [
+        {
+          "bytes": 36706,
+          "height": 475,
+          "src": "./assets/covers/optimized/e070eba19ff7c4f7a547-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 89600,
+          "height": 950,
+          "src": "./assets/covers/optimized/4c98cd6539ae9e2b6249-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-ac44675fb141.jpg": {
+      "sourceBytes": 248361,
+      "variants": [
+        {
+          "bytes": 35136,
+          "height": 467,
+          "src": "./assets/covers/optimized/6f639f23dcb16d592136-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 86886,
+          "height": 935,
+          "src": "./assets/covers/optimized/97c388d1a817fa656859-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-ac550d06312c.jpg": {
+      "sourceBytes": 268308,
+      "variants": [
+        {
+          "bytes": 41166,
+          "height": 549,
+          "src": "./assets/covers/optimized/8610c0a4cce2e01a38e4-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 91470,
+          "height": 1098,
+          "src": "./assets/covers/optimized/f06d7c9a0d77b4c306cf-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-adadcab86ee9.jpg": {
+      "sourceBytes": 100798,
+      "variants": [
+        {
+          "bytes": 33594,
+          "height": 549,
+          "src": "./assets/covers/optimized/8ada8c34882b387263ad-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 36102,
+          "height": 566,
+          "src": "./assets/covers/optimized/49bdaeba47c74d0e6180-371.webp",
+          "width": 371
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-b03b53daebfe.jpg": {
+      "sourceBytes": 96345,
+      "variants": [
+        {
+          "bytes": 32590,
+          "height": 453,
+          "src": "./assets/covers/optimized/9369a936918de9586d66-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 60920,
+          "height": 680,
+          "src": "./assets/covers/optimized/32a9604e02432927508c-540.webp",
+          "width": 540
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-b0a29cbc3a81.jpg": {
+      "sourceBytes": 63840,
+      "variants": [
+        {
+          "bytes": 21554,
+          "height": 581,
+          "src": "./assets/covers/optimized/1f7bd05d358b1664c188-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 26352,
+          "height": 662,
+          "src": "./assets/covers/optimized/8d97b7b9f8d498f98ac5-410.webp",
+          "width": 410
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-b17a9f713f78.jpg": {
+      "sourceBytes": 311723,
+      "variants": [
+        {
+          "bytes": 53564,
+          "height": 497,
+          "src": "./assets/covers/optimized/efb66c8d85eee776daad-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 136808,
+          "height": 994,
+          "src": "./assets/covers/optimized/967edea63bd9cbb2cba2-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-b2440a90f2c1.jpg": {
+      "sourceBytes": 298886,
+      "variants": [
+        {
+          "bytes": 32290,
+          "height": 565,
+          "src": "./assets/covers/optimized/5914f4532da3d0bdf837-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 104166,
+          "height": 1131,
+          "src": "./assets/covers/optimized/4bfb642c0ab2db62a5bf-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-b4978f5e95e7.jpg": {
+      "sourceBytes": 275873,
+      "variants": [
+        {
+          "bytes": 34600,
+          "height": 460,
+          "src": "./assets/covers/optimized/5a18ab1f2fb91c5d54c5-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 91964,
+          "height": 921,
+          "src": "./assets/covers/optimized/bcbe0f6d465f523a1f13-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-b50a7b33a666.jpg": {
+      "sourceBytes": 276427,
+      "variants": [
+        {
+          "bytes": 54824,
+          "height": 561,
+          "src": "./assets/covers/optimized/99534a0e6f14c9fb79bd-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 140170,
+          "height": 1123,
+          "src": "./assets/covers/optimized/889091f347925a8d7cb7-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-b7cea0217bd7.webp": {
+      "sourceBytes": 32598,
+      "variants": [
+        {
+          "bytes": 27180,
+          "height": 466,
+          "src": "./assets/covers/optimized/8b7dcbec556cd457778e-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 35080,
+          "height": 626,
+          "src": "./assets/covers/optimized/33f5ff0de647c965f5f9-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-b984c24e6ed5.jpg": {
+      "sourceBytes": 335542,
+      "variants": [
+        {
+          "bytes": 48692,
+          "height": 469,
+          "src": "./assets/covers/optimized/a9a40c1aeff8489fedc0-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 134354,
+          "height": 938,
+          "src": "./assets/covers/optimized/72ba74c7fd84d71a1db4-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-ba6172c97610.jpg": {
+      "sourceBytes": 163446,
+      "variants": [
+        {
+          "bytes": 39658,
+          "height": 570,
+          "src": "./assets/covers/optimized/c8547d19cc9d3a387f89-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 93976,
+          "height": 1141,
+          "src": "./assets/covers/optimized/3cd36d9ac1041c232210-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-bab5b6a1d260.jpg": {
+      "sourceBytes": 318796,
+      "variants": [
+        {
+          "bytes": 59228,
+          "height": 547,
+          "src": "./assets/covers/optimized/2d4eee4b103f5f778e9f-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 163152,
+          "height": 1093,
+          "src": "./assets/covers/optimized/ead023db6187f6e50697-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-bc5e04fce106.jpg": {
+      "sourceBytes": 249783,
+      "variants": [
+        {
+          "bytes": 35730,
+          "height": 474,
+          "src": "./assets/covers/optimized/f173a1b39d57ab1e0562-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 85366,
+          "height": 948,
+          "src": "./assets/covers/optimized/e7694866584965b98279-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-bcc8af8d80d9.jpg": {
+      "sourceBytes": 246387,
+      "variants": [
+        {
+          "bytes": 37610,
+          "height": 499,
+          "src": "./assets/covers/optimized/8494052a072d1126bfdc-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 92886,
+          "height": 997,
+          "src": "./assets/covers/optimized/842e38be0d4261ce47fd-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-bebbe3246adb.jpg": {
+      "sourceBytes": 281543,
+      "variants": [
+        {
+          "bytes": 46618,
+          "height": 526,
+          "src": "./assets/covers/optimized/6f4dbc13786e9f48c7ae-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 116934,
+          "height": 1052,
+          "src": "./assets/covers/optimized/9736a0219751707152d1-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-bf17ed4347cd.jpg": {
+      "sourceBytes": 1600111,
+      "variants": [
+        {
+          "bytes": 25282,
+          "height": 549,
+          "src": "./assets/covers/optimized/b21ef71a43651fec2026-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 128504,
+          "height": 1099,
+          "src": "./assets/covers/optimized/b2b375cd8b9a65443fd7-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-bf34d63d0cea.jpg": {
+      "sourceBytes": 311702,
+      "variants": [
+        {
+          "bytes": 39666,
+          "height": 444,
+          "src": "./assets/covers/optimized/ccdde5c89827c96f9088-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 110826,
+          "height": 887,
+          "src": "./assets/covers/optimized/566e822cb5a52edbce80-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-c0079e48fc50.jpg": {
+      "sourceBytes": 290400,
+      "variants": [
+        {
+          "bytes": 26302,
+          "height": 562,
+          "src": "./assets/covers/optimized/15b0e820be27fb3a02c5-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 101950,
+          "height": 1124,
+          "src": "./assets/covers/optimized/9df645f82e0012f6843f-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-c43f2d286a86.jpg": {
+      "sourceBytes": 332366,
+      "variants": [
+        {
+          "bytes": 56106,
+          "height": 494,
+          "src": "./assets/covers/optimized/437b91b86e8e2567704b-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 144664,
+          "height": 989,
+          "src": "./assets/covers/optimized/a4920964470d829b626a-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-c4a30deef770.webp": {
+      "sourceBytes": 46836,
+      "variants": [
+        {
+          "bytes": 39756,
+          "height": 514,
+          "src": "./assets/covers/optimized/803fd95f2c90530fd44e-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 50434,
+          "height": 691,
+          "src": "./assets/covers/optimized/98a834b6b4b5b94994c0-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-c4fc884c6e8d.jpg": {
+      "sourceBytes": 316360,
+      "variants": [
+        {
+          "bytes": 47352,
+          "height": 466,
+          "src": "./assets/covers/optimized/4fe548fe2e70ac5fd613-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 114646,
+          "height": 933,
+          "src": "./assets/covers/optimized/4a6c311ad819645662b4-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-c50fbbb47b88.jpg": {
+      "sourceBytes": 193685,
+      "variants": [
+        {
+          "bytes": 25216,
+          "height": 564,
+          "src": "./assets/covers/optimized/6184ab999aafa801cf59-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 74918,
+          "height": 1128,
+          "src": "./assets/covers/optimized/b138ce767b335ddcc62f-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-c5536a2fc610.jpg": {
+      "sourceBytes": 268956,
+      "variants": [
+        {
+          "bytes": 35850,
+          "height": 501,
+          "src": "./assets/covers/optimized/ced999345fd013cd71d0-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 104214,
+          "height": 1002,
+          "src": "./assets/covers/optimized/d3acdd3beab6183a94e4-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-c5a35a53a079.jpg": {
+      "sourceBytes": 163137,
+      "variants": [
+        {
+          "bytes": 47358,
+          "height": 523,
+          "src": "./assets/covers/optimized/2a615a1ad5e6abb27932-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 67684,
+          "height": 703,
+          "src": "./assets/covers/optimized/a10d5324b0d3e4656c54-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-c5ad34960a54.jpg": {
+      "sourceBytes": 224646,
+      "variants": [
+        {
+          "bytes": 33400,
+          "height": 551,
+          "src": "./assets/covers/optimized/1277208f410ee42fbb86-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 69926,
+          "height": 1101,
+          "src": "./assets/covers/optimized/2a3b2b1d3ec6678d33f8-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-c73899614890.jpg": {
+      "sourceBytes": 311770,
+      "variants": [
+        {
+          "bytes": 47726,
+          "height": 498,
+          "src": "./assets/covers/optimized/d64dd38cb468963dc87a-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 128888,
+          "height": 996,
+          "src": "./assets/covers/optimized/1413d441ac91dfc835b0-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-c78e1139a59f.jpg": {
+      "sourceBytes": 98488,
+      "variants": [
+        {
+          "bytes": 22554,
+          "height": 562,
+          "src": "./assets/covers/optimized/c615b2eac68230ca34d9-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 32770,
+          "height": 755,
+          "src": "./assets/covers/optimized/894f587612a3c57c78ba-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-c931a2c3637d.jpg": {
+      "sourceBytes": 317472,
+      "variants": [
+        {
+          "bytes": 43490,
+          "height": 545,
+          "src": "./assets/covers/optimized/afd3da1aaa957ddb75b7-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 118294,
+          "height": 1091,
+          "src": "./assets/covers/optimized/d4832d4e5ee05660bee2-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-ca1275bbc399.jpg": {
+      "sourceBytes": 127969,
+      "variants": [
+        {
+          "bytes": 10138,
+          "height": 334,
+          "src": "./assets/covers/optimized/d3f26beae12fae7e04bc-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 32380,
+          "height": 668,
+          "src": "./assets/covers/optimized/26b78dd15ea2b9c6c2a4-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-cac42f0d439e.jpg": {
+      "sourceBytes": 352990,
+      "variants": [
+        {
+          "bytes": 46058,
+          "height": 441,
+          "src": "./assets/covers/optimized/f45bd761a4b3e9870493-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 131484,
+          "height": 882,
+          "src": "./assets/covers/optimized/90f3e5fbdef0ffaf9466-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-cc38bf53380e.jpg": {
+      "sourceBytes": 308325,
+      "variants": [
+        {
+          "bytes": 42804,
+          "height": 515,
+          "src": "./assets/covers/optimized/b828553160db2aaa8765-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 143116,
+          "height": 1031,
+          "src": "./assets/covers/optimized/a207ccaf83157acfd555-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-cda91a7d8e60.jpg": {
+      "sourceBytes": 462502,
+      "variants": [
+        {
+          "bytes": 11846,
+          "height": 360,
+          "src": "./assets/covers/optimized/73aa424032d305f78977-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 37584,
+          "height": 720,
+          "src": "./assets/covers/optimized/5af46da401317dd19969-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-d4d8c137249d.jpg": {
+      "sourceBytes": 355471,
+      "variants": [
+        {
+          "bytes": 47394,
+          "height": 465,
+          "src": "./assets/covers/optimized/a75a7d8d2c510d984840-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 141842,
+          "height": 931,
+          "src": "./assets/covers/optimized/b9c8221d61969276610e-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-d536b78163e6.jpg": {
+      "sourceBytes": 332645,
+      "variants": [
+        {
+          "bytes": 49826,
+          "height": 482,
+          "src": "./assets/covers/optimized/d647298747a68ac708b6-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 144524,
+          "height": 963,
+          "src": "./assets/covers/optimized/6f3b3464c541a758755d-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-d709b50f3e6f.jpg": {
+      "sourceBytes": 287683,
+      "variants": [
+        {
+          "bytes": 40986,
+          "height": 488,
+          "src": "./assets/covers/optimized/cbce191b8f4970670772-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 113330,
+          "height": 975,
+          "src": "./assets/covers/optimized/22c99a4d3f14abd6069c-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-d98a41c72460.jpg": {
+      "sourceBytes": 272958,
+      "variants": [
+        {
+          "bytes": 42744,
+          "height": 477,
+          "src": "./assets/covers/optimized/e647c6f6f00958e695d2-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 98976,
+          "height": 953,
+          "src": "./assets/covers/optimized/b3a62777c435071f797c-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-db8adb44414c.jpg": {
+      "sourceBytes": 231013,
+      "variants": [
+        {
+          "bytes": 35228,
+          "height": 507,
+          "src": "./assets/covers/optimized/6f309a13986730618c8d-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 84534,
+          "height": 1014,
+          "src": "./assets/covers/optimized/93e787333dd274034a61-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-dc8ef91bbfa9.jpg": {
+      "sourceBytes": 313166,
+      "variants": [
+        {
+          "bytes": 39726,
+          "height": 565,
+          "src": "./assets/covers/optimized/ba63f2678849f0634174-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 109264,
+          "height": 1131,
+          "src": "./assets/covers/optimized/ef733553ebf66b4aec63-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-dd7211ab2de3.jpg": {
+      "sourceBytes": 396091,
+      "variants": [
+        {
+          "bytes": 61742,
+          "height": 461,
+          "src": "./assets/covers/optimized/6562ea00611c588ac96a-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 170250,
+          "height": 923,
+          "src": "./assets/covers/optimized/1e810d36f0d3e8bcabdb-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-de126b828536.jpg": {
+      "sourceBytes": 300672,
+      "variants": [
+        {
+          "bytes": 57318,
+          "height": 523,
+          "src": "./assets/covers/optimized/5d1948e7836054e1bd0e-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 130514,
+          "height": 1046,
+          "src": "./assets/covers/optimized/706ce268c93262bab04e-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-de87f4ae8cc1.jpg": {
+      "sourceBytes": 228145,
+      "variants": [
+        {
+          "bytes": 44388,
+          "height": 653,
+          "src": "./assets/covers/optimized/354a90b26e6514cbf070-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 143360,
+          "height": 1280,
+          "src": "./assets/covers/optimized/4324481e8df9bb2bc21a-706.webp",
+          "width": 706
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-dee2c3136e37.jpg": {
+      "sourceBytes": 266628,
+      "variants": [
+        {
+          "bytes": 37614,
+          "height": 469,
+          "src": "./assets/covers/optimized/f103dac8456831b8a1d3-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 93800,
+          "height": 938,
+          "src": "./assets/covers/optimized/41280e58cf9242a70588-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-e00dae6a3310.jpg": {
+      "sourceBytes": 335169,
+      "variants": [
+        {
+          "bytes": 46798,
+          "height": 440,
+          "src": "./assets/covers/optimized/9d8fcaf3ecccf78802fa-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 123062,
+          "height": 879,
+          "src": "./assets/covers/optimized/7a992193d72227b9f43c-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-e0bbf087c984.jpg": {
+      "sourceBytes": 273453,
+      "variants": [
+        {
+          "bytes": 50410,
+          "height": 527,
+          "src": "./assets/covers/optimized/f5faf071b0807f5e90e6-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 127498,
+          "height": 1054,
+          "src": "./assets/covers/optimized/c34cec688d79fd02162e-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-e101ecfdae90.jpg": {
+      "sourceBytes": 303145,
+      "variants": [
+        {
+          "bytes": 54424,
+          "height": 555,
+          "src": "./assets/covers/optimized/71cc01cd397fb929b8e9-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 153100,
+          "height": 1110,
+          "src": "./assets/covers/optimized/a178edb7a22147eeb27f-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-e14d5ea25010.jpg": {
+      "sourceBytes": 150789,
+      "variants": [
+        {
+          "bytes": 41844,
+          "height": 545,
+          "src": "./assets/covers/optimized/07093003088a07cd7dc0-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 58122,
+          "height": 733,
+          "src": "./assets/covers/optimized/bf64d4b99dbc95efd12e-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-e1634199b887.jpg": {
+      "sourceBytes": 202042,
+      "variants": [
+        {
+          "bytes": 21172,
+          "height": 558,
+          "src": "./assets/covers/optimized/3a40a6256efcdc72f167-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 77862,
+          "height": 1116,
+          "src": "./assets/covers/optimized/50e74e8897d91bdd30c0-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-e24a3d18d569.jpg": {
+      "sourceBytes": 153994,
+      "variants": [
+        {
+          "bytes": 23996,
+          "height": 360,
+          "src": "./assets/covers/optimized/826058fbc936894c55a9-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 57564,
+          "height": 700,
+          "src": "./assets/covers/optimized/c8ba3af2d8e88e66ab0e-700.webp",
+          "width": 700
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-e2ec46d05e22.jpg": {
+      "sourceBytes": 318863,
+      "variants": [
+        {
+          "bytes": 56960,
+          "height": 509,
+          "src": "./assets/covers/optimized/d375549a769abcd22659-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 146692,
+          "height": 1018,
+          "src": "./assets/covers/optimized/aa7cb4db185ff4f4ef66-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-e3bcc43f3a23.jpg": {
+      "sourceBytes": 293729,
+      "variants": [
+        {
+          "bytes": 38816,
+          "height": 479,
+          "src": "./assets/covers/optimized/0f87dbb2f486fab37372-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 109594,
+          "height": 957,
+          "src": "./assets/covers/optimized/48b64dfd309fdfd94e9c-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-e91252f3d073.jpg": {
+      "sourceBytes": 106206,
+      "variants": [
+        {
+          "bytes": 38698,
+          "height": 549,
+          "src": "./assets/covers/optimized/6a4e6cb0d03bf38c6e16-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 41234,
+          "height": 566,
+          "src": "./assets/covers/optimized/00923157daafe96e7980-371.webp",
+          "width": 371
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-eaa89e9cfcc3.jpg": {
+      "sourceBytes": 269642,
+      "variants": [
+        {
+          "bytes": 47932,
+          "height": 525,
+          "src": "./assets/covers/optimized/559ce0c08b2c6432c71e-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 115080,
+          "height": 1051,
+          "src": "./assets/covers/optimized/f1a478f0ad881297ab6b-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-eadffebb1a71.jpg": {
+      "sourceBytes": 304959,
+      "variants": [
+        {
+          "bytes": 28682,
+          "height": 562,
+          "src": "./assets/covers/optimized/4ce8152c30917caebc98-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 108166,
+          "height": 1123,
+          "src": "./assets/covers/optimized/1a66e38667e4c2fd0f9b-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-eb444826d531.jpg": {
+      "sourceBytes": 325056,
+      "variants": [
+        {
+          "bytes": 43934,
+          "height": 438,
+          "src": "./assets/covers/optimized/7d2cda93574043389cfd-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 114018,
+          "height": 876,
+          "src": "./assets/covers/optimized/cef046fa2aaf0f627a55-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-ec79e04923fa.jpg": {
+      "sourceBytes": 1479206,
+      "variants": [
+        {
+          "bytes": 83800,
+          "height": 566,
+          "src": "./assets/covers/optimized/ca2ab3ff6c1c0dd214be-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 229976,
+          "height": 1132,
+          "src": "./assets/covers/optimized/26e317bf0799af56b712-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-ed91a7fbcae3.jpg": {
+      "sourceBytes": 94944,
+      "variants": [
+        {
+          "bytes": 31842,
+          "height": 567,
+          "src": "./assets/covers/optimized/2377d23b45080fcd3c09-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 38632,
+          "height": 630,
+          "src": "./assets/covers/optimized/748c2c910d4bba57c0e1-400.webp",
+          "width": 400
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-ee3a4f56489b.jpg": {
+      "sourceBytes": 193594,
+      "variants": [
+        {
+          "bytes": 22306,
+          "height": 435,
+          "src": "./assets/covers/optimized/1803f9c5e1e9445225a6-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 49618,
+          "height": 869,
+          "src": "./assets/covers/optimized/540b9bdd3494794698b6-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-ee7c4d03cfa6.jpg": {
+      "sourceBytes": 1035762,
+      "variants": [
+        {
+          "bytes": 22342,
+          "height": 569,
+          "src": "./assets/covers/optimized/557e2ea54ce5b30337ee-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 73888,
+          "height": 1139,
+          "src": "./assets/covers/optimized/50d36dee2c96965fabf0-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-ef082fdfd146.jpg": {
+      "sourceBytes": 271385,
+      "variants": [
+        {
+          "bytes": 50968,
+          "height": 580,
+          "src": "./assets/covers/optimized/4636417f61460fbde847-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 151424,
+          "height": 1159,
+          "src": "./assets/covers/optimized/fc4fea1468f4f0e39845-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-efc6021b0f5d.jpg": {
+      "sourceBytes": 404262,
+      "variants": [
+        {
+          "bytes": 50444,
+          "height": 540,
+          "src": "./assets/covers/optimized/8ca47773d7cade7bd42a-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 169450,
+          "height": 1081,
+          "src": "./assets/covers/optimized/9629d9c8893405020a37-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-f00fa14f933f.jpg": {
+      "sourceBytes": 282322,
+      "variants": [
+        {
+          "bytes": 46372,
+          "height": 504,
+          "src": "./assets/covers/optimized/8bed03a26f87480d9fbc-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 113548,
+          "height": 1008,
+          "src": "./assets/covers/optimized/a58218bebedbdf9b5518-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-f119025dce3c.jpg": {
+      "sourceBytes": 222387,
+      "variants": [
+        {
+          "bytes": 35682,
+          "height": 544,
+          "src": "./assets/covers/optimized/c5c88e55faa27cf17a42-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 91986,
+          "height": 1088,
+          "src": "./assets/covers/optimized/997df3477c839ee4fc01-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-f1ce74671825.jpg": {
+      "sourceBytes": 110557,
+      "variants": [
+        {
+          "bytes": 29092,
+          "height": 520,
+          "src": "./assets/covers/optimized/04b5f9454353697a8fbe-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 37822,
+          "height": 699,
+          "src": "./assets/covers/optimized/9e9eb22949167b988ac1-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-f32897359def.jpg": {
+      "sourceBytes": 253225,
+      "variants": [
+        {
+          "bytes": 42704,
+          "height": 563,
+          "src": "./assets/covers/optimized/9ddabf9aae98b3231d85-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 119112,
+          "height": 1127,
+          "src": "./assets/covers/optimized/5e7cac384936941a94f6-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-f7673f4d3ca6.jpg": {
+      "sourceBytes": 281577,
+      "variants": [
+        {
+          "bytes": 51262,
+          "height": 554,
+          "src": "./assets/covers/optimized/6d292617882eda5d52a8-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 137672,
+          "height": 1108,
+          "src": "./assets/covers/optimized/bf50b31e4e3e75a47d00-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-f7bfcf5e3082.jpg": {
+      "sourceBytes": 319853,
+      "variants": [
+        {
+          "bytes": 32992,
+          "height": 566,
+          "src": "./assets/covers/optimized/647cc953c7ca45e168f3-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 111586,
+          "height": 1132,
+          "src": "./assets/covers/optimized/05f4761869e8aea65f80-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-f8b8f888579e.jpg": {
+      "sourceBytes": 273488,
+      "variants": [
+        {
+          "bytes": 36168,
+          "height": 545,
+          "src": "./assets/covers/optimized/6af71e87a5065fc6074b-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 97526,
+          "height": 1090,
+          "src": "./assets/covers/optimized/ede6176141c04674d9af-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-f908287412d8.jpg": {
+      "sourceBytes": 290592,
+      "variants": [
+        {
+          "bytes": 47328,
+          "height": 501,
+          "src": "./assets/covers/optimized/77d8a6635d46b7bd3b34-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 115118,
+          "height": 1002,
+          "src": "./assets/covers/optimized/d5ebefa93746fa876489-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-f9ab9ec4f551.jpg": {
+      "sourceBytes": 141754,
+      "variants": [
+        {
+          "bytes": 33084,
+          "height": 530,
+          "src": "./assets/covers/optimized/042f2b83c81af71c2b45-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 78974,
+          "height": 1061,
+          "src": "./assets/covers/optimized/40fd29e5e96dd0b9a5d5-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-fa2f5f727d7a.jpg": {
+      "sourceBytes": 233041,
+      "variants": [
+        {
+          "bytes": 17946,
+          "height": 254,
+          "src": "./assets/covers/optimized/509d319f890e0ff14119-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 50538,
+          "height": 507,
+          "src": "./assets/covers/optimized/2fbef469d36cc4f4cf2c-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-fb31f0cd4b8e.jpg": {
+      "sourceBytes": 265006,
+      "variants": [
+        {
+          "bytes": 49682,
+          "height": 555,
+          "src": "./assets/covers/optimized/2f1bb73ecec764ec4db7-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 124296,
+          "height": 1109,
+          "src": "./assets/covers/optimized/141f2914638eae52c0c1-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-fd10d752f976.jpg": {
+      "sourceBytes": 282782,
+      "variants": [
+        {
+          "bytes": 33670,
+          "height": 485,
+          "src": "./assets/covers/optimized/417349064b1858ac95c7-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 104032,
+          "height": 969,
+          "src": "./assets/covers/optimized/8c364c224dcdf9b0a78a-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-fe100eca2ebf.jpg": {
+      "sourceBytes": 827782,
+      "variants": [
+        {
+          "bytes": 52392,
+          "height": 566,
+          "src": "./assets/covers/optimized/2e74c903c7a3a51d133e-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 212916,
+          "height": 1131,
+          "src": "./assets/covers/optimized/794119f3f9bce7096034-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-ff636e316295.jpg": {
+      "sourceBytes": 298839,
+      "variants": [
+        {
+          "bytes": 32056,
+          "height": 565,
+          "src": "./assets/covers/optimized/fc9bef4db3187ed71392-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 105572,
+          "height": 1131,
+          "src": "./assets/covers/optimized/f7d986a14fb3e4182bb7-720.webp",
           "width": 720
         }
       ]
@@ -8857,176 +12851,6 @@
           "height": 914,
           "src": "./assets/covers/optimized/b45178a2a2744831133a-720.webp",
           "width": 720
-        }
-      ]
-    },
-    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-2a3b6987dd2d.webp": {
-      "sourceBytes": 43338,
-      "variants": [
-        {
-          "bytes": 34114,
-          "height": 562,
-          "src": "./assets/covers/optimized/4851e23da956cc448158-360.webp",
-          "width": 360
-        },
-        {
-          "bytes": 47756,
-          "height": 756,
-          "src": "./assets/covers/optimized/2d79fb14b1c79c1e535a-484.webp",
-          "width": 484
-        }
-      ]
-    },
-    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-436fc748983f.webp": {
-      "sourceBytes": 47786,
-      "variants": [
-        {
-          "bytes": 35838,
-          "height": 565,
-          "src": "./assets/covers/optimized/df93076ba4ee65411953-360.webp",
-          "width": 360
-        },
-        {
-          "bytes": 53052,
-          "height": 760,
-          "src": "./assets/covers/optimized/d5c25665caa8be58e36a-484.webp",
-          "width": 484
-        }
-      ]
-    },
-    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-5c0b287e6e1e.webp": {
-      "sourceBytes": 55468,
-      "variants": [
-        {
-          "bytes": 44202,
-          "height": 566,
-          "src": "./assets/covers/optimized/c836fe2a32b2e1fb4aa1-360.webp",
-          "width": 360
-        },
-        {
-          "bytes": 60708,
-          "height": 761,
-          "src": "./assets/covers/optimized/c5f3804ea060d323eeeb-484.webp",
-          "width": 484
-        }
-      ]
-    },
-    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-6d119d2ccb53.webp": {
-      "sourceBytes": 43446,
-      "variants": [
-        {
-          "bytes": 35378,
-          "height": 599,
-          "src": "./assets/covers/optimized/d09d359326a4e5e49308-360.webp",
-          "width": 360
-        },
-        {
-          "bytes": 46910,
-          "height": 805,
-          "src": "./assets/covers/optimized/13944dbddc6e79a45338-484.webp",
-          "width": 484
-        }
-      ]
-    },
-    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-6d3090f466eb.webp": {
-      "sourceBytes": 46432,
-      "variants": [
-        {
-          "bytes": 37206,
-          "height": 470,
-          "src": "./assets/covers/optimized/00b06ed9d587ef765b12-360.webp",
-          "width": 360
-        },
-        {
-          "bytes": 51376,
-          "height": 632,
-          "src": "./assets/covers/optimized/a47bb68d32d53f0094f8-484.webp",
-          "width": 484
-        }
-      ]
-    },
-    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-726d7dfa3300.webp": {
-      "sourceBytes": 44614,
-      "variants": [
-        {
-          "bytes": 35716,
-          "height": 566,
-          "src": "./assets/covers/optimized/a96124132381b74c182b-360.webp",
-          "width": 360
-        },
-        {
-          "bytes": 48526,
-          "height": 761,
-          "src": "./assets/covers/optimized/400de111dc594870f768-484.webp",
-          "width": 484
-        }
-      ]
-    },
-    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-81b148aa764e.webp": {
-      "sourceBytes": 30774,
-      "variants": [
-        {
-          "bytes": 26042,
-          "height": 566,
-          "src": "./assets/covers/optimized/4e3b1d663007f180938e-360.webp",
-          "width": 360
-        },
-        {
-          "bytes": 33210,
-          "height": 761,
-          "src": "./assets/covers/optimized/182a0361d6c668998bd7-484.webp",
-          "width": 484
-        }
-      ]
-    },
-    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-8b16df7d56a8.webp": {
-      "sourceBytes": 56662,
-      "variants": [
-        {
-          "bytes": 45926,
-          "height": 530,
-          "src": "./assets/covers/optimized/16d016d273b05ae96868-360.webp",
-          "width": 360
-        },
-        {
-          "bytes": 61956,
-          "height": 713,
-          "src": "./assets/covers/optimized/1b3ff603ed4713aabdd4-484.webp",
-          "width": 484
-        }
-      ]
-    },
-    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-b7cea0217bd7.webp": {
-      "sourceBytes": 32598,
-      "variants": [
-        {
-          "bytes": 27180,
-          "height": 466,
-          "src": "./assets/covers/optimized/8b7dcbec556cd457778e-360.webp",
-          "width": 360
-        },
-        {
-          "bytes": 35080,
-          "height": 626,
-          "src": "./assets/covers/optimized/33f5ff0de647c965f5f9-484.webp",
-          "width": 484
-        }
-      ]
-    },
-    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-c4a30deef770.webp": {
-      "sourceBytes": 46836,
-      "variants": [
-        {
-          "bytes": 39756,
-          "height": 514,
-          "src": "./assets/covers/optimized/803fd95f2c90530fd44e-360.webp",
-          "width": 360
-        },
-        {
-          "bytes": 50434,
-          "height": 691,
-          "src": "./assets/covers/optimized/98a834b6b4b5b94994c0-484.webp",
-          "width": 484
         }
       ]
     },
