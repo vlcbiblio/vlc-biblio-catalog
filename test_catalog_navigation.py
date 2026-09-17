@@ -219,8 +219,15 @@ class CatalogNavigationTests(unittest.TestCase):
         expect(self.page.locator("#faq")).to_be_visible()
         expect(self.page.locator("#latestGrid .latest-card")).to_have_count(6)
 
+        self.assertEqual(self.page.locator("#totalCount").inner_text(), "96")
+        self.assertEqual(self.page.locator("#libraryCount").inner_text(), "24")
+        self.assertEqual(self.page.locator("#exchangeCount").inner_text(), "72")
+
         self.page.locator("#audienceFilter").select_option("children")
         expect(self.page.locator("#grid .book")).to_have_count(48)
+        self.assertEqual(self.page.locator("#totalCount").inner_text(), "96")
+        self.assertEqual(self.page.locator("#libraryCount").inner_text(), "24")
+        self.assertEqual(self.page.locator("#exchangeCount").inner_text(), "72")
         self.assertEqual(
             self.page.locator("#grid .book .badge.exchange").first.inner_text(),
             "🏠 Частная библиотека",

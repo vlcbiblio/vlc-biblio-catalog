@@ -1179,9 +1179,9 @@
       function render() {
         const visible = sorted(books.filter(matches));
 
-        document.querySelector("#totalCount").textContent = visible.length;
-        document.querySelector("#libraryCount").textContent = visible.filter((book) => book.section === "library").length;
-        document.querySelector("#exchangeCount").textContent = visible.filter((book) => book.section === "exchange").length;
+        document.querySelector("#totalCount").textContent = books.length;
+        document.querySelector("#libraryCount").textContent = books.filter((book) => book.section === "library").length;
+        document.querySelector("#exchangeCount").textContent = books.filter((book) => book.section === "exchange").length;
 
         grid.innerHTML = visible
           .map((book, index) => `
