@@ -1632,6 +1632,28 @@
         }
       ]
     },
+    "https://belayavorona.eu/cdn/shop/files/jswlo0421y5x7uuzpwn2o2spjjb9ur9d.jpg?v=1747047850&width=1920": {
+      "sourceBytes": 28327,
+      "variants": [
+        {
+          "bytes": 19796,
+          "height": 561,
+          "src": "./assets/covers/optimized/28f5d5776b6dc014b5bd-356.webp",
+          "width": 356
+        }
+      ]
+    },
+    "https://belayavorona.eu/cdn/shop/files/wioj057dc0u890mwlxqz1cabahwlg8p4.jpg?v=1747071474&width=1920": {
+      "sourceBytes": 28905,
+      "variants": [
+        {
+          "bytes": 17498,
+          "height": 561,
+          "src": "./assets/covers/optimized/a1821665d792e4c9af17-356.webp",
+          "width": 356
+        }
+      ]
+    },
     "https://book-tower.com.ua/image/cache/catalog/hudogestvennaya-lite-folder/6/a-4442063623_tvoe-serdtse-budet-600x600.jpg": {
       "sourceBytes": 80249,
       "variants": [
