@@ -1,5 +1,49 @@
 window.BIBLIO_BOOKS = [
   {
+    "id": "b-4f7aeb5f2db7",
+    "requestId": "813",
+    "title": "Бобёр Боря-следопыт! Спасаем планету. Книжка подготовишки",
+    "author": "Инга Мари Рамке, Кристин Куглер",
+    "section": "library",
+    "catalogStatus": "Pilar Faus",
+    "libraryKey": "library:pilar faus",
+    "sourceKind": "library",
+    "availability": "transferred",
+    "audience": "adult",
+    "cover": "https://cdn.insales-shop.ru/images/products/1/3009/545811393/00116687.jpg",
+    "isbn": "978-5-00116-687-0",
+    "year": "2022",
+    "publisher": "Питер",
+    "annotation": "Бобёр Боря обнаруживает, что его плотина засорилась, и вместе с друзьями выясняет, как отходы попадают на полигон, почему их важно сортировать и как дать вещам вторую жизнь.",
+    "sourceUrl": "https://www.piter.com/collection/all/product/bobyor-borya-sledopyt-spasaem-planetu-knizhka-podgotovishki",
+    "livelibUrl": "",
+    "wildberriesUrl": "",
+    "addedAt": "2026-09-18T11:30:23",
+    "updatedAt": "2026-09-18T12:24:36"
+  },
+  {
+    "id": "b-e1d87adf06a4",
+    "requestId": "812",
+    "title": "Как папа был маленьким",
+    "author": "Александр Раскин",
+    "section": "library",
+    "catalogStatus": "Pilar Faus",
+    "libraryKey": "library:pilar faus",
+    "sourceKind": "library",
+    "availability": "transferred",
+    "audience": "adult",
+    "cover": "https://fantlab.ru/images/editions/orig/354790",
+    "isbn": "978-5-353-10095-9",
+    "year": "2022",
+    "publisher": "РОСМЭН",
+    "annotation": "Папы не всегда были взрослыми: когда-то они опаздывали в школу, учились музыке и немецкому языку, писали сочинения, выступали на сцене и попадали в смешные истории. В книгу вошли избранные рассказы из сборников «Как папа был маленьким» и «Как папа учился в школе».",
+    "sourceUrl": "https://rosman.ru/catalog/kak_papa_byl_malenkim_raskin_a/",
+    "livelibUrl": "https://www.livelib.ru/book/1009161592-kak-papa-byl-malenkim-aleksandr-raskin",
+    "wildberriesUrl": "",
+    "addedAt": "2026-09-18T11:26:24",
+    "updatedAt": "2026-09-18T12:24:36"
+  },
+  {
     "id": "b-7f1db451216a",
     "requestId": "811",
     "title": "Стихи и сказки для самых маленьких",
@@ -19,7 +63,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-18T11:24:10",
-    "updatedAt": "2026-09-18T12:23:22"
+    "updatedAt": "2026-09-18T12:24:24"
   },
   {
     "id": "b-27eb7e868205",
