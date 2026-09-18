@@ -236,6 +236,14 @@ class CatalogNavigationTests(unittest.TestCase):
         response = self.page.request.get(f"{self.base_url}privacy.html")
         self.assertEqual(response.status, 200)
 
+    def test_partner_link_opens_the_bot_team_message_scenario(self):
+        self.page.goto(self.base_url)
+        partner_link = self.page.get_by_role("link", name="Стать партнёром")
+        self.assertEqual(
+            partner_link.get_attribute("href"),
+            "https://t.me/VLS_Biblio_bot?start=partner",
+        )
+
     def test_telegram_catalog_can_open_a_clean_url_in_external_browser(self):
         self.page.set_viewport_size({"width": 390, "height": 844})
         self.context.add_init_script("""
