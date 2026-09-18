@@ -663,23 +663,6 @@
         }
       ]
     },
-    "https://basket-10.wbbasket.ru/vol1543/part154335/154335501/images/big/1.webp": {
-      "sourceBytes": 101104,
-      "variants": [
-        {
-          "bytes": 15170,
-          "height": 480,
-          "src": "./assets/covers/optimized/b35791d116f4313cf6bc-360.webp",
-          "width": 360
-        },
-        {
-          "bytes": 64012,
-          "height": 960,
-          "src": "./assets/covers/optimized/d22838c4636959ccfcd2-720.webp",
-          "width": 720
-        }
-      ]
-    },
     "https://basket-10.wbbasket.ru/vol1547/part154775/154775094/images/big/1.webp": {
       "sourceBytes": 136564,
       "variants": [
