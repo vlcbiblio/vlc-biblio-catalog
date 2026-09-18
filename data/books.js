@@ -22742,7 +22742,7 @@ window.BIBLIO_BOOKS = [
     "catalogStatus": "Частная библиотека",
     "libraryKey": "user:29cb368aa115",
     "sourceKind": "user",
-    "availability": "reserved",
+    "availability": "available",
     "audience": "children",
     "cover": "https://kniga.lv/_img/product/50/1/72/1717521465/w320_h340_cover_q70.webp",
     "isbn": "978-5-00154-995-6",
