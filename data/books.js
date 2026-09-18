@@ -7495,7 +7495,7 @@ window.BIBLIO_BOOKS = [
     "id": "b-6e62b6287d68",
     "requestId": "563",
     "title": "Все приключения нулика. Трилогия",
-    "author": "В. Лёвин",
+    "author": "Левшин",
     "section": "exchange",
     "catalogStatus": "Частная библиотека",
     "libraryKey": "user:eac4b24812ce",
