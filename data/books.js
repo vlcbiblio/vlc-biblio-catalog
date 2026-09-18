@@ -1,27 +1,5 @@
 window.BIBLIO_BOOKS = [
   {
-    "id": "b-1ed1fe233b38",
-    "requestId": "814",
-    "title": "Психология семьи. Хрестоматия",
-    "author": "Д. Я. Райгородский (редактор-составитель)",
-    "section": "library",
-    "catalogStatus": "Pilar Faus",
-    "libraryKey": "library:pilar faus",
-    "sourceKind": "library",
-    "availability": "transferred",
-    "audience": "adult",
-    "cover": "http://www.bitrix.skunb.ru/upload/exh_subsections/02202a17b115.jpg",
-    "isbn": "5-94648-005-7",
-    "year": "2002",
-    "publisher": "БАХРАХ-М",
-    "annotation": "Хрестоматия рассматривает эволюцию и сущность брачно-семейных отношений, модели семьи, поло-ролевую дифференциацию и межличностные отношения. Учебное пособие предназначено для студентов психологических, социологических, экономических и журналистских специальностей.",
-    "sourceUrl": "https://rusneb.ru/catalog/000199_000009_000754120/",
-    "livelibUrl": "",
-    "wildberriesUrl": "",
-    "addedAt": "2026-09-18T11:33:54",
-    "updatedAt": "2026-09-18T12:30:50"
-  },
-  {
     "id": "b-4f7aeb5f2db7",
     "requestId": "813",
     "title": "Бобёр Боря-следопыт! Спасаем планету. Книжка подготовишки",
@@ -41,7 +19,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-18T11:30:23",
-    "updatedAt": "2026-09-18T12:24:36"
+    "updatedAt": "2026-09-18T12:37:18",
+    "coverImage": {
+      "src": "./assets/covers/optimized/5b9ed6d8f2c1d89d18ed-248.webp",
+      "srcset": "./assets/covers/optimized/5b9ed6d8f2c1d89d18ed-248.webp 248w",
+      "width": 248,
+      "height": 329
+    }
   },
   {
     "id": "b-e1d87adf06a4",
@@ -63,7 +47,41 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/book/1009161592-kak-papa-byl-malenkim-aleksandr-raskin",
     "wildberriesUrl": "",
     "addedAt": "2026-09-18T11:26:24",
-    "updatedAt": "2026-09-18T12:24:36"
+    "updatedAt": "2026-09-18T12:37:18",
+    "coverImage": {
+      "src": "./assets/covers/optimized/a53fcafe5a71c42dd58e-458.webp",
+      "srcset": "./assets/covers/optimized/09d7a9f8406187958e70-360.webp 360w, ./assets/covers/optimized/a53fcafe5a71c42dd58e-458.webp 458w",
+      "width": 458,
+      "height": 700
+    }
+  },
+  {
+    "id": "b-1ed1fe233b38",
+    "requestId": "814",
+    "title": "Психология семьи. Хрестоматия",
+    "author": "Д. Я. Райгородский (редактор-составитель)",
+    "section": "library",
+    "catalogStatus": "Pilar Faus",
+    "libraryKey": "library:pilar faus",
+    "sourceKind": "library",
+    "availability": "transferred",
+    "audience": "adult",
+    "cover": "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-1ed1fe233b38.jpg",
+    "isbn": "5-94648-005-7",
+    "year": "2002",
+    "publisher": "БАХРАХ-М",
+    "annotation": "Хрестоматия рассматривает эволюцию и сущность брачно-семейных отношений, модели семьи, поло-ролевую дифференциацию и межличностные отношения. Учебное пособие предназначено для студентов психологических, социологических, экономических и журналистских специальностей.",
+    "sourceUrl": "https://rusneb.ru/catalog/000199_000009_000754120/",
+    "livelibUrl": "",
+    "wildberriesUrl": "",
+    "addedAt": "2026-09-18T11:33:54",
+    "updatedAt": "2026-09-18T12:30:50",
+    "coverImage": {
+      "src": "./assets/covers/optimized/814f87b449347ab07549-481.webp",
+      "srcset": "./assets/covers/optimized/cfbcc3ca9b5507223fcf-360.webp 360w, ./assets/covers/optimized/814f87b449347ab07549-481.webp 481w",
+      "width": 481,
+      "height": 734
+    }
   },
   {
     "id": "b-7f1db451216a",
@@ -85,7 +103,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-18T11:24:10",
-    "updatedAt": "2026-09-18T12:24:24"
+    "updatedAt": "2026-09-18T12:24:24",
+    "coverImage": {
+      "src": "./assets/covers/optimized/1d2ff751c546f7bfcd95-600.webp",
+      "srcset": "./assets/covers/optimized/46362cea546b8664d0d5-360.webp 360w, ./assets/covers/optimized/1d2ff751c546f7bfcd95-600.webp 600w",
+      "width": 600,
+      "height": 873
+    }
   },
   {
     "id": "b-27eb7e868205",
@@ -499,7 +523,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=978-5-699-15044-1",
     "wildberriesUrl": "",
     "addedAt": "2026-09-18T10:59:18",
-    "updatedAt": "2026-09-18T12:14:35"
+    "updatedAt": "2026-09-18T12:14:35",
+    "coverImage": {
+      "src": "./assets/covers/optimized/3e7f1c772560f6e063a4-720.webp",
+      "srcset": "./assets/covers/optimized/aea84ff1573d6f788798-360.webp 360w, ./assets/covers/optimized/3e7f1c772560f6e063a4-720.webp 720w",
+      "width": 720,
+      "height": 933
+    }
   },
   {
     "id": "b-dcad54f55017",
@@ -521,7 +551,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-18T11:06:38",
-    "updatedAt": "2026-09-18T12:14:35"
+    "updatedAt": "2026-09-18T12:14:35",
+    "coverImage": {
+      "src": "./assets/covers/optimized/6fd9f2da101217967e8c-200.webp",
+      "srcset": "./assets/covers/optimized/6fd9f2da101217967e8c-200.webp 200w",
+      "width": 200,
+      "height": 305
+    }
   },
   {
     "id": "b-0286253699b6",
@@ -4923,7 +4959,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-17T09:51:52+02:00",
-    "updatedAt": "2026-09-17T09:51:52+02:00"
+    "updatedAt": "2026-09-17T09:51:52+02:00",
+    "coverImage": {
+      "src": "./assets/covers/optimized/c710af9ce178019ae70a-452.webp",
+      "srcset": "./assets/covers/optimized/cfd32ac506daa70795f3-360.webp 360w, ./assets/covers/optimized/c710af9ce178019ae70a-452.webp 452w",
+      "width": 452,
+      "height": 640
+    }
   },
   {
     "id": "b-1ef030ec5879",
@@ -4946,7 +4988,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-17T09:51:52+02:00",
-    "updatedAt": "2026-09-17T09:51:52+02:00"
+    "updatedAt": "2026-09-17T09:51:52+02:00",
+    "coverImage": {
+      "src": "./assets/covers/optimized/586b7230f767713d81ee-537.webp",
+      "srcset": "./assets/covers/optimized/b73c93cddb7b1aad8610-360.webp 360w, ./assets/covers/optimized/586b7230f767713d81ee-537.webp 537w",
+      "width": 537,
+      "height": 641
+    }
   },
   {
     "id": "b-23c28b8164fc",
@@ -4969,7 +5017,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-17T09:51:52+02:00",
-    "updatedAt": "2026-09-17T09:51:52+02:00"
+    "updatedAt": "2026-09-17T09:51:52+02:00",
+    "coverImage": {
+      "src": "./assets/covers/optimized/554acda404d1c36e0dec-451.webp",
+      "srcset": "./assets/covers/optimized/702258d154d852d768f0-360.webp 360w, ./assets/covers/optimized/554acda404d1c36e0dec-451.webp 451w",
+      "width": 451,
+      "height": 640
+    }
   },
   {
     "id": "b-33feb18bb658",
@@ -4992,7 +5046,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-17T09:51:52+02:00",
-    "updatedAt": "2026-09-17T09:51:52+02:00"
+    "updatedAt": "2026-09-17T09:51:52+02:00",
+    "coverImage": {
+      "src": "./assets/covers/optimized/f4fa13f9aeac70b4842e-505.webp",
+      "srcset": "./assets/covers/optimized/c24995fc41d44dd5991d-360.webp 360w, ./assets/covers/optimized/f4fa13f9aeac70b4842e-505.webp 505w",
+      "width": 505,
+      "height": 639
+    }
   },
   {
     "id": "b-3a90adc2569b",
@@ -5015,7 +5075,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-17T09:51:52+02:00",
-    "updatedAt": "2026-09-17T09:51:52+02:00"
+    "updatedAt": "2026-09-17T09:51:52+02:00",
+    "coverImage": {
+      "src": "./assets/covers/optimized/8f8267dacb023e2f4390-469.webp",
+      "srcset": "./assets/covers/optimized/9a4e41c7d658c768748c-360.webp 360w, ./assets/covers/optimized/8f8267dacb023e2f4390-469.webp 469w",
+      "width": 469,
+      "height": 500
+    }
   },
   {
     "id": "b-42abe93df9c1",
@@ -5038,7 +5104,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-17T09:51:52+02:00",
-    "updatedAt": "2026-09-17T09:51:52+02:00"
+    "updatedAt": "2026-09-17T09:51:52+02:00",
+    "coverImage": {
+      "src": "./assets/covers/optimized/bbbe619bbddd31bbb58a-470.webp",
+      "srcset": "./assets/covers/optimized/4ae7eb95a9bff28c49e3-360.webp 360w, ./assets/covers/optimized/bbbe619bbddd31bbb58a-470.webp 470w",
+      "width": 470,
+      "height": 641
+    }
   },
   {
     "id": "b-4cd864951198",
@@ -5061,7 +5133,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-17T09:51:52+02:00",
-    "updatedAt": "2026-09-17T09:51:52+02:00"
+    "updatedAt": "2026-09-17T09:51:52+02:00",
+    "coverImage": {
+      "src": "./assets/covers/optimized/f4b84217d2124a57e87d-452.webp",
+      "srcset": "./assets/covers/optimized/0090198ba280b5a01de1-360.webp 360w, ./assets/covers/optimized/f4b84217d2124a57e87d-452.webp 452w",
+      "width": 452,
+      "height": 640
+    }
   },
   {
     "id": "b-4f52d094c033",
@@ -5084,7 +5162,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-17T09:51:52+02:00",
-    "updatedAt": "2026-09-17T09:51:52+02:00"
+    "updatedAt": "2026-09-17T09:51:52+02:00",
+    "coverImage": {
+      "src": "./assets/covers/optimized/5f6e872dde6a47455b3f-453.webp",
+      "srcset": "./assets/covers/optimized/cb905d608a44dc997a3f-360.webp 360w, ./assets/covers/optimized/5f6e872dde6a47455b3f-453.webp 453w",
+      "width": 453,
+      "height": 640
+    }
   },
   {
     "id": "b-5991cdc526f4",
@@ -5107,7 +5191,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-17T09:51:52+02:00",
-    "updatedAt": "2026-09-17T09:51:52+02:00"
+    "updatedAt": "2026-09-17T09:51:52+02:00",
+    "coverImage": {
+      "src": "./assets/covers/optimized/624c88752e4d502b5311-504.webp",
+      "srcset": "./assets/covers/optimized/b0b063a0ead1d6a729ec-360.webp 360w, ./assets/covers/optimized/624c88752e4d502b5311-504.webp 504w",
+      "width": 504,
+      "height": 639
+    }
   },
   {
     "id": "b-5e1380759465",
@@ -5130,7 +5220,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-17T09:51:52+02:00",
-    "updatedAt": "2026-09-17T09:51:52+02:00"
+    "updatedAt": "2026-09-17T09:51:52+02:00",
+    "coverImage": {
+      "src": "./assets/covers/optimized/d47d284fd60ba6360c26-488.webp",
+      "srcset": "./assets/covers/optimized/7f603de6bc0e7455366a-360.webp 360w, ./assets/covers/optimized/d47d284fd60ba6360c26-488.webp 488w",
+      "width": 488,
+      "height": 642
+    }
   },
   {
     "id": "b-61afac09f787",
@@ -5153,7 +5249,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-17T09:51:52+02:00",
-    "updatedAt": "2026-09-17T09:51:52+02:00"
+    "updatedAt": "2026-09-17T09:51:52+02:00",
+    "coverImage": {
+      "src": "./assets/covers/optimized/823cbf0cef5b6117a8b1-478.webp",
+      "srcset": "./assets/covers/optimized/73ba3c719bb811a97ea4-360.webp 360w, ./assets/covers/optimized/823cbf0cef5b6117a8b1-478.webp 478w",
+      "width": 478,
+      "height": 638
+    }
   },
   {
     "id": "b-90a23ace20fe",
@@ -5176,7 +5278,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-17T09:51:52+02:00",
-    "updatedAt": "2026-09-17T09:51:52+02:00"
+    "updatedAt": "2026-09-17T09:51:52+02:00",
+    "coverImage": {
+      "src": "./assets/covers/optimized/e0103243fd1cb4e95839-494.webp",
+      "srcset": "./assets/covers/optimized/2b9ffac2bf31b5d97483-360.webp 360w, ./assets/covers/optimized/e0103243fd1cb4e95839-494.webp 494w",
+      "width": 494,
+      "height": 600
+    }
   },
   {
     "id": "b-91a33e8e3ca3",
@@ -5199,7 +5307,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-17T09:51:52+02:00",
-    "updatedAt": "2026-09-17T09:51:52+02:00"
+    "updatedAt": "2026-09-17T09:51:52+02:00",
+    "coverImage": {
+      "src": "./assets/covers/optimized/c77833706ba3e9149da8-504.webp",
+      "srcset": "./assets/covers/optimized/cf6b1d81a9db04ea62d3-360.webp 360w, ./assets/covers/optimized/c77833706ba3e9149da8-504.webp 504w",
+      "width": 504,
+      "height": 641
+    }
   },
   {
     "id": "b-aca66849677e",
@@ -5222,7 +5336,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-17T09:51:52+02:00",
-    "updatedAt": "2026-09-17T09:51:52+02:00"
+    "updatedAt": "2026-09-17T09:51:52+02:00",
+    "coverImage": {
+      "src": "./assets/covers/optimized/99e6de698fbb26ec12cb-503.webp",
+      "srcset": "./assets/covers/optimized/85e5fdc134f3c727fc81-360.webp 360w, ./assets/covers/optimized/99e6de698fbb26ec12cb-503.webp 503w",
+      "width": 503,
+      "height": 647
+    }
   },
   {
     "id": "b-b3337f2ca42c",
@@ -5245,7 +5365,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-17T09:51:52+02:00",
-    "updatedAt": "2026-09-17T09:51:52+02:00"
+    "updatedAt": "2026-09-17T09:51:52+02:00",
+    "coverImage": {
+      "src": "./assets/covers/optimized/f70ebd7725f340b92b4d-505.webp",
+      "srcset": "./assets/covers/optimized/2a4fa48608454e0dedf5-360.webp 360w, ./assets/covers/optimized/f70ebd7725f340b92b4d-505.webp 505w",
+      "width": 505,
+      "height": 641
+    }
   },
   {
     "id": "b-b446705e43fc",
@@ -5268,7 +5394,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-17T09:51:52+02:00",
-    "updatedAt": "2026-09-17T09:51:52+02:00"
+    "updatedAt": "2026-09-17T09:51:52+02:00",
+    "coverImage": {
+      "src": "./assets/covers/optimized/ec1066853b2ba63283ba-520.webp",
+      "srcset": "./assets/covers/optimized/40ab583ef6c0b00fc65e-360.webp 360w, ./assets/covers/optimized/ec1066853b2ba63283ba-520.webp 520w",
+      "width": 520,
+      "height": 675
+    }
   },
   {
     "id": "b-be65b604e5ff",
@@ -5291,7 +5423,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-17T09:51:52+02:00",
-    "updatedAt": "2026-09-17T09:51:52+02:00"
+    "updatedAt": "2026-09-17T09:51:52+02:00",
+    "coverImage": {
+      "src": "./assets/covers/optimized/de052ca753a3dcd765c9-487.webp",
+      "srcset": "./assets/covers/optimized/9d6d9473dead0d46985c-360.webp 360w, ./assets/covers/optimized/de052ca753a3dcd765c9-487.webp 487w",
+      "width": 487,
+      "height": 640
+    }
   },
   {
     "id": "b-c1651033c982",
@@ -5314,7 +5452,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-17T09:51:52+02:00",
-    "updatedAt": "2026-09-17T09:51:52+02:00"
+    "updatedAt": "2026-09-17T09:51:52+02:00",
+    "coverImage": {
+      "src": "./assets/covers/optimized/62e21dde0b3353e0396a-475.webp",
+      "srcset": "./assets/covers/optimized/d25b5eb8bc0ffa8acd51-360.webp 360w, ./assets/covers/optimized/62e21dde0b3353e0396a-475.webp 475w",
+      "width": 475,
+      "height": 642
+    }
   },
   {
     "id": "b-d05f6abd79f4",
@@ -5337,7 +5481,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-17T09:51:52+02:00",
-    "updatedAt": "2026-09-17T09:51:52+02:00"
+    "updatedAt": "2026-09-17T09:51:52+02:00",
+    "coverImage": {
+      "src": "./assets/covers/optimized/204d7b137c9b5994deb6-467.webp",
+      "srcset": "./assets/covers/optimized/d4c76192a0d77d2c8335-360.webp 360w, ./assets/covers/optimized/204d7b137c9b5994deb6-467.webp 467w",
+      "width": 467,
+      "height": 500
+    }
   },
   {
     "id": "b-db8f328a873e",
@@ -5360,7 +5510,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-17T09:51:52+02:00",
-    "updatedAt": "2026-09-17T09:51:52+02:00"
+    "updatedAt": "2026-09-17T09:51:52+02:00",
+    "coverImage": {
+      "src": "./assets/covers/optimized/076aa5f6e08abb88c2e5-489.webp",
+      "srcset": "./assets/covers/optimized/35316edd33b097fb8bc4-360.webp 360w, ./assets/covers/optimized/076aa5f6e08abb88c2e5-489.webp 489w",
+      "width": 489,
+      "height": 639
+    }
   },
   {
     "id": "b-e5277106b7d5",
@@ -5383,7 +5539,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-17T09:51:52+02:00",
-    "updatedAt": "2026-09-17T09:51:52+02:00"
+    "updatedAt": "2026-09-17T09:51:52+02:00",
+    "coverImage": {
+      "src": "./assets/covers/optimized/f5952faa1a856edba4a2-488.webp",
+      "srcset": "./assets/covers/optimized/1c1c4aef2ad84f189917-360.webp 360w, ./assets/covers/optimized/f5952faa1a856edba4a2-488.webp 488w",
+      "width": 488,
+      "height": 641
+    }
   },
   {
     "id": "b-f7ab4739ac72",
@@ -5406,7 +5568,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-17T09:51:52+02:00",
-    "updatedAt": "2026-09-17T09:51:52+02:00"
+    "updatedAt": "2026-09-17T09:51:52+02:00",
+    "coverImage": {
+      "src": "./assets/covers/optimized/767785a8c60373df0aac-507.webp",
+      "srcset": "./assets/covers/optimized/2195d2442f07d84bcce5-360.webp 360w, ./assets/covers/optimized/767785a8c60373df0aac-507.webp 507w",
+      "width": 507,
+      "height": 680
+    }
   },
   {
     "id": "b-fda560a5c10d",
@@ -5429,7 +5597,13 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-09-17T09:51:52+02:00",
-    "updatedAt": "2026-09-17T09:51:52+02:00"
+    "updatedAt": "2026-09-17T09:51:52+02:00",
+    "coverImage": {
+      "src": "./assets/covers/optimized/4cf41a4194ea6787fe82-469.webp",
+      "srcset": "./assets/covers/optimized/3d9235586590b202eeda-360.webp 360w, ./assets/covers/optimized/4cf41a4194ea6787fe82-469.webp 469w",
+      "width": 469,
+      "height": 638
+    }
   },
   {
     "id": "b-0021bff5db0d",
