@@ -2026,6 +2026,23 @@
         }
       ]
     },
+    "https://imo10.labirint.ru/books/1002899/cover.jpg/484-0": {
+      "sourceBytes": 38710,
+      "variants": [
+        {
+          "bytes": 32426,
+          "height": 570,
+          "src": "./assets/covers/optimized/a492dcb1b5546efd6aa3-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 41798,
+          "height": 767,
+          "src": "./assets/covers/optimized/b70d119dbce27216854b-484.webp",
+          "width": 484
+        }
+      ]
+    },
     "https://imo10.labirint.ru/books/1003444/cover.jpg/484-0": {
       "sourceBytes": 21920,
       "variants": [
@@ -4020,6 +4037,23 @@
           "bytes": 131698,
           "height": 1074,
           "src": "./assets/covers/optimized/e9075da9e0e3e7c2962b-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-0b485625fd86.jpg": {
+      "sourceBytes": 266029,
+      "variants": [
+        {
+          "bytes": 57116,
+          "height": 551,
+          "src": "./assets/covers/optimized/bbb32880b9e86fbe410e-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 150390,
+          "height": 1102,
+          "src": "./assets/covers/optimized/283cc81464ee49f8715d-720.webp",
           "width": 720
         }
       ]
