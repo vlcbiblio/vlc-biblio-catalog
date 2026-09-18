@@ -392,6 +392,28 @@ window.BIBLIO_BOOKS = [
     }
   },
   {
+    "id": "b-dcad54f55017",
+    "requestId": "810",
+    "title": "Волшебник Изумрудного города",
+    "author": "Александр Волков",
+    "section": "exchange",
+    "catalogStatus": "Частная библиотека",
+    "libraryKey": "user:da6a4fee4d26",
+    "sourceKind": "user",
+    "availability": "available",
+    "audience": "adult",
+    "cover": "https://fantlab.ru/images/editions/big/20285?r=1492543172",
+    "isbn": "5-08-000262-X",
+    "year": "1992",
+    "publisher": "Лицей",
+    "annotation": "Сказочная повесть об удивительных приключениях девочки Элли и её друзей в Волшебной стране. Чтобы вернуться домой, Элли отправляется в Изумрудный город к Гудвину и по пути встречает Страшилу, Железного Дровосека и Трусливого Льва.",
+    "sourceUrl": "https://fantlab.ru/edition20285",
+    "livelibUrl": "",
+    "wildberriesUrl": "",
+    "addedAt": "2026-09-18T11:06:38",
+    "updatedAt": "2026-09-18T11:28:09"
+  },
+  {
     "id": "b-40411abb0fb4",
     "requestId": "809",
     "title": "Стихи детям",
@@ -411,7 +433,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=978-5-699-15044-1",
     "wildberriesUrl": "",
     "addedAt": "2026-09-18T10:59:18",
-    "updatedAt": "2026-09-18T11:27:01"
+    "updatedAt": "2026-09-18T11:28:08"
   },
   {
     "id": "b-0286253699b6",
