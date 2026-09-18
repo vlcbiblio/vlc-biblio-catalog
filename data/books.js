@@ -22192,22 +22192,22 @@ window.BIBLIO_BOOKS = [
     "sourceKind": "user",
     "availability": "available",
     "audience": "children",
-    "cover": "https://basket-12.wbbasket.ru/vol1809/part180924/180924857/images/big/1.webp",
-    "isbn": "",
-    "year": "2020",
-    "publisher": "Malamalama (Маламалама)",
-    "annotation": "Любимые сказки. Гуси-лебеди (книжка-панорамка)Книжка-панорамка из серии «Любимые сказки» - это сборник русских потешек, знакомых каждому с детства. 8 ярких страниц и 4 разворота с красочными объёмными иллюстрациями делают это издание особенным. Ведь малышу интереснее знакомиться со стишками, когда перед глазами, в виде 3D иллюстраций, возникают герои этих стишков. Книга выполнена из плотного картона, что гарантирует долговечность и комфортное использование",
+    "cover": "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-d8d4c685f018.jpg",
+    "isbn": "978-5-08-007330-4",
+    "year": "2024",
+    "publisher": "Детская литература",
+    "annotation": "Нынче в Котофеевке все мечтают завести гусей: известно, что эти птицы очень умны и при правильном воспитании могут стать верными друзьями. Степан поддался уговорам домочадцев и привёз с воскресной ярмарки парочку очаровательных птиц — так начинаются новые приключения котофеевцев. Книга для детей из серии «У нас в Котофеевке», придуманная, написанная и проиллюстрированная Риной Зенюк.",
     "locationNote": "Местоположение: Сагунто. Доступность метро на станциях Colón и Aragón в определённые дни и часы.",
-    "sourceUrl": "https://www.wildberries.ru/catalog/180924857/detail.aspx",
-    "livelibUrl": "",
+    "sourceUrl": "https://detlit.ru/zenyuk-novaya-istoriya-pro-kotofeevku-2/",
+    "livelibUrl": "https://www.livelib.ru/search?search=978-5-08-007330-4",
     "wildberriesUrl": "",
     "addedAt": "2026-09-15T13:39:05",
     "updatedAt": "2026-09-15T23:01:58",
     "coverImage": {
-      "src": "./assets/covers/optimized/55419835e44dfd587006-720.webp",
-      "srcset": "./assets/covers/optimized/b50ccac44a494bc0d724-360.webp 360w, ./assets/covers/optimized/55419835e44dfd587006-720.webp 720w",
+      "src": "./assets/covers/optimized/2b1e51445777546e89ec-720.webp",
+      "srcset": "./assets/covers/optimized/a8bed21a700920c84c27-360.webp 360w, ./assets/covers/optimized/2b1e51445777546e89ec-720.webp 720w",
       "width": 720,
-      "height": 960
+      "height": 931
     }
   },
   {

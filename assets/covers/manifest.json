@@ -816,23 +816,6 @@
         }
       ]
     },
-    "https://basket-12.wbbasket.ru/vol1809/part180924/180924857/images/big/1.webp": {
-      "sourceBytes": 90806,
-      "variants": [
-        {
-          "bytes": 26286,
-          "height": 480,
-          "src": "./assets/covers/optimized/b50ccac44a494bc0d724-360.webp",
-          "width": 360
-        },
-        {
-          "bytes": 67476,
-          "height": 960,
-          "src": "./assets/covers/optimized/55419835e44dfd587006-720.webp",
-          "width": 720
-        }
-      ]
-    },
     "https://basket-12.wbbasket.ru/vol1819/part181981/181981941/images/big/1.webp": {
       "sourceBytes": 199418,
       "variants": [
@@ -7606,6 +7589,23 @@
           "bytes": 113330,
           "height": 975,
           "src": "./assets/covers/optimized/22c99a4d3f14abd6069c-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-d8d4c685f018.jpg": {
+      "sourceBytes": 275310,
+      "variants": [
+        {
+          "bytes": 46468,
+          "height": 465,
+          "src": "./assets/covers/optimized/a8bed21a700920c84c27-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 121930,
+          "height": 931,
+          "src": "./assets/covers/optimized/2b1e51445777546e89ec-720.webp",
           "width": 720
         }
       ]
