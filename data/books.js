@@ -4844,7 +4844,6 @@ window.BIBLIO_BOOKS = [
     "wildberriesUrl": "",
     "addedAt": "2026-09-17T09:31:04+02:00",
     "updatedAt": "2026-09-17T14:20:30",
-    "searchAliases": "Кейт Дикамило; Дикамило",
     "coverImage": {
       "src": "./assets/covers/optimized/cef046fa2aaf0f627a55-720.webp",
       "srcset": "./assets/covers/optimized/7d2cda93574043389cfd-360.webp 360w, ./assets/covers/optimized/cef046fa2aaf0f627a55-720.webp 720w",
@@ -7872,7 +7871,7 @@ window.BIBLIO_BOOKS = [
     "id": "b-ec79e04923fa",
     "requestId": "575",
     "title": "Школа снеговиков",
-    "author": "",
+    "author": "Усачев",
     "section": "exchange",
     "catalogStatus": "Частная библиотека",
     "libraryKey": "user:eac4b24812ce",
