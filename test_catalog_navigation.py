@@ -35,6 +35,8 @@ BOOKS[24]["locationNote"] = (
     "Местоположение: Сагунто. Доступность метро на станциях Colón и Aragón "
     "в определённые дни и часы."
 )
+BOOKS[0]["annotation"] = "Новогодняя ёлка"
+BOOKS[1]["annotation"] = "Новогодняя елка"
 
 
 class CatalogHandler(SimpleHTTPRequestHandler):
@@ -235,6 +237,15 @@ class CatalogNavigationTests(unittest.TestCase):
 
         response = self.page.request.get(f"{self.base_url}privacy.html")
         self.assertEqual(response.status, 200)
+
+    def test_search_treats_yo_and_e_as_the_same_letter(self):
+        self.page.goto(self.base_url)
+
+        self.page.locator("#search").fill("елка")
+        expect(self.page.locator("#grid .book")).to_have_count(2)
+
+        self.page.locator("#search").fill("ёлка")
+        expect(self.page.locator("#grid .book")).to_have_count(2)
 
     def test_partner_link_opens_the_bot_team_message_scenario(self):
         self.page.goto(self.base_url)

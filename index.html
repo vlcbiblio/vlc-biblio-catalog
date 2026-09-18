@@ -996,7 +996,7 @@
       }
 
       function normalize(value) {
-        return compact(value).toLocaleLowerCase("ru");
+        return compact(value).toLocaleLowerCase("ru").replaceAll("ё", "е");
       }
 
       function bookDate(book) {
