@@ -433,7 +433,7 @@
       </footer>
     </main>
 
-    <script src="./data/books.js?v=20260918135442"></script>
+    <script src="./data/books.js?v=20260918135932"></script>
     <script src="./assets/shelf.js?v=checkout-3"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
@@ -442,10 +442,6 @@
       const labels = {
         library: "Библиотека Pilar Faus",
         exchange: "Частная библиотека",
-      };
-      const audienceLabels = {
-        children: "Детская литература",
-        adult: "Взрослая литература",
       };
       const relatedCollator = new Intl.Collator("ru", { numeric: true, sensitivity: "base" });
       const content = document.querySelector("#content");
@@ -581,7 +577,6 @@
           ["ISBN", book.isbn],
           ["Год выпуска", book.year],
           ["Издательство", book.publisher],
-          ["Раздел", audienceLabels[book.audience]],
           ["Обновлено", book.updatedAt ? new Date(book.updatedAt).toLocaleDateString("ru") : ""],
         ].filter((detail) => detail && detail[1]);
 

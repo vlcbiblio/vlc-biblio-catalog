@@ -838,11 +838,6 @@
           <option value="library">Библиотека Pilar Faus</option>
           <option value="exchange">Частная библиотека</option>
         </select>
-        <select class="field" id="audienceFilter">
-          <option value="">Любая литература</option>
-          <option value="children">Детская литература</option>
-          <option value="adult">Взрослая литература</option>
-        </select>
       </section>
 
       <section class="grid" id="grid" aria-label="Книги"></section>
@@ -900,7 +895,7 @@
       </article>
     </section>
 
-    <script src="./data/books.js?v=20260918135442"></script>
+    <script src="./data/books.js?v=20260918135932"></script>
     <script src="./assets/shelf.js?v=checkout-3"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
@@ -911,11 +906,6 @@
         library: "Библиотека Pilar Faus",
         exchange: "Частная библиотека",
       };
-      const audienceLabels = {
-        children: "Детская литература",
-        adult: "Взрослая литература",
-      };
-
       const catalogStorageKey = `vlc-biblio:catalog:v1:${new URL("./", location.href).pathname}`;
       const storedCatalogState = readCatalogState();
       // Reload can copy history.state before the outgoing pagehide saves scroll.
@@ -924,7 +914,6 @@
       const state = {
         search: typeof savedCatalogState?.search === "string" ? savedCatalogState.search : "",
         section: ["library", "exchange"].includes(savedCatalogState?.section) ? savedCatalogState.section : "",
-        audience: ["children", "adult"].includes(savedCatalogState?.audience) ? savedCatalogState.audience : "",
       };
       let catalogReady = false;
 
@@ -1010,12 +999,18 @@
 
       function matches(book) {
         const query = normalize(state.search);
-        const text = normalize([book.title, book.author, book.isbn, book.publisher, book.annotation].join(" "));
+        const text = normalize([
+          book.title,
+          book.author,
+          book.isbn,
+          book.publisher,
+          book.annotation,
+          book.searchAliases,
+        ].join(" "));
 
         return (
           (!query || text.includes(query)) &&
-          (!state.section || book.section === state.section) &&
-          (!state.audience || book.audience === state.audience)
+          (!state.section || book.section === state.section)
         );
       }
 
@@ -1032,7 +1027,6 @@
           ["ISBN", book.isbn],
           ["Год выпуска", book.year],
           ["Издательство", book.publisher],
-          ["Раздел", audienceLabels[book.audience]],
           ["Обновлено", book.updatedAt ? new Date(book.updatedAt).toLocaleDateString("ru") : ""],
         ].filter((detail) => detail && detail[1]);
 
@@ -1228,7 +1222,6 @@
 
       [
         ["#sectionFilter", "section"],
-        ["#audienceFilter", "audience"],
       ].forEach(([selector, key]) => {
         document.querySelector(selector).addEventListener("change", (event) => {
           state[key] = event.target.value;
@@ -1289,7 +1282,6 @@
       } else {
         document.querySelector("#search").value = state.search;
         document.querySelector("#sectionFilter").value = state.section;
-        document.querySelector("#audienceFilter").value = state.audience;
         renderLatest();
         render();
         catalogReady = true;
