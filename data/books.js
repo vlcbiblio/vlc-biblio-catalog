@@ -532,7 +532,7 @@ window.BIBLIO_BOOKS = [
     "sourceKind": "user",
     "availability": "available",
     "audience": "children",
-    "cover": "",
+    "cover": "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-53c810df59b9.jpg",
     "isbn": "978-5-04-117325-8",
     "year": "2021",
     "publisher": "Эксмо",
@@ -541,7 +541,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=978-5-04117-325-8",
     "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=978-5-04117-325-8",
     "addedAt": "2026-09-25T17:54:08",
-    "updatedAt": "2026-09-26T10:00:03",
+    "updatedAt": "2026-09-26T10:09:45",
     "authorKey": "стайнем, глория мари"
   },
   {
