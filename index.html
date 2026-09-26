@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="./assets/favicon.png?v=20260922" />
     <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
     <script src="https://telegram.org/js/telegram-web-app.js?63"></script>
-    <script src="./assets/telegram-links.js?v=2" defer></script>
+    <script src="./assets/telegram-links.js?v=1" defer></script>
     <script>
       // Restore only after the catalog and its filters have been rendered.
       if ("scrollRestoration" in history) history.scrollRestoration = "manual";
@@ -45,12 +45,11 @@
       }
 
       .topbar {
-        position: relative;
         display: grid;
-        grid-template-columns: minmax(0, 1.7fr) minmax(320px, 1fr) 42px;
+        grid-template-columns: minmax(0, 1.7fr) minmax(320px, 1fr);
         align-items: stretch;
-        gap: 14px;
-        padding-bottom: 10px;
+        gap: 24px;
+        padding-bottom: 22px;
         border-bottom: 1px solid var(--line);
       }
 
@@ -210,14 +209,11 @@
       }
 
       .how-it-works {
-        margin-top: 10px;
         padding: 16px 18px;
         border: 1px solid var(--line);
         border-radius: 10px;
         background: var(--paper);
       }
-
-      .how-it-works .section-heading { font-size: 24px; }
 
       .steps {
         display: grid;
@@ -230,7 +226,7 @@
 
       .steps li {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         gap: 8px;
         padding: 10px 12px;
         border-radius: 6px;
@@ -259,14 +255,8 @@
         box-shadow: var(--shadow);
       }
 
-      .action-card h3 {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        margin: 0 0 5px;
-        font-size: 18px;
-      }
-      .action-card .action-icon { flex: 0 0 auto; font-size: 21px; line-height: 1; }
+      .action-card .action-icon { font-size: 23px; line-height: 1; }
+      .action-card h3 { margin: 7px 0 5px; font-size: 18px; }
       .action-card p { margin: 0 0 12px; color: var(--muted); font-size: 14px; line-height: 1.4; }
 
       .primary-link {
@@ -357,29 +347,6 @@
         color: var(--muted);
         font-size: 11px;
         line-height: 1.25;
-      }
-
-      .external-browser-button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 40px;
-        padding: 8px 12px;
-        border: 1px solid var(--blue);
-        border-radius: 6px;
-        background: var(--paper);
-        color: var(--blue);
-        font-size: 13px;
-        font-weight: 700;
-        line-height: 1.3;
-        cursor: pointer;
-      }
-
-      .external-browser-button[hidden] { display: none; }
-      .external-browser-button:hover { background: rgba(49, 95, 134, 0.07); }
-      .external-browser-button:focus-visible {
-        outline: 3px solid var(--blue);
-        outline-offset: 2px;
       }
 
       .controls {
@@ -491,19 +458,6 @@
         margin: 0 0 10px;
         color: var(--muted);
         font-size: 14px;
-      }
-
-      .location-note {
-        display: block;
-        margin: 0 0 12px;
-        padding: 9px 10px;
-        border-left: 4px solid var(--gold);
-        border-radius: 4px;
-        background: #fff8e8;
-        color: var(--ink);
-        font-size: 13px;
-        font-weight: 650;
-        line-height: 1.4;
       }
 
       .card-action {
@@ -662,11 +616,7 @@
         color: var(--muted);
         font-size: 14px;
         line-height: 1.4;
-        white-space: pre-line;
       }
-
-      .collection-note .location-note { margin: 12px 0 0; white-space: normal; }
-      .location-note::before { content: "📍 "; }
 
       .dialog-links,
       .dialog-actions {
@@ -707,9 +657,8 @@
 
       @media (max-width: 820px) {
         .topbar { display: block; }
-        .brand-plaque { width: 100%; padding-right: 64px; }
-        .site-menu { position: absolute; top: 0; right: 0; }
-        .catalog-summary { margin-top: 8px; }
+        .brand-plaque { width: 100%; }
+        .catalog-summary { margin-top: 12px; }
         .controls { grid-template-columns: 1fr 1fr; }
         .controls .search { grid-column: 1 / -1; }
         .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -741,7 +690,7 @@
         .details { grid-template-columns: 1fr; gap: 4px; }
       }
     </style>
-    <link rel="stylesheet" href="./assets/shelf.css?v=checkout-3" />
+    <link rel="stylesheet" href="./assets/shelf.css?v=checkout-1" />
   </head>
   <body>
     <main class="page">
@@ -755,6 +704,18 @@
                 частных библиотек участников.
               </p>
             </div>
+            <details class="site-menu">
+              <summary aria-label="Открыть меню">☰</summary>
+              <nav aria-label="Основная навигация">
+                <a href="#catalog">Каталог</a>
+                <a href="#add-book">Подарить книгу</a>
+                <a href="#how-it-works">Как это работает</a>
+                <a href="#business">Для бизнеса</a>
+                <a href="./privacy.html">Конфиденциальность</a>
+                <a href="#about">О проекте</a>
+                <a href="#faq">FAQ</a>
+              </nav>
+            </details>
           </div>
           <nav class="telegram-links" aria-label="Telegram">
             <span class="telegram-item">
@@ -780,27 +741,12 @@
             <div class="stat"><strong id="libraryCount">0</strong><span>в Библиотеке Pilar Faus</span></div>
             <div class="stat"><strong id="exchangeCount">0</strong><span>частные</span></div>
           </div>
-          <button class="external-browser-button" type="button" data-open-external-browser hidden>
-            🌐 Открыть в браузере
-          </button>
           <div data-shelf-toolbar></div>
         </div>
-        <details class="site-menu">
-          <summary aria-label="Открыть меню">☰</summary>
-          <nav aria-label="Основная навигация">
-            <a href="#catalog">Каталог</a>
-            <a href="#add-book">Подарить книгу</a>
-            <a href="#how-it-works">Как это работает</a>
-            <a href="#business">Для бизнеса</a>
-            <a href="./privacy.html">Конфиденциальность</a>
-            <a href="#about">О проекте</a>
-            <a href="#faq">FAQ</a>
-          </nav>
-        </details>
       </section>
 
       <section class="content-section how-it-works" id="how-it-works" aria-labelledby="how-title">
-        <h2 class="section-heading" id="how-title">Как это работает</h2>
+🎁"C:\10.Викины дела\Книги\Конни 1"        <h2 class="section-heading" id="how-title">Как это работает</h2>
         <ol class="steps">
           <li><span class="step-icon" aria-hidden="true">📚</span>Посмотрите, какие книги уже есть в каталоге</li>
           <li><span class="step-icon" aria-hidden="true">🎁</span>Подарите книгу библиотеке Pilar Faus</li>
@@ -811,12 +757,14 @@
 
       <section class="content-section action-cards" id="add-book" aria-label="Добавить книгу">
         <article class="action-card">
-          <h3><span class="action-icon" aria-hidden="true">🎁</span>Подарить книгу библиотеке</h3>
+          <span class="action-icon" aria-hidden="true">🎁</span>
+          <h3>Подарить книгу библиотеке</h3>
           <p>Книга будет передана в государственную библиотеку Pilar Faus и станет доступна читателям.</p>
           <a class="primary-link" href="https://t.me/VLS_Biblio_bot" target="_blank" rel="noreferrer">Подарить книгу →</a>
         </article>
         <article class="action-card private">
-          <h3><span class="action-icon" aria-hidden="true">🏠</span>Добавить в частную библиотеку</h3>
+          <span class="action-icon" aria-hidden="true">🏠</span>
+          <h3>Добавить в частную библиотеку</h3>
           <p>Книга остаётся у вас, но другие участники смогут найти её в каталоге и попросить почитать.</p>
           <a class="primary-link" href="https://t.me/VLS_Biblio_bot" target="_blank" rel="noreferrer">Добавить свою книгу →</a>
         </article>
@@ -837,6 +785,11 @@
           <option value="">Все разделы</option>
           <option value="library">Библиотека Pilar Faus</option>
           <option value="exchange">Частная библиотека</option>
+        </select>
+        <select class="field" id="audienceFilter">
+          <option value="">Любая литература</option>
+          <option value="children">Детская литература</option>
+          <option value="adult">Взрослая литература</option>
         </select>
       </section>
 
@@ -859,7 +812,7 @@
           <li>возможность зайти и оставить или забрать книги в часы работы;</li>
           <li>никаких дополнительных процессов для сотрудников.</li>
         </ul>
-        <a class="primary-link" href="https://t.me/VLS_Biblio_bot?start=partner" target="_blank" rel="noreferrer">Стать партнёром →</a>
+        <a class="primary-link" href="https://t.me/VLS_Biblio_bot" target="_blank" rel="noreferrer">Стать партнёром →</a>
       </section>
 
       <section class="content-section" id="faq" aria-labelledby="faq-title">
@@ -895,8 +848,8 @@
       </article>
     </section>
 
-    <script src="./data/books.js?v=20260918143718"></script>
-    <script src="./assets/shelf.js?v=checkout-3"></script>
+    <script src="./data/books.js?v=20260926094811"></script>
+    <script src="./assets/shelf.js?v=checkout-1"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
       const botUrl = "https://t.me/VLS_Biblio_bot";
@@ -906,6 +859,11 @@
         library: "Библиотека Pilar Faus",
         exchange: "Частная библиотека",
       };
+      const audienceLabels = {
+        children: "Детская литература",
+        adult: "Взрослая литература",
+      };
+
       const catalogStorageKey = `vlc-biblio:catalog:v1:${new URL("./", location.href).pathname}`;
       const storedCatalogState = readCatalogState();
       // Reload can copy history.state before the outgoing pagehide saves scroll.
@@ -914,6 +872,7 @@
       const state = {
         search: typeof savedCatalogState?.search === "string" ? savedCatalogState.search : "",
         section: ["library", "exchange"].includes(savedCatalogState?.section) ? savedCatalogState.section : "",
+        audience: ["children", "adult"].includes(savedCatalogState?.audience) ? savedCatalogState.audience : "",
       };
       let catalogReady = false;
 
@@ -985,7 +944,7 @@
       }
 
       function normalize(value) {
-        return compact(value).toLocaleLowerCase("ru").replaceAll("ё", "е");
+        return compact(value).toLocaleLowerCase("ru");
       }
 
       function bookDate(book) {
@@ -999,18 +958,12 @@
 
       function matches(book) {
         const query = normalize(state.search);
-        const text = normalize([
-          book.title,
-          book.author,
-          book.isbn,
-          book.publisher,
-          book.annotation,
-          book.searchAliases,
-        ].join(" "));
+        const text = normalize([book.title, book.author, book.isbn, book.publisher, book.annotation].join(" "));
 
         return (
           (!query || text.includes(query)) &&
-          (!state.section || book.section === state.section)
+          (!state.section || book.section === state.section) &&
+          (!state.audience || book.audience === state.audience)
         );
       }
 
@@ -1027,6 +980,7 @@
           ["ISBN", book.isbn],
           ["Год выпуска", book.year],
           ["Издательство", book.publisher],
+          ["Раздел", audienceLabels[book.audience]],
           ["Обновлено", book.updatedAt ? new Date(book.updatedAt).toLocaleDateString("ru") : ""],
         ].filter((detail) => detail && detail[1]);
 
@@ -1091,33 +1045,19 @@
       }
 
       function collectionNote(book) {
-        let note;
         if (canJoinWaitlist(book)) {
-          note = "Книга зарезервирована. Встаньте в очередь, чтобы получить уведомление, когда подойдёт ваша очередь.";
-        } else if (book.section === "exchange" && book.availability === "unavailable") {
-          note = "Книга пока недоступна для запроса.";
-        } else if (book.section === "exchange") {
-          note = "Книга в частной коллекции. Вы можете запросить книгу на время.";
-        } else if (book.availability === "planned") {
-          note = "Книга собирается для передачи в библиотеку Pilar Faus.";
-        } else if (book.availability === "transferred" || book.availability === "given") {
-          note = "Книга передана в библиотеку Pilar Faus.";
-        } else if (book.availability === "accepted") {
-          note = "Книга принята в фонд библиотеки Pilar Faus.";
-        } else {
-          note = "Книга относится к библиотеке Pilar Faus.";
+          return "Книга зарезервирована. Встаньте в очередь, чтобы получить уведомление, когда подойдёт ваша очередь.";
         }
-        return note;
-      }
-
-      function locationNoteMarkup(book, className = "location-note") {
-        return book.locationNote
-          ? `<strong class="${className}">${escapeHtml(book.locationNote)}</strong>`
-          : "";
+        if (book.section === "exchange") {
+          return "Книга в частной коллекции. Вы можете запросить книгу на время.";
+        }
+        if (book.availability === "planned") return "Книга собирается для передачи в библиотеку Pilar Faus.";
+        if (book.availability === "transferred" || book.availability === "given") return "Книга передана в библиотеку Pilar Faus.";
+        if (book.availability === "accepted") return "Книга принята в фонд библиотеки Pilar Faus.";
+        return "Книга относится к библиотеке Pilar Faus.";
       }
 
       function statusLabel(book) {
-        if (book.section === "exchange" && book.availability === "unavailable") return "⏸ Пока недоступна";
         if (book.section === "exchange") return "🏠 Частная библиотека";
         if (book.availability === "planned") return "🎁 Собирается для Pilar Faus";
         if (book.availability === "transferred" || book.availability === "given") return "📦 Передана в Pilar Faus";
@@ -1173,9 +1113,9 @@
       function render() {
         const visible = sorted(books.filter(matches));
 
-        document.querySelector("#totalCount").textContent = books.length;
-        document.querySelector("#libraryCount").textContent = books.filter((book) => book.section === "library").length;
-        document.querySelector("#exchangeCount").textContent = books.filter((book) => book.section === "exchange").length;
+        document.querySelector("#totalCount").textContent = visible.length;
+        document.querySelector("#libraryCount").textContent = visible.filter((book) => book.section === "library").length;
+        document.querySelector("#exchangeCount").textContent = visible.filter((book) => book.section === "exchange").length;
 
         grid.innerHTML = visible
           .map((book, index) => `
@@ -1222,6 +1162,7 @@
 
       [
         ["#sectionFilter", "section"],
+        ["#audienceFilter", "audience"],
       ].forEach(([selector, key]) => {
         document.querySelector(selector).addEventListener("change", (event) => {
           state[key] = event.target.value;
@@ -1282,6 +1223,7 @@
       } else {
         document.querySelector("#search").value = state.search;
         document.querySelector("#sectionFilter").value = state.section;
+        document.querySelector("#audienceFilter").value = state.audience;
         renderLatest();
         render();
         catalogReady = true;

@@ -434,7 +434,7 @@
       </footer>
     </main>
 
-    <script src="./data/books.js?v=20260918143718"></script>
+    <script src="./data/books.js?v=20260926094811"></script>
     <script src="./assets/shelf.js?v=checkout-3"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
@@ -625,10 +625,13 @@
 
       function relatedCollections(book) {
         const currentId = bookIdentity(book);
-        const currentAuthor = normalizeText(book.author);
+        const currentAuthor = normalizeText(book.authorKey || book.author);
         const currentLibrary = relatedLibraryKey(book);
         const sameAuthor = currentAuthor
-          ? sortRelatedBooks(books.filter((item) => bookIdentity(item) !== currentId && normalizeText(item.author) === currentAuthor))
+          ? sortRelatedBooks(books.filter((item) =>
+              bookIdentity(item) !== currentId &&
+              normalizeText(item.authorKey || item.author) === currentAuthor
+            ))
           : [];
         const sameLibrary = currentLibrary
           ? sortRelatedBooks(
