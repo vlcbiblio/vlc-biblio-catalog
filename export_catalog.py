@@ -21,6 +21,7 @@ OWNER_LOCATION_NOTES = {
         "Местоположение: Сагунто. Доступность метро на станциях Colón и Aragón "
         "в определённые дни и часы."
     ),
+    "oyellowsparrow": "Местоположение: метро Campanar",
 }
 
 # These existing catalog entries were reviewed manually because their metadata

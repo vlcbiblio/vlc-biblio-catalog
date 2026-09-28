@@ -23604,6 +23604,7 @@ window.BIBLIO_BOOKS = [
     "year": "2008",
     "publisher": "АСТ / Астрель",
     "annotation": "Продолжение историй о Малыше и Карлсоне. В книге Карлсон снова прилетает к Малышу, устраивает шумные игры и пир, звонит в колокольчик, смотрит телевизор, притворяется привидением из Вазастана и остаётся красивым, умным и в меру упитанным героем.",
+    "locationNote": "Местоположение: метро Campanar",
     "sourceUrl": "https://www.abebooks.com/9785170557073/Karlson-kotoryy-zhivet-kryshe-opyat-5170557078/plp",
     "livelibUrl": "https://www.livelib.ru/search?search=978-5-17-055707-3",
     "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=978-5-17-055707-3",
