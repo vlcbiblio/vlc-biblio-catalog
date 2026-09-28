@@ -37,6 +37,10 @@ BOOKS[24]["locationNote"] = (
 )
 BOOKS[0]["annotation"] = "Новогодняя ёлка"
 BOOKS[1]["annotation"] = "Новогодняя елка"
+BOOKS[2]["searchAliases"] = "Кейт Дикамило; Дикамило"
+BOOKS[0].update({"author": "Сьюзен Коллинз", "authorKey": "suzanne-collins"})
+BOOKS[1].update({"author": "Коллинз Сьюзен", "authorKey": "suzanne-collins"})
+BOOKS[2].update({"author": "Suzanne Collins", "authorKey": "suzanne-collins"})
 
 
 class CatalogHandler(SimpleHTTPRequestHandler):
@@ -213,7 +217,7 @@ class CatalogNavigationTests(unittest.TestCase):
         self.page.go_back()
         self.assert_catalog(first["scroll"])
 
-    def test_audience_filter_and_public_sections_are_available(self):
+    def test_audience_classification_is_hidden_and_public_sections_are_available(self):
         self.page.goto(self.base_url)
         expect(self.page.locator("[data-open-external-browser]")).to_be_hidden()
         expect(self.page.locator("#how-it-works")).to_be_visible()
@@ -225,11 +229,10 @@ class CatalogNavigationTests(unittest.TestCase):
         self.assertEqual(self.page.locator("#libraryCount").inner_text(), "24")
         self.assertEqual(self.page.locator("#exchangeCount").inner_text(), "72")
 
-        self.page.locator("#audienceFilter").select_option("children")
-        expect(self.page.locator("#grid .book")).to_have_count(48)
-        self.assertEqual(self.page.locator("#totalCount").inner_text(), "96")
-        self.assertEqual(self.page.locator("#libraryCount").inner_text(), "24")
-        self.assertEqual(self.page.locator("#exchangeCount").inner_text(), "72")
+        expect(self.page.locator("#audienceFilter")).to_have_count(0)
+        expect(self.page.locator("#grid .book")).to_have_count(96)
+        expect(self.page.get_by_text("Детская литература", exact=True)).to_have_count(0)
+        expect(self.page.get_by_text("Взрослая литература", exact=True)).to_have_count(0)
         self.assertEqual(
             self.page.locator("#grid .book .badge.exchange").first.inner_text(),
             "🏠 Частная библиотека",
@@ -246,6 +249,20 @@ class CatalogNavigationTests(unittest.TestCase):
 
         self.page.locator("#search").fill("ёлка")
         expect(self.page.locator("#grid .book")).to_have_count(2)
+
+    def test_search_uses_hidden_aliases(self):
+        self.page.goto(self.base_url)
+        self.page.locator("#search").fill("Дикамило")
+
+        expect(self.page.locator("#grid .book")).to_have_count(1)
+        expect(self.page.locator("#grid .book")).to_contain_text("Shelf volume 002")
+
+    def test_related_books_use_author_key_across_name_variants(self):
+        self.page.goto(f"{self.base_url}book.html?id=test-0")
+
+        related = self.page.locator(".related-results")
+        expect(related).to_contain_text("Shelf volume 001")
+        expect(related).to_contain_text("Shelf volume 002")
 
     def test_partner_link_opens_the_bot_team_message_scenario(self):
         self.page.goto(self.base_url)

@@ -101,6 +101,17 @@
 
       .telegram-link:hover { text-decoration: underline; }
 
+      .external-browser {
+        max-width: 100%;
+        margin-top: 12px;
+        padding: 10px 14px;
+        border: 1px solid rgba(255, 255, 255, 0.45);
+        border-radius: 999px;
+        color: inherit;
+        background: rgba(255, 255, 255, 0.12);
+        cursor: pointer;
+      }
+
       .telegram-item {
         display: inline-flex;
         align-items: center;
@@ -734,6 +745,7 @@
               <a class="telegram-link" href="https://t.me/bibliotecavlc" target="_blank" rel="noreferrer">@bibliotecavlc</a>
             </span>
           </nav>
+          <button class="external-browser" type="button" data-open-external-browser hidden>Открыть во внешнем браузере</button>
         </div>
         <div class="catalog-summary">
           <div class="stats" aria-label="Статистика каталога">
@@ -746,7 +758,7 @@
       </section>
 
       <section class="content-section how-it-works" id="how-it-works" aria-labelledby="how-title">
-🎁"C:\10.Викины дела\Книги\Конни 1"        <h2 class="section-heading" id="how-title">Как это работает</h2>
+        <h2 class="section-heading" id="how-title">Как это работает</h2>
         <ol class="steps">
           <li><span class="step-icon" aria-hidden="true">📚</span>Посмотрите, какие книги уже есть в каталоге</li>
           <li><span class="step-icon" aria-hidden="true">🎁</span>Подарите книгу библиотеке Pilar Faus</li>
@@ -786,11 +798,6 @@
           <option value="library">Библиотека Pilar Faus</option>
           <option value="exchange">Частная библиотека</option>
         </select>
-        <select class="field" id="audienceFilter">
-          <option value="">Любая литература</option>
-          <option value="children">Детская литература</option>
-          <option value="adult">Взрослая литература</option>
-        </select>
       </section>
 
       <section class="grid" id="grid" aria-label="Книги"></section>
@@ -812,7 +819,7 @@
           <li>возможность зайти и оставить или забрать книги в часы работы;</li>
           <li>никаких дополнительных процессов для сотрудников.</li>
         </ul>
-        <a class="primary-link" href="https://t.me/VLS_Biblio_bot" target="_blank" rel="noreferrer">Стать партнёром →</a>
+        <a class="primary-link" href="https://t.me/VLS_Biblio_bot?start=partner" target="_blank" rel="noreferrer">Стать партнёром →</a>
       </section>
 
       <section class="content-section" id="faq" aria-labelledby="faq-title">
@@ -859,11 +866,6 @@
         library: "Библиотека Pilar Faus",
         exchange: "Частная библиотека",
       };
-      const audienceLabels = {
-        children: "Детская литература",
-        adult: "Взрослая литература",
-      };
-
       const catalogStorageKey = `vlc-biblio:catalog:v1:${new URL("./", location.href).pathname}`;
       const storedCatalogState = readCatalogState();
       // Reload can copy history.state before the outgoing pagehide saves scroll.
@@ -872,7 +874,6 @@
       const state = {
         search: typeof savedCatalogState?.search === "string" ? savedCatalogState.search : "",
         section: ["library", "exchange"].includes(savedCatalogState?.section) ? savedCatalogState.section : "",
-        audience: ["children", "adult"].includes(savedCatalogState?.audience) ? savedCatalogState.audience : "",
       };
       let catalogReady = false;
 
@@ -944,7 +945,7 @@
       }
 
       function normalize(value) {
-        return compact(value).toLocaleLowerCase("ru");
+        return compact(value).toLocaleLowerCase("ru").replaceAll("ё", "е");
       }
 
       function bookDate(book) {
@@ -958,12 +959,18 @@
 
       function matches(book) {
         const query = normalize(state.search);
-        const text = normalize([book.title, book.author, book.isbn, book.publisher, book.annotation].join(" "));
+        const text = normalize([
+          book.title,
+          book.author,
+          book.isbn,
+          book.publisher,
+          book.annotation,
+          book.searchAliases,
+        ].join(" "));
 
         return (
           (!query || text.includes(query)) &&
-          (!state.section || book.section === state.section) &&
-          (!state.audience || book.audience === state.audience)
+          (!state.section || book.section === state.section)
         );
       }
 
@@ -980,7 +987,6 @@
           ["ISBN", book.isbn],
           ["Год выпуска", book.year],
           ["Издательство", book.publisher],
-          ["Раздел", audienceLabels[book.audience]],
           ["Обновлено", book.updatedAt ? new Date(book.updatedAt).toLocaleDateString("ru") : ""],
         ].filter((detail) => detail && detail[1]);
 
@@ -1162,7 +1168,6 @@
 
       [
         ["#sectionFilter", "section"],
-        ["#audienceFilter", "audience"],
       ].forEach(([selector, key]) => {
         document.querySelector(selector).addEventListener("change", (event) => {
           state[key] = event.target.value;
@@ -1223,7 +1228,6 @@
       } else {
         document.querySelector("#search").value = state.search;
         document.querySelector("#sectionFilter").value = state.section;
-        document.querySelector("#audienceFilter").value = state.audience;
         renderLatest();
         render();
         catalogReady = true;

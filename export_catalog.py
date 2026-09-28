@@ -24,25 +24,93 @@ OWNER_LOCATION_NOTES = {
     "oyellowsparrow": "Местоположение: метро Campanar",
 }
 
+AUTHOR_OVERRIDES = {
+    "88": "Рина Зенюк",
+    "132": "Рина Зенюк",
+    "154": "Рина Зенюк",
+}
+
+AUTHOR_KEY_ALIASES = {
+    "сьюзен коллинз": "suzanne-collins",
+    "коллинз сьюзен": "suzanne-collins",
+    "suzanne collins": "suzanne-collins",
+}
+
+# Older individual submissions for these books duplicate the later split-series
+# cards. Their richer bibliographic fields are merged into the retained cards
+# during export, while the original rows remain available as an audit trail.
+DUPLICATE_REQUESTS = {
+    "78": "800",
+    "191": "799",
+    "206": "798",
+}
+DUPLICATE_MERGE_FIELDS = (
+    "isbn",
+    "publication_year",
+    "publisher",
+    "annotation",
+    "metadata_source_url",
+    "livelib_url",
+    "wildberries_url",
+)
+
+REQUEST_OVERRIDES = {
+    "199": {
+        "title": "Голодные игры. Рассвет жатвы (на испанском языке)",
+        "author": "Сьюзен Коллинз",
+        "isbn": "9788427248427",
+        "publication_year": "2025",
+        "publisher": "Molino",
+        "annotation": (
+            "За двадцать четыре года до событий основной трилогии шестнадцатилетний "
+            "Хеймитч Эбернети становится участником Пятидесятых Голодных игр — Второй "
+            "Квартальной Бойни, когда каждый дистрикт обязан отправить вдвое больше "
+            "трибутов. Это испанское издание романа «Рассвет жатвы»."
+        ),
+        "metadata_source_url": "https://ast.ru/book/rassvet-zhatvy-886638/",
+        "livelib_url": "https://www.livelib.ru/book/1013689408-rassvet-zhatvy-syuzen-kollinz",
+        "preview_url": (
+            "https://vlcbiblio.github.io/vlc-biblio-catalog/"
+            "assets/covers/b-59e5a3f12b7c.jpg"
+        ),
+        "search_aliases": (
+            "Рассвет Жатвы; Sunrise on the Reaping; Amanecer en la cosecha; "
+            "Suzanne Collins"
+        ),
+    },
+    "580": {
+        "title": "Рассвет Жатвы",
+        "publication_year": "2025",
+        "publisher": "АСТ, Neoclassic",
+        "annotation": (
+            "За двадцать четыре года до событий основной трилогии шестнадцатилетний "
+            "Хеймитч Эбернети становится участником Пятидесятых Голодных игр — Второй "
+            "Квартальной Бойни, когда каждый дистрикт обязан отправить вдвое больше "
+            "трибутов. Хеймитч понимает, что главные его соперники находятся не только "
+            "на смертельной арене."
+        ),
+    },
+}
+
 # These existing catalog entries were reviewed manually because their metadata
 # does not contain a reliable age marker (or describes young-adult fiction).
 ADULT_REQUEST_IDS = {
     "34", "40", "42", "45", "47", "48", "49", "70", "85", "106", "109",
     "118", "120", "138", "143", "148", "164", "165", "170", "194", "196",
-    "198", "207", "209", "218", "227", "231", "232", "237",
+    "198", "199", "207", "209", "218", "227", "231", "232", "237",
 }
 
 CHILDREN_REQUEST_IDS = set("""
 24 25 23 21 19 17 22 20 16 14 3 1 2 235 95 104 80 44 188 184 180 99 193 212
 107 108 155 78 174 101 176 96 233 89 206 130 149 177 131 162 119 63 52 144
 205 172 221 201 123 214 58 112 102 145 167 128 50 81 190 139 94 234 178 97 113
-86 56 75 28 126 158 219 68 114 134 189 159 141 179 199 43 150 225 72 116 171
+86 56 75 28 126 158 219 68 114 134 189 159 141 179 43 150 225 72 116 171
 129 79 173 103 73 203 136 140 163 213 181 137 197 67 224 91 98 121 57 187 215
 74 204 220 161 53 39 122 54 236 62 169 151 210 76 222 66 55 146 27 87 93 61 152
 90 186 60 105 82 127 142 51 64 88 200 125 195 208 59 168 230 69 77 115 46 83 175
 124 111 160 153 223 229 185 211 71 183 154 192 166 41 182 147 100 191 92 132 110 117
 133 157 156 202 84 216 135 217 228 226 65 37 36 29 35 30 33 32 38 31 18 26 15 13
-9 11 10 7 6 5 12 4 8
+9 11 10 7 6 5 12 4 8 797 798 799 800
 """.split())
 
 CHILDREN_MARKERS = (
@@ -55,6 +123,11 @@ CHILDREN_MARKERS = (
 
 def clean(value):
     return re.sub(r"\s+", " ", str(value or "")).strip()
+
+
+def author_key_for(author):
+    normalized = clean(author).casefold().replace("ё", "е")
+    return AUTHOR_KEY_ALIASES.get(normalized, normalized)
 
 
 def parse_request_timestamp(request_file):
@@ -183,6 +256,8 @@ def location_note_for(row, section):
 
 
 def has_public_book_data(row):
+    if clean(row.get("book_number")) in DUPLICATE_REQUESTS:
+        return False
     if clean(row.get("status")) in BAD_STATUSES:
         return False
     if (clean(row.get("catalog_visibility")) != "public"
@@ -192,14 +267,16 @@ def has_public_book_data(row):
 
 
 def public_book(row):
+    row = dict(row)
+    row.update(REQUEST_OVERRIDES.get(clean(row.get("book_number")), {}))
     section = section_for(row)
     book_number = clean(row.get("book_number"))
     request_file = clean(row.get("request_file"))
-    return {
+    book = {
         "id": public_id_for(row),
         "requestId": book_number or re.sub(r"\W+", "-", request_file).strip("-"),
         "title": clean(row.get("title")),
-        "author": clean(row.get("author")),
+        "author": AUTHOR_OVERRIDES.get(book_number, clean(row.get("author"))),
         "section": section,
         "catalogStatus": catalog_status_for(row, section),
         "libraryKey": library_key_for(row, section),
@@ -219,6 +296,13 @@ def public_book(row):
         "updatedAt": clean(row.get("channel_published_at") or row.get("user_published_at")
                            or row.get("catalog_added_at")),
     }
+    author_key = author_key_for(book["author"])
+    if author_key:
+        book["authorKey"] = author_key
+    search_aliases = clean(row.get("search_aliases"))
+    if search_aliases:
+        book["searchAliases"] = search_aliases
+    return book
 
 
 def section_priority(book):
@@ -238,6 +322,15 @@ def book_timestamp(book):
 def load_books(source):
     with source.open("r", encoding="utf-8-sig", newline="") as handle:
         rows = list(csv.DictReader(handle))
+    rows_by_id = {clean(row.get("book_number")): row for row in rows}
+    for duplicate_id, retained_id in DUPLICATE_REQUESTS.items():
+        duplicate = rows_by_id.get(duplicate_id)
+        retained = rows_by_id.get(retained_id)
+        if not duplicate or not retained:
+            continue
+        for field in DUPLICATE_MERGE_FIELDS:
+            if not clean(retained.get(field)):
+                retained[field] = duplicate.get(field, "")
     books = [public_book(row) for row in rows if has_public_book_data(row)]
     return sorted(
         books,
