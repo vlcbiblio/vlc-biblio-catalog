@@ -656,7 +656,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=84-235-0794-7",
     "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=84-235-0794-7",
     "addedAt": "2026-09-29T16:51:10",
-    "updatedAt": "2026-09-29T22:18:37",
+    "updatedAt": "2026-09-29T21:27:59",
     "authorKey": "javier martínez de aguirre"
   },
   {
@@ -679,31 +679,8 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=84-482-1529-X",
     "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=84-482-1529-X",
     "addedAt": "2026-09-29T16:54:00",
-    "updatedAt": "2026-09-29T22:18:37",
+    "updatedAt": "2026-09-29T21:27:59",
     "authorKey": "david pérez (texto)"
-  },
-  {
-    "id": "b-bc8a1f89cdb1",
-    "requestId": "820",
-    "title": "Miquel Barceló 1984–1994",
-    "author": "Miquel Barceló; texto de Enrique Juncosa",
-    "section": "exchange",
-    "catalogStatus": "Частная библиотека",
-    "libraryKey": "user:d4ec76c92a71",
-    "sourceKind": "user",
-    "availability": "available",
-    "audience": "adult",
-    "cover": "C:\\29.Biblio\\1.Telegram\\_obrabotka\\_processed\\covers\\miquel-barcelo-1984-1994-844820686x.jpg",
-    "isbn": "84-482-0686-X",
-    "year": "1995",
-    "publisher": "Institut Valencià d’Art Modern (IVAM)",
-    "annotation": "Каталог, посвящённый работам испанского художника Микеля Барсело за 1984–1994 годы. Содержит текст Энрике Хункосы, хронику творческой деятельности и репродукции произведений; тексты даны на испанском, валенсийском и английском языках.",
-    "sourceUrl": "https://tienda.ivam.es/es/producto/miquel-barcelo-1984-1994/",
-    "livelibUrl": "https://www.livelib.ru/search?search=84-482-0686-X",
-    "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=84-482-0686-X",
-    "addedAt": "2026-09-29T16:48:57",
-    "updatedAt": "2026-09-29T22:18:37",
-    "authorKey": "miquel barceló; texto de enrique juncosa"
   },
   {
     "id": "b-53c810df59b9",
