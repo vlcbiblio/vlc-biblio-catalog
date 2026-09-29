@@ -88,7 +88,7 @@ class CatalogOnlyExportTests(unittest.TestCase):
             {"book_number": "206", "title": "Старый дубль", "isbn": "9785389121713",
              "annotation": "Полная аннотация", "catalog_visibility": "public"},
             {"book_number": "798", "title": "Фамильяры. Книга 2",
-             "catalog_visibility": "public"},
+             "catalog_visibility": "public", "preview_url": "https://example.org/familiars.jpg"},
         ]
         with tempfile.TemporaryDirectory() as temp:
             path = Path(temp) / "books.csv"
@@ -165,12 +165,15 @@ class CatalogOnlyExportTests(unittest.TestCase):
 
     def test_explicit_catalog_selection_survives_export_without_telegram_receipts(self):
         rows = [
-            {"book_number": "1", "title": "Published", "user_published_at": "2026-09-12T12:00:00"},
+            {"book_number": "1", "title": "Published", "user_published_at": "2026-09-12T12:00:00",
+             "preview_url": "https://example.org/published.jpg"},
             {"book_number": "2", "title": "Selected", "catalog_visibility": "public",
              "catalog_added_at": "2026-09-13T12:00:00", "telegram_delivery_mode": "manual_batch",
-             "user_id": "42", "username": "private_owner"},
+             "user_id": "42", "username": "private_owner",
+             "preview_url": "https://example.org/selected.jpg"},
             {"book_number": "3", "title": "Unselected"},
-            {"book_number": "4", "title": "Rejected", "catalog_visibility": "public", "status": "rejected"},
+            {"book_number": "4", "title": "Rejected", "catalog_visibility": "public", "status": "rejected",
+             "preview_url": "https://example.org/rejected.jpg"},
         ]
         with tempfile.TemporaryDirectory() as temp:
             path = Path(temp) / "books.csv"
@@ -188,6 +191,40 @@ class CatalogOnlyExportTests(unittest.TestCase):
         self.assertNotIn("telegram_delivery_mode", selected)
         self.assertNotIn("user_published_at", rows[1])
         self.assertNotIn("channel_published_at", rows[1])
+
+    def test_export_is_blocked_when_a_public_book_has_no_cover(self):
+        rows = [
+            {"book_number": "1", "title": "Ready", "catalog_visibility": "public",
+             "preview_url": "https://example.org/ready.jpg"},
+            {"book_number": "2", "title": "Missing cover", "catalog_visibility": "public",
+             "preview_url": ""},
+        ]
+        with tempfile.TemporaryDirectory() as temp:
+            path = Path(temp) / "books.csv"
+            fields = sorted({key for row in rows for key in row})
+            with path.open("w", encoding="utf-8", newline="") as handle:
+                writer = csv.DictWriter(handle, fieldnames=fields)
+                writer.writeheader()
+                writer.writerows(rows)
+
+            with self.assertRaisesRegex(ValueError, r"2: Missing cover"):
+                export.load_books(path)
+
+    def test_export_is_blocked_for_a_local_cover_path(self):
+        rows = [
+            {"book_number": "3", "title": "Local cover", "catalog_visibility": "public",
+             "preview_url": r"C:\\covers\\book.jpg"},
+        ]
+        with tempfile.TemporaryDirectory() as temp:
+            path = Path(temp) / "books.csv"
+            fields = sorted({key for row in rows for key in row})
+            with path.open("w", encoding="utf-8", newline="") as handle:
+                writer = csv.DictWriter(handle, fieldnames=fields)
+                writer.writeheader()
+                writer.writerows(rows)
+
+            with self.assertRaisesRegex(ValueError, r"3: Local cover"):
+                export.load_books(path)
 
 
 if __name__ == "__main__":

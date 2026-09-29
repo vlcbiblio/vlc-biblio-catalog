@@ -5,6 +5,7 @@ import json
 import re
 from datetime import datetime
 from pathlib import Path
+from urllib.parse import urlparse
 
 
 ROOT = Path(__file__).resolve().parent
@@ -266,6 +267,25 @@ def has_public_book_data(row):
     return any(clean(row.get(field)) for field in ("isbn", "title", "author"))
 
 
+def has_publishable_cover(book):
+    parsed = urlparse(clean(book.get("cover")))
+    return parsed.scheme in {"http", "https"} and bool(parsed.netloc)
+
+
+def require_publishable_covers(books):
+    missing = [book for book in books if not has_publishable_cover(book)]
+    if not missing:
+        return
+    details = ", ".join(
+        f'{book.get("requestId") or book.get("id")}: {book.get("title") or "<без названия>"}'
+        for book in missing
+    )
+    raise ValueError(
+        f"Catalog export blocked: {len(missing)} public book(s) have no publishable cover URL: "
+        f"{details}"
+    )
+
+
 def public_book(row):
     row = dict(row)
     row.update(REQUEST_OVERRIDES.get(clean(row.get("book_number")), {}))
@@ -332,6 +352,7 @@ def load_books(source):
             if not clean(retained.get(field)):
                 retained[field] = duplicate.get(field, "")
     books = [public_book(row) for row in rows if has_public_book_data(row)]
+    require_publishable_covers(books)
     return sorted(
         books,
         key=lambda book: (
