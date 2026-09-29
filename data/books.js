@@ -532,7 +532,7 @@ window.BIBLIO_BOOKS = [
     "sourceKind": "user",
     "availability": "available",
     "audience": "adult",
-    "cover": "C:\\29.Biblio\\1.Telegram\\_obrabotka\\_processed\\covers\\miquel-barcelo-1984-1994-844820686x.jpg",
+    "cover": "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-bc8a1f89cdb1.jpg",
     "isbn": "84-482-0686-X",
     "year": "1995",
     "publisher": "Institut Valencià d’Art Modern (IVAM)",
@@ -542,7 +542,13 @@ window.BIBLIO_BOOKS = [
     "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=84-482-0686-X",
     "addedAt": "2026-09-29T16:48:57",
     "updatedAt": "2026-09-29T22:29:58",
-    "authorKey": "miquel barceló; texto de enrique juncosa"
+    "authorKey": "miquel barceló; texto de enrique juncosa",
+    "coverImage": {
+      "src": "./assets/covers/optimized/dfa35f57df9d25ab90f4-720.webp",
+      "srcset": "./assets/covers/optimized/77a4c411de9f325cb003-360.webp 360w, ./assets/covers/optimized/dfa35f57df9d25ab90f4-720.webp 720w",
+      "width": 720,
+      "height": 540
+    }
   },
   {
     "id": "b-2675702a0aab",
@@ -555,7 +561,7 @@ window.BIBLIO_BOOKS = [
     "sourceKind": "user",
     "availability": "available",
     "audience": "adult",
-    "cover": "",
+    "cover": "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-2675702a0aab.jpg",
     "isbn": "84-235-0794-7",
     "year": "1987",
     "publisher": "Institución Príncipe de Viana, Gobierno de Navarra",
@@ -565,7 +571,13 @@ window.BIBLIO_BOOKS = [
     "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=84-235-0794-7",
     "addedAt": "2026-09-29T16:51:10",
     "updatedAt": "2026-09-29T22:28:59",
-    "authorKey": "javier martínez de aguirre"
+    "authorKey": "javier martínez de aguirre",
+    "coverImage": {
+      "src": "./assets/covers/optimized/c84c64fd8882d76a40be-720.webp",
+      "srcset": "./assets/covers/optimized/1ad7410277a20c59ed6e-360.webp 360w, ./assets/covers/optimized/c84c64fd8882d76a40be-720.webp 720w",
+      "width": 720,
+      "height": 960
+    }
   },
   {
     "id": "b-5157562c6893",
@@ -578,7 +590,7 @@ window.BIBLIO_BOOKS = [
     "sourceKind": "user",
     "availability": "available",
     "audience": "adult",
-    "cover": "",
+    "cover": "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-5157562c6893.jpg",
     "isbn": "84-482-1529-X",
     "year": "1997",
     "publisher": "Generalitat Valenciana; Agencia Española de Cooperación Internacional",
@@ -588,7 +600,13 @@ window.BIBLIO_BOOKS = [
     "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=84-482-1529-X",
     "addedAt": "2026-09-29T16:54:00",
     "updatedAt": "2026-09-29T22:28:59",
-    "authorKey": "david pérez (texto)"
+    "authorKey": "david pérez (texto)",
+    "coverImage": {
+      "src": "./assets/covers/optimized/c182598c8d035d6b2d11-720.webp",
+      "srcset": "./assets/covers/optimized/12f2c801dd577f6e7d3c-360.webp 360w, ./assets/covers/optimized/c182598c8d035d6b2d11-720.webp 720w",
+      "width": 720,
+      "height": 960
+    }
   },
   {
     "id": "b-c4cd3bb16507",
@@ -601,7 +619,7 @@ window.BIBLIO_BOOKS = [
     "sourceKind": "user",
     "availability": "available",
     "audience": "adult",
-    "cover": "C:\\29.Biblio\\1.Telegram\\_obrabotka\\_processed\\covers\\la-luz-en-la-pintura-carroggio-1998.jpg",
+    "cover": "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-c4cd3bb16507.jpg",
     "isbn": "978-84-86061-16-6",
     "year": "1998",
     "publisher": "Carroggio, S.A. de Ediciones",
@@ -611,7 +629,13 @@ window.BIBLIO_BOOKS = [
     "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=978-84-86061-16-6",
     "addedAt": "2026-09-29T16:46:28",
     "updatedAt": "2026-09-29T22:21:34",
-    "authorKey": "varios autores; prólogo de antonio gala"
+    "authorKey": "varios autores; prólogo de antonio gala",
+    "coverImage": {
+      "src": "./assets/covers/optimized/45c3c61c101024f679b8-720.webp",
+      "srcset": "./assets/covers/optimized/03b4cd0b4a52b11ed199-360.webp 360w, ./assets/covers/optimized/45c3c61c101024f679b8-720.webp 720w",
+      "width": 720,
+      "height": 720
+    }
   },
   {
     "id": "b-0c09753a6fea",
@@ -624,7 +648,7 @@ window.BIBLIO_BOOKS = [
     "sourceKind": "user",
     "availability": "available",
     "audience": "adult",
-    "cover": "",
+    "cover": "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-0c09753a6fea.jpg",
     "isbn": "",
     "year": "1994",
     "publisher": "Centro Nacional de Exposiciones y Promoción Artística",
@@ -634,7 +658,13 @@ window.BIBLIO_BOOKS = [
     "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=Sorolla+en+Andaluc%C3%ADa+Joaqu%C3%ADn+Sorolla",
     "addedAt": "2026-09-29T16:45:02",
     "updatedAt": "2026-09-29T22:20:25",
-    "authorKey": "joaquín sorolla"
+    "authorKey": "joaquín sorolla",
+    "coverImage": {
+      "src": "./assets/covers/optimized/7cebf9805b5261fb976f-720.webp",
+      "srcset": "./assets/covers/optimized/961088c7d4f4ef41f5eb-360.webp 360w, ./assets/covers/optimized/7cebf9805b5261fb976f-720.webp 720w",
+      "width": 720,
+      "height": 960
+    }
   },
   {
     "id": "b-b155c7abb114",
@@ -647,7 +677,7 @@ window.BIBLIO_BOOKS = [
     "sourceKind": "user",
     "availability": "available",
     "audience": "adult",
-    "cover": "",
+    "cover": "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-b155c7abb114.jpg",
     "isbn": "978-84-7795-501-6",
     "year": "2008",
     "publisher": "Museu Valencià de la Il·lustració i de la Modernitat (MuVIM)",
@@ -657,7 +687,13 @@ window.BIBLIO_BOOKS = [
     "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=978-84-7795-501-6",
     "addedAt": "2026-09-29T16:43:49",
     "updatedAt": "2026-09-29T22:20:25",
-    "authorKey": "américa sánchez"
+    "authorKey": "américa sánchez",
+    "coverImage": {
+      "src": "./assets/covers/optimized/c5710057cbe6b10c12f7-720.webp",
+      "srcset": "./assets/covers/optimized/0453ce72c291f232eb27-360.webp 360w, ./assets/covers/optimized/c5710057cbe6b10c12f7-720.webp 720w",
+      "width": 720,
+      "height": 960
+    }
   },
   {
     "id": "b-0a4b65c0f9cc",
@@ -670,7 +706,7 @@ window.BIBLIO_BOOKS = [
     "sourceKind": "user",
     "availability": "available",
     "audience": "adult",
-    "cover": "C:\\29.Biblio\\1.Telegram\\_obrabotka\\_processed\\covers\\cronica-guerra-civil-espanola-8401375681.jpg",
+    "cover": "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-0a4b65c0f9cc.jpg",
     "isbn": "84-01-37568-1",
     "year": "1996",
     "publisher": "Plaza & Janés",
@@ -680,7 +716,13 @@ window.BIBLIO_BOOKS = [
     "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=84-01-37568-1",
     "addedAt": "2026-09-29T16:52:47",
     "updatedAt": "2026-09-29T22:20:07",
-    "authorKey": "rafael borràs betriu"
+    "authorKey": "rafael borràs betriu",
+    "coverImage": {
+      "src": "./assets/covers/optimized/2d4cdb6c85bef57624ab-427.webp",
+      "srcset": "./assets/covers/optimized/6c755b8cee7e2e9cae3e-360.webp 360w, ./assets/covers/optimized/2d4cdb6c85bef57624ab-427.webp 427w",
+      "width": 427,
+      "height": 500
+    }
   },
   {
     "id": "b-951cb8a82490",
@@ -693,7 +735,7 @@ window.BIBLIO_BOOKS = [
     "sourceKind": "user",
     "availability": "available",
     "audience": "adult",
-    "cover": "C:\\29.Biblio\\1.Telegram\\_obrabotka\\_processed\\covers\\porcelain-vivienne-foley-9781912217700.jpg",
+    "cover": "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-951cb8a82490.jpg",
     "isbn": "978-1-912217-70-0",
     "year": "2018",
     "publisher": "Herbert Press",
@@ -703,7 +745,13 @@ window.BIBLIO_BOOKS = [
     "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=978-1-912217-70-0",
     "addedAt": "2026-09-29T16:47:42",
     "updatedAt": "2026-09-29T22:20:01",
-    "authorKey": "vivienne foley"
+    "authorKey": "vivienne foley",
+    "coverImage": {
+      "src": "./assets/covers/optimized/9a90f249a7fe50f10121-461.webp",
+      "srcset": "./assets/covers/optimized/bd88174789e2ebc161bc-360.webp 360w, ./assets/covers/optimized/9a90f249a7fe50f10121-461.webp 461w",
+      "width": 461,
+      "height": 600
+    }
   },
   {
     "id": "b-53c810df59b9",
@@ -726,7 +774,13 @@ window.BIBLIO_BOOKS = [
     "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=978-5-04117-325-8",
     "addedAt": "2026-09-25T17:54:08",
     "updatedAt": "2026-09-26T10:09:45",
-    "authorKey": "стайнем, глория мари"
+    "authorKey": "стайнем, глория мари",
+    "coverImage": {
+      "src": "./assets/covers/optimized/220cf772f4e9321addae-720.webp",
+      "srcset": "./assets/covers/optimized/0618f05bfacbf303e83b-360.webp 360w, ./assets/covers/optimized/220cf772f4e9321addae-720.webp 720w",
+      "width": 720,
+      "height": 960
+    }
   },
   {
     "id": "b-40411abb0fb4",
@@ -22720,7 +22774,13 @@ window.BIBLIO_BOOKS = [
     "wildberriesUrl": "",
     "addedAt": "2026-09-15T13:39:05",
     "updatedAt": "2026-09-15T23:01:58",
-    "authorKey": "рина зенюк"
+    "authorKey": "рина зенюк",
+    "coverImage": {
+      "src": "./assets/covers/optimized/55419835e44dfd587006-720.webp",
+      "srcset": "./assets/covers/optimized/b50ccac44a494bc0d724-360.webp 360w, ./assets/covers/optimized/55419835e44dfd587006-720.webp 720w",
+      "width": 720,
+      "height": 960
+    }
   },
   {
     "id": "b-d956493f34cf",
