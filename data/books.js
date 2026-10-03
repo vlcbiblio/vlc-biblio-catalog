@@ -19,7 +19,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=978-5-08-006959-8",
     "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=978-5-08-006959-8",
     "addedAt": "2026-09-30T21:53:39",
-    "updatedAt": "2026-09-30T23:32:09",
+    "updatedAt": "2026-09-30T23:32:32",
     "authorKey": "михаил зощенко"
   },
   {
@@ -543,6 +543,29 @@ window.BIBLIO_BOOKS = [
       "width": 720,
       "height": 938
     }
+  },
+  {
+    "id": "b-5da6db187a21",
+    "requestId": "827",
+    "title": "Inferno",
+    "author": "Dan Brown",
+    "section": "exchange",
+    "catalogStatus": "Частная библиотека",
+    "libraryKey": "user:4cc49332fdc4",
+    "sourceKind": "user",
+    "availability": "available",
+    "audience": "adult",
+    "cover": "https://image-hamelyn.b-cdn.net/products/9780552174114/1.webp",
+    "isbn": "978-0-552-17411-4",
+    "year": "2022",
+    "publisher": "Wilco International",
+    "annotation": "Профессор Гарварда Роберт Лэнгдон приходит в себя в больнице Флоренции, не помня событий последних дней. Вместе с врачом Сиенной Брукс он пытается расшифровать подсказки, связанные с «Адом» Данте и произведениями искусства эпохи Возрождения, чтобы остановить угрозу глобального масштаба.",
+    "sourceUrl": "https://tienda.hamelyn.com/libros-segunda-mano/inferno-9780552174114",
+    "livelibUrl": "",
+    "wildberriesUrl": "",
+    "addedAt": "2026-10-03T07:59:04",
+    "updatedAt": "2026-10-03T13:16:57",
+    "authorKey": "dan brown"
   },
   {
     "id": "b-0a4b65c0f9cc",
