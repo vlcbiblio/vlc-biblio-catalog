@@ -9,6 +9,8 @@
   const lists = { cart: [], favorites: [] };
   let storageAvailable = true;
   let activeList = "cart";
+  const t = (key, fallback) => window.BiblioI18n?.t(`shelf.${key}`, fallback) ?? fallback;
+  const bookText = (key, fallback) => window.BiblioI18n?.t(`book.${key}`, fallback) ?? fallback;
 
   const escape = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
@@ -37,8 +39,8 @@
   }
 
   function buttonLabel(list, selected) {
-    return list === "cart" ? (selected ? "В корзине ✓" : "В корзину")
-      : (selected ? "Убрать из избранного" : "Добавить в избранное");
+    return list === "cart" ? (selected ? t("inCart", "En la cesta ✓") : t("addCart", "Añadir a la cesta"))
+      : (selected ? t("removeFavorite", "Quitar de favoritos") : t("addFavorite", "Añadir a favoritos"));
   }
 
   function buttonMarkup(list, book) {
@@ -46,7 +48,7 @@
     const selected = has(list, id);
     const label = buttonLabel(list, selected);
     const favorite = list === "favorites";
-    return `<button class="shelf-button${favorite ? " shelf-favorite" : ""}" type="button" data-shelf-toggle="${list}" data-shelf-id="${escape(id)}" aria-pressed="${selected}" aria-label="${escape(label + ': ' + (book.title || 'Без названия'))}" title="${escape(label)}">${favorite ? heartMarkup() : label}</button>`;
+    return `<button class="shelf-button${favorite ? " shelf-favorite" : ""}" type="button" data-shelf-toggle="${list}" data-shelf-id="${escape(id)}" aria-pressed="${selected}" aria-label="${escape(label + ': ' + (book.title || bookText('untitled', 'Sin título')))}" title="${escape(label)}">${favorite ? heartMarkup() : label}</button>`;
   }
 
   function favoriteMarkup(book) {
@@ -61,25 +63,25 @@
   let floatingCart;
   let toolbarCartVisible = true;
   if (toolbar) {
-    toolbar.innerHTML = `<nav class="shelf-nav" aria-label="Мои списки">
-      <button class="shelf-button" type="button" data-shelf-open="cart">Корзина <span data-shelf-count="cart">0</span></button>
-      <button class="shelf-button shelf-favorites-nav" type="button" data-shelf-open="favorites" title="Избранное">${heartMarkup()} Избранное <span data-shelf-count="favorites">0</span></button>
+    toolbar.innerHTML = `<nav class="shelf-nav" aria-label="${escape(t("lists", "Mis listas"))}">
+      <button class="shelf-button" type="button" data-shelf-open="cart">${escape(t("cart", "Cesta"))} <span data-shelf-count="cart">0</span></button>
+      <button class="shelf-button shelf-favorites-nav" type="button" data-shelf-open="favorites" title="${escape(t("favorites", "Favoritos"))}">${heartMarkup()} ${escape(t("favorites", "Favoritos"))} <span data-shelf-count="favorites">0</span></button>
     </nav>`;
     floatingCart = document.createElement("button");
     floatingCart.className = "shelf-floating-cart";
     floatingCart.type = "button";
     floatingCart.dataset.shelfFloatingOpen = "cart";
-    floatingCart.setAttribute("aria-label", "Открыть корзину");
+    floatingCart.setAttribute("aria-label", t("openCart", "Abrir la cesta"));
     floatingCart.setAttribute("aria-hidden", "true");
     floatingCart.tabIndex = -1;
-    floatingCart.innerHTML = `<svg class="shelf-floating-cart-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="20" r="1"></circle><circle cx="19" cy="20" r="1"></circle><path d="M3 4h2l2.4 10.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6L21 7H6"></path></svg><span>Корзина</span><span data-shelf-floating-count>0</span>`;
+    floatingCart.innerHTML = `<svg class="shelf-floating-cart-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="20" r="1"></circle><circle cx="19" cy="20" r="1"></circle><path d="M3 4h2l2.4 10.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6L21 7H6"></path></svg><span>${escape(t("cart", "Cesta"))}</span><span data-shelf-floating-count>0</span>`;
     document.body.append(floatingCart);
   }
   const dialog = document.createElement("dialog");
   dialog.className = "shelf-dialog";
   dialog.setAttribute("aria-labelledby", "shelf-title");
   dialog.innerHTML = `<div class="shelf-dialog-header"><h2 id="shelf-title"></h2>
-    <button class="shelf-button" type="button" data-shelf-close autofocus>Закрыть</button></div>
+    <button class="shelf-button" type="button" data-shelf-close autofocus>${escape(t("close", "Cerrar"))}</button></div>
     <div class="shelf-content"></div><p class="shelf-feedback" role="status"></p><p class="shelf-storage-note"></p>`;
   document.body.append(dialog);
   const status = document.createElement("p");
@@ -132,7 +134,7 @@
     const book = byId.get(id);
     if (!selected && (!book || (list === "cart" && !canAdd(book)))) return;
     if (!selected && lists[list].length >= limits.savedBooks) {
-      announce("Список заполнен. Удалите ненужные книги.");
+      announce(t("full", "La lista está llena. Elimina los libros que no necesites."));
       return;
     }
     lists[list] = selected ? lists[list].filter((savedId) => savedId !== id) : [...lists[list], id];
@@ -142,32 +144,32 @@
       storageAvailable = false;
     }
     sync();
-    const message = list === "cart" ? (selected ? "Книга удалена из корзины" : "Книга добавлена в корзину")
-      : (selected ? "Книга удалена из избранного" : "Книга добавлена в избранное");
-    announce(storageAvailable ? message : message + ". Браузер не разрешает сохранение: список доступен только на этой странице.");
+    const message = list === "cart" ? (selected ? t("removedCart", "Libro eliminado de la cesta") : t("addedCart", "Libro añadido a la cesta"))
+      : (selected ? t("removedFavorite", "Libro eliminado de favoritos") : t("addedFavorite", "Libro añadido a favoritos"));
+    announce(storageAvailable ? message : message + t("storageBlockedSuffix", ". El navegador no permite guardar datos: la lista solo está disponible en esta página."));
   }
 
   function availabilityLabel(book) {
-    if (!book) return "Книга больше не опубликована в каталоге";
-    if (canAdd(book)) return "Доступна для запроса";
-    if (book.section === "library") return "Библиотека Pilar Faus";
-    if (book.availability === "reserved") return "Зарезервирована — можно встать в очередь";
-    return "Сейчас недоступна для запроса";
+    if (!book) return t("unpublished", "El libro ya no está publicado en el catálogo");
+    if (canAdd(book)) return t("available", "Disponible para solicitar");
+    if (book.section === "library") return bookText("library", "Biblioteca Pilar Faus");
+    if (book.availability === "reserved") return t("reserved", "Reservado: puedes apuntarte a la lista de espera");
+    return t("unavailable", "No disponible para solicitar por el momento");
   }
 
   function rowMarkup(id, number) {
     const book = byId.get(id);
-    const title = book?.title || `Книга ${id}`;
+    const title = book?.title || `${bookText("fallback", "Libro")} ${id}`;
     const cover = book?.coverImage?.src || book?.cover;
     const waitlist = book?.section === "exchange" && book.availability === "reserved" && requestId(book);
     return `<li class="shelf-row" data-shelf-row="${escape(id)}">
-      <div class="shelf-cover">${cover ? `<img src="${escape(cover)}" alt="" loading="lazy" referrerpolicy="no-referrer" />` : "<span aria-hidden=\"true\">Книга</span>"}</div>
+      <div class="shelf-cover">${cover ? `<img src="${escape(cover)}" alt="" loading="lazy" referrerpolicy="no-referrer" />` : `<span aria-hidden="true">${escape(bookText("fallback", "Libro"))}</span>`}</div>
       <div class="shelf-row-body">
         ${book ? `<a class="shelf-book-title" href="./book.html?id=${encodeURIComponent(id)}">${number ? `${number}. ` : ""}${escape(title)}</a>` : `<span class="shelf-book-title">${escape(title)}</span>`}
         <p class="shelf-author">${escape(book?.author)}</p>
         <p class="shelf-availability">${availabilityLabel(book)}</p>
-        ${waitlist ? `<a class="shelf-waitlist" href="https://t.me/VLS_Biblio_bot?start=wait_${requestId(book)}" target="_blank" rel="noreferrer">Встать в очередь в боте</a>` : ""}
-        ${activeList === "favorites" && book ? controlsMarkup(book) : `<div class="shelf-controls"><button class="shelf-button" type="button" data-shelf-toggle="${activeList}" data-shelf-id="${escape(id)}">Удалить</button>${book ? buttonMarkup("favorites", book) : ""}</div>`}
+        ${waitlist ? `<a class="shelf-waitlist" href="https://t.me/VLS_Biblio_bot?start=wait_${requestId(book)}" target="_blank" rel="noreferrer">${escape(t("waitlistBot", "Apuntarme a la lista de espera en el bot"))}</a>` : ""}
+        ${activeList === "favorites" && book ? controlsMarkup(book) : `<div class="shelf-controls"><button class="shelf-button" type="button" data-shelf-toggle="${activeList}" data-shelf-id="${escape(id)}">${escape(t("remove", "Eliminar"))}</button>${book ? buttonMarkup("favorites", book) : ""}</div>`}
       </div>
     </li>`;
   }
@@ -191,27 +193,27 @@
       const payload = `books_${items.map((id) => requestId(byId.get(id))).join("_")}`;
       const range = `${offset + 1}–${offset + items.length}`;
       offset += items.length;
-      if (payload.length > limits.startLength) return '<p class="shelf-note">Не удалось подготовить ссылку для этой книги.</p>';
-      return `<div class="shelf-checkout">${batches.length > 1 ? `<p class="shelf-note">Заказ ${index + 1}: книги ${range}</p>` : ""}
-        <a class="shelf-button shelf-primary" data-shelf-checkout href="https://t.me/VLS_Biblio_bot?start=${payload}" target="_blank" rel="noreferrer"><span>${items.length === 1 ? "Запросить книгу" : `Запросить выбранные: ${items.length}`}</span><span>через Телеграм</span></a></div>`;
+      if (payload.length > limits.startLength) return `<p class="shelf-note">${escape(t("linkError", "No se ha podido preparar el enlace para este libro."))}</p>`;
+      return `<div class="shelf-checkout">${batches.length > 1 ? `<p class="shelf-note">${escape(t("order", "Pedido"))} ${index + 1}: ${escape(t("booksRange", "libros"))} ${range}</p>` : ""}
+        <a class="shelf-button shelf-primary" data-shelf-checkout href="https://t.me/VLS_Biblio_bot?start=${payload}" target="_blank" rel="noreferrer"><span>${items.length === 1 ? escape(bookText("request", "Solicitar el libro")) : `${escape(t("requestSelected", "Solicitar los seleccionados"))}: ${items.length}`}</span><span>${escape(bookText("telegram", "por Telegram"))}</span></a></div>`;
     }).join("");
   }
 
   function locationMarkup(ids) {
     const notes = [...new Set(ids.map((id) => byId.get(id)?.locationNote).filter(Boolean))];
     if (!notes.length) return "";
-    return `<aside class="shelf-location" aria-label="Место передачи книг">
+    return `<aside class="shelf-location" aria-label="${escape(t("location", "Lugar de entrega de los libros"))}">
       ${notes.map((note) => `<p>${escape(note)}</p>`).join("")}
     </aside>`;
   }
 
   function renderList() {
-    dialog.querySelector("#shelf-title").textContent = `${activeList === "cart" ? "Корзина" : "Избранное"} · ${lists[activeList].length}`;
+    dialog.querySelector("#shelf-title").textContent = `${activeList === "cart" ? t("cart", "Cesta") : t("favorites", "Favoritos")} · ${lists[activeList].length}`;
     let markup;
     if (!lists[activeList].length) {
-      markup = `<p class="shelf-empty">${activeList === "cart" ? "Корзина пока пуста. Добавляйте книги из каталога, а затем проверьте список перед отправкой в бот." : "Здесь будут книги, которые вы хотите сохранить на потом. Нажмите на сердечко на карточке книги."}</p>`;
+      markup = `<p class="shelf-empty">${escape(activeList === "cart" ? t("cartEmpty", "La cesta está vacía. Añade libros del catálogo y revisa la lista antes de enviarla al bot.") : t("favoritesEmpty", "Aquí aparecerán los libros que quieras guardar para más adelante. Pulsa el corazón de la ficha del libro."))}</p>`;
     } else if (activeList === "favorites") {
-      markup = `<p class="shelf-note">Сохранённые книги на потом. Доступные книги можно добавить в корзину.</p><ul class="shelf-list">${lists.favorites.map((id) => rowMarkup(id)).join("")}</ul>`;
+      markup = `<p class="shelf-note">${escape(t("favoritesNote", "Libros guardados para más adelante. Puedes añadir los que estén disponibles a la cesta."))}</p><ul class="shelf-list">${lists.favorites.map((id) => rowMarkup(id)).join("")}</ul>`;
     } else {
       const groups = new Map();
       const unavailable = [];
@@ -223,11 +225,11 @@
         if (!groups.has(key)) groups.set(key, []);
         groups.get(key).push(id);
       }
-      markup = '<p class="shelf-note">Проверьте список и удалите лишнее. Книги разных владельцев оформляются отдельно. Добавление в корзину не резервирует книгу; бот проверит доступность и попросит подтвердить отправку.</p>';
-      markup += Array.from(groups.values()).map((ids, index) => `<section class="shelf-group" aria-label="Библиотека ${index + 1}"><h3>Библиотека ${index + 1} · ${ids.length}</h3>
+      markup = `<p class="shelf-note">${escape(t("cartNote", "Revisa la lista y elimina lo que no necesites. Los libros de distintas personas propietarias se tramitan por separado. Añadir un libro a la cesta no lo reserva; el bot comprobará su disponibilidad y te pedirá que confirmes el envío."))}</p>`;
+      markup += Array.from(groups.values()).map((ids, index) => `<section class="shelf-group" aria-label="${escape(t("library", "Biblioteca"))} ${index + 1}"><h3>${escape(t("library", "Biblioteca"))} ${index + 1} · ${ids.length}</h3>
         <ul class="shelf-list">${ids.map((id, number) => rowMarkup(id, number + 1)).join("")}</ul>${locationMarkup(ids)}${checkoutMarkup(ids)}</section>`).join("");
-      if (unavailable.length) markup += `<section class="shelf-group"><h3>Сейчас недоступны · ${unavailable.length}</h3><p class="shelf-note">Эти книги не включены в запрос. Можно оставить их в избранном или удалить из корзины.</p><ul class="shelf-list">${unavailable.map((id) => rowMarkup(id)).join("")}</ul></section>`;
-      if (groups.size) markup += '<p class="shelf-note">После перехода в бот корзина сохраняется. Удалите книги из неё, когда подтвердите заказ.</p>';
+      if (unavailable.length) markup += `<section class="shelf-group"><h3>${escape(t("unavailableHeading", "No disponibles por el momento"))} · ${unavailable.length}</h3><p class="shelf-note">${escape(t("unavailableNote", "Estos libros no se incluyen en la solicitud. Puedes guardarlos en favoritos o eliminarlos de la cesta."))}</p><ul class="shelf-list">${unavailable.map((id) => rowMarkup(id)).join("")}</ul></section>`;
+      if (groups.size) markup += `<p class="shelf-note">${escape(t("afterBot", "La cesta se conserva después de abrir el bot. Elimina los libros cuando hayas confirmado el pedido."))}</p>`;
     }
     const focused = document.activeElement;
     const focusId = focused?.dataset.shelfId;
@@ -235,8 +237,8 @@
     const scrollTop = dialog.scrollTop;
     dialog.querySelector(".shelf-content").innerHTML = markup;
     dialog.querySelector(".shelf-storage-note").textContent = storageAvailable
-      ? "Списки хранятся в этом браузере. На другом устройстве или в другом браузере они будут отдельными."
-      : "Браузер не разрешает сохранение. Списки доступны только на этой странице.";
+      ? t("storageOk", "Las listas se guardan en este navegador. Serán distintas en otro dispositivo o navegador.")
+      : t("storageBlocked", "El navegador no permite guardar datos. Las listas solo están disponibles en esta página.");
     if (focusId) {
       const replacement = Array.from(dialog.querySelectorAll("[data-shelf-toggle]")).find((button) => button.dataset.shelfId === focusId && button.dataset.shelfToggle === focusList);
       (replacement || dialog.querySelector("[data-shelf-close]")).focus({ preventScroll: true });
@@ -257,7 +259,7 @@
       const label = buttonLabel(list, selected);
       if (list === "cart") button.textContent = label;
       button.setAttribute("aria-pressed", String(selected));
-      button.setAttribute("aria-label", label + ": " + (book.title || "Без названия"));
+      button.setAttribute("aria-label", label + ": " + (book.title || bookText("untitled", "Sin título")));
       button.setAttribute("title", label);
     });
     syncFloatingCart();
@@ -280,7 +282,7 @@
   });
   dialog.addEventListener("close", syncFloatingCart);
   dialog.addEventListener("error", (event) => {
-    if (event.target.tagName === "IMG") event.target.replaceWith(document.createTextNode("Книга"));
+    if (event.target.tagName === "IMG") event.target.replaceWith(document.createTextNode(bookText("fallback", "Libro")));
   }, true);
   window.addEventListener("storage", (event) => {
     if (event.key === null || event.key?.startsWith(prefix)) { readLists(); sync(); }

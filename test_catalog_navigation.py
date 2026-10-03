@@ -280,6 +280,34 @@ class CatalogNavigationTests(unittest.TestCase):
         self.assertEqual(instagram.get_attribute("href"), "https://www.instagram.com/vlc.biblio")
         self.assertEqual(instagram.locator("svg.instagram-icon").count(), 1)
 
+    def test_language_toggle_switches_ui_and_preserves_book_data(self):
+        self.page.goto(self.base_url)
+        first_title = self.page.locator("#grid .book .title").first.inner_text()
+
+        expect(self.page.locator("#how-title")).to_have_text("Как это работает")
+        expect(self.page.locator("[data-shelf-open='cart']")).to_contain_text("Корзина")
+        expect(self.page.locator("#grid .badge.exchange").first).to_have_text("🏠 Частная библиотека")
+        expect(self.page.locator("#grid .shelf-favorite").first).to_have_attribute("title", "Добавить в избранное")
+        expect(self.page.locator("[data-language-toggle]")).to_have_text("ES")
+        self.assertEqual(self.page.locator("html").get_attribute("lang"), "ru")
+        self.assertEqual(self.page.locator("#grid .book .title").first.inner_text(), first_title)
+
+        self.page.reload()
+        expect(self.page.locator("#how-title")).to_have_text("Как это работает")
+
+        self.page.locator("[data-language-toggle]").click()
+        expect(self.page.locator("#how-title")).to_have_text("Cómo funciona")
+        self.assertEqual(self.page.locator("html").get_attribute("lang"), "es")
+        self.page.goto(f"{self.base_url}privacy.html")
+        expect(self.page.locator("h1")).to_have_text("Privacidad")
+
+        self.page.goto(self.base_url)
+        self.page.locator("[data-language-toggle]").click()
+        expect(self.page.locator("#how-title")).to_have_text("Как это работает")
+        self.assertEqual(self.page.locator("html").get_attribute("lang"), "ru")
+        self.page.goto(f"{self.base_url}privacy.html")
+        expect(self.page.locator("h1")).to_have_text("Конфиденциальность")
+
     def test_telegram_catalog_can_open_a_clean_url_in_external_browser(self):
         self.page.set_viewport_size({"width": 390, "height": 844})
         self.context.add_init_script("""

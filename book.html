@@ -426,23 +426,25 @@
   </head>
   <body>
     <main class="page">
-      <a class="back" href="./">← Volver al catálogo</a>
+      <a class="back" href="./" data-i18n="catalog.back">← Volver al catálogo</a>
       <div data-shelf-toolbar></div>
       <section id="content"></section>
       <footer class="site-footer">
-        <a class="privacy-link" href="./privacy.html">Privacidad</a>
+        <a class="privacy-link" href="./privacy.html" data-i18n="catalog.nav.privacy">Privacidad</a>
       </footer>
     </main>
 
     <script src="./data/books.js?v=20261003135012"></script>
-    <script src="./assets/shelf.js?v=es-1"></script>
+    <script src="./assets/i18n.js?v=1"></script>
+    <script src="./assets/shelf.js?v=i18n-1"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
       const botUrl = "https://t.me/VLS_Biblio_bot";
       const libraryMapUrl = "https://www.google.com/maps/search/?api=1&query=Biblioteca%20P%C3%BAblica%20de%20Val%C3%A8ncia%20Pilar%20Faus%2039.470374%2C-0.381743";
+      const t = (key, fallback) => window.BiblioI18n?.t(key, fallback) ?? fallback;
       const labels = {
-        library: "Biblioteca Pilar Faus",
-        exchange: "Biblioteca particular",
+        library: t("book.library", "Biblioteca Pilar Faus"),
+        exchange: t("book.private", "Biblioteca particular"),
       };
       const relatedCollator = new Intl.Collator("ru", { numeric: true, sensitivity: "base" });
       const content = document.querySelector("#content");
@@ -490,7 +492,7 @@
       }
 
       function fallbackCover(title) {
-        return `<div class="cover-placeholder">${escapeHtml(title || "Libro")}</div>`;
+        return `<div class="cover-placeholder">${escapeHtml(title || t("book.fallback", "Libro"))}</div>`;
       }
 
       function coverMarkup(book, lazy = false) {
@@ -502,7 +504,7 @@
         const responsive = image
           ? ` srcset="${escapeHtml(image.srcset)}" sizes="${sizes}" width="${image.width}" height="${image.height}"`
           : "";
-        return `<img src="${escapeHtml(image?.src || book.cover)}"${responsive} alt="Portada: ${escapeHtml(book.title)}" loading="${lazy ? "lazy" : "eager"}" fetchpriority="${lazy ? "low" : "high"}" decoding="async" referrerpolicy="no-referrer" data-fallback-title="${escapeHtml(book.title || "Libro")}" />`;
+        return `<img src="${escapeHtml(image?.src || book.cover)}"${responsive} alt="${escapeHtml(t("book.cover", "Portada"))}: ${escapeHtml(book.title)}" loading="${lazy ? "lazy" : "eager"}" fetchpriority="${lazy ? "low" : "high"}" decoding="async" referrerpolicy="no-referrer" data-fallback-title="${escapeHtml(book.title || t("book.fallback", "Libro"))}" />`;
       }
 
       function telegramIcon() {
@@ -511,7 +513,7 @@
 
       function actionLabelMarkup(action) {
         if (action.isTelegram) {
-          return `<span>${escapeHtml(action.isWaitlist ? "Apuntarme a la lista de espera" : "Solicitar el libro")}</span><span>por Telegram</span>`;
+          return `<span>${escapeHtml(action.isWaitlist ? t("book.waitlist", "Apuntarme a la lista de espera") : t("book.request", "Solicitar el libro"))}</span><span>${escapeHtml(t("book.telegram", "por Telegram"))}</span>`;
         }
         return `<span>${escapeHtml(action.label)}</span>`;
       }
@@ -536,7 +538,7 @@
         if (book.section === "library") {
           return {
             href: libraryMapUrl,
-            label: "Biblioteca Pilar Faus",
+            label: t("book.library", "Biblioteca Pilar Faus"),
           };
         }
         return null;
@@ -550,19 +552,19 @@
       function collectionNote(book) {
         let note;
         if (canJoinWaitlist(book)) {
-          note = "El libro está reservado. Apúntate a la lista de espera para recibir un aviso cuando llegue tu turno.";
+          note = t("book.note.reserved", "El libro está reservado. Apúntate a la lista de espera para recibir un aviso cuando llegue tu turno.");
         } else if (book.section === "exchange" && book.availability === "unavailable") {
-          note = "El libro no se puede solicitar por el momento.";
+          note = t("book.note.unavailable", "El libro no se puede solicitar por el momento.");
         } else if (book.section === "exchange") {
-          note = "El libro pertenece a una colección particular. Puedes solicitarlo en préstamo.";
+          note = t("book.note.private", "El libro pertenece a una colección particular. Puedes solicitarlo en préstamo.");
         } else if (book.availability === "planned") {
-          note = "El libro se está preparando para su entrega a la biblioteca Pilar Faus.";
+          note = t("book.note.planned", "El libro se está preparando para su entrega a la biblioteca Pilar Faus.");
         } else if (book.availability === "transferred" || book.availability === "given") {
-          note = "El libro ha sido entregado a la biblioteca Pilar Faus.";
+          note = t("book.note.transferred", "El libro ha sido entregado a la biblioteca Pilar Faus.");
         } else if (book.availability === "accepted") {
-          note = "El libro ha sido incorporado al fondo de la biblioteca Pilar Faus.";
+          note = t("book.note.accepted", "El libro ha sido incorporado al fondo de la biblioteca Pilar Faus.");
         } else {
-          note = "El libro pertenece a la biblioteca Pilar Faus.";
+          note = t("book.note.library", "El libro pertenece a la biblioteca Pilar Faus.");
         }
         return note;
       }
@@ -576,9 +578,9 @@
       function detailsMarkup(book) {
         const details = [
           ["ISBN", book.isbn],
-          ["Año de publicación", book.year],
-          ["Editorial", book.publisher],
-          ["Actualizado", book.updatedAt ? new Date(book.updatedAt).toLocaleDateString("es-ES") : ""],
+          [t("book.year", "Año de publicación"), book.year],
+          [t("book.publisher", "Editorial"), book.publisher],
+          [t("book.updated", "Actualizado"), book.updatedAt ? new Date(book.updatedAt).toLocaleDateString(window.BiblioI18n?.locale === "ru" ? "ru" : "es-ES") : ""],
         ].filter((detail) => detail && detail[1]);
 
         return details
@@ -587,11 +589,11 @@
       }
 
       function statusLabel(book) {
-        if (book.section === "exchange" && book.availability === "unavailable") return "⏸ No disponible por el momento";
-        if (book.section === "exchange") return "🏠 Biblioteca particular";
-        if (book.availability === "planned") return "🎁 En preparación para Pilar Faus";
-        if (book.availability === "transferred" || book.availability === "given") return "📦 Entregado a Pilar Faus";
-        if (book.availability === "accepted") return "📚 En el fondo de Pilar Faus";
+        if (book.section === "exchange" && book.availability === "unavailable") return t("book.status.unavailable", "⏸ No disponible por el momento");
+        if (book.section === "exchange") return t("book.status.private", "🏠 Biblioteca particular");
+        if (book.availability === "planned") return t("book.status.planned", "🎁 En preparación para Pilar Faus");
+        if (book.availability === "transferred" || book.availability === "given") return t("book.status.transferred", "📦 Entregado a Pilar Faus");
+        if (book.availability === "accepted") return t("book.status.accepted", "📚 En el fondo de Pilar Faus");
         return "📍 Pilar Faus";
       }
 
@@ -614,8 +616,8 @@
             </div>
             <a class="related-card-link" href="${escapeHtml(relatedUrl(book))}">
             <div class="related-body">
-              <h3 class="related-title">${escapeHtml(book.title || "Sin título")}</h3>
-              <p class="related-author">${escapeHtml(book.author || "Autor no indicado")}</p>
+              <h3 class="related-title">${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h3>
+              <p class="related-author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
             </div>
             </a>
             ${window.BiblioShelf.controlsMarkup(book, false)}
@@ -655,11 +657,11 @@
         const active = collections.author.length ? "author" : "library";
         const activeItems = collections[active];
         return `
-          <section class="related" data-book-id="${escapeHtml(book.id)}" data-related-active="${active}" aria-label="Libros relacionados">
+          <section class="related" data-book-id="${escapeHtml(book.id)}" data-related-active="${active}" aria-label="${escapeHtml(t("book.related", "Libros relacionados"))}">
             <div class="related-header">
-              <div class="related-tabs" role="tablist" aria-label="Filtro de libros relacionados">
-                <button class="related-tab" type="button" role="tab" data-related-tab="author" aria-selected="${active === "author"}" ${collections.author.length ? "" : "disabled"}>Del mismo autor</button>
-                <button class="related-tab" type="button" role="tab" data-related-tab="library" aria-selected="${active === "library"}" ${collections.library.length ? "" : "disabled"}>En la misma biblioteca</button>
+              <div class="related-tabs" role="tablist" aria-label="${escapeHtml(t("book.relatedFilter", "Filtro de libros relacionados"))}">
+                <button class="related-tab" type="button" role="tab" data-related-tab="author" aria-selected="${active === "author"}" ${collections.author.length ? "" : "disabled"}>${escapeHtml(t("book.sameAuthor", "Del mismo autor"))}</button>
+                <button class="related-tab" type="button" role="tab" data-related-tab="library" aria-selected="${active === "library"}" ${collections.library.length ? "" : "disabled"}>${escapeHtml(t("book.sameLibrary", "En la misma biblioteca"))}</button>
               </div>
             </div>
             <div class="related-results" aria-live="polite">${relatedListMarkup(activeItems)}</div>
@@ -680,21 +682,21 @@
       }
 
       function renderBook(book) {
-        document.title = `${book.title || "Libro"} | VLC Biblio`;
+        document.title = `${book.title || t("book.fallback", "Libro")} | VLC Biblio`;
         content.innerHTML = `
           <article class="book">
             <div class="cover">${coverMarkup(book)}${window.BiblioShelf.favoriteMarkup(book)}</div>
             <div class="body">
               ${badgesMarkup(book)}
-              <h1>${escapeHtml(book.title || "Sin título")}</h1>
-              <p class="author">${escapeHtml(book.author || "Autor no indicado")}</p>
+              <h1>${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h1>
+              <p class="author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
               <dl class="details">${detailsMarkup(book)}</dl>
-              <p class="annotation">${escapeHtml(book.annotation || "Todavía no se ha añadido una descripción.")}</p>
+              <p class="annotation">${escapeHtml(book.annotation || t("book.noDescription", "Todavía no se ha añadido una descripción."))}</p>
               <div class="collection-note"><span>${escapeHtml(collectionNote(book))}</span>${locationNoteMarkup(book)}</div>
               ${window.BiblioShelf.controlsMarkup(book, false)}
               <div class="actions">
                 ${libraryAction(book) ? `<a class="${libraryAction(book).isTelegram ? "telegram-action" : ""}" href="${escapeHtml(libraryAction(book).href)}" target="_blank" rel="noreferrer">${actionLabelMarkup(libraryAction(book))}</a>` : ""}
-                <a href="${escapeHtml(correctionUrl(book))}" target="_blank" rel="noreferrer">Quiero informar de un error</a>
+                <a href="${escapeHtml(correctionUrl(book))}" target="_blank" rel="noreferrer">${escapeHtml(t("book.reportError", "Quiero informar de un error"))}</a>
                 <a href="${escapeHtml(googleSearchUrl(book))}" target="_blank" rel="noreferrer">Google</a>
               </div>
             </div>
@@ -704,8 +706,8 @@
       }
 
       function renderMissing() {
-        document.title = "Libro no encontrado | VLC Biblio";
-        content.innerHTML = `<p class="empty">No se ha encontrado el libro. Vuelve al catálogo y elige otra ficha.</p>`;
+        document.title = `${t("book.notFoundTitle", "Libro no encontrado")} | VLC Biblio`;
+        content.innerHTML = `<p class="empty">${escapeHtml(t("book.notFound", "No se ha encontrado el libro. Vuelve al catálogo y elige otra ficha."))}</p>`;
       }
 
       const params = new URLSearchParams(window.location.search);

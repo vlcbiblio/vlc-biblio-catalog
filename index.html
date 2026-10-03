@@ -178,6 +178,24 @@
         gap: 18px;
       }
 
+      .brand-tools { display: flex; align-items: center; gap: 8px; }
+
+      .language-toggle {
+        width: 42px;
+        height: 42px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        color: var(--ink);
+        background: var(--paper);
+        cursor: pointer;
+        font: inherit;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .language-toggle:hover,
+      .language-toggle:focus-visible { background: rgba(49, 95, 134, 0.07); }
+
       .site-menu { position: relative; flex: 0 0 auto; }
 
       .site-menu summary {
@@ -733,38 +751,41 @@
           <div class="brand-heading">
             <div>
               <h1 id="catalog-title">VLC Biblio</h1>
-              <p class="subtitle">
+              <p class="subtitle" data-i18n="catalog.subtitle">
                 Catálogo abierto de libros para el fondo de la biblioteca Pilar Faus y
                 las bibliotecas particulares de los participantes.
               </p>
             </div>
-            <details class="site-menu">
-              <summary aria-label="Abrir el menú">☰</summary>
-              <nav aria-label="Navegación principal">
-                <a href="#catalog">Catálogo</a>
-                <a href="#add-book">Donar un libro</a>
-                <a href="#how-it-works">Cómo funciona</a>
-                <a href="#business">Para negocios</a>
-                <a href="./privacy.html">Privacidad</a>
-                <a href="#about">Sobre el proyecto</a>
-                <a href="#faq">FAQ</a>
-              </nav>
-            </details>
+            <div class="brand-tools">
+              <button class="language-toggle" type="button" data-language-toggle aria-label="Cambiar el idioma a ruso">RU</button>
+              <details class="site-menu">
+                <summary aria-label="Abrir el menú" data-i18n-aria-label="catalog.menu.open">☰</summary>
+                <nav aria-label="Navegación principal" data-i18n-aria-label="catalog.nav.main">
+                  <a href="#catalog" data-i18n="catalog.nav.catalog">Catálogo</a>
+                  <a href="#add-book" data-i18n="catalog.nav.donate">Donar un libro</a>
+                  <a href="#how-it-works" data-i18n="catalog.nav.how">Cómo funciona</a>
+                  <a href="#business" data-i18n="catalog.nav.business">Para negocios</a>
+                  <a href="./privacy.html" data-i18n="catalog.nav.privacy">Privacidad</a>
+                  <a href="#about" data-i18n="catalog.nav.about">Sobre el proyecto</a>
+                  <a href="#faq">FAQ</a>
+                </nav>
+              </details>
+            </div>
           </div>
           <nav class="telegram-links" aria-label="Telegram">
             <span class="telegram-item">
               <svg class="telegram-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.7 4.3 18.4 20c-.2 1-.8 1.2-1.6.8l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.6-.6-.3L6 13.5l-4.8-1.5c-1-.3-1-1 .2-1.5L20.2 3.2c.9-.3 1.7.2 1.5 1.1Z"/></svg>
-              <span class="telegram-label">Añadir un libro</span>
+              <span class="telegram-label" data-i18n="catalog.telegram.add">Añadir un libro</span>
               <a class="telegram-link" href="https://t.me/VLS_Biblio_bot" target="_blank" rel="noreferrer">@VLS_Biblio_bot</a>
             </span>
             <span class="telegram-item">
               <svg class="telegram-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.7 4.3 18.4 20c-.2 1-.8 1.2-1.6.8l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.6-.6-.3L6 13.5l-4.8-1.5c-1-.3-1-1 .2-1.5L20.2 3.2c.9-.3 1.7.2 1.5 1.1Z"/></svg>
-              <span class="telegram-label">Noticias del proyecto</span>
+              <span class="telegram-label" data-i18n="catalog.telegram.news">Noticias del proyecto</span>
               <a class="telegram-link" href="https://t.me/VLC_biblio" target="_blank" rel="noreferrer">@VLC_biblio</a>
             </span>
             <span class="telegram-item">
               <svg class="telegram-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.7 4.3 18.4 20c-.2 1-.8 1.2-1.6.8l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.6-.6-.3L6 13.5l-4.8-1.5c-1-.3-1-1 .2-1.5L20.2 3.2c.9-.3 1.7.2 1.5 1.1Z"/></svg>
-              <span class="telegram-label">Conversaciones</span>
+              <span class="telegram-label" data-i18n="catalog.telegram.chat">Conversaciones</span>
               <a class="telegram-link" href="https://t.me/bibliotecavlc" target="_blank" rel="noreferrer">@bibliotecavlc</a>
             </span>
           </nav>
@@ -774,101 +795,101 @@
               <span>@vlc.biblio</span>
             </a>
           </div>
-          <button class="external-browser" type="button" data-open-external-browser hidden>Abrir en el navegador externo</button>
+          <button class="external-browser" type="button" data-open-external-browser data-i18n="catalog.external" hidden>Abrir en el navegador externo</button>
         </div>
         <div class="catalog-summary">
-          <div class="stats" aria-label="Estadísticas del catálogo">
-            <div class="stat"><strong id="totalCount">0</strong><span>en total</span></div>
-            <div class="stat"><strong id="libraryCount">0</strong><span>en la biblioteca Pilar Faus</span></div>
-            <div class="stat"><strong id="exchangeCount">0</strong><span>particulares</span></div>
+          <div class="stats" aria-label="Estadísticas del catálogo" data-i18n-aria-label="catalog.stats.label">
+            <div class="stat"><strong id="totalCount">0</strong><span data-i18n="catalog.stats.total">en total</span></div>
+            <div class="stat"><strong id="libraryCount">0</strong><span data-i18n="catalog.stats.library">en la biblioteca Pilar Faus</span></div>
+            <div class="stat"><strong id="exchangeCount">0</strong><span data-i18n="catalog.stats.private">particulares</span></div>
           </div>
           <div data-shelf-toolbar></div>
         </div>
       </section>
 
       <section class="content-section how-it-works" id="how-it-works" aria-labelledby="how-title">
-        <h2 class="section-heading" id="how-title">Cómo funciona</h2>
+        <h2 class="section-heading" id="how-title" data-i18n="catalog.how.title">Cómo funciona</h2>
         <ol class="steps">
-          <li><span class="step-icon" aria-hidden="true">📚</span>Consulta los libros disponibles en el catálogo</li>
-          <li><span class="step-icon" aria-hidden="true">🎁</span>Dona un libro a la biblioteca Pilar Faus</li>
-          <li><span class="step-icon" aria-hidden="true">🤝</span>Añade tu libro y compártelo con otros lectores</li>
-          <li><span class="step-icon" aria-hidden="true">🤖</span>Toda la gestión de los libros se realiza mediante el bot de Telegram</li>
+          <li><span class="step-icon" aria-hidden="true">📚</span><span data-i18n="catalog.how.1">Consulta los libros disponibles en el catálogo</span></li>
+          <li><span class="step-icon" aria-hidden="true">🎁</span><span data-i18n="catalog.how.2">Dona un libro a la biblioteca Pilar Faus</span></li>
+          <li><span class="step-icon" aria-hidden="true">🤝</span><span data-i18n="catalog.how.3">Añade tu libro y compártelo con otros lectores</span></li>
+          <li><span class="step-icon" aria-hidden="true">🤖</span><span data-i18n="catalog.how.4">Toda la gestión de los libros se realiza mediante el bot de Telegram</span></li>
         </ol>
       </section>
 
-      <section class="content-section action-cards" id="add-book" aria-label="Añadir un libro">
+      <section class="content-section action-cards" id="add-book" aria-label="Añadir un libro" data-i18n-aria-label="catalog.add.label">
         <article class="action-card">
           <span class="action-icon" aria-hidden="true">🎁</span>
-          <h3>Donar un libro a la biblioteca</h3>
-          <p>El libro se entregará a la biblioteca pública Pilar Faus y quedará a disposición de sus lectores.</p>
-          <a class="primary-link" href="https://t.me/VLS_Biblio_bot" target="_blank" rel="noreferrer">Donar un libro →</a>
+          <h3 data-i18n="catalog.donate.title">Donar un libro a la biblioteca</h3>
+          <p data-i18n="catalog.donate.text">El libro se entregará a la biblioteca pública Pilar Faus y quedará a disposición de sus lectores.</p>
+          <a class="primary-link" href="https://t.me/VLS_Biblio_bot" target="_blank" rel="noreferrer" data-i18n="catalog.donate.link">Donar un libro →</a>
         </article>
         <article class="action-card private">
           <span class="action-icon" aria-hidden="true">🏠</span>
-          <h3>Añadir a una biblioteca particular</h3>
-          <p>El libro se queda contigo, pero otros participantes podrán encontrarlo en el catálogo y pedirlo prestado.</p>
-          <a class="primary-link" href="https://t.me/VLS_Biblio_bot" target="_blank" rel="noreferrer">Añadir mi libro →</a>
+          <h3 data-i18n="catalog.private.title">Añadir a una biblioteca particular</h3>
+          <p data-i18n="catalog.private.text">El libro se queda contigo, pero otros participantes podrán encontrarlo en el catálogo y pedirlo prestado.</p>
+          <a class="primary-link" href="https://t.me/VLS_Biblio_bot" target="_blank" rel="noreferrer" data-i18n="catalog.private.link">Añadir mi libro →</a>
         </article>
       </section>
 
       <section class="content-section" id="latest" aria-labelledby="latest-title">
-        <h2 class="section-heading" id="latest-title">Últimos libros añadidos</h2>
+        <h2 class="section-heading" id="latest-title" data-i18n="catalog.latest">Últimos libros añadidos</h2>
         <div class="latest-grid" id="latestGrid"></div>
       </section>
 
       <section class="content-section" id="catalog" aria-labelledby="books-title">
-        <h2 class="section-heading" id="books-title">Catálogo</h2>
+        <h2 class="section-heading" id="books-title" data-i18n="catalog.title">Catálogo</h2>
       </section>
 
-      <section class="controls" aria-label="Filtros">
-        <input class="field search" id="search" type="search" placeholder="Buscar por título, autor, ISBN o editorial" />
+      <section class="controls" aria-label="Filtros" data-i18n-aria-label="catalog.filters">
+        <input class="field search" id="search" type="search" placeholder="Buscar por título, autor, ISBN o editorial" data-i18n-placeholder="catalog.search" />
         <select class="field" id="sectionFilter">
-          <option value="">Todas las secciones</option>
-          <option value="library">Biblioteca Pilar Faus</option>
-          <option value="exchange">Biblioteca particular</option>
+          <option value="" data-i18n="catalog.sections.all">Todas las secciones</option>
+          <option value="library" data-i18n="catalog.sections.library">Biblioteca Pilar Faus</option>
+          <option value="exchange" data-i18n="catalog.sections.private">Biblioteca particular</option>
         </select>
       </section>
 
-      <section class="grid" id="grid" aria-label="Libros"></section>
-      <p class="empty" id="empty">No se ha encontrado nada. Prueba a quitar algún filtro.</p>
+      <section class="grid" id="grid" aria-label="Libros" data-i18n-aria-label="catalog.books"></section>
+      <p class="empty" id="empty" data-i18n="catalog.empty">No se ha encontrado nada. Prueba a quitar algún filtro.</p>
 
       <section class="content-section info-panel" id="about" aria-labelledby="about-title">
-        <h2 class="section-heading" id="about-title">¿Por qué lo hacemos?</h2>
-        <p class="section-lead">Leer es importante. Queremos facilitar el acceso a los libros a quienes viven en València: ampliamos el fondo de la biblioteca pública Pilar Faus y, al mismo tiempo, creamos una red de pequeñas bibliotecas particulares.</p>
+        <h2 class="section-heading" id="about-title" data-i18n="catalog.about.title">¿Por qué lo hacemos?</h2>
+        <p class="section-lead" data-i18n="catalog.about.text">Leer es importante. Queremos facilitar el acceso a los libros a quienes viven en València: ampliamos el fondo de la biblioteca pública Pilar Faus y, al mismo tiempo, creamos una red de pequeñas bibliotecas particulares.</p>
       </section>
 
       <section class="content-section info-panel" id="business" aria-labelledby="business-title">
-        <h2 class="section-heading" id="business-title">Para negocios</h2>
-        <h3>Conviértete en punto de entrega de libros</h3>
-        <p class="section-lead">Una cafetería, una tienda, un estudio u otro espacio puede colaborar con el proyecto como punto cómodo de entrega de libros. Basta con reservar un pequeño lugar —una balda, una caja o parte de una estantería— donde los participantes puedan dejar y recoger lotes preparados durante el horario de apertura.</p>
-        <p>Cada lote llevará el número del pedido: el personal no tendrá que registrar los libros ni organizar su entrega.</p>
-        <h3>Qué necesitamos del establecimiento colaborador:</h3>
+        <h2 class="section-heading" id="business-title" data-i18n="catalog.business.title">Para negocios</h2>
+        <h3 data-i18n="catalog.business.heading">Conviértete en punto de entrega de libros</h3>
+        <p class="section-lead" data-i18n="catalog.business.lead">Una cafetería, una tienda, un estudio u otro espacio puede colaborar con el proyecto como punto cómodo de entrega de libros. Basta con reservar un pequeño lugar —una balda, una caja o parte de una estantería— donde los participantes puedan dejar y recoger lotes preparados durante el horario de apertura.</p>
+        <p data-i18n="catalog.business.text">Cada lote llevará el número del pedido: el personal no tendrá que registrar los libros ni organizar su entrega.</p>
+        <h3 data-i18n="catalog.business.needs">Qué necesitamos del establecimiento colaborador:</h3>
         <ul class="partner-points">
-          <li>un pequeño espacio para varios lotes de libros;</li>
-          <li>la posibilidad de entrar y dejar o recoger libros durante el horario de apertura;</li>
-          <li>ningún proceso adicional para el personal.</li>
+          <li data-i18n="catalog.business.1">un pequeño espacio para varios lotes de libros;</li>
+          <li data-i18n="catalog.business.2">la posibilidad de entrar y dejar o recoger libros durante el horario de apertura;</li>
+          <li data-i18n="catalog.business.3">ningún proceso adicional para el personal.</li>
         </ul>
-        <a class="primary-link" href="https://t.me/VLS_Biblio_bot?start=partner" target="_blank" rel="noreferrer">Colaborar con el proyecto →</a>
+        <a class="primary-link" href="https://t.me/VLS_Biblio_bot?start=partner" target="_blank" rel="noreferrer" data-i18n="catalog.business.link">Colaborar con el proyecto →</a>
       </section>
 
       <section class="content-section" id="faq" aria-labelledby="faq-title">
         <h2 class="section-heading" id="faq-title">FAQ</h2>
         <div class="faq-list">
-          <details><summary>¿Qué libros se pueden entregar?</summary><p>Propón libros en buen estado. Envía la información o las fotos del libro mediante el bot de Telegram; el equipo revisará la solicitud y te indicará los pasos siguientes.</p></details>
-          <details><summary>¿Dónde hay que llevar los libros?</summary><p>Una vez acordada la entrega, el bot indicará el método y el punto disponibles en ese momento. No lleves el libro a Pilar Faus sin la confirmación del proyecto.</p></details>
-          <details><summary>¿Cómo puedo pedir un libro a un propietario particular?</summary><p>Abre la ficha de un libro disponible, añádelo a la cesta y envía la solicitud mediante Telegram. El bot te ayudará a coordinar la entrega con la persona propietaria.</p></details>
-          <details><summary>¿Tengo que regalar mi libro para siempre?</summary><p>No. Al añadirlo, elige la biblioteca particular: el libro seguirá siendo tuyo y otros participantes podrán pedirlo prestado.</p></details>
-          <details><summary>¿En qué idiomas están los libros?</summary><p>El catálogo puede incluir libros en distintos idiomas. Usa el buscador para encontrar el idioma que necesitas por título, autor o descripción.</p></details>
-          <details><summary>¿Cómo llegará el libro a Pilar Faus?</summary><p>Envías la solicitud mediante el bot, el equipo revisa el libro y organiza la entrega. El estado del catálogo indicará en qué fase se encuentra.</p></details>
+          <details><summary data-i18n="catalog.faq.q1">¿Qué libros se pueden entregar?</summary><p data-i18n="catalog.faq.a1">Propón libros en buen estado. Envía la información o las fotos del libro mediante el bot de Telegram; el equipo revisará la solicitud y te indicará los pasos siguientes.</p></details>
+          <details><summary data-i18n="catalog.faq.q2">¿Dónde hay que llevar los libros?</summary><p data-i18n="catalog.faq.a2">Una vez acordada la entrega, el bot indicará el método y el punto disponibles en ese momento. No lleves el libro a Pilar Faus sin la confirmación del proyecto.</p></details>
+          <details><summary data-i18n="catalog.faq.q3">¿Cómo puedo pedir un libro a un propietario particular?</summary><p data-i18n="catalog.faq.a3">Abre la ficha de un libro disponible, añádelo a la cesta y envía la solicitud mediante Telegram. El bot te ayudará a coordinar la entrega con la persona propietaria.</p></details>
+          <details><summary data-i18n="catalog.faq.q4">¿Tengo que regalar mi libro para siempre?</summary><p data-i18n="catalog.faq.a4">No. Al añadirlo, elige la biblioteca particular: el libro seguirá siendo tuyo y otros participantes podrán pedirlo prestado.</p></details>
+          <details><summary data-i18n="catalog.faq.q5">¿En qué idiomas están los libros?</summary><p data-i18n="catalog.faq.a5">El catálogo puede incluir libros en distintos idiomas. Usa el buscador para encontrar el idioma que necesitas por título, autor o descripción.</p></details>
+          <details><summary data-i18n="catalog.faq.q6">¿Cómo llegará el libro a Pilar Faus?</summary><p data-i18n="catalog.faq.a6">Envías la solicitud mediante el bot, el equipo revisa el libro y organiza la entrega. El estado del catálogo indicará en qué fase se encuentra.</p></details>
         </div>
       </section>
       <footer class="site-footer">
-        <a class="privacy-link" href="./privacy.html">Privacidad</a>
+        <a class="privacy-link" href="./privacy.html" data-i18n="catalog.nav.privacy">Privacidad</a>
       </footer>
     </main>
 
     <section class="modal" id="bookModal" aria-labelledby="modalTitle">
-      <button class="close" id="modalClose" type="button">← Volver al catálogo</button>
+      <button class="close" id="modalClose" type="button" data-i18n="catalog.back">← Volver al catálogo</button>
       <article class="dialog">
         <div class="dialog-cover" id="modalCover"></div>
         <div class="dialog-body">
@@ -885,15 +906,17 @@
     </section>
 
     <script src="./data/books.js?v=20261003135012"></script>
-    <script src="./assets/shelf.js?v=es-1"></script>
+    <script src="./assets/i18n.js?v=1"></script>
+    <script src="./assets/shelf.js?v=i18n-1"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
       const botUrl = "https://t.me/VLS_Biblio_bot";
       const libraryMapUrl = "https://www.google.com/maps/search/?api=1&query=Biblioteca%20P%C3%BAblica%20de%20Val%C3%A8ncia%20Pilar%20Faus%2039.470374%2C-0.381743";
+      const t = (key, fallback) => window.BiblioI18n?.t(key, fallback) ?? fallback;
 
       const labels = {
-        library: "Biblioteca Pilar Faus",
-        exchange: "Biblioteca particular",
+        library: t("book.library", "Biblioteca Pilar Faus"),
+        exchange: t("book.private", "Biblioteca particular"),
       };
       const catalogStorageKey = `vlc-biblio:catalog:v1:${new URL("./", location.href).pathname}`;
       const storedCatalogState = readCatalogState();
@@ -1014,9 +1037,9 @@
       function renderDetails(book) {
         const details = [
           ["ISBN", book.isbn],
-          ["Año de publicación", book.year],
-          ["Editorial", book.publisher],
-          ["Actualizado", book.updatedAt ? new Date(book.updatedAt).toLocaleDateString("es-ES") : ""],
+          [t("book.year", "Año de publicación"), book.year],
+          [t("book.publisher", "Editorial"), book.publisher],
+          [t("book.updated", "Actualizado"), book.updatedAt ? new Date(book.updatedAt).toLocaleDateString(window.BiblioI18n?.locale === "ru" ? "ru" : "es-ES") : ""],
         ].filter((detail) => detail && detail[1]);
 
         return details
@@ -1025,7 +1048,7 @@
       }
 
       function fallbackCover(title) {
-        return `<div class="cover-placeholder">${escapeHtml(title || "Libro")}</div>`;
+        return `<div class="cover-placeholder">${escapeHtml(title || t("book.fallback", "Libro"))}</div>`;
       }
 
       function coverMarkup(book, lazy = false) {
@@ -1034,7 +1057,7 @@
         const responsive = image
           ? ` srcset="${escapeHtml(image.srcset)}" sizes="(max-width: 560px) 50vw, 240px" width="${image.width}" height="${image.height}"`
           : "";
-        return `<img src="${escapeHtml(image?.src || book.cover)}"${responsive} alt="Portada: ${escapeHtml(book.title)}" loading="${lazy ? "lazy" : "eager"}" decoding="async" referrerpolicy="no-referrer" data-fallback-title="${escapeHtml(book.title || "Libro")}" />`;
+        return `<img src="${escapeHtml(image?.src || book.cover)}"${responsive} alt="${escapeHtml(t("book.cover", "Portada"))}: ${escapeHtml(book.title)}" loading="${lazy ? "lazy" : "eager"}" decoding="async" referrerpolicy="no-referrer" data-fallback-title="${escapeHtml(book.title || t("book.fallback", "Libro"))}" />`;
       }
 
       function telegramIcon() {
@@ -1043,7 +1066,7 @@
 
       function actionLabelMarkup(action) {
         if (action.isTelegram) {
-          return `<span>${escapeHtml(action.isWaitlist ? "Apuntarme a la lista de espera" : "Solicitar el libro")}</span><span>por Telegram</span>`;
+          return `<span>${escapeHtml(action.isWaitlist ? t("book.waitlist", "Apuntarme a la lista de espera") : t("book.request", "Solicitar el libro"))}</span><span>${escapeHtml(t("book.telegram", "por Telegram"))}</span>`;
         }
         return `<span>${escapeHtml(action.label)}</span>`;
       }
@@ -1073,7 +1096,7 @@
         if (book.section === "library") {
           return {
             href: libraryMapUrl,
-            label: "Biblioteca Pilar Faus",
+            label: t("book.library", "Biblioteca Pilar Faus"),
           };
         }
         return null;
@@ -1081,22 +1104,22 @@
 
       function collectionNote(book) {
         if (canJoinWaitlist(book)) {
-          return "El libro está reservado. Apúntate a la lista de espera para recibir un aviso cuando llegue tu turno.";
+          return t("book.note.reserved", "El libro está reservado. Apúntate a la lista de espera para recibir un aviso cuando llegue tu turno.");
         }
         if (book.section === "exchange") {
-          return "El libro pertenece a una colección particular. Puedes solicitarlo en préstamo.";
+          return t("book.note.private", "El libro pertenece a una colección particular. Puedes solicitarlo en préstamo.");
         }
-        if (book.availability === "planned") return "El libro se está preparando para su entrega a la biblioteca Pilar Faus.";
-        if (book.availability === "transferred" || book.availability === "given") return "El libro ha sido entregado a la biblioteca Pilar Faus.";
-        if (book.availability === "accepted") return "El libro ha sido incorporado al fondo de la biblioteca Pilar Faus.";
-        return "El libro pertenece a la biblioteca Pilar Faus.";
+        if (book.availability === "planned") return t("book.note.planned", "El libro se está preparando para su entrega a la biblioteca Pilar Faus.");
+        if (book.availability === "transferred" || book.availability === "given") return t("book.note.transferred", "El libro ha sido entregado a la biblioteca Pilar Faus.");
+        if (book.availability === "accepted") return t("book.note.accepted", "El libro ha sido incorporado al fondo de la biblioteca Pilar Faus.");
+        return t("book.note.library", "El libro pertenece a la biblioteca Pilar Faus.");
       }
 
       function statusLabel(book) {
-        if (book.section === "exchange") return "🏠 Biblioteca particular";
-        if (book.availability === "planned") return "🎁 En preparación para Pilar Faus";
-        if (book.availability === "transferred" || book.availability === "given") return "📦 Entregado a Pilar Faus";
-        if (book.availability === "accepted") return "📚 En el fondo de Pilar Faus";
+        if (book.section === "exchange") return t("book.status.private", "🏠 Biblioteca particular");
+        if (book.availability === "planned") return t("book.status.planned", "🎁 En preparación para Pilar Faus");
+        if (book.availability === "transferred" || book.availability === "given") return t("book.status.transferred", "📦 Entregado a Pilar Faus");
+        if (book.availability === "accepted") return t("book.status.accepted", "📚 En el fondo de Pilar Faus");
         return "📍 Pilar Faus";
       }
 
@@ -1154,15 +1177,15 @@
 
         grid.innerHTML = visible
           .map((book, index) => `
-            <article class="book" tabindex="0" role="button" data-book-id="${escapeHtml(book.id)}" aria-label="Abrir la ficha: ${escapeHtml(book.title)}">
+            <article class="book" tabindex="0" role="button" data-book-id="${escapeHtml(book.id)}" aria-label="${escapeHtml(t("book.open", "Abrir la ficha"))}: ${escapeHtml(book.title)}">
               <div class="cover">
                 ${coverMarkup(book, index >= 4)}
                 ${badgeMarkup(book)}
                 ${window.BiblioShelf.favoriteMarkup(book)}
               </div>
               <div class="body">
-                <h2 class="title">${escapeHtml(book.title || "Sin título")}</h2>
-                <p class="author">${escapeHtml(book.author || "Autor no indicado")}</p>
+                <h2 class="title">${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h2>
+                <p class="author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
                 ${libraryAction(book) ? `<a class="card-action ${libraryAction(book).isTelegram ? "telegram-action" : ""}" href="${escapeHtml(libraryAction(book).href)}" target="_blank" rel="noreferrer">${actionLabelMarkup(libraryAction(book))}</a>` : ""}
                 ${window.BiblioShelf.controlsMarkup(book, false)}
               </div>
@@ -1184,8 +1207,8 @@
         latestGrid.innerHTML = latest.map((book) => `
           <a class="latest-card" href="${escapeHtml(bookPageUrl(book))}">
             <div class="latest-cover">${coverMarkup(book, true)}</div>
-            <h3>${escapeHtml(book.title || "Sin título")}</h3>
-            <p>${escapeHtml(book.author || "Autor no indicado")}</p>
+            <h3>${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h3>
+            <p>${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
           </a>
         `).join("");
       }

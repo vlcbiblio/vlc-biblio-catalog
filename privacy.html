@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="ru">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Конфиденциальность | VLC Biblio</title>
+    <title data-i18n="privacy.pageTitle">Privacidad | VLC Biblio</title>
     <link rel="icon" type="image/png" href="./assets/favicon.png" />
     <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
     <style>
@@ -98,104 +98,108 @@
   </head>
   <body>
     <main class="page">
-      <a class="back" href="./">← Назад к каталогу</a>
+      <a class="back" href="./" data-i18n="catalog.back">← Volver al catálogo</a>
       <article class="privacy">
-        <h1>Конфиденциальность</h1>
-        <p class="muted">Последнее обновление: 14 сентября 2026</p>
+        <h1 data-i18n="privacy.title">Privacidad</h1>
+        <p class="muted" data-i18n="privacy.updated">Última actualización: 2 de octubre de 2026</p>
 
-        <p>
-          VLC Biblio ведет публичный каталог книг и Telegram-бота для передачи книг в библиотеку
-          Pilar Faus и временного обмена книгами между участниками.
-        </p>
-
-        <h2>Публичный сайт</h2>
-        <p>
-          Этот сайт является статическим каталогом. Он не использует аналитику, рекламные пиксели,
-          формы регистрации или собственные cookies.
-        </p>
-        <p>
-          В каталоге публикуются сведения о книгах: название, автор, ISBN, издательство, год,
-          описание, статус, дата обновления и ссылка для запроса книги через Telegram. Имена,
-          Telegram ID, chat ID, исходные фотографии пользователей и внутренние заметки в публичный
-          каталог не выгружаются.
+        <p data-i18n="privacy.intro">
+          VLC Biblio mantiene un catálogo público y un bot de Telegram para entregar libros a la
+          biblioteca Pilar Faus y prestar temporalmente libros entre participantes.
         </p>
 
-        <h2>Корзина и избранное</h2>
-        <p>
-          Корзина и избранное сохраняются в локальном хранилище вашего браузера
-          (localStorage). Сохраняются только идентификаторы выбранных книг. Списки
-          доступны после закрытия и повторного открытия сайта в этом браузере;
-          на другом устройстве или в другом браузере они будут отдельными.
-          Списки не привязаны к Telegram-аккаунту и не отправляются команде проекта.
-          Удалить книгу можно в соответствующем списке, а удалить все сохранённые
-          списки — очистив данные сайта в настройках браузера.
+        <h2 data-i18n="privacy.public.title">Sitio web público</h2>
+        <p data-i18n="privacy.public.p1">
+          Este sitio es un catálogo estático. No utiliza herramientas de análisis, píxeles
+          publicitarios, formularios de registro ni cookies propias.
         </p>
-        <p>
-          Добавление книги в корзину или избранное не создаёт заявку и не резервирует
-          книгу. При нажатии кнопки запроса книг через Телеграм номера книг выбранного заказа
-          передаются Telegram-боту через ссылку. Бот проверяет доступность и предлагает
-          подтвердить отправку. Корзина после перехода в бот не очищается автоматически.
+        <p data-i18n="privacy.public.p2">
+          El catálogo publica información sobre los libros: título, autor, ISBN, editorial, año,
+          descripción, estado, fecha de actualización y un enlace para solicitar el libro mediante
+          Telegram. Los nombres, identificadores de Telegram y de chat, las fotografías originales
+          de los usuarios y las notas internas no se publican en el catálogo.
         </p>
 
-        <h2>Внешние сервисы</h2>
-        <p>
-          Обложки книг могут загружаться с публичных сайтов издателей, магазинов или книжных
-          каталогов. При загрузке такой обложки браузер обращается к внешнему сайту напрямую.
-          Ссылки на Telegram и Google Maps открываются только после нажатия пользователем.
+        <h2 data-i18n="privacy.lists.title">Cesta y favoritos</h2>
+        <p data-i18n="privacy.lists.p1">
+          La cesta y los favoritos se guardan en el almacenamiento local de tu navegador
+          (localStorage). Solo se conservan los identificadores de los libros seleccionados. Las
+          listas siguen disponibles al cerrar y volver a abrir el sitio en ese navegador; serán
+          distintas en otro dispositivo o navegador. No están vinculadas a tu cuenta de Telegram
+          ni se envían al equipo del proyecto. Puedes eliminar un libro desde la lista
+          correspondiente o borrar todas las listas guardadas eliminando los datos del sitio en la
+          configuración del navegador.
         </p>
-        <p>
-          Страницы каталога и книг загружают официальный скрипт Telegram с telegram.org,
-          чтобы кнопки перехода в бот работали внутри приложения Telegram. Корзина
-          передаётся боту только после нажатия кнопки запроса книг.
+        <p data-i18n="privacy.lists.p2">
+          Añadir un libro a la cesta o a favoritos no crea una solicitud ni reserva el libro. Al
+          pulsar el botón para solicitar libros mediante Telegram, los números de los libros del
+          pedido seleccionado se transmiten al bot a través del enlace. El bot comprueba su
+          disponibilidad y pide que confirmes el envío. La cesta no se vacía automáticamente al
+          abrir el bot.
         </p>
 
-        <h2>Telegram-бот</h2>
-        <p>
-          Если вы используете Telegram-бота, он может получать и хранить данные, необходимые для
-          обработки заявки:
+        <h2 data-i18n="privacy.external.title">Servicios externos</h2>
+        <p data-i18n="privacy.external.p1">
+          Las portadas pueden cargarse desde sitios públicos de editoriales, tiendas o catálogos de
+          libros. Al cargar una portada de este tipo, el navegador se conecta directamente con el
+          sitio externo. Los enlaces a Telegram y Google Maps solo se abren cuando el usuario los pulsa.
+        </p>
+        <p data-i18n="privacy.external.p2">
+          Las páginas del catálogo y de los libros cargan el script oficial de Telegram desde
+          telegram.org para que los botones que abren el bot funcionen dentro de la aplicación de
+          Telegram. La cesta solo se transmite al bot después de pulsar el botón de solicitud.
+        </p>
+
+        <h2 data-i18n="privacy.bot.title">Bot de Telegram</h2>
+        <p data-i18n="privacy.bot.intro">
+          Si utilizas el bot de Telegram, este puede recibir y almacenar los datos necesarios para
+          tramitar la solicitud:
         </p>
         <ul>
-          <li>Telegram user ID, chat ID, username и отображаемое имя;</li>
-          <li>фотографии книг, текстовые сообщения и результаты OCR;</li>
-          <li>данные о книге, статус обработки, запросы на временную передачу и возврат книги.</li>
+          <li data-i18n="privacy.bot.li1">identificador de usuario y de chat de Telegram, nombre de usuario y nombre visible;</li>
+          <li data-i18n="privacy.bot.li2">fotografías de libros, mensajes de texto y resultados de OCR;</li>
+          <li data-i18n="privacy.bot.li3">datos del libro, estado de tramitación y solicitudes de préstamo y devolución.</li>
         </ul>
-        <p>
-          Эти данные нужны, чтобы обработать фотографии, подготовить карточку книги, отправить
-          результат пользователю, передать заявку администраторам и, при необходимости, связать
-          владельца книги с человеком, который запросил книгу.
+        <p data-i18n="privacy.bot.p">
+          Estos datos son necesarios para procesar las fotografías, preparar la ficha del libro,
+          enviar el resultado al usuario, trasladar la solicitud a los administradores y, cuando
+          sea necesario, poner en contacto a la persona propietaria con quien solicita el libro.
         </p>
 
-        <h2>Публикация и передача данных</h2>
-        <p>
-          Книга появляется в публичном каталоге только после проверки. Для частных книг публичная
-          карточка не показывает владельца. Telegram username владельца передается запросившему
-          пользователю только после согласия владельца на передачу книги.
+        <h2 data-i18n="privacy.sharing.title">Publicación y comunicación de datos</h2>
+        <p data-i18n="privacy.sharing.p">
+          Un libro solo aparece en el catálogo público después de su revisión. En el caso de los
+          libros particulares, la ficha pública no muestra a la persona propietaria. Su nombre de
+          usuario de Telegram solo se comunica a quien solicita el libro después de que la persona
+          propietaria acepte entregarlo.
         </p>
 
-        <h2>Сроки хранения</h2>
-        <p>
-          Исходные фотографии, входные JSON-заявки, сообщения и OCR-тексты удаляются из рабочего
-          архива через 90 дней после обработки. Заявки на обмен книгами хранятся до завершения:
-          после возврата книги, отказа администратора или отказа владельца они удаляются через
-          90 дней. Chat ID администраторов хранятся только пока администратор находится в
-          разрешенном списке.
+        <h2 data-i18n="privacy.retention.title">Plazos de conservación</h2>
+        <p data-i18n="privacy.retention.p">
+          Las fotografías originales, las solicitudes JSON recibidas, los mensajes y los textos
+          obtenidos por OCR se eliminan del archivo de trabajo 90 días después de su tramitación.
+          Las solicitudes de préstamo se conservan hasta que finalizan; se eliminan 90 días después
+          de la devolución del libro o del rechazo por parte de un administrador o de la persona
+          propietaria. Los identificadores de chat de los administradores solo se conservan mientras
+          estos permanezcan en la lista autorizada.
         </p>
 
-        <h2>Ваши права</h2>
-        <p>
-          Вы можете попросить удалить или исправить связанные с вами данные, а также уточнить,
-          какие данные были сохранены. Для этого напишите в Telegram-бот
+        <h2 data-i18n="privacy.rights.title">Tus derechos</h2>
+        <p data-i18n-html="privacy.rights.p">
+          Puedes solicitar que se eliminen o rectifiquen tus datos y preguntar qué información se
+          ha guardado. Para ello, escribe al bot de Telegram
           <a href="https://t.me/VLS_Biblio_bot" target="_blank" rel="noreferrer">@VLS_Biblio_bot</a>
-          или в чат проекта
+          o al chat del proyecto
           <a href="https://t.me/bibliotecavlc" target="_blank" rel="noreferrer">@bibliotecavlc</a>.
         </p>
 
-        <h2>Контакт</h2>
-        <p>
-          По вопросам конфиденциальности напишите команде VLC Biblio через Telegram:
+        <h2 data-i18n="privacy.contact.title">Contacto</h2>
+        <p data-i18n-html="privacy.contact.p">
+          Para cualquier consulta sobre privacidad, escribe al equipo de VLC Biblio por Telegram:
           <a href="https://t.me/bibliotecavlc" target="_blank" rel="noreferrer">@bibliotecavlc</a>.
         </p>
       </article>
     </main>
+    <script src="./assets/i18n.js?v=1"></script>
   </body>
 </html>
