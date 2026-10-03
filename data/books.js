@@ -564,7 +564,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-10-03T07:59:04",
-    "updatedAt": "2026-10-03T13:16:57",
+    "updatedAt": "2026-10-03T13:18:05",
     "authorKey": "dan brown"
   },
   {
