@@ -565,7 +565,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.litres.ru/book/natalya-scherba/sonnyy-dom-66518922/",
     "wildberriesUrl": "",
     "addedAt": "2026-10-03T10:26:32",
-    "updatedAt": "2026-10-03T13:20:09",
+    "updatedAt": "2026-10-03T13:27:31",
     "authorKey": "наталья щерба"
   },
   {
@@ -589,7 +589,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/book/1013770927-razreshi-lyubit-pozvol-mne-byt-ryadomabstr-anna-dzhejn",
     "wildberriesUrl": "",
     "addedAt": "2026-10-03T10:27:57",
-    "updatedAt": "2026-10-03T13:20:09",
+    "updatedAt": "2026-10-03T13:27:31",
     "authorKey": "анна джейн"
   },
   {
