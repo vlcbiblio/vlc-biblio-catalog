@@ -545,6 +545,35 @@ window.BIBLIO_BOOKS = [
     }
   },
   {
+    "id": "b-068ced1f8012",
+    "requestId": "828",
+    "title": "Лошади созданы, чтобы быть лошадьми",
+    "author": "Франц Майрингер",
+    "section": "exchange",
+    "catalogStatus": "Частная библиотека",
+    "libraryKey": "user:01c6face7091",
+    "sourceKind": "user",
+    "availability": "available",
+    "audience": "adult",
+    "cover": "https://s1.livelib.ru/boocover/1002933951/200x305/ae2c/Frants_Majringer__Loshadi_sozdany_chtoby_byt_loshadmi.jpg",
+    "isbn": "978-5-8242-0127-7",
+    "year": "2011",
+    "publisher": "Изд-во им. Сабашниковых",
+    "annotation": "Книга о философии и гармонии во взаимоотношениях человека и лошади. Автор рассматривает физические, психологические, технические и интеллектуальные проблемы верховой езды и тренинга и даёт практические рекомендации всадникам. Отдельная глава посвящена практике спортивного судейства.",
+    "sourceUrl": "https://www.livelib.ru/book/1002933951-loshadi-sozdany-chtoby-byt-loshadmi-frants-majringer",
+    "livelibUrl": "https://www.livelib.ru/book/1002933951-loshadi-sozdany-chtoby-byt-loshadmi-frants-majringer",
+    "wildberriesUrl": "",
+    "addedAt": "2026-10-14T20:48:34",
+    "updatedAt": "2026-10-15T12:21:16+02:00",
+    "authorKey": "франц майрингер",
+    "coverImage": {
+      "src": "./assets/covers/optimized/47354886b02ab19b45df-200.webp",
+      "srcset": "./assets/covers/optimized/47354886b02ab19b45df-200.webp 200w",
+      "width": 200,
+      "height": 305
+    }
+  },
+  {
     "id": "b-73dae1c27c86",
     "requestId": "825",
     "title": "Финиста. Сонный дом",

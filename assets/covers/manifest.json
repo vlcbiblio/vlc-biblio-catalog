@@ -3786,6 +3786,17 @@
         }
       ]
     },
+    "https://s1.livelib.ru/boocover/1002933951/200x305/ae2c/Frants_Majringer__Loshadi_sozdany_chtoby_byt_loshadmi.jpg": {
+      "sourceBytes": 16348,
+      "variants": [
+        {
+          "bytes": 7656,
+          "height": 305,
+          "src": "./assets/covers/optimized/47354886b02ab19b45df-200.webp",
+          "width": 200
+        }
+      ]
+    },
     "https://simg.marwin.kz/media/catalog/product/cache/41deb699a7fea062a8915debbbb0442c/migrated/article/22062/15_tn3.jpg": {
       "sourceBytes": 60505,
       "variants": [
