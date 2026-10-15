@@ -555,7 +555,7 @@ window.BIBLIO_BOOKS = [
     "sourceKind": "user",
     "availability": "available",
     "audience": "adult",
-    "cover": "https://s1.livelib.ru/boocover/1002933951/200x305/ae2c/Frants_Majringer__Loshadi_sozdany_chtoby_byt_loshadmi.jpg",
+    "cover": "https://equilife.ru/wp-content/uploads/2016/04/10300-mairinger-b.jpg",
     "isbn": "978-5-8242-0127-7",
     "year": "2011",
     "publisher": "Изд-во им. Сабашниковых",
@@ -567,10 +567,10 @@ window.BIBLIO_BOOKS = [
     "updatedAt": "2026-10-15T12:21:16+02:00",
     "authorKey": "франц майрингер",
     "coverImage": {
-      "src": "./assets/covers/optimized/47354886b02ab19b45df-200.webp",
-      "srcset": "./assets/covers/optimized/47354886b02ab19b45df-200.webp 200w",
-      "width": 200,
-      "height": 305
+      "src": "./assets/covers/optimized/a87499d726e6311c9010-395.webp",
+      "srcset": "./assets/covers/optimized/1139100927a2f4a0c4a1-360.webp 360w, ./assets/covers/optimized/a87499d726e6311c9010-395.webp 395w",
+      "width": 395,
+      "height": 577
     }
   },
   {

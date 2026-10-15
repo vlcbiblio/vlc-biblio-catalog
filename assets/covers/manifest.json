@@ -1982,6 +1982,23 @@
         }
       ]
     },
+    "https://equilife.ru/wp-content/uploads/2016/04/10300-mairinger-b.jpg": {
+      "sourceBytes": 194467,
+      "variants": [
+        {
+          "bytes": 19422,
+          "height": 526,
+          "src": "./assets/covers/optimized/1139100927a2f4a0c4a1-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 22922,
+          "height": 577,
+          "src": "./assets/covers/optimized/a87499d726e6311c9010-395.webp",
+          "width": 395
+        }
+      ]
+    },
     "https://fantlab.ru/images/editions/big/139381?r=1492544443": {
       "sourceBytes": 21790,
       "variants": [
@@ -3783,17 +3800,6 @@
           "height": 761,
           "src": "./assets/covers/optimized/7e82d91be03982386721-720.webp",
           "width": 720
-        }
-      ]
-    },
-    "https://s1.livelib.ru/boocover/1002933951/200x305/ae2c/Frants_Majringer__Loshadi_sozdany_chtoby_byt_loshadmi.jpg": {
-      "sourceBytes": 16348,
-      "variants": [
-        {
-          "bytes": 7656,
-          "height": 305,
-          "src": "./assets/covers/optimized/47354886b02ab19b45df-200.webp",
-          "width": 200
         }
       ]
     },
