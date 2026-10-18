@@ -254,7 +254,9 @@ class CatalogNavigationTests(unittest.TestCase):
         self.page.goto(self.base_url)
         expect(self.page.locator("[data-open-external-browser]")).to_be_hidden()
         expect(self.page.locator("#how-it-works")).to_be_visible()
-        expect(self.page.locator(".events-teaser")).to_be_visible()
+        expect(self.page.locator(".event-preview")).to_be_visible()
+        expect(self.page.locator(".topbar > .event-preview")).to_have_count(1)
+        expect(self.page.locator(".events-teaser")).to_have_count(0)
         expect(self.page.locator("#business")).to_be_visible()
         expect(self.page.locator("#faq")).to_be_visible()
         expect(self.page.locator("#latestGrid .latest-card")).to_have_count(6)
@@ -279,7 +281,7 @@ class CatalogNavigationTests(unittest.TestCase):
         response = self.page.request.get(f"{self.base_url}privacy.html")
         self.assertEqual(response.status, 200)
 
-        events_link = self.page.locator(".events-teaser a")
+        events_link = self.page.locator(".event-preview")
         self.assertEqual(events_link.get_attribute("href"), "./events.html")
 
         events_response = self.page.request.get(f"{self.base_url}events.html")
@@ -346,7 +348,8 @@ class CatalogNavigationTests(unittest.TestCase):
         first_title = self.page.locator("#grid .book .title").first.inner_text()
 
         expect(self.page.locator("#how-title")).to_have_text("Как это работает")
-        expect(self.page.locator(".events-teaser")).to_contain_text("Встречи VLC Biblio")
+        expect(self.page.locator(".event-preview-kicker")).to_have_text("Ближайшая встреча")
+        expect(self.page.locator(".event-preview-meta")).to_contain_text("28 октября")
         expect(self.page.locator("#loadMore")).to_have_text("Показать ещё")
         expect(self.page.locator("[data-shelf-open='cart']")).to_contain_text("Корзина")
         expect(self.page.locator("#grid .badge.exchange").first).to_have_text("🏠 Частная библиотека")
@@ -360,7 +363,8 @@ class CatalogNavigationTests(unittest.TestCase):
 
         self.page.locator("[data-language-toggle]").click()
         expect(self.page.locator("#how-title")).to_have_text("Cómo funciona")
-        expect(self.page.locator(".events-teaser")).to_contain_text("Encuentros de VLC Biblio")
+        expect(self.page.locator(".event-preview-kicker")).to_have_text("Próximo encuentro")
+        expect(self.page.locator(".event-preview-meta")).to_contain_text("28 de octubre")
         expect(self.page.locator("#loadMore")).to_have_text("Mostrar más")
         self.assertEqual(self.page.locator("html").get_attribute("lang"), "es")
         self.page.goto(f"{self.base_url}privacy.html")

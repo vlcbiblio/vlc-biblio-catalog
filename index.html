@@ -57,7 +57,8 @@
         display: grid;
         grid-template-columns: minmax(0, 1.7fr) minmax(320px, 1fr);
         align-items: stretch;
-        gap: 24px;
+        column-gap: 24px;
+        row-gap: 12px;
         padding-bottom: 22px;
         border-bottom: 1px solid var(--line);
       }
@@ -335,27 +336,55 @@
 
       .action-card.private .primary-link { background: var(--blue); }
 
-      .events-teaser {
-        margin-top: 12px;
-        border-top: 1px solid var(--line);
-        border-bottom: 1px solid var(--line);
-      }
-
-      .events-teaser a {
-        display: flex;
-        min-height: 44px;
+      .event-preview {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
         align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        padding: 10px 2px;
-        color: var(--blue);
-        font-size: 14px;
-        font-weight: 700;
+        gap: 13px;
+        min-height: 64px;
+        padding: 9px 14px 9px 10px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: linear-gradient(90deg, rgba(178, 119, 40, 0.1), rgba(255, 253, 248, 0.72));
+        color: var(--ink);
         text-decoration: none;
       }
 
-      .events-teaser a:hover { text-decoration: underline; }
-      .events-teaser a:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+      .event-preview:hover { border-color: rgba(178, 119, 40, 0.7); }
+      .event-preview:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+
+      .event-preview-date {
+        display: grid;
+        width: 46px;
+        min-height: 46px;
+        place-content: center;
+        border-radius: 6px;
+        background: var(--gold);
+        color: #fffdf8;
+        text-align: center;
+      }
+
+      .event-preview-date strong {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 0.9;
+      }
+
+      .event-preview-date span,
+      .event-preview-kicker {
+        font-size: 9px;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .event-preview-copy { min-width: 0; }
+      .event-preview-kicker { display: block; margin-bottom: 2px; color: var(--gold); }
+      .event-preview-title { display: block; overflow: hidden; font-size: 14px; line-height: 1.25; text-overflow: ellipsis; white-space: nowrap; }
+      .event-preview-meta { display: block; margin-top: 2px; color: var(--muted); font-size: 11px; line-height: 1.3; }
+      .event-preview-arrow { color: var(--blue); font-size: 20px; }
 
       .latest-grid {
         display: grid;
@@ -817,6 +846,7 @@
         .topbar { display: block; }
         .brand-plaque { width: 100%; }
         .catalog-summary { margin-top: 12px; }
+        .event-preview { margin-top: 12px; }
         .controls { grid-template-columns: 1fr 1fr; }
         .controls .search-box { grid-column: 1 / -1; }
         .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -835,6 +865,10 @@
         .brand-plaque {
           padding: 14px;
         }
+        .event-preview { grid-template-columns: auto minmax(0, 1fr); padding-right: 10px; }
+        .event-preview-title { white-space: normal; }
+        .event-preview-meta { font-size: 10px; }
+        .event-preview-arrow { display: none; }
         .how-it-works, .action-card { padding: 14px; }
         .info-panel { padding: 18px; }
         .steps, .action-cards { grid-template-columns: 1fr; }
@@ -912,6 +946,18 @@
           </div>
           <div data-shelf-toolbar></div>
         </div>
+        <a class="event-preview" href="./events.html" aria-label="Ver el próximo encuentro de VLC Biblio" data-i18n-aria-label="events.preview.label">
+          <span class="event-preview-date" aria-hidden="true">
+            <strong>28</strong>
+            <span data-i18n="events.month">OCT</span>
+          </span>
+          <span class="event-preview-copy">
+            <span class="event-preview-kicker" data-i18n="events.preview.kicker">Próximo encuentro</span>
+            <strong class="event-preview-title" data-i18n="events.event.title">Club de lectura y creatividad para niños de 5 a 8 años</strong>
+            <span class="event-preview-meta" data-i18n="events.preview.meta">28 de octubre · 18:00 · Sala Infantil, Pilar Faus</span>
+          </span>
+          <span class="event-preview-arrow" aria-hidden="true">→</span>
+        </a>
       </section>
 
       <section class="content-section how-it-works" id="how-it-works" aria-labelledby="how-title">
@@ -949,13 +995,6 @@
           <a class="primary-link" href="https://t.me/VLS_Biblio_bot" target="_blank" rel="noreferrer" data-i18n="catalog.private.link">Añadir mi libro →</a>
         </article>
       </section>
-
-      <aside class="events-teaser" aria-label="Encuentros de VLC Biblio" data-i18n-aria-label="events.teaser.label">
-        <a href="./events.html">
-          <span data-i18n="events.teaser">Encuentros de VLC Biblio — ver la agenda</span>
-          <span aria-hidden="true">→</span>
-        </a>
-      </aside>
 
       <section class="content-section" id="latest" aria-labelledby="latest-title">
         <h2 class="section-heading" id="latest-title" data-i18n="catalog.latest">Últimos libros añadidos</h2>
