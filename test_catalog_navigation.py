@@ -331,14 +331,22 @@ class CatalogNavigationTests(unittest.TestCase):
 
         expect(self.page.locator("h1")).to_have_text("Встречи")
         expect(self.page.locator(".event-card")).to_have_count(1)
+        poster = self.page.locator(".event-poster img")
+        expect(poster).to_be_visible()
+        expect(poster).to_have_attribute("src", "./assets/events/children-book-club-2026-10-28.webp")
+        expect(poster).to_have_attribute("alt", "Афиша книжного и творческого клуба для детей")
         expect(self.page.locator(".event-card h3")).to_have_text(
             "Книжный и творческий клуб для детей 5–8 лет"
         )
+        expect(self.page.locator(".event-program li")).to_have_count(3)
+        expect(self.page.locator(".event-contacts")).to_contain_text("@lena_artukh")
+        expect(self.page.locator(".event-support")).to_contain_text("@VLS_Biblio_bot")
         registration = self.page.locator(".event-card .primary-link")
         self.assertEqual(registration.get_attribute("href"), "https://clck.ru/3VtMAP")
 
         self.page.locator("[data-language-toggle]").click()
         expect(self.page.locator("h1")).to_have_text("Encuentros")
+        expect(poster).to_have_attribute("alt", "Cartel del club de lectura y creatividad para niños")
         expect(self.page.locator(".event-card h3")).to_have_text(
             "Club de lectura y creatividad para niños de 5 a 8 años"
         )

@@ -62,6 +62,17 @@
     "events.month": "ОКТ",
     "events.event.title": "Книжный и творческий клуб для детей 5–8 лет",
     "events.event.description": "Литературно-творческая встреча на русском языке: сказочная история с элементами театра, разговор об эмоциях, игра и поделка.",
+    "events.event.fullDescription": "28 октября в 18:00 приглашаем детей на уютную литературно-творческую встречу на русском языке в детском зале библиотеки Pilar Faus в Валенсии.",
+    "events.poster.alt": "Афиша книжного и творческого клуба для детей",
+    "events.program.title": "Что будет",
+    "events.program.story": "Сказочная история с элементами театра.",
+    "events.program.emotions": "Обсудим эмоции героев и проведём небольшую тематическую игру.",
+    "events.program.craft": "В творческой части каждый ребёнок сделает яркую поделку своими руками.",
+    "events.club.instagram": "Instagram клуба →",
+    "events.contacts.title": "Организаторы и контакты",
+    "events.contacts.organizer": "Организатор:",
+    "events.contacts.club": "Книжный клуб «Однажды»:",
+    "events.support": "Можно помочь пополнить фонд русскоязычных книг библиотеки Pilar Faus, поделившись своими книгами через",
     "events.meta.date": "Дата",
     "events.date": "Среда, 28 октября 2026",
     "events.meta.time": "Время",
@@ -224,6 +235,9 @@
     });
     document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
       element.setAttribute("aria-label", t(element.dataset.i18nAriaLabel, element.getAttribute("aria-label") || ""));
+    });
+    document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+      element.setAttribute("alt", t(element.dataset.i18nAlt, element.getAttribute("alt") || ""));
     });
     const toggle = document.querySelector("[data-language-toggle]");
     if (toggle) {
