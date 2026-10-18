@@ -165,7 +165,7 @@ def write_site(root: Path, books):
         if GENERATED_BOOK_PATTERN.fullmatch(existing.name) and existing.name not in expected:
             existing.unlink()
 
-    urls = [(SITE_URL, ""), (SITE_URL + "privacy.html", "")]
+    urls = [(SITE_URL, ""), (SITE_URL + "events.html", ""), (SITE_URL + "privacy.html", "")]
     urls.extend((book_url(book), compact(book.get("updatedAt") or book.get("addedAt"))[:10]) for book in books)
     sitemap_items = []
     for url, lastmod in urls:

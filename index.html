@@ -15,7 +15,7 @@
     <title>VLC Biblio</title>
     <link rel="icon" type="image/png" href="./assets/favicon.png?v=20260922" />
     <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
-    <script src="https://telegram.org/js/telegram-web-app.js?63"></script>
+    <script src="https://telegram.org/js/telegram-web-app.js?63" defer></script>
     <script src="./assets/telegram-links.js?v=1" defer></script>
     <script>
       // Restore only after the catalog and its filters have been rendered.
@@ -335,6 +335,28 @@
 
       .action-card.private .primary-link { background: var(--blue); }
 
+      .events-teaser {
+        margin-top: 12px;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .events-teaser a {
+        display: flex;
+        min-height: 44px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 10px 2px;
+        color: var(--blue);
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .events-teaser a:hover { text-decoration: underline; }
+      .events-teaser a:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+
       .latest-grid {
         display: grid;
         grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -617,6 +639,37 @@
         background: rgba(255, 253, 248, 0.58);
       }
 
+      .catalog-more {
+        display: grid;
+        justify-items: center;
+        gap: 8px;
+        margin: 22px 0 4px;
+      }
+
+      .catalog-more[hidden] { display: none; }
+
+      .catalog-progress {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .load-more {
+        min-width: 180px;
+        min-height: 44px;
+        border: 1px solid var(--green);
+        border-radius: 7px;
+        background: var(--paper);
+        color: var(--green);
+        padding: 9px 18px;
+        cursor: pointer;
+        font: inherit;
+        font-weight: 800;
+      }
+
+      .load-more:hover { background: rgba(47, 111, 94, 0.08); }
+      .load-more:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+
       .modal {
         display: none;
         padding: 24px 0 0;
@@ -817,6 +870,7 @@
                   <a href="#catalog" data-i18n="catalog.nav.catalog">Catálogo</a>
                   <a href="#add-book" data-i18n="catalog.nav.donate">Donar un libro</a>
                   <a href="#how-it-works" data-i18n="catalog.nav.how">Cómo funciona</a>
+                  <a href="./events.html" data-i18n="catalog.nav.events">Encuentros</a>
                   <a href="#business" data-i18n="catalog.nav.business">Para negocios</a>
                   <a href="./privacy.html" data-i18n="catalog.nav.privacy">Privacidad</a>
                   <a href="#about" data-i18n="catalog.nav.about">Sobre el proyecto</a>
@@ -896,6 +950,13 @@
         </article>
       </section>
 
+      <aside class="events-teaser" aria-label="Encuentros de VLC Biblio" data-i18n-aria-label="events.teaser.label">
+        <a href="./events.html">
+          <span data-i18n="events.teaser">Encuentros de VLC Biblio — ver la agenda</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </aside>
+
       <section class="content-section" id="latest" aria-labelledby="latest-title">
         <h2 class="section-heading" id="latest-title" data-i18n="catalog.latest">Últimos libros añadidos</h2>
         <div class="latest-grid" id="latestGrid"></div>
@@ -920,6 +981,10 @@
 
       <section class="grid" id="grid" aria-label="Libros" data-i18n-aria-label="catalog.books"></section>
       <p class="empty" id="empty" data-i18n="catalog.empty">No se ha encontrado nada. Prueba a quitar algún filtro.</p>
+      <div class="catalog-more" id="catalogMore" hidden>
+        <p class="catalog-progress" id="catalogProgress" aria-live="polite"></p>
+        <button class="load-more" id="loadMore" type="button" data-i18n="catalog.more">Mostrar más</button>
+      </div>
 
       <section class="content-section info-panel" id="about" aria-labelledby="about-title">
         <h2 class="section-heading" id="about-title" data-i18n="catalog.about.title">¿Por qué lo hacemos?</h2>
@@ -974,7 +1039,7 @@
     </section>
 
     <script src="./data/books.js?v=8b1181ffba769746"></script>
-    <script src="./assets/i18n.js?v=1"></script>
+    <script src="./assets/i18n.js?v=performance-1"></script>
     <script src="./assets/shelf.js?v=i18n-1"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
@@ -995,12 +1060,19 @@
         search: typeof savedCatalogState?.search === "string" ? savedCatalogState.search : "",
         section: ["library", "exchange"].includes(savedCatalogState?.section) ? savedCatalogState.section : "",
       };
+      const pageSize = 48;
+      let visibleLimit = Number.isInteger(savedCatalogState?.visibleLimit)
+        ? Math.min(books.length, Math.max(pageSize, savedCatalogState.visibleLimit))
+        : pageSize;
       let catalogReady = false;
 
       const grid = document.querySelector("#grid");
       const latestGrid = document.querySelector("#latestGrid");
       const controls = document.querySelector(".controls");
       const empty = document.querySelector("#empty");
+      const catalogMore = document.querySelector("#catalogMore");
+      const catalogProgress = document.querySelector("#catalogProgress");
+      const loadMore = document.querySelector("#loadMore");
       const modal = document.querySelector("#bookModal");
       const modalClose = document.querySelector("#modalClose");
       const modalCover = document.querySelector("#modalCover");
@@ -1027,6 +1099,7 @@
         const anchor = Array.from(grid.children).find((card) => card.getBoundingClientRect().bottom > visibleTop);
         const snapshot = {
           ...state,
+          visibleLimit,
           scrollY: window.scrollY,
           anchorId: anchor?.dataset.bookId,
           anchorOffset: anchor?.getBoundingClientRect().top,
@@ -1125,7 +1198,7 @@
         const responsive = image
           ? ` srcset="${escapeHtml(image.srcset)}" sizes="(max-width: 560px) 50vw, 240px" width="${image.width}" height="${image.height}"`
           : "";
-        return `<img src="${escapeHtml(image?.src || book.cover)}"${responsive} alt="${escapeHtml(t("book.cover", "Portada"))}: ${escapeHtml(book.title)}" loading="${lazy ? "lazy" : "eager"}" decoding="async" referrerpolicy="no-referrer" data-fallback-title="${escapeHtml(book.title || t("book.fallback", "Libro"))}" />`;
+        return `<img src="${escapeHtml(image?.src || book.cover)}"${responsive} alt="${escapeHtml(t("book.cover", "Portada"))}: ${escapeHtml(book.title)}" loading="${lazy ? "lazy" : "eager"}"${lazy ? ' fetchpriority="low"' : ""} decoding="async" referrerpolicy="no-referrer" data-fallback-title="${escapeHtml(book.title || t("book.fallback", "Libro"))}" />`;
       }
 
       function telegramIcon() {
@@ -1233,32 +1306,39 @@
         image.replaceWith(document.createRange().createContextualFragment(fallbackCover(image.dataset.fallbackTitle)));
       }
 
-      function render() {
+      function cardMarkup(book) {
+        return `
+          <article class="book" tabindex="0" role="button" data-book-id="${escapeHtml(book.id)}" aria-label="${escapeHtml(t("book.open", "Abrir la ficha"))}: ${escapeHtml(book.title)}">
+            <div class="cover">
+              ${coverMarkup(book, true)}
+              ${badgeMarkup(book)}
+              ${window.BiblioShelf.favoriteMarkup(book)}
+            </div>
+            <div class="body">
+              <h2 class="title">${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h2>
+              <p class="author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
+              ${libraryAction(book) ? `<a class="card-action ${libraryAction(book).isTelegram ? "telegram-action" : ""}" href="${escapeHtml(libraryAction(book).href)}" target="_blank" rel="noreferrer">${actionLabelMarkup(libraryAction(book))}</a>` : ""}
+              ${window.BiblioShelf.controlsMarkup(book, false)}
+            </div>
+          </article>`;
+      }
+
+      function render(options = {}) {
+        if (options.resetLimit) visibleLimit = pageSize;
         const visible = sorted(books.filter(matches));
+        const shown = visible.slice(0, visibleLimit);
 
         document.querySelector("#totalCount").textContent = visible.length;
         document.querySelector("#libraryCount").textContent = visible.filter((book) => book.section === "library").length;
         document.querySelector("#exchangeCount").textContent = visible.filter((book) => book.section === "exchange").length;
 
-        grid.innerHTML = visible
-          .map((book, index) => `
-            <article class="book" tabindex="0" role="button" data-book-id="${escapeHtml(book.id)}" aria-label="${escapeHtml(t("book.open", "Abrir la ficha"))}: ${escapeHtml(book.title)}">
-              <div class="cover">
-                ${coverMarkup(book, index >= 4)}
-                ${badgeMarkup(book)}
-                ${window.BiblioShelf.favoriteMarkup(book)}
-              </div>
-              <div class="body">
-                <h2 class="title">${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h2>
-                <p class="author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
-                ${libraryAction(book) ? `<a class="card-action ${libraryAction(book).isTelegram ? "telegram-action" : ""}" href="${escapeHtml(libraryAction(book).href)}" target="_blank" rel="noreferrer">${actionLabelMarkup(libraryAction(book))}</a>` : ""}
-                ${window.BiblioShelf.controlsMarkup(book, false)}
-              </div>
-            </article>
-          `)
-          .join("");
+        grid.innerHTML = shown.map(cardMarkup).join("");
 
         empty.style.display = visible.length ? "none" : "block";
+        catalogMore.hidden = !visible.length || shown.length >= visible.length;
+        catalogProgress.textContent = t("catalog.progress", "Mostrados {shown} de {total}")
+          .replace("{shown}", shown.length)
+          .replace("{total}", visible.length);
       }
 
       function renderLatest() {
@@ -1278,18 +1358,26 @@
         `).join("");
       }
 
+      let searchTimer;
       document.querySelector("#search").addEventListener("input", (event) => {
         state.search = event.target.value;
-        render();
+        clearTimeout(searchTimer);
+        searchTimer = setTimeout(() => render({ resetLimit: true }), 180);
       });
 
       [
         ["#sectionFilter", "section"],
       ].forEach(([selector, key]) => {
         document.querySelector(selector).addEventListener("change", (event) => {
+          clearTimeout(searchTimer);
           state[key] = event.target.value;
-          render();
+          render({ resetLimit: true });
         });
+      });
+
+      loadMore.addEventListener("click", () => {
+        visibleLimit += pageSize;
+        render();
       });
 
       grid.addEventListener("click", (event) => {

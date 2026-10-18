@@ -107,10 +107,12 @@ class CatalogNavigationTests(unittest.TestCase):
         self.context.close()
         self.assertEqual(self.errors, [])
 
-    def open_catalog(self, section="exchange", scroll=2200):
+    def open_catalog(self, section="exchange", scroll=None):
         self.page.goto(self.base_url)
         self.page.locator("#search").fill("Shelf")
         self.page.locator("#sectionFilter").select_option(section)
+        if scroll is None:
+            scroll = self.page.evaluate("document.querySelector('#grid').offsetTop + 300")
         self.page.evaluate("top => window.scrollTo(0, top)", scroll)
 
     def open_visible_book(self):
@@ -187,6 +189,21 @@ class CatalogNavigationTests(unittest.TestCase):
         self.page.reload()
         self.assert_catalog(previous_scroll)
 
+    def test_loaded_catalog_batches_survive_book_navigation(self):
+        self.open_catalog()
+        self.page.locator("#loadMore").click()
+        expect(self.page.locator("#grid .book")).to_have_count(72)
+
+        card = self.page.locator("[data-book-id='test-90']")
+        card.scroll_into_view_if_needed()
+        previous_scroll = self.page.evaluate("scrollY")
+        card.click(position={"x": 20, "y": 30})
+        expect(self.page).to_have_url(f"{self.base_url}books/test-90.html")
+
+        self.page.go_back()
+        expect(self.page.locator("#grid .book")).to_have_count(72)
+        self.assert_catalog(previous_scroll)
+
     def test_catalog_keeps_visible_book_when_viewport_changes(self):
         self.open_catalog()
         self.open_visible_book()
@@ -237,6 +254,7 @@ class CatalogNavigationTests(unittest.TestCase):
         self.page.goto(self.base_url)
         expect(self.page.locator("[data-open-external-browser]")).to_be_hidden()
         expect(self.page.locator("#how-it-works")).to_be_visible()
+        expect(self.page.locator(".events-teaser")).to_be_visible()
         expect(self.page.locator("#business")).to_be_visible()
         expect(self.page.locator("#faq")).to_be_visible()
         expect(self.page.locator("#latestGrid .latest-card")).to_have_count(6)
@@ -246,7 +264,11 @@ class CatalogNavigationTests(unittest.TestCase):
         self.assertEqual(self.page.locator("#exchangeCount").inner_text(), "72")
 
         expect(self.page.locator("#audienceFilter")).to_have_count(0)
+        expect(self.page.locator("#grid .book")).to_have_count(48)
+        expect(self.page.locator("#catalogProgress")).to_have_text("Показано 48 из 96")
+        self.page.locator("#loadMore").click()
         expect(self.page.locator("#grid .book")).to_have_count(96)
+        expect(self.page.locator("#catalogMore")).to_be_hidden()
         expect(self.page.get_by_text("Детская литература", exact=True)).to_have_count(0)
         expect(self.page.get_by_text("Взрослая литература", exact=True)).to_have_count(0)
         self.assertEqual(
@@ -256,6 +278,12 @@ class CatalogNavigationTests(unittest.TestCase):
 
         response = self.page.request.get(f"{self.base_url}privacy.html")
         self.assertEqual(response.status, 200)
+
+        events_link = self.page.locator(".events-teaser a")
+        self.assertEqual(events_link.get_attribute("href"), "./events.html")
+
+        events_response = self.page.request.get(f"{self.base_url}events.html")
+        self.assertEqual(events_response.status, 200)
 
     def test_search_treats_yo_and_e_as_the_same_letter(self):
         self.page.goto(self.base_url)
@@ -296,11 +324,30 @@ class CatalogNavigationTests(unittest.TestCase):
         self.assertEqual(instagram.get_attribute("href"), "https://www.instagram.com/vlc.biblio")
         self.assertEqual(instagram.locator("svg.instagram-icon").count(), 1)
 
+    def test_events_page_lists_only_the_confirmed_event_in_both_languages(self):
+        self.page.goto(f"{self.base_url}events.html")
+
+        expect(self.page.locator("h1")).to_have_text("Встречи")
+        expect(self.page.locator(".event-card")).to_have_count(1)
+        expect(self.page.locator(".event-card h3")).to_have_text(
+            "Книжный и творческий клуб для детей 5–8 лет"
+        )
+        registration = self.page.locator(".event-card .primary-link")
+        self.assertEqual(registration.get_attribute("href"), "https://clck.ru/3VtMAP")
+
+        self.page.locator("[data-language-toggle]").click()
+        expect(self.page.locator("h1")).to_have_text("Encuentros")
+        expect(self.page.locator(".event-card h3")).to_have_text(
+            "Club de lectura y creatividad para niños de 5 a 8 años"
+        )
+
     def test_language_toggle_switches_ui_and_preserves_book_data(self):
         self.page.goto(self.base_url)
         first_title = self.page.locator("#grid .book .title").first.inner_text()
 
         expect(self.page.locator("#how-title")).to_have_text("Как это работает")
+        expect(self.page.locator(".events-teaser")).to_contain_text("Встречи VLC Biblio")
+        expect(self.page.locator("#loadMore")).to_have_text("Показать ещё")
         expect(self.page.locator("[data-shelf-open='cart']")).to_contain_text("Корзина")
         expect(self.page.locator("#grid .badge.exchange").first).to_have_text("🏠 Частная библиотека")
         expect(self.page.locator("#grid .shelf-favorite").first).to_have_attribute("title", "Добавить в избранное")
@@ -313,6 +360,8 @@ class CatalogNavigationTests(unittest.TestCase):
 
         self.page.locator("[data-language-toggle]").click()
         expect(self.page.locator("#how-title")).to_have_text("Cómo funciona")
+        expect(self.page.locator(".events-teaser")).to_contain_text("Encuentros de VLC Biblio")
+        expect(self.page.locator("#loadMore")).to_have_text("Mostrar más")
         self.assertEqual(self.page.locator("html").get_attribute("lang"), "es")
         self.page.goto(f"{self.base_url}privacy.html")
         expect(self.page.locator("h1")).to_have_text("Privacidad")

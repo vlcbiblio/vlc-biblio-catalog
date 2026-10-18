@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Encuentros de VLC Biblio en València: libros, lectura y comunidad." />
+    <title data-i18n="events.pageTitle">Encuentros | VLC Biblio</title>
+    <link rel="icon" type="image/png" href="./assets/favicon.png" />
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f7f4ee;
+        --ink: #26231f;
+        --muted: #716b63;
+        --line: #ddd4c5;
+        --paper: #fffdf8;
+        --green: #2f6f5e;
+        --blue: #315f86;
+        --shadow: 0 14px 36px rgba(38, 35, 31, 0.1);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      .page { width: min(840px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 44px; }
+      .page-tools { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
+
+      .back { color: var(--blue); font-weight: 700; text-decoration: none; }
+      .back:hover { text-decoration: underline; }
+
+      .language-toggle {
+        min-width: 42px;
+        min-height: 36px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: var(--paper);
+        color: var(--ink);
+        cursor: pointer;
+        font-weight: 800;
+      }
+
+      .back:focus-visible,
+      .language-toggle:focus-visible,
+      .primary-link:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+
+      h1,
+      h2,
+      h3 { font-family: Georgia, "Times New Roman", serif; }
+      h1 { margin: 0 0 10px; font-size: clamp(34px, 6vw, 52px); line-height: 1.05; }
+      h2 { margin: 30px 0 12px; font-size: 24px; }
+      h3 { margin: 0 0 8px; font-size: clamp(21px, 3vw, 27px); line-height: 1.15; }
+      .lead { max-width: 680px; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.55; }
+
+      .event-list { margin: 0; padding: 0; list-style: none; }
+      .event-card {
+        display: grid;
+        grid-template-columns: 96px minmax(0, 1fr);
+        gap: 20px;
+        padding: 20px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--paper);
+        box-shadow: var(--shadow);
+      }
+
+      .event-date {
+        display: flex;
+        min-height: 104px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-self: start;
+        border: 1px solid rgba(47, 111, 94, 0.25);
+        border-radius: 7px;
+        background: #f3eee4;
+        color: var(--green);
+        text-align: center;
+      }
+
+      .event-date strong { font-family: Georgia, "Times New Roman", serif; font-size: 42px; font-weight: 400; line-height: 1; }
+      .event-date span { font-size: 11px; font-weight: 800; letter-spacing: 0.1em; }
+      .event-description { margin: 0 0 15px; color: var(--muted); line-height: 1.5; }
+      .event-meta { display: grid; gap: 7px; margin: 0 0 15px; }
+      .event-meta div { display: grid; grid-template-columns: 116px minmax(0, 1fr); gap: 10px; }
+      .event-meta dt { color: var(--muted); font-size: 12px; font-weight: 800; }
+      .event-meta dd { margin: 0; font-size: 14px; line-height: 1.4; }
+      .event-note { margin: 0 0 14px; font-size: 13px; font-weight: 700; }
+
+      .primary-link {
+        display: inline-flex;
+        min-height: 40px;
+        align-items: center;
+        border-radius: 6px;
+        background: var(--green);
+        color: #fff;
+        padding: 8px 13px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      @media (max-width: 560px) {
+        .page { width: min(100% - 20px, 840px); padding-top: 18px; }
+        .event-card { grid-template-columns: 1fr; gap: 16px; padding: 16px; }
+        .event-date { width: 96px; min-height: 92px; }
+        .event-meta div { grid-template-columns: 1fr; gap: 2px; }
+        .primary-link { width: 100%; min-height: 44px; justify-content: center; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <div class="page-tools">
+        <a class="back" href="./" data-i18n="catalog.back">← Volver al catálogo</a>
+        <button class="language-toggle" type="button" data-language-toggle aria-label="Cambiar el idioma a ruso">RU</button>
+      </div>
+
+      <header>
+        <h1 data-i18n="events.heading">Encuentros</h1>
+        <p class="lead" data-i18n="events.intro">Actividades en torno a los libros, la lectura y la comunidad en València.</p>
+      </header>
+
+      <section aria-labelledby="upcoming-title">
+        <h2 id="upcoming-title" data-i18n="events.upcoming">Próximos encuentros</h2>
+        <ol class="event-list">
+          <li>
+            <article class="event-card">
+              <div class="event-date" aria-hidden="true">
+                <strong>28</strong>
+                <span data-i18n="events.month">OCT</span>
+              </div>
+              <div>
+                <h3 data-i18n="events.event.title">Club de lectura y creatividad para niños de 5 a 8 años</h3>
+                <p class="event-description" data-i18n="events.event.description">Un encuentro literario y creativo en ruso: cuento con elementos teatrales, conversación sobre las emociones, juego y una manualidad.</p>
+                <dl class="event-meta">
+                  <div><dt data-i18n="events.meta.date">Fecha</dt><dd><time datetime="2026-10-28" data-i18n="events.date">Miércoles, 28 de octubre de 2026</time></dd></div>
+                  <div><dt data-i18n="events.meta.time">Horario</dt><dd><time datetime="2026-10-28T18:00:00+01:00" data-i18n="events.time">18:00–18:40</time></dd></div>
+                  <div><dt data-i18n="events.meta.place">Lugar</dt><dd data-i18n="events.place">Sala Infantil · Biblioteca Pública de València Pilar Faus · C/ de l’Hospital, 13</dd></div>
+                  <div><dt data-i18n="events.meta.audience">Idioma y edad</dt><dd data-i18n="events.audience">En ruso · Para niños de 5 a 8 años</dd></div>
+                </dl>
+                <p class="event-note" data-i18n="events.note">Gratis · 8 plazas · inscripción necesaria</p>
+                <a class="primary-link" href="https://clck.ru/3VtMAP" rel="noreferrer" data-i18n="events.cta">Inscribirse →</a>
+              </div>
+            </article>
+          </li>
+        </ol>
+      </section>
+    </main>
+    <script src="./assets/i18n.js?v=performance-1"></script>
+  </body>
+</html>

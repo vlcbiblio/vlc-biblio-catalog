@@ -45,6 +45,7 @@ class StaticSiteGenerationTests(unittest.TestCase):
             sitemap = ElementTree.parse(root / "sitemap.xml")
             locations = [item.text for item in sitemap.findall("{*}url/{*}loc")]
             self.assertEqual(locations.count(generate.book_url(self.book)), 1)
+            self.assertIn(generate.SITE_URL + "events.html", locations)
             self.assertIn(f"Sitemap: {generate.SITE_URL}sitemap.xml", (root / "robots.txt").read_text(encoding="utf-8"))
 
     def test_books_payload_parser_rejects_executable_javascript(self):
@@ -73,7 +74,7 @@ class StaticSiteGenerationTests(unittest.TestCase):
         sitemap = ElementTree.parse(root / "sitemap.xml")
         locations = {item.text for item in sitemap.findall("{*}url/{*}loc")}
         self.assertTrue(canonicals <= locations)
-        self.assertEqual(len(locations), len(books) + 2)
+        self.assertEqual(len(locations), len(books) + 3)
 
 
 if __name__ == "__main__":
