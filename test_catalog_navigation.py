@@ -339,7 +339,9 @@ class CatalogNavigationTests(unittest.TestCase):
             "Книжный и творческий клуб для детей 5–8 лет"
         )
         expect(self.page.locator(".event-program li")).to_have_count(3)
-        expect(self.page.locator(".event-contacts")).to_contain_text("@lena_artukh")
+        expect(self.page.locator(".event-contacts")).to_contain_text("@odnazhdy_vlc")
+        expect(self.page.locator(".event-contacts a")).to_have_count(1)
+        expect(self.page.locator(".event-contacts a")).to_have_attribute("href", "https://t.me/odnazhdy_vlc")
         expect(self.page.locator(".event-support")).to_contain_text("@VLS_Biblio_bot")
         registration = self.page.locator(".event-card .primary-link")
         self.assertEqual(registration.get_attribute("href"), "https://clck.ru/3VtMAP")
