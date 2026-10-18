@@ -3,6 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Catálogo comunitario de libros en València: fondo de la biblioteca Pilar Faus y préstamos entre bibliotecas particulares." />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://vlcbiblio.github.io/vlc-biblio-catalog/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="VLC Biblio" />
+    <meta property="og:title" content="VLC Biblio — catálogo de libros" />
+    <meta property="og:description" content="Encuentra libros de la biblioteca Pilar Faus y de bibliotecas particulares de València." />
+    <meta property="og:url" content="https://vlcbiblio.github.io/vlc-biblio-catalog/" />
+    <meta name="twitter:card" content="summary" />
     <title>VLC Biblio</title>
     <link rel="icon" type="image/png" href="./assets/favicon.png?v=20260922" />
     <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
@@ -406,7 +415,7 @@
         top: 0;
         z-index: 2;
         display: grid;
-        grid-template-columns: minmax(240px, 1fr) repeat(2, minmax(150px, 220px));
+        grid-template-columns: minmax(320px, 1fr) minmax(180px, 240px);
         gap: 10px;
         padding: 16px 0 20px;
         background: rgba(247, 244, 238, 0.94);
@@ -421,6 +430,50 @@
         background: var(--paper);
         color: var(--ink);
         padding: 0 12px;
+      }
+
+      .controls > .field {
+        align-self: end;
+        min-height: 52px;
+      }
+
+      .search-box {
+        position: relative;
+        display: grid;
+        gap: 6px;
+      }
+
+      .search-label {
+        color: var(--ink);
+        font-size: 14px;
+        font-weight: 800;
+      }
+
+      .search-box .field {
+        min-height: 52px;
+        border: 2px solid var(--green);
+        border-radius: 9px;
+        padding: 0 16px 0 46px;
+        box-shadow: 0 5px 16px rgba(47, 111, 94, 0.13);
+        font-size: 16px;
+      }
+
+      .search-box .field::placeholder { color: #686159; opacity: 1; }
+
+      .search-box .field:focus {
+        outline: 4px solid rgba(47, 111, 94, 0.2);
+        outline-offset: 1px;
+        border-color: #24584b;
+      }
+
+      .search-icon {
+        position: absolute;
+        left: 15px;
+        bottom: 15px;
+        width: 22px;
+        height: 22px;
+        color: var(--green);
+        pointer-events: none;
       }
 
       .grid {
@@ -712,7 +765,7 @@
         .brand-plaque { width: 100%; }
         .catalog-summary { margin-top: 12px; }
         .controls { grid-template-columns: 1fr 1fr; }
-        .controls .search { grid-column: 1 / -1; }
+        .controls .search-box { grid-column: 1 / -1; }
         .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         .latest-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
         .dialog { grid-template-columns: 1fr; }
@@ -733,7 +786,7 @@
         .info-panel { padding: 18px; }
         .steps, .action-cards { grid-template-columns: 1fr; }
         .controls { position: static; grid-template-columns: 1fr; }
-        .controls .search { grid-column: auto; }
+        .controls .search-box { grid-column: auto; }
         .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
         .body { padding: 11px; }
         .title { font-size: 14px; }
@@ -817,6 +870,17 @@
         </ol>
       </section>
 
+      <section class="content-section info-panel" id="ordering" aria-labelledby="ordering-title">
+        <h2 class="section-heading" id="ordering-title" data-i18n="catalog.order.title">Cómo pedir un libro</h2>
+        <ol class="steps">
+          <li><span class="step-icon" aria-hidden="true">1</span><span data-i18n="catalog.order.1">Abre la ficha de un libro particular disponible y añádelo a la cesta.</span></li>
+          <li><span class="step-icon" aria-hidden="true">2</span><span data-i18n="catalog.order.2">Revisa la cesta. Los libros de distintas personas se tramitan por separado.</span></li>
+          <li><span class="step-icon" aria-hidden="true">3</span><span data-i18n="catalog.order.3">Pulsa «Solicitar por Telegram» y confirma la solicitud en el bot.</span></li>
+          <li><span class="step-icon" aria-hidden="true">4</span><span data-i18n="catalog.order.4">El bot comprobará la disponibilidad y ayudará a acordar la entrega y la devolución.</span></li>
+        </ol>
+        <p data-i18n="catalog.order.library">Los libros de Pilar Faus no se piden al propietario por el bot: su ficha lleva a la biblioteca pública, donde se consulta la disponibilidad y el préstamo.</p>
+      </section>
+
       <section class="content-section action-cards" id="add-book" aria-label="Añadir un libro" data-i18n-aria-label="catalog.add.label">
         <article class="action-card">
           <span class="action-icon" aria-hidden="true">🎁</span>
@@ -842,7 +906,11 @@
       </section>
 
       <section class="controls" aria-label="Filtros" data-i18n-aria-label="catalog.filters">
-        <input class="field search" id="search" type="search" placeholder="Buscar por título, autor, ISBN o editorial" data-i18n-placeholder="catalog.search" />
+        <label class="search-box" for="search">
+          <span class="search-label" data-i18n="catalog.search.label">Buscar en el catálogo</span>
+          <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" /></svg>
+          <input class="field search" id="search" type="search" placeholder="Título, autor, ISBN o editorial" data-i18n-placeholder="catalog.search" />
+        </label>
         <select class="field" id="sectionFilter">
           <option value="" data-i18n="catalog.sections.all">Todas las secciones</option>
           <option value="library" data-i18n="catalog.sections.library">Biblioteca Pilar Faus</option>
@@ -1128,10 +1196,7 @@
       }
 
       function bookPageUrl(book) {
-        const url = new URL("book.html", window.location.href);
-        url.search = "";
-        url.searchParams.set("id", book.id);
-        return `${url.pathname}${url.search}`;
+        return `./books/${encodeURIComponent(book.id)}.html`;
       }
 
       function currentBookFromUrl() {

@@ -50,8 +50,8 @@ Browser checks use synthetic books and block external requests:
 python -X utf8 -m unittest test_shelf test_catalog_navigation test_cover_loading -v
 ```
 
-Publish `shelf.js`, `shelf.css`, and `telegram-links.js` together with `index.html`, `book.html`, and
-`privacy.html` to make these features available on GitHub Pages. No bot restart
+Publish `shelf.js`, `shelf.css`, and `telegram-links.js` together with `index.html`, `book.html`,
+`privacy.html`, `books/`, `sitemap.xml`, and `robots.txt` to make these features available on GitHub Pages. No bot restart
 is needed for this site change.
 
 ## GitHub Pages
@@ -151,8 +151,21 @@ images are replaced by a text placeholder instead of a broken image.
 Each book opens as a standalone detail page with a shareable URL:
 
 ```text
-https://vlcbiblio.github.io/vlc-biblio-catalog/book.html?id=7
+https://vlcbiblio.github.io/vlc-biblio-catalog/books/b-14eee954a1db.html
 ```
+
+`python export_catalog.py` now regenerates these crawlable pages together with
+`sitemap.xml` and `robots.txt`. To rebuild them from the existing public
+`data/books.js` without reading the private processing table, run:
+
+```powershell
+python -X utf8 generate_catalog_site.py
+```
+
+Every generated page contains its title, author, description and order link in
+the initial HTML, plus canonical, Open Graph, Twitter and `Book` JSON-LD metadata.
+The old `book.html?id=...` form remains compatible, but points crawlers to the
+generated canonical URL.
 
 Browser Back and Forward follow the visited book pages in order. The explicit
 `← Назад к каталогу` link opens the catalog with the search, section and scroll

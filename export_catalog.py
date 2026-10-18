@@ -7,6 +7,8 @@ from datetime import datetime
 from pathlib import Path
 from urllib.parse import urlparse
 
+from generate_catalog_site import write_site
+
 
 ROOT = Path(__file__).resolve().parent
 DEFAULT_SOURCE = ROOT.parent / "1.Telegram" / "_obrabotka" / "books.csv"
@@ -417,6 +419,7 @@ def main():
     books = load_books(args.source)
     write_books(args.output, books)
     update_data_cache_buster(args.index, args.book_page)
+    write_site(args.output.resolve().parent.parent, books)
     print(f"Exported {len(books)} books to {args.output}")
 
 

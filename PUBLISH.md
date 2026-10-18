@@ -57,7 +57,8 @@ https://github.com/vlcbiblio/vlc-biblio-catalog.git
 ```powershell
 cd "C:\29.Biblio\3.GitHub catalog"
 git status
-git add index.html data/books.js book.html privacy.html
+python -X utf8 generate_catalog_site.py
+git add index.html data/books.js book.html privacy.html assets books sitemap.xml robots.txt generate_catalog_site.py
 git commit -m "Update site"
 git push origin main
 ```

@@ -4,7 +4,7 @@
 
   const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
   const byId = new Map(books.map((book) => [String(book.id), book]));
-  const prefix = `vlc-biblio:shelf:v1:${new URL("./", location.href).pathname}:`;
+  const prefix = `vlc-biblio:shelf:v1:${new URL("./", document.baseURI).pathname}:`;
   const limits = { orderBooks: 30, startLength: 64, savedBooks: 2000 };
   const lists = { cart: [], favorites: [] };
   let storageAvailable = true;
@@ -165,7 +165,7 @@
     return `<li class="shelf-row" data-shelf-row="${escape(id)}">
       <div class="shelf-cover">${cover ? `<img src="${escape(cover)}" alt="" loading="lazy" referrerpolicy="no-referrer" />` : `<span aria-hidden="true">${escape(bookText("fallback", "Libro"))}</span>`}</div>
       <div class="shelf-row-body">
-        ${book ? `<a class="shelf-book-title" href="./book.html?id=${encodeURIComponent(id)}">${number ? `${number}. ` : ""}${escape(title)}</a>` : `<span class="shelf-book-title">${escape(title)}</span>`}
+        ${book ? `<a class="shelf-book-title" href="./books/${encodeURIComponent(id)}.html">${number ? `${number}. ` : ""}${escape(title)}</a>` : `<span class="shelf-book-title">${escape(title)}</span>`}
         <p class="shelf-author">${escape(book?.author)}</p>
         <p class="shelf-availability">${availabilityLabel(book)}</p>
         ${waitlist ? `<a class="shelf-waitlist" href="https://t.me/VLS_Biblio_bot?start=wait_${requestId(book)}" target="_blank" rel="noreferrer">${escape(t("waitlistBot", "Apuntarme a la lista de espera en el bot"))}</a>` : ""}

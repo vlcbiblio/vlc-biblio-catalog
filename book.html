@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,follow" />
     <title>Libro | VLC Biblio</title>
     <link rel="icon" type="image/png" href="./assets/favicon.png" />
     <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
@@ -602,7 +603,7 @@
       }
 
       function relatedUrl(book) {
-        return `./book.html?id=${encodeURIComponent(book.id || book.requestId || "")}`;
+        return `./books/${encodeURIComponent(book.id || book.requestId || "")}.html`;
       }
 
       function relatedCardMarkup(book) {
@@ -711,12 +712,26 @@
       }
 
       const params = new URLSearchParams(window.location.search);
-      const id = params.get("id") || params.get("book");
+      const id = document.body.dataset.bookId || params.get("id") || params.get("book");
       const book = books.find(
         (item) => String(item.id) === String(id) || String(item.requestId) === String(id)
       );
-      if (book) renderBook(book);
-      else renderMissing();
+      if (book) {
+        if (!document.querySelector('link[rel="canonical"]')) {
+          const canonical = document.createElement("link");
+          canonical.rel = "canonical";
+          canonical.href = new URL(`./books/${encodeURIComponent(book.id)}.html`, document.baseURI).href;
+          document.head.append(canonical);
+        }
+        renderBook(book);
+      }
+      else {
+        const robots = document.createElement("meta");
+        robots.name = "robots";
+        robots.content = "noindex,follow";
+        document.head.append(robots);
+        renderMissing();
+      }
 
       content.addEventListener("click", (event) => {
         const tab = event.target.closest(".related-tab");

@@ -45,10 +45,26 @@ BOOKS[2].update({"author": "Suzanne Collins", "authorKey": "suzanne-collins"})
 
 class CatalogHandler(SimpleHTTPRequestHandler):
     def do_GET(self):
-        if urlsplit(self.path).path == "/data/books.js":
+        request_path = urlsplit(self.path).path
+        if request_path == "/data/books.js":
             payload = f"window.BIBLIO_BOOKS = {json.dumps(BOOKS)};".encode()
             self.send_response(200)
             self.send_header("Content-Type", "application/javascript; charset=utf-8")
+            self.send_header("Content-Length", str(len(payload)))
+            self.end_headers()
+            self.wfile.write(payload)
+            return
+        if request_path.startswith("/books/test-") and request_path.endswith(".html"):
+            book_id = Path(request_path).stem
+            page = (Path(__file__).parent / "book.html").read_text(encoding="utf-8")
+            page = page.replace(
+                '<meta name="viewport" content="width=device-width, initial-scale=1" />',
+                '<meta name="viewport" content="width=device-width, initial-scale=1" />\n    <base href="../" />',
+                1,
+            ).replace("<body>", f'<body data-book-id="{book_id}">', 1)
+            payload = page.encode()
+            self.send_response(200)
+            self.send_header("Content-Type", "text/html; charset=utf-8")
             self.send_header("Content-Length", str(len(payload)))
             self.end_headers()
             self.wfile.write(payload)
@@ -109,7 +125,7 @@ class CatalogNavigationTests(unittest.TestCase):
             return {id: card.dataset.bookId, x: rect.left + 20, y: rect.top + 30, scroll: scrollY};
         }""")
         self.page.mouse.click(target["x"], target["y"])
-        expect(self.page).to_have_url(f"{self.base_url}book.html?id={target['id']}")
+        expect(self.page).to_have_url(f"{self.base_url}books/{target['id']}.html")
         expect(self.page.locator("#content h1")).to_be_visible()
         return target
 
@@ -194,7 +210,7 @@ class CatalogNavigationTests(unittest.TestCase):
     def test_owner_location_note_follows_private_collection_note(self):
         self.page.goto(f"{self.base_url}book.html?id=test-24")
         self.assertEqual(
-            self.page.locator(".collection-note").inner_text(),
+            self.page.locator(".body > .collection-note").first.inner_text(),
             "Книга в частной коллекции. Вы можете запросить книгу на время.\n"
             "Местоположение: Сагунто. Доступность метро на станциях Colón и Aragón "
             "в определённые дни и часы.",
@@ -204,7 +220,7 @@ class CatalogNavigationTests(unittest.TestCase):
         self.open_catalog()
         previous_scroll = self.page.evaluate("scrollY")
         self.page.goto(f"{self.base_url}?book=test-24")
-        expect(self.page).to_have_url(f"{self.base_url}book.html?id=test-24")
+        expect(self.page).to_have_url(f"{self.base_url}books/test-24.html")
         self.page.locator("a.back").click()
         self.assert_catalog(previous_scroll)
 

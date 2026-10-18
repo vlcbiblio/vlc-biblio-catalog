@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vlcbiblio.github.io/vlc-biblio-catalog/sitemap.xml
