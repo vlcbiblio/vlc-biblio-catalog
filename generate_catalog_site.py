@@ -59,6 +59,15 @@ def direct_action(book):
     return ""
 
 
+def deposit_markup(book):
+    if book.get("section") != "exchange" or book.get("depositEur") != 20:
+        return ""
+    return '''<aside class="deposit-note" aria-label="Condiciones del depósito">
+            <span class="deposit-note-icon" aria-hidden="true">↩</span>
+            <span><strong>Depósito reembolsable: 20 euros</strong><small>por cada libro de esta biblioteca</small></span>
+          </aside>'''
+
+
 def static_book_markup(book):
     esc = lambda value: html.escape(compact(value), quote=True)
     title = esc(book.get("title") or "Sin título")
@@ -90,6 +99,8 @@ def static_book_markup(book):
         label = "Apuntarme a la lista de espera" if book.get("availability") == "reserved" else "Solicitar el libro por Telegram"
         action_markup = f'<a class="telegram-action" href="{esc(action)}" target="_blank" rel="noreferrer">{label}</a>'
     annotation = esc(book.get("annotation") or "Todavía no se ha añadido una descripción.")
+    deposit = deposit_markup(book)
+    deposit_line = f"\n          {deposit}" if deposit else ""
     return f'''<section id="content">
       <article class="book">
         <div class="cover">{cover_markup}</div>
@@ -98,7 +109,7 @@ def static_book_markup(book):
           <h1>{title}</h1>
           <p class="author">{author}</p>
           <dl class="details">{''.join(details)}</dl>
-          <p class="annotation">{annotation}</p>
+          <p class="annotation">{annotation}</p>{deposit_line}
           <div class="collection-note">{note}</div>
           <div class="actions">{action_markup}</div>
         </div>

@@ -181,6 +181,48 @@
         line-height: 1.55;
       }
 
+      .deposit-note {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin: 16px 0 0;
+        padding: 14px 16px;
+        border: 1px solid #e4c681;
+        border-radius: 8px;
+        background: linear-gradient(135deg, #fff8e8, #fffdf8);
+        color: var(--ink);
+        box-shadow: 0 6px 18px rgba(178, 119, 40, 0.1);
+      }
+
+      .deposit-note-icon {
+        display: grid;
+        place-items: center;
+        width: 36px;
+        height: 36px;
+        flex: 0 0 36px;
+        border-radius: 50%;
+        background: var(--gold);
+        color: #fff;
+        font-size: 22px;
+        font-weight: 800;
+        line-height: 1;
+      }
+
+      .deposit-note strong,
+      .deposit-note small { display: block; }
+
+      .deposit-note strong {
+        font-size: 15px;
+        line-height: 1.35;
+      }
+
+      .deposit-note small {
+        margin-top: 2px;
+        color: #655438;
+        font-size: 13px;
+        line-height: 1.4;
+      }
+
       .collection-note {
         margin: 12px 0 0;
         color: var(--muted);
@@ -449,6 +491,10 @@
           <p class="author">Фрауке Шойнеманн, Антье Циллат</p>
           <dl class="details"></dl>
           <p class="annotation">Todavía no se ha añadido una descripción.</p>
+          <aside class="deposit-note" aria-label="Condiciones del depósito">
+            <span class="deposit-note-icon" aria-hidden="true">↩</span>
+            <span><strong>Depósito reembolsable: 20 euros</strong><small>por cada libro de esta biblioteca</small></span>
+          </aside>
           <div class="collection-note">Este libro pertenece a una biblioteca particular. Puedes solicitarlo en préstamo.</div>
           <div class="actions"><a class="telegram-action" href="https://t.me/VLS_Biblio_bot?start=book_793" target="_blank" rel="noreferrer">Solicitar el libro por Telegram</a></div>
         </div>
@@ -459,8 +505,8 @@
       </footer>
     </main>
 
-    <script src="./data/books.js?v=8b1181ffba769746"></script>
-    <script src="./assets/i18n.js?v=1"></script>
+    <script src="./data/books.js?v=20261020214216"></script>
+    <script src="./assets/i18n.js?v=deposit-1"></script>
     <script src="./assets/shelf.js?v=i18n-1"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
@@ -600,6 +646,19 @@
           : "";
       }
 
+      function depositMarkup(book) {
+        if (book.section !== "exchange" || book.depositEur !== 20) return "";
+        return `
+          <aside class="deposit-note" aria-label="${escapeHtml(t("book.deposit.label", "Condiciones del depósito"))}">
+            <span class="deposit-note-icon" aria-hidden="true">↩</span>
+            <span>
+              <strong>${escapeHtml(t("book.deposit.title", "Depósito reembolsable: 20 euros"))}</strong>
+              <small>${escapeHtml(t("book.deposit.detail", "por cada libro de esta biblioteca"))}</small>
+            </span>
+          </aside>
+        `;
+      }
+
       function detailsMarkup(book) {
         const details = [
           ["ISBN", book.isbn],
@@ -717,6 +776,7 @@
               <p class="author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
               <dl class="details">${detailsMarkup(book)}</dl>
               <p class="annotation">${escapeHtml(book.annotation || t("book.noDescription", "Todavía no se ha añadido una descripción."))}</p>
+              ${depositMarkup(book)}
               <div class="collection-note"><span>${escapeHtml(collectionNote(book))}</span>${locationNoteMarkup(book)}</div>
               ${window.BiblioShelf.controlsMarkup(book, false)}
               <div class="actions">

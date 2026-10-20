@@ -35,6 +35,7 @@ BOOKS[24]["locationNote"] = (
     "Местоположение: Сагунто. Доступность метро на станциях Colón и Aragón "
     "в определённые дни и часы."
 )
+BOOKS[24]["depositEur"] = 20
 BOOKS[0]["annotation"] = "Новогодняя ёлка"
 BOOKS[1]["annotation"] = "Новогодняя елка"
 BOOKS[2]["searchAliases"] = "Кейт Дикамило; Дикамило"
@@ -232,6 +233,26 @@ class CatalogNavigationTests(unittest.TestCase):
             "Местоположение: Сагунто. Доступность метро на станциях Colón и Aragón "
             "в определённые дни и часы.",
         )
+
+    def test_deposit_notice_is_visible_only_for_configured_book_on_desktop_and_mobile(self):
+        for width, height in [(1280, 900), (390, 844)]:
+            with self.subTest(width=width):
+                self.page.set_viewport_size({"width": width, "height": height})
+                self.page.goto(f"{self.base_url}book.html?id=test-24")
+                notice = self.page.locator(".body > .deposit-note")
+                expect(notice).to_be_visible()
+                expect(notice).to_have_attribute("aria-label", "Условия залога")
+                expect(notice).to_contain_text("Возвратный залог — 20 евро")
+                self.assertLess(
+                    self.page.locator(".annotation").bounding_box()["y"],
+                    notice.bounding_box()["y"],
+                )
+
+                self.page.goto(f"{self.base_url}book.html?id=test-25")
+                expect(self.page.locator(".body > .deposit-note")).to_have_count(0)
+
+                self.page.goto(f"{self.base_url}book.html?id=test-0")
+                expect(self.page.locator(".body > .deposit-note")).to_have_count(0)
 
     def test_legacy_book_link_preserves_saved_catalog(self):
         self.open_catalog()

@@ -26,6 +26,9 @@ OWNER_LOCATION_NOTES = {
     ),
     "oyellowsparrow": "Местоположение: метро Campanar",
 }
+OWNER_DEPOSIT_EUR = {
+    "irishkakosh": 20,
+}
 
 AUTHOR_OVERRIDES = {
     "88": "Рина Зенюк",
@@ -258,6 +261,13 @@ def location_note_for(row, section):
     return OWNER_LOCATION_NOTES.get(username, "")
 
 
+def deposit_eur_for(row, section):
+    if section != "exchange":
+        return 0
+    username = clean(row.get("username")).lstrip("@").casefold()
+    return OWNER_DEPOSIT_EUR.get(username, 0)
+
+
 def has_public_book_data(row):
     if clean(row.get("book_number")) in DUPLICATE_REQUESTS:
         return False
@@ -324,6 +334,9 @@ def public_book(row):
     search_aliases = clean(row.get("search_aliases"))
     if search_aliases:
         book["searchAliases"] = search_aliases
+    deposit_eur = deposit_eur_for(row, section)
+    if deposit_eur:
+        book["depositEur"] = deposit_eur
     return book
 
 

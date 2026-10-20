@@ -181,6 +181,48 @@
         line-height: 1.55;
       }
 
+      .deposit-note {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin: 16px 0 0;
+        padding: 14px 16px;
+        border: 1px solid #e4c681;
+        border-radius: 8px;
+        background: linear-gradient(135deg, #fff8e8, #fffdf8);
+        color: var(--ink);
+        box-shadow: 0 6px 18px rgba(178, 119, 40, 0.1);
+      }
+
+      .deposit-note-icon {
+        display: grid;
+        place-items: center;
+        width: 36px;
+        height: 36px;
+        flex: 0 0 36px;
+        border-radius: 50%;
+        background: var(--gold);
+        color: #fff;
+        font-size: 22px;
+        font-weight: 800;
+        line-height: 1;
+      }
+
+      .deposit-note strong,
+      .deposit-note small { display: block; }
+
+      .deposit-note strong {
+        font-size: 15px;
+        line-height: 1.35;
+      }
+
+      .deposit-note small {
+        margin-top: 2px;
+        color: #655438;
+        font-size: 13px;
+        line-height: 1.4;
+      }
+
       .collection-note {
         margin: 12px 0 0;
         color: var(--muted);
@@ -449,6 +491,10 @@
           <p class="author">Беатрис Поттер</p>
           <dl class="details"><dt>Año de publicación</dt><dd>2024</dd></dl>
           <p class="annotation">Ознакомиться со всей книгой в электронном виде можно по ссылке на сайте издательства СЗКЭО РФ Подарочное иллюстрированное издание отпечатано на матовой мелованной бумаге Омела с закладкой ляссе одного цвета с капталом. БМЛ Том 280 Беатрис Поттер Все сказки о кролике Питере Хелен Беатрис Поттер (1866–1943) — английская детская писательница и художница. В 1902 году ее «Сказка о кролике Питере» впервые вышла в печать. С тех пор Беатрис начала регулярно издавать свои новые детские книжки. Сказки Беатрис Поттер в наши дни переводятся на множество языков и издаются многочисленными тиражами. Данное издание включает двадцать три сказочные истории про кролика Питера и многих других персонажей, придуманных Поттер. Текст дан в переводе Сергея Юрьевича Афонькина. Хелен Беатрис Поттер (1866–1943) — английская детская писательница и художница. Беатрис родилась в состоятельной лондонской семье. С малых лет она проявляла способности к рисованию, которые ее отец, сам увлекавшийся рисованием и фотографированием, охотно поддерживал. Он водил дочь в Музей естествознания, где она могла часами практиковаться в рисовании животных с натуры. Каждое лето семья проводила в загородном доме, где дети могли любоваться природой. Там Беатрис заполнила многочисленными зарисовками растений, зверят и птиц несколько альбомов. Вместе с младшим братом девочка собирала камни и составляла гербарий, наблюдала за повадками животных и изучала их анатомию. У детей было множество питомцев: лягушки, ящерицы и, конечно, кролики. Девочка воспитывалась несколькими гувернантками; разница в возрасте с последней из них, Энни Картер Мур, составляла всего три года. Девушки проводили много времени вместе и стали подругами. Они продолжали общаться и после замужества Энни. Предпосылки сказок о кролике Питере зародились в письмах Беатрис к Энни: Беатрис сочиняла небольшие истории про кролика и его друзей для сына Энни и сама выполняла к ним милые рисунки. Свое имя кролик в ее сказках получил от настоящего кролика Питера, который был у Беатрис в детстве, — он также был частым героем ее иллюстраций. Энни не раз говорила, что из этих маленьких сказок можно было бы составить книгу, и в 1902 году «Сказка о кролике Питере» впервые вышла в печать. До этого издатели неоднократно отказывали Беатрис в публикации, однако уже к концу года было продано двадцать восемь тысяч экземпляров ее книги. С тех пор Беатрис начала регулярно издавать свои новые сказочные истории для детей. Несмотря на свою приверженность к литературе для малышей и любовь к детям, своими детьми Беатрис так и не обзавелась, однако она стала любящей тетей для детей своего брата и заботливой крестной для дочери Энни. Беатрис искренне восхищалась сельскими красотами; свои земли и недвижимость она завещала Национальному фонду, охраняющему исторические объекты и природные ландшафты Великобритании. Культурное наследие писательницы было оценено по достоинству: в наши дни сказки Беатрис Поттер регулярно переиздаются и пользуются любовью читателей, по мотивам этих сказок неоднократно делали экранизации, а коллекция писем и рисунков Беатрис бережно хранится в музеях и библиотеках Великобритании и США</p>
+          <aside class="deposit-note" aria-label="Condiciones del depósito">
+            <span class="deposit-note-icon" aria-hidden="true">↩</span>
+            <span><strong>Depósito reembolsable: 20 euros</strong><small>por cada libro de esta biblioteca</small></span>
+          </aside>
           <div class="collection-note">Este libro pertenece a una biblioteca particular. Puedes solicitarlo en préstamo.</div>
           <div class="actions"><a class="telegram-action" href="https://t.me/VLS_Biblio_bot?start=book_134" target="_blank" rel="noreferrer">Solicitar el libro por Telegram</a></div>
         </div>
@@ -459,8 +505,8 @@
       </footer>
     </main>
 
-    <script src="./data/books.js?v=8b1181ffba769746"></script>
-    <script src="./assets/i18n.js?v=1"></script>
+    <script src="./data/books.js?v=20261020214216"></script>
+    <script src="./assets/i18n.js?v=deposit-1"></script>
     <script src="./assets/shelf.js?v=i18n-1"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
@@ -600,6 +646,19 @@
           : "";
       }
 
+      function depositMarkup(book) {
+        if (book.section !== "exchange" || book.depositEur !== 20) return "";
+        return `
+          <aside class="deposit-note" aria-label="${escapeHtml(t("book.deposit.label", "Condiciones del depósito"))}">
+            <span class="deposit-note-icon" aria-hidden="true">↩</span>
+            <span>
+              <strong>${escapeHtml(t("book.deposit.title", "Depósito reembolsable: 20 euros"))}</strong>
+              <small>${escapeHtml(t("book.deposit.detail", "por cada libro de esta biblioteca"))}</small>
+            </span>
+          </aside>
+        `;
+      }
+
       function detailsMarkup(book) {
         const details = [
           ["ISBN", book.isbn],
@@ -717,6 +776,7 @@
               <p class="author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
               <dl class="details">${detailsMarkup(book)}</dl>
               <p class="annotation">${escapeHtml(book.annotation || t("book.noDescription", "Todavía no se ha añadido una descripción."))}</p>
+              ${depositMarkup(book)}
               <div class="collection-note"><span>${escapeHtml(collectionNote(book))}</span>${locationNoteMarkup(book)}</div>
               ${window.BiblioShelf.controlsMarkup(book, false)}
               <div class="actions">

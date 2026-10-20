@@ -57,6 +57,28 @@ class CatalogOnlyExportTests(unittest.TestCase):
         self.assertEqual(export.location_note_for({"username": "IrishkaKosh"}, "library"), "")
         self.assertEqual(export.location_note_for({"username": "another_user"}, "exchange"), "")
 
+    def test_deposit_is_exported_only_for_the_configured_private_library(self):
+        configured = export.public_book({
+            "username": "@IrishkaKosh",
+            "destination": "книгообмен",
+            "title": "Книга",
+        })
+        other_owner = export.public_book({
+            "username": "another_user",
+            "destination": "книгообмен",
+            "title": "Другая книга",
+        })
+        public_library = export.public_book({
+            "username": "@IrishkaKosh",
+            "destination": "Pilar Faus",
+            "title": "Библиотечная книга",
+        })
+
+        self.assertEqual(configured["depositEur"], 20)
+        self.assertNotIn("depositEur", other_owner)
+        self.assertNotIn("depositEur", public_library)
+        self.assertNotIn("username", configured)
+
     def test_oyellowsparrow_private_books_get_campanar_location_note(self):
         expected = "Местоположение: метро Campanar"
         self.assertEqual(export.location_note_for({"username": "@oYellowSparrow"}, "exchange"), expected)

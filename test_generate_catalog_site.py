@@ -23,6 +23,10 @@ class StaticSiteGenerationTests(unittest.TestCase):
             "updatedAt": "2026-10-18T12:00:00",
         }
 
+    @staticmethod
+    def static_content(page):
+        return page.split('<section id="content">', 1)[1].split('</section>', 1)[0]
+
     def test_generated_page_has_static_content_and_unique_seo(self):
         root = Path(__file__).parent
         page = generate.render_book_page((root / "book.html").read_text(encoding="utf-8"), self.book)
@@ -33,7 +37,25 @@ class StaticSiteGenerationTests(unittest.TestCase):
         self.assertIn('property="og:image" content="https://example.org/cover.jpg"', page)
         self.assertIn('type="application/ld+json"', page)
         self.assertIn('https://t.me/VLS_Biblio_bot?start=book_42', page)
-        self.assertNotIn("depósito", page)
+        self.assertIn('<script src="./assets/i18n.js?v=deposit-1"></script>', page)
+        self.assertNotIn("depósito", self.static_content(page))
+
+    def test_deposit_notice_is_static_and_limited_to_configured_books(self):
+        template = (Path(__file__).parent / "book.html").read_text(encoding="utf-8")
+        configured = generate.render_book_page(template, {**self.book, "depositEur": 20})
+        other_owner = generate.render_book_page(template, self.book)
+        public_library = generate.render_book_page(template, {
+            **self.book,
+            "section": "library",
+            "depositEur": 20,
+        })
+
+        configured_content = self.static_content(configured)
+        self.assertIn('class="deposit-note" aria-label="Condiciones del depósito"', configured_content)
+        self.assertIn("Depósito reembolsable: 20 euros", configured_content)
+        self.assertLess(configured_content.index('class="annotation"'), configured_content.index('class="deposit-note"'))
+        self.assertNotIn('class="deposit-note"', self.static_content(other_owner))
+        self.assertNotIn('class="deposit-note"', self.static_content(public_library))
 
     def test_site_writes_one_canonical_url_per_book(self):
         with tempfile.TemporaryDirectory() as temp:
