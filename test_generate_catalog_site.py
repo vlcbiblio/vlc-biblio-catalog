@@ -76,7 +76,8 @@ class StaticSiteGenerationTests(unittest.TestCase):
                 self.assertIn(f'<body data-book-id="test-{number}">', test_page)
                 self.assertIn('src="./data/books.js', test_page)
                 self.assertIn('"orderBot": "toma_lib_valencia_bot"', test_page)
-                self.assertIn('"orderStart": "book_16"', test_page)
+                expected_start = "book_16" if number == 1 else "book_10"
+                self.assertIn(f'"orderStart": "{expected_start}"', test_page)
                 self.assertIn(f'"requestId": "99000{number}"', test_page)
                 self.assertNotIn(f"start=book_99000{number}", test_page)
                 self.assertNotIn(generate.SITE_URL + f"books/test-{number}.html", locations)

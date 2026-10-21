@@ -264,7 +264,7 @@ class ShelfTests(unittest.TestCase):
             links.evaluate_all("nodes => nodes.map(node => node.href)"),
             [
                 "https://t.me/toma_lib_valencia_bot?start=book_16",
-                "https://t.me/toma_lib_valencia_bot?start=book_16",
+                "https://t.me/toma_lib_valencia_bot?start=book_10",
             ],
         )
 

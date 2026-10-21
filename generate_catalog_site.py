@@ -37,7 +37,7 @@ TEST_BOOKS = (
         "annotation": "Вторая тестовая страница для проверки отдельного сценария заказа.",
         "libraryKey": "test:toma-lib-valencia",
         "orderBot": "toma_lib_valencia_bot",
-        "orderStart": "book_16",
+        "orderStart": "book_10",
     },
 )
 
