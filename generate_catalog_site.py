@@ -23,8 +23,9 @@ TEST_BOOKS = (
         "section": "exchange",
         "availability": "available",
         "annotation": "Тестовая страница для проверки передачи заказа в отдельный Telegram-бот.",
-        "libraryKey": "test:toma-lib-valencia",
+        "libraryKey": "test:toma-lib-valencia:1",
         "orderBot": "toma_lib_valencia_bot",
+        "orderStart": "book_16",
     },
     {
         "id": "test-2",
@@ -34,8 +35,9 @@ TEST_BOOKS = (
         "section": "exchange",
         "availability": "available",
         "annotation": "Вторая тестовая страница для проверки отдельного сценария заказа.",
-        "libraryKey": "test:toma-lib-valencia",
+        "libraryKey": "test:toma-lib-valencia:2",
         "orderBot": "toma_lib_valencia_bot",
+        "orderStart": "book_16",
     },
 )
 

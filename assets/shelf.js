@@ -21,6 +21,10 @@
     const candidate = String(book?.orderBot ?? "").replace(/^@/, "");
     return /^[A-Za-z0-9_]{5,32}$/.test(candidate) ? candidate : defaultOrderBot;
   };
+  const orderStart = (book) => {
+    const candidate = String(book?.orderStart ?? "");
+    return /^[A-Za-z0-9_-]{1,64}$/.test(candidate) ? candidate : "";
+  };
   const canAdd = (book) => book?.section === "exchange" && book.availability === "available" && !!requestId(book);
   const has = (list, id) => lists[list].includes(String(id));
 
@@ -196,7 +200,8 @@
     let offset = 0;
     const bot = orderBot(byId.get(ids[0]));
     return batches.map((items, index) => {
-      const payload = `books_${items.map((id) => requestId(byId.get(id))).join("_")}`;
+      const customStart = items.length === 1 ? orderStart(byId.get(items[0])) : "";
+      const payload = customStart || `books_${items.map((id) => requestId(byId.get(id))).join("_")}`;
       const range = `${offset + 1}–${offset + items.length}`;
       offset += items.length;
       if (payload.length > limits.startLength) return `<p class="shelf-note">${escape(t("linkError", "No se ha podido preparar el enlace para este libro."))}</p>`;
