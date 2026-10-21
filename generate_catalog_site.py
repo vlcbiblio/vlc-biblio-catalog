@@ -13,31 +13,29 @@ from urllib.parse import quote
 SITE_URL = "https://vlcbiblio.github.io/vlc-biblio-catalog/"
 BOOK_ID_PATTERN = re.compile(r"^[A-Za-z0-9_-]{1,128}$")
 GENERATED_BOOK_PATTERN = re.compile(r"^b-[0-9a-f]{12}\.html$")
-TELEGRAM_BOT_PATTERN = re.compile(r"^[A-Za-z0-9_]{5,32}$")
-TELEGRAM_START_PATTERN = re.compile(r"^[A-Za-z0-9_-]{1,64}$")
 
 TEST_BOOKS = (
     {
         "id": "test-1",
+        "requestId": "990001",
         "title": "Тест 1",
         "author": "Тестовая книга",
         "section": "exchange",
         "availability": "available",
         "annotation": "Тестовая страница для проверки передачи заказа в отдельный Telegram-бот.",
+        "libraryKey": "test:toma-lib-valencia",
         "orderBot": "toma_lib_valencia_bot",
-        "orderPayload": "order_test_1",
-        "orderLabel": "Заказать через @toma_lib_valencia_bot",
     },
     {
         "id": "test-2",
+        "requestId": "990002",
         "title": "Тест 2",
         "author": "Тестовая книга",
         "section": "exchange",
         "availability": "available",
         "annotation": "Вторая тестовая страница для проверки отдельного сценария заказа.",
+        "libraryKey": "test:toma-lib-valencia",
         "orderBot": "toma_lib_valencia_bot",
-        "orderPayload": "order_test_2",
-        "orderLabel": "Заказать через @toma_lib_valencia_bot",
     },
 )
 
@@ -76,10 +74,8 @@ def description_for(book):
 
 
 def direct_action(book):
-    bot = compact(book.get("orderBot")).lstrip("@")
-    payload = compact(book.get("orderPayload"))
-    if TELEGRAM_BOT_PATTERN.fullmatch(bot) and TELEGRAM_START_PATTERN.fullmatch(payload):
-        return f"https://t.me/{bot}?start={quote(payload)}"
+    if compact(book.get("orderBot")):
+        return ""
     request_id = compact(book.get("requestId"))
     if book.get("section") != "exchange" or not request_id.isdigit():
         return ""
@@ -127,9 +123,7 @@ def static_book_markup(book):
     action = direct_action(book)
     action_markup = ""
     if action:
-        label = compact(book.get("orderLabel")) or (
-            "Apuntarme a la lista de espera" if book.get("availability") == "reserved" else "Solicitar el libro por Telegram"
-        )
+        label = "Apuntarme a la lista de espera" if book.get("availability") == "reserved" else "Solicitar el libro por Telegram"
         action_markup = f'<a class="telegram-action" href="{esc(action)}" target="_blank" rel="noreferrer">{esc(label)}</a>'
     annotation = esc(book.get("annotation") or "Todavía no se ha añadido una descripción.")
     deposit = deposit_markup(book)
@@ -150,7 +144,7 @@ def static_book_markup(book):
     </section>'''
 
 
-def render_book_page(template, book, *, indexable=True, standalone=False):
+def render_book_page(template, book, *, indexable=True, embedded_books=None):
     esc = lambda value: html.escape(compact(value), quote=True)
     title = compact(book.get("title")) or "Libro"
     author = compact(book.get("author"))
@@ -193,14 +187,14 @@ def render_book_page(template, book, *, indexable=True, standalone=False):
     rendered = rendered.replace("<title>Libro | VLC Biblio</title>", f"<title>{esc(page_title)}</title>", 1)
     rendered = rendered.replace("  <body>", f'  <body data-book-id="{esc(book.get("id"))}">', 1)
     rendered = rendered.replace('      <section id="content"></section>', "      " + static_book_markup(book), 1)
-    if standalone:
-        rendered = re.sub(r'\n    <script src="\./data/books\.js[^>]*></script>', "", rendered, count=1)
+    if embedded_books:
+        payload = json.dumps(list(embedded_books), ensure_ascii=False).replace("</", "<\\/")
         rendered = re.sub(
-            r'\n    <script>\n      const books = .*?\n    </script>(?=\n  </body>)',
-            "",
+            r'    <script src="\./data/books\.js[^>]*></script>',
+            lambda match: match.group(0) + "\n" +
+            f'    <script>window.BIBLIO_BOOKS = [...(Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : []), ...{payload}];</script>',
             rendered,
             count=1,
-            flags=re.DOTALL,
         )
     return rendered
 
@@ -213,7 +207,7 @@ def write_test_pages(root: Path, template=None):
     for book in TEST_BOOKS:
         filename = Path(book_path(book)).name
         (output_dir / filename).write_text(
-            render_book_page(template, book, indexable=False, standalone=True),
+            render_book_page(template, book, indexable=False, embedded_books=TEST_BOOKS),
             encoding="utf-8",
         )
 

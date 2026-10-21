@@ -249,6 +249,21 @@ class ShelfTests(unittest.TestCase):
         self.open_list()
         self.assertEqual(self.page.locator("[data-shelf-checkout]").count(), 3)
 
+    def test_hidden_test_books_use_cart_and_checkout_through_their_bot(self):
+        self.page.goto(self.url + "books/test-1.html")
+        cart_button = self.page.locator('.book [data-shelf-toggle="cart"]')
+        self.assertTrue(cart_button.is_visible())
+        cart_button.click()
+        self.page.goto(self.url + "books/test-2.html")
+        self.page.locator('.book [data-shelf-toggle="cart"]').click()
+        self.open_list()
+        link = self.page.locator("[data-shelf-checkout]")
+        self.assertEqual(link.count(), 1)
+        self.assertEqual(
+            link.get_attribute("href"),
+            "https://t.me/toma_lib_valencia_bot?start=books_990001_990002",
+        )
+
     def test_cart_shows_transfer_location_before_telegram_checkout(self):
         self.button(1).click()
         self.button(2).click()

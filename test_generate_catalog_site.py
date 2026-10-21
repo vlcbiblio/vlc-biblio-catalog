@@ -73,9 +73,11 @@ class StaticSiteGenerationTests(unittest.TestCase):
             for number in (1, 2):
                 test_page = (root / "books" / f"test-{number}.html").read_text(encoding="utf-8")
                 self.assertIn('content="noindex,follow"', test_page)
-                self.assertIn(f"https://t.me/toma_lib_valencia_bot?start=order_test_{number}", test_page)
                 self.assertIn(f'<body data-book-id="test-{number}">', test_page)
-                self.assertNotIn('src="./data/books.js', test_page)
+                self.assertIn('src="./data/books.js', test_page)
+                self.assertIn('"orderBot": "toma_lib_valencia_bot"', test_page)
+                self.assertIn(f'"requestId": "99000{number}"', test_page)
+                self.assertNotIn(f"start=book_99000{number}", test_page)
                 self.assertNotIn(generate.SITE_URL + f"books/test-{number}.html", locations)
 
     def test_books_payload_parser_rejects_executable_javascript(self):

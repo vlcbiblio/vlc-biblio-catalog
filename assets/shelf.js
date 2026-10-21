@@ -6,6 +6,7 @@
   const byId = new Map(books.map((book) => [String(book.id), book]));
   const prefix = `vlc-biblio:shelf:v1:${new URL("./", document.baseURI).pathname}:`;
   const limits = { orderBooks: 30, startLength: 64, savedBooks: 2000 };
+  const defaultOrderBot = "VLS_Biblio_bot";
   const lists = { cart: [], favorites: [] };
   let storageAvailable = true;
   let activeList = "cart";
@@ -16,6 +17,10 @@
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
   })[char]);
   const requestId = (book) => /^\d+$/.test(String(book?.requestId ?? "")) ? String(book.requestId) : "";
+  const orderBot = (book) => {
+    const candidate = String(book?.orderBot ?? "").replace(/^@/, "");
+    return /^[A-Za-z0-9_]{5,32}$/.test(candidate) ? candidate : defaultOrderBot;
+  };
   const canAdd = (book) => book?.section === "exchange" && book.availability === "available" && !!requestId(book);
   const has = (list, id) => lists[list].includes(String(id));
 
@@ -189,13 +194,14 @@
     }
     if (batch.length) batches.push(batch);
     let offset = 0;
+    const bot = orderBot(byId.get(ids[0]));
     return batches.map((items, index) => {
       const payload = `books_${items.map((id) => requestId(byId.get(id))).join("_")}`;
       const range = `${offset + 1}–${offset + items.length}`;
       offset += items.length;
       if (payload.length > limits.startLength) return `<p class="shelf-note">${escape(t("linkError", "No se ha podido preparar el enlace para este libro."))}</p>`;
       return `<div class="shelf-checkout">${batches.length > 1 ? `<p class="shelf-note">${escape(t("order", "Pedido"))} ${index + 1}: ${escape(t("booksRange", "libros"))} ${range}</p>` : ""}
-        <a class="shelf-button shelf-primary" data-shelf-checkout href="https://t.me/VLS_Biblio_bot?start=${payload}" target="_blank" rel="noreferrer"><span>${items.length === 1 ? escape(bookText("request", "Solicitar el libro")) : `${escape(t("requestSelected", "Solicitar los seleccionados"))}: ${items.length}`}</span><span>${escape(bookText("telegram", "por Telegram"))}</span></a></div>`;
+        <a class="shelf-button shelf-primary" data-shelf-checkout href="https://t.me/${bot}?start=${payload}" target="_blank" rel="noreferrer"><span>${items.length === 1 ? escape(bookText("request", "Solicitar el libro")) : `${escape(t("requestSelected", "Solicitar los seleccionados"))}: ${items.length}`}</span><span>${escape(bookText("telegram", "por Telegram"))}</span></a></div>`;
     }).join("");
   }
 
@@ -221,7 +227,7 @@
         const book = byId.get(id);
         if (!canAdd(book)) { unavailable.push(id); continue; }
         // Unknown owners must never be combined based on a shared empty key.
-        const key = book.libraryKey || `book:${id}`;
+        const key = `${orderBot(book)}:${book.libraryKey || `book:${id}`}`;
         if (!groups.has(key)) groups.set(key, []);
         groups.get(key).push(id);
       }
