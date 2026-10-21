@@ -257,6 +257,7 @@ class ShelfTests(unittest.TestCase):
         self.page.goto(self.url + "books/test-2.html")
         self.page.locator('.book [data-shelf-toggle="cart"]').click()
         self.open_list()
+        self.assertEqual(self.page.locator(".shelf-group").count(), 1)
         links = self.page.locator("[data-shelf-checkout]")
         self.assertEqual(links.count(), 2)
         self.assertEqual(

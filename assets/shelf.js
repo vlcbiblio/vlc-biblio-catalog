@@ -186,17 +186,23 @@
   function checkoutMarkup(ids) {
     // Both the existing bot's order limit and Telegram's start limit apply.
     const batches = [];
-    let batch = [];
-    for (const id of ids) {
-      const candidate = [...batch, id];
-      const payload = `books_${candidate.map((value) => requestId(byId.get(value))).join("_")}`;
-      if (batch.length && (candidate.length > limits.orderBooks || payload.length > limits.startLength)) {
-        batches.push(batch);
-        batch = [];
+    if (ids.some((id) => orderStart(byId.get(id)))) {
+      // Existing Notion links represent one book each, but the books still
+      // belong to one library group in the cart.
+      batches.push(...ids.map((id) => [id]));
+    } else {
+      let batch = [];
+      for (const id of ids) {
+        const candidate = [...batch, id];
+        const payload = `books_${candidate.map((value) => requestId(byId.get(value))).join("_")}`;
+        if (batch.length && (candidate.length > limits.orderBooks || payload.length > limits.startLength)) {
+          batches.push(batch);
+          batch = [];
+        }
+        batch.push(id);
       }
-      batch.push(id);
+      if (batch.length) batches.push(batch);
     }
-    if (batch.length) batches.push(batch);
     let offset = 0;
     const bot = orderBot(byId.get(ids[0]));
     return batches.map((items, index) => {
