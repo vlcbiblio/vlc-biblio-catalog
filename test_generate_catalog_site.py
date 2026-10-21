@@ -70,6 +70,14 @@ class StaticSiteGenerationTests(unittest.TestCase):
             self.assertIn(generate.SITE_URL + "events.html", locations)
             self.assertIn(f"Sitemap: {generate.SITE_URL}sitemap.xml", (root / "robots.txt").read_text(encoding="utf-8"))
 
+            for number in (1, 2):
+                test_page = (root / "books" / f"test-{number}.html").read_text(encoding="utf-8")
+                self.assertIn('content="noindex,follow"', test_page)
+                self.assertIn(f"https://t.me/toma_lib_valencia_bot?start=order_test_{number}", test_page)
+                self.assertIn(f'<body data-book-id="test-{number}">', test_page)
+                self.assertNotIn('src="./data/books.js', test_page)
+                self.assertNotIn(generate.SITE_URL + f"books/test-{number}.html", locations)
+
     def test_books_payload_parser_rejects_executable_javascript(self):
         with tempfile.TemporaryDirectory() as temp:
             path = Path(temp) / "books.js"
@@ -80,7 +88,7 @@ class StaticSiteGenerationTests(unittest.TestCase):
     def test_checked_in_pages_match_the_current_public_payload(self):
         root = Path(__file__).parent
         books = generate.load_books_js(root / "data" / "books.js")
-        pages = list((root / "books").glob("*.html"))
+        pages = [page for page in (root / "books").glob("*.html") if generate.GENERATED_BOOK_PATTERN.fullmatch(page.name)]
         self.assertEqual(len(pages), len(books))
         canonicals = set()
         for page in pages:

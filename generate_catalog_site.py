@@ -13,6 +13,33 @@ from urllib.parse import quote
 SITE_URL = "https://vlcbiblio.github.io/vlc-biblio-catalog/"
 BOOK_ID_PATTERN = re.compile(r"^[A-Za-z0-9_-]{1,128}$")
 GENERATED_BOOK_PATTERN = re.compile(r"^b-[0-9a-f]{12}\.html$")
+TELEGRAM_BOT_PATTERN = re.compile(r"^[A-Za-z0-9_]{5,32}$")
+TELEGRAM_START_PATTERN = re.compile(r"^[A-Za-z0-9_-]{1,64}$")
+
+TEST_BOOKS = (
+    {
+        "id": "test-1",
+        "title": "Тест 1",
+        "author": "Тестовая книга",
+        "section": "exchange",
+        "availability": "available",
+        "annotation": "Тестовая страница для проверки передачи заказа в отдельный Telegram-бот.",
+        "orderBot": "toma_lib_valencia_bot",
+        "orderPayload": "order_test_1",
+        "orderLabel": "Заказать через @toma_lib_valencia_bot",
+    },
+    {
+        "id": "test-2",
+        "title": "Тест 2",
+        "author": "Тестовая книга",
+        "section": "exchange",
+        "availability": "available",
+        "annotation": "Вторая тестовая страница для проверки отдельного сценария заказа.",
+        "orderBot": "toma_lib_valencia_bot",
+        "orderPayload": "order_test_2",
+        "orderLabel": "Заказать через @toma_lib_valencia_bot",
+    },
+)
 
 
 def compact(value):
@@ -49,6 +76,10 @@ def description_for(book):
 
 
 def direct_action(book):
+    bot = compact(book.get("orderBot")).lstrip("@")
+    payload = compact(book.get("orderPayload"))
+    if TELEGRAM_BOT_PATTERN.fullmatch(bot) and TELEGRAM_START_PATTERN.fullmatch(payload):
+        return f"https://t.me/{bot}?start={quote(payload)}"
     request_id = compact(book.get("requestId"))
     if book.get("section") != "exchange" or not request_id.isdigit():
         return ""
@@ -96,8 +127,10 @@ def static_book_markup(book):
     action = direct_action(book)
     action_markup = ""
     if action:
-        label = "Apuntarme a la lista de espera" if book.get("availability") == "reserved" else "Solicitar el libro por Telegram"
-        action_markup = f'<a class="telegram-action" href="{esc(action)}" target="_blank" rel="noreferrer">{label}</a>'
+        label = compact(book.get("orderLabel")) or (
+            "Apuntarme a la lista de espera" if book.get("availability") == "reserved" else "Solicitar el libro por Telegram"
+        )
+        action_markup = f'<a class="telegram-action" href="{esc(action)}" target="_blank" rel="noreferrer">{esc(label)}</a>'
     annotation = esc(book.get("annotation") or "Todavía no se ha añadido una descripción.")
     deposit = deposit_markup(book)
     deposit_line = f"\n          {deposit}" if deposit else ""
@@ -117,7 +150,7 @@ def static_book_markup(book):
     </section>'''
 
 
-def render_book_page(template, book):
+def render_book_page(template, book, *, indexable=True, standalone=False):
     esc = lambda value: html.escape(compact(value), quote=True)
     title = compact(book.get("title")) or "Libro"
     author = compact(book.get("author"))
@@ -139,8 +172,9 @@ def render_book_page(template, book):
         structured["image"] = image
     if compact(book.get("annotation")):
         structured["description"] = compact(book.get("annotation"))
+    robots = "index,follow" if indexable else "noindex,follow"
     metadata = f'''    <meta name="description" content="{esc(description)}" />
-    <meta name="robots" content="index,follow" />
+    <meta name="robots" content="{robots}" />
     <link rel="canonical" href="{esc(canonical)}" />
     <meta property="og:type" content="book" />
     <meta property="og:site_name" content="VLC Biblio" />
@@ -159,7 +193,29 @@ def render_book_page(template, book):
     rendered = rendered.replace("<title>Libro | VLC Biblio</title>", f"<title>{esc(page_title)}</title>", 1)
     rendered = rendered.replace("  <body>", f'  <body data-book-id="{esc(book.get("id"))}">', 1)
     rendered = rendered.replace('      <section id="content"></section>', "      " + static_book_markup(book), 1)
+    if standalone:
+        rendered = re.sub(r'\n    <script src="\./data/books\.js[^>]*></script>', "", rendered, count=1)
+        rendered = re.sub(
+            r'\n    <script>\n      const books = .*?\n    </script>(?=\n  </body>)',
+            "",
+            rendered,
+            count=1,
+            flags=re.DOTALL,
+        )
     return rendered
+
+
+def write_test_pages(root: Path, template=None):
+    root = Path(root)
+    template = template or (root / "book.html").read_text(encoding="utf-8")
+    output_dir = root / "books"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    for book in TEST_BOOKS:
+        filename = Path(book_path(book)).name
+        (output_dir / filename).write_text(
+            render_book_page(template, book, indexable=False, standalone=True),
+            encoding="utf-8",
+        )
 
 
 def write_site(root: Path, books):
@@ -172,6 +228,7 @@ def write_site(root: Path, books):
         filename = Path(book_path(book)).name
         expected.add(filename)
         (output_dir / filename).write_text(render_book_page(template, book), encoding="utf-8")
+    write_test_pages(root, template)
     for existing in output_dir.glob("*.html"):
         if GENERATED_BOOK_PATTERN.fullmatch(existing.name) and existing.name not in expected:
             existing.unlink()
@@ -202,7 +259,12 @@ def main():
     parser = argparse.ArgumentParser(description="Generate crawlable VLC Biblio pages.")
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parent)
     parser.add_argument("--data", type=Path)
+    parser.add_argument("--test-pages-only", action="store_true")
     args = parser.parse_args()
+    if args.test_pages_only:
+        write_test_pages(args.root)
+        print(f"Generated {len(TEST_BOOKS)} hidden test book pages")
+        return
     data = args.data or args.root / "data" / "books.js"
     books = load_books_js(data)
     write_site(args.root, books)
