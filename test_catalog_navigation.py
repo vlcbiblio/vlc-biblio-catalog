@@ -275,8 +275,9 @@ class CatalogNavigationTests(unittest.TestCase):
         self.page.goto(self.base_url)
         expect(self.page.locator("[data-open-external-browser]")).to_be_hidden()
         expect(self.page.locator("#how-it-works")).to_be_visible()
-        expect(self.page.locator(".event-preview")).to_be_visible()
-        expect(self.page.locator(".topbar > .event-preview")).to_have_count(1)
+        expect(self.page.locator(".event-preview")).to_have_count(2)
+        expect(self.page.locator(".event-preview").first).to_be_visible()
+        expect(self.page.locator(".topbar > .event-preview")).to_have_count(2)
         expect(self.page.locator(".events-teaser")).to_have_count(0)
         expect(self.page.locator("#business")).to_be_visible()
         expect(self.page.locator("#faq")).to_be_visible()
@@ -302,7 +303,7 @@ class CatalogNavigationTests(unittest.TestCase):
         response = self.page.request.get(f"{self.base_url}privacy.html")
         self.assertEqual(response.status, 200)
 
-        events_link = self.page.locator(".event-preview")
+        events_link = self.page.locator(".event-preview").first
         self.assertEqual(events_link.get_attribute("href"), "./events.html")
 
         events_response = self.page.request.get(f"{self.base_url}events.html")
@@ -347,31 +348,45 @@ class CatalogNavigationTests(unittest.TestCase):
         self.assertEqual(instagram.get_attribute("href"), "https://www.instagram.com/vlc.biblio")
         self.assertEqual(instagram.locator("svg.instagram-icon").count(), 1)
 
-    def test_events_page_lists_only_the_confirmed_event_in_both_languages(self):
+    def test_events_page_lists_both_events_in_both_languages(self):
         self.page.goto(f"{self.base_url}events.html")
 
         expect(self.page.locator("h1")).to_have_text("Встречи")
-        expect(self.page.locator(".event-card")).to_have_count(1)
-        poster = self.page.locator(".event-poster img")
+        expect(self.page.locator(".event-card")).to_have_count(2)
+        poster = self.page.locator(".event-poster img").first
         expect(poster).to_be_visible()
         expect(poster).to_have_attribute("src", "./assets/events/children-book-club-2026-10-28.webp")
         expect(poster).to_have_attribute("alt", "Афиша книжного и творческого клуба для детей")
-        expect(self.page.locator(".event-card h3")).to_have_text(
-            "Книжный и творческий клуб для детей 5–8 лет"
-        )
-        expect(self.page.locator(".event-program li")).to_have_count(3)
-        expect(self.page.locator(".event-contacts")).to_contain_text("@odnazhdy_vlc")
-        expect(self.page.locator(".event-contacts a")).to_have_count(1)
-        expect(self.page.locator(".event-contacts a")).to_have_attribute("href", "https://t.me/odnazhdy_vlc")
-        expect(self.page.locator(".event-support")).to_contain_text("@VLS_Biblio_bot")
-        registration = self.page.locator(".event-card .primary-link")
+        october = self.page.locator(".event-card").first
+        expect(october.locator("h3")).to_have_text("Книжный и творческий клуб для детей 5–8 лет")
+        expect(october.locator(".event-program li")).to_have_count(3)
+        expect(october.locator(".event-contacts")).to_contain_text("@odnazhdy_vlc")
+        expect(october.locator(".event-contacts a")).to_have_count(1)
+        expect(october.locator(".event-contacts a")).to_have_attribute("href", "https://t.me/odnazhdy_vlc")
+        expect(october.locator(".event-support")).to_contain_text("@VLS_Biblio_bot")
+        registration = october.locator(".primary-link")
         self.assertEqual(registration.get_attribute("href"), "https://clck.ru/3VtMAP")
+        education = self.page.locator("#education-valencia")
+        expect(education.locator("h3")).to_have_text("Образование в Валенсии: что важно знать родителям?")
+        expect(education.locator(".event-poster img")).to_have_attribute(
+            "src", "./assets/events/education-valencia-2026-11-17.webp"
+        )
+        expect(education.locator(".event-program li")).to_have_count(9)
+        expect(education.locator(".primary-link")).to_have_attribute(
+            "href", "https://forms.gle/7HUnV2j9Sz3W3oJH9"
+        )
+        expect(education.locator("a[href='https://www.instagram.com/demyanko.esp/']")).to_be_visible()
+        expect(education.locator("a[href='https://www.instagram.com/vlc.biblio']")).to_be_visible()
+        expect(education.locator("a[href='https://www.instagram.com/odnazhdy_vlc/']")).to_be_visible()
 
         self.page.locator("[data-language-toggle]").click()
         expect(self.page.locator("h1")).to_have_text("Encuentros")
         expect(poster).to_have_attribute("alt", "Cartel del club de lectura y creatividad para niños")
         expect(self.page.locator(".event-card h3")).to_have_text(
-            "Club de lectura y creatividad para niños de 5 a 8 años"
+            ["Club de lectura y creatividad para niños de 5 a 8 años", "Educación en Valencia: qué deben saber las familias"]
+        )
+        expect(self.page.locator("#education-valencia .event-poster img")).to_have_attribute(
+            "alt", "Cartel del encuentro «Educación en Valencia: qué deben saber las familias»"
         )
 
     def test_language_toggle_switches_ui_and_preserves_book_data(self):
@@ -379,8 +394,8 @@ class CatalogNavigationTests(unittest.TestCase):
         first_title = self.page.locator("#grid .book .title").first.inner_text()
 
         expect(self.page.locator("#how-title")).to_have_text("Как это работает")
-        expect(self.page.locator(".event-preview-kicker")).to_have_text("Ближайшая встреча")
-        expect(self.page.locator(".event-preview-meta")).to_contain_text("28 октября")
+        expect(self.page.locator(".event-preview-kicker").first).to_have_text("Ближайшая встреча")
+        expect(self.page.locator(".event-preview-meta").first).to_contain_text("28 октября")
         expect(self.page.locator("#loadMore")).to_have_text("Показать ещё")
         expect(self.page.locator("[data-shelf-open='cart']")).to_contain_text("Корзина")
         expect(self.page.locator("#grid .badge.exchange").first).to_have_text("🏠 Частная библиотека")
@@ -394,8 +409,8 @@ class CatalogNavigationTests(unittest.TestCase):
 
         self.page.locator("[data-language-toggle]").click()
         expect(self.page.locator("#how-title")).to_have_text("Cómo funciona")
-        expect(self.page.locator(".event-preview-kicker")).to_have_text("Próximo encuentro")
-        expect(self.page.locator(".event-preview-meta")).to_contain_text("28 de octubre")
+        expect(self.page.locator(".event-preview-kicker").first).to_have_text("Próximo encuentro")
+        expect(self.page.locator(".event-preview-meta").first).to_contain_text("28 de octubre")
         expect(self.page.locator("#loadMore")).to_have_text("Mostrar más")
         self.assertEqual(self.page.locator("html").get_attribute("lang"), "es")
         self.page.goto(f"{self.base_url}privacy.html")
