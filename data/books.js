@@ -564,7 +564,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=%D1%87+%7C+c+%D0%BD%D0%BD%D0%BD",
     "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=%D1%87+%7C+c+%D0%BD%D0%BD%D0%BD",
     "addedAt": "2026-10-23T15:09:20",
-    "updatedAt": "2026-10-24T09:00:07"
+    "updatedAt": "2026-10-24T10:26:13"
   },
   {
     "id": "b-e8100927b5e1",
@@ -586,7 +586,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-10-23T22:41:13",
-    "updatedAt": "2026-10-24T09:00:07",
+    "updatedAt": "2026-10-24T10:26:10",
     "authorKey": "джордж оруэлл"
   },
   {
