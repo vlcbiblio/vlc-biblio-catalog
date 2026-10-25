@@ -1359,7 +1359,7 @@ window.BIBLIO_BOOKS = [
     "catalogStatus": "Частная библиотека",
     "libraryKey": "user:eac4b24812ce",
     "sourceKind": "user",
-    "availability": "available",
+    "availability": "reserved",
     "audience": "adult",
     "cover": "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-0fd2dc1a9888.jpg",
     "isbn": "",
