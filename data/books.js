@@ -15510,7 +15510,7 @@ window.BIBLIO_BOOKS = [
     "catalogStatus": "Частная библиотека",
     "libraryKey": "user:eac4b24812ce",
     "sourceKind": "user",
-    "availability": "unavailable",
+    "availability": "available",
     "audience": "adult",
     "cover": "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-2a1e47161703.jpg",
     "isbn": "978-5-699-59370-5",
