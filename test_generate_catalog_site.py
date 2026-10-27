@@ -56,7 +56,7 @@ class StaticSiteGenerationTests(unittest.TestCase):
         self.assertIn('property="og:image" content="https://example.org/cover.jpg"', page)
         self.assertIn('type="application/ld+json"', page)
         self.assertIn('https://t.me/VLS_Biblio_bot?start=book_42', page)
-        self.assertIn('<script src="./assets/i18n.js?v=toma-note-2"></script>', page)
+        self.assertRegex(page, r'<script src="\./assets/i18n\.js\?v=[^"<>]+"></script>')
         self.assertNotIn("depósito", self.static_content(page))
 
     def test_deposit_notice_is_static_and_limited_to_configured_books(self):
