@@ -89,17 +89,8 @@ class StaticSiteGenerationTests(unittest.TestCase):
             self.assertIn(generate.SITE_URL + "events.html", locations)
             self.assertIn(f"Sitemap: {generate.SITE_URL}sitemap.xml", (root / "robots.txt").read_text(encoding="utf-8"))
 
-            for number in (1, 2):
-                test_page = (root / "books" / f"test-{number}.html").read_text(encoding="utf-8")
-                self.assertIn('content="noindex,follow"', test_page)
-                self.assertIn(f'<body data-book-id="test-{number}">', test_page)
-                self.assertIn('src="./data/books.js', test_page)
-                self.assertIn('"orderBot": "toma_lib_valencia_bot"', test_page)
-                expected_start = "book_16" if number == 1 else "book_10"
-                self.assertIn(f'"orderStart": "{expected_start}"', test_page)
-                self.assertIn(f'"requestId": "99000{number}"', test_page)
-                self.assertNotIn(f"start=book_99000{number}", test_page)
-                self.assertNotIn(generate.SITE_URL + f"books/test-{number}.html", locations)
+            self.assertFalse((root / "books" / "test-1.html").exists())
+            self.assertFalse((root / "books" / "test-2.html").exists())
 
     def test_books_payload_parser_rejects_executable_javascript(self):
         with tempfile.TemporaryDirectory() as temp:

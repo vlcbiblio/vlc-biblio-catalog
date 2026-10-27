@@ -14,34 +14,6 @@ SITE_URL = "https://vlcbiblio.github.io/vlc-biblio-catalog/"
 BOOK_ID_PATTERN = re.compile(r"^[A-Za-z0-9_-]{1,128}$")
 GENERATED_BOOK_PATTERN = re.compile(r"^b-[0-9a-f]{12}\.html$")
 
-TEST_BOOKS = (
-    {
-        "id": "test-1",
-        "requestId": "990001",
-        "title": "Тест 1",
-        "author": "Тестовая книга",
-        "section": "exchange",
-        "availability": "available",
-        "annotation": "Тестовая страница для проверки передачи заказа в отдельный Telegram-бот.",
-        "libraryKey": "test:toma-lib-valencia",
-        "orderBot": "toma_lib_valencia_bot",
-        "orderStart": "book_16",
-    },
-    {
-        "id": "test-2",
-        "requestId": "990002",
-        "title": "Тест 2",
-        "author": "Тестовая книга",
-        "section": "exchange",
-        "availability": "available",
-        "annotation": "Вторая тестовая страница для проверки отдельного сценария заказа.",
-        "libraryKey": "test:toma-lib-valencia",
-        "orderBot": "toma_lib_valencia_bot",
-        "orderStart": "book_10",
-    },
-)
-
-
 def compact(value):
     return re.sub(r"\s+", " ", str(value or "")).strip()
 
@@ -221,19 +193,6 @@ def render_book_page(template, book, *, indexable=True, embedded_books=None):
     return rendered
 
 
-def write_test_pages(root: Path, template=None):
-    root = Path(root)
-    template = template or (root / "book.html").read_text(encoding="utf-8")
-    output_dir = root / "books"
-    output_dir.mkdir(parents=True, exist_ok=True)
-    for book in TEST_BOOKS:
-        filename = Path(book_path(book)).name
-        (output_dir / filename).write_text(
-            render_book_page(template, book, indexable=False, embedded_books=TEST_BOOKS),
-            encoding="utf-8",
-        )
-
-
 def write_site(root: Path, books):
     root = Path(root)
     template = (root / "book.html").read_text(encoding="utf-8")
@@ -244,7 +203,6 @@ def write_site(root: Path, books):
         filename = Path(book_path(book)).name
         expected.add(filename)
         (output_dir / filename).write_text(render_book_page(template, book), encoding="utf-8")
-    write_test_pages(root, template)
     for existing in output_dir.glob("*.html"):
         if GENERATED_BOOK_PATTERN.fullmatch(existing.name) and existing.name not in expected:
             existing.unlink()
@@ -275,12 +233,7 @@ def main():
     parser = argparse.ArgumentParser(description="Generate crawlable VLC Biblio pages.")
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parent)
     parser.add_argument("--data", type=Path)
-    parser.add_argument("--test-pages-only", action="store_true")
     args = parser.parse_args()
-    if args.test_pages_only:
-        write_test_pages(args.root)
-        print(f"Generated {len(TEST_BOOKS)} hidden test book pages")
-        return
     data = args.data or args.root / "data" / "books.js"
     books = load_books_js(data)
     write_site(args.root, books)

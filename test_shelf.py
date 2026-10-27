@@ -23,6 +23,12 @@ BOOKS = [
     {"id": "40", "requestId": "40", "title": "В библиотеке", "section": "library"},
     {"id": "41", "requestId": "41", "title": "Занята", "section": "exchange", "availability": "reserved"},
     {"id": "42", "requestId": "bad-42", "title": "Без номера", "section": "exchange", "availability": "available"},
+    {"id": "43", "requestId": "43", "title": "Тест 1", "section": "exchange",
+     "availability": "available", "libraryKey": "test:toma-lib-valencia",
+     "orderBot": "toma_lib_valencia_bot", "orderStart": "book_16"},
+    {"id": "44", "requestId": "44", "title": "Тест 2", "section": "exchange",
+     "availability": "available", "libraryKey": "test:toma-lib-valencia",
+     "orderBot": "toma_lib_valencia_bot", "orderStart": "book_10"},
 ]
 
 
@@ -279,12 +285,12 @@ class ShelfTests(unittest.TestCase):
         self.assertEqual(self.page.locator('.shelf-waitlist').count(), 0)
         self.assertEqual(self.page.locator('[data-shelf-checkout]').count(), 0)
 
-    def test_hidden_test_books_use_cart_and_checkout_through_their_bot(self):
-        self.page.goto(self.url + "books/test-1.html")
+    def test_external_books_use_cart_and_checkout_through_their_bot(self):
+        self.page.goto(self.url + "book.html?id=43")
         cart_button = self.page.locator('.book [data-shelf-toggle="cart"]')
         self.assertTrue(cart_button.is_visible())
         cart_button.click()
-        self.page.goto(self.url + "books/test-2.html")
+        self.page.goto(self.url + "book.html?id=44")
         self.page.locator('.book [data-shelf-toggle="cart"]').click()
         self.open_list()
         self.assertEqual(self.page.locator(".shelf-group").count(), 1)
