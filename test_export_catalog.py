@@ -8,6 +8,46 @@ import export_catalog as export
 
 
 class CatalogOnlyExportTests(unittest.TestCase):
+    def test_same_site_original_cover_works_without_optimized_manifest(self):
+        from PIL import Image
+        from generate_catalog_site import static_book_markup
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            covers = root / 'assets/covers'
+            covers.mkdir(parents=True)
+            Image.new('RGB', (20, 30), 'red').save(covers / 'notion-test.png')
+            url = 'https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/notion-test.png'
+            rows = [{'id': 'source', 'cover': url}]
+            result = export.write_books(root / 'data/books.js', rows)
+            self.assertEqual(result[0]['cover'], url)
+            self.assertEqual(result[0]['coverImage']['src'], './assets/covers/notion-test.png')
+            self.assertEqual(result[0]['coverImage']['width'], 20)
+            self.assertIn('src="./assets/covers/notion-test.png"', static_book_markup(result[0]))
+            self.assertEqual(rows, [{'id': 'source', 'cover': url}])
+            # An encoded traversal must never attach an asset outside covers.
+            Image.new('RGB', (20, 30)).save(root / 'outside.png')
+            result = export.write_books(root / 'data/books.js', [{'cover': url.replace('notion-test.png', '%2e%2e/%2e%2e/outside.png')}])
+            self.assertNotIn('coverImage', result[0])
+
+    def test_external_order_routes_are_per_record(self):
+        source = {'username': 'ekailnina', 'destination': 'книгообмен',
+                  'order_bot': 'toma_lib_valencia_bot', 'order_start': 'book_220'}
+        imported = export.public_book(source)
+        self.assertEqual(imported['orderStart'], 'book_220')
+        self.assertEqual(imported['orderBot'], 'toma_lib_valencia_bot')
+        ordinary = export.public_book({'username': 'ekailnina', 'book_number': '13'})
+        self.assertNotIn('orderBot', ordinary)
+        with self.assertRaises(ValueError):
+            export.public_book(dict(source, order_start='https://example.com'))
+
+    def test_explicit_missing_notion_cover_does_not_weaken_other_checks(self):
+        row = {'request_file': 'notion:3f94f95a-2ae4-815a-9b18-fe742d0f74d4',
+               'source_cover_status': 'missing', 'order_bot': 'toma_lib_valencia_bot',
+               'order_start': 'book_220'}
+        export.require_publishable_covers([export.public_book(row)])
+        with self.assertRaises(ValueError):
+            export.require_publishable_covers([export.public_book(dict(row, request_file='ordinary'))])
+
     def test_author_key_groups_collins_name_variants(self):
         variants = ("Сьюзен Коллинз", "Коллинз Сьюзен", "Suzanne Collins")
         self.assertEqual(

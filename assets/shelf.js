@@ -170,7 +170,9 @@
     const book = byId.get(id);
     const title = book?.title || `${bookText("fallback", "Libro")} ${id}`;
     const cover = book?.coverImage?.src || book?.cover;
-    const waitlist = book?.section === "exchange" && book.availability === "reserved" && requestId(book);
+    const waitlist = book?.section === "exchange" && book.availability === "reserved" && requestId(book) && orderBot(book) === defaultOrderBot;
+    const externalReserved = book?.section === "exchange" && book.availability === "reserved"
+      && orderBot(book) !== defaultOrderBot && orderStart(book);
     return `<li class="shelf-row" data-shelf-row="${escape(id)}">
       <div class="shelf-cover">${cover ? `<img src="${escape(cover)}" alt="" loading="lazy" referrerpolicy="no-referrer" />` : `<span aria-hidden="true">${escape(bookText("fallback", "Libro"))}</span>`}</div>
       <div class="shelf-row-body">
@@ -178,6 +180,7 @@
         <p class="shelf-author">${escape(book?.author)}</p>
         <p class="shelf-availability">${availabilityLabel(book)}</p>
         ${waitlist ? `<a class="shelf-waitlist" href="https://t.me/VLS_Biblio_bot?start=wait_${requestId(book)}" target="_blank" rel="noreferrer">${escape(t("waitlistBot", "Apuntarme a la lista de espera en el bot"))}</a>` : ""}
+        ${externalReserved ? `<a class="shelf-external-availability" href="https://t.me/${orderBot(book)}?start=${orderStart(book)}" target="_blank" rel="noreferrer">${escape(bookText("checkAvailabilityBot", "Consultar disponibilidad en el bot"))}</a>` : ""}
         ${activeList === "favorites" && book ? controlsMarkup(book) : `<div class="shelf-controls"><button class="shelf-button" type="button" data-shelf-toggle="${activeList}" data-shelf-id="${escape(id)}">${escape(t("remove", "Eliminar"))}</button>${book ? buttonMarkup("favorites", book) : ""}</div>`}
       </div>
     </li>`;
@@ -186,15 +189,24 @@
   function checkoutMarkup(ids) {
     // Both the existing bot's order limit and Telegram's start limit apply.
     const batches = [];
-    if (ids.some((id) => orderStart(byId.get(id)))) {
-      // Existing Notion links represent one book each, but the books still
-      // belong to one library group in the cart.
+    const bot = orderBot(byId.get(ids[0]));
+    const batchPrefix = bot === "toma_lib_valencia_bot" ? "book_" : "books_";
+    const batchRequestId = (id) => {
+      const book = byId.get(id);
+      const start = orderStart(book);
+      if (orderBot(book) === "toma_lib_valencia_bot" && /^book_[0-9]+$/.test(start)) {
+        return start.slice(5);
+      }
+      return start ? "" : requestId(book);
+    };
+    if (ids.some((id) => !batchRequestId(id))) {
+      // Unknown custom payload formats remain individual links.
       batches.push(...ids.map((id) => [id]));
     } else {
       let batch = [];
       for (const id of ids) {
         const candidate = [...batch, id];
-        const payload = `books_${candidate.map((value) => requestId(byId.get(value))).join("_")}`;
+        const payload = `${batchPrefix}${candidate.map(batchRequestId).join("_")}`;
         if (batch.length && (candidate.length > limits.orderBooks || payload.length > limits.startLength)) {
           batches.push(batch);
           batch = [];
@@ -204,10 +216,9 @@
       if (batch.length) batches.push(batch);
     }
     let offset = 0;
-    const bot = orderBot(byId.get(ids[0]));
     return batches.map((items, index) => {
       const customStart = items.length === 1 ? orderStart(byId.get(items[0])) : "";
-      const payload = customStart || `books_${items.map((id) => requestId(byId.get(id))).join("_")}`;
+      const payload = customStart || `${batchPrefix}${items.map(batchRequestId).join("_")}`;
       const range = `${offset + 1}–${offset + items.length}`;
       offset += items.length;
       if (payload.length > limits.startLength) return `<p class="shelf-note">${escape(t("linkError", "No se ha podido preparar el enlace para este libro."))}</p>`;
@@ -218,9 +229,11 @@
 
   function locationMarkup(ids) {
     const notes = [...new Set(ids.map((id) => byId.get(id)?.locationNote).filter(Boolean))];
-    if (!notes.length) return "";
-    return `<aside class="shelf-location" aria-label="${escape(t("location", "Lugar de entrega de los libros"))}">
+    const hasDeposit = ids.some((id) => byId.get(id)?.depositEur === 20);
+    if (!notes.length && !hasDeposit) return "";
+    return `<aside class="shelf-location" aria-label="${escape(t("terms", "Condiciones de entrega de los libros"))}">
       ${notes.map((note) => `<p>${escape(note)}</p>`).join("")}
+      ${hasDeposit ? `<p>${escape(t("deposit20", "Залог за каждую книгу этой библиотеки 20 евро."))}</p>` : ""}
     </aside>`;
   }
 

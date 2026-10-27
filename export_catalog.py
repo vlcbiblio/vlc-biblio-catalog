@@ -5,7 +5,7 @@ import json
 import re
 from datetime import datetime
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import urlparse, unquote
 
 from generate_catalog_site import write_site
 
@@ -285,7 +285,8 @@ def has_publishable_cover(book):
 
 
 def require_publishable_covers(books):
-    missing = [book for book in books if not has_publishable_cover(book)]
+    missing = [book for book in books if not has_publishable_cover(book)
+               and book.get("coverMissingReason") != "notion-source-missing"]
     if not missing:
         return
     details = ", ".join(
@@ -337,6 +338,17 @@ def public_book(row):
     deposit_eur = deposit_eur_for(row, section)
     if deposit_eur:
         book["depositEur"] = deposit_eur
+    # Routing belongs to the source record, never to all books of an owner.
+    if clean(row.get("order_bot")) or clean(row.get("order_start")):
+        bot, start = clean(row.get("order_bot")), clean(row.get("order_start"))
+        if not re.fullmatch(r"[A-Za-z0-9_]{5,32}", bot) or not re.fullmatch(r"book_[0-9]+", start):
+            raise ValueError("Invalid external book order route")
+        book.update(orderBot=bot, orderStart=start)
+    if (clean(row.get("source_cover_status")) == "missing"
+            and re.fullmatch(r"notion:[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}", request_file)
+            and book.get("orderBot") == "toma_lib_valencia_bot"
+            and not book["cover"]):
+        book["coverMissingReason"] = "notion-source-missing"
     return book
 
 
@@ -400,9 +412,26 @@ def write_books(output, books):
                 "width": largest["width"],
                 "height": largest["height"],
             }
+        elif not variants:
+            # A same-site original can already be present locally before its
+            # responsive derivatives exist (for example a newly imported cover).
+            url = urlparse(clean(book.get("cover")))
+            prefix = "/vlc-biblio-catalog/assets/covers/"
+            if url.scheme == "https" and url.netloc == "vlcbiblio.github.io" and url.path.startswith(prefix):
+                local = (root / 'assets/covers' / unquote(url.path[len(prefix):])).resolve()
+                covers_root = (root / 'assets/covers').resolve()
+                if local.is_relative_to(covers_root) and local.is_file():
+                    from PIL import Image
+                    with Image.open(local) as image:
+                        width, height = image.size
+                        image.verify()
+                    src = './' + local.relative_to(root).as_posix()
+                    public['coverImage'] = {'src': src, 'srcset': f'{src} {width}w',
+                                            'width': width, 'height': height}
         public_books.append(public)
     payload = json.dumps(public_books, ensure_ascii=False, indent=2)
     output.write_text(f"window.BIBLIO_BOOKS = {payload};\n", encoding="utf-8")
+    return public_books
 
 
 def update_data_cache_buster(*html_paths):
@@ -430,7 +459,7 @@ def main():
     args = parser.parse_args()
 
     books = load_books(args.source)
-    write_books(args.output, books)
+    books = write_books(args.output, books)
     update_data_cache_buster(args.index, args.book_page)
     write_site(args.output.resolve().parent.parent, books)
     print(f"Exported {len(books)} books to {args.output}")

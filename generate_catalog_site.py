@@ -7,7 +7,7 @@ import json
 import re
 import argparse
 from pathlib import Path
-from urllib.parse import quote
+from urllib.parse import quote, urlparse
 
 
 SITE_URL = "https://vlcbiblio.github.io/vlc-biblio-catalog/"
@@ -77,6 +77,11 @@ def description_for(book):
 
 def direct_action(book):
     if compact(book.get("orderBot")):
+        bot, start = compact(book.get("orderBot")), compact(book.get("orderStart"))
+        if (book.get("availability") == "reserved" and book.get("section") == "exchange"
+                and re.fullmatch(r"[A-Za-z0-9_]{5,32}", bot)
+                and re.fullmatch(r"book_[0-9]+", start)):
+            return f"https://t.me/{bot}?start={start}"
         return ""
     request_id = compact(book.get("requestId"))
     if book.get("section") != "exchange" or not request_id.isdigit():
@@ -97,11 +102,19 @@ def deposit_markup(book):
           </aside>'''
 
 
+def is_toma_source(book):
+    source = urlparse(compact(book.get("sourceUrl")))
+    return (book.get("section") == "exchange"
+            and book.get("orderBot") == "toma_lib_valencia_bot"
+            and source.scheme == "https" and source.netloc == "funny-cannon-067.notion.site"
+            and re.fullmatch(r"/[0-9a-f]{32}", source.path) is not None)
+
+
 def static_book_markup(book):
     esc = lambda value: html.escape(compact(value), quote=True)
     title = esc(book.get("title") or "Sin título")
     author = esc(book.get("author") or "Autor no indicado")
-    cover = absolute_asset_url(book.get("coverImage", {}).get("src") or book.get("cover"))
+    cover = compact(book.get("coverImage", {}).get("src") or book.get("cover"))
     cover_markup = (
         f'<img src="{esc(cover)}" alt="Portada: {title}" fetchpriority="high" '
         'decoding="async" referrerpolicy="no-referrer" />'
@@ -122,10 +135,16 @@ def static_book_markup(book):
         if private else
         "Este libro forma parte del catálogo de la biblioteca pública Pilar Faus. Consulta allí su disponibilidad."
     )
+    if is_toma_source(book):
+        note = ('Книга в частной коллекции Библиотеки '
+                '<a href="https://t.me/toma_lib_valencia" target="_blank" rel="noreferrer">ТОМА</a>. '
+                'Вы можете запросить книгу на время.')
     action = direct_action(book)
     action_markup = ""
     if action:
         label = "Apuntarme a la lista de espera" if book.get("availability") == "reserved" else "Solicitar el libro por Telegram"
+        if book.get("orderBot"):
+            label = "Consultar disponibilidad en el bot"
         action_markup = f'<a class="telegram-action" href="{esc(action)}" target="_blank" rel="noreferrer">{esc(label)}</a>'
     annotation = esc(book.get("annotation") or "Todavía no se ha añadido una descripción.")
     deposit = deposit_markup(book)
@@ -180,6 +199,7 @@ def render_book_page(template, book, *, indexable=True, embedded_books=None):
     {f'<meta property="og:image" content="{esc(image)}" />' if image else ''}
     <meta name="twitter:card" content="{'summary_large_image' if image else 'summary'}" />
     <script type="application/ld+json">{json.dumps(structured, ensure_ascii=False).replace('</', '<\\/')}</script>'''
+    metadata = re.sub(r"(?m)^ +$", "", metadata)
     rendered = template.replace(
         '    <meta name="viewport" content="width=device-width, initial-scale=1" />',
         '    <meta name="viewport" content="width=device-width, initial-scale=1" />\n    <base href="../" />\n' + metadata,

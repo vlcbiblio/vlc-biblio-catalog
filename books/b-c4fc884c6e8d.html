@@ -484,7 +484,7 @@
       <div data-shelf-toolbar></div>
       <section id="content">
       <article class="book">
-        <div class="cover"><img src="https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/optimized/4a6c311ad819645662b4-720.webp" alt="Portada: Вес-все-все дети и эти" fetchpriority="high" decoding="async" referrerpolicy="no-referrer" /></div>
+        <div class="cover"><img src="./assets/covers/optimized/4a6c311ad819645662b4-720.webp" alt="Portada: Вес-все-все дети и эти" fetchpriority="high" decoding="async" referrerpolicy="no-referrer" /></div>
         <div class="body">
           <div class="badges"><span class="badge exchange">🏠 Biblioteca particular</span></div>
           <h1>Вес-все-все дети и эти</h1>
@@ -505,9 +505,9 @@
       </footer>
     </main>
 
-    <script src="./data/books.js?v=20261020214216"></script>
-    <script src="./assets/i18n.js?v=deposit-1"></script>
-    <script src="./assets/shelf.js?v=i18n-1"></script>
+    <script src="./data/books.js?v=20261027152954"></script>
+    <script src="./assets/i18n.js?v=sagunto-deposit-1"></script>
+    <script src="./assets/shelf.js?v=toma-book-batch-5"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
       const botUrl = "https://t.me/VLS_Biblio_bot";
@@ -595,10 +595,18 @@
       }
 
       function canJoinWaitlist(book) {
-        return book.section === "exchange" && book.availability === "reserved";
+        return book.section === "exchange" && book.availability === "reserved" && !book.orderBot;
       }
 
       function libraryAction(book) {
+        if (book.section === "exchange" && book.availability === "reserved"
+            && /^[A-Za-z0-9_]{5,32}$/.test(book.orderBot || "")
+            && /^book_[0-9]+$/.test(book.orderStart || "")) {
+          return {
+            href: `https://t.me/${book.orderBot}?start=${book.orderStart}`,
+            label: t("book.checkAvailabilityBot", "Consultar disponibilidad en el bot"),
+          };
+        }
         if (canJoinWaitlist(book)) {
           return {
             href: `${botUrl}?start=wait_${encodeURIComponent(book.requestId)}`,
@@ -638,6 +646,13 @@
           note = t("book.note.library", "El libro pertenece a la biblioteca Pilar Faus.");
         }
         return note;
+      }
+
+      function collectionNoteMarkup(book) {
+        const tomaSource = book.section === "exchange" && book.orderBot === "toma_lib_valencia_bot"
+          && /^https:\/\/funny-cannon-067\.notion\.site\/[0-9a-f]{32}$/.test(book.sourceUrl || "");
+        if (!tomaSource) return escapeHtml(collectionNote(book));
+        return `${escapeHtml(t("book.note.toma.before", "El libro pertenece a la colección particular de la Biblioteca "))}<a href="https://t.me/toma_lib_valencia" target="_blank" rel="noreferrer">${escapeHtml(t("book.note.toma.name", "TOMA"))}</a>${escapeHtml(t("book.note.toma.after", ". Puedes solicitarlo en préstamo."))}`;
       }
 
       function locationNoteMarkup(book) {
@@ -777,7 +792,7 @@
               <dl class="details">${detailsMarkup(book)}</dl>
               <p class="annotation">${escapeHtml(book.annotation || t("book.noDescription", "Todavía no se ha añadido una descripción."))}</p>
               ${depositMarkup(book)}
-              <div class="collection-note"><span>${escapeHtml(collectionNote(book))}</span>${locationNoteMarkup(book)}</div>
+              <div class="collection-note"><span>${collectionNoteMarkup(book)}</span>${locationNoteMarkup(book)}</div>
               ${window.BiblioShelf.controlsMarkup(book, false)}
               <div class="actions">
                 ${libraryAction(book) ? `<a class="${libraryAction(book).isTelegram ? "telegram-action" : ""}" href="${escapeHtml(libraryAction(book).href)}" target="_blank" rel="noreferrer">${actionLabelMarkup(libraryAction(book))}</a>` : ""}

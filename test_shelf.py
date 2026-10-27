@@ -15,6 +15,7 @@ BOOKS = [
     {"id": str(number), "requestId": str(number), "title": f"Книга {number}",
      "author": "Автор", "section": "exchange", "availability": "available",
      "libraryKey": "owner-a" if number <= 36 else "owner-b",
+     "depositEur": 20 if number <= 36 else 0,
      "locationNote": ("Местоположение: Сагунто. Доступность метро на станциях Colón и Aragón "
                       "в определённые дни и часы.") if number <= 36 else ""}
     for number in range(1, 40)
@@ -249,6 +250,35 @@ class ShelfTests(unittest.TestCase):
         self.open_list()
         self.assertEqual(self.page.locator("[data-shelf-checkout]").count(), 3)
 
+    def test_toma_source_collection_note_and_old_owner_note(self):
+        changed = [{**book, 'orderBot': 'toma_lib_valencia_bot', 'orderStart': 'book_220',
+                    'sourceUrl': 'https://funny-cannon-067.notion.site/' + 'a' * 32}
+                   if book['id'] == '1' else book for book in BOOKS]
+        self.replace_books(changed)
+        self.page.goto(self.url + 'book.html?id=1')
+        note = self.page.locator('.book .collection-note span')
+        self.assertEqual(note.inner_text(), 'Книга в частной коллекции Библиотеки ТОМА. Вы можете запросить книгу на время.')
+        self.assertEqual(note.locator('a').get_attribute('href'), 'https://t.me/toma_lib_valencia')
+        self.page.goto(self.url + 'book.html?id=2')
+        self.assertEqual(self.page.locator('.book .collection-note span').inner_text(),
+                         'Книга в частной коллекции. Вы можете запросить книгу на время.')
+        self.assertEqual(self.page.locator('.book .collection-note a').count(), 0)
+
+    def test_external_reserved_book_has_source_link_without_local_waitlist(self):
+        changed = [{**book, 'availability': 'reserved', 'orderBot': 'toma_lib_valencia_bot',
+                    'orderStart': 'book_166'} if book['id'] == '1' else book for book in BOOKS]
+        self.replace_books(changed)
+        self.page.goto(self.url + 'book.html?id=1')
+        link = self.page.locator('.book a[href="https://t.me/toma_lib_valencia_bot?start=book_166"]')
+        self.assertTrue(link.is_visible())
+        self.assertEqual(self.page.locator('.book a[href*="start=wait_"]').count(), 0)
+        self.page.locator('.book [data-shelf-toggle="favorites"]').click()
+        self.open_list('favorites')
+        self.assertEqual(self.page.locator('.shelf-external-availability').get_attribute('href'),
+                         'https://t.me/toma_lib_valencia_bot?start=book_166')
+        self.assertEqual(self.page.locator('.shelf-waitlist').count(), 0)
+        self.assertEqual(self.page.locator('[data-shelf-checkout]').count(), 0)
+
     def test_hidden_test_books_use_cart_and_checkout_through_their_bot(self):
         self.page.goto(self.url + "books/test-1.html")
         cart_button = self.page.locator('.book [data-shelf-toggle="cart"]')
@@ -259,16 +289,11 @@ class ShelfTests(unittest.TestCase):
         self.open_list()
         self.assertEqual(self.page.locator(".shelf-group").count(), 1)
         links = self.page.locator("[data-shelf-checkout]")
-        self.assertEqual(links.count(), 2)
-        self.assertEqual(
-            links.evaluate_all("nodes => nodes.map(node => node.href)"),
-            [
-                "https://t.me/toma_lib_valencia_bot?start=book_16",
-                "https://t.me/toma_lib_valencia_bot?start=book_10",
-            ],
-        )
+        self.assertEqual(links.count(), 1)
+        self.assertEqual(links.get_attribute("href"),
+                         "https://t.me/toma_lib_valencia_bot?start=book_16_10")
 
-    def test_cart_shows_transfer_location_before_telegram_checkout(self):
+    def test_cart_shows_transfer_location_and_deposit_before_telegram_checkout(self):
         self.button(1).click()
         self.button(2).click()
         self.open_list()
@@ -277,7 +302,8 @@ class ShelfTests(unittest.TestCase):
         self.assertEqual(
             location.inner_text(),
             "Местоположение: Сагунто. Доступность метро на станциях Colón и Aragón "
-            "в определённые дни и часы.",
+            "в определённые дни и часы.\n\n"
+            "Залог за каждую книгу этой библиотеки 20 евро.",
         )
         self.assertTrue(location.locator("xpath=following-sibling::div//a[@data-shelf-checkout]").is_visible())
 

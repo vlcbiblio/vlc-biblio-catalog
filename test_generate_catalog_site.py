@@ -9,6 +9,25 @@ import generate_catalog_site as generate
 
 
 class StaticSiteGenerationTests(unittest.TestCase):
+    def test_toma_note_is_limited_to_new_notion_source(self):
+        source = {'section': 'exchange', 'orderBot': 'toma_lib_valencia_bot',
+                  'sourceUrl': 'https://funny-cannon-067.notion.site/' + 'a' * 32}
+        markup = generate.static_book_markup(source)
+        self.assertIn('Книга в частной коллекции Библиотеки ', markup)
+        self.assertIn('href="https://t.me/toma_lib_valencia"', markup)
+        self.assertIn('>ТОМА</a>. Вы можете запросить книгу на время.', markup)
+        for ordinary in ({'section': 'exchange'}, {'section': 'exchange', 'orderBot': source['orderBot']},
+                         dict(source, sourceUrl='https://other.notion.site/' + 'a' * 32)):
+            self.assertNotIn('>ТОМА</a>', generate.static_book_markup(ordinary))
+
+    def test_reserved_external_source_link_is_visible_in_static_page(self):
+        book = {'id': 'source', 'section': 'exchange', 'availability': 'reserved',
+                'orderBot': 'toma_lib_valencia_bot', 'orderStart': 'book_166'}
+        markup = generate.static_book_markup(book)
+        self.assertIn('https://t.me/toma_lib_valencia_bot?start=book_166', markup)
+        self.assertIn('Consultar disponibilidad', markup)
+        self.assertNotIn('start=wait_', markup)
+
     def setUp(self):
         self.book = {
             "id": "b-0123456789ab",
@@ -37,7 +56,7 @@ class StaticSiteGenerationTests(unittest.TestCase):
         self.assertIn('property="og:image" content="https://example.org/cover.jpg"', page)
         self.assertIn('type="application/ld+json"', page)
         self.assertIn('https://t.me/VLS_Biblio_bot?start=book_42', page)
-        self.assertIn('<script src="./assets/i18n.js?v=deposit-1"></script>', page)
+        self.assertIn('<script src="./assets/i18n.js?v=toma-note-2"></script>', page)
         self.assertNotIn("depósito", self.static_content(page))
 
     def test_deposit_notice_is_static_and_limited_to_configured_books(self):
