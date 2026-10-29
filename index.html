@@ -336,8 +336,19 @@
 
       .action-card.private .primary-link { background: var(--blue); }
 
-      .event-preview {
+      .events-overview {
         grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: minmax(0, 3fr) minmax(220px, 1fr);
+        gap: 12px;
+      }
+
+      .current-events { display: grid; gap: 10px; min-width: 0; }
+      .event-preview.events-archive-link { align-self: start; background: var(--paper); }
+      .events-archive-link .event-preview-title { white-space: normal; }
+      .events-archive-icon { color: var(--blue); font-size: 26px; text-align: center; width: 46px; }
+
+      .event-preview {
         display: grid;
         grid-template-columns: auto minmax(0, 1fr) auto;
         align-items: center;
@@ -846,7 +857,7 @@
         .topbar { display: block; }
         .brand-plaque { width: 100%; }
         .catalog-summary { margin-top: 12px; }
-        .event-preview { margin-top: 12px; }
+        .events-overview { margin-top: 12px; grid-template-columns: 1fr; }
         .controls { grid-template-columns: 1fr 1fr; }
         .controls .search-box { grid-column: 1 / -1; }
         .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -947,18 +958,30 @@
           </div>
           <div data-shelf-toolbar></div>
         </div>
-        <a class="event-preview" href="./events.html#education-valencia" aria-label="Ver los detalles del encuentro sobre educación en Valencia" data-i18n-aria-label="events.preview.label">
-          <span class="event-preview-date" aria-hidden="true">
-            <strong>17</strong>
-            <span data-i18n="events.preview.month">NOV</span>
-          </span>
-          <span class="event-preview-copy">
-            <span class="event-preview-kicker" data-i18n="events.preview.kicker">Próximo encuentro</span>
-            <strong class="event-preview-title" data-i18n="events.preview.title">Educación en Valencia: qué deben saber las familias</strong>
-            <span class="event-preview-meta" data-i18n="events.preview.meta">17 de noviembre · 18:30 · La Cotorra Galería</span>
-          </span>
-          <span class="event-preview-arrow" aria-hidden="true">→</span>
-        </a>
+        <div class="events-overview">
+          <div class="current-events" role="group" aria-label="Encuentros actuales" data-i18n-aria-label="events.current">
+            <a class="event-preview" href="./events.html#education-valencia" aria-label="Ver los detalles del encuentro sobre educación en Valencia" data-i18n-aria-label="events.preview.label">
+              <span class="event-preview-date" aria-hidden="true">
+                <strong>17</strong>
+                <span data-i18n="events.preview.month">NOV</span>
+              </span>
+              <span class="event-preview-copy">
+                <span class="event-preview-kicker" data-i18n="events.preview.kicker">Próximo encuentro</span>
+                <strong class="event-preview-title" data-i18n="events.preview.title">Educación en Valencia: qué deben saber las familias</strong>
+                <span class="event-preview-meta" data-i18n="events.preview.meta">17 de noviembre · 18:30 · La Cotorra Galería</span>
+              </span>
+              <span class="event-preview-arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+          <a class="event-preview events-archive-link" href="./events-archive.html">
+            <span class="events-archive-icon" aria-hidden="true">▤</span>
+            <span class="event-preview-copy">
+              <strong class="event-preview-title" data-i18n="events.archive.heading">Archivo de encuentros</strong>
+              <span class="event-preview-meta" data-i18n="events.archive.past">Encuentros anteriores</span>
+            </span>
+            <span class="event-preview-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
       </section>
 
       <section class="content-section how-it-works" id="how-it-works" aria-labelledby="how-title">
@@ -1079,7 +1102,7 @@
     </section>
 
     <script src="./data/books.js?v=20261027214706"></script>
-    <script src="./assets/i18n.js?v=events-archive-2026-10-29"></script>
+    <script src="./assets/i18n.js?v=events-overview-2026-10-29"></script>
     <script src="./assets/shelf.js?v=toma-book-batch-5"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];

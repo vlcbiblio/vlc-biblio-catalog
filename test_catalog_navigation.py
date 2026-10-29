@@ -275,9 +275,10 @@ class CatalogNavigationTests(unittest.TestCase):
         self.page.goto(self.base_url)
         expect(self.page.locator("[data-open-external-browser]")).to_be_hidden()
         expect(self.page.locator("#how-it-works")).to_be_visible()
-        expect(self.page.locator(".event-preview")).to_have_count(1)
+        expect(self.page.locator(".current-events .event-preview")).to_have_count(1)
         expect(self.page.locator(".event-preview").first).to_be_visible()
-        expect(self.page.locator(".topbar > .event-preview")).to_have_count(1)
+        expect(self.page.locator(".topbar > .events-overview")).to_have_count(1)
+        expect(self.page.locator(".events-overview > .events-archive-link")).to_have_count(1)
         expect(self.page.locator(".events-teaser")).to_have_count(0)
         expect(self.page.locator("#business")).to_be_visible()
         expect(self.page.locator("#faq")).to_be_visible()
@@ -308,6 +309,29 @@ class CatalogNavigationTests(unittest.TestCase):
 
         events_response = self.page.request.get(f"{self.base_url}events.html")
         self.assertEqual(events_response.status, 200)
+
+    def test_current_events_and_single_archive_share_the_homepage_block(self):
+        self.page.goto(self.base_url)
+        current = self.page.locator(".current-events")
+        archive = self.page.locator(".events-overview > .events-archive-link")
+        expect(archive).to_contain_text("Архив мероприятий")
+        expect(archive).to_have_attribute("href", "./events-archive.html")
+        current.evaluate("el => { const card = el.firstElementChild; el.append(card.cloneNode(true), card.cloneNode(true)); }")
+        expect(current.locator(".event-preview")).to_have_count(3)
+        expect(archive).to_have_count(1)
+        for width in (1280, 390):
+            self.page.set_viewport_size({"width": width, "height": 900})
+            current_box = current.bounding_box()
+            archive_box = archive.bounding_box()
+            if width == 1280:
+                self.assertGreater(archive_box["x"], current_box["x"] + current_box["width"])
+            else:
+                self.assertGreater(archive_box["y"], current_box["y"] + current_box["height"])
+            self.assertTrue(self.page.evaluate("document.documentElement.scrollWidth <= innerWidth"))
+        self.page.locator("[data-language-toggle]").click()
+        expect(archive).to_contain_text("Archivo de encuentros")
+        archive.click()
+        expect(self.page.locator("h1")).to_have_text("Archivo de encuentros")
 
     def test_search_treats_yo_and_e_as_the_same_letter(self):
         self.page.goto(self.base_url)
