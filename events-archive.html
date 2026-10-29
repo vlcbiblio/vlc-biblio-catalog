@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Archivo de encuentros de VLC Biblio en València." />
+    <title data-i18n="events.archive.pageTitle">Archivo de encuentros | VLC Biblio</title>
+    <link rel="icon" type="image/png" href="./assets/favicon.png" />
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f7f4ee;
+        --ink: #26231f;
+        --muted: #716b63;
+        --line: #ddd4c5;
+        --paper: #fffdf8;
+        --green: #2f6f5e;
+        --blue: #315f86;
+        --shadow: 0 14px 36px rgba(38, 35, 31, 0.1);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      .page { width: min(1040px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 44px; }
+      .page-tools { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
+
+      .back { color: var(--blue); font-weight: 700; text-decoration: none; }
+      .back:hover { text-decoration: underline; }
+
+      .language-toggle {
+        min-width: 42px;
+        min-height: 36px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: var(--paper);
+        color: var(--ink);
+        cursor: pointer;
+        font-weight: 800;
+      }
+
+      .back:focus-visible,
+      .language-toggle:focus-visible,
+      .primary-link:focus-visible,
+      .secondary-link:focus-visible,
+      .event-contacts a:focus-visible,
+      .event-support a:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+
+      h1,
+      h2,
+      h3 { font-family: Georgia, "Times New Roman", serif; }
+      h1 { margin: 0 0 10px; font-size: clamp(34px, 6vw, 52px); line-height: 1.05; }
+      h2 { margin: 30px 0 12px; font-size: 24px; }
+      h3 { margin: 0 0 8px; font-size: clamp(21px, 3vw, 27px); line-height: 1.15; }
+      .lead { max-width: 680px; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.55; }
+
+      .event-list { margin: 0; padding: 0; list-style: none; }
+      .event-card {
+        display: grid;
+        grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
+        gap: 28px;
+        padding: 22px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--paper);
+        box-shadow: var(--shadow);
+      }
+
+      .event-poster { margin: 0; }
+      .event-poster img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border: 1px solid var(--line);
+        border-radius: 7px;
+        background: #f1d9f1;
+      }
+
+      .event-content { min-width: 0; }
+      .event-heading { display: grid; grid-template-columns: 82px minmax(0, 1fr); gap: 16px; align-items: start; }
+
+      .event-date {
+        display: flex;
+        min-height: 88px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-self: start;
+        border: 1px solid rgba(47, 111, 94, 0.25);
+        border-radius: 7px;
+        background: #f3eee4;
+        color: var(--green);
+        text-align: center;
+      }
+
+      .event-date strong { font-family: Georgia, "Times New Roman", serif; font-size: 36px; font-weight: 400; line-height: 1; }
+      .event-date span { font-size: 11px; font-weight: 800; letter-spacing: 0.1em; }
+      .event-description { margin: 0 0 18px; color: var(--muted); line-height: 1.55; }
+      .event-meta { display: grid; gap: 7px; margin: 18px 0; padding: 14px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+      .event-meta div { display: grid; grid-template-columns: 116px minmax(0, 1fr); gap: 10px; }
+      .event-meta dt { color: var(--muted); font-size: 12px; font-weight: 800; }
+      .event-meta dd { margin: 0; font-size: 14px; line-height: 1.4; }
+      .event-note { margin: 0 0 14px; font-size: 13px; font-weight: 700; }
+
+      .event-program { margin: 18px 0; }
+      .event-program h4,
+      .event-contacts h4 { margin: 0 0 9px; font-size: 15px; }
+      .event-program ul { display: grid; gap: 7px; margin: 0; padding-left: 20px; line-height: 1.45; }
+
+      .event-actions { display: flex; flex-wrap: wrap; gap: 9px; margin: 16px 0; }
+      .secondary-link {
+        display: inline-flex;
+        min-height: 40px;
+        align-items: center;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        color: var(--blue);
+        padding: 8px 13px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .secondary-link:hover { border-color: var(--blue); }
+      .event-contacts { padding: 14px 16px; border-radius: 7px; background: #f3eee4; }
+      .event-contacts p { margin: 6px 0 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
+      .event-contacts a,
+      .event-support a { color: var(--blue); font-weight: 700; text-decoration: none; }
+      .event-contacts a:hover,
+      .event-support a:hover { text-decoration: underline; }
+      .event-support { margin: 14px 0 0; padding-left: 13px; border-left: 3px solid var(--green); color: var(--muted); font-size: 13px; line-height: 1.5; }
+
+      .primary-link {
+        display: inline-flex;
+        min-height: 40px;
+        align-items: center;
+        border-radius: 6px;
+        background: var(--green);
+        color: #fff;
+        padding: 8px 13px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      @media (max-width: 560px) {
+        .page { width: min(100% - 20px, 1040px); padding-top: 18px; }
+        .event-card { grid-template-columns: 1fr; gap: 16px; padding: 16px; }
+        .event-heading { grid-template-columns: 70px minmax(0, 1fr); gap: 12px; }
+        .event-date { width: 70px; min-height: 76px; }
+        .event-meta div { grid-template-columns: 1fr; gap: 2px; }
+        .event-actions { display: grid; grid-template-columns: 1fr; }
+        .primary-link, .secondary-link { width: 100%; min-height: 44px; justify-content: center; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <div class="page-tools">
+        <a class="back" href="./" data-i18n="catalog.back">← Volver al catálogo</a>
+        <button class="language-toggle" type="button" data-language-toggle aria-label="Cambiar el idioma a ruso">RU</button>
+      </div>
+
+      <header>
+        <h1 data-i18n="events.archive.heading">Archivo de encuentros</h1>
+        <p class="lead" data-i18n="events.archive.intro">Encuentros que ya se han celebrado: libros, lectura y comunidad en València.</p>
+      </header>
+
+      <nav class="event-actions" aria-label="Encuentros" data-i18n-aria-label="events.heading">
+        <a class="secondary-link" href="./events.html" data-i18n="events.heading">Encuentros</a>
+        <a class="secondary-link" href="./events-archive.html" aria-current="page" data-i18n="events.archive.heading">Archivo de encuentros</a>
+      </nav>
+
+      <section aria-labelledby="past-title">
+        <h2 id="past-title" data-i18n="events.archive.past">Encuentros anteriores</h2>
+        <ol class="event-list">
+          <li id="children-book-club-2026-10-28">
+            <article class="event-card">
+              <figure class="event-poster">
+                <img src="./assets/events/children-book-club-2026-10-28.webp" width="940" height="788" alt="Cartel del club de lectura y creatividad para niños" data-i18n-alt="events.poster.alt" />
+              </figure>
+              <div class="event-content">
+                <div class="event-heading">
+                  <div class="event-date" aria-hidden="true">
+                    <strong>28</strong>
+                    <span data-i18n="events.month">OCT</span>
+                  </div>
+                  <div>
+                    <h3 data-i18n="events.event.title">Club de lectura y creatividad para niños de 5 a 8 años</h3>
+                    <p class="event-description" data-i18n="events.event.fullDescription">El 28 de octubre a las 18:00 invitamos a los niños a un encuentro literario y creativo en ruso, en la Sala Infantil de la biblioteca Pilar Faus de València.</p>
+                  </div>
+                </div>
+                <dl class="event-meta">
+                  <div><dt data-i18n="events.meta.date">Fecha</dt><dd><time datetime="2026-10-28" data-i18n="events.date">Miércoles, 28 de octubre de 2026</time></dd></div>
+                  <div><dt data-i18n="events.meta.time">Horario</dt><dd><time datetime="2026-10-28T18:00:00+01:00" data-i18n="events.time">18:00–18:40</time></dd></div>
+                  <div><dt data-i18n="events.meta.place">Lugar</dt><dd data-i18n="events.place">Sala Infantil · Biblioteca Pública de València Pilar Faus · C/ de l’Hospital, 13</dd></div>
+                  <div><dt data-i18n="events.meta.audience">Idioma y edad</dt><dd data-i18n="events.audience">En ruso · Para niños de 5 a 8 años</dd></div>
+                </dl>
+                <section class="event-program" aria-labelledby="event-program-title">
+                  <h4 id="event-program-title" data-i18n="events.program.title">Qué haremos</h4>
+                  <ul>
+                    <li data-i18n="events.program.story">Un cuento con elementos teatrales.</li>
+                    <li data-i18n="events.program.emotions">Conversaremos sobre las emociones de los personajes y jugaremos juntos.</li>
+                    <li data-i18n="events.program.craft">En la parte creativa, cada niño hará una manualidad llena de color.</li>
+                  </ul>
+                </section>
+                <p class="event-note" data-i18n="events.archive.completed">Encuentro finalizado</p>
+                <div class="event-actions">
+                  <a class="secondary-link" href="https://www.instagram.com/odnazhdy_vlc/" target="_blank" rel="noreferrer" data-i18n="events.club.instagram">Instagram del club →</a>
+                </div>
+                <section class="event-contacts" aria-labelledby="event-contacts-title">
+                  <h4 id="event-contacts-title" data-i18n="events.contacts.title">Organización y contacto</h4>
+                  <p><span data-i18n="events.contacts.channel">Canal del club de lectura «Odnazhdy»:</span> <a href="https://t.me/odnazhdy_vlc" target="_blank" rel="noreferrer">@odnazhdy_vlc</a></p>
+                </section>
+                <p class="event-support"><span data-i18n="events.support">También puedes ayudar a ampliar el fondo de libros en ruso de la biblioteca Pilar Faus compartiendo tus libros a través de</span> <a href="https://t.me/VLS_Biblio_bot" target="_blank" rel="noreferrer">@VLS_Biblio_bot</a>.</p>
+              </div>
+            </article>
+          </li>
+        </ol>
+      </section>
+    </main>
+    <script src="./assets/i18n.js?v=events-archive-2026-10-29"></script>
+  </body>
+</html>
