@@ -376,7 +376,7 @@ class CatalogNavigationTests(unittest.TestCase):
         self.page.goto(f"{self.base_url}events.html")
 
         expect(self.page.locator("h1")).to_have_text("Встречи")
-        expect(self.page.locator(".event-card")).to_have_count(1)
+        expect(self.page.locator(".event-card")).to_have_count(2)
         expect(self.page.locator("time[datetime='2026-10-28']")).to_have_count(0)
         self.page.get_by_role("link", name="Архив мероприятий").click()
         expect(self.page.locator("h1")).to_have_text("Архив мероприятий")
@@ -400,6 +400,13 @@ class CatalogNavigationTests(unittest.TestCase):
         self.page.get_by_role("link", name="Encuentros", exact=True).click()
         expect(self.page.locator("h1")).to_have_text("Encuentros")
         self.page.locator("[data-language-toggle]").click()
+        anya = self.page.locator("#anya-journalism")
+        expect(anya.locator("h3")).to_have_text("Профессии изнутри: журналистика и блогинг")
+        expect(anya.locator("ul li")).to_have_count(4)
+        expect(anya.locator(".primary-link")).to_have_attribute("href", "https://tinyurl.com/27wwpz63")
+        expect(anya).to_contain_text("45 человек")
+        expect(anya).to_contain_text("60–75 минут")
+        self.assertNotIn("anyainvalencia", anya.inner_html())
         education = self.page.locator("#education-valencia")
         expect(education.locator("h3")).to_have_text("Образование в Валенсии: что важно знать родителям?")
         expect(education.locator(".event-poster img")).to_have_attribute(
@@ -416,7 +423,7 @@ class CatalogNavigationTests(unittest.TestCase):
         self.page.locator("[data-language-toggle]").click()
         expect(self.page.locator("h1")).to_have_text("Encuentros")
         expect(self.page.locator(".event-card h3")).to_have_text(
-            ["Educación en Valencia: qué deben saber las familias"]
+            ["Educación en Valencia: qué deben saber las familias", "Profesiones por dentro: periodismo y blogging"]
         )
         expect(self.page.locator("#education-valencia .event-poster img")).to_have_attribute(
             "alt", "Cartel del encuentro «Educación en Valencia: qué deben saber las familias»"
