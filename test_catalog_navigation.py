@@ -411,7 +411,7 @@ class CatalogNavigationTests(unittest.TestCase):
         anya = self.page.locator("#anya-journalism")
         expect(anya.locator("h3")).to_have_text("Профессии изнутри: журналистика и блогинг")
         expect(anya.locator("ul li")).to_have_count(4)
-        expect(anya.locator(".primary-link")).to_have_attribute("href", "https://tinyurl.com/27wwpz63")
+        expect(anya.locator(".primary-link")).to_have_attribute("href", "https://docs.google.com/forms/d/e/1FAIpQLSdptP8u4QlutvhVfe-GX9ZUbo7d48Zpow3Ek13YaYPHfcbBxw/viewform")
         expect(anya).to_contain_text("45 человек")
         expect(anya).to_contain_text("60–75 минут")
         self.assertNotIn("anyainvalencia", anya.inner_html())
