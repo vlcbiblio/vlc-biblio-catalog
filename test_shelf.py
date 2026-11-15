@@ -275,13 +275,13 @@ class ShelfTests(unittest.TestCase):
                     'orderStart': 'book_166'} if book['id'] == '1' else book for book in BOOKS]
         self.replace_books(changed)
         self.page.goto(self.url + 'book.html?id=1')
-        link = self.page.locator('.book a[href="https://t.me/toma_lib_valencia_bot?start=book_166"]')
+        link = self.page.locator('.book a[href="https://t.me/toma_lib_valencia_bot?start=ext_book_166"]')
         self.assertTrue(link.is_visible())
         self.assertEqual(self.page.locator('.book a[href*="start=wait_"]').count(), 0)
         self.page.locator('.book [data-shelf-toggle="favorites"]').click()
         self.open_list('favorites')
         self.assertEqual(self.page.locator('.shelf-external-availability').get_attribute('href'),
-                         'https://t.me/toma_lib_valencia_bot?start=book_166')
+                         'https://t.me/toma_lib_valencia_bot?start=ext_book_166')
         self.assertEqual(self.page.locator('.shelf-waitlist').count(), 0)
         self.assertEqual(self.page.locator('[data-shelf-checkout]').count(), 0)
 
@@ -297,7 +297,7 @@ class ShelfTests(unittest.TestCase):
         links = self.page.locator("[data-shelf-checkout]")
         self.assertEqual(links.count(), 1)
         self.assertEqual(links.get_attribute("href"),
-                         "https://t.me/toma_lib_valencia_bot?start=book_16_10")
+                         "https://t.me/toma_lib_valencia_bot?start=ext_book_16_10")
 
     def test_cart_shows_transfer_location_and_deposit_before_telegram_checkout(self):
         self.button(1).click()

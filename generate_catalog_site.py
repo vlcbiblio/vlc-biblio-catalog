@@ -53,6 +53,8 @@ def direct_action(book):
         if (book.get("availability") == "reserved" and book.get("section") == "exchange"
                 and re.fullmatch(r"[A-Za-z0-9_]{5,32}", bot)
                 and re.fullmatch(r"book_[0-9]+", start)):
+            if bot == "toma_lib_valencia_bot":
+                start = f"ext_{start}"
             return f"https://t.me/{bot}?start={start}"
         return ""
     request_id = compact(book.get("requestId"))

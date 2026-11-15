@@ -492,7 +492,7 @@
           <dl class="details"><dt>Año de publicación</dt><dd>2024</dd><dt>Editorial</dt><dd>Эксмо</dd></dl>
           <p class="annotation">Блогер и журналист Юстасия Булгакова рассказывает историю Антальи, одного из самых популярных курортов Турции. Здесь собраны малоизвестные и удивительные факты, с которыми прогулка по городу становится куда интереснее.</p>
           <div class="collection-note">Книга в частной коллекции Библиотеки <a href="https://t.me/toma_lib_valencia" target="_blank" rel="noreferrer">ТОМА</a>. Вы можете запросить книгу на время.</div>
-          <div class="actions"><a class="telegram-action" href="https://t.me/toma_lib_valencia_bot?start=book_166" target="_blank" rel="noreferrer">Consultar disponibilidad en el bot</a></div>
+          <div class="actions"><a class="telegram-action" href="https://t.me/toma_lib_valencia_bot?start=ext_book_166" target="_blank" rel="noreferrer">Consultar disponibilidad en el bot</a></div>
         </div>
       </article>
     </section>
@@ -502,7 +502,7 @@
       </footer>
     </main>
 
-    <script src="./data/books.js?v=20261115123159"></script>
+    <script src="./data/books.js?v=20261115150015"></script>
     <script src="./assets/i18n.js?v=sagunto-deposit-1"></script>
     <script src="./assets/shelf.js?v=toma-book-batch-5"></script>
     <script>
@@ -599,8 +599,11 @@
         if (book.section === "exchange" && book.availability === "reserved"
             && /^[A-Za-z0-9_]{5,32}$/.test(book.orderBot || "")
             && /^book_[0-9]+$/.test(book.orderStart || "")) {
+          const start = book.orderBot === "toma_lib_valencia_bot"
+            ? `ext_${book.orderStart}`
+            : book.orderStart;
           return {
-            href: `https://t.me/${book.orderBot}?start=${book.orderStart}`,
+            href: `https://t.me/${book.orderBot}?start=${start}`,
             label: t("book.checkAvailabilityBot", "Consultar disponibilidad en el bot"),
           };
         }

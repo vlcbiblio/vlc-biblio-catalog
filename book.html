@@ -478,7 +478,7 @@
       </footer>
     </main>
 
-    <script src="./data/books.js?v=20261115123159"></script>
+    <script src="./data/books.js?v=20261115150015"></script>
     <script src="./assets/i18n.js?v=sagunto-deposit-1"></script>
     <script src="./assets/shelf.js?v=toma-book-batch-5"></script>
     <script>
@@ -575,8 +575,11 @@
         if (book.section === "exchange" && book.availability === "reserved"
             && /^[A-Za-z0-9_]{5,32}$/.test(book.orderBot || "")
             && /^book_[0-9]+$/.test(book.orderStart || "")) {
+          const start = book.orderBot === "toma_lib_valencia_bot"
+            ? `ext_${book.orderStart}`
+            : book.orderStart;
           return {
-            href: `https://t.me/${book.orderBot}?start=${book.orderStart}`,
+            href: `https://t.me/${book.orderBot}?start=${start}`,
             label: t("book.checkAvailabilityBot", "Consultar disponibilidad en el bot"),
           };
         }

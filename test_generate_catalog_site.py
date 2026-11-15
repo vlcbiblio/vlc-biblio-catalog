@@ -24,7 +24,7 @@ class StaticSiteGenerationTests(unittest.TestCase):
         book = {'id': 'source', 'section': 'exchange', 'availability': 'reserved',
                 'orderBot': 'toma_lib_valencia_bot', 'orderStart': 'book_166'}
         markup = generate.static_book_markup(book)
-        self.assertIn('https://t.me/toma_lib_valencia_bot?start=book_166', markup)
+        self.assertIn('https://t.me/toma_lib_valencia_bot?start=ext_book_166', markup)
         self.assertIn('Consultar disponibilidad', markup)
         self.assertNotIn('start=wait_', markup)
 

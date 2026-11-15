@@ -551,6 +551,68 @@ window.BIBLIO_BOOKS = [
     }
   },
   {
+    "id": "b-c5995a07b728",
+    "requestId": "1089",
+    "title": "Очень может быть: 20 правдивых (или не очень) историй",
+    "author": "Камиль де Брёйне,Ярне Дарен",
+    "section": "exchange",
+    "catalogStatus": "Частная библиотека",
+    "libraryKey": "user:51d91e09b5bf",
+    "sourceKind": "user",
+    "availability": "available",
+    "audience": "adult",
+    "cover": "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/notion-4174f95a-2ae4-812c-b938-d35a805610a7.png",
+    "isbn": "",
+    "year": "2024",
+    "publisher": "Гудвин",
+    "annotation": "Сборник из двадцати забавных и неожиданных историй, в которых трудно отличить правду от вымысла. Книга бельгийских авторов Камиля де Брёйне и Ярне Дарена, дополненная яркими авторскими иллюстрациями.",
+    "sourceUrl": "https://funny-cannon-067.notion.site/4174f95a2ae4812cb938d35a805610a7",
+    "livelibUrl": "",
+    "wildberriesUrl": "",
+    "addedAt": "2026-11-15T13:59:59+00:00",
+    "updatedAt": "2026-11-15T13:59:59+00:00",
+    "authorKey": "камиль де брейне,ярне дарен",
+    "orderBot": "toma_lib_valencia_bot",
+    "orderStart": "book_255",
+    "coverImage": {
+      "src": "./assets/covers/optimized/2f7163e3419d0747d9a9-411.webp",
+      "srcset": "./assets/covers/optimized/92cfc53bee74643a800c-360.webp 360w, ./assets/covers/optimized/2f7163e3419d0747d9a9-411.webp 411w",
+      "width": 411,
+      "height": 486
+    }
+  },
+  {
+    "id": "b-c9cb56dcddee",
+    "requestId": "1088",
+    "title": "Дон Кихот",
+    "author": "Мигель де Сервантес",
+    "section": "exchange",
+    "catalogStatus": "Частная библиотека",
+    "libraryKey": "user:51d91e09b5bf",
+    "sourceKind": "user",
+    "availability": "available",
+    "audience": "adult",
+    "cover": "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/notion-4174f95a-2ae4-8108-b256-f7d79ed7b8a6.png",
+    "isbn": "",
+    "year": "2025",
+    "publisher": "Эксмо",
+    "annotation": "Сокращённый пересказ знаменитого романа Мигеля де Сервантеса о мечтательном идальго, вообразившем себя странствующим рыцарем. Один из главных классических текстов мировой литературы о столкновении благородных иллюзий с реальностью.",
+    "sourceUrl": "https://funny-cannon-067.notion.site/4174f95a2ae48108b256f7d79ed7b8a6",
+    "livelibUrl": "",
+    "wildberriesUrl": "",
+    "addedAt": "2026-11-15T13:59:59+00:00",
+    "updatedAt": "2026-11-15T13:59:59+00:00",
+    "authorKey": "мигель де сервантес",
+    "orderBot": "toma_lib_valencia_bot",
+    "orderStart": "book_254",
+    "coverImage": {
+      "src": "./assets/covers/optimized/4b05cab404a753be565a-445.webp",
+      "srcset": "./assets/covers/optimized/29468869a80204056a11-360.webp 360w, ./assets/covers/optimized/4b05cab404a753be565a-445.webp 445w",
+      "width": 445,
+      "height": 699
+    }
+  },
+  {
     "id": "b-19f74451d9e3",
     "requestId": "1082",
     "title": "Тайны Чароводья. Книга вторая. Друг или враг",
@@ -571,7 +633,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-03T20:07:43",
-    "updatedAt": "2026-11-04T15:09:11",
+    "updatedAt": "2026-11-04T15:21:42",
     "authorKey": "юлия иванова",
     "depositEur": 20,
     "coverImage": {
@@ -602,7 +664,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-03T20:09:07",
-    "updatedAt": "2026-11-04T15:09:11",
+    "updatedAt": "2026-11-04T15:21:42",
     "authorKey": "юлия иванова",
     "depositEur": 20,
     "coverImage": {
@@ -633,7 +695,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-03T20:09:36",
-    "updatedAt": "2026-11-04T15:09:11",
+    "updatedAt": "2026-11-04T15:21:42",
     "authorKey": "юлия иванова",
     "depositEur": 20,
     "coverImage": {
@@ -664,7 +726,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-03T20:05:56",
-    "updatedAt": "2026-11-04T15:09:11",
+    "updatedAt": "2026-11-04T15:21:42",
     "authorKey": "валентин постников",
     "depositEur": 20,
     "coverImage": {
@@ -695,7 +757,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-03T20:07:12",
-    "updatedAt": "2026-11-04T15:09:11",
+    "updatedAt": "2026-11-04T15:21:42",
     "authorKey": "юлия иванова",
     "depositEur": 20,
     "coverImage": {
@@ -726,7 +788,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-03T20:10:14",
-    "updatedAt": "2026-11-04T15:09:11",
+    "updatedAt": "2026-11-04T15:21:42",
     "authorKey": "юлия иванова",
     "depositEur": 20,
     "coverImage": {
@@ -757,7 +819,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-03T20:06:22",
-    "updatedAt": "2026-11-04T15:09:11",
+    "updatedAt": "2026-11-04T15:21:42",
     "authorKey": "андрей усачев",
     "depositEur": 20,
     "coverImage": {
@@ -788,7 +850,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-03T20:08:11",
-    "updatedAt": "2026-11-04T15:09:11",
+    "updatedAt": "2026-11-04T15:21:42",
     "authorKey": "юлия иванова",
     "depositEur": 20,
     "coverImage": {
@@ -819,7 +881,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-03T20:04:50",
-    "updatedAt": "2026-11-04T15:09:11",
+    "updatedAt": "2026-11-04T15:21:42",
     "authorKey": "наталья щерба",
     "depositEur": 20,
     "coverImage": {
@@ -850,7 +912,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-03T20:08:33",
-    "updatedAt": "2026-11-04T15:09:11",
+    "updatedAt": "2026-11-04T15:21:42",
     "authorKey": "юлия иванова",
     "depositEur": 20,
     "coverImage": {

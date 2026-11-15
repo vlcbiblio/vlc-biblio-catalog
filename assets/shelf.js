@@ -23,7 +23,11 @@
   };
   const orderStart = (book) => {
     const candidate = String(book?.orderStart ?? "");
-    return /^[A-Za-z0-9_-]{1,64}$/.test(candidate) ? candidate : "";
+    if (!/^[A-Za-z0-9_-]{1,64}$/.test(candidate)) return "";
+    if (orderBot(book) === "toma_lib_valencia_bot" && /^book_[0-9]+$/.test(candidate)) {
+      return `ext_${candidate}`;
+    }
+    return candidate;
   };
   const canAdd = (book) => book?.section === "exchange" && book.availability === "available" && !!requestId(book);
   const has = (list, id) => lists[list].includes(String(id));
@@ -190,12 +194,12 @@
     // Both the existing bot's order limit and Telegram's start limit apply.
     const batches = [];
     const bot = orderBot(byId.get(ids[0]));
-    const batchPrefix = bot === "toma_lib_valencia_bot" ? "book_" : "books_";
+    const batchPrefix = bot === "toma_lib_valencia_bot" ? "ext_book_" : "books_";
     const batchRequestId = (id) => {
       const book = byId.get(id);
       const start = orderStart(book);
-      if (orderBot(book) === "toma_lib_valencia_bot" && /^book_[0-9]+$/.test(start)) {
-        return start.slice(5);
+      if (orderBot(book) === "toma_lib_valencia_bot" && /^ext_book_[0-9]+$/.test(start)) {
+        return start.slice(9);
       }
       return start ? "" : requestId(book);
     };

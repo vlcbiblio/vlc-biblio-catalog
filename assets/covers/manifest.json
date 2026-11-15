@@ -12257,6 +12257,40 @@
         }
       ]
     },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/notion-4174f95a-2ae4-8108-b256-f7d79ed7b8a6.png": {
+      "sourceBytes": 584505,
+      "variants": [
+        {
+          "bytes": 60772,
+          "height": 565,
+          "src": "./assets/covers/optimized/29468869a80204056a11-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 78580,
+          "height": 699,
+          "src": "./assets/covers/optimized/4b05cab404a753be565a-445.webp",
+          "width": 445
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/notion-4174f95a-2ae4-812c-b938-d35a805610a7.png": {
+      "sourceBytes": 315225,
+      "variants": [
+        {
+          "bytes": 34650,
+          "height": 426,
+          "src": "./assets/covers/optimized/92cfc53bee74643a800c-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 44190,
+          "height": 486,
+          "src": "./assets/covers/optimized/2f7163e3419d0747d9a9-411.webp",
+          "width": 411
+        }
+      ]
+    },
     "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/private/notion-20260916/016c9499-622e-4c69-893c-80681c2012d8.webp": {
       "sourceBytes": 32318,
       "variants": [
