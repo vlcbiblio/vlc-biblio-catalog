@@ -106,7 +106,7 @@ def optimize_catalog(catalog, cache_dir, refresh=False):
     manifest["covers"].update(results)
     manifest_path.parent.mkdir(parents=True, exist_ok=True)
     manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    export.write_books(catalog, books)
+    books = export.write_books(catalog, books)
     export.update_data_cache_buster(root / "index.html", root / "book.html")
     if (root / "book.html").is_file():
         export.write_site(root, books)

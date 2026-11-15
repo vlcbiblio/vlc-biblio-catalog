@@ -34,6 +34,13 @@
         padding: 28px 0 44px;
       }
 
+      .top-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 18px;
+      }
+
       .back,
       .privacy a {
         color: var(--blue);
@@ -42,12 +49,27 @@
 
       .back {
         display: inline-flex;
-        margin-bottom: 18px;
         text-decoration: none;
       }
 
       .back:hover,
       .privacy a:hover { text-decoration: underline; }
+
+      .language-toggle {
+        width: 42px;
+        height: 42px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        color: var(--ink);
+        background: var(--paper);
+        cursor: pointer;
+        font: inherit;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .language-toggle:hover,
+      .language-toggle:focus-visible { background: rgba(49, 95, 134, 0.07); }
 
       .privacy {
         border: 1px solid var(--line);
@@ -98,24 +120,35 @@
   </head>
   <body>
     <main class="page">
-      <a class="back" href="./" data-i18n="catalog.back">← Volver al catálogo</a>
+      <div class="top-nav">
+        <a class="back" href="./" data-i18n="catalog.back">← Volver al catálogo</a>
+        <button class="language-toggle" type="button" data-language-toggle aria-label="Cambiar el idioma a ruso">RU</button>
+      </div>
       <article class="privacy">
         <h1 data-i18n="privacy.title">Privacidad</h1>
-        <p class="muted" data-i18n="privacy.updated">Última actualización: 2 de octubre de 2026</p>
+        <p class="muted" data-i18n="privacy.updated">Última actualización: 15 de noviembre de 2026</p>
 
         <p data-i18n="privacy.intro">
           VLC Biblio mantiene un catálogo público y un bot de Telegram para entregar libros a la
           biblioteca Pilar Faus y prestar temporalmente libros entre participantes.
         </p>
 
+        <h2 data-i18n="privacy.controller.title">Responsable del tratamiento</h2>
+        <p data-i18n-html="privacy.controller.p">
+          VLC Biblio es una iniciativa ciudadana y cultural comunitaria sin ánimo de lucro con sede en
+          Valencia (España). Para cualquier consulta o ejercicio de derechos de protección de datos,
+          puedes dirigirte a <a href="mailto:freetemplatespaula@gmail.com">freetemplatespaula@gmail.com</a> o contactar
+          a través de Telegram en <a href="https://t.me/bibliotecavlc" target="_blank" rel="noreferrer">@bibliotecavlc</a>.
+        </p>
+
         <h2 data-i18n="privacy.public.title">Sitio web público</h2>
         <p data-i18n="privacy.public.p1">
-          Este sitio es un catálogo estático. No utiliza herramientas de análisis, píxeles
-          publicitarios, formularios de registro ni cookies propias.
+          Este sitio es un catálogo estático. No utiliza herramientas de analítica web, píxeles
+          publicitarios, formularios de registro ni cookies propias de seguimiento.
         </p>
         <p data-i18n="privacy.public.p2">
-          El catálogo publica información sobre los libros: título, autor, ISBN, editorial, año,
-          descripción, estado, fecha de actualización y un enlace para solicitar el libro mediante
+          El catálogo publica información bibliográfica sobre los libros: título, autor, ISBN, editorial,
+          año, descripción, estado, fecha de actualización y un enlace para solicitar el libro mediante
           Telegram. Los nombres, identificadores de Telegram y de chat, las fotografías originales
           de los usuarios y las notas internas no se publican en el catálogo.
         </p>
@@ -138,11 +171,12 @@
           abrir el bot.
         </p>
 
-        <h2 data-i18n="privacy.external.title">Servicios externos</h2>
+        <h2 data-i18n="privacy.external.title">Servicios externos y recursos locales</h2>
         <p data-i18n="privacy.external.p1">
-          Las portadas pueden cargarse desde sitios públicos de editoriales, tiendas o catálogos de
-          libros. Al cargar una portada de este tipo, el navegador se conecta directamente con el
-          sitio externo. Los enlaces a Telegram y Google Maps solo se abren cuando el usuario los pulsa.
+          Todas las portadas de los libros se alojan y sirven localmente como recursos estáticos optimizados
+          en formato WebP desde el propio sitio web. No se realizan conexiones automáticas a servidores de librerías
+          ni plataformas externas en terceros países al visualizar las imágenes. Los enlaces a Telegram, Instagram
+          y Google Maps solo se abren cuando el usuario los pulsa de forma voluntaria.
         </p>
         <p data-i18n="privacy.external.p2">
           Las páginas del catálogo y de los libros cargan el script oficial de Telegram desde
@@ -184,22 +218,54 @@
           estos permanezcan en la lista autorizada.
         </p>
 
+        <h2 data-i18n="privacy.p2p.title">Préstamo entre particulares y exención de responsabilidad</h2>
+        <p data-i18n="privacy.p2p.p">
+          VLC Biblio opera como un catálogo cultural y punto de encuentro comunitario. En el caso de libros
+          pertenecientes a colecciones privadas o bibliotecas colaboradoras (por ejemplo, TOMA), el préstamo
+          temporal se acuerda directamente entre las personas participantes. VLC Biblio no ejerce custodia física
+          ni asume responsabilidad por pérdida, deterioro o falta de devolución de los ejemplares prestados entre particulares.
+        </p>
+
         <h2 data-i18n="privacy.rights.title">Tus derechos</h2>
-        <p data-i18n-html="privacy.rights.p">
-          Puedes solicitar que se eliminen o rectifiquen tus datos y preguntar qué información se
-          ha guardado. Para ello, escribe al bot de Telegram
-          <a href="https://t.me/VLS_Biblio_bot" target="_blank" rel="noreferrer">@VLS_Biblio_bot</a>
-          o al chat del proyecto
-          <a href="https://t.me/bibliotecavlc" target="_blank" rel="noreferrer">@bibliotecavlc</a>.
+        <p data-i18n="privacy.rights.intro">
+          De conformidad con el Reglamento General de Protección de Datos (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD),
+          tienes derecho a ejercitar los siguientes derechos respecto a tus datos personales:
+        </p>
+        <ul>
+          <li data-i18n="privacy.rights.access"><strong>Acceso:</strong> consultar qué datos personales tuyos están siendo tratados.</li>
+          <li data-i18n="privacy.rights.rectification"><strong>Rectificación:</strong> solicitar la corrección de datos inexactos o incompletos.</li>
+          <li data-i18n="privacy.rights.erasure"><strong>Supresión:</strong> pedir la eliminación de tus datos cuando ya no sean necesarios.</li>
+          <li data-i18n="privacy.rights.limitation"><strong>Limitación del tratamiento:</strong> solicitar la suspensión temporal del tratamiento en los supuestos previstos por la ley.</li>
+          <li data-i18n="privacy.rights.portability"><strong>Portabilidad:</strong> recibir los datos personales que nos hayas facilitado en formato estructurado y de lectura mecánica.</li>
+          <li data-i18n="privacy.rights.opposition"><strong>Oposición:</strong> oponerte al tratamiento de tus datos personales.</li>
+          <li data-i18n="privacy.rights.withdrawal"><strong>Retirada del consentimiento:</strong> revocar los consentimientos otorgados en cualquier momento, sin efectos retroactivos.</li>
+        </ul>
+        <p data-i18n-html="privacy.rights.exercise">
+          Para ejercer cualquiera de estos derechos, puedes escribir a <a href="mailto:freetemplatespaula@gmail.com">freetemplatespaula@gmail.com</a>,
+          al bot de Telegram <a href="https://t.me/VLS_Biblio_bot" target="_blank" rel="noreferrer">@VLS_Biblio_bot</a>
+          o al chat del proyecto <a href="https://t.me/bibliotecavlc" target="_blank" rel="noreferrer">@bibliotecavlc</a>.
+        </p>
+
+        <h2 data-i18n="privacy.dpa.title">Autoridad de control competente</h2>
+        <p data-i18n-html="privacy.dpa.p">
+          Si consideras que el tratamiento de tus datos no se ajusta a la normativa de protección de datos,
+          tienes derecho a presentar una reclamación ante la <strong>Agencia Española de Protección de Datos (AEPD)</strong>
+          a través de su sede electrónica en <a href="https://www.aepd.es" target="_blank" rel="noreferrer">www.aepd.es</a>
+          o por correo postal en C/ Jorge Juan, 6, 28001 Madrid.
         </p>
 
         <h2 data-i18n="privacy.contact.title">Contacto</h2>
         <p data-i18n-html="privacy.contact.p">
-          Para cualquier consulta sobre privacidad, escribe al equipo de VLC Biblio por Telegram:
+          Para cualquier consulta sobre privacidad y datos, escribe al equipo de VLC Biblio por correo electrónico
+          a <a href="mailto:freetemplatespaula@gmail.com">freetemplatespaula@gmail.com</a> o por Telegram a
           <a href="https://t.me/bibliotecavlc" target="_blank" rel="noreferrer">@bibliotecavlc</a>.
+        </p>
+
+        <p class="muted" style="margin-top: 24px;">
+          <a href="./legal.html" data-i18n="privacy.toLegal">Consultar el Aviso Legal y Condiciones de Uso →</a>
         </p>
       </article>
     </main>
-    <script src="./assets/i18n.js?v=1"></script>
+    <script src="./assets/i18n.js?v=legal-1"></script>
   </body>
 </html>

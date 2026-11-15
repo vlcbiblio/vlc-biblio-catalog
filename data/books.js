@@ -20,7 +20,13 @@ window.BIBLIO_BOOKS = [
     "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=978-5-08-006959-8",
     "addedAt": "2026-09-30T21:53:39",
     "updatedAt": "2026-09-30T23:32:32",
-    "authorKey": "михаил зощенко"
+    "authorKey": "михаил зощенко",
+    "coverImage": {
+      "src": "./assets/covers/optimized/2d95eca074b1b8f01aee-720.webp",
+      "srcset": "./assets/covers/optimized/9b18c3ffb1aff68d021b-360.webp 360w, ./assets/covers/optimized/2d95eca074b1b8f01aee-720.webp 720w",
+      "width": 720,
+      "height": 720
+    }
   },
   {
     "id": "b-1ed1fe233b38",
@@ -569,8 +575,8 @@ window.BIBLIO_BOOKS = [
     "authorKey": "юлия иванова",
     "depositEur": 20,
     "coverImage": {
-      "src": "./assets/covers/b-19f74451d9e3-20261103.jpg",
-      "srcset": "./assets/covers/b-19f74451d9e3-20261103.jpg 504w",
+      "src": "./assets/covers/optimized/e7e1c4b47927a0becf60-504.webp",
+      "srcset": "./assets/covers/optimized/2639c4ff69aaf999f94e-360.webp 360w, ./assets/covers/optimized/e7e1c4b47927a0becf60-504.webp 504w",
       "width": 504,
       "height": 704
     }
@@ -600,8 +606,8 @@ window.BIBLIO_BOOKS = [
     "authorKey": "юлия иванова",
     "depositEur": 20,
     "coverImage": {
-      "src": "./assets/covers/b-1a04917e07d7-20261103.jpg",
-      "srcset": "./assets/covers/b-1a04917e07d7-20261103.jpg 502w",
+      "src": "./assets/covers/optimized/52cf68e346beb568adf5-502.webp",
+      "srcset": "./assets/covers/optimized/e8901c5edb3234515faf-360.webp 360w, ./assets/covers/optimized/52cf68e346beb568adf5-502.webp 502w",
       "width": 502,
       "height": 702
     }
@@ -631,10 +637,10 @@ window.BIBLIO_BOOKS = [
     "authorKey": "юлия иванова",
     "depositEur": 20,
     "coverImage": {
-      "src": "./assets/covers/b-284dbd776171-20261103.jpg",
-      "srcset": "./assets/covers/b-284dbd776171-20261103.jpg 837w",
-      "width": 837,
-      "height": 1128
+      "src": "./assets/covers/optimized/6dee06deaf9dc9c516d8-720.webp",
+      "srcset": "./assets/covers/optimized/47c84f7acbfdc0ce4c49-360.webp 360w, ./assets/covers/optimized/6dee06deaf9dc9c516d8-720.webp 720w",
+      "width": 720,
+      "height": 970
     }
   },
   {
@@ -662,8 +668,8 @@ window.BIBLIO_BOOKS = [
     "authorKey": "валентин постников",
     "depositEur": 20,
     "coverImage": {
-      "src": "./assets/covers/b-335fc1feb0ae-20261103.jpg",
-      "srcset": "./assets/covers/b-335fc1feb0ae-20261103.jpg 259w",
+      "src": "./assets/covers/optimized/890f815fbb702eb98b81-259.webp",
+      "srcset": "./assets/covers/optimized/890f815fbb702eb98b81-259.webp 259w",
       "width": 259,
       "height": 346
     }
@@ -693,8 +699,8 @@ window.BIBLIO_BOOKS = [
     "authorKey": "юлия иванова",
     "depositEur": 20,
     "coverImage": {
-      "src": "./assets/covers/b-9670c214c5ac-20261103.jpg",
-      "srcset": "./assets/covers/b-9670c214c5ac-20261103.jpg 504w",
+      "src": "./assets/covers/optimized/1083e9032906eb096fbd-504.webp",
+      "srcset": "./assets/covers/optimized/4882124a464762490536-360.webp 360w, ./assets/covers/optimized/1083e9032906eb096fbd-504.webp 504w",
       "width": 504,
       "height": 705
     }
@@ -724,8 +730,8 @@ window.BIBLIO_BOOKS = [
     "authorKey": "юлия иванова",
     "depositEur": 20,
     "coverImage": {
-      "src": "./assets/covers/b-a11ff92b1fc3-20261103.jpg",
-      "srcset": "./assets/covers/b-a11ff92b1fc3-20261103.jpg 641w",
+      "src": "./assets/covers/optimized/162bfaf6baf3b780af9e-641.webp",
+      "srcset": "./assets/covers/optimized/e19f3947fc93b274b35c-360.webp 360w, ./assets/covers/optimized/162bfaf6baf3b780af9e-641.webp 641w",
       "width": 641,
       "height": 864
     }
@@ -755,8 +761,8 @@ window.BIBLIO_BOOKS = [
     "authorKey": "андрей усачев",
     "depositEur": 20,
     "coverImage": {
-      "src": "./assets/covers/b-ae01fdc065ac-20261103.jpg",
-      "srcset": "./assets/covers/b-ae01fdc065ac-20261103.jpg 625w",
+      "src": "./assets/covers/optimized/c9383618f4a4b9371c3c-625.webp",
+      "srcset": "./assets/covers/optimized/6bdb21a6fb7afe871082-360.webp 360w, ./assets/covers/optimized/c9383618f4a4b9371c3c-625.webp 625w",
       "width": 625,
       "height": 700
     }
@@ -786,8 +792,8 @@ window.BIBLIO_BOOKS = [
     "authorKey": "юлия иванова",
     "depositEur": 20,
     "coverImage": {
-      "src": "./assets/covers/b-ed2899c184a9-20261103.jpg",
-      "srcset": "./assets/covers/b-ed2899c184a9-20261103.jpg 503w",
+      "src": "./assets/covers/optimized/7b913755c29188e57b6f-503.webp",
+      "srcset": "./assets/covers/optimized/b865f352b350e6c8c2a8-360.webp 360w, ./assets/covers/optimized/7b913755c29188e57b6f-503.webp 503w",
       "width": 503,
       "height": 701
     }
@@ -817,8 +823,8 @@ window.BIBLIO_BOOKS = [
     "authorKey": "наталья щерба",
     "depositEur": 20,
     "coverImage": {
-      "src": "./assets/covers/b-edef337ea6f8-20261103.jpg",
-      "srcset": "./assets/covers/b-edef337ea6f8-20261103.jpg 320w",
+      "src": "./assets/covers/optimized/a2c9604f4f7873dd1a74-320.webp",
+      "srcset": "./assets/covers/optimized/a2c9604f4f7873dd1a74-320.webp 320w",
       "width": 320,
       "height": 488
     }
@@ -848,8 +854,8 @@ window.BIBLIO_BOOKS = [
     "authorKey": "юлия иванова",
     "depositEur": 20,
     "coverImage": {
-      "src": "./assets/covers/b-f82e5194da8f-20261103.jpg",
-      "srcset": "./assets/covers/b-f82e5194da8f-20261103.jpg 504w",
+      "src": "./assets/covers/optimized/17e071cf13165fa7e7c8-504.webp",
+      "srcset": "./assets/covers/optimized/1f1eb1e208cd09fad5e0-360.webp 360w, ./assets/covers/optimized/17e071cf13165fa7e7c8-504.webp 504w",
       "width": 504,
       "height": 703
     }
@@ -879,10 +885,10 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_63",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-8174-8556-f66fa403132c.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-8174-8556-f66fa403132c.png 1500w",
-      "width": 1500,
-      "height": 2359
+      "src": "./assets/covers/optimized/a3db49cafcbc863c1467-720.webp",
+      "srcset": "./assets/covers/optimized/f8bc7824bf113d7a3193-360.webp 360w, ./assets/covers/optimized/a3db49cafcbc863c1467-720.webp 720w",
+      "width": 720,
+      "height": 1132
     }
   },
   {
@@ -910,8 +916,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_193",
     "coverImage": {
-      "src": "./assets/covers/notion-3f34f95a-2ae4-8156-b689-f239672729c4.png",
-      "srcset": "./assets/covers/notion-3f34f95a-2ae4-8156-b689-f239672729c4.png 359w",
+      "src": "./assets/covers/optimized/c862d73e9045c87e82f1-359.webp",
+      "srcset": "./assets/covers/optimized/c862d73e9045c87e82f1-359.webp 359w",
       "width": 359,
       "height": 557
     }
@@ -941,10 +947,10 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_128",
     "coverImage": {
-      "src": "./assets/covers/notion-3e34f95a-2ae4-811f-a585-da702dd105bf.jpg",
-      "srcset": "./assets/covers/notion-3e34f95a-2ae4-811f-a585-da702dd105bf.jpg 1083w",
-      "width": 1083,
-      "height": 1732
+      "src": "./assets/covers/optimized/995e17819a6af8eb8280-720.webp",
+      "srcset": "./assets/covers/optimized/c43800a0c3378d8b7dc9-360.webp 360w, ./assets/covers/optimized/995e17819a6af8eb8280-720.webp 720w",
+      "width": 720,
+      "height": 1151
     }
   },
   {
@@ -972,8 +978,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_79",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-81d0-a19a-c38340fff2d1.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-81d0-a19a-c38340fff2d1.png 328w",
+      "src": "./assets/covers/optimized/851d6eda8749cf6c05c6-328.webp",
+      "srcset": "./assets/covers/optimized/851d6eda8749cf6c05c6-328.webp 328w",
       "width": 328,
       "height": 500
     }
@@ -1003,8 +1009,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_172",
     "coverImage": {
-      "src": "./assets/covers/notion-3f34f95a-2ae4-81e6-a0b6-fc54da4f966e.png",
-      "srcset": "./assets/covers/notion-3f34f95a-2ae4-81e6-a0b6-fc54da4f966e.png 200w",
+      "src": "./assets/covers/optimized/73d3d6c6495d3e425923-200.webp",
+      "srcset": "./assets/covers/optimized/73d3d6c6495d3e425923-200.webp 200w",
       "width": 200,
       "height": 301
     }
@@ -1034,10 +1040,10 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_114",
     "coverImage": {
-      "src": "./assets/covers/notion-3e34f95a-2ae4-818c-8955-fa23ec5aad47.png",
-      "srcset": "./assets/covers/notion-3e34f95a-2ae4-818c-8955-fa23ec5aad47.png 733w",
-      "width": 733,
-      "height": 1200
+      "src": "./assets/covers/optimized/662ce6a8a528e5d9711b-720.webp",
+      "srcset": "./assets/covers/optimized/c51b20b3ce9fa85d836e-360.webp 360w, ./assets/covers/optimized/662ce6a8a528e5d9711b-720.webp 720w",
+      "width": 720,
+      "height": 1179
     }
   },
   {
@@ -1065,8 +1071,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_155",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-8185-87b0-e4c36a896922.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-8185-87b0-e4c36a896922.png 555w",
+      "src": "./assets/covers/optimized/3a7c5d1440cece242a0e-555.webp",
+      "srcset": "./assets/covers/optimized/1356fa04d4a789c54020-360.webp 360w, ./assets/covers/optimized/3a7c5d1440cece242a0e-555.webp 555w",
       "width": 555,
       "height": 843
     }
@@ -1096,8 +1102,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_117",
     "coverImage": {
-      "src": "./assets/covers/notion-3e34f95a-2ae4-81a4-bb44-cb2c52d1b92f.png",
-      "srcset": "./assets/covers/notion-3e34f95a-2ae4-81a4-bb44-cb2c52d1b92f.png 615w",
+      "src": "./assets/covers/optimized/24fa8608922851e9b8e7-615.webp",
+      "srcset": "./assets/covers/optimized/44431f6ea2fcd1d678a9-360.webp 360w, ./assets/covers/optimized/24fa8608922851e9b8e7-615.webp 615w",
       "width": 615,
       "height": 1000
     }
@@ -1127,8 +1133,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_156",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-8106-96b1-d805b367fff4.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-8106-96b1-d805b367fff4.png 200w",
+      "src": "./assets/covers/optimized/979529353f739de73068-200.webp",
+      "srcset": "./assets/covers/optimized/979529353f739de73068-200.webp 200w",
       "width": 200,
       "height": 320
     }
@@ -1158,8 +1164,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_97",
     "coverImage": {
-      "src": "./assets/covers/notion-3da4f95a-2ae4-81e4-9df2-d141bd4eb67c.png",
-      "srcset": "./assets/covers/notion-3da4f95a-2ae4-81e4-9df2-d141bd4eb67c.png 242w",
+      "src": "./assets/covers/optimized/b3b358cf7a0c2fcf9de0-242.webp",
+      "srcset": "./assets/covers/optimized/b3b358cf7a0c2fcf9de0-242.webp 242w",
       "width": 242,
       "height": 377
     }
@@ -1189,8 +1195,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_66",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-81aa-ae1a-ffcad788c671.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-81aa-ae1a-ffcad788c671.png 600w",
+      "src": "./assets/covers/optimized/bcd3b22e951340c27caf-600.webp",
+      "srcset": "./assets/covers/optimized/72e7ee483d0a7c8819b0-360.webp 360w, ./assets/covers/optimized/bcd3b22e951340c27caf-600.webp 600w",
       "width": 600,
       "height": 766
     }
@@ -1220,8 +1226,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_61",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-8130-b122-c2ee7ec04bcb.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-8130-b122-c2ee7ec04bcb.png 373w",
+      "src": "./assets/covers/optimized/c51cd3753ef8a01f332f-373.webp",
+      "srcset": "./assets/covers/optimized/7e8968293062b299af5e-360.webp 360w, ./assets/covers/optimized/c51cd3753ef8a01f332f-373.webp 373w",
       "width": 373,
       "height": 536
     }
@@ -1251,8 +1257,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_232",
     "coverImage": {
-      "src": "./assets/covers/notion-3f94f95a-2ae4-81a8-a847-d34808bf5e1e.png",
-      "srcset": "./assets/covers/notion-3f94f95a-2ae4-81a8-a847-d34808bf5e1e.png 179w",
+      "src": "./assets/covers/optimized/51033674f42980d01f17-179.webp",
+      "srcset": "./assets/covers/optimized/51033674f42980d01f17-179.webp 179w",
       "width": 179,
       "height": 281
     }
@@ -1282,8 +1288,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_120",
     "coverImage": {
-      "src": "./assets/covers/notion-3e34f95a-2ae4-8133-af7f-fae8ba8120fd.png",
-      "srcset": "./assets/covers/notion-3e34f95a-2ae4-8133-af7f-fae8ba8120fd.png 404w",
+      "src": "./assets/covers/optimized/5e35b6cfcbed54937a82-404.webp",
+      "srcset": "./assets/covers/optimized/118780afc9304edc212f-360.webp 360w, ./assets/covers/optimized/5e35b6cfcbed54937a82-404.webp 404w",
       "width": 404,
       "height": 520
     }
@@ -1313,8 +1319,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_132",
     "coverImage": {
-      "src": "./assets/covers/notion-3e34f95a-2ae4-81d3-a75a-e086a6b0ee3c.png",
-      "srcset": "./assets/covers/notion-3e34f95a-2ae4-81d3-a75a-e086a6b0ee3c.png 400w",
+      "src": "./assets/covers/optimized/13c84dffd5ffe77077d7-400.webp",
+      "srcset": "./assets/covers/optimized/b578b1954847b1cbda7d-360.webp 360w, ./assets/covers/optimized/13c84dffd5ffe77077d7-400.webp 400w",
       "width": 400,
       "height": 511
     }
@@ -1344,8 +1350,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_188",
     "coverImage": {
-      "src": "./assets/covers/notion-3f34f95a-2ae4-81bf-bbc5-fd61ebc39cab.png",
-      "srcset": "./assets/covers/notion-3f34f95a-2ae4-81bf-bbc5-fd61ebc39cab.png 353w",
+      "src": "./assets/covers/optimized/f2aa963583176976fcb6-353.webp",
+      "srcset": "./assets/covers/optimized/f2aa963583176976fcb6-353.webp 353w",
       "width": 353,
       "height": 566
     }
@@ -1375,8 +1381,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_47",
     "coverImage": {
-      "src": "./assets/covers/notion-3d54f95a-2ae4-8166-b981-d7c266927cd3.png",
-      "srcset": "./assets/covers/notion-3d54f95a-2ae4-8166-b981-d7c266927cd3.png 410w",
+      "src": "./assets/covers/optimized/bfee27e37999948d46a3-410.webp",
+      "srcset": "./assets/covers/optimized/0b02dfb6450d18ba74b6-360.webp 360w, ./assets/covers/optimized/bfee27e37999948d46a3-410.webp 410w",
       "width": 410,
       "height": 575
     }
@@ -1406,8 +1412,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_86",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-8125-a4c5-d3fe797cd4d8.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-8125-a4c5-d3fe797cd4d8.png 179w",
+      "src": "./assets/covers/optimized/431ce26751a0bfce1b63-179.webp",
+      "srcset": "./assets/covers/optimized/431ce26751a0bfce1b63-179.webp 179w",
       "width": 179,
       "height": 282
     }
@@ -1437,8 +1443,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_135",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-81c7-8f30-cc8d69b7c8f8.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-81c7-8f30-cc8d69b7c8f8.png 200w",
+      "src": "./assets/covers/optimized/8226862d8f01d3145f0e-200.webp",
+      "srcset": "./assets/covers/optimized/8226862d8f01d3145f0e-200.webp 200w",
       "width": 200,
       "height": 329
     }
@@ -1468,8 +1474,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_167",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-8173-a842-edbd992a214e.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-8173-a842-edbd992a214e.png 353w",
+      "src": "./assets/covers/optimized/c437fbbf1a97563a5554-353.webp",
+      "srcset": "./assets/covers/optimized/c437fbbf1a97563a5554-353.webp 353w",
       "width": 353,
       "height": 566
     }
@@ -1499,10 +1505,10 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_62",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-8151-a333-c5e59cefff98.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-8151-a333-c5e59cefff98.png 960w",
-      "width": 960,
-      "height": 1280
+      "src": "./assets/covers/optimized/5a78d4b48c92fd23b0ff-720.webp",
+      "srcset": "./assets/covers/optimized/5fb1bf125bc8288f6a87-360.webp 360w, ./assets/covers/optimized/5a78d4b48c92fd23b0ff-720.webp 720w",
+      "width": 720,
+      "height": 960
     }
   },
   {
@@ -1530,8 +1536,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_44",
     "coverImage": {
-      "src": "./assets/covers/notion-3d54f95a-2ae4-8195-851a-d1b93b92a92e.png",
-      "srcset": "./assets/covers/notion-3d54f95a-2ae4-8195-851a-d1b93b92a92e.png 140w",
+      "src": "./assets/covers/optimized/6e758d91c8f3d76ab372-140.webp",
+      "srcset": "./assets/covers/optimized/6e758d91c8f3d76ab372-140.webp 140w",
       "width": 140,
       "height": 204
     }
@@ -1561,8 +1567,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_129",
     "coverImage": {
-      "src": "./assets/covers/notion-3e34f95a-2ae4-817f-bb06-f1d5262dfc32.webp",
-      "srcset": "./assets/covers/notion-3e34f95a-2ae4-817f-bb06-f1d5262dfc32.webp 593w",
+      "src": "./assets/covers/optimized/28b3995fc4fcb28c4b26-593.webp",
+      "srcset": "./assets/covers/optimized/d7467fcd174c0fb0e90f-360.webp 360w, ./assets/covers/optimized/28b3995fc4fcb28c4b26-593.webp 593w",
       "width": 593,
       "height": 919
     }
@@ -1592,8 +1598,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_125",
     "coverImage": {
-      "src": "./assets/covers/notion-3e34f95a-2ae4-81b8-a93f-d5685082d0aa.png",
-      "srcset": "./assets/covers/notion-3e34f95a-2ae4-81b8-a93f-d5685082d0aa.png 440w",
+      "src": "./assets/covers/optimized/1a64f29c374324402942-440.webp",
+      "srcset": "./assets/covers/optimized/f226c9d91cb408051589-360.webp 360w, ./assets/covers/optimized/1a64f29c374324402942-440.webp 440w",
       "width": 440,
       "height": 700
     }
@@ -1623,8 +1629,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_81",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-8181-8af8-ffcfd2112401.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-8181-8af8-ffcfd2112401.png 225w",
+      "src": "./assets/covers/optimized/167edd8b1f1c08ce3493-225.webp",
+      "srcset": "./assets/covers/optimized/167edd8b1f1c08ce3493-225.webp 225w",
       "width": 225,
       "height": 360
     }
@@ -1654,10 +1660,10 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_15",
     "coverImage": {
-      "src": "./assets/covers/notion-3d44f95a-2ae4-8180-8331-c02d99e2e5af.png",
-      "srcset": "./assets/covers/notion-3d44f95a-2ae4-8180-8331-c02d99e2e5af.png 721w",
-      "width": 721,
-      "height": 946
+      "src": "./assets/covers/optimized/665dc6c05972e32b6510-720.webp",
+      "srcset": "./assets/covers/optimized/096d8045af38b6961c1f-360.webp 360w, ./assets/covers/optimized/665dc6c05972e32b6510-720.webp 720w",
+      "width": 720,
+      "height": 945
     }
   },
   {
@@ -1685,8 +1691,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_45",
     "coverImage": {
-      "src": "./assets/covers/notion-3d54f95a-2ae4-8145-b816-f86321417330.png",
-      "srcset": "./assets/covers/notion-3d54f95a-2ae4-8145-b816-f86321417330.png 409w",
+      "src": "./assets/covers/optimized/12071b4e4d5cb37a9635-409.webp",
+      "srcset": "./assets/covers/optimized/e0baae6c1125daa04c20-360.webp 360w, ./assets/covers/optimized/12071b4e4d5cb37a9635-409.webp 409w",
       "width": 409,
       "height": 573
     }
@@ -1716,8 +1722,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_103",
     "coverImage": {
-      "src": "./assets/covers/notion-3da4f95a-2ae4-8191-b64a-fe2b88e009f5.png",
-      "srcset": "./assets/covers/notion-3da4f95a-2ae4-8191-b64a-fe2b88e009f5.png 356w",
+      "src": "./assets/covers/optimized/c7f2b3527fd27208e277-356.webp",
+      "srcset": "./assets/covers/optimized/c7f2b3527fd27208e277-356.webp 356w",
       "width": 356,
       "height": 561
     }
@@ -1747,8 +1753,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_223",
     "coverImage": {
-      "src": "./assets/covers/notion-3f94f95a-2ae4-81e2-9bcf-cb56478bf0c6.png",
-      "srcset": "./assets/covers/notion-3f94f95a-2ae4-81e2-9bcf-cb56478bf0c6.png 356w",
+      "src": "./assets/covers/optimized/f21e3d655cd95b416e48-356.webp",
+      "srcset": "./assets/covers/optimized/f21e3d655cd95b416e48-356.webp 356w",
       "width": 356,
       "height": 561
     }
@@ -1778,8 +1784,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_37",
     "coverImage": {
-      "src": "./assets/covers/notion-3d54f95a-2ae4-8130-a86d-f8fd92eb14be.png",
-      "srcset": "./assets/covers/notion-3d54f95a-2ae4-8130-a86d-f8fd92eb14be.png 562w",
+      "src": "./assets/covers/optimized/270deaee3260e9b1ef7a-562.webp",
+      "srcset": "./assets/covers/optimized/c9d353d77e78a40f1b42-360.webp 360w, ./assets/covers/optimized/270deaee3260e9b1ef7a-562.webp 562w",
       "width": 562,
       "height": 800
     }
@@ -1809,8 +1815,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_180",
     "coverImage": {
-      "src": "./assets/covers/notion-3f34f95a-2ae4-8186-9ee5-f2669f0b75eb.png",
-      "srcset": "./assets/covers/notion-3f34f95a-2ae4-8186-9ee5-f2669f0b75eb.png 200w",
+      "src": "./assets/covers/optimized/881e31502a51ee65e7e1-200.webp",
+      "srcset": "./assets/covers/optimized/881e31502a51ee65e7e1-200.webp 200w",
       "width": 200,
       "height": 300
     }
@@ -1840,8 +1846,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_225",
     "coverImage": {
-      "src": "./assets/covers/notion-3f94f95a-2ae4-8102-b9b5-d4c841b30d67.png",
-      "srcset": "./assets/covers/notion-3f94f95a-2ae4-8102-b9b5-d4c841b30d67.png 341w",
+      "src": "./assets/covers/optimized/ee8f6c78973b074b2841-341.webp",
+      "srcset": "./assets/covers/optimized/ee8f6c78973b074b2841-341.webp 341w",
       "width": 341,
       "height": 586
     }
@@ -1871,8 +1877,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_89",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-81e3-abd6-dea49ce430b9.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-81e3-abd6-dea49ce430b9.png 242w",
+      "src": "./assets/covers/optimized/e6b617ebda07b3a9522f-242.webp",
+      "srcset": "./assets/covers/optimized/e6b617ebda07b3a9522f-242.webp 242w",
       "width": 242,
       "height": 367
     }
@@ -1902,8 +1908,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_41",
     "coverImage": {
-      "src": "./assets/covers/notion-3d54f95a-2ae4-81ac-9514-e8f57db99f22.png",
-      "srcset": "./assets/covers/notion-3d54f95a-2ae4-81ac-9514-e8f57db99f22.png 140w",
+      "src": "./assets/covers/optimized/a2c91779b8e8fe7d4e7a-140.webp",
+      "srcset": "./assets/covers/optimized/a2c91779b8e8fe7d4e7a-140.webp 140w",
       "width": 140,
       "height": 202
     }
@@ -1933,8 +1939,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_158",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-81db-b279-c2f49960464d.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-81db-b279-c2f49960464d.png 558w",
+      "src": "./assets/covers/optimized/1f6b2fc66e23ad4e7794-558.webp",
+      "srcset": "./assets/covers/optimized/bbe7de1669b42caac2a8-360.webp 360w, ./assets/covers/optimized/1f6b2fc66e23ad4e7794-558.webp 558w",
       "width": 558,
       "height": 808
     }
@@ -1964,8 +1970,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_165",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-8169-a977-fbb5a918ec76.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-8169-a977-fbb5a918ec76.png 258w",
+      "src": "./assets/covers/optimized/e832ba8b7d50efcd71ee-258.webp",
+      "srcset": "./assets/covers/optimized/e832ba8b7d50efcd71ee-258.webp 258w",
       "width": 258,
       "height": 400
     }
@@ -1995,8 +2001,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_154",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-8146-8c55-c7672f74511c.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-8146-8c55-c7672f74511c.png 368w",
+      "src": "./assets/covers/optimized/5e50e8d21129df597f54-368.webp",
+      "srcset": "./assets/covers/optimized/d1cdc772f9dc2e47ff34-360.webp 360w, ./assets/covers/optimized/5e50e8d21129df597f54-368.webp 368w",
       "width": 368,
       "height": 541
     }
@@ -2026,8 +2032,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_38",
     "coverImage": {
-      "src": "./assets/covers/notion-3d54f95a-2ae4-81cb-97a5-d6e468cd70e7.png",
-      "srcset": "./assets/covers/notion-3d54f95a-2ae4-81cb-97a5-d6e468cd70e7.png 200w",
+      "src": "./assets/covers/optimized/85fcdcaa25a52d9b7faf-200.webp",
+      "srcset": "./assets/covers/optimized/85fcdcaa25a52d9b7faf-200.webp 200w",
       "width": 200,
       "height": 305
     }
@@ -2057,8 +2063,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_213",
     "coverImage": {
-      "src": "./assets/covers/notion-3f74f95a-2ae4-8147-b1c3-cf69ff3715d5.png",
-      "srcset": "./assets/covers/notion-3f74f95a-2ae4-8147-b1c3-cf69ff3715d5.png 436w",
+      "src": "./assets/covers/optimized/baab2ed96daa9b60fd74-436.webp",
+      "srcset": "./assets/covers/optimized/c87b711a3c9c51759ea3-360.webp 360w, ./assets/covers/optimized/baab2ed96daa9b60fd74-436.webp 436w",
       "width": 436,
       "height": 645
     }
@@ -2088,8 +2094,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_215",
     "coverImage": {
-      "src": "./assets/covers/notion-3f74f95a-2ae4-819e-bc1d-f40d6778cb37.png",
-      "srcset": "./assets/covers/notion-3f74f95a-2ae4-819e-bc1d-f40d6778cb37.png 367w",
+      "src": "./assets/covers/optimized/4ac8ebbfed028d9c4a7a-367.webp",
+      "srcset": "./assets/covers/optimized/1ada67c00538cf7364a2-360.webp 360w, ./assets/covers/optimized/4ac8ebbfed028d9c4a7a-367.webp 367w",
       "width": 367,
       "height": 544
     }
@@ -2119,8 +2125,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_16",
     "coverImage": {
-      "src": "./assets/covers/notion-3d44f95a-2ae4-8190-9655-ee72077c317c.png",
-      "srcset": "./assets/covers/notion-3d44f95a-2ae4-8190-9655-ee72077c317c.png 640w",
+      "src": "./assets/covers/optimized/61a56189a68d0a512e89-640.webp",
+      "srcset": "./assets/covers/optimized/2554bbb34df5e9be02d2-360.webp 360w, ./assets/covers/optimized/61a56189a68d0a512e89-640.webp 640w",
       "width": 640,
       "height": 830
     }
@@ -2150,8 +2156,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_146",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-818d-98d4-dc4a5da8bb87.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-818d-98d4-dc4a5da8bb87.png 358w",
+      "src": "./assets/covers/optimized/1be357e9da2e451299d6-358.webp",
+      "srcset": "./assets/covers/optimized/1be357e9da2e451299d6-358.webp 358w",
       "width": 358,
       "height": 558
     }
@@ -2181,8 +2187,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_85",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-81b2-8d2f-dbbd618e0330.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-81b2-8d2f-dbbd618e0330.png 361w",
+      "src": "./assets/covers/optimized/9a354002424b45bcce2f-361.webp",
+      "srcset": "./assets/covers/optimized/723f80f7912e4446452d-360.webp 360w, ./assets/covers/optimized/9a354002424b45bcce2f-361.webp 361w",
       "width": 361,
       "height": 554
     }
@@ -2211,8 +2217,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_14",
     "coverImage": {
-      "src": "./assets/covers/notion-3d44f95a-2ae4-81be-a21b-cc08d61fc642.png",
-      "srcset": "./assets/covers/notion-3d44f95a-2ae4-81be-a21b-cc08d61fc642.png 411w",
+      "src": "./assets/covers/optimized/88fd2de617b95e20a5d8-411.webp",
+      "srcset": "./assets/covers/optimized/53f4686c9f8516729adc-360.webp 360w, ./assets/covers/optimized/88fd2de617b95e20a5d8-411.webp 411w",
       "width": 411,
       "height": 515
     }
@@ -2242,8 +2248,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_198",
     "coverImage": {
-      "src": "./assets/covers/notion-3f64f95a-2ae4-81d1-ae71-d1a3a8caac0b.png",
-      "srcset": "./assets/covers/notion-3f64f95a-2ae4-81d1-ae71-d1a3a8caac0b.png 377w",
+      "src": "./assets/covers/optimized/b3f58f77a3d435aaaacc-377.webp",
+      "srcset": "./assets/covers/optimized/7469f016da2d64d4ec60-360.webp 360w, ./assets/covers/optimized/b3f58f77a3d435aaaacc-377.webp 377w",
       "width": 377,
       "height": 530
     }
@@ -2273,8 +2279,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_248",
     "coverImage": {
-      "src": "./assets/covers/notion-4054f95a-2ae4-81f5-b692-c2b556d35e2c.png",
-      "srcset": "./assets/covers/notion-4054f95a-2ae4-81f5-b692-c2b556d35e2c.png 306w",
+      "src": "./assets/covers/optimized/ccac9aba2aaca260590c-306.webp",
+      "srcset": "./assets/covers/optimized/ccac9aba2aaca260590c-306.webp 306w",
       "width": 306,
       "height": 500
     }
@@ -2304,10 +2310,10 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_217",
     "coverImage": {
-      "src": "./assets/covers/notion-3f74f95a-2ae4-8163-8ba2-e34183c79ed4.png",
-      "srcset": "./assets/covers/notion-3f74f95a-2ae4-8163-8ba2-e34183c79ed4.png 1500w",
-      "width": 1500,
-      "height": 1351
+      "src": "./assets/covers/optimized/2d94f0d495c88cecec50-720.webp",
+      "srcset": "./assets/covers/optimized/43cca4ff3c0b1cfca6d9-360.webp 360w, ./assets/covers/optimized/2d94f0d495c88cecec50-720.webp 720w",
+      "width": 720,
+      "height": 648
     }
   },
   {
@@ -2335,8 +2341,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_76",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-81e8-a671-ee2cfce57793.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-81e8-a671-ee2cfce57793.png 463w",
+      "src": "./assets/covers/optimized/9cf2cab5abd234a37884-463.webp",
+      "srcset": "./assets/covers/optimized/abb107a7dc9bdec21243-360.webp 360w, ./assets/covers/optimized/9cf2cab5abd234a37884-463.webp 463w",
       "width": 463,
       "height": 663
     }
@@ -2366,8 +2372,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_57",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-81ff-a344-c35a21e5be39.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-81ff-a344-c35a21e5be39.png 242w",
+      "src": "./assets/covers/optimized/1fe4d625dde85bfcce38-242.webp",
+      "srcset": "./assets/covers/optimized/1fe4d625dde85bfcce38-242.webp 242w",
       "width": 242,
       "height": 384
     }
@@ -2397,10 +2403,10 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_252",
     "coverImage": {
-      "src": "./assets/covers/notion-4054f95a-2ae4-8152-9f3f-fc45856a8683.png",
-      "srcset": "./assets/covers/notion-4054f95a-2ae4-8152-9f3f-fc45856a8683.png 1272w",
-      "width": 1272,
-      "height": 2000
+      "src": "./assets/covers/optimized/1bc291b3e02ecd31aa45-720.webp",
+      "srcset": "./assets/covers/optimized/7a18764f61c4f949020b-360.webp 360w, ./assets/covers/optimized/1bc291b3e02ecd31aa45-720.webp 720w",
+      "width": 720,
+      "height": 1132
     }
   },
   {
@@ -2428,8 +2434,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_54",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-81bc-944c-e5b80caa4532.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-81bc-944c-e5b80caa4532.png 350w",
+      "src": "./assets/covers/optimized/d621ccce0d7ce2ccd460-350.webp",
+      "srcset": "./assets/covers/optimized/d621ccce0d7ce2ccd460-350.webp 350w",
       "width": 350,
       "height": 530
     }
@@ -2459,8 +2465,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_68",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-81e9-925e-ded1ed039f8c.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-81e9-925e-ded1ed039f8c.png 375w",
+      "src": "./assets/covers/optimized/b7ec8f63030b1fd4ab87-375.webp",
+      "srcset": "./assets/covers/optimized/907bf30d0a0e6daf0c6c-360.webp 360w, ./assets/covers/optimized/b7ec8f63030b1fd4ab87-375.webp 375w",
       "width": 375,
       "height": 479
     }
@@ -2490,8 +2496,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_91",
     "coverImage": {
-      "src": "./assets/covers/notion-3da4f95a-2ae4-8159-a807-ec7f9acea870.png",
-      "srcset": "./assets/covers/notion-3da4f95a-2ae4-8159-a807-ec7f9acea870.png 353w",
+      "src": "./assets/covers/optimized/5d2bf11891a01847dbe6-353.webp",
+      "srcset": "./assets/covers/optimized/5d2bf11891a01847dbe6-353.webp 353w",
       "width": 353,
       "height": 566
     }
@@ -2521,8 +2527,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_216",
     "coverImage": {
-      "src": "./assets/covers/notion-3f74f95a-2ae4-8118-b888-ddce0d6c5002.png",
-      "srcset": "./assets/covers/notion-3f74f95a-2ae4-8118-b888-ddce0d6c5002.png 355w",
+      "src": "./assets/covers/optimized/0e53acb3c8b30c52276b-355.webp",
+      "srcset": "./assets/covers/optimized/0e53acb3c8b30c52276b-355.webp 355w",
       "width": 355,
       "height": 563
     }
@@ -2552,8 +2558,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_166",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-81a3-ab61-d2ff80edc63a.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-81a3-ab61-d2ff80edc63a.png 484w",
+      "src": "./assets/covers/optimized/138ac5e992ca6027c9ea-484.webp",
+      "srcset": "./assets/covers/optimized/8bf18fe02a6af0b9e776-360.webp 360w, ./assets/covers/optimized/138ac5e992ca6027c9ea-484.webp 484w",
       "width": 484,
       "height": 692
     }
@@ -2583,8 +2589,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_181",
     "coverImage": {
-      "src": "./assets/covers/notion-3f34f95a-2ae4-814a-a812-f08cb779c6a7.png",
-      "srcset": "./assets/covers/notion-3f34f95a-2ae4-814a-a812-f08cb779c6a7.png 313w",
+      "src": "./assets/covers/optimized/b49f7d34b49be53d8b1b-313.webp",
+      "srcset": "./assets/covers/optimized/b49f7d34b49be53d8b1b-313.webp 313w",
       "width": 313,
       "height": 500
     }
@@ -2614,8 +2620,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_197",
     "coverImage": {
-      "src": "./assets/covers/notion-3f64f95a-2ae4-8183-b24f-ce3900d5343c.png",
-      "srcset": "./assets/covers/notion-3f64f95a-2ae4-8183-b24f-ce3900d5343c.png 376w",
+      "src": "./assets/covers/optimized/e636b1cdffca780594a8-376.webp",
+      "srcset": "./assets/covers/optimized/36011ee971a1076cc3d8-360.webp 360w, ./assets/covers/optimized/e636b1cdffca780594a8-376.webp 376w",
       "width": 376,
       "height": 531
     }
@@ -2645,8 +2651,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_112",
     "coverImage": {
-      "src": "./assets/covers/notion-3e34f95a-2ae4-8134-ab12-fd222045424e.png",
-      "srcset": "./assets/covers/notion-3e34f95a-2ae4-8134-ab12-fd222045424e.png 558w",
+      "src": "./assets/covers/optimized/11fdf2187504ea67acbf-558.webp",
+      "srcset": "./assets/covers/optimized/6aa94e30832cfc7bb240-360.webp 360w, ./assets/covers/optimized/11fdf2187504ea67acbf-558.webp 558w",
       "width": 558,
       "height": 769
     }
@@ -2676,8 +2682,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_102",
     "coverImage": {
-      "src": "./assets/covers/notion-3da4f95a-2ae4-81a3-b308-e5c447840b33.png",
-      "srcset": "./assets/covers/notion-3da4f95a-2ae4-81a3-b308-e5c447840b33.png 242w",
+      "src": "./assets/covers/optimized/67ba2d52c2fd525a04b7-242.webp",
+      "srcset": "./assets/covers/optimized/67ba2d52c2fd525a04b7-242.webp 242w",
       "width": 242,
       "height": 379
     }
@@ -2707,8 +2713,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_145",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-8196-9481-d8062cdff035.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-8196-9481-d8062cdff035.png 614w",
+      "src": "./assets/covers/optimized/632167b2e8f1a78f0c25-614.webp",
+      "srcset": "./assets/covers/optimized/3d9b814d7859e46c3b8e-360.webp 360w, ./assets/covers/optimized/632167b2e8f1a78f0c25-614.webp 614w",
       "width": 614,
       "height": 1000
     }
@@ -2738,8 +2744,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_90",
     "coverImage": {
-      "src": "./assets/covers/notion-3da4f95a-2ae4-81d2-89da-c4cf065757f0.png",
-      "srcset": "./assets/covers/notion-3da4f95a-2ae4-81d2-89da-c4cf065757f0.png 242w",
+      "src": "./assets/covers/optimized/7eac8e30684ddeb8f453-242.webp",
+      "srcset": "./assets/covers/optimized/7eac8e30684ddeb8f453-242.webp 242w",
       "width": 242,
       "height": 313
     }
@@ -2769,8 +2775,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_226",
     "coverImage": {
-      "src": "./assets/covers/notion-3f94f95a-2ae4-810e-936b-fb0673efd79c.png",
-      "srcset": "./assets/covers/notion-3f94f95a-2ae4-810e-936b-fb0673efd79c.png 242w",
+      "src": "./assets/covers/optimized/4e79d2ec66542e68b9bf-242.webp",
+      "srcset": "./assets/covers/optimized/4e79d2ec66542e68b9bf-242.webp 242w",
       "width": 242,
       "height": 375
     }
@@ -2800,10 +2806,10 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_123",
     "coverImage": {
-      "src": "./assets/covers/notion-3e34f95a-2ae4-81fd-9af3-f10edbb6f283.jpg",
-      "srcset": "./assets/covers/notion-3e34f95a-2ae4-81fd-9af3-f10edbb6f283.jpg 1535w",
-      "width": 1535,
-      "height": 2433
+      "src": "./assets/covers/optimized/1ac4729d10658ad4a847-720.webp",
+      "srcset": "./assets/covers/optimized/5b4e3d77ef893c5d1bd1-360.webp 360w, ./assets/covers/optimized/1ac4729d10658ad4a847-720.webp 720w",
+      "width": 720,
+      "height": 1141
     }
   },
   {
@@ -2831,8 +2837,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_101",
     "coverImage": {
-      "src": "./assets/covers/notion-3da4f95a-2ae4-81c0-8bb0-fc1c0094e83f.png",
-      "srcset": "./assets/covers/notion-3da4f95a-2ae4-81c0-8bb0-fc1c0094e83f.png 304w",
+      "src": "./assets/covers/optimized/05f73521d1f256214fb8-304.webp",
+      "srcset": "./assets/covers/optimized/05f73521d1f256214fb8-304.webp 304w",
       "width": 304,
       "height": 400
     }
@@ -2862,8 +2868,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_119",
     "coverImage": {
-      "src": "./assets/covers/notion-3e34f95a-2ae4-812d-abe0-ea425e38c0bf.png",
-      "srcset": "./assets/covers/notion-3e34f95a-2ae4-812d-abe0-ea425e38c0bf.png 711w",
+      "src": "./assets/covers/optimized/28365291bd449cd8e868-711.webp",
+      "srcset": "./assets/covers/optimized/778090c03a8bcd62cd6a-360.webp 360w, ./assets/covers/optimized/28365291bd449cd8e868-711.webp 711w",
       "width": 711,
       "height": 1200
     }
@@ -2893,8 +2899,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_67",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-8172-9248-fa13e963408a.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-8172-9248-fa13e963408a.png 279w",
+      "src": "./assets/covers/optimized/3b0ab36d5af9cb7faa68-279.webp",
+      "srcset": "./assets/covers/optimized/3b0ab36d5af9cb7faa68-279.webp 279w",
       "width": 279,
       "height": 400
     }
@@ -2924,8 +2930,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_111",
     "coverImage": {
-      "src": "./assets/covers/notion-3e34f95a-2ae4-811c-bedd-df52241dd5f2.png",
-      "srcset": "./assets/covers/notion-3e34f95a-2ae4-811c-bedd-df52241dd5f2.png 700w",
+      "src": "./assets/covers/optimized/7cb49d22eff1a58e0682-700.webp",
+      "srcset": "./assets/covers/optimized/6a82e134e025e361c942-360.webp 360w, ./assets/covers/optimized/7cb49d22eff1a58e0682-700.webp 700w",
       "width": 700,
       "height": 936
     }
@@ -2955,8 +2961,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_1",
     "coverImage": {
-      "src": "./assets/covers/notion-3ea4f95a-2ae4-8177-84fb-c525670cd984.png",
-      "srcset": "./assets/covers/notion-3ea4f95a-2ae4-8177-84fb-c525670cd984.png 484w",
+      "src": "./assets/covers/optimized/563ce254a8bc21c50f3b-484.webp",
+      "srcset": "./assets/covers/optimized/e2318d10fdbb14ee52e7-360.webp 360w, ./assets/covers/optimized/563ce254a8bc21c50f3b-484.webp 484w",
       "width": 484,
       "height": 678
     }
@@ -2986,8 +2992,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_98",
     "coverImage": {
-      "src": "./assets/covers/notion-3da4f95a-2ae4-8187-8894-df7e9670ca2d.png",
-      "srcset": "./assets/covers/notion-3da4f95a-2ae4-8187-8894-df7e9670ca2d.png 367w",
+      "src": "./assets/covers/optimized/b2638b661b0b0ad860fb-367.webp",
+      "srcset": "./assets/covers/optimized/1241cf62f7be613b13c9-360.webp 360w, ./assets/covers/optimized/b2638b661b0b0ad860fb-367.webp 367w",
       "width": 367,
       "height": 544
     }
@@ -3017,8 +3023,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_185",
     "coverImage": {
-      "src": "./assets/covers/notion-3f34f95a-2ae4-81eb-9252-ef0f0b63f01b.png",
-      "srcset": "./assets/covers/notion-3f34f95a-2ae4-81eb-9252-ef0f0b63f01b.png 398w",
+      "src": "./assets/covers/optimized/5d218ebe978e54ab1f12-398.webp",
+      "srcset": "./assets/covers/optimized/006f35dfc6b643887065-360.webp 360w, ./assets/covers/optimized/5d218ebe978e54ab1f12-398.webp 398w",
       "width": 398,
       "height": 601
     }
@@ -3048,8 +3054,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_74",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-8166-892f-dcc0b0d2aade.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-8166-892f-dcc0b0d2aade.png 375w",
+      "src": "./assets/covers/optimized/002de87296c4da65de1c-375.webp",
+      "srcset": "./assets/covers/optimized/a49d1b7cc434b973f6c7-360.webp 360w, ./assets/covers/optimized/002de87296c4da65de1c-375.webp 375w",
       "width": 375,
       "height": 532
     }
@@ -3079,10 +3085,10 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_11",
     "coverImage": {
-      "src": "./assets/covers/notion-3d44f95a-2ae4-81ec-97e1-e0e6b3f659c8.png",
-      "srcset": "./assets/covers/notion-3d44f95a-2ae4-81ec-97e1-e0e6b3f659c8.png 1081w",
-      "width": 1081,
-      "height": 1536
+      "src": "./assets/covers/optimized/c7ff738103490b73fa00-720.webp",
+      "srcset": "./assets/covers/optimized/1fb3241ee503102c6caf-360.webp 360w, ./assets/covers/optimized/c7ff738103490b73fa00-720.webp 720w",
+      "width": 720,
+      "height": 1023
     }
   },
   {
@@ -3110,8 +3116,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_195",
     "coverImage": {
-      "src": "./assets/covers/notion-3f34f95a-2ae4-815a-abf4-e2724241ace0.png",
-      "srcset": "./assets/covers/notion-3f34f95a-2ae4-815a-abf4-e2724241ace0.png 200w",
+      "src": "./assets/covers/optimized/e65475682d0f91b66588-200.webp",
+      "srcset": "./assets/covers/optimized/e65475682d0f91b66588-200.webp 200w",
       "width": 200,
       "height": 280
     }
@@ -3141,8 +3147,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_163",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-8172-aef5-f99e6d198c05.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-8172-aef5-f99e6d198c05.png 366w",
+      "src": "./assets/covers/optimized/db4e91c0b4afabe87ba0-366.webp",
+      "srcset": "./assets/covers/optimized/c59986899edd16e6b5cf-360.webp 360w, ./assets/covers/optimized/db4e91c0b4afabe87ba0-366.webp 366w",
       "width": 366,
       "height": 598
     }
@@ -3171,8 +3177,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_220",
     "coverImage": {
-      "src": "./assets/covers/notion-3f94f95a-2ae4-815a-9b18-fe742d0f74d4.png",
-      "srcset": "./assets/covers/notion-3f94f95a-2ae4-815a-9b18-fe742d0f74d4.png 486w",
+      "src": "./assets/covers/optimized/75d8c678f76b60fd9603-486.webp",
+      "srcset": "./assets/covers/optimized/67b2629575daf059fa50-360.webp 360w, ./assets/covers/optimized/75d8c678f76b60fd9603-486.webp 486w",
       "width": 486,
       "height": 740
     }
@@ -3202,8 +3208,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_115",
     "coverImage": {
-      "src": "./assets/covers/notion-3e34f95a-2ae4-818c-ac20-dd4797ea2d6e.png",
-      "srcset": "./assets/covers/notion-3e34f95a-2ae4-818c-ac20-dd4797ea2d6e.png 594w",
+      "src": "./assets/covers/optimized/d6acc20c9fad0b2b94ae-594.webp",
+      "srcset": "./assets/covers/optimized/fba47a7457a86fd4adee-360.webp 360w, ./assets/covers/optimized/d6acc20c9fad0b2b94ae-594.webp 594w",
       "width": 594,
       "height": 1001
     }
@@ -3233,8 +3239,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_59",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-8134-b51d-dce821b9f9f9.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-8134-b51d-dce821b9f9f9.png 242w",
+      "src": "./assets/covers/optimized/f3b109cc209a731c8b8f-242.webp",
+      "srcset": "./assets/covers/optimized/f3b109cc209a731c8b8f-242.webp 242w",
       "width": 242,
       "height": 366
     }
@@ -3264,8 +3270,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_34",
     "coverImage": {
-      "src": "./assets/covers/notion-3d54f95a-2ae4-816b-8b44-ea6eae9c27bc.png",
-      "srcset": "./assets/covers/notion-3d54f95a-2ae4-816b-8b44-ea6eae9c27bc.png 375w",
+      "src": "./assets/covers/optimized/d3d9a389df4d7b9d4874-375.webp",
+      "srcset": "./assets/covers/optimized/c258356e294c23d152de-360.webp 360w, ./assets/covers/optimized/d3d9a389df4d7b9d4874-375.webp 375w",
       "width": 375,
       "height": 553
     }
@@ -3295,8 +3301,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_234",
     "coverImage": {
-      "src": "./assets/covers/notion-3f94f95a-2ae4-8110-9fb2-e870c028d15a.png",
-      "srcset": "./assets/covers/notion-3f94f95a-2ae4-8110-9fb2-e870c028d15a.png 235w",
+      "src": "./assets/covers/optimized/20fac5f77bb5d8f99d58-235.webp",
+      "srcset": "./assets/covers/optimized/20fac5f77bb5d8f99d58-235.webp 235w",
       "width": 235,
       "height": 330
     }
@@ -3326,8 +3332,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_164",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-81a8-b62f-e58a328ebf5c.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-81a8-b62f-e58a328ebf5c.png 358w",
+      "src": "./assets/covers/optimized/242377f75f4ad8c2898a-358.webp",
+      "srcset": "./assets/covers/optimized/242377f75f4ad8c2898a-358.webp 358w",
       "width": 358,
       "height": 558
     }
@@ -3357,8 +3363,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_49",
     "coverImage": {
-      "src": "./assets/covers/notion-3d54f95a-2ae4-8170-a64f-df0e7be5678a.png",
-      "srcset": "./assets/covers/notion-3d54f95a-2ae4-8170-a64f-df0e7be5678a.png 410w",
+      "src": "./assets/covers/optimized/53e33cfdcda81f4949bb-410.webp",
+      "srcset": "./assets/covers/optimized/01982d944920275f41f7-360.webp 360w, ./assets/covers/optimized/53e33cfdcda81f4949bb-410.webp 410w",
       "width": 410,
       "height": 567
     }
@@ -3388,8 +3394,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_161",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-8167-b1bd-dc417fbb280c.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-8167-b1bd-dc417fbb280c.png 449w",
+      "src": "./assets/covers/optimized/4c2e0f45a6a7ca8d5d45-449.webp",
+      "srcset": "./assets/covers/optimized/6dc4b46e7f9544a3db8b-360.webp 360w, ./assets/covers/optimized/4c2e0f45a6a7ca8d5d45-449.webp 449w",
       "width": 449,
       "height": 682
     }
@@ -3419,8 +3425,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_83",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-81ee-81c6-d6c4c312eb20.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-81ee-81c6-d6c4c312eb20.png 361w",
+      "src": "./assets/covers/optimized/dacc3e94daa4a807febd-361.webp",
+      "srcset": "./assets/covers/optimized/807802fde8add07a9388-360.webp 360w, ./assets/covers/optimized/dacc3e94daa4a807febd-361.webp 361w",
       "width": 361,
       "height": 554
     }
@@ -3450,8 +3456,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_204",
     "coverImage": {
-      "src": "./assets/covers/notion-3f64f95a-2ae4-8104-bbd4-f773f200fe8f.png",
-      "srcset": "./assets/covers/notion-3f64f95a-2ae4-8104-bbd4-f773f200fe8f.png 180w",
+      "src": "./assets/covers/optimized/80f5bcc06646a0e10ef7-180.webp",
+      "srcset": "./assets/covers/optimized/80f5bcc06646a0e10ef7-180.webp 180w",
       "width": 180,
       "height": 280
     }
@@ -3481,8 +3487,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_147",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-81a6-ae76-d2925b0a08a1.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-81a6-ae76-d2925b0a08a1.png 200w",
+      "src": "./assets/covers/optimized/9d8f8ede7303a8b90a7e-200.webp",
+      "srcset": "./assets/covers/optimized/9d8f8ede7303a8b90a7e-200.webp 200w",
       "width": 200,
       "height": 319
     }
@@ -3512,8 +3518,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_168",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-8177-9f7b-d86206964010.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-8177-9f7b-d86206964010.png 242w",
+      "src": "./assets/covers/optimized/d8d8c2ba562102d01ea2-242.webp",
+      "srcset": "./assets/covers/optimized/d8d8c2ba562102d01ea2-242.webp 242w",
       "width": 242,
       "height": 363
     }
@@ -3543,8 +3549,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_9",
     "coverImage": {
-      "src": "./assets/covers/notion-3d44f95a-2ae4-811e-bd1d-de7c00db3a55.png",
-      "srcset": "./assets/covers/notion-3d44f95a-2ae4-811e-bd1d-de7c00db3a55.png 405w",
+      "src": "./assets/covers/optimized/da513d9871f69e7c926e-405.webp",
+      "srcset": "./assets/covers/optimized/d7166ad0cc10db671165-360.webp 360w, ./assets/covers/optimized/da513d9871f69e7c926e-405.webp 405w",
       "width": 405,
       "height": 540
     }
@@ -3574,8 +3580,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_7",
     "coverImage": {
-      "src": "./assets/covers/notion-3d44f95a-2ae4-81dd-a2f4-f5a448ebdda3.png",
-      "srcset": "./assets/covers/notion-3d44f95a-2ae4-81dd-a2f4-f5a448ebdda3.png 489w",
+      "src": "./assets/covers/optimized/91d5063a738355e9b592-489.webp",
+      "srcset": "./assets/covers/optimized/6d5d43c64b072ebb92c7-360.webp 360w, ./assets/covers/optimized/91d5063a738355e9b592-489.webp 489w",
       "width": 489,
       "height": 720
     }
@@ -3605,8 +3611,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_239",
     "coverImage": {
-      "src": "./assets/covers/notion-3ff4f95a-2ae4-8173-95a6-cc055f624a27.png",
-      "srcset": "./assets/covers/notion-3ff4f95a-2ae4-8173-95a6-cc055f624a27.png 375w",
+      "src": "./assets/covers/optimized/04c9e3bc9b5053b5f1ef-375.webp",
+      "srcset": "./assets/covers/optimized/8d6737c1839642e4700a-360.webp 360w, ./assets/covers/optimized/04c9e3bc9b5053b5f1ef-375.webp 375w",
       "width": 375,
       "height": 533
     }
@@ -3636,8 +3642,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_106",
     "coverImage": {
-      "src": "./assets/covers/notion-3da4f95a-2ae4-81d1-8f13-d6ea64a564f8.png",
-      "srcset": "./assets/covers/notion-3da4f95a-2ae4-81d1-8f13-d6ea64a564f8.png 356w",
+      "src": "./assets/covers/optimized/fc8579afc307d1880732-356.webp",
+      "srcset": "./assets/covers/optimized/fc8579afc307d1880732-356.webp 356w",
       "width": 356,
       "height": 561
     }
@@ -3667,8 +3673,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_184",
     "coverImage": {
-      "src": "./assets/covers/notion-3f34f95a-2ae4-8187-b071-dd0a607aeecd.png",
-      "srcset": "./assets/covers/notion-3f34f95a-2ae4-8187-b071-dd0a607aeecd.png 434w",
+      "src": "./assets/covers/optimized/0c871cfb8174985aafca-434.webp",
+      "srcset": "./assets/covers/optimized/c87f21ec4893e69906c2-360.webp 360w, ./assets/covers/optimized/0c871cfb8174985aafca-434.webp 434w",
       "width": 434,
       "height": 652
     }
@@ -3698,8 +3704,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_144",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-8163-8512-f75dd5672ab7.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-8163-8512-f75dd5672ab7.png 441w",
+      "src": "./assets/covers/optimized/1b017c78065cf96e641d-441.webp",
+      "srcset": "./assets/covers/optimized/97b489926926e6ddf00f-360.webp 360w, ./assets/covers/optimized/1b017c78065cf96e641d-441.webp 441w",
       "width": 441,
       "height": 572
     }
@@ -3729,8 +3735,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_8",
     "coverImage": {
-      "src": "./assets/covers/notion-3d44f95a-2ae4-81e1-85c4-c5d3aa83cbbf.png",
-      "srcset": "./assets/covers/notion-3d44f95a-2ae4-81e1-85c4-c5d3aa83cbbf.png 242w",
+      "src": "./assets/covers/optimized/0912c6ec4a4851f4dfa6-242.webp",
+      "srcset": "./assets/covers/optimized/0912c6ec4a4851f4dfa6-242.webp 242w",
       "width": 242,
       "height": 293
     }
@@ -3760,8 +3766,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_190",
     "coverImage": {
-      "src": "./assets/covers/notion-3f34f95a-2ae4-8167-bd7f-d329fae9a1eb.png",
-      "srcset": "./assets/covers/notion-3f34f95a-2ae4-8167-bd7f-d329fae9a1eb.png 200w",
+      "src": "./assets/covers/optimized/61fe4de692ea4f42056e-200.webp",
+      "srcset": "./assets/covers/optimized/61fe4de692ea4f42056e-200.webp 200w",
       "width": 200,
       "height": 305
     }
@@ -3791,10 +3797,10 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_228",
     "coverImage": {
-      "src": "./assets/covers/notion-3f94f95a-2ae4-81a6-925d-f85b44e13140.png",
-      "srcset": "./assets/covers/notion-3f94f95a-2ae4-81a6-925d-f85b44e13140.png 1506w",
-      "width": 1506,
-      "height": 2000
+      "src": "./assets/covers/optimized/d5ecd9d09381ed8b340c-720.webp",
+      "srcset": "./assets/covers/optimized/55474f054654df0e7b27-360.webp 360w, ./assets/covers/optimized/d5ecd9d09381ed8b340c-720.webp 720w",
+      "width": 720,
+      "height": 956
     }
   },
   {
@@ -3822,8 +3828,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_42",
     "coverImage": {
-      "src": "./assets/covers/notion-3d54f95a-2ae4-8144-898a-d93e3e48bce7.png",
-      "srcset": "./assets/covers/notion-3d54f95a-2ae4-8144-898a-d93e3e48bce7.png 140w",
+      "src": "./assets/covers/optimized/bbeffc828fcf27a3a923-140.webp",
+      "srcset": "./assets/covers/optimized/bbeffc828fcf27a3a923-140.webp 140w",
       "width": 140,
       "height": 204
     }
@@ -3853,8 +3859,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_231",
     "coverImage": {
-      "src": "./assets/covers/notion-3f94f95a-2ae4-8104-95aa-c5ba96922054.png",
-      "srcset": "./assets/covers/notion-3f94f95a-2ae4-8104-95aa-c5ba96922054.png 181w",
+      "src": "./assets/covers/optimized/5e9997502237ae4e7bb5-181.webp",
+      "srcset": "./assets/covers/optimized/5e9997502237ae4e7bb5-181.webp 181w",
       "width": 181,
       "height": 279
     }
@@ -3884,8 +3890,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_23",
     "coverImage": {
-      "src": "./assets/covers/notion-3d44f95a-2ae4-8195-a26b-e0c8bfe809c1.png",
-      "srcset": "./assets/covers/notion-3d44f95a-2ae4-8195-a26b-e0c8bfe809c1.png 484w",
+      "src": "./assets/covers/optimized/4feade18420cc7f90190-484.webp",
+      "srcset": "./assets/covers/optimized/9d8c0d81edde428f9763-360.webp 360w, ./assets/covers/optimized/4feade18420cc7f90190-484.webp 484w",
       "width": 484,
       "height": 759
     }
@@ -3915,8 +3921,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_243",
     "coverImage": {
-      "src": "./assets/covers/notion-3ff4f95a-2ae4-8156-b3ac-d6283915ca6f.png",
-      "srcset": "./assets/covers/notion-3ff4f95a-2ae4-8156-b3ac-d6283915ca6f.png 484w",
+      "src": "./assets/covers/optimized/1732bb0c5895bf04c3fd-484.webp",
+      "srcset": "./assets/covers/optimized/31cb01e950e1b18c0608-360.webp 360w, ./assets/covers/optimized/1732bb0c5895bf04c3fd-484.webp 484w",
       "width": 484,
       "height": 690
     }
@@ -3946,10 +3952,10 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_113",
     "coverImage": {
-      "src": "./assets/covers/notion-3e34f95a-2ae4-812c-ac27-fbca91bfd50b.png",
-      "srcset": "./assets/covers/notion-3e34f95a-2ae4-812c-ac27-fbca91bfd50b.png 1335w",
-      "width": 1335,
-      "height": 2020
+      "src": "./assets/covers/optimized/5764e54aecf547c57a24-720.webp",
+      "srcset": "./assets/covers/optimized/941736b00e83387e1f6c-360.webp 360w, ./assets/covers/optimized/5764e54aecf547c57a24-720.webp 720w",
+      "width": 720,
+      "height": 1089
     }
   },
   {
@@ -3977,8 +3983,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_229",
     "coverImage": {
-      "src": "./assets/covers/notion-3f94f95a-2ae4-8193-a117-d069aefe767d.png",
-      "srcset": "./assets/covers/notion-3f94f95a-2ae4-8193-a117-d069aefe767d.png 359w",
+      "src": "./assets/covers/optimized/618bd65952af8836086a-359.webp",
+      "srcset": "./assets/covers/optimized/618bd65952af8836086a-359.webp 359w",
       "width": 359,
       "height": 557
     }
@@ -4008,10 +4014,10 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_201",
     "coverImage": {
-      "src": "./assets/covers/notion-3f64f95a-2ae4-813d-bf6e-c264edd93c6f.png",
-      "srcset": "./assets/covers/notion-3f64f95a-2ae4-813d-bf6e-c264edd93c6f.png 1152w",
-      "width": 1152,
-      "height": 1587
+      "src": "./assets/covers/optimized/26ff8ae9ede54e4551ec-720.webp",
+      "srcset": "./assets/covers/optimized/af6a60cd1d512c916105-360.webp 360w, ./assets/covers/optimized/26ff8ae9ede54e4551ec-720.webp 720w",
+      "width": 720,
+      "height": 992
     }
   },
   {
@@ -4039,8 +4045,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_179",
     "coverImage": {
-      "src": "./assets/covers/notion-3f34f95a-2ae4-8176-baf2-e4c109821d67.png",
-      "srcset": "./assets/covers/notion-3f34f95a-2ae4-8176-baf2-e4c109821d67.png 480w",
+      "src": "./assets/covers/optimized/8af4394ac97144b0d586-480.webp",
+      "srcset": "./assets/covers/optimized/fdc48cba993b5d11fde7-360.webp 360w, ./assets/covers/optimized/8af4394ac97144b0d586-480.webp 480w",
       "width": 480,
       "height": 638
     }
@@ -4069,8 +4075,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_80",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-8100-8851-cbe69c48074a.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-8100-8851-cbe69c48074a.png 546w",
+      "src": "./assets/covers/optimized/2b2037388e09497a6f21-546.webp",
+      "srcset": "./assets/covers/optimized/7d6d8dff52e711fa3f03-360.webp 360w, ./assets/covers/optimized/2b2037388e09497a6f21-546.webp 546w",
       "width": 546,
       "height": 876
     }
@@ -4100,8 +4106,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_137",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-8195-be18-f83716ec0c32.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-8195-be18-f83716ec0c32.png 200w",
+      "src": "./assets/covers/optimized/7ac6f970a500acc2ba4c-200.webp",
+      "srcset": "./assets/covers/optimized/7ac6f970a500acc2ba4c-200.webp 200w",
       "width": 200,
       "height": 318
     }
@@ -4131,8 +4137,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_69",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-81d8-aadc-e279eeee9af1.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-81d8-aadc-e279eeee9af1.png 375w",
+      "src": "./assets/covers/optimized/2348fc7a6baad98fcd04-375.webp",
+      "srcset": "./assets/covers/optimized/9aa1eea35e64eea0db53-360.webp 360w, ./assets/covers/optimized/2348fc7a6baad98fcd04-375.webp 375w",
       "width": 375,
       "height": 519
     }
@@ -4162,10 +4168,10 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_21",
     "coverImage": {
-      "src": "./assets/covers/notion-3d44f95a-2ae4-813e-a87c-ffe14ee7996d.png",
-      "srcset": "./assets/covers/notion-3d44f95a-2ae4-813e-a87c-ffe14ee7996d.png 977w",
-      "width": 977,
-      "height": 1144
+      "src": "./assets/covers/optimized/9a84290a928aaca8ccc4-720.webp",
+      "srcset": "./assets/covers/optimized/3793e19ff4055a067890-360.webp 360w, ./assets/covers/optimized/9a84290a928aaca8ccc4-720.webp 720w",
+      "width": 720,
+      "height": 843
     }
   },
   {
@@ -4193,8 +4199,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_131",
     "coverImage": {
-      "src": "./assets/covers/notion-3e34f95a-2ae4-81e8-a4e7-ec06ecd211a2.png",
-      "srcset": "./assets/covers/notion-3e34f95a-2ae4-81e8-a4e7-ec06ecd211a2.png 498w",
+      "src": "./assets/covers/optimized/6fca7e1e85568247ac71-498.webp",
+      "srcset": "./assets/covers/optimized/68477ba5ceed62ff0f7e-360.webp 360w, ./assets/covers/optimized/6fca7e1e85568247ac71-498.webp 498w",
       "width": 498,
       "height": 800
     }
@@ -4224,8 +4230,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_241",
     "coverImage": {
-      "src": "./assets/covers/notion-3ff4f95a-2ae4-81d6-b786-d0b770507d94.png",
-      "srcset": "./assets/covers/notion-3ff4f95a-2ae4-81d6-b786-d0b770507d94.png 379w",
+      "src": "./assets/covers/optimized/640a534c6d393e424b0f-379.webp",
+      "srcset": "./assets/covers/optimized/e3062d136e6021747340-360.webp 360w, ./assets/covers/optimized/640a534c6d393e424b0f-379.webp 379w",
       "width": 379,
       "height": 527
     }
@@ -4255,8 +4261,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_72",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-81c8-98ac-f69b5348e46a.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-81c8-98ac-f69b5348e46a.png 375w",
+      "src": "./assets/covers/optimized/63054132b99f23832e80-375.webp",
+      "srcset": "./assets/covers/optimized/1e2729c7af7d87c83b90-360.webp 360w, ./assets/covers/optimized/63054132b99f23832e80-375.webp 375w",
       "width": 375,
       "height": 535
     }
@@ -4286,8 +4292,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_36",
     "coverImage": {
-      "src": "./assets/covers/notion-3d54f95a-2ae4-8183-af60-c5e5ad70b63b.png",
-      "srcset": "./assets/covers/notion-3d54f95a-2ae4-8183-af60-c5e5ad70b63b.png 375w",
+      "src": "./assets/covers/optimized/5b74e228c8a9de81e478-375.webp",
+      "srcset": "./assets/covers/optimized/ab4cdf6354090e7033ad-360.webp 360w, ./assets/covers/optimized/5b74e228c8a9de81e478-375.webp 375w",
       "width": 375,
       "height": 567
     }
@@ -4317,8 +4323,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_202",
     "coverImage": {
-      "src": "./assets/covers/notion-3f64f95a-2ae4-816c-bb9e-d32fd3c4dfde.png",
-      "srcset": "./assets/covers/notion-3f64f95a-2ae4-816c-bb9e-d32fd3c4dfde.png 260w",
+      "src": "./assets/covers/optimized/1eacbea5faee166f19ea-260.webp",
+      "srcset": "./assets/covers/optimized/1eacbea5faee166f19ea-260.webp 260w",
       "width": 260,
       "height": 339
     }
@@ -4348,8 +4354,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_244",
     "coverImage": {
-      "src": "./assets/covers/notion-3ff4f95a-2ae4-8190-9aec-d587e4a17baa.png",
-      "srcset": "./assets/covers/notion-3ff4f95a-2ae4-8190-9aec-d587e4a17baa.png 369w",
+      "src": "./assets/covers/optimized/638535911d93836148d7-369.webp",
+      "srcset": "./assets/covers/optimized/b0b72492d0f06cd7b131-360.webp 360w, ./assets/covers/optimized/638535911d93836148d7-369.webp 369w",
       "width": 369,
       "height": 542
     }
@@ -4379,8 +4385,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_87",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-815c-8c03-fd1dafd26273.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-815c-8c03-fd1dafd26273.png 242w",
+      "src": "./assets/covers/optimized/7a2e14e34add1639b3ad-242.webp",
+      "srcset": "./assets/covers/optimized/7a2e14e34add1639b3ad-242.webp 242w",
       "width": 242,
       "height": 380
     }
@@ -4410,8 +4416,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_157",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-81b0-9447-ffd23e89cd53.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-81b0-9447-ffd23e89cd53.png 565w",
+      "src": "./assets/covers/optimized/8d5ab0e8cfe277ed684d-565.webp",
+      "srcset": "./assets/covers/optimized/0bbfa427865f5dfb88ca-360.webp 360w, ./assets/covers/optimized/8d5ab0e8cfe277ed684d-565.webp 565w",
       "width": 565,
       "height": 825
     }
@@ -4441,8 +4447,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_138",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-81a0-915a-cc1438130f18.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-81a0-915a-cc1438130f18.png 442w",
+      "src": "./assets/covers/optimized/89efe417ae7f044e53b1-442.webp",
+      "srcset": "./assets/covers/optimized/a9e8fb0524ded3c65cff-360.webp 360w, ./assets/covers/optimized/89efe417ae7f044e53b1-442.webp 442w",
       "width": 442,
       "height": 694
     }
@@ -4472,10 +4478,10 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_209",
     "coverImage": {
-      "src": "./assets/covers/notion-3f74f95a-2ae4-8141-ba40-c49a5b0ed4f3.png",
-      "srcset": "./assets/covers/notion-3f74f95a-2ae4-8141-ba40-c49a5b0ed4f3.png 1100w",
-      "width": 1100,
-      "height": 1318
+      "src": "./assets/covers/optimized/e7fe96e4853295919a06-720.webp",
+      "srcset": "./assets/covers/optimized/62d92168e3290e004ffe-360.webp 360w, ./assets/covers/optimized/e7fe96e4853295919a06-720.webp 720w",
+      "width": 720,
+      "height": 863
     }
   },
   {
@@ -4503,8 +4509,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_100",
     "coverImage": {
-      "src": "./assets/covers/notion-3da4f95a-2ae4-815e-97f4-ff088f77a1f2.png",
-      "srcset": "./assets/covers/notion-3da4f95a-2ae4-815e-97f4-ff088f77a1f2.png 242w",
+      "src": "./assets/covers/optimized/bb4a5a0581f005776d33-242.webp",
+      "srcset": "./assets/covers/optimized/bb4a5a0581f005776d33-242.webp 242w",
       "width": 242,
       "height": 361
     }
@@ -4534,8 +4540,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_175",
     "coverImage": {
-      "src": "./assets/covers/notion-3f34f95a-2ae4-816b-982e-ee149a311c03.png",
-      "srcset": "./assets/covers/notion-3f34f95a-2ae4-816b-982e-ee149a311c03.png 625w",
+      "src": "./assets/covers/optimized/be5e9d852a8bcae651a2-625.webp",
+      "srcset": "./assets/covers/optimized/8ea690b40a97b4b20669-360.webp 360w, ./assets/covers/optimized/be5e9d852a8bcae651a2-625.webp 625w",
       "width": 625,
       "height": 808
     }
@@ -4565,8 +4571,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_177",
     "coverImage": {
-      "src": "./assets/covers/notion-3f34f95a-2ae4-812d-876b-e6dc27180601.png",
-      "srcset": "./assets/covers/notion-3f34f95a-2ae4-812d-876b-e6dc27180601.png 220w",
+      "src": "./assets/covers/optimized/fe2ec7bc845b053564dd-220.webp",
+      "srcset": "./assets/covers/optimized/fe2ec7bc845b053564dd-220.webp 220w",
       "width": 220,
       "height": 289
     }
@@ -4596,8 +4602,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_192",
     "coverImage": {
-      "src": "./assets/covers/notion-3f34f95a-2ae4-81ca-9644-fffff0ebc56a.png",
-      "srcset": "./assets/covers/notion-3f34f95a-2ae4-81ca-9644-fffff0ebc56a.png 200w",
+      "src": "./assets/covers/optimized/17b9946c32f26b459991-200.webp",
+      "srcset": "./assets/covers/optimized/17b9946c32f26b459991-200.webp 200w",
       "width": 200,
       "height": 305
     }
@@ -4627,8 +4633,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_211",
     "coverImage": {
-      "src": "./assets/covers/notion-3f74f95a-2ae4-81a0-bb61-d58274a8f7e0.png",
-      "srcset": "./assets/covers/notion-3f74f95a-2ae4-81a0-bb61-d58274a8f7e0.png 443w",
+      "src": "./assets/covers/optimized/72597686c192feb5b0e4-443.webp",
+      "srcset": "./assets/covers/optimized/b4d44de7b92f21ad84f5-360.webp 360w, ./assets/covers/optimized/72597686c192feb5b0e4-443.webp 443w",
       "width": 443,
       "height": 691
     }
@@ -4658,10 +4664,10 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_124",
     "coverImage": {
-      "src": "./assets/covers/notion-3e34f95a-2ae4-8183-bff8-eee7301ec226.png",
-      "srcset": "./assets/covers/notion-3e34f95a-2ae4-8183-bff8-eee7301ec226.png 824w",
-      "width": 824,
-      "height": 1287
+      "src": "./assets/covers/optimized/79831a2429020fd44a45-720.webp",
+      "srcset": "./assets/covers/optimized/d1b6d8d900e0680d4844-360.webp 360w, ./assets/covers/optimized/79831a2429020fd44a45-720.webp 720w",
+      "width": 720,
+      "height": 1125
     }
   },
   {
@@ -4689,8 +4695,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_149",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-8177-a549-c237adfa56c4.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-8177-a549-c237adfa56c4.png 480w",
+      "src": "./assets/covers/optimized/63507c45b40d16de6ae6-480.webp",
+      "srcset": "./assets/covers/optimized/178565877810a61c6a12-360.webp 360w, ./assets/covers/optimized/63507c45b40d16de6ae6-480.webp 480w",
       "width": 480,
       "height": 638
     }
@@ -4720,8 +4726,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_242",
     "coverImage": {
-      "src": "./assets/covers/notion-3ff4f95a-2ae4-8105-8b82-de857ec294a1.png",
-      "srcset": "./assets/covers/notion-3ff4f95a-2ae4-8105-8b82-de857ec294a1.png 377w",
+      "src": "./assets/covers/optimized/18a3719178ab87931aa8-377.webp",
+      "srcset": "./assets/covers/optimized/15a16b3b044be315b9bf-360.webp 360w, ./assets/covers/optimized/18a3719178ab87931aa8-377.webp 377w",
       "width": 377,
       "height": 530
     }
@@ -4751,10 +4757,10 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_52",
     "coverImage": {
-      "src": "./assets/covers/notion-3d54f95a-2ae4-81a2-bf58-e3c8cf0af737.png",
-      "srcset": "./assets/covers/notion-3d54f95a-2ae4-81a2-bf58-e3c8cf0af737.png 1299w",
-      "width": 1299,
-      "height": 1829
+      "src": "./assets/covers/optimized/afd87ddb3f5612cb5561-720.webp",
+      "srcset": "./assets/covers/optimized/84a7434af01425d26d01-360.webp 360w, ./assets/covers/optimized/afd87ddb3f5612cb5561-720.webp 720w",
+      "width": 720,
+      "height": 1014
     }
   },
   {
@@ -4782,8 +4788,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_53",
     "coverImage": {
-      "src": "./assets/covers/notion-3d54f95a-2ae4-8163-a88a-f30b9670172f.png",
-      "srcset": "./assets/covers/notion-3d54f95a-2ae4-8163-a88a-f30b9670172f.png 550w",
+      "src": "./assets/covers/optimized/36f87815dc7e149e4dbb-550.webp",
+      "srcset": "./assets/covers/optimized/0ddc47d4a7b8e8645478-360.webp 360w, ./assets/covers/optimized/36f87815dc7e149e4dbb-550.webp 550w",
       "width": 550,
       "height": 550
     }
@@ -4813,8 +4819,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_64",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-8116-b392-deab00d6e1a2.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-8116-b392-deab00d6e1a2.png 200w",
+      "src": "./assets/covers/optimized/4caa4857b2497060100c-200.webp",
+      "srcset": "./assets/covers/optimized/4caa4857b2497060100c-200.webp 200w",
       "width": 200,
       "height": 258
     }
@@ -4844,8 +4850,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_140",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-819c-a30a-e564db701800.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-819c-a30a-e564db701800.png 313w",
+      "src": "./assets/covers/optimized/90e6d1417967f980adea-313.webp",
+      "srcset": "./assets/covers/optimized/90e6d1417967f980adea-313.webp 313w",
       "width": 313,
       "height": 434
     }
@@ -4875,8 +4881,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_110",
     "coverImage": {
-      "src": "./assets/covers/notion-3e34f95a-2ae4-81f8-9281-d69d9f8057f2.png",
-      "srcset": "./assets/covers/notion-3e34f95a-2ae4-81f8-9281-d69d9f8057f2.png 703w",
+      "src": "./assets/covers/optimized/0e809fb23c142f63e72b-703.webp",
+      "srcset": "./assets/covers/optimized/152bf74e9560c32ae049-360.webp 360w, ./assets/covers/optimized/0e809fb23c142f63e72b-703.webp 703w",
       "width": 703,
       "height": 919
     }
@@ -4906,8 +4912,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_4",
     "coverImage": {
-      "src": "./assets/covers/notion-3d44f95a-2ae4-819a-81da-dd02262a7a50.png",
-      "srcset": "./assets/covers/notion-3d44f95a-2ae4-819a-81da-dd02262a7a50.png 484w",
+      "src": "./assets/covers/optimized/3edeae34f47ee1d1e594-484.webp",
+      "srcset": "./assets/covers/optimized/d74f15be43a8d4a05594-360.webp 360w, ./assets/covers/optimized/3edeae34f47ee1d1e594-484.webp 484w",
       "width": 484,
       "height": 752
     }
@@ -4937,8 +4943,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_22",
     "coverImage": {
-      "src": "./assets/covers/notion-3d44f95a-2ae4-81b7-a269-dc266dc93fe9.png",
-      "srcset": "./assets/covers/notion-3d44f95a-2ae4-81b7-a269-dc266dc93fe9.png 279w",
+      "src": "./assets/covers/optimized/7ae152fbc74030486844-279.webp",
+      "srcset": "./assets/covers/optimized/7ae152fbc74030486844-279.webp 279w",
       "width": 279,
       "height": 300
     }
@@ -4968,8 +4974,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_82",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-813e-afff-cb86a6ad9733.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-813e-afff-cb86a6ad9733.png 360w",
+      "src": "./assets/covers/optimized/5f110ed1880264b107de-360.webp",
+      "srcset": "./assets/covers/optimized/5f110ed1880264b107de-360.webp 360w",
       "width": 360,
       "height": 555
     }
@@ -4999,8 +5005,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_196",
     "coverImage": {
-      "src": "./assets/covers/notion-3f64f95a-2ae4-81a8-86b2-e77f9802d1d0.png",
-      "srcset": "./assets/covers/notion-3f64f95a-2ae4-81a8-86b2-e77f9802d1d0.png 393w",
+      "src": "./assets/covers/optimized/f93b74e8e7420eeb6061-393.webp",
+      "srcset": "./assets/covers/optimized/dd1f7007371ed8aa3e4e-360.webp 360w, ./assets/covers/optimized/f93b74e8e7420eeb6061-393.webp 393w",
       "width": 393,
       "height": 508
     }
@@ -5030,8 +5036,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_230",
     "coverImage": {
-      "src": "./assets/covers/notion-3f94f95a-2ae4-819c-8679-e5a874e526e7.png",
-      "srcset": "./assets/covers/notion-3f94f95a-2ae4-819c-8679-e5a874e526e7.png 200w",
+      "src": "./assets/covers/optimized/bd7cfcc5a0996886774e-200.webp",
+      "srcset": "./assets/covers/optimized/bd7cfcc5a0996886774e-200.webp 200w",
       "width": 200,
       "height": 304
     }
@@ -5061,8 +5067,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_108",
     "coverImage": {
-      "src": "./assets/covers/notion-3da4f95a-2ae4-816c-a75e-c7df34f360cd.png",
-      "srcset": "./assets/covers/notion-3da4f95a-2ae4-816c-a75e-c7df34f360cd.png 356w",
+      "src": "./assets/covers/optimized/a070b856ea3a41126f10-356.webp",
+      "srcset": "./assets/covers/optimized/a070b856ea3a41126f10-356.webp 356w",
       "width": 356,
       "height": 561
     }
@@ -5092,8 +5098,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_150",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-819f-82d8-cd76a10934ec.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-819f-82d8-cd76a10934ec.png 368w",
+      "src": "./assets/covers/optimized/7bb7be88065e0dd7d97c-368.webp",
+      "srcset": "./assets/covers/optimized/b196ba32fc8a5bd58973-360.webp 360w, ./assets/covers/optimized/7bb7be88065e0dd7d97c-368.webp 368w",
       "width": 368,
       "height": 541
     }
@@ -5123,8 +5129,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_208",
     "coverImage": {
-      "src": "./assets/covers/notion-3f74f95a-2ae4-8118-9795-f1de1b7ed9a7.png",
-      "srcset": "./assets/covers/notion-3f74f95a-2ae4-8118-9795-f1de1b7ed9a7.png 357w",
+      "src": "./assets/covers/optimized/efec91dcd81765ede073-357.webp",
+      "srcset": "./assets/covers/optimized/efec91dcd81765ede073-357.webp 357w",
       "width": 357,
       "height": 560
     }
@@ -5154,8 +5160,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_143",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-8144-87c8-eb1d8efea1d8.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-8144-87c8-eb1d8efea1d8.png 400w",
+      "src": "./assets/covers/optimized/559682cf706f4fe185d8-400.webp",
+      "srcset": "./assets/covers/optimized/c7b5b7d53decae43480d-360.webp 360w, ./assets/covers/optimized/559682cf706f4fe185d8-400.webp 400w",
       "width": 400,
       "height": 400
     }
@@ -5185,8 +5191,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_152",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-8194-924c-e01e3de8011c.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-8194-924c-e01e3de8011c.png 200w",
+      "src": "./assets/covers/optimized/295c460ef799882cb9af-200.webp",
+      "srcset": "./assets/covers/optimized/295c460ef799882cb9af-200.webp 200w",
       "width": 200,
       "height": 312
     }
@@ -5216,8 +5222,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_84",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-8160-b540-d9c89345fb83.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-8160-b540-d9c89345fb83.png 350w",
+      "src": "./assets/covers/optimized/f87282c912cf5e26f8d9-350.webp",
+      "srcset": "./assets/covers/optimized/f87282c912cf5e26f8d9-350.webp 350w",
       "width": 350,
       "height": 571
     }
@@ -5247,8 +5253,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_176",
     "coverImage": {
-      "src": "./assets/covers/notion-3f34f95a-2ae4-81ba-92e1-c8d82ac40913.png",
-      "srcset": "./assets/covers/notion-3f34f95a-2ae4-81ba-92e1-c8d82ac40913.png 569w",
+      "src": "./assets/covers/optimized/78dc63d8dfdc4cfa4b2e-569.webp",
+      "srcset": "./assets/covers/optimized/f2243e9f9cea3c10b23c-360.webp 360w, ./assets/covers/optimized/78dc63d8dfdc4cfa4b2e-569.webp 569w",
       "width": 569,
       "height": 1000
     }
@@ -5278,8 +5284,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_130",
     "coverImage": {
-      "src": "./assets/covers/notion-3e34f95a-2ae4-8175-8f6b-c1d63909b39f.jpg",
-      "srcset": "./assets/covers/notion-3e34f95a-2ae4-8175-8f6b-c1d63909b39f.jpg 445w",
+      "src": "./assets/covers/optimized/d97cdc71ed4eb00ef5fd-445.webp",
+      "srcset": "./assets/covers/optimized/fb064f0a7e0c11879f87-360.webp 360w, ./assets/covers/optimized/d97cdc71ed4eb00ef5fd-445.webp 445w",
       "width": 445,
       "height": 700
     }
@@ -5309,8 +5315,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_159",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-81d3-b406-d83fd369908c.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-81d3-b406-d83fd369908c.png 527w",
+      "src": "./assets/covers/optimized/d00405e5e656a120907a-527.webp",
+      "srcset": "./assets/covers/optimized/fb7d5b04abe83798a3fb-360.webp 360w, ./assets/covers/optimized/d00405e5e656a120907a-527.webp 527w",
       "width": 527,
       "height": 791
     }
@@ -5340,8 +5346,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_222",
     "coverImage": {
-      "src": "./assets/covers/notion-3f94f95a-2ae4-810a-9360-fb0c05083716.png",
-      "srcset": "./assets/covers/notion-3f94f95a-2ae4-810a-9360-fb0c05083716.png 200w",
+      "src": "./assets/covers/optimized/78615a15893e089a91cb-200.webp",
+      "srcset": "./assets/covers/optimized/78615a15893e089a91cb-200.webp 200w",
       "width": 200,
       "height": 317
     }
@@ -5371,10 +5377,10 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_133",
     "coverImage": {
-      "src": "./assets/covers/notion-3e34f95a-2ae4-81f6-bf4f-d0db2ecd92d6.png",
-      "srcset": "./assets/covers/notion-3e34f95a-2ae4-81f6-bf4f-d0db2ecd92d6.png 1000w",
-      "width": 1000,
-      "height": 1201
+      "src": "./assets/covers/optimized/2b1f479fb006093447f2-720.webp",
+      "srcset": "./assets/covers/optimized/41475795699ce16824de-360.webp 360w, ./assets/covers/optimized/2b1f479fb006093447f2-720.webp 720w",
+      "width": 720,
+      "height": 865
     }
   },
   {
@@ -5402,8 +5408,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_127",
     "coverImage": {
-      "src": "./assets/covers/notion-3e34f95a-2ae4-81a5-82e5-c29ea141444d.webp",
-      "srcset": "./assets/covers/notion-3e34f95a-2ae4-81a5-82e5-c29ea141444d.webp 636w",
+      "src": "./assets/covers/optimized/28e504158aeaf5872036-636.webp",
+      "srcset": "./assets/covers/optimized/2e313f90fc38833ccbd5-360.webp 360w, ./assets/covers/optimized/28e504158aeaf5872036-636.webp 636w",
       "width": 636,
       "height": 1000
     }
@@ -5433,8 +5439,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_12",
     "coverImage": {
-      "src": "./assets/covers/notion-3d44f95a-2ae4-811b-bcc9-f5d196febad8.png",
-      "srcset": "./assets/covers/notion-3d44f95a-2ae4-811b-bcc9-f5d196febad8.png 600w",
+      "src": "./assets/covers/optimized/c9f25516822d1d693866-600.webp",
+      "srcset": "./assets/covers/optimized/aa5c9ae1bc161944f6b3-360.webp 360w, ./assets/covers/optimized/c9f25516822d1d693866-600.webp 600w",
       "width": 600,
       "height": 685
     }
@@ -5464,8 +5470,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_253",
     "coverImage": {
-      "src": "./assets/covers/notion-4054f95a-2ae4-8189-868c-eb7df9931d09.png",
-      "srcset": "./assets/covers/notion-4054f95a-2ae4-8189-868c-eb7df9931d09.png 620w",
+      "src": "./assets/covers/optimized/6a090d2851be27d3a5a9-620.webp",
+      "srcset": "./assets/covers/optimized/54d5af255f4e1671af0a-360.webp 360w, ./assets/covers/optimized/6a090d2851be27d3a5a9-620.webp 620w",
       "width": 620,
       "height": 1000
     }
@@ -5495,8 +5501,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_245",
     "coverImage": {
-      "src": "./assets/covers/notion-3ff4f95a-2ae4-811b-b662-f12777d650ea.png",
-      "srcset": "./assets/covers/notion-3ff4f95a-2ae4-811b-b662-f12777d650ea.png 370w",
+      "src": "./assets/covers/optimized/23b1278a3718dd1741ee-370.webp",
+      "srcset": "./assets/covers/optimized/045a8fa4e9e2972818af-360.webp 360w, ./assets/covers/optimized/23b1278a3718dd1741ee-370.webp 370w",
       "width": 370,
       "height": 540
     }
@@ -5526,8 +5532,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_249",
     "coverImage": {
-      "src": "./assets/covers/notion-4054f95a-2ae4-81c7-8c46-cd86f88f71ac.png",
-      "srcset": "./assets/covers/notion-4054f95a-2ae4-81c7-8c46-cd86f88f71ac.png 354w",
+      "src": "./assets/covers/optimized/393b0781c11a42106f00-354.webp",
+      "srcset": "./assets/covers/optimized/393b0781c11a42106f00-354.webp 354w",
       "width": 354,
       "height": 564
     }
@@ -5557,8 +5563,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_2",
     "coverImage": {
-      "src": "./assets/covers/notion-3d44f95a-2ae4-818e-b4cd-e9d9db0d46ee.png",
-      "srcset": "./assets/covers/notion-3d44f95a-2ae4-818e-b4cd-e9d9db0d46ee.png 675w",
+      "src": "./assets/covers/optimized/d28dcfbdcc4bc300f580-675.webp",
+      "srcset": "./assets/covers/optimized/a8d4186d6fc8e595f1fd-360.webp 360w, ./assets/covers/optimized/d28dcfbdcc4bc300f580-675.webp 675w",
       "width": 675,
       "height": 900
     }
@@ -5588,8 +5594,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_194",
     "coverImage": {
-      "src": "./assets/covers/notion-3f34f95a-2ae4-810a-9de1-dffde424ffaa.png",
-      "srcset": "./assets/covers/notion-3f34f95a-2ae4-810a-9de1-dffde424ffaa.png 366w",
+      "src": "./assets/covers/optimized/fd783b55c49abc19ec5a-366.webp",
+      "srcset": "./assets/covers/optimized/097bc3ce18863f03db26-360.webp 360w, ./assets/covers/optimized/fd783b55c49abc19ec5a-366.webp 366w",
       "width": 366,
       "height": 546
     }
@@ -5619,8 +5625,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_227",
     "coverImage": {
-      "src": "./assets/covers/notion-3f94f95a-2ae4-8124-8b67-dd760947e737.png",
-      "srcset": "./assets/covers/notion-3f94f95a-2ae4-8124-8b67-dd760947e737.png 457w",
+      "src": "./assets/covers/optimized/0ed59d593d9c87735b5b-457.webp",
+      "srcset": "./assets/covers/optimized/3695dbefe07846f7f577-360.webp 360w, ./assets/covers/optimized/0ed59d593d9c87735b5b-457.webp 457w",
       "width": 457,
       "height": 688
     }
@@ -5650,8 +5656,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_43",
     "coverImage": {
-      "src": "./assets/covers/notion-3d54f95a-2ae4-816f-9b93-d1429e456e1f.png",
-      "srcset": "./assets/covers/notion-3d54f95a-2ae4-816f-9b93-d1429e456e1f.png 140w",
+      "src": "./assets/covers/optimized/41d58494aabd90126b8f-140.webp",
+      "srcset": "./assets/covers/optimized/41d58494aabd90126b8f-140.webp 140w",
       "width": 140,
       "height": 204
     }
@@ -5681,10 +5687,10 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_126",
     "coverImage": {
-      "src": "./assets/covers/notion-3e34f95a-2ae4-812f-9a90-cee1b5263d98.png",
-      "srcset": "./assets/covers/notion-3e34f95a-2ae4-812f-9a90-cee1b5263d98.png 1698w",
-      "width": 1698,
-      "height": 2413
+      "src": "./assets/covers/optimized/40843a1935f7a0acf51e-720.webp",
+      "srcset": "./assets/covers/optimized/f04d36025e7a06f3b564-360.webp 360w, ./assets/covers/optimized/40843a1935f7a0acf51e-720.webp 720w",
+      "width": 720,
+      "height": 1023
     }
   },
   {
@@ -5712,8 +5718,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_141",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-8194-aca7-f58d5b56f058.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-8194-aca7-f58d5b56f058.png 480w",
+      "src": "./assets/covers/optimized/63507c45b40d16de6ae6-480.webp",
+      "srcset": "./assets/covers/optimized/178565877810a61c6a12-360.webp 360w, ./assets/covers/optimized/63507c45b40d16de6ae6-480.webp 480w",
       "width": 480,
       "height": 638
     }
@@ -5743,8 +5749,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_247",
     "coverImage": {
-      "src": "./assets/covers/notion-4054f95a-2ae4-8193-a42f-f65f2b91e3e9.png",
-      "srcset": "./assets/covers/notion-4054f95a-2ae4-8193-a42f-f65f2b91e3e9.png 600w",
+      "src": "./assets/covers/optimized/e130530a75045ea80d28-600.webp",
+      "srcset": "./assets/covers/optimized/17d46a48f02ab0715f3c-360.webp 360w, ./assets/covers/optimized/e130530a75045ea80d28-600.webp 600w",
       "width": 600,
       "height": 600
     }
@@ -5774,8 +5780,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_171",
     "coverImage": {
-      "src": "./assets/covers/notion-3f34f95a-2ae4-8101-acdd-dcf45b3c2751.png",
-      "srcset": "./assets/covers/notion-3f34f95a-2ae4-8101-acdd-dcf45b3c2751.png 365w",
+      "src": "./assets/covers/optimized/3eb57fbcfa946bf3cb87-365.webp",
+      "srcset": "./assets/covers/optimized/e59002b51e3366fc4fd0-360.webp 360w, ./assets/covers/optimized/3eb57fbcfa946bf3cb87-365.webp 365w",
       "width": 365,
       "height": 547
     }
@@ -5805,8 +5811,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_219",
     "coverImage": {
-      "src": "./assets/covers/notion-3f74f95a-2ae4-81f0-8c94-d41a2686bd76.png",
-      "srcset": "./assets/covers/notion-3f74f95a-2ae4-81f0-8c94-d41a2686bd76.png 374w",
+      "src": "./assets/covers/optimized/025680da016f78f017eb-374.webp",
+      "srcset": "./assets/covers/optimized/2055722709a7115a8754-360.webp 360w, ./assets/covers/optimized/025680da016f78f017eb-374.webp 374w",
       "width": 374,
       "height": 534
     }
@@ -5836,8 +5842,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_19",
     "coverImage": {
-      "src": "./assets/covers/notion-3d44f95a-2ae4-81c0-b76c-e97ce431ab08.png",
-      "srcset": "./assets/covers/notion-3d44f95a-2ae4-81c0-b76c-e97ce431ab08.png 484w",
+      "src": "./assets/covers/optimized/b4ef25e1c6750eb6d94f-484.webp",
+      "srcset": "./assets/covers/optimized/793368c57cc35f06cee4-360.webp 360w, ./assets/covers/optimized/b4ef25e1c6750eb6d94f-484.webp 484w",
       "width": 484,
       "height": 734
     }
@@ -5867,8 +5873,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_95",
     "coverImage": {
-      "src": "./assets/covers/notion-3da4f95a-2ae4-813d-a713-dae6a0fdc91d.png",
-      "srcset": "./assets/covers/notion-3da4f95a-2ae4-813d-a713-dae6a0fdc91d.png 179w",
+      "src": "./assets/covers/optimized/844402ebcd0199999722-179.webp",
+      "srcset": "./assets/covers/optimized/844402ebcd0199999722-179.webp 179w",
       "width": 179,
       "height": 281
     }
@@ -5898,8 +5904,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_206",
     "coverImage": {
-      "src": "./assets/covers/notion-3f74f95a-2ae4-8161-8343-fc25257bb45b.png",
-      "srcset": "./assets/covers/notion-3f74f95a-2ae4-8161-8343-fc25257bb45b.png 371w",
+      "src": "./assets/covers/optimized/d98a162094a75d1c3617-371.webp",
+      "srcset": "./assets/covers/optimized/355759e1cf409d5aa608-360.webp 360w, ./assets/covers/optimized/d98a162094a75d1c3617-371.webp 371w",
       "width": 371,
       "height": 539
     }
@@ -5929,8 +5935,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_94",
     "coverImage": {
-      "src": "./assets/covers/notion-3da4f95a-2ae4-817a-b2b1-eff64d2e3227.png",
-      "srcset": "./assets/covers/notion-3da4f95a-2ae4-817a-b2b1-eff64d2e3227.png 234w",
+      "src": "./assets/covers/optimized/203669931a01ae517f60-234.webp",
+      "srcset": "./assets/covers/optimized/203669931a01ae517f60-234.webp 234w",
       "width": 234,
       "height": 350
     }
@@ -5960,8 +5966,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_250",
     "coverImage": {
-      "src": "./assets/covers/notion-4054f95a-2ae4-814e-9511-c27bada7eada.png",
-      "srcset": "./assets/covers/notion-4054f95a-2ae4-814e-9511-c27bada7eada.png 287w",
+      "src": "./assets/covers/optimized/5942f5ae36ada8b23325-287.webp",
+      "srcset": "./assets/covers/optimized/5942f5ae36ada8b23325-287.webp 287w",
       "width": 287,
       "height": 475
     }
@@ -5991,8 +5997,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_236",
     "coverImage": {
-      "src": "./assets/covers/notion-3f94f95a-2ae4-8142-b423-c525305ff45b.png",
-      "srcset": "./assets/covers/notion-3f94f95a-2ae4-8142-b423-c525305ff45b.png 240w",
+      "src": "./assets/covers/optimized/bd1ad1ae81647af2fe4c-240.webp",
+      "srcset": "./assets/covers/optimized/bd1ad1ae81647af2fe4c-240.webp 240w",
       "width": 240,
       "height": 370
     }
@@ -6022,8 +6028,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_48",
     "coverImage": {
-      "src": "./assets/covers/notion-3d54f95a-2ae4-8166-b639-d0f9ab589c33.png",
-      "srcset": "./assets/covers/notion-3d54f95a-2ae4-8166-b639-d0f9ab589c33.png 410w",
+      "src": "./assets/covers/optimized/1e2efee2eab5e502770f-410.webp",
+      "srcset": "./assets/covers/optimized/3f9d0a2f5ff2a44c6a18-360.webp 360w, ./assets/covers/optimized/1e2efee2eab5e502770f-410.webp 410w",
       "width": 410,
       "height": 568
     }
@@ -6053,8 +6059,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_104",
     "coverImage": {
-      "src": "./assets/covers/notion-3da4f95a-2ae4-8141-a196-e093ae1e3401.png",
-      "srcset": "./assets/covers/notion-3da4f95a-2ae4-8141-a196-e093ae1e3401.png 179w",
+      "src": "./assets/covers/optimized/0b57afbf74fefb970cca-179.webp",
+      "srcset": "./assets/covers/optimized/0b57afbf74fefb970cca-179.webp 179w",
       "width": 179,
       "height": 281
     }
@@ -6084,8 +6090,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_151",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-814e-81c0-df39e70fe397.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-814e-81c0-df39e70fe397.png 568w",
+      "src": "./assets/covers/optimized/bb1f9e33264dede0a37e-568.webp",
+      "srcset": "./assets/covers/optimized/c763acbb13280a2ab7df-360.webp 360w, ./assets/covers/optimized/bb1f9e33264dede0a37e-568.webp 568w",
       "width": 568,
       "height": 852
     }
@@ -6115,8 +6121,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_237",
     "coverImage": {
-      "src": "./assets/covers/notion-3f94f95a-2ae4-81e0-a812-ebaf749c22dd.png",
-      "srcset": "./assets/covers/notion-3f94f95a-2ae4-81e0-a812-ebaf749c22dd.png 280w",
+      "src": "./assets/covers/optimized/4b3053f6156e2eba6c3b-280.webp",
+      "srcset": "./assets/covers/optimized/4b3053f6156e2eba6c3b-280.webp 280w",
       "width": 280,
       "height": 374
     }
@@ -6146,8 +6152,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_71",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-81fc-9076-cf552d239462.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-81fc-9076-cf552d239462.png 375w",
+      "src": "./assets/covers/optimized/40e0645a2b2feaf99f68-375.webp",
+      "srcset": "./assets/covers/optimized/fb4ac7d32e6323240518-360.webp 360w, ./assets/covers/optimized/40e0645a2b2feaf99f68-375.webp 375w",
       "width": 375,
       "height": 542
     }
@@ -6177,8 +6183,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_96",
     "coverImage": {
-      "src": "./assets/covers/notion-3da4f95a-2ae4-81f8-91f0-f711815ae625.png",
-      "srcset": "./assets/covers/notion-3da4f95a-2ae4-81f8-91f0-f711815ae625.png 338w",
+      "src": "./assets/covers/optimized/88936efc8a1ad27babda-338.webp",
+      "srcset": "./assets/covers/optimized/88936efc8a1ad27babda-338.webp 338w",
       "width": 338,
       "height": 532
     }
@@ -6208,8 +6214,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_174",
     "coverImage": {
-      "src": "./assets/covers/notion-3f34f95a-2ae4-81f1-80ed-d414b29bb5d1.png",
-      "srcset": "./assets/covers/notion-3f34f95a-2ae4-81f1-80ed-d414b29bb5d1.png 366w",
+      "src": "./assets/covers/optimized/a7990fc93511dcf9a65e-366.webp",
+      "srcset": "./assets/covers/optimized/e5b0b24a8b33d9f709ca-360.webp 360w, ./assets/covers/optimized/a7990fc93511dcf9a65e-366.webp 366w",
       "width": 366,
       "height": 546
     }
@@ -6239,8 +6245,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_40",
     "coverImage": {
-      "src": "./assets/covers/notion-3d54f95a-2ae4-819b-9fc9-fd6f1c27decb.png",
-      "srcset": "./assets/covers/notion-3d54f95a-2ae4-819b-9fc9-fd6f1c27decb.png 140w",
+      "src": "./assets/covers/optimized/896dac59d305aba2fa5d-140.webp",
+      "srcset": "./assets/covers/optimized/896dac59d305aba2fa5d-140.webp 140w",
       "width": 140,
       "height": 202
     }
@@ -6270,8 +6276,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_5",
     "coverImage": {
-      "src": "./assets/covers/notion-3d44f95a-2ae4-81c2-b49d-cd0f29ffb310.png",
-      "srcset": "./assets/covers/notion-3d44f95a-2ae4-81c2-b49d-cd0f29ffb310.png 370w",
+      "src": "./assets/covers/optimized/8011e9b11ba41b829267-370.webp",
+      "srcset": "./assets/covers/optimized/898601ef50d1b3bc1899-360.webp 360w, ./assets/covers/optimized/8011e9b11ba41b829267-370.webp 370w",
       "width": 370,
       "height": 540
     }
@@ -6301,10 +6307,10 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_18",
     "coverImage": {
-      "src": "./assets/covers/notion-3d44f95a-2ae4-81f2-a9b7-ef0077d25756.png",
-      "srcset": "./assets/covers/notion-3d44f95a-2ae4-81f2-a9b7-ef0077d25756.png 1050w",
-      "width": 1050,
-      "height": 1400
+      "src": "./assets/covers/optimized/f0175c57f793d4c43202-720.webp",
+      "srcset": "./assets/covers/optimized/32fed3b1ce0a9974e7c5-360.webp 360w, ./assets/covers/optimized/f0175c57f793d4c43202-720.webp 720w",
+      "width": 720,
+      "height": 960
     }
   },
   {
@@ -6332,8 +6338,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_46",
     "coverImage": {
-      "src": "./assets/covers/notion-3d54f95a-2ae4-8183-a6ad-f444138b4ebe.png",
-      "srcset": "./assets/covers/notion-3d54f95a-2ae4-8183-a6ad-f444138b4ebe.png 410w",
+      "src": "./assets/covers/optimized/906622954f7802a4a85c-410.webp",
+      "srcset": "./assets/covers/optimized/1cb669969d47853ea7f1-360.webp 360w, ./assets/covers/optimized/906622954f7802a4a85c-410.webp 410w",
       "width": 410,
       "height": 562
     }
@@ -6363,8 +6369,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_75",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-81eb-8ba5-f72e27ac5b83.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-81eb-8ba5-f72e27ac5b83.png 360w",
+      "src": "./assets/covers/optimized/bafa5208f581b492ce2a-360.webp",
+      "srcset": "./assets/covers/optimized/bafa5208f581b492ce2a-360.webp 360w",
       "width": 360,
       "height": 555
     }
@@ -6394,10 +6400,10 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_162",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-8112-a969-fa1543691f72.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-8112-a969-fa1543691f72.png 875w",
-      "width": 875,
-      "height": 1280
+      "src": "./assets/covers/optimized/243554274e82e3df8e4c-720.webp",
+      "srcset": "./assets/covers/optimized/0afafca32ef6ccdaf42a-360.webp 360w, ./assets/covers/optimized/243554274e82e3df8e4c-720.webp 720w",
+      "width": 720,
+      "height": 1053
     }
   },
   {
@@ -6425,8 +6431,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_251",
     "coverImage": {
-      "src": "./assets/covers/notion-4054f95a-2ae4-816a-aab2-c8ea4aff214c.png",
-      "srcset": "./assets/covers/notion-4054f95a-2ae4-816a-aab2-c8ea4aff214c.png 313w",
+      "src": "./assets/covers/optimized/f502a91883fd8c52e1fa-313.webp",
+      "srcset": "./assets/covers/optimized/f502a91883fd8c52e1fa-313.webp 313w",
       "width": 313,
       "height": 500
     }
@@ -6456,8 +6462,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_139",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-8199-a285-e8d486f1404d.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-8199-a285-e8d486f1404d.png 178w",
+      "src": "./assets/covers/optimized/7b9ff7eeb2bed516a266-178.webp",
+      "srcset": "./assets/covers/optimized/7b9ff7eeb2bed516a266-178.webp 178w",
       "width": 178,
       "height": 284
     }
@@ -6487,10 +6493,10 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_122",
     "coverImage": {
-      "src": "./assets/covers/notion-3e34f95a-2ae4-8199-a625-f358d79f3b8b.png",
-      "srcset": "./assets/covers/notion-3e34f95a-2ae4-8199-a625-f358d79f3b8b.png 1335w",
-      "width": 1335,
-      "height": 2020
+      "src": "./assets/covers/optimized/1c76be229ae813ff44e7-720.webp",
+      "srcset": "./assets/covers/optimized/66c19187da54b0e4f352-360.webp 360w, ./assets/covers/optimized/1c76be229ae813ff44e7-720.webp 720w",
+      "width": 720,
+      "height": 1089
     }
   },
   {
@@ -6518,10 +6524,10 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_199",
     "coverImage": {
-      "src": "./assets/covers/notion-3f64f95a-2ae4-81ac-8a0f-d9fc16d54f2d.png",
-      "srcset": "./assets/covers/notion-3f64f95a-2ae4-81ac-8a0f-d9fc16d54f2d.png 1237w",
-      "width": 1237,
-      "height": 1635
+      "src": "./assets/covers/optimized/d00fcd5868a6f019eab9-720.webp",
+      "srcset": "./assets/covers/optimized/8dd7073f261634961c5a-360.webp 360w, ./assets/covers/optimized/d00fcd5868a6f019eab9-720.webp 720w",
+      "width": 720,
+      "height": 952
     }
   },
   {
@@ -6549,8 +6555,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_105",
     "coverImage": {
-      "src": "./assets/covers/notion-3da4f95a-2ae4-816f-a9ac-c731e3edc905.png",
-      "srcset": "./assets/covers/notion-3da4f95a-2ae4-816f-a9ac-c731e3edc905.png 583w",
+      "src": "./assets/covers/optimized/f29e00565d6b65f16c8d-583.webp",
+      "srcset": "./assets/covers/optimized/42cf1b87acdffedb1711-360.webp 360w, ./assets/covers/optimized/f29e00565d6b65f16c8d-583.webp 583w",
       "width": 583,
       "height": 800
     }
@@ -6580,8 +6586,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_77",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-8101-bf36-dae0b25d3399.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-8101-bf36-dae0b25d3399.png 362w",
+      "src": "./assets/covers/optimized/e9220b5c37c0897a0673-362.webp",
+      "srcset": "./assets/covers/optimized/bb2892dd1ebf2639a9e2-360.webp 360w, ./assets/covers/optimized/e9220b5c37c0897a0673-362.webp 362w",
       "width": 362,
       "height": 552
     }
@@ -6611,8 +6617,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_13",
     "coverImage": {
-      "src": "./assets/covers/notion-3d44f95a-2ae4-81ad-abe3-ec4fa3faaf49.png",
-      "srcset": "./assets/covers/notion-3d44f95a-2ae4-81ad-abe3-ec4fa3faaf49.png 715w",
+      "src": "./assets/covers/optimized/f9a09ad14bf9235f7531-715.webp",
+      "srcset": "./assets/covers/optimized/10da3ef40948606e0890-360.webp 360w, ./assets/covers/optimized/f9a09ad14bf9235f7531-715.webp 715w",
       "width": 715,
       "height": 940
     }
@@ -6642,8 +6648,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_233",
     "coverImage": {
-      "src": "./assets/covers/notion-3f94f95a-2ae4-812a-9dcf-f1101b15a285.png",
-      "srcset": "./assets/covers/notion-3f94f95a-2ae4-812a-9dcf-f1101b15a285.png 420w",
+      "src": "./assets/covers/optimized/eae10ed01f053a6bce9f-420.webp",
+      "srcset": "./assets/covers/optimized/7e7f08ac64d8185816b0-360.webp 360w, ./assets/covers/optimized/eae10ed01f053a6bce9f-420.webp 420w",
       "width": 420,
       "height": 664
     }
@@ -6673,8 +6679,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_88",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-8141-8fc7-cd2300cc4da3.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-8141-8fc7-cd2300cc4da3.png 356w",
+      "src": "./assets/covers/optimized/5bdfebbfbafc1f069fdd-356.webp",
+      "srcset": "./assets/covers/optimized/5bdfebbfbafc1f069fdd-356.webp 356w",
       "width": 356,
       "height": 561
     }
@@ -6704,8 +6710,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_240",
     "coverImage": {
-      "src": "./assets/covers/notion-3ff4f95a-2ae4-819a-964e-d7a65bd2c695.png",
-      "srcset": "./assets/covers/notion-3ff4f95a-2ae4-819a-964e-d7a65bd2c695.png 361w",
+      "src": "./assets/covers/optimized/24727f2a5c3d4f91e7f5-361.webp",
+      "srcset": "./assets/covers/optimized/1fbb534f0c0a4cffaee7-360.webp 360w, ./assets/covers/optimized/24727f2a5c3d4f91e7f5-361.webp 361w",
       "width": 361,
       "height": 554
     }
@@ -6735,10 +6741,10 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_173",
     "coverImage": {
-      "src": "./assets/covers/notion-3f34f95a-2ae4-81dc-8138-de6b91df016d.png",
-      "srcset": "./assets/covers/notion-3f34f95a-2ae4-81dc-8138-de6b91df016d.png 795w",
-      "width": 795,
-      "height": 1228
+      "src": "./assets/covers/optimized/b47736d39e2913293ff9-720.webp",
+      "srcset": "./assets/covers/optimized/539e0b45cb33d2b99db2-360.webp 360w, ./assets/covers/optimized/b47736d39e2913293ff9-720.webp 720w",
+      "width": 720,
+      "height": 1112
     }
   },
   {
@@ -6766,8 +6772,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_205",
     "coverImage": {
-      "src": "./assets/covers/notion-3f64f95a-2ae4-81f4-9ea7-f674628a397b.png",
-      "srcset": "./assets/covers/notion-3f64f95a-2ae4-81f4-9ea7-f674628a397b.png 179w",
+      "src": "./assets/covers/optimized/096c242e907672aaa42c-179.webp",
+      "srcset": "./assets/covers/optimized/096c242e907672aaa42c-179.webp 179w",
       "width": 179,
       "height": 282
     }
@@ -6797,8 +6803,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_20",
     "coverImage": {
-      "src": "./assets/covers/notion-3d44f95a-2ae4-81dc-b371-cd3ab71557ac.png",
-      "srcset": "./assets/covers/notion-3d44f95a-2ae4-81dc-b371-cd3ab71557ac.png 631w",
+      "src": "./assets/covers/optimized/b7fc083eaaa52c542235-631.webp",
+      "srcset": "./assets/covers/optimized/fa768eb751813e2acccb-360.webp 360w, ./assets/covers/optimized/b7fc083eaaa52c542235-631.webp 631w",
       "width": 631,
       "height": 993
     }
@@ -6828,8 +6834,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_200",
     "coverImage": {
-      "src": "./assets/covers/notion-3f64f95a-2ae4-8158-8a06-da06a58a0c6c.png",
-      "srcset": "./assets/covers/notion-3f64f95a-2ae4-8158-8a06-da06a58a0c6c.png 360w",
+      "src": "./assets/covers/optimized/385a82c5d64c0827c44c-360.webp",
+      "srcset": "./assets/covers/optimized/385a82c5d64c0827c44c-360.webp 360w",
       "width": 360,
       "height": 555
     }
@@ -6859,8 +6865,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_107",
     "coverImage": {
-      "src": "./assets/covers/notion-3da4f95a-2ae4-8195-ad67-dc9c04bcc7f1.png",
-      "srcset": "./assets/covers/notion-3da4f95a-2ae4-8195-ad67-dc9c04bcc7f1.png 359w",
+      "src": "./assets/covers/optimized/90151b4541a84786da0d-359.webp",
+      "srcset": "./assets/covers/optimized/90151b4541a84786da0d-359.webp 359w",
       "width": 359,
       "height": 557
     }
@@ -6890,8 +6896,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_170",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-816e-a488-d1685469621f.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-816e-a488-d1685469621f.png 368w",
+      "src": "./assets/covers/optimized/4f7babe6231ed76c01bf-368.webp",
+      "srcset": "./assets/covers/optimized/960d0f975f51fba67931-360.webp 360w, ./assets/covers/optimized/4f7babe6231ed76c01bf-368.webp 368w",
       "width": 368,
       "height": 543
     }
@@ -6921,8 +6927,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_39",
     "coverImage": {
-      "src": "./assets/covers/notion-3d54f95a-2ae4-8132-b16a-c578e181ea87.png",
-      "srcset": "./assets/covers/notion-3d54f95a-2ae4-8132-b16a-c578e181ea87.png 140w",
+      "src": "./assets/covers/optimized/f28f526033cadd5953e7-140.webp",
+      "srcset": "./assets/covers/optimized/f28f526033cadd5953e7-140.webp 140w",
       "width": 140,
       "height": 204
     }
@@ -6952,8 +6958,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_136",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-812e-bb80-cb7d3f6a1a66.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-812e-bb80-cb7d3f6a1a66.png 200w",
+      "src": "./assets/covers/optimized/81c6c8431705679cb5b9-200.webp",
+      "srcset": "./assets/covers/optimized/81c6c8431705679cb5b9-200.webp 200w",
       "width": 200,
       "height": 305
     }
@@ -6983,8 +6989,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_56",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-81b2-ba6b-e073893becaa.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-81b2-ba6b-e073893becaa.png 355w",
+      "src": "./assets/covers/optimized/3f65bc53eef905287188-355.webp",
+      "srcset": "./assets/covers/optimized/3f65bc53eef905287188-355.webp 355w",
       "width": 355,
       "height": 563
     }
@@ -7014,8 +7020,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_60",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-81d9-87fc-ff921c28d789.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-81d9-87fc-ff921c28d789.png 179w",
+      "src": "./assets/covers/optimized/88a4edb51af71ea5eb0e-179.webp",
+      "srcset": "./assets/covers/optimized/88a4edb51af71ea5eb0e-179.webp 179w",
       "width": 179,
       "height": 282
     }
@@ -7044,8 +7050,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_17",
     "coverImage": {
-      "src": "./assets/covers/notion-3d44f95a-2ae4-81dd-a118-ccd9412c62a1.png",
-      "srcset": "./assets/covers/notion-3d44f95a-2ae4-81dd-a118-ccd9412c62a1.png 536w",
+      "src": "./assets/covers/optimized/b5e4ddc655cb20439d67-536.webp",
+      "srcset": "./assets/covers/optimized/a8de77b096fb30884421-360.webp 360w, ./assets/covers/optimized/b5e4ddc655cb20439d67-536.webp 536w",
       "width": 536,
       "height": 700
     }
@@ -7075,8 +7081,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_221",
     "coverImage": {
-      "src": "./assets/covers/notion-3f94f95a-2ae4-817e-b207-df7b5efe8872.png",
-      "srcset": "./assets/covers/notion-3f94f95a-2ae4-817e-b207-df7b5efe8872.png 551w",
+      "src": "./assets/covers/optimized/92bc7dc4d3df91ca7cd2-551.webp",
+      "srcset": "./assets/covers/optimized/a3d7f53036bac5dfce10-360.webp 360w, ./assets/covers/optimized/92bc7dc4d3df91ca7cd2-551.webp 551w",
       "width": 551,
       "height": 867
     }
@@ -7106,8 +7112,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_169",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-8140-8274-db6233802e6e.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-8140-8274-db6233802e6e.png 438w",
+      "src": "./assets/covers/optimized/efb53f22b69e92104119-438.webp",
+      "srcset": "./assets/covers/optimized/a8d841d98ea0e7709fe4-360.webp 360w, ./assets/covers/optimized/efb53f22b69e92104119-438.webp 438w",
       "width": 438,
       "height": 701
     }
@@ -7137,8 +7143,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_73",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-81ea-9585-f6ef7c57770e.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-81ea-9585-f6ef7c57770e.png 375w",
+      "src": "./assets/covers/optimized/6845845f34798ed54e11-375.webp",
+      "srcset": "./assets/covers/optimized/12d39fdcf848171093a6-360.webp 360w, ./assets/covers/optimized/6845845f34798ed54e11-375.webp 375w",
       "width": 375,
       "height": 500
     }
@@ -7168,8 +7174,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_210",
     "coverImage": {
-      "src": "./assets/covers/notion-3f74f95a-2ae4-814a-b076-d479648f8f53.png",
-      "srcset": "./assets/covers/notion-3f74f95a-2ae4-814a-b076-d479648f8f53.png 242w",
+      "src": "./assets/covers/optimized/e66fb5dbeb2437c7dff1-242.webp",
+      "srcset": "./assets/covers/optimized/e66fb5dbeb2437c7dff1-242.webp 242w",
       "width": 242,
       "height": 311
     }
@@ -7199,8 +7205,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_189",
     "coverImage": {
-      "src": "./assets/covers/notion-3f34f95a-2ae4-816c-bbf7-d82f52bbbd87.png",
-      "srcset": "./assets/covers/notion-3f34f95a-2ae4-816c-bbf7-d82f52bbbd87.png 442w",
+      "src": "./assets/covers/optimized/e3d2b4d68c0146d99d8f-442.webp",
+      "srcset": "./assets/covers/optimized/8026deaccac1c0b89344-360.webp 360w, ./assets/covers/optimized/e3d2b4d68c0146d99d8f-442.webp 442w",
       "width": 442,
       "height": 694
     }
@@ -7230,8 +7236,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_58",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-815e-9513-d7334cab8443.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-815e-9513-d7334cab8443.png 356w",
+      "src": "./assets/covers/optimized/18590655d90dba0b5bb7-356.webp",
+      "srcset": "./assets/covers/optimized/18590655d90dba0b5bb7-356.webp 356w",
       "width": 356,
       "height": 561
     }
@@ -7261,8 +7267,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_134",
     "coverImage": {
-      "src": "./assets/covers/notion-3e34f95a-2ae4-813a-9a8c-e1a7f2ff8445.png",
-      "srcset": "./assets/covers/notion-3e34f95a-2ae4-813a-9a8c-e1a7f2ff8445.png 375w",
+      "src": "./assets/covers/optimized/3553873ca67f8f686a0c-375.webp",
+      "srcset": "./assets/covers/optimized/9bd2a5fdde4a8ad008fe-360.webp 360w, ./assets/covers/optimized/3553873ca67f8f686a0c-375.webp 375w",
       "width": 375,
       "height": 527
     }
@@ -7292,10 +7298,10 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_207",
     "coverImage": {
-      "src": "./assets/covers/notion-3f74f95a-2ae4-8198-97a9-ebad50285b93.png",
-      "srcset": "./assets/covers/notion-3f74f95a-2ae4-8198-97a9-ebad50285b93.png 1200w",
-      "width": 1200,
-      "height": 1594
+      "src": "./assets/covers/optimized/2dd0b0035ce08885b725-720.webp",
+      "srcset": "./assets/covers/optimized/a89f19b369e97f026bce-360.webp 360w, ./assets/covers/optimized/2dd0b0035ce08885b725-720.webp 720w",
+      "width": 720,
+      "height": 956
     }
   },
   {
@@ -7323,10 +7329,10 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_92",
     "coverImage": {
-      "src": "./assets/covers/notion-3da4f95a-2ae4-8180-ab2f-dbfc359bc3e2.png",
-      "srcset": "./assets/covers/notion-3da4f95a-2ae4-8180-ab2f-dbfc359bc3e2.png 819w",
-      "width": 819,
-      "height": 1242
+      "src": "./assets/covers/optimized/27f11b36e6ed7b79f3f8-720.webp",
+      "srcset": "./assets/covers/optimized/400eea8ba636ca5b3ed4-360.webp 360w, ./assets/covers/optimized/27f11b36e6ed7b79f3f8-720.webp 720w",
+      "width": 720,
+      "height": 1092
     }
   },
   {
@@ -7354,8 +7360,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_70",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-8159-bad2-c74928283f53.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-8159-bad2-c74928283f53.png 375w",
+      "src": "./assets/covers/optimized/ec19908201683c6cea0a-375.webp",
+      "srcset": "./assets/covers/optimized/df422120a0ff574a5799-360.webp 360w, ./assets/covers/optimized/ec19908201683c6cea0a-375.webp 375w",
       "width": 375,
       "height": 574
     }
@@ -7385,8 +7391,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_51",
     "coverImage": {
-      "src": "./assets/covers/notion-3d54f95a-2ae4-814a-b839-fa6877e960ba.png",
-      "srcset": "./assets/covers/notion-3d54f95a-2ae4-814a-b839-fa6877e960ba.png 410w",
+      "src": "./assets/covers/optimized/45c5f463673159b66c94-410.webp",
+      "srcset": "./assets/covers/optimized/a1a2a65803d8adeaee3e-360.webp 360w, ./assets/covers/optimized/45c5f463673159b66c94-410.webp 410w",
       "width": 410,
       "height": 572
     }
@@ -7416,8 +7422,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_214",
     "coverImage": {
-      "src": "./assets/covers/notion-3f74f95a-2ae4-8196-87fb-f4bbf01730e8.png",
-      "srcset": "./assets/covers/notion-3f74f95a-2ae4-8196-87fb-f4bbf01730e8.png 357w",
+      "src": "./assets/covers/optimized/3bfaa36f290d6db069ec-357.webp",
+      "srcset": "./assets/covers/optimized/3bfaa36f290d6db069ec-357.webp 357w",
       "width": 357,
       "height": 560
     }
@@ -7447,8 +7453,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_187",
     "coverImage": {
-      "src": "./assets/covers/notion-3f34f95a-2ae4-816b-adcb-f5b1e3b37bca.png",
-      "srcset": "./assets/covers/notion-3f34f95a-2ae4-816b-adcb-f5b1e3b37bca.png 480w",
+      "src": "./assets/covers/optimized/708ee852868e36b86b28-480.webp",
+      "srcset": "./assets/covers/optimized/953e31e84bf2aa9e2774-360.webp 360w, ./assets/covers/optimized/708ee852868e36b86b28-480.webp 480w",
       "width": 480,
       "height": 638
     }
@@ -7478,8 +7484,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_160",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-81fb-be37-c747e7a4bee1.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-81fb-be37-c747e7a4bee1.png 200w",
+      "src": "./assets/covers/optimized/6caa50c347282d7d8abe-200.webp",
+      "srcset": "./assets/covers/optimized/6caa50c347282d7d8abe-200.webp 200w",
       "width": 200,
       "height": 289
     }
@@ -7509,8 +7515,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_148",
     "coverImage": {
-      "src": "./assets/covers/notion-3f24f95a-2ae4-81c2-a759-c718150668aa.png",
-      "srcset": "./assets/covers/notion-3f24f95a-2ae4-81c2-a759-c718150668aa.png 574w",
+      "src": "./assets/covers/optimized/7feb855beadce73be8a3-574.webp",
+      "srcset": "./assets/covers/optimized/56490293ec13663414aa-360.webp 360w, ./assets/covers/optimized/7feb855beadce73be8a3-574.webp 574w",
       "width": 574,
       "height": 853
     }
@@ -7540,8 +7546,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_218",
     "coverImage": {
-      "src": "./assets/covers/notion-3f74f95a-2ae4-8108-9b9b-db1ad2905a77.png",
-      "srcset": "./assets/covers/notion-3f74f95a-2ae4-8108-9b9b-db1ad2905a77.png 355w",
+      "src": "./assets/covers/optimized/d5f66affc6246c9c4cb6-355.webp",
+      "srcset": "./assets/covers/optimized/d5f66affc6246c9c4cb6-355.webp 355w",
       "width": 355,
       "height": 563
     }
@@ -7571,8 +7577,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_182",
     "coverImage": {
-      "src": "./assets/covers/notion-3f34f95a-2ae4-81d2-b2c0-ee7e8d880e0e.png",
-      "srcset": "./assets/covers/notion-3f34f95a-2ae4-81d2-b2c0-ee7e8d880e0e.png 416w",
+      "src": "./assets/covers/optimized/9b0d38df73aecfa7df77-416.webp",
+      "srcset": "./assets/covers/optimized/6e146d0ad4affeb82ee8-360.webp 360w, ./assets/covers/optimized/9b0d38df73aecfa7df77-416.webp 416w",
       "width": 416,
       "height": 628
     }
@@ -7602,8 +7608,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_183",
     "coverImage": {
-      "src": "./assets/covers/notion-3f34f95a-2ae4-811e-91c6-e889d6712d10.png",
-      "srcset": "./assets/covers/notion-3f34f95a-2ae4-811e-91c6-e889d6712d10.png 396w",
+      "src": "./assets/covers/optimized/0636ff5ef358a59dd3c5-396.webp",
+      "srcset": "./assets/covers/optimized/c4870b11ef4e9377067d-360.webp 360w, ./assets/covers/optimized/0636ff5ef358a59dd3c5-396.webp 396w",
       "width": 396,
       "height": 600
     }
@@ -7632,8 +7638,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_35",
     "coverImage": {
-      "src": "./assets/covers/notion-3d54f95a-2ae4-8181-9dbf-f11780687ce7.png",
-      "srcset": "./assets/covers/notion-3d54f95a-2ae4-8181-9dbf-f11780687ce7.png 439w",
+      "src": "./assets/covers/optimized/f3504d1ec79747d027ef-439.webp",
+      "srcset": "./assets/covers/optimized/912066c8fd53309dc6b0-360.webp 360w, ./assets/covers/optimized/f3504d1ec79747d027ef-439.webp 439w",
       "width": 439,
       "height": 700
     }
@@ -7663,8 +7669,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_3",
     "coverImage": {
-      "src": "./assets/covers/notion-3d44f95a-2ae4-81d3-99c1-e825541c8fd5.png",
-      "srcset": "./assets/covers/notion-3d44f95a-2ae4-81d3-99c1-e825541c8fd5.png 484w",
+      "src": "./assets/covers/optimized/a7cfb97b7d40a58ec442-484.webp",
+      "srcset": "./assets/covers/optimized/8931e2230dc9afce4457-360.webp 360w, ./assets/covers/optimized/a7cfb97b7d40a58ec442-484.webp 484w",
       "width": 484,
       "height": 761
     }
@@ -7694,10 +7700,10 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_212",
     "coverImage": {
-      "src": "./assets/covers/notion-3f74f95a-2ae4-819e-85c9-c3583f474dbe.png",
-      "srcset": "./assets/covers/notion-3f74f95a-2ae4-819e-85c9-c3583f474dbe.png 1200w",
-      "width": 1200,
-      "height": 1200
+      "src": "./assets/covers/optimized/0ad08c4da12a2a8f1283-720.webp",
+      "srcset": "./assets/covers/optimized/7452decca28cf51af94f-360.webp 360w, ./assets/covers/optimized/0ad08c4da12a2a8f1283-720.webp 720w",
+      "width": 720,
+      "height": 720
     }
   },
   {
@@ -7725,8 +7731,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_178",
     "coverImage": {
-      "src": "./assets/covers/notion-3f34f95a-2ae4-81da-a246-d284bab8ae9b.png",
-      "srcset": "./assets/covers/notion-3f34f95a-2ae4-81da-a246-d284bab8ae9b.png 180w",
+      "src": "./assets/covers/optimized/de2c29767d52e6ed9030-180.webp",
+      "srcset": "./assets/covers/optimized/de2c29767d52e6ed9030-180.webp 180w",
       "width": 180,
       "height": 281
     }
@@ -7756,8 +7762,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_238",
     "coverImage": {
-      "src": "./assets/covers/notion-3ff4f95a-2ae4-81e0-8dfe-cc7d44d292af.png",
-      "srcset": "./assets/covers/notion-3ff4f95a-2ae4-81e0-8dfe-cc7d44d292af.png 375w",
+      "src": "./assets/covers/optimized/796de492e248964eab21-375.webp",
+      "srcset": "./assets/covers/optimized/05b17130bd018e1e8a9c-360.webp 360w, ./assets/covers/optimized/796de492e248964eab21-375.webp 375w",
       "width": 375,
       "height": 526
     }
@@ -7787,8 +7793,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_203",
     "coverImage": {
-      "src": "./assets/covers/notion-3f64f95a-2ae4-8156-8792-e6035b4dddbf.png",
-      "srcset": "./assets/covers/notion-3f64f95a-2ae4-8156-8792-e6035b4dddbf.png 200w",
+      "src": "./assets/covers/optimized/fc4a8beabda83034ffa4-200.webp",
+      "srcset": "./assets/covers/optimized/fc4a8beabda83034ffa4-200.webp 200w",
       "width": 200,
       "height": 267
     }
@@ -7818,8 +7824,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_78",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-81c0-886b-c4a1c1c46bdb.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-81c0-886b-c4a1c1c46bdb.png 182w",
+      "src": "./assets/covers/optimized/a8ec8b97ae22c590e33b-182.webp",
+      "srcset": "./assets/covers/optimized/a8ec8b97ae22c590e33b-182.webp 182w",
       "width": 182,
       "height": 276
     }
@@ -7849,8 +7855,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_186",
     "coverImage": {
-      "src": "./assets/covers/notion-3f34f95a-2ae4-815b-99c5-f6b5a7dbb3b1.png",
-      "srcset": "./assets/covers/notion-3f34f95a-2ae4-815b-99c5-f6b5a7dbb3b1.png 534w",
+      "src": "./assets/covers/optimized/4020eb1d0203b966689f-534.webp",
+      "srcset": "./assets/covers/optimized/e306a0e73e60975da0e1-360.webp 360w, ./assets/covers/optimized/4020eb1d0203b966689f-534.webp 534w",
       "width": 534,
       "height": 800
     }
@@ -7880,8 +7886,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_246",
     "coverImage": {
-      "src": "./assets/covers/notion-4054f95a-2ae4-8154-a937-d789e29878ab.png",
-      "srcset": "./assets/covers/notion-4054f95a-2ae4-8154-a937-d789e29878ab.png 200w",
+      "src": "./assets/covers/optimized/90ea832258de559158e5-200.webp",
+      "srcset": "./assets/covers/optimized/90ea832258de559158e5-200.webp 200w",
       "width": 200,
       "height": 300
     }
@@ -7911,8 +7917,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_93",
     "coverImage": {
-      "src": "./assets/covers/notion-3da4f95a-2ae4-8178-82c1-e456e166f30f.png",
-      "srcset": "./assets/covers/notion-3da4f95a-2ae4-8178-82c1-e456e166f30f.png 484w",
+      "src": "./assets/covers/optimized/68bb01aafcbf838752ff-484.webp",
+      "srcset": "./assets/covers/optimized/f090976c8ef08aa5f92f-360.webp 360w, ./assets/covers/optimized/68bb01aafcbf838752ff-484.webp 484w",
       "width": 484,
       "height": 666
     }
@@ -7942,10 +7948,10 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_50",
     "coverImage": {
-      "src": "./assets/covers/notion-3d54f95a-2ae4-8103-9af8-e7042b708bed.png",
-      "srcset": "./assets/covers/notion-3d54f95a-2ae4-8103-9af8-e7042b708bed.png 819w",
-      "width": 819,
-      "height": 1147
+      "src": "./assets/covers/optimized/ec922cea9c402027fddb-720.webp",
+      "srcset": "./assets/covers/optimized/54ff38778f3edba00d80-360.webp 360w, ./assets/covers/optimized/ec922cea9c402027fddb-720.webp 720w",
+      "width": 720,
+      "height": 1008
     }
   },
   {
@@ -7973,8 +7979,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_6",
     "coverImage": {
-      "src": "./assets/covers/notion-3d44f95a-2ae4-81fa-9df0-f8d7cef4bd21.png",
-      "srcset": "./assets/covers/notion-3d44f95a-2ae4-81fa-9df0-f8d7cef4bd21.png 310w",
+      "src": "./assets/covers/optimized/336c203f8d7ef31456ce-310.webp",
+      "srcset": "./assets/covers/optimized/336c203f8d7ef31456ce-310.webp 310w",
       "width": 310,
       "height": 450
     }
@@ -8004,8 +8010,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_65",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-81c6-a71f-ee475879cb7d.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-81c6-a71f-ee475879cb7d.png 359w",
+      "src": "./assets/covers/optimized/7d62f73e8f758389566d-359.webp",
+      "srcset": "./assets/covers/optimized/7d62f73e8f758389566d-359.webp 359w",
       "width": 359,
       "height": 557
     }
@@ -8061,8 +8067,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_55",
     "coverImage": {
-      "src": "./assets/covers/notion-3d74f95a-2ae4-810e-9c92-c885c51feba3.png",
-      "srcset": "./assets/covers/notion-3d74f95a-2ae4-810e-9c92-c885c51feba3.png 415w",
+      "src": "./assets/covers/optimized/75db2023f27a2c2bb659-415.webp",
+      "srcset": "./assets/covers/optimized/97db18d96609c7d890b7-360.webp 360w, ./assets/covers/optimized/75db2023f27a2c2bb659-415.webp 415w",
       "width": 415,
       "height": 546
     }
@@ -8092,8 +8098,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_235",
     "coverImage": {
-      "src": "./assets/covers/notion-3f94f95a-2ae4-81c9-ae55-f5a95fa08536.png",
-      "srcset": "./assets/covers/notion-3f94f95a-2ae4-81c9-ae55-f5a95fa08536.png 182w",
+      "src": "./assets/covers/optimized/c163b6013a9492c155c6-182.webp",
+      "srcset": "./assets/covers/optimized/c163b6013a9492c155c6-182.webp 182w",
       "width": 182,
       "height": 277
     }
@@ -8123,10 +8129,10 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_191",
     "coverImage": {
-      "src": "./assets/covers/notion-3f34f95a-2ae4-814b-aad5-ff9eeb75f711.png",
-      "srcset": "./assets/covers/notion-3f34f95a-2ae4-814b-aad5-ff9eeb75f711.png 820w",
-      "width": 820,
-      "height": 1289
+      "src": "./assets/covers/optimized/c76b1387f8eb8da75fbd-720.webp",
+      "srcset": "./assets/covers/optimized/61f78e01a49cb932c67f-360.webp 360w, ./assets/covers/optimized/c76b1387f8eb8da75fbd-720.webp 720w",
+      "width": 720,
+      "height": 1132
     }
   },
   {
@@ -8154,8 +8160,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_99",
     "coverImage": {
-      "src": "./assets/covers/notion-3da4f95a-2ae4-8141-8428-c630735f0e7e.png",
-      "srcset": "./assets/covers/notion-3da4f95a-2ae4-8141-8428-c630735f0e7e.png 356w",
+      "src": "./assets/covers/optimized/9993eed81161dc039d72-356.webp",
+      "srcset": "./assets/covers/optimized/9993eed81161dc039d72-356.webp 356w",
       "width": 356,
       "height": 561
     }
@@ -8185,8 +8191,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_10",
     "coverImage": {
-      "src": "./assets/covers/notion-3d44f95a-2ae4-8123-8ef5-ff3dee77ee02.png",
-      "srcset": "./assets/covers/notion-3d44f95a-2ae4-8123-8ef5-ff3dee77ee02.png 200w",
+      "src": "./assets/covers/optimized/f8bfa3520b3f3c77f9d2-200.webp",
+      "srcset": "./assets/covers/optimized/f8bfa3520b3f3c77f9d2-200.webp 200w",
       "width": 200,
       "height": 305
     }
@@ -8216,8 +8222,8 @@ window.BIBLIO_BOOKS = [
     "orderBot": "toma_lib_valencia_bot",
     "orderStart": "book_109",
     "coverImage": {
-      "src": "./assets/covers/notion-3da4f95a-2ae4-81f3-baf8-cba51d1082d7.png",
-      "srcset": "./assets/covers/notion-3da4f95a-2ae4-81f3-baf8-cba51d1082d7.png 357w",
+      "src": "./assets/covers/optimized/965a634ee6212521ae61-357.webp",
+      "srcset": "./assets/covers/optimized/965a634ee6212521ae61-357.webp 357w",
       "width": 357,
       "height": 560
     }
@@ -8244,8 +8250,8 @@ window.BIBLIO_BOOKS = [
     "addedAt": "2026-10-23T15:09:20",
     "updatedAt": "2026-10-24T10:26:26",
     "coverImage": {
-      "src": "./assets/covers/b-be1918b0e3ae.png",
-      "srcset": "./assets/covers/b-be1918b0e3ae.png 566w",
+      "src": "./assets/covers/optimized/72a98492e23cdf7a7217-566.webp",
+      "srcset": "./assets/covers/optimized/056e06712008c16d5d79-360.webp 360w, ./assets/covers/optimized/72a98492e23cdf7a7217-566.webp 566w",
       "width": 566,
       "height": 821
     }
@@ -8271,7 +8277,13 @@ window.BIBLIO_BOOKS = [
     "wildberriesUrl": "",
     "addedAt": "2026-10-23T22:41:13",
     "updatedAt": "2026-10-24T10:26:26",
-    "authorKey": "джордж оруэлл"
+    "authorKey": "джордж оруэлл",
+    "coverImage": {
+      "src": "./assets/covers/optimized/8c851efb31d2a6c50f38-600.webp",
+      "srcset": "./assets/covers/optimized/e0a310f83148e296a89e-360.webp 360w, ./assets/covers/optimized/8c851efb31d2a6c50f38-600.webp 600w",
+      "width": 600,
+      "height": 942
+    }
   },
   {
     "id": "b-068ced1f8012",
@@ -8325,7 +8337,13 @@ window.BIBLIO_BOOKS = [
     "addedAt": "2026-10-03T10:26:32",
     "updatedAt": "2026-10-03T13:50:21",
     "authorKey": "наталья щерба",
-    "depositEur": 20
+    "depositEur": 20,
+    "coverImage": {
+      "src": "./assets/covers/optimized/2a90c970563392d7a200-415.webp",
+      "srcset": "./assets/covers/optimized/e64f21d15c0519a11725-360.webp 360w, ./assets/covers/optimized/2a90c970563392d7a200-415.webp 415w",
+      "width": 415,
+      "height": 631
+    }
   },
   {
     "id": "b-b3ffcb17511c",
@@ -8350,7 +8368,13 @@ window.BIBLIO_BOOKS = [
     "addedAt": "2026-10-03T10:27:57",
     "updatedAt": "2026-10-03T13:50:21",
     "authorKey": "анна джейн",
-    "depositEur": 20
+    "depositEur": 20,
+    "coverImage": {
+      "src": "./assets/covers/optimized/b814fcf0b32fb1afd178-320.webp",
+      "srcset": "./assets/covers/optimized/b814fcf0b32fb1afd178-320.webp 320w",
+      "width": 320,
+      "height": 505
+    }
   },
   {
     "id": "b-5da6db187a21",
@@ -8373,7 +8397,13 @@ window.BIBLIO_BOOKS = [
     "wildberriesUrl": "",
     "addedAt": "2026-10-03T07:59:04",
     "updatedAt": "2026-10-03T13:18:16",
-    "authorKey": "dan brown"
+    "authorKey": "dan brown",
+    "coverImage": {
+      "src": "./assets/covers/optimized/436b90910ef99007bf15-353.webp",
+      "srcset": "./assets/covers/optimized/436b90910ef99007bf15-353.webp 353w",
+      "width": 353,
+      "height": 550
+    }
   },
   {
     "id": "b-0a4b65c0f9cc",

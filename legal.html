@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="legal.pageTitle">Aviso Legal | VLC Biblio</title>
+    <link rel="icon" type="image/png" href="./assets/favicon.png" />
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f7f4ee;
+        --ink: #26231f;
+        --muted: #716b63;
+        --line: #ddd4c5;
+        --paper: #fffdf8;
+        --blue: #315f86;
+        --shadow: 0 14px 36px rgba(38, 35, 31, 0.1);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      .page {
+        width: min(840px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 28px 0 44px;
+      }
+
+      .top-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 18px;
+      }
+
+      .back,
+      .legal a {
+        color: var(--blue);
+        font-weight: 700;
+      }
+
+      .back {
+        display: inline-flex;
+        text-decoration: none;
+      }
+
+      .back:hover,
+      .legal a:hover { text-decoration: underline; }
+
+      .language-toggle {
+        width: 42px;
+        height: 42px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        color: var(--ink);
+        background: var(--paper);
+        cursor: pointer;
+        font: inherit;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .language-toggle:hover,
+      .language-toggle:focus-visible { background: rgba(49, 95, 134, 0.07); }
+
+      .legal {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--paper);
+        box-shadow: var(--shadow);
+        padding: 28px;
+      }
+
+      h1 {
+        margin: 0 0 10px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(32px, 6vw, 52px);
+        line-height: 1.05;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin: 28px 0 10px;
+        font-size: 18px;
+        line-height: 1.25;
+      }
+
+      p,
+      li {
+        color: #4d473f;
+        font-size: 15px;
+        line-height: 1.58;
+      }
+
+      p { margin: 0 0 14px; }
+      ul { margin: 0 0 16px; padding-left: 20px; }
+
+      .muted {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .legal-notice-box {
+        margin: 16px 0;
+        padding: 16px;
+        border-left: 4px solid var(--blue);
+        background: rgba(49, 95, 134, 0.05);
+        border-radius: 0 6px 6px 0;
+      }
+
+      .legal-notice-box p {
+        margin: 0;
+      }
+
+      @media (max-width: 560px) {
+        .page {
+          width: min(100% - 20px, 840px);
+          padding-top: 18px;
+        }
+
+        .legal { padding: 20px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <div class="top-nav">
+        <a class="back" href="./" data-i18n="catalog.back">← Volver al catálogo</a>
+        <button class="language-toggle" type="button" data-language-toggle aria-label="Cambiar el idioma a ruso">RU</button>
+      </div>
+      <article class="legal">
+        <h1 data-i18n="legal.title">Aviso Legal</h1>
+        <p class="muted" data-i18n="legal.updated">Última actualización: 15 de noviembre de 2026</p>
+
+        <h2 data-i18n="legal.id.title">1. Datos identificativos (Art. 10 LSSI-CE)</h2>
+        <p data-i18n="legal.id.p1">
+          En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad
+          de la Información y de Comercio Electrónico (LSSI-CE), se ponen a disposición pública los datos
+          identificativos del titular de este sitio web:
+        </p>
+        <ul>
+          <li data-i18n="legal.id.li1"><strong>Denominación del proyecto:</strong> VLC Biblio (Iniciativa cultural ciudadana sin ánimo de lucro).</li>
+          <li data-i18n="legal.id.li2"><strong>Ámbito territorial:</strong> Valencia (Comunidad Valenciana, España).</li>
+          <li data-i18n-html="legal.id.li3"><strong>Correo electrónico de contacto:</strong> <a href="mailto:freetemplatespaula@gmail.com">freetemplatespaula@gmail.com</a></li>
+          <li data-i18n-html="legal.id.li4"><strong>Canales de comunicación oficiales:</strong> bot de Telegram <a href="https://t.me/VLS_Biblio_bot" target="_blank" rel="noreferrer">@VLS_Biblio_bot</a>, grupo <a href="https://t.me/bibliotecavlc" target="_blank" rel="noreferrer">@bibliotecavlc</a> y cuenta de Instagram <a href="https://www.instagram.com/vlc.biblio/" target="_blank" rel="noreferrer">@vlc.biblio</a>.</li>
+        </ul>
+
+        <h2 data-i18n="legal.independent.title">2. Carácter independiente y desvinculación institucional</h2>
+        <p data-i18n="legal.independent.p1">
+          VLC Biblio es una iniciativa voluntaria, independiente y autogestionada por la comunidad
+          vecinal y cultural de Valencia para promover la lectura y facilitar el acceso a libros.
+        </p>
+        <div class="legal-notice-box">
+          <p data-i18n-html="legal.independent.p2">
+            <strong>Aviso de no afiliación:</strong> VLC Biblio <strong>NO</strong> es la página web ni
+            el canal oficial de la <em>Biblioteca Pública de Valencia Pilar Faus</em>, ni forma parte
+            de la estructura administrativa de la <em>Generalitat Valenciana</em> ni del <em>Ministerio
+            de Cultura</em> de España. La mención a la biblioteca Pilar Faus responde exclusivamente a
+            su condición de destinataria de donaciones culturales de libros en lengua rusa gestionadas
+            altruistamente por la comunidad.
+          </p>
+        </div>
+
+        <h2 data-i18n="legal.terms.title">3. Condiciones de uso del sitio web</h2>
+        <p data-i18n="legal.terms.p">
+          El acceso a este catálogo estático y el uso del bot de Telegram son de carácter libre y gratuito.
+          La persona usuaria se compromete a realizar un uso adecuado, lícito y conforme a la buena fe,
+          absteniéndose de cualquier actuación que pueda dañar, sobrecargar, inutilizar o menoscabar el
+          sitio web o vulnerar derechos de terceros.
+        </p>
+
+        <h2 data-i18n="legal.p2p.title">4. Préstamo entre particulares y exención de responsabilidad</h2>
+        <p data-i18n="legal.p2p.p1">
+          El catálogo incluye tanto libros donados para su posterior entrega a la biblioteca pública
+          como libros pertenecientes a fondos particulares o bibliotecas colaboradoras (por ejemplo,
+          la colección TOMA), puestos a disposición en régimen de préstamo temporal entre personas
+          participantes.
+        </p>
+        <p data-i18n="legal.p2p.p2">
+          Los acuerdos de préstamo de libros particulares se conciertan de forma directa, voluntaria y
+          exclusiva entre las personas involucradas. VLC Biblio actúa únicamente como facilitador
+          informativo y canal de enlace, por lo que no ejerce la custodia física ni el control directo
+          de los ejemplares privados, no percibe fianza o depósito en su propio nombre y queda exento
+          de cualquier responsabilidad civil, material o patrimonial por pérdida, deterioro, retraso o
+          falta de devolución de los libros prestados entre particulares.
+        </p>
+
+        <h2 data-i18n="legal.ip.title">5. Propiedad intelectual y cita bibliográfica</h2>
+        <p data-i18n="legal.ip.p1">
+          Los títulos, nombres de autor, imágenes de portadas y datos bibliográficos mostrados en el
+          catálogo se incorporan con fines estrictamente informativos, de catalogación, reseña cultural y
+          fomento del hábito lector, al amparo de los artículos 32 (derecho de cita) y 37 (usos en bibliotecas
+          e instituciones culturales) del Texto Refundido de la Ley de Propiedad Intelectual (Real Decreto
+          Legislativo 1/1996).
+        </p>
+        <p data-i18n="legal.ip.p2">
+          El diseño del sitio web, el código fuente, la estructura y los contenidos propios son titularidad
+          de VLC Biblio o se publican bajo licencias de código abierto. Queda prohibida la reproducción
+          total o parcial con fines comerciales no autorizados.
+        </p>
+
+        <h2 data-i18n="legal.links.title">6. Enlaces a terceros</h2>
+        <p data-i18n="legal.links.p">
+          El sitio web contiene enlaces que dirigen a plataformas externas (como Telegram, Instagram, Google
+          Forms o Google Maps). VLC Biblio no ejerce control sobre el contenido, condiciones o políticas de
+          privacidad de dichos sitios externos y no asume responsabilidad derivada de su utilización.
+        </p>
+
+        <h2 data-i18n="legal.law.title">7. Legislación aplicable y jurisdicción</h2>
+        <p data-i18n="legal.law.p">
+          El presente Aviso Legal se rige en todos sus extremos por la legislación española y el marco
+          jurídico aplicable de la Unión Europea. Para la resolución de cualquier litigio o discrepancia,
+          las partes se someterán a los juzgados y tribunales de la ciudad de Valencia (España).
+        </p>
+
+        <p class="muted" style="margin-top: 28px;">
+          <a href="./privacy.html" data-i18n="legal.toPrivacy">Consultar la Política de Privacidad →</a>
+        </p>
+      </article>
+    </main>
+    <script src="./assets/i18n.js?v=legal-1"></script>
+  </body>
+</html>
