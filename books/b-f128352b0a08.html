@@ -477,6 +477,7 @@
       }
     </style>
     <link rel="stylesheet" href="./assets/shelf.css?v=checkout-3" />
+    <link rel="stylesheet" href="./assets/categories.css?v=categories-public-20261115-1" />
   </head>
   <body data-book-id="b-f128352b0a08">
     <main class="page">
@@ -490,6 +491,7 @@
           <h1>Когда дыхание растворяется в воздухе</h1>
           <p class="author">Каланити П.</p>
           <dl class="details"><dt>ISBN</dt><dd>9785699902064</dd><dt>Año de publicación</dt><dd>2021</dd><dt>Editorial</dt><dd>Эксмо</dd></dl>
+          <div class="local-categories"><dl><div class="local-category-detail"><dt>Edad de lectura</dt><dd>Взрослые<small>Recomendación de la biblioteca</small></dd></div><div class="local-category-detail"><dt>Género y tema</dt><dd>Биографии и мемуары · Здоровье и медицина<small>Categoría editorial</small></dd></div><div class="local-category-detail"><dt>Clasificación de la edición</dt><dd>12+<small>Confirmado por una fuente externa</small></dd></div></dl><details><summary>Base de la recomendación editorial</summary><p>La edad recomendada y la clasificación de una edición son datos distintos.</p><p>Пол Каланити: автобиографическое осмысление работы врача, собственной смертельной болезни и смысла жизни; взрослому читателю, независимо от сравнительно низкой маркировки конкретного издания.</p></details></div>
           <p class="annotation">Пол Каланити с одинаковым успехом мог бы стать как великим врачом, так и великим писателем. В юности он мечтал посвятить свою жизнь английской литературе, но не найдя в ней ответы на свои вопросы о сущности человека, Пол радикально поменял профессию и стал высококлассным нейрохирургом, надеясь лучше познать, что движет людьми и их поступками. Как врач-философ он очень трепетно относился к чувствам своих пациентов и их близких. Ему было всего 36 лет, когда смерть, с которой он боролся каждый день в операционной, постучалась к нему самому. Неутешительный диагноз - рак легких, четвертая стадия - разом перечеркнул все его планы на счастливую семейную жизнь, мечты о научной деятельности и о карьере писателя. Пол мужественно продолжал борьбу с недугом: закончил обучение, спасал пациентов, увидел рождение дочери, размышлял над человеческими возможностями и описал все это в книге, которую вы держите в руках. Эта книга - его завещание дочери, чтобы она знала, каким был ее отец на самом деле; врачам, которые отстраняются от переживаний пациентов; пациентам, которые столкнулись со смертельной болезнью; всем, кто задумывается о смысле жизни и своем предназначении. Пол оставил после себя десятки спасенных жизней, незавершенную рукопись этой книги и маленькую дочку Кэди, которая появилась на свет за 8 месяцев до его смерти. Но Пол остался жить в своей книге, которую с замиранием сердца читают уже в 37 странах и восхищаются силой духа одного-единственного человека, который страстно любил свой язык, обожал свою работу и по-настоящему уважал человека со всеми его чувствами и возможностями</p>
           <aside class="deposit-note" aria-label="Condiciones del depósito">
             <span class="deposit-note-icon" aria-hidden="true">↩</span>
@@ -507,7 +509,11 @@
     </main>
 
     <script src="./data/books.js?v=20261115150015"></script>
+    <script src="./data/book-categories.js?v=0f453f962453"></script>
+    <script src="./assets/category-overlay.js?v=categories-public-20261115-1"></script>
     <script src="./assets/i18n.js?v=sagunto-deposit-1"></script>
+    <script src="./assets/category-logic.js?v=categories-public-20261115-1"></script>
+    <script src="./assets/local-categories.js?v=categories-public-20261115-1"></script>
     <script src="./assets/shelf.js?v=toma-book-batch-5"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
@@ -721,6 +727,7 @@
             <div class="related-body">
               <h3 class="related-title">${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h3>
               <p class="related-author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
+              ${window.BiblioCategories.cardMarkup(book)}
             </div>
             </a>
             ${window.BiblioShelf.controlsMarkup(book, false)}
@@ -794,6 +801,7 @@
               <h1>${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h1>
               <p class="author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
               <dl class="details">${detailsMarkup(book)}</dl>
+              ${window.BiblioCategories.detailMarkup(book)}
               <p class="annotation">${escapeHtml(book.annotation || t("book.noDescription", "Todavía no se ha añadido una descripción."))}</p>
               ${depositMarkup(book)}
               <div class="collection-note"><span>${collectionNoteMarkup(book)}</span>${locationNoteMarkup(book)}</div>

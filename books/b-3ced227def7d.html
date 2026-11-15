@@ -477,6 +477,7 @@
       }
     </style>
     <link rel="stylesheet" href="./assets/shelf.css?v=checkout-3" />
+    <link rel="stylesheet" href="./assets/categories.css?v=categories-public-20261115-1" />
   </head>
   <body data-book-id="b-3ced227def7d">
     <main class="page">
@@ -490,6 +491,7 @@
           <h1>Цирк и не только!</h1>
           <p class="author">Зенюк Рина; Рина Зенюк; Зенюк Р.</p>
           <dl class="details"><dt>Año de publicación</dt><dd>2023</dd><dt>Editorial</dt><dd>Детская литература</dd></dl>
+          <div class="local-categories"><dl><div class="local-category-detail"><dt>Edad de lectura</dt><dd>4–6 лет · 7–10 лет<small>Recomendación de la biblioteca</small></dd></div><div class="local-category-detail"><dt>Género y tema</dt><dd>Сказки и фольклор · Юмор и сатира<small>Categoría editorial</small></dd></div><div class="local-category-detail"><dt>Clasificación de la edición</dt><dd>Sin datos confirmados<small>Sin datos confirmados</small></dd></div></dl><details><summary>Base de la recomendación editorial</summary><p>La edad recomendada y la clasificación de una edición son datos distintos.</p><p>Добрые иллюстрированные истории о Котофеевке/Котофеях: чтение с родителями дошкольникам и самостоятельное чтение в младшей школе.</p></details></div>
           <p class="annotation">В Котофеевке настоящее событие — приезжает цирк! Невероятное представление, мировые звёзды, шоу, которое перевернёт с нижних лап на верхние всех жителей! И как вы думаете, кто в центре событий? Конечно, Федя, Вася и Тося! Ни много ни мало, они решаются на побег с цирком! Что может быть прекраснее, чем судьба настоящего артиста? Приключения начинаются! 5 причин купить книгу: • Новая книга о весёлых котах Рины Зенюк: на этот раз в Котофеевку приезжает Цирк! • Федю, Васю и Тосю ждёт настоящее приключение и впервые за пределами Котофеевки! • Поучительная история со счастливым концом о семейных ценностях и настоящей дружбе • Большое количество иллюстраций, увеличенный формат, плотная бумага, крупный шрифт • Подходит как для чтения родителями детям, так и для самостоятельного чтения ребенка Все КНИГИ СЕРИИ «У нас в Котофеевке» (поиск на Wildberries по артикулу): 296028788 - Сборник 1(В сборник вошли пять книг) 608825716 - Сборник 2 (В сборник вошли пять книг) 277580454 - Снежный гость. 217013299 - Сюрприз для мамы. 150462184 - Как Федя Вася и Тося на рыбалку ходили. 171231370 - Большие гонки. 188137047 - Цирк и не только. 135791072 - Ловушка для Кота Мороза. 199632745 - На что ловятся котофеечки. 259765419 - Гуси-Лебеди. 404243525 - Ай да концерт! 208448088 - Кошки-мышки. 233243709 - Книга с наклейками. Круглый год в Котофеевке. 259767560 - Времена года. Раскраска по номерам. 259766772 - Про Федю Васю и Тосю. Раскраска по номерам</p>
           <aside class="deposit-note" aria-label="Condiciones del depósito">
             <span class="deposit-note-icon" aria-hidden="true">↩</span>
@@ -507,7 +509,11 @@
     </main>
 
     <script src="./data/books.js?v=20261115150015"></script>
+    <script src="./data/book-categories.js?v=0f453f962453"></script>
+    <script src="./assets/category-overlay.js?v=categories-public-20261115-1"></script>
     <script src="./assets/i18n.js?v=sagunto-deposit-1"></script>
+    <script src="./assets/category-logic.js?v=categories-public-20261115-1"></script>
+    <script src="./assets/local-categories.js?v=categories-public-20261115-1"></script>
     <script src="./assets/shelf.js?v=toma-book-batch-5"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
@@ -721,6 +727,7 @@
             <div class="related-body">
               <h3 class="related-title">${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h3>
               <p class="related-author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
+              ${window.BiblioCategories.cardMarkup(book)}
             </div>
             </a>
             ${window.BiblioShelf.controlsMarkup(book, false)}
@@ -794,6 +801,7 @@
               <h1>${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h1>
               <p class="author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
               <dl class="details">${detailsMarkup(book)}</dl>
+              ${window.BiblioCategories.detailMarkup(book)}
               <p class="annotation">${escapeHtml(book.annotation || t("book.noDescription", "Todavía no se ha añadido una descripción."))}</p>
               ${depositMarkup(book)}
               <div class="collection-note"><span>${collectionNoteMarkup(book)}</span>${locationNoteMarkup(book)}</div>

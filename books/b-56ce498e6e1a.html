@@ -477,6 +477,7 @@
       }
     </style>
     <link rel="stylesheet" href="./assets/shelf.css?v=checkout-3" />
+    <link rel="stylesheet" href="./assets/categories.css?v=categories-public-20261115-1" />
   </head>
   <body data-book-id="b-56ce498e6e1a">
     <main class="page">
@@ -490,6 +491,7 @@
           <h1>Сказки Сутеева</h1>
           <p class="author">Сутеев Владимир Григорьевич</p>
           <dl class="details"><dt>ISBN</dt><dd>978-5-17-100051-6</dd><dt>Año de publicación</dt><dd>2016</dd><dt>Editorial</dt><dd>Издательство АСТ</dd></dl>
+          <div class="local-categories"><dl><div class="local-category-detail"><dt>Edad de lectura</dt><dd>4–6 лет · 7–10 лет<small>Recomendación de la biblioteca</small></dd></div><div class="local-category-detail"><dt>Género y tema</dt><dd>Сказки и фольклор<small>Categoría editorial</small></dd></div><div class="local-category-detail"><dt>Clasificación de la edición</dt><dd>Sin datos confirmados<small>Sin datos confirmados</small></dd></div></dl><details><summary>Base de la recomendación editorial</summary><p>La edad recomendada y la clasificación de una edición son datos distintos.</p><p>Народные/литературные сказки и классические детские сказочные циклы; семейное чтение дошкольникам и самостоятельное чтение в младшей школе.</p></details></div>
           <p class="annotation">Книга сказок Владимира Сутеева — идеальная первая ступенька в мир чтения для вашего ребенка! Что может быть лучше, чем открывать волшебный мир сказок Сутеева вместе с малышом? В этом сборнике сказок Сутеева собраны лучшие произведения Владимира Сутеева — классика детской литературы. Добрые, мудрые и понятные каждому ребенку истории станут прекрасным началом знакомства с книгами. Этот сборник сказок Сутеева — отличный подарок малышу, мальчику или девочке 3-5 лет. Героями детских книг Сутеева стали любознательные зверята, так похожие на вашего кроху: непоседливые котята, отважный цыпленок, дружелюбный утенок. Через их приключения ребенок легко усвоит уроки щедрости, ответственности и трудолюбия. Классические сказки Сутеева отличаются: Яркими авторскими иллюстрациями Сутеева Короткими текстами, идеальными для первого чтения Добрыми сюжетами, проверенными временем Качественным подарочным изданием Книги для детей 3-5 лет от Владимира Сутеева — это: Развитие воображения и речи Понимание важных жизненных ценностей Идеальные сказки на ночь Узнаваемые сказки с иллюстрациями Сутеева Подарочное издание Сутеева с лучшими произведениями для детей станет treasured экземпляром в библиотеке вашего ребенка. Сказки и картинки Сутеева дарят хорошее настроение и крепкий сон. Подарите малышу радость первых книжных открытий с классикой детской литературы от издательства &quot;Малыш&quot;! Сборник сказок Владимира Сутеева — лучший подарок на день рождения или просто без повода</p>
           <aside class="deposit-note" aria-label="Condiciones del depósito">
             <span class="deposit-note-icon" aria-hidden="true">↩</span>
@@ -507,7 +509,11 @@
     </main>
 
     <script src="./data/books.js?v=20261115150015"></script>
+    <script src="./data/book-categories.js?v=0f453f962453"></script>
+    <script src="./assets/category-overlay.js?v=categories-public-20261115-1"></script>
     <script src="./assets/i18n.js?v=sagunto-deposit-1"></script>
+    <script src="./assets/category-logic.js?v=categories-public-20261115-1"></script>
+    <script src="./assets/local-categories.js?v=categories-public-20261115-1"></script>
     <script src="./assets/shelf.js?v=toma-book-batch-5"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
@@ -721,6 +727,7 @@
             <div class="related-body">
               <h3 class="related-title">${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h3>
               <p class="related-author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
+              ${window.BiblioCategories.cardMarkup(book)}
             </div>
             </a>
             ${window.BiblioShelf.controlsMarkup(book, false)}
@@ -794,6 +801,7 @@
               <h1>${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h1>
               <p class="author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
               <dl class="details">${detailsMarkup(book)}</dl>
+              ${window.BiblioCategories.detailMarkup(book)}
               <p class="annotation">${escapeHtml(book.annotation || t("book.noDescription", "Todavía no se ha añadido una descripción."))}</p>
               ${depositMarkup(book)}
               <div class="collection-note"><span>${collectionNoteMarkup(book)}</span>${locationNoteMarkup(book)}</div>

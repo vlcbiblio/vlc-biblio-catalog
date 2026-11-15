@@ -477,6 +477,7 @@
       }
     </style>
     <link rel="stylesheet" href="./assets/shelf.css?v=checkout-3" />
+    <link rel="stylesheet" href="./assets/categories.css?v=categories-public-20261115-1" />
   </head>
   <body data-book-id="b-bfcc9fa89b55">
     <main class="page">
@@ -490,6 +491,7 @@
           <h1>Каждому нужна своя кошка</h1>
           <p class="author">Лукас Ольга</p>
           <dl class="details"><dt>Año de publicación</dt><dd>2025</dd><dt>Editorial</dt><dd>Издательство Речь</dd></dl>
+          <div class="local-categories"><dl><div class="local-category-detail"><dt>Edad de lectura</dt><dd>7–10 лет<small>Recomendación de la biblioteca</small></dd></div><div class="local-category-detail"><dt>Género y tema</dt><dd>Детектив · Истории о животных<small>Categoría editorial</small></dd></div><div class="local-category-detail"><dt>Clasificación de la edición</dt><dd>Sin datos confirmados<small>Sin datos confirmados</small></dd></div></dl><details><summary>Base de la recomendación editorial</summary><p>La edad recomendada y la clasificación de una edición son datos distintos.</p><p>Детские расследования с котами, собаками или другими животными-героями. Жанр определяется задачей расследования, а не словами «тайна» в любом бытовом рассказе.</p></details></div>
           <p class="annotation">Кошачье детективное агентство охраняет покой садоводства «Чайное» в любое время года. В октябре многие садоводы уехали в город, но происшествий меньше не стало. Куда пропадают игрушки котёнка Геши? Почему на багажнике белой машины появляются листья растений, которые в «Чайном» не встретишь? Кто и зачем передвигает с места на место предметы то там, то тут? Муся, Плюшка, Элиза и их ученики разгадают тайну пропавшего семейного портрета, помогут председателю выяснить, кому принадлежат заброшенные участки, и научат впечатлительную кошку Милку не придумывать страшные истории до того, как будут обнаружены все улики. Иллюстрации к книге сделала Ольга Громова. Её весёлые рисунки приглашают детей и взрослых в уютный добрый мир садоводства «Чайное». «Каждому нужна своя кошка» — седьмая, но не последняя книга серии про кошачье детективное агентство. Кошки, коты, котята и собаки-детективы не собираются сидеть, сложа лапы! «Каждому нужна своя кошка» — детская книга для читателей от 6 лет. В неё входят рассказы о приключениях и детективных расследованиях в современном садоводстве. Можно читать как самостоятельную книгу или вместе со всеми книгами серии (артикул 102854678). В каком порядке читать книги про кошачье детективное агентство: Кошачье детективное агентство. У кошек всегда каникулы. Кошки идут по снегу. Весна - время кошек. Учитесь у кошек. Кошкам можно всё. Каждому нужна своя кошка. Продолжение следует</p>
           <aside class="deposit-note" aria-label="Condiciones del depósito">
             <span class="deposit-note-icon" aria-hidden="true">↩</span>
@@ -507,7 +509,11 @@
     </main>
 
     <script src="./data/books.js?v=20261115150015"></script>
+    <script src="./data/book-categories.js?v=0f453f962453"></script>
+    <script src="./assets/category-overlay.js?v=categories-public-20261115-1"></script>
     <script src="./assets/i18n.js?v=sagunto-deposit-1"></script>
+    <script src="./assets/category-logic.js?v=categories-public-20261115-1"></script>
+    <script src="./assets/local-categories.js?v=categories-public-20261115-1"></script>
     <script src="./assets/shelf.js?v=toma-book-batch-5"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
@@ -721,6 +727,7 @@
             <div class="related-body">
               <h3 class="related-title">${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h3>
               <p class="related-author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
+              ${window.BiblioCategories.cardMarkup(book)}
             </div>
             </a>
             ${window.BiblioShelf.controlsMarkup(book, false)}
@@ -794,6 +801,7 @@
               <h1>${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h1>
               <p class="author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
               <dl class="details">${detailsMarkup(book)}</dl>
+              ${window.BiblioCategories.detailMarkup(book)}
               <p class="annotation">${escapeHtml(book.annotation || t("book.noDescription", "Todavía no se ha añadido una descripción."))}</p>
               ${depositMarkup(book)}
               <div class="collection-note"><span>${collectionNoteMarkup(book)}</span>${locationNoteMarkup(book)}</div>

@@ -477,6 +477,7 @@
       }
     </style>
     <link rel="stylesheet" href="./assets/shelf.css?v=checkout-3" />
+    <link rel="stylesheet" href="./assets/categories.css?v=categories-public-20261115-1" />
   </head>
   <body data-book-id="b-540616fffed1">
     <main class="page">
@@ -490,6 +491,7 @@
           <h1>Несравненная Ябеда-Корябеда</h1>
           <p class="author">Александр Семенов</p>
           <dl class="details"><dt>ISBN</dt><dd>9785080070013</dd><dt>Año de publicación</dt><dd>2022</dd><dt>Editorial</dt><dd>Детская литература</dd></dl>
+          <div class="local-categories"><dl><div class="local-category-detail"><dt>Edad de lectura</dt><dd>12–17 лет<small>Recomendación de la biblioteca</small></dd></div><div class="local-category-detail"><dt>Género y tema</dt><dd>Сказки и фольклор · Приключения<small>Categoría editorial</small></dd></div><div class="local-category-detail"><dt>Clasificación de la edición</dt><dd>12+<small>Confirmado por una fuente externa</small></dd></div></dl><details><summary>Base de la recomendación editorial</summary><p>La edad recomendada y la clasificación de una edición son datos distintos.</p><p>Литературная сказка или сказочная повесть с последовательным сюжетом; рекомендуем уверенным читателям младшей школы. Учебные/мифологические мотивы не заменяют художественный жанр.; Рекомендация ограничена снизу подтверждённой маркировкой этого издания 12+.</p></details></div>
           <p class="annotation">НЕСРАВНЕННАЯ ЯБЕДА-КОРЯБЕДА Одним обыкновенным осенним утром город Укромный изменился до неузнаваемости. В нём появились шоколадные тротуары, съедобный Кондитерский музей, зоопарк с доисторическими и сказочными зверями и много других удивительных вещей. И всё это подарила городу злая волшебница Я. К. Орябеда. Какая же очередная каверза коварной Ябеды-Корябеды скрывается за этими чудесами? Кто поможет разоблачить её хитроумный план? Кто найдёт в себе мужество изгнать злую волшебницу из города? Ответы на эти и многие другие вопросы вы найдёте в этой детективно-загадочной истории. СПОРТИВНАЯ КОТЛЕТА ЯБЕДЫ-КОРЯБЕДЫ Всеобщая тревога! Как сообщает проверенный источник, известная злая волшебница и хулиганка Ябеда-Корябеда опять вернулась к своим тёмным делишкам. На этот раз она задумала ни больше ни меньше как сорвать крупнейшее международное мероприятие — первые в истории Детские зимние спортивные игры! Юных спортсменов и болельщиков, а также читателей этой книги ждут нелёгкие испытания и масса неожиданностей, подстроенных командой Ябеды-Корябеды. Удастся ли преодолеть их, чтобы Игры состоялись? Кто победит — злая волшебница или любовь к спорту? И главное — при чём здесь котлета?.. Неутомимый писатель и художник Александр Семёнов, автор популярных книг о проделках Ябеды-Корябеды, представляет очередную историю с участием любимых героев. Читатель не только окунётся в круговорот весёлых и непредсказуемых событий, но и станет их непосредственным участником, узнает много интересного о зимних видах спорта. Нас находят по запросам: Бестселлеры книги популярные Детская и юношеская книга Детская книгаДетская литература рассказы Детские книги сказки Детские рассказы Детские сказки Добрые сказки Издательство Детская литература Интересные книги для подростка Книга для подростков Книги 12+ Книги детские книги Книги для девочек подростков Книги для детей книга Книги для мальчиков подростков Книги для подростков в 12 лет Книги для подростков фэнтези Книги подростковые Подарок подростку книги Ябеда Корябеда Подарок ребенку Подростковая литература Подростковые книги Сказка Сказки для детей книги Сказки и рассказы для детей Фантастика и фэнтези Художественная литература для детей Художественная литература для подростков</p>
           <aside class="deposit-note" aria-label="Condiciones del depósito">
             <span class="deposit-note-icon" aria-hidden="true">↩</span>
@@ -507,7 +509,11 @@
     </main>
 
     <script src="./data/books.js?v=20261115150015"></script>
+    <script src="./data/book-categories.js?v=0f453f962453"></script>
+    <script src="./assets/category-overlay.js?v=categories-public-20261115-1"></script>
     <script src="./assets/i18n.js?v=sagunto-deposit-1"></script>
+    <script src="./assets/category-logic.js?v=categories-public-20261115-1"></script>
+    <script src="./assets/local-categories.js?v=categories-public-20261115-1"></script>
     <script src="./assets/shelf.js?v=toma-book-batch-5"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
@@ -721,6 +727,7 @@
             <div class="related-body">
               <h3 class="related-title">${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h3>
               <p class="related-author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
+              ${window.BiblioCategories.cardMarkup(book)}
             </div>
             </a>
             ${window.BiblioShelf.controlsMarkup(book, false)}
@@ -794,6 +801,7 @@
               <h1>${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h1>
               <p class="author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
               <dl class="details">${detailsMarkup(book)}</dl>
+              ${window.BiblioCategories.detailMarkup(book)}
               <p class="annotation">${escapeHtml(book.annotation || t("book.noDescription", "Todavía no se ha añadido una descripción."))}</p>
               ${depositMarkup(book)}
               <div class="collection-note"><span>${collectionNoteMarkup(book)}</span>${locationNoteMarkup(book)}</div>

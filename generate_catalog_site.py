@@ -9,6 +9,8 @@ import argparse
 from pathlib import Path
 from urllib.parse import quote, urlparse
 
+from book_categories import apply_categories, load_records, refresh_payload, static_categories_markup
+
 
 SITE_URL = "https://vlcbiblio.github.io/vlc-biblio-catalog/"
 BOOK_ID_PATTERN = re.compile(r"^[A-Za-z0-9_-]{1,128}$")
@@ -131,6 +133,7 @@ def static_book_markup(book):
           <h1>{title}</h1>
           <p class="author">{author}</p>
           <dl class="details">{''.join(details)}</dl>
+          {static_categories_markup(book)}
           <p class="annotation">{annotation}</p>{deposit_line}
           <div class="collection-note">{note}</div>
           <div class="actions">{action_markup}</div>
@@ -197,6 +200,9 @@ def render_book_page(template, book, *, indexable=True, embedded_books=None):
 
 def write_site(root: Path, books):
     root = Path(root)
+    records = load_records(root)
+    refresh_payload(root, books, records)
+    books = apply_categories(books, records)
     template = (root / "book.html").read_text(encoding="utf-8")
     output_dir = root / "books"
     output_dir.mkdir(parents=True, exist_ok=True)

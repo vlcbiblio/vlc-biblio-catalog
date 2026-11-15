@@ -894,6 +894,7 @@
       }
     </style>
     <link rel="stylesheet" href="./assets/shelf.css?v=checkout-1" />
+    <link rel="stylesheet" href="./assets/categories.css?v=categories-public-20261115-1" />
   </head>
   <body>
     <main class="page">
@@ -1048,11 +1049,15 @@
           <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" /></svg>
           <input class="field search" id="search" type="search" placeholder="Título, autor, ISBN o editorial" data-i18n-placeholder="catalog.search" />
         </label>
+        <label class="sr-only" for="sectionFilter" data-i18n="catalog.sections.all">Todas las secciones</label>
         <select class="field" id="sectionFilter">
           <option value="" data-i18n="catalog.sections.all">Todas las secciones</option>
           <option value="library" data-i18n="catalog.sections.library">Biblioteca Pilar Faus</option>
           <option value="exchange" data-i18n="catalog.sections.private">Biblioteca particular</option>
         </select>
+        <label class="category-filter" for="ageFilter"><span data-category-label="age">Edad de lectura</span><select class="field" id="ageFilter"></select></label>
+        <label class="category-filter" for="genreFilter"><span data-category-label="genre">Género y tema</span><select class="field" id="genreFilter"></select></label>
+        <button class="local-reset" id="resetCategories" type="button" data-category-label="reset">Restablecer</button>
       </section>
 
       <section class="grid" id="grid" aria-label="Libros" data-i18n-aria-label="catalog.books"></section>
@@ -1116,7 +1121,11 @@
     </section>
 
     <script src="./data/books.js?v=20261115150015"></script>
+    <script src="./data/book-categories.js?v=0f453f962453"></script>
+    <script src="./assets/category-overlay.js?v=categories-public-20261115-1"></script>
     <script src="./assets/i18n.js?v=two-events-2026-11-05"></script>
+    <script src="./assets/category-logic.js?v=categories-public-20261115-1"></script>
+    <script src="./assets/local-categories.js?v=categories-public-20261115-1"></script>
     <script src="./assets/shelf.js?v=toma-book-batch-5"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
@@ -1133,10 +1142,7 @@
       // Reload can copy history.state before the outgoing pagehide saves scroll.
       const isReload = performance.getEntriesByType("navigation")[0]?.type === "reload";
       const savedCatalogState = (isReload && storedCatalogState) || history.state?.biblioCatalog || storedCatalogState;
-      const state = {
-        search: typeof savedCatalogState?.search === "string" ? savedCatalogState.search : "",
-        section: ["library", "exchange"].includes(savedCatalogState?.section) ? savedCatalogState.section : "",
-      };
+      const state = window.BiblioCategoryLogic.readCatalogState(location.search, savedCatalogState, books);
       const pageSize = 48;
       let visibleLimit = Number.isInteger(savedCatalogState?.visibleLimit)
         ? Math.min(books.length, Math.max(pageSize, savedCatalogState.visibleLimit))
@@ -1183,7 +1189,7 @@
         };
         // Each history entry keeps its own list; the explicit catalog link uses
         // the latest list saved in this tab, even after several book pages.
-        history.replaceState({ ...history.state, biblioCatalog: snapshot }, "");
+        history.replaceState({ ...history.state, biblioCatalog: snapshot }, "", window.BiblioCategoryLogic.catalogUrl(state));
         try {
           sessionStorage.setItem(catalogStorageKey, JSON.stringify(snapshot));
         } catch {
@@ -1228,20 +1234,7 @@
       }
 
       function matches(book) {
-        const query = normalize(state.search);
-        const text = normalize([
-          book.title,
-          book.author,
-          book.isbn,
-          book.publisher,
-          book.annotation,
-          book.searchAliases,
-        ].join(" "));
-
-        return (
-          (!query || text.includes(query)) &&
-          (!state.section || book.section === state.section)
-        );
+        return window.BiblioCategoryLogic.matches(book, state);
       }
 
       function sorted(list) {
@@ -1394,6 +1387,7 @@
             <div class="body">
               <h2 class="title">${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h2>
               <p class="author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
+              ${window.BiblioCategories.cardMarkup(book)}
               ${libraryAction(book) ? `<a class="card-action ${libraryAction(book).isTelegram ? "telegram-action" : ""}" href="${escapeHtml(libraryAction(book).href)}" target="_blank" rel="noreferrer">${actionLabelMarkup(libraryAction(book))}</a>` : ""}
               ${window.BiblioShelf.controlsMarkup(book, false)}
             </div>
@@ -1436,19 +1430,45 @@
       }
 
       let searchTimer;
+      window.BiblioCategories.fillFilters(books, state);
+      function commitFilters() {
+        clearTimeout(searchTimer);
+        const nextUrl = window.BiblioCategoryLogic.catalogUrl(state);
+        if (nextUrl !== location.pathname + location.search + location.hash) {
+          history.pushState({ biblioCatalog: { ...state, visibleLimit: pageSize, scrollY: window.scrollY } }, "", nextUrl);
+        }
+        render({ resetLimit: true });
+        saveCatalogState();
+      }
+      document.querySelector("#resetCategories").addEventListener("click", () => {
+        Object.assign(state, { search: "", section: "", age: "", genre: "" });
+        window.BiblioCategories.syncControls(state);
+        commitFilters();
+      });
+      window.addEventListener("popstate", () => {
+        clearTimeout(searchTimer);
+        const snapshot = history.state?.biblioCatalog;
+        Object.assign(state, window.BiblioCategoryLogic.readCatalogState(location.search, snapshot, books));
+        visibleLimit = Math.min(books.length, Math.max(pageSize, snapshot?.visibleLimit || pageSize));
+        window.BiblioCategories.syncControls(state);
+        render();
+        restoreCatalogPosition(snapshot);
+      });
       document.querySelector("#search").addEventListener("input", (event) => {
         state.search = event.target.value;
         clearTimeout(searchTimer);
-        searchTimer = setTimeout(() => render({ resetLimit: true }), 180);
+        searchTimer = setTimeout(commitFilters, 180);
       });
 
       [
         ["#sectionFilter", "section"],
+        ["#ageFilter", "age"],
+        ["#genreFilter", "genre"],
       ].forEach(([selector, key]) => {
         document.querySelector(selector).addEventListener("change", (event) => {
           clearTimeout(searchTimer);
           state[key] = event.target.value;
-          render({ resetLimit: true });
+          commitFilters();
         });
       });
 
@@ -1510,6 +1530,7 @@
       } else {
         document.querySelector("#search").value = state.search;
         document.querySelector("#sectionFilter").value = state.section;
+        window.BiblioCategories.syncControls(state);
         renderLatest();
         render();
         catalogReady = true;

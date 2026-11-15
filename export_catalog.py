@@ -8,6 +8,7 @@ from pathlib import Path
 from urllib.parse import urlparse, unquote
 
 from generate_catalog_site import write_site
+from book_categories import refresh_payload
 
 
 ROOT = Path(__file__).resolve().parent
@@ -431,6 +432,7 @@ def write_books(output, books):
         public_books.append(public)
     payload = json.dumps(public_books, ensure_ascii=False, indent=2)
     output.write_text(f"window.BIBLIO_BOOKS = {payload};\n", encoding="utf-8")
+    refresh_payload(root, public_books)
     return public_books
 
 

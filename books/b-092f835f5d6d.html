@@ -477,6 +477,7 @@
       }
     </style>
     <link rel="stylesheet" href="./assets/shelf.css?v=checkout-3" />
+    <link rel="stylesheet" href="./assets/categories.css?v=categories-public-20261115-1" />
   </head>
   <body data-book-id="b-092f835f5d6d">
     <main class="page">
@@ -490,6 +491,7 @@
           <h1>Плавучий диван</h1>
           <p class="author">Гем Франциска</p>
           <dl class="details"><dt>ISBN</dt><dd>978-5-04-108903-0</dd><dt>Año de publicación</dt><dd>2021</dd><dt>Editorial</dt><dd>Эксмо</dd></dl>
+          <div class="local-categories"><dl><div class="local-category-detail"><dt>Edad de lectura</dt><dd>6 лет · 7–10 лет<small>Recomendación de la biblioteca</small></dd></div><div class="local-category-detail"><dt>Género y tema</dt><dd>Сказки и фольклор · Детская проза<small>Categoría editorial</small></dd></div><div class="local-category-detail"><dt>Clasificación de la edición</dt><dd>6+<small>Confirmado por una fuente externa</small></dd></div></dl><details><summary>Base de la recomendación editorial</summary><p>La edad recomendada y la clasificación de una edición son datos distintos.</p><p>Иллюстрированная детская история о дружбе, семье, вымышленных существах или оживших животных: чтение вслух дошкольнику и первое самостоятельное чтение. Содержательные исключения (взрослые романы, наука, подростковый хоррор) проверены отдельно.; Рекомендация ограничена снизу подтверждённой маркировкой этого издания 6+.</p></details></div>
           <p class="annotation">Ратц и Мими — ленивец и бабочка, которая живёт в его шерсти. И хотя вся эта история — забавный вымысел, этот факт взят из настоящей дикой природы — в шерсти ленивцев и правда живут бабочки! Старина Ратц из этой истории больше всего любит поспать, а вот Мими — сущая егоза, она обожает убираться и веселиться. И, конечно же, она не может пропустить мимо ушей объявление о гонке на реке, за победу в которой обещают самые соблазнительные призы (вроде торта из листьев и реактивной швабры). Но когда соревнование начинается, оказывается, что это вовсе не соревнование, а… А вот во что на самом деле влипли Ратц и Мими на этот раз, вы узнаете, прочитав историю «Плавучий диван»! В ней вас ждут уморительные приключения животных в джунглях, которые сопровождаются забавными цветными иллюстрациями. А иллюстрации эти нарисовал тот же художник, что и оформлял книги-бестселлеры «Не открывать! Кусается!» и др. &lt;br&gt; Небольшой объём текста, яркое оформление и лёгкий сюжет сделают эту книгу идеальным подарком для начинающего читателя, который ещё только открывает для себя мир литературы. Ну а тем детям, которые уже активно читают, эта книга станет добрым и весёлым другом, с которым здорово провести интересный вечер. Вперёд к приключениям вместе с Ратцем и Мими</p>
           <aside class="deposit-note" aria-label="Condiciones del depósito">
             <span class="deposit-note-icon" aria-hidden="true">↩</span>
@@ -507,7 +509,11 @@
     </main>
 
     <script src="./data/books.js?v=20261115150015"></script>
+    <script src="./data/book-categories.js?v=0f453f962453"></script>
+    <script src="./assets/category-overlay.js?v=categories-public-20261115-1"></script>
     <script src="./assets/i18n.js?v=sagunto-deposit-1"></script>
+    <script src="./assets/category-logic.js?v=categories-public-20261115-1"></script>
+    <script src="./assets/local-categories.js?v=categories-public-20261115-1"></script>
     <script src="./assets/shelf.js?v=toma-book-batch-5"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
@@ -721,6 +727,7 @@
             <div class="related-body">
               <h3 class="related-title">${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h3>
               <p class="related-author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
+              ${window.BiblioCategories.cardMarkup(book)}
             </div>
             </a>
             ${window.BiblioShelf.controlsMarkup(book, false)}
@@ -794,6 +801,7 @@
               <h1>${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h1>
               <p class="author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
               <dl class="details">${detailsMarkup(book)}</dl>
+              ${window.BiblioCategories.detailMarkup(book)}
               <p class="annotation">${escapeHtml(book.annotation || t("book.noDescription", "Todavía no se ha añadido una descripción."))}</p>
               ${depositMarkup(book)}
               <div class="collection-note"><span>${collectionNoteMarkup(book)}</span>${locationNoteMarkup(book)}</div>

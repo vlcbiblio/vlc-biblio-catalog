@@ -477,6 +477,7 @@
       }
     </style>
     <link rel="stylesheet" href="./assets/shelf.css?v=checkout-3" />
+    <link rel="stylesheet" href="./assets/categories.css?v=categories-public-20261115-1" />
   </head>
   <body data-book-id="b-f9ab9ec4f551">
     <main class="page">
@@ -490,6 +491,7 @@
           <h1>Потусторонний город</h1>
           <p class="author">Райбер Влад</p>
           <dl class="details"><dt>ISBN</dt><dd>978-5-04-204348-2</dd><dt>Año de publicación</dt><dd>2024</dd><dt>Editorial</dt><dd>Эксмо</dd></dl>
+          <div class="local-categories"><dl><div class="local-category-detail"><dt>Edad de lectura</dt><dd>12–14 лет · 15–17 лет<small>Recomendación de la biblioteca</small></dd></div><div class="local-category-detail"><dt>Género y tema</dt><dd>Ужасы и мистика<small>Categoría editorial</small></dd></div><div class="local-category-detail"><dt>Clasificación de la edición</dt><dd>Sin datos confirmados<small>Sin datos confirmados</small></dd></div></dl><details><summary>Base de la recomendación editorial</summary><p>La edad recomendada y la clasificación de una edición son datos distintos.</p><p>Подростковые мистические/страшные рассказы и криповые истории: напряжение и пугающие ситуации, поэтому рекомендуем от среднего подросткового возраста.</p></details></div>
           <p class="annotation">Новинка от Влада Райбера — мастера мистических и страшных рассказов для подростков и финалиста премии &quot;Эксмо.Дебют&quot;. Его истории знакомы тысячам людей, а книги озвучивают на популярных ютуб-каналах, набирая миллионные просмотры! В летнем лагере будто по воле судьбы оказываются те, кто пережил кошмар наяву: побывал в проклятом месте или встретился с монстром лицом к лицу. Но этот лагерь — не место для отдыха. Каждую ночь среди корпусов ходит загадочная фигура в маске с длинными ушами. Говорят, это Зайка Косенький. Он слушает, о чём рассказывают друг другу мальчишки и девчонки, а после забирает свидетелей, чтобы об их историях никто не узнал. Каждый год в лагере кто-нибудь исчезает. Удастся ли ребятам пережить это страшное лето? &quot;Летний лагерь&quot; — целый сборник историй, рассказанных подростками у костра. Настоящий подарок для всех, кому понравились книги Влада Райбера, такие как: &quot;Потусторонний город&quot;, &quot;Кошачья маска&quot;, &quot;Плачущий монстр&quot;, а также роман &quot;Зайчик&quot;. История для всех, кто обожает крипипасты, городские легенды, фольклорный ужас и страшные истории в духе &quot;Закулисья&quot;, SCP и &quot;Пять ночей у Фредди&quot;. Книгу оценят все фанаты страшных историй! Запечатанные форзацы с героями и описаниями чудовищ, а также атмосферная вёрстка внутри! Подарите её на Хэллоуин, день рождения или Новый год, или просто, чтобы сделать вечер пятницы по-настоящему страшным! Познакомьтесь со всеми книгами автора: &quot;Летний лагерь&quot; &quot;Плачущий монстр&quot; &quot;Потусторонний город&quot; &quot;Плюшевая голова&quot; &quot;Кошачья маска&quot; &quot;Кошмарный звонок&quot; Продолжение следует</p>
           <aside class="deposit-note" aria-label="Condiciones del depósito">
             <span class="deposit-note-icon" aria-hidden="true">↩</span>
@@ -507,7 +509,11 @@
     </main>
 
     <script src="./data/books.js?v=20261115150015"></script>
+    <script src="./data/book-categories.js?v=0f453f962453"></script>
+    <script src="./assets/category-overlay.js?v=categories-public-20261115-1"></script>
     <script src="./assets/i18n.js?v=sagunto-deposit-1"></script>
+    <script src="./assets/category-logic.js?v=categories-public-20261115-1"></script>
+    <script src="./assets/local-categories.js?v=categories-public-20261115-1"></script>
     <script src="./assets/shelf.js?v=toma-book-batch-5"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
@@ -721,6 +727,7 @@
             <div class="related-body">
               <h3 class="related-title">${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h3>
               <p class="related-author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
+              ${window.BiblioCategories.cardMarkup(book)}
             </div>
             </a>
             ${window.BiblioShelf.controlsMarkup(book, false)}
@@ -794,6 +801,7 @@
               <h1>${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h1>
               <p class="author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
               <dl class="details">${detailsMarkup(book)}</dl>
+              ${window.BiblioCategories.detailMarkup(book)}
               <p class="annotation">${escapeHtml(book.annotation || t("book.noDescription", "Todavía no se ha añadido una descripción."))}</p>
               ${depositMarkup(book)}
               <div class="collection-note"><span>${collectionNoteMarkup(book)}</span>${locationNoteMarkup(book)}</div>

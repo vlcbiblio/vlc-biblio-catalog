@@ -477,6 +477,7 @@
       }
     </style>
     <link rel="stylesheet" href="./assets/shelf.css?v=checkout-3" />
+    <link rel="stylesheet" href="./assets/categories.css?v=categories-public-20261115-1" />
   </head>
   <body data-book-id="b-cfa35bc17b1c">
     <main class="page">
@@ -490,6 +491,7 @@
           <h1>Кто хочет быть единорогом?</h1>
           <p class="author">Шрайбер Шанталь</p>
           <dl class="details"><dt>ISBN</dt><dd>978-5-04-118466-7</dd><dt>Editorial</dt><dd>Эксмо</dd></dl>
+          <div class="local-categories"><dl><div class="local-category-detail"><dt>Edad de lectura</dt><dd>6 лет · 7–10 лет<small>Recomendación de la biblioteca</small></dd></div><div class="local-category-detail"><dt>Género y tema</dt><dd>Сказки и фольклор · Детская проза<small>Categoría editorial</small></dd></div><div class="local-category-detail"><dt>Clasificación de la edición</dt><dd>6+<small>Confirmado por una fuente externa</small></dd></div></dl><details><summary>Base de la recomendación editorial</summary><p>La edad recomendada y la clasificación de una edición son datos distintos.</p><p>Иллюстрированная детская история о дружбе, семье, вымышленных существах или оживших животных: чтение вслух дошкольнику и первое самостоятельное чтение. Содержательные исключения (взрослые романы, наука, подростковый хоррор) проверены отдельно.; Рекомендация ограничена снизу подтверждённой маркировкой этого издания 6+.</p></details></div>
           <p class="annotation">Жанры: Серия,Самостоятельное чтение,Проза.</p>
           <div class="collection-note">Este libro pertenece a una biblioteca particular. Puedes solicitarlo en préstamo.</div>
           <div class="actions"><a class="telegram-action" href="https://t.me/VLS_Biblio_bot?start=book_331" target="_blank" rel="noreferrer">Solicitar el libro por Telegram</a></div>
@@ -503,7 +505,11 @@
     </main>
 
     <script src="./data/books.js?v=20261115150015"></script>
+    <script src="./data/book-categories.js?v=0f453f962453"></script>
+    <script src="./assets/category-overlay.js?v=categories-public-20261115-1"></script>
     <script src="./assets/i18n.js?v=sagunto-deposit-1"></script>
+    <script src="./assets/category-logic.js?v=categories-public-20261115-1"></script>
+    <script src="./assets/local-categories.js?v=categories-public-20261115-1"></script>
     <script src="./assets/shelf.js?v=toma-book-batch-5"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
@@ -717,6 +723,7 @@
             <div class="related-body">
               <h3 class="related-title">${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h3>
               <p class="related-author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
+              ${window.BiblioCategories.cardMarkup(book)}
             </div>
             </a>
             ${window.BiblioShelf.controlsMarkup(book, false)}
@@ -790,6 +797,7 @@
               <h1>${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h1>
               <p class="author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
               <dl class="details">${detailsMarkup(book)}</dl>
+              ${window.BiblioCategories.detailMarkup(book)}
               <p class="annotation">${escapeHtml(book.annotation || t("book.noDescription", "Todavía no se ha añadido una descripción."))}</p>
               ${depositMarkup(book)}
               <div class="collection-note"><span>${collectionNoteMarkup(book)}</span>${locationNoteMarkup(book)}</div>

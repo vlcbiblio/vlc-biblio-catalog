@@ -477,6 +477,7 @@
       }
     </style>
     <link rel="stylesheet" href="./assets/shelf.css?v=checkout-3" />
+    <link rel="stylesheet" href="./assets/categories.css?v=categories-public-20261115-1" />
   </head>
   <body data-book-id="b-713beb83774c">
     <main class="page">
@@ -490,6 +491,7 @@
           <h1>Наука не скука. Ученые ответы на детские вопросы</h1>
           <p class="author">Бейнье М.; Фишу Б.</p>
           <dl class="details"><dt>ISBN</dt><dd>978-5-00116-234-6</dd><dt>Año de publicación</dt><dd>2025</dd><dt>Editorial</dt><dd>ПИТЕР</dd></dl>
+          <div class="local-categories"><dl><div class="local-category-detail"><dt>Edad de lectura</dt><dd>7–10 лет<small>Recomendación de la biblioteca</small></dd></div><div class="local-category-detail"><dt>Género y tema</dt><dd>Познавательная литература для детей<small>Categoría editorial</small></dd></div><div class="local-category-detail"><dt>Clasificación de la edición</dt><dd>6+<small>Confirmado por una fuente externa</small></dd></div></dl><details><summary>Base de la recomendación editorial</summary><p>La edad recomendada y la clasificación de una edición son datos distintos.</p><p>Детская научно-познавательная/занимательная книга с объяснениями, опытами, задачами или схемами; рекомендуем школьнику, умеющему следить за учебно-познавательным текстом. Художественная проза не присвоена за слово «рассказывает».</p></details></div>
           <p class="annotation">Какого размера капля дождя? Что такое GPS? Откуда берутся вулканы? Почему зимой солнце греет меньше? Когда был изобретен первый компьютер? Почему от прививок больно? Из чего состоят сопли?Всё это реальные вопросы, которые задают дети. Для поиска ответов на такие, кажется, простые вопросы экспертам из разных областей знаний требовались недели: ведь объяснения должны быть понятными и увлекательными, чтобы ребята могли понять, почему мир устроен так, как он устроен. В книге вы найдете ответы на самые популярные вопросы. Благодаря комиксам-схемам даже самая сложная информация становится предельно ясной!Книга стала лауреатом книжной премии науки и образования Франции в категории &quot;Наука детям&quot;, 2015 (Gout des Sciences 2015). Она была написана редакторами популярного детского научного журнала Images Doc Марком Бейнье и Бертраном Фишу</p>
           <aside class="deposit-note" aria-label="Condiciones del depósito">
             <span class="deposit-note-icon" aria-hidden="true">↩</span>
@@ -507,7 +509,11 @@
     </main>
 
     <script src="./data/books.js?v=20261115150015"></script>
+    <script src="./data/book-categories.js?v=0f453f962453"></script>
+    <script src="./assets/category-overlay.js?v=categories-public-20261115-1"></script>
     <script src="./assets/i18n.js?v=sagunto-deposit-1"></script>
+    <script src="./assets/category-logic.js?v=categories-public-20261115-1"></script>
+    <script src="./assets/local-categories.js?v=categories-public-20261115-1"></script>
     <script src="./assets/shelf.js?v=toma-book-batch-5"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
@@ -721,6 +727,7 @@
             <div class="related-body">
               <h3 class="related-title">${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h3>
               <p class="related-author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
+              ${window.BiblioCategories.cardMarkup(book)}
             </div>
             </a>
             ${window.BiblioShelf.controlsMarkup(book, false)}
@@ -794,6 +801,7 @@
               <h1>${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h1>
               <p class="author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
               <dl class="details">${detailsMarkup(book)}</dl>
+              ${window.BiblioCategories.detailMarkup(book)}
               <p class="annotation">${escapeHtml(book.annotation || t("book.noDescription", "Todavía no se ha añadido una descripción."))}</p>
               ${depositMarkup(book)}
               <div class="collection-note"><span>${collectionNoteMarkup(book)}</span>${locationNoteMarkup(book)}</div>

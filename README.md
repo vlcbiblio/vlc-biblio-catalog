@@ -2,6 +2,38 @@
 
 Static catalog prototype for VLC Biblio.
 
+## Reader age and genre categories
+
+The existing search and fund selector combine with compact reader-age and genre
+filters. Broad ages include overlapping precise recommendations: 11–14 includes
+12–14, and 15–17 includes 16–17; detail pages retain the exact age. Adult and
+pending recommendations stay separate. Reader recommendations are distinct from
+edition age ratings. RU/ES labels and sources appear on the catalog and book pages.
+
+Reviewed category decisions are stored independently in `data/book-categories.json`.
+`data/book-categories.js` and `assets/category-overlay.js` apply category fields by ID
+without changing ownership, availability, covers or Telegram order routes. Static
+`books/*.html` pages receive the same categories during generation. Future exports
+preserve the reviewed JSON; new or bibliographically changed records are explicitly
+pending until a manual review updates them. See `BOOK_CATEGORY_POLICY.md`.
+
+To import a complete reviewed snapshot and regenerate from public data only:
+
+```powershell
+python scripts/import_book_categories.py --source PATH_TO_REVIEWED_JSON
+python -X utf8 generate_catalog_site.py
+```
+
+The importer verifies the public snapshot hash and exact current IDs. It does not
+read the private CSV. Do not use the private export command merely to rebuild pages.
+
+Non-browser regression checks for categories, export and static generation:
+
+```powershell
+node --test tests/categories.test.mjs
+python -X utf8 -m unittest test_book_categories test_generate_catalog_site test_export_catalog -q
+```
+
 ## Basket and favorites
 
 Both the catalog and book pages have persistent browser-local **Корзина** and

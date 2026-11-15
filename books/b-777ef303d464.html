@@ -477,6 +477,7 @@
       }
     </style>
     <link rel="stylesheet" href="./assets/shelf.css?v=checkout-3" />
+    <link rel="stylesheet" href="./assets/categories.css?v=categories-public-20261115-1" />
   </head>
   <body data-book-id="b-777ef303d464">
     <main class="page">
@@ -490,6 +491,7 @@
           <h1>Поклонник</h1>
           <p class="author">Анна Джейн</p>
           <dl class="details"><dt>Año de publicación</dt><dd>2019</dd><dt>Editorial</dt><dd>Издательство CLEVER</dd></dl>
+          <div class="local-categories"><dl><div class="local-category-detail"><dt>Edad de lectura</dt><dd>Взрослые<small>Recomendación de la biblioteca</small></dd></div><div class="local-category-detail"><dt>Género y tema</dt><dd>Любовная проза<small>Categoría editorial</small></dd></div><div class="local-category-detail"><dt>Clasificación de la edición</dt><dd>Sin datos confirmados<small>Sin datos confirmados</small></dd></div></dl><details><summary>Base de la recomendación editorial</summary><p>La edad recomendada y la clasificación de una edición son datos distintos.</p><p>Современная романтическая проза Анны Джейн о любовных отношениях, ревности и взрослении. Основная редакционная аудитория — взрослые; это рекомендация, а не выдуманная маркировка 18+.</p></details></div>
           <p class="annotation">НЕЗАКОННОЕ ПОТРЕБЛЕНИЕ НАРКОТИЧЕСКИХ СРЕДСТВ, ПСИХОТРОПНЫХ ВЕЩЕСТВ, ИХ АНАЛОГОВ ПРИЧИНЯЕТ ВРЕД ЗДОРОВЬЮ, ИХ НЕЗАКОННЫЙ ОБОРОТ ЗАПРЕЩЕН И ВЛЕЧЕТ УСТАНОВЛЕННУЮ ЗАКОНОДАТЕЛЬСТВОМ ОТВЕТСТВЕННОСТЬ. От автора бестселлера &quot;#ЛюбовьНенависть&quot; - романтический триллер &quot;Поклонник&quot;. Впервые Анна Джейн пишет в жанре романтического саспенса! Каждый день Ангелина Ланская получает цветы. Цветов всегда четное количество, и она понятия не имеет, кто их отправитель. Загадочный поклонник намеренно сводит ее с ума, играет, сажает на иглу адреналина и ожидания. Этот человек точно знает, чем ее зацепить. С виду обычная студентка психфака, Ангелина не так безобидна, как кажется. Девушка не помнит свое детство, ее мучает монстр из ночных кошмаров, а порой в ее душе открывается черная бездна. Она - идеальный кандидат для закрытого клуба &quot;Легион&quot; на роль жертвы или убийцы? Любовь или смерть? Кровавые ставки уже сделаны! «Поклонник» — романтический триллер с элементами детектива и яркой любовной линией. Он станет замечательным подарком и чудесным дополнением к подарочному комплекту или праздничному набору для тех, кто предпочитает книги редакции Trendbooks и ценит интересную художественную литературу. Бестселлер понравится девушке, любимой женщине, подруге, сестре, маме в качестве сюрприза на день рождения, 8 Марта, 14 февраля (День святого Валентина), Новый год (НГ) и любой другой праздник. Анна Джейн — популярный автор Young Adult бестселлеров для взрослых. Также популярны романы Анны Джейн «ЛюбовьНенависть», «Наследница Черного дракона», «Тайна Черного дракона», «Звезда Черного дракона», «Кошмарных снов, любимая», «Подарок ангела», «Влюбленная ведьма», «Восхитительная ведьма», «Твое сердце будет разбито», «По осколкам твоего сердца», «Запрети любить», которые неоднократно получали призы читательских симпатий LiveLib и насчитывают свыше 22 миллионов прочтений онлайн. Современное издание книги Анны Джейн «Поклонник» предназначено для ценителей эксклюзивной классики, фэнтези и фантастики, философии, триллеров и детективов, исторических романов, энциклопедий человеческой души, бумажной продукции по саморазвитию и психологии</p>
           <aside class="deposit-note" aria-label="Condiciones del depósito">
             <span class="deposit-note-icon" aria-hidden="true">↩</span>
@@ -507,7 +509,11 @@
     </main>
 
     <script src="./data/books.js?v=20261115150015"></script>
+    <script src="./data/book-categories.js?v=0f453f962453"></script>
+    <script src="./assets/category-overlay.js?v=categories-public-20261115-1"></script>
     <script src="./assets/i18n.js?v=sagunto-deposit-1"></script>
+    <script src="./assets/category-logic.js?v=categories-public-20261115-1"></script>
+    <script src="./assets/local-categories.js?v=categories-public-20261115-1"></script>
     <script src="./assets/shelf.js?v=toma-book-batch-5"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
@@ -721,6 +727,7 @@
             <div class="related-body">
               <h3 class="related-title">${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h3>
               <p class="related-author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
+              ${window.BiblioCategories.cardMarkup(book)}
             </div>
             </a>
             ${window.BiblioShelf.controlsMarkup(book, false)}
@@ -794,6 +801,7 @@
               <h1>${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h1>
               <p class="author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
               <dl class="details">${detailsMarkup(book)}</dl>
+              ${window.BiblioCategories.detailMarkup(book)}
               <p class="annotation">${escapeHtml(book.annotation || t("book.noDescription", "Todavía no se ha añadido una descripción."))}</p>
               ${depositMarkup(book)}
               <div class="collection-note"><span>${collectionNoteMarkup(book)}</span>${locationNoteMarkup(book)}</div>

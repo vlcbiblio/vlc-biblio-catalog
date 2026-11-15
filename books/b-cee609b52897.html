@@ -477,6 +477,7 @@
       }
     </style>
     <link rel="stylesheet" href="./assets/shelf.css?v=checkout-3" />
+    <link rel="stylesheet" href="./assets/categories.css?v=categories-public-20261115-1" />
   </head>
   <body data-book-id="b-cee609b52897">
     <main class="page">
@@ -490,6 +491,7 @@
           <h1>Всегда хорошее время</h1>
           <p class="author">Жвалевский А.В., Пастернак Е.Б.</p>
           <dl class="details"><dt>ISBN</dt><dd>978-5-9691-2193-5</dd><dt>Año de publicación</dt><dd>2023</dd></dl>
+          <div class="local-categories"><dl><div class="local-category-detail"><dt>Edad de lectura</dt><dd>11–14 лет<small>Recomendación de la biblioteca</small></dd></div><div class="local-category-detail"><dt>Género y tema</dt><dd>Детская проза · Социальная и психологическая проза<small>Categoría editorial</small></dd></div><div class="local-category-detail"><dt>Clasificación de la edición</dt><dd>Sin datos confirmados<small>Sin datos confirmados</small></dd></div></dl><details><summary>Base de la recomendación editorial</summary><p>La edad recomendada y la clasificación de una edición son datos distintos.</p><p>Реалистическая школьная/семейная повесть или классическое чтение о человеческих отношениях, утрате, выборе и взрослении; рекомендуем средней школе, а не автоматически взрослым по серьёзной теме.</p></details></div>
           <p class="annotation">Андрей Жвалевский, Евгения Пастернак. Время всегда хорошее: повесть. 19-е изд. // Что будет, если девчонка из 2018 года вдруг окажется в 1980 году? А мальчик из 1980 года перенесется на ее место? Где лучше? И что такое &quot;лучше&quot;? Где интереснее играть: на компьютере или во дворе? Что важнее: свобода и раскованность в чате или умение разговаривать, глядя в глаза друг другу? И самое главное - правда ли, что &quot;время тогда было другое&quot;? А может быть, время всегда хорошее и, вообще, всё зависит только от тебя // Книга &quot;Время всегда хорошее&quot; - обладатель премии «Алиса» за лучшую фантастическую книгу для детей и юношества, Лауреат Всероссийского конкурса на лучшее литературное произведение для детей и юношества &quot;Книгуру&quot;, Финалист премии &quot;Ясная Поляна&quot; в номинации &quot;Детство. Отрочество. Юность&quot;, Участник &quot;длинного списка&quot; премии &quot;Baby-НОС&quot;, Победитель читательского конкурса &quot;Книга года&quot; Центральной городской детской библиотеки имени Гайдара (Москва), Обладатель почетных знаков &quot;Нравится детям Ленинградской области&quot; и &quot;Нравится детям Белгородской области&quot; // С 2007 года книга издавалась шестнадцать раз общим тиражом 20000 экземпляров // Что: приключенческая повесть о совершенно реальных школьниках, поменявшихся местами во времени // О чем: не о выдуманной машине времени, а о настоящем советском прошлом и сегодняшнем дне - глазами школьников // На той же полке: лучшая советская подростковая классика - от Булычева и Крапивина до Рыбакова и Лиханова, и одновременно - самые актуальные повести для тинейджеров наших дней // Для кого: Их читают даже самые нечитающие дети! И, добавим, - даже самые «тяжелые на подъем» родители! // Читайте - Андрей Жвалевский, Евгения Пастернак - Время всегда хорошее - Детская фантастика - Подростковая фантастика - Отечественная детская фантастика - Российская детская фантастика - Российская подростковая фантастика - Близкое будущее - Недавнее прошлое - Путешествия во времени - Хроноопера - Попаданцы - Школьники-попаданцы - Советское прошлое - Становление героя - Становление героев - Социальная фантастика - Российская социальная фантастика - Подростковая фантастика - Подростковое фэнтези - Русское подростковое фэнтези - Российское подростковое фэнтези - Отечественное подростковое фэнтези</p>
           <aside class="deposit-note" aria-label="Condiciones del depósito">
             <span class="deposit-note-icon" aria-hidden="true">↩</span>
@@ -507,7 +509,11 @@
     </main>
 
     <script src="./data/books.js?v=20261115150015"></script>
+    <script src="./data/book-categories.js?v=0f453f962453"></script>
+    <script src="./assets/category-overlay.js?v=categories-public-20261115-1"></script>
     <script src="./assets/i18n.js?v=sagunto-deposit-1"></script>
+    <script src="./assets/category-logic.js?v=categories-public-20261115-1"></script>
+    <script src="./assets/local-categories.js?v=categories-public-20261115-1"></script>
     <script src="./assets/shelf.js?v=toma-book-batch-5"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
@@ -721,6 +727,7 @@
             <div class="related-body">
               <h3 class="related-title">${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h3>
               <p class="related-author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
+              ${window.BiblioCategories.cardMarkup(book)}
             </div>
             </a>
             ${window.BiblioShelf.controlsMarkup(book, false)}
@@ -794,6 +801,7 @@
               <h1>${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h1>
               <p class="author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
               <dl class="details">${detailsMarkup(book)}</dl>
+              ${window.BiblioCategories.detailMarkup(book)}
               <p class="annotation">${escapeHtml(book.annotation || t("book.noDescription", "Todavía no se ha añadido una descripción."))}</p>
               ${depositMarkup(book)}
               <div class="collection-note"><span>${collectionNoteMarkup(book)}</span>${locationNoteMarkup(book)}</div>

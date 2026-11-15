@@ -477,6 +477,7 @@
       }
     </style>
     <link rel="stylesheet" href="./assets/shelf.css?v=checkout-3" />
+    <link rel="stylesheet" href="./assets/categories.css?v=categories-public-20261115-1" />
   </head>
   <body data-book-id="b-c4a30deef770">
     <main class="page">
@@ -490,6 +491,7 @@
           <h1>Небесная музыка. Дилогия в одном томе</h1>
           <p class="author">Анна Джейн</p>
           <dl class="details"><dt>ISBN</dt><dd>9785171542498</dd><dt>Año de publicación</dt><dd>2023</dd></dl>
+          <div class="local-categories"><dl><div class="local-category-detail"><dt>Edad de lectura</dt><dd>Взрослые<small>Recomendación de la biblioteca</small></dd></div><div class="local-category-detail"><dt>Género y tema</dt><dd>Любовная проза<small>Categoría editorial</small></dd></div><div class="local-category-detail"><dt>Clasificación de la edición</dt><dd>16+<small>Confirmado por una fuente externa</small></dd></div></dl><details><summary>Base de la recomendación editorial</summary><p>La edad recomendada y la clasificación de una edición son datos distintos.</p><p>Современная романтическая проза Анны Джейн о любовных отношениях, ревности и взрослении. Основная редакционная аудитория — взрослые; это рекомендация, а не выдуманная маркировка 18+.</p></details></div>
           <p class="annotation">Один из самых популярных авторов современного молодёжного романа. Более 1 000 000 поклонников на просторах Рунета! Её книги — это истории о любви, романтике, о дружбе и доброте, приправленные неиссякаемым юмором. Ее герои всегда интересные личности, с которыми просто невозможно скучать и невозможно расстаться. Диана – певица, покорившая своим голосом миллионы людей. Она красива, талантлива и популярна. В нее влюблены Дастин - известный актер, за красивым лицом которого скрывается надменность и холодность, и Кристиан - незаконорожденный сын богатого человека, привыкший получать все, что хочет. Но никто не знает, что голос Дианы - это Санни, талантливая студентка музыкальной школы искусств. И пока на сцене одна, за сценой поет другая. Что заставило Санни продать свой голос? Сколько стоит чужой талант? Кто будет достоин любви, а кто останется ни с чем? И что победит: истинный талант или деньги? Небесная музыка начинает играть над их головами</p>
           <aside class="deposit-note" aria-label="Condiciones del depósito">
             <span class="deposit-note-icon" aria-hidden="true">↩</span>
@@ -507,7 +509,11 @@
     </main>
 
     <script src="./data/books.js?v=20261115150015"></script>
+    <script src="./data/book-categories.js?v=0f453f962453"></script>
+    <script src="./assets/category-overlay.js?v=categories-public-20261115-1"></script>
     <script src="./assets/i18n.js?v=sagunto-deposit-1"></script>
+    <script src="./assets/category-logic.js?v=categories-public-20261115-1"></script>
+    <script src="./assets/local-categories.js?v=categories-public-20261115-1"></script>
     <script src="./assets/shelf.js?v=toma-book-batch-5"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
@@ -721,6 +727,7 @@
             <div class="related-body">
               <h3 class="related-title">${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h3>
               <p class="related-author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
+              ${window.BiblioCategories.cardMarkup(book)}
             </div>
             </a>
             ${window.BiblioShelf.controlsMarkup(book, false)}
@@ -794,6 +801,7 @@
               <h1>${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h1>
               <p class="author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
               <dl class="details">${detailsMarkup(book)}</dl>
+              ${window.BiblioCategories.detailMarkup(book)}
               <p class="annotation">${escapeHtml(book.annotation || t("book.noDescription", "Todavía no se ha añadido una descripción."))}</p>
               ${depositMarkup(book)}
               <div class="collection-note"><span>${collectionNoteMarkup(book)}</span>${locationNoteMarkup(book)}</div>

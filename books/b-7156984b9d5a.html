@@ -477,6 +477,7 @@
       }
     </style>
     <link rel="stylesheet" href="./assets/shelf.css?v=checkout-3" />
+    <link rel="stylesheet" href="./assets/categories.css?v=categories-public-20261115-1" />
   </head>
   <body data-book-id="b-7156984b9d5a">
     <main class="page">
@@ -490,6 +491,7 @@
           <h1>Снежный гость</h1>
           <p class="author">Рина Зенюк, Игорь Шевчук</p>
           <dl class="details"><dt>Año de publicación</dt><dd>2025</dd><dt>Editorial</dt><dd>Детская литература</dd></dl>
+          <div class="local-categories"><dl><div class="local-category-detail"><dt>Edad de lectura</dt><dd>4–6 лет · 7–10 лет<small>Recomendación de la biblioteca</small></dd></div><div class="local-category-detail"><dt>Género y tema</dt><dd>Сказки и фольклор · Юмор и сатира<small>Categoría editorial</small></dd></div><div class="local-category-detail"><dt>Clasificación de la edición</dt><dd>Sin datos confirmados<small>Sin datos confirmados</small></dd></div></dl><details><summary>Base de la recomendación editorial</summary><p>La edad recomendada y la clasificación de una edición son datos distintos.</p><p>Добрые иллюстрированные истории о Котофеевке/Котофеях: чтение с родителями дошкольникам и самостоятельное чтение в младшей школе.</p></details></div>
           <p class="annotation">Накануне Нового года в Котофеевке произошли загадочные события. Сначала гром и молния в зимнем небе. Затем Федя, Вася и Тося устроили погром во дворе тётки Обжорихи. Впрочем, это ещё можно объяснить. Читатели знают, что наша дружная троица любит шалить. А вот снежный гость к праздничному столу — это, пожалуй, станет событием года. Давайте разберёмся во всём по порядку и встретим Новый год с котофеевцами! 5 причин купить книгу: Новогодняя история с трогательным финалом от Рины Зенюк и Игоря Шевчука! Яркие иллюстрации, любимые герои и поучительный сюжет! Идеально подходит для первого самостоятельного чтения. Сказки серии « У нас в Котофеевке» можно читать в любом порядке! Не важно, сколько вам лет, приключения котят никого не оставят равнодушными!</p>
           <aside class="deposit-note" aria-label="Condiciones del depósito">
             <span class="deposit-note-icon" aria-hidden="true">↩</span>
@@ -507,7 +509,11 @@
     </main>
 
     <script src="./data/books.js?v=20261115150015"></script>
+    <script src="./data/book-categories.js?v=0f453f962453"></script>
+    <script src="./assets/category-overlay.js?v=categories-public-20261115-1"></script>
     <script src="./assets/i18n.js?v=sagunto-deposit-1"></script>
+    <script src="./assets/category-logic.js?v=categories-public-20261115-1"></script>
+    <script src="./assets/local-categories.js?v=categories-public-20261115-1"></script>
     <script src="./assets/shelf.js?v=toma-book-batch-5"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
@@ -721,6 +727,7 @@
             <div class="related-body">
               <h3 class="related-title">${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h3>
               <p class="related-author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
+              ${window.BiblioCategories.cardMarkup(book)}
             </div>
             </a>
             ${window.BiblioShelf.controlsMarkup(book, false)}
@@ -794,6 +801,7 @@
               <h1>${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h1>
               <p class="author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
               <dl class="details">${detailsMarkup(book)}</dl>
+              ${window.BiblioCategories.detailMarkup(book)}
               <p class="annotation">${escapeHtml(book.annotation || t("book.noDescription", "Todavía no se ha añadido una descripción."))}</p>
               ${depositMarkup(book)}
               <div class="collection-note"><span>${collectionNoteMarkup(book)}</span>${locationNoteMarkup(book)}</div>
