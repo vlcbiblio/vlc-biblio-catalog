@@ -504,10 +504,11 @@
       </footer>
     </main>
 
-    <script src="./data/books.js?v=20261115150015"></script>
-    <script src="./data/book-categories.js?v=0f453f962453"></script>
+    <script src="./data/books.js?v=20261118135407"></script>
+    <script src="./data/book-categories.js?v=262ecae78865"></script>
     <script src="./assets/category-overlay.js?v=categories-public-20261115-1"></script>
     <script src="./assets/i18n.js?v=sagunto-deposit-1"></script>
+    <script src="./assets/analytics.js?v=analytics-1"></script>
     <script src="./assets/category-logic.js?v=categories-public-20261115-1"></script>
     <script src="./assets/local-categories.js?v=categories-public-20261115-1"></script>
     <script src="./assets/shelf.js?v=toma-book-batch-5"></script>
@@ -831,6 +832,13 @@
           document.head.append(canonical);
         }
         renderBook(book);
+        window.BiblioAnalytics?.track("view_item", {
+          item_id: book.id,
+          item_name: book.title,
+          item_category: book.section,
+          availability: book.availability,
+          order_bot: book.orderBot || "VLS_Biblio_bot",
+        });
       }
       else {
         const robots = document.createElement("meta");
@@ -841,6 +849,15 @@
       }
 
       content.addEventListener("click", (event) => {
+        const telegramLink = event.target.closest("a.telegram-action, a.button[href^='https://t.me/']");
+        if (telegramLink && book) {
+          window.BiblioAnalytics?.track("begin_checkout", {
+            checkout_source: telegramLink.classList.contains("telegram-action") ? "book_waitlist" : "book_bot",
+            order_bot: book.orderBot || "VLS_Biblio_bot",
+            item_count: 1,
+            item_id: book.id,
+          });
+        }
         const tab = event.target.closest(".related-tab");
         if (!tab) return;
         const section = tab.closest(".related");

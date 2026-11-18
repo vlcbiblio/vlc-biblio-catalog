@@ -37514,6 +37514,90 @@
       "research_scope": "work_or_series_reference",
       "editorial_note": "В исходной карточке отсутствует ISBN, поэтому официальная маркировка издания не зафиксирована как edition-уровень.",
       "classification_review_date": "2026-11-15"
+    },
+    "b-e14182991b20": {
+      "identity": {
+        "title": "Мышонок Тим. Меня обижают в детском саду!",
+        "author": "Анна Казалис",
+        "isbn": "978-5-353-09727-3",
+        "annotation": "История о том, как подготовить ребёнка к детскому саду. Для малыша, который всё время был рядом с мамой, новое место — всегда стресс. Сказка помогает заранее прожить сложные ситуации, подсказывает простые слова, если в садике обижают, и помогает почувствовать опору."
+      },
+      "reader_age_groups": [
+        "0–3 года",
+        "4–6 лет"
+      ],
+      "reader_age_status": "editorial_recommendation",
+      "reader_age_basis": [
+        "Сказкотерапия для малышей о детском саде, адаптации и разрешении первых конфликтов."
+      ],
+      "genres": [
+        "Сказки и фольклор",
+        "Эмоции и общение",
+        "Книги-картинки"
+      ],
+      "genre_status": "editorial_review",
+      "genre_basis": "Иллюстрированная терапевтическая сказка для малышей о детских эмоциях и общении в саду.",
+      "edition_age_ratings": [
+        "0+"
+      ],
+      "edition_rating_status": "edition_confirmed",
+      "edition_rating_sources": [
+        "https://www.labirint.ru/books/795493/"
+      ],
+      "reader_age_sources": [
+        "https://www.labirint.ru/books/795493/"
+      ],
+      "genre_sources": [],
+      "external_match": "edition",
+      "sources": [
+        "https://www.labirint.ru/books/795493/"
+      ],
+      "research_sources": [],
+      "research_scope": "work_or_series_reference",
+      "editorial_note": "Подборка педиатра для 0–3 лет из проекта vlc_biblio_reel.",
+      "classification_review_date": "2026-11-18"
+    },
+    "b-ceff7139901d": {
+      "identity": {
+        "title": "Мир вокруг меня",
+        "author": "Ульева, Елена Александровна",
+        "isbn": "978-5-00211-246-3",
+        "annotation": "Познавательная энциклопедия в сказках для любознательных малышей. Для ребёнка почти всё в мире новое — знакомые и добрые истории каждый вечер объясняют простые вещи, успокаивают и становятся уютным ритуалом перед сном."
+      },
+      "reader_age_groups": [
+        "0–3 года",
+        "4–6 лет"
+      ],
+      "reader_age_status": "editorial_recommendation",
+      "reader_age_basis": [
+        "Познавательные сказки для дошкольников, объясняющие базовые явления окружающего мира."
+      ],
+      "genres": [
+        "Познавательная литература для детей",
+        "Сказки и фольклор",
+        "Энциклопедии"
+      ],
+      "genre_status": "editorial_review",
+      "genre_basis": "Энциклопедия в сказках для малышей обо всём на свете.",
+      "edition_age_ratings": [
+        "0+"
+      ],
+      "edition_rating_status": "edition_confirmed",
+      "edition_rating_sources": [
+        "https://clever-media.ru/books/mir-vokrug-menya/"
+      ],
+      "reader_age_sources": [
+        "https://clever-media.ru/books/mir-vokrug-menya/"
+      ],
+      "genre_sources": [],
+      "external_match": "edition",
+      "sources": [
+        "https://clever-media.ru/books/mir-vokrug-menya/"
+      ],
+      "research_sources": [],
+      "research_scope": "work_or_series_reference",
+      "editorial_note": "Подборка педиатра для 0–3 лет из проекта vlc_biblio_reel.",
+      "classification_review_date": "2026-11-18"
     }
   }
 }

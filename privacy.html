@@ -143,14 +143,30 @@
 
         <h2 data-i18n="privacy.public.title">Sitio web público</h2>
         <p data-i18n="privacy.public.p1">
-          Este sitio es un catálogo estático. No utiliza herramientas de analítica web, píxeles
-          publicitarios, formularios de registro ni cookies propias de seguimiento.
+          Este sitio es un catálogo estático. No utiliza píxeles publicitarios ni formularios de
+          registro, y solo activa la analítica web si aceptas expresamente las cookies de medición.
         </p>
         <p data-i18n="privacy.public.p2">
           El catálogo publica información bibliográfica sobre los libros: título, autor, ISBN, editorial,
           año, descripción, estado, fecha de actualización y un enlace para solicitar el libro mediante
           Telegram. Los nombres, identificadores de Telegram y de chat, las fotografías originales
           de los usuarios y las notas internas no se publican en el catálogo.
+        </p>
+
+        <h2 data-i18n="privacy.analytics.title">Analítica web (Google Analytics 4)</h2>
+        <p data-i18n="privacy.analytics.p1">
+          Con tu consentimiento previo (Google Consent Mode v2), el sitio utiliza Google Analytics 4 para
+          medir las visitas diarias y entender en qué paso del proceso de solicitud de libros se detienen
+          las personas usuarias (consulta de ficha, añadido a la cesta, apertura de la cesta y clic hacia
+          el bot de Telegram).
+        </p>
+        <p data-i18n="privacy.analytics.p2">
+          La personalización publicitaria está desactivada y las cookies de analítica no se cargan si
+          rechazas el aviso o aún no has elegido. Puedes cambiar o retirar tu consentimiento en cualquier
+          momento:
+        </p>
+        <p>
+          <button class="language-toggle" style="width: auto; padding: 0 14px;" type="button" onclick="window.BiblioAnalytics && window.BiblioAnalytics.openConsent()" data-i18n="privacy.analytics.manage">Cambiar preferencias de analítica</button>
         </p>
 
         <h2 data-i18n="privacy.lists.title">Cesta y favoritos</h2>
@@ -267,5 +283,6 @@
       </article>
     </main>
     <script src="./assets/i18n.js?v=legal-1"></script>
+    <script src="./assets/analytics.js?v=analytics-1"></script>
   </body>
 </html>

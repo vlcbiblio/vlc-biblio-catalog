@@ -551,6 +551,64 @@ window.BIBLIO_BOOKS = [
     }
   },
   {
+    "id": "b-ceff7139901d",
+    "requestId": "1091",
+    "title": "Мир вокруг меня",
+    "author": "Ульева, Елена Александровна",
+    "section": "exchange",
+    "catalogStatus": "Частная библиотека",
+    "libraryKey": "user:29cb368aa115",
+    "sourceKind": "user",
+    "availability": "available",
+    "audience": "children",
+    "cover": "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-ceff7139901d.jpg",
+    "isbn": "978-5-00211-246-3",
+    "year": "2023",
+    "publisher": "CLEVER",
+    "annotation": "Познавательная энциклопедия в сказках для любознательных малышей. Для ребёнка почти всё в мире новое — знакомые и добрые истории каждый вечер объясняют простые вещи, успокаивают и становятся уютным ритуалом перед сном.",
+    "sourceUrl": "https://clever-media.ru/books/mir-vokrug-menya/",
+    "livelibUrl": "https://www.livelib.ru/search?search=978-5-00211-246-3",
+    "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=978-5-00211-246-3",
+    "addedAt": "2026-11-18T13:40:00+01:00",
+    "updatedAt": "2026-11-18T13:40:00",
+    "authorKey": "ульева, елена александровна",
+    "coverImage": {
+      "src": "./assets/covers/optimized/441c43cf63f6d4e0b560-720.webp",
+      "srcset": "./assets/covers/optimized/23f44be9fc286c9c37ec-360.webp 360w, ./assets/covers/optimized/441c43cf63f6d4e0b560-720.webp 720w",
+      "width": 720,
+      "height": 930
+    }
+  },
+  {
+    "id": "b-e14182991b20",
+    "requestId": "1090",
+    "title": "Мышонок Тим. Меня обижают в детском саду!",
+    "author": "Анна Казалис",
+    "section": "exchange",
+    "catalogStatus": "Частная библиотека",
+    "libraryKey": "user:29cb368aa115",
+    "sourceKind": "user",
+    "availability": "available",
+    "audience": "children",
+    "cover": "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-e14182991b20.jpg",
+    "isbn": "978-5-353-09727-3",
+    "year": "2021",
+    "publisher": "РОСМЭН",
+    "annotation": "История о том, как подготовить ребёнка к детскому саду. Для малыша, который всё время был рядом с мамой, новое место — всегда стресс. Сказка помогает заранее прожить сложные ситуации, подсказывает простые слова, если в садике обижают, и помогает почувствовать опору.",
+    "sourceUrl": "https://www.labirint.ru/books/795493/",
+    "livelibUrl": "https://www.livelib.ru/search?search=978-5-353-09727-3",
+    "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=978-5-353-09727-3",
+    "addedAt": "2026-11-18T13:40:00+01:00",
+    "updatedAt": "2026-11-18T13:40:00",
+    "authorKey": "анна казалис",
+    "coverImage": {
+      "src": "./assets/covers/optimized/062f4695e3e9197ab67d-720.webp",
+      "srcset": "./assets/covers/optimized/f04f17734b0b0cba2510-360.webp 360w, ./assets/covers/optimized/062f4695e3e9197ab67d-720.webp 720w",
+      "width": 720,
+      "height": 937
+    }
+  },
+  {
     "id": "b-c5995a07b728",
     "requestId": "1089",
     "title": "Очень может быть: 20 правдивых (или не очень) историй",
@@ -32359,7 +32417,7 @@ window.BIBLIO_BOOKS = [
     "sourceKind": "user",
     "availability": "available",
     "audience": "children",
-    "cover": "https://kniga.lv/_img/product/50/1/72/1717521465/w320_h340_cover_q70.webp",
+    "cover": "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-083dfb4845d2.webp",
     "isbn": "978-5-00154-995-6",
     "year": "2023",
     "publisher": "CLEVER",
@@ -32371,10 +32429,10 @@ window.BIBLIO_BOOKS = [
     "updatedAt": "2026-09-10T13:10:16",
     "authorKey": "ульева, елена александровна",
     "coverImage": {
-      "src": "./assets/covers/optimized/ba9d6a8a0a722862677e-320.webp",
-      "srcset": "./assets/covers/optimized/ba9d6a8a0a722862677e-320.webp 320w",
-      "width": 320,
-      "height": 340
+      "src": "./assets/covers/optimized/fba506c14008365d2828-720.webp",
+      "srcset": "./assets/covers/optimized/57deab53a5280ed8498d-360.webp 360w, ./assets/covers/optimized/fba506c14008365d2828-720.webp 720w",
+      "width": 720,
+      "height": 720
     }
   },
   {
@@ -32388,7 +32446,7 @@ window.BIBLIO_BOOKS = [
     "sourceKind": "user",
     "availability": "available",
     "audience": "children",
-    "cover": "https://files.books.ru/pic/5630001-5631000/5630808/005630808.jpg",
+    "cover": "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-2fc63abe2c11.jpg",
     "isbn": "978-5-222-46608-7",
     "year": "2026",
     "publisher": "Феникс",
@@ -32400,10 +32458,10 @@ window.BIBLIO_BOOKS = [
     "updatedAt": "2026-09-10T13:10:16",
     "authorKey": "ульева, елена александровна",
     "coverImage": {
-      "src": "./assets/covers/optimized/1faa391650f89159ffef-150.webp",
-      "srcset": "./assets/covers/optimized/1faa391650f89159ffef-150.webp 150w",
-      "width": 150,
-      "height": 189
+      "src": "./assets/covers/optimized/fce3d4f3ae236ab6f636-720.webp",
+      "srcset": "./assets/covers/optimized/87843ebf788bd1e2e57b-360.webp 360w, ./assets/covers/optimized/fce3d4f3ae236ab6f636-720.webp 720w",
+      "width": 720,
+      "height": 994
     }
   },
   {
@@ -32475,7 +32533,7 @@ window.BIBLIO_BOOKS = [
     "sourceKind": "user",
     "availability": "available",
     "audience": "children",
-    "cover": "https://kniga.lv/_img/product/65/2/64/1717521489/w320_h400_cover_q70.webp",
+    "cover": "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-86a31103b61d.webp",
     "isbn": "978-5-00211-332-3",
     "year": "2024",
     "publisher": "CLEVER",
@@ -32487,10 +32545,10 @@ window.BIBLIO_BOOKS = [
     "updatedAt": "2026-09-10T13:10:16",
     "authorKey": "ульева, елена александровна",
     "coverImage": {
-      "src": "./assets/covers/optimized/55b8c5e673b1d21db5a1-320.webp",
-      "srcset": "./assets/covers/optimized/55b8c5e673b1d21db5a1-320.webp 320w",
-      "width": 320,
-      "height": 400
+      "src": "./assets/covers/optimized/22e61f1c68023520fcad-720.webp",
+      "srcset": "./assets/covers/optimized/35f3d797dd15793d297d-360.webp 360w, ./assets/covers/optimized/22e61f1c68023520fcad-720.webp 720w",
+      "width": 720,
+      "height": 720
     }
   },
   {
@@ -32533,7 +32591,7 @@ window.BIBLIO_BOOKS = [
     "sourceKind": "user",
     "availability": "available",
     "audience": "children",
-    "cover": "https://imo10.labirint.ru/books/794020/cover.jpg/484-0",
+    "cover": "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-af3dd42bc303.jpg",
     "isbn": "978-5-222-46974-3",
     "year": "2026",
     "publisher": "Феникс",
@@ -32545,10 +32603,10 @@ window.BIBLIO_BOOKS = [
     "updatedAt": "2026-09-10T13:10:16",
     "authorKey": "ульева, елена александровна",
     "coverImage": {
-      "src": "./assets/covers/optimized/7480f0e86fa4167f66fc-484.webp",
-      "srcset": "./assets/covers/optimized/77d4f6d4890d838a82c0-360.webp 360w, ./assets/covers/optimized/7480f0e86fa4167f66fc-484.webp 484w",
-      "width": 484,
-      "height": 647
+      "src": "./assets/covers/optimized/e8dd9c20d7265e8e60d6-594.webp",
+      "srcset": "./assets/covers/optimized/3df830eff6cdb4871733-360.webp 360w, ./assets/covers/optimized/e8dd9c20d7265e8e60d6-594.webp 594w",
+      "width": 594,
+      "height": 793
     }
   },
   {

@@ -4114,6 +4114,23 @@
         }
       ]
     },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-083dfb4845d2.webp": {
+      "sourceBytes": 116810,
+      "variants": [
+        {
+          "bytes": 25092,
+          "height": 360,
+          "src": "./assets/covers/optimized/57deab53a5280ed8498d-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 53842,
+          "height": 720,
+          "src": "./assets/covers/optimized/fba506c14008365d2828-720.webp",
+          "width": 720
+        }
+      ]
+    },
     "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-0991ae081419.jpg": {
       "sourceBytes": 356791,
       "variants": [
@@ -4931,6 +4948,23 @@
           "bytes": 115780,
           "height": 1192,
           "src": "./assets/covers/optimized/b9b99684de77623ed62b-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-2fc63abe2c11.jpg": {
+      "sourceBytes": 381192,
+      "variants": [
+        {
+          "bytes": 37488,
+          "height": 497,
+          "src": "./assets/covers/optimized/87843ebf788bd1e2e57b-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 96340,
+          "height": 994,
+          "src": "./assets/covers/optimized/fce3d4f3ae236ab6f636-720.webp",
           "width": 720
         }
       ]
@@ -6572,6 +6606,23 @@
         }
       ]
     },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-86a31103b61d.webp": {
+      "sourceBytes": 162264,
+      "variants": [
+        {
+          "bytes": 30314,
+          "height": 360,
+          "src": "./assets/covers/optimized/35f3d797dd15793d297d-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 70506,
+          "height": 720,
+          "src": "./assets/covers/optimized/22e61f1c68023520fcad-720.webp",
+          "width": 720
+        }
+      ]
+    },
     "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-86ed676c84ce.jpg": {
       "sourceBytes": 295248,
       "variants": [
@@ -7249,6 +7300,23 @@
           "height": 700,
           "src": "./assets/covers/optimized/c9383618f4a4b9371c3c-625.webp",
           "width": 625
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-af3dd42bc303.jpg": {
+      "sourceBytes": 157894,
+      "variants": [
+        {
+          "bytes": 28338,
+          "height": 481,
+          "src": "./assets/covers/optimized/3df830eff6cdb4871733-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 50162,
+          "height": 793,
+          "src": "./assets/covers/optimized/e8dd9c20d7265e8e60d6-594.webp",
+          "width": 594
         }
       ]
     },
@@ -7932,6 +8000,23 @@
         }
       ]
     },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-ceff7139901d.jpg": {
+      "sourceBytes": 493911,
+      "variants": [
+        {
+          "bytes": 40020,
+          "height": 465,
+          "src": "./assets/covers/optimized/23f44be9fc286c9c37ec-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 104316,
+          "height": 930,
+          "src": "./assets/covers/optimized/441c43cf63f6d4e0b560-720.webp",
+          "width": 720
+        }
+      ]
+    },
     "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-d05f6abd79f4.jpg": {
       "sourceBytes": 106299,
       "variants": [
@@ -8200,6 +8285,23 @@
           "bytes": 153100,
           "height": 1110,
           "src": "./assets/covers/optimized/a178edb7a22147eeb27f-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/b-e14182991b20.jpg": {
+      "sourceBytes": 564354,
+      "variants": [
+        {
+          "bytes": 29512,
+          "height": 468,
+          "src": "./assets/covers/optimized/f04f17734b0b0cba2510-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 89556,
+          "height": 937,
+          "src": "./assets/covers/optimized/062f4695e3e9197ab67d-720.webp",
           "width": 720
         }
       ]

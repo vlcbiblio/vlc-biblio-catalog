@@ -157,6 +157,24 @@
       storageAvailable = false;
     }
     sync();
+    const track = window.BiblioAnalytics?.track;
+    if (track) {
+      if (list === "cart") {
+        track(selected ? "remove_from_cart" : "add_to_cart", {
+          item_id: id,
+          item_name: book?.title,
+          item_category: book?.section,
+          order_bot: book ? orderBot(book) : undefined,
+          cart_size: lists.cart.length,
+        });
+      } else if (list === "favorites" && !selected) {
+        track("add_to_wishlist", {
+          item_id: id,
+          item_name: book?.title,
+          item_category: book?.section,
+        });
+      }
+    }
     const message = list === "cart" ? (selected ? t("removedCart", "Libro eliminado de la cesta") : t("addedCart", "Libro añadido a la cesta"))
       : (selected ? t("removedFavorite", "Libro eliminado de favoritos") : t("addedFavorite", "Libro añadido a favoritos"));
     announce(storageAvailable ? message : message + t("storageBlockedSuffix", ". El navegador no permite guardar datos: la lista solo está disponible en esta página."));
@@ -227,7 +245,7 @@
       offset += items.length;
       if (payload.length > limits.startLength) return `<p class="shelf-note">${escape(t("linkError", "No se ha podido preparar el enlace para este libro."))}</p>`;
       return `<div class="shelf-checkout">${batches.length > 1 ? `<p class="shelf-note">${escape(t("order", "Pedido"))} ${index + 1}: ${escape(t("booksRange", "libros"))} ${range}</p>` : ""}
-        <a class="shelf-button shelf-primary" data-shelf-checkout href="https://t.me/${bot}?start=${payload}" target="_blank" rel="noreferrer"><span>${items.length === 1 ? escape(bookText("request", "Solicitar el libro")) : `${escape(t("requestSelected", "Solicitar los seleccionados"))}: ${items.length}`}</span><span>${escape(bookText("telegram", "por Telegram"))}</span></a></div>`;
+        <a class="shelf-button shelf-primary" data-shelf-checkout data-shelf-bot="${escape(bot)}" data-shelf-item-count="${items.length}" href="https://t.me/${bot}?start=${payload}" target="_blank" rel="noreferrer"><span>${items.length === 1 ? escape(bookText("request", "Solicitar el libro")) : `${escape(t("requestSelected", "Solicitar los seleccionados"))}: ${items.length}`}</span><span>${escape(bookText("telegram", "por Telegram"))}</span></a></div>`;
     }).join("");
   }
 
@@ -312,7 +330,29 @@
       dialog.showModal();
       dialog.scrollTop = 0;
       syncFloatingCart();
+      if (activeList === "cart") {
+        const availableCount = lists.cart.filter((id) => canAdd(byId.get(id))).length;
+        window.BiblioAnalytics?.track("view_cart", {
+          cart_size: lists.cart.length,
+          available_count: availableCount,
+          unavailable_count: lists.cart.length - availableCount,
+        });
+      }
     } else toggle(button.dataset.shelfToggle, button.dataset.shelfId);
+  });
+  dialog.addEventListener("click", (event) => {
+    const link = event.target.closest("[data-shelf-checkout], .shelf-waitlist, .shelf-external-availability");
+    if (!link) return;
+    const checkoutSource = link.hasAttribute("data-shelf-checkout")
+      ? "cart"
+      : (link.classList.contains("shelf-waitlist") ? "cart_waitlist" : "cart_external");
+    const rowId = link.closest("[data-shelf-row]")?.dataset.shelfRow;
+    window.BiblioAnalytics?.track("begin_checkout", {
+      checkout_source: checkoutSource,
+      order_bot: link.dataset.shelfBot || (rowId ? orderBot(byId.get(rowId)) : defaultOrderBot),
+      item_count: Number(link.dataset.shelfItemCount) || 1,
+      item_id: rowId,
+    });
   });
   dialog.addEventListener("close", syncFloatingCart);
   dialog.addEventListener("error", (event) => {

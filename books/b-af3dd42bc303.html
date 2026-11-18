@@ -12,9 +12,9 @@
     <meta property="og:title" content="Что ты чувствуешь? Энциклопедия для малышей в сказках — Ульева, Елена Александровна | VLC Biblio" />
     <meta property="og:description" content="Энциклопедия для малышей в сказках о чувствах и эмоциях: как понимать злость, грусть, радость, обиду, надежду и другие состояния" />
     <meta property="og:url" content="https://vlcbiblio.github.io/vlc-biblio-catalog/books/b-af3dd42bc303.html" />
-    <meta property="og:image" content="https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/optimized/7480f0e86fa4167f66fc-484.webp" />
+    <meta property="og:image" content="https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/optimized/e8dd9c20d7265e8e60d6-594.webp" />
     <meta name="twitter:card" content="summary_large_image" />
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "Что ты чувствуешь? Энциклопедия для малышей в сказках", "url": "https://vlcbiblio.github.io/vlc-biblio-catalog/books/b-af3dd42bc303.html", "author": {"@type": "Person", "name": "Ульева, Елена Александровна"}, "isbn": "978-5-222-46974-3", "image": "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/optimized/7480f0e86fa4167f66fc-484.webp", "description": "Энциклопедия для малышей в сказках о чувствах и эмоциях: как понимать злость, грусть, радость, обиду, надежду и другие состояния."}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "Что ты чувствуешь? Энциклопедия для малышей в сказках", "url": "https://vlcbiblio.github.io/vlc-biblio-catalog/books/b-af3dd42bc303.html", "author": {"@type": "Person", "name": "Ульева, Елена Александровна"}, "isbn": "978-5-222-46974-3", "image": "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/optimized/e8dd9c20d7265e8e60d6-594.webp", "description": "Энциклопедия для малышей в сказках о чувствах и эмоциях: как понимать злость, грусть, радость, обиду, надежду и другие состояния."}</script>
     <title>Что ты чувствуешь? Энциклопедия для малышей в сказках — Ульева, Елена Александровна | VLC Biblio</title>
     <link rel="icon" type="image/png" href="./assets/favicon.png" />
     <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
@@ -485,7 +485,7 @@
       <div data-shelf-toolbar></div>
       <section id="content">
       <article class="book">
-        <div class="cover"><img src="./assets/covers/optimized/7480f0e86fa4167f66fc-484.webp" alt="Portada: Что ты чувствуешь? Энциклопедия для малышей в сказках" fetchpriority="high" decoding="async" referrerpolicy="no-referrer" /></div>
+        <div class="cover"><img src="./assets/covers/optimized/e8dd9c20d7265e8e60d6-594.webp" alt="Portada: Что ты чувствуешь? Энциклопедия для малышей в сказках" fetchpriority="high" decoding="async" referrerpolicy="no-referrer" /></div>
         <div class="body">
           <div class="badges"><span class="badge exchange">🏠 Biblioteca particular</span></div>
           <h1>Что ты чувствуешь? Энциклопедия для малышей в сказках</h1>
@@ -504,10 +504,11 @@
       </footer>
     </main>
 
-    <script src="./data/books.js?v=20261115150015"></script>
-    <script src="./data/book-categories.js?v=0f453f962453"></script>
+    <script src="./data/books.js?v=20261118135407"></script>
+    <script src="./data/book-categories.js?v=262ecae78865"></script>
     <script src="./assets/category-overlay.js?v=categories-public-20261115-1"></script>
     <script src="./assets/i18n.js?v=sagunto-deposit-1"></script>
+    <script src="./assets/analytics.js?v=analytics-1"></script>
     <script src="./assets/category-logic.js?v=categories-public-20261115-1"></script>
     <script src="./assets/local-categories.js?v=categories-public-20261115-1"></script>
     <script src="./assets/shelf.js?v=toma-book-batch-5"></script>
@@ -831,6 +832,13 @@
           document.head.append(canonical);
         }
         renderBook(book);
+        window.BiblioAnalytics?.track("view_item", {
+          item_id: book.id,
+          item_name: book.title,
+          item_category: book.section,
+          availability: book.availability,
+          order_bot: book.orderBot || "VLS_Biblio_bot",
+        });
       }
       else {
         const robots = document.createElement("meta");
@@ -841,6 +849,15 @@
       }
 
       content.addEventListener("click", (event) => {
+        const telegramLink = event.target.closest("a.telegram-action, a.button[href^='https://t.me/']");
+        if (telegramLink && book) {
+          window.BiblioAnalytics?.track("begin_checkout", {
+            checkout_source: telegramLink.classList.contains("telegram-action") ? "book_waitlist" : "book_bot",
+            order_bot: book.orderBot || "VLS_Biblio_bot",
+            item_count: 1,
+            item_id: book.id,
+          });
+        }
         const tab = event.target.closest(".related-tab");
         if (!tab) return;
         const section = tab.closest(".related");
