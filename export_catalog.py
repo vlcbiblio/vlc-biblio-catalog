@@ -358,7 +358,7 @@ def section_priority(book):
 
 
 def book_timestamp(book):
-    value = book.get("updatedAt") or book.get("addedAt") or ""
+    value = book.get("addedAt") or book.get("updatedAt") or ""
     if not value:
         return 0
     try:
@@ -384,7 +384,6 @@ def load_books(source):
     return sorted(
         books,
         key=lambda book: (
-            section_priority(book),
             -book_timestamp(book),
             book.get("id") or "",
         ),

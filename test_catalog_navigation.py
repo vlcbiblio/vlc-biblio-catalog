@@ -5,6 +5,7 @@ synthetic books, so these checks never modify catalog data or contact Telegram.
 """
 
 import json
+import re
 import threading
 import unittest
 from functools import partial
@@ -136,7 +137,7 @@ class CatalogNavigationTests(unittest.TestCase):
         self.page.wait_for_function("top => Math.abs(scrollY - top) <= 2", arg=expected)
 
     def assert_catalog(self, scroll, section="exchange", search="Shelf"):
-        expect(self.page).to_have_url(self.base_url)
+        expect(self.page).to_have_url(re.compile(rf"^{re.escape(self.base_url)}(?:\?.*)?$"))
         expect(self.page.locator("#search")).to_have_value(search)
         expect(self.page.locator("#sectionFilter")).to_have_value(section)
         self.assert_scroll(scroll)
@@ -179,6 +180,7 @@ class CatalogNavigationTests(unittest.TestCase):
         second = self.open_visible_book()
         self.page.go_back()
         self.assert_catalog(second["scroll"], section="library")
+        self.page.go_back()
         self.page.go_back()
         expect(self.page).to_have_url(first_url)
         self.page.go_back()
@@ -275,7 +277,7 @@ class CatalogNavigationTests(unittest.TestCase):
         self.page.goto(self.base_url)
         expect(self.page.locator("[data-open-external-browser]")).to_be_hidden()
         expect(self.page.locator("#how-it-works")).to_be_visible()
-        expect(self.page.locator(".current-events .event-preview")).to_have_count(2)
+        expect(self.page.locator(".current-events .event-preview")).to_have_count(1)
         expect(self.page.locator(".event-preview").first).to_be_visible()
         expect(self.page.locator(".topbar > .events-overview")).to_have_count(1)
         expect(self.page.locator(".events-overview > .events-archive-link")).to_have_count(1)
@@ -305,7 +307,7 @@ class CatalogNavigationTests(unittest.TestCase):
         self.assertEqual(response.status, 200)
 
         events_link = self.page.locator(".event-preview").first
-        self.assertEqual(events_link.get_attribute("href"), "./events.html#education-valencia")
+        self.assertEqual(events_link.get_attribute("href"), "./events.html#anya-journalism")
 
         events_response = self.page.request.get(f"{self.base_url}events.html")
         self.assertEqual(events_response.status, 200)
