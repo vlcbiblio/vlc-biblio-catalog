@@ -19,7 +19,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=978-5-00211-246-3",
     "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=978-5-00211-246-3",
     "addedAt": "2026-11-18T13:40:00+01:00",
-    "updatedAt": "2026-11-18T13:40:00",
+    "updatedAt": "2026-11-18T14:59:02",
     "authorKey": "ульева, елена александровна",
     "coverImage": {
       "src": "./assets/covers/optimized/441c43cf63f6d4e0b560-720.webp",
@@ -48,7 +48,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/search?search=978-5-353-09727-3",
     "wildberriesUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=978-5-353-09727-3",
     "addedAt": "2026-11-18T13:40:00+01:00",
-    "updatedAt": "2026-11-18T13:40:00",
+    "updatedAt": "2026-11-18T14:59:02",
     "authorKey": "анна казалис",
     "coverImage": {
       "src": "./assets/covers/optimized/062f4695e3e9197ab67d-720.webp",
