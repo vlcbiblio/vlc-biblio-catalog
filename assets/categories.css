@@ -7,9 +7,9 @@
 .local-category-tags{display:flex;flex-wrap:wrap;gap:5px;margin:10px 0 9px;font-size:11px;line-height:1.45}
 .local-category-tags span{max-width:100%;padding:3px 7px;border:1px solid #dbe4d9;border-radius:5px;background:#f0f5ec;color:#3d6759;overflow-wrap:anywhere}
 .local-category-tags .local-genre{border-color:#e3ddcf;background:#f6f1e7;color:#71644f}
-.local-categories{padding:0 0 16px;margin:0 0 20px;border-bottom:1px solid var(--line)}
+.local-categories{padding:16px 0;margin:20px 0 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .local-categories dl{margin:0;display:grid;gap:10px}.local-category-detail{display:grid;grid-template-columns:145px minmax(0,1fr);gap:14px}
-.local-category-detail dt{color:var(--muted);font-size:12px}.local-category-detail dd{margin:0;font-size:13px;line-height:1.6;overflow-wrap:anywhere}
+.local-category-detail dt{color:var(--muted);font-size:13px}.local-category-detail dd{margin:0;font-size:15px;line-height:1.6;overflow-wrap:anywhere}
 .local-category-detail small{display:block;font-size:11px;color:var(--muted)}.local-category-detail a{display:inline-block;margin-right:9px;font-size:11px;color:var(--blue)}
 .local-categories details{margin-top:13px;color:var(--muted);font-size:11px;line-height:1.6}.local-categories summary{cursor:pointer}.local-categories details p{margin:7px 0}
 .local-research-sources a{display:inline-block;margin-right:9px;color:var(--blue)}.local-editorial-note{font-size:12px;color:var(--muted);line-height:1.6;margin:12px 0 0}

@@ -126,10 +126,7 @@ def static_categories_markup(book):
     if not book.get('reader_age_groups') and not book.get('genres'):
         return ''
     esc = lambda value: html.escape(str(value or ''), quote=True)
-    statuses = {'external_catalog': 'Confirmado por una fuente externa', 'editorial_recommendation': 'Recomendación de la biblioteca', 'editorial_review': 'Categoría editorial', 'pending_review': 'Pendiente de revisión', 'unknown': 'Sin datos confirmados', 'conflict': 'Las fuentes discrepan'}
-    def group(label, key, status_key):
+    def group(label, key):
         values = book.get(key) or ['Sin datos confirmados']
-        return f'<div class="local-category-detail"><dt>{label}</dt><dd>{esc(" · ".join(values))}<small>{esc(statuses.get(book.get(status_key), "Pendiente de revisión"))}</small></dd></div>'
-    basis = '; '.join(dict.fromkeys([*book.get('reader_age_basis', []), book.get('genre_basis', '')])).strip('; ')
-    research = ' '.join(f'<a href="{esc(url)}" target="_blank" rel="noopener noreferrer">{esc(urlparse(url).hostname)}</a>' for value in book.get('research_sources', []) if (url := safe_url(value)))
-    return '<div class="local-categories"><dl>' + group('Edad de lectura', 'reader_age_groups', 'reader_age_status') + group('Género y tema', 'genres', 'genre_status') + group('Clasificación de la edición', 'edition_age_ratings', 'edition_rating_status') + '</dl><details><summary>Base de la recomendación editorial</summary><p>La edad recomendada y la clasificación de una edición son datos distintos.</p>' + (f'<p>{esc(basis)}</p>' if basis else '') + (f'<p>Las referencias corresponden a la obra o serie y no confirman el ISBN de esta edición.</p><p>{research}</p>' if research else '') + '</details></div>'
+        return f'<div class="local-category-detail"><dt>{label}</dt><dd>{esc("\u00a0· ".join(values))}</dd></div>'
+    return '<div class="local-categories"><dl>' + group('Edad de lectura', 'reader_age_groups') + group('Género y tema', 'genres') + '</dl></div>'

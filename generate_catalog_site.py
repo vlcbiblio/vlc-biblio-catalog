@@ -132,10 +132,10 @@ def static_book_markup(book):
           <div class="badges"><span class="badge {'exchange' if private else 'library'}">{status}</span></div>
           <h1>{title}</h1>
           <p class="author">{author}</p>
-          <dl class="details">{''.join(details)}</dl>
-          {static_categories_markup(book)}
           <p class="annotation">{annotation}</p>{deposit_line}
           <div class="collection-note">{note}</div>
+          {static_categories_markup(book)}
+          <dl class="details">{''.join(details)}</dl>
           <div class="actions">{action_markup}</div>
         </div>
       </article>

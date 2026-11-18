@@ -56,8 +56,9 @@ class BookCategoryTests(unittest.TestCase):
             generate.write_site(root, [self.book])
             page = (root / 'books' / (self.book['id'] + '.html')).read_text(encoding='utf-8')
             static = page.split('<section id="content">', 1)[1].split('</section>', 1)[0]
-            self.assertIn('12–14 лет', static); self.assertIn('Фэнтези', static); self.assertIn('12+', static)
-            self.assertIn('Recomendación de la biblioteca', static)
+            self.assertIn('12–14 лет', static); self.assertIn('Фэнтези', static)
+            self.assertNotIn('12+', static)
+            self.assertNotIn('Recomendación de la biblioteca', static)
             self.assertIn('telegram.org/js/telegram-web-app.js', page)
             self.assertIn('assets/telegram-links.js', page)
             self.assertIn('https://t.me/toma_lib_valencia_bot?start=ext_book_42', page)

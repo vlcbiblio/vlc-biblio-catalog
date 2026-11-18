@@ -214,6 +214,7 @@
     "book.sameLibrary": "В этой же библиотеке",
     "book.noDescription": "Описание пока не добавлено.",
     "book.reportError": "Хочу сообщить об ошибке",
+    "book.googleSearch": "Погуглить книгу",
     "book.notFoundTitle": "Книга не найдена",
     "book.notFound": "Книга не найдена. Вернитесь в каталог и выберите другую карточку.",
     "privacy.title": "Конфиденциальность",

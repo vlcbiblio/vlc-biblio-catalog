@@ -141,44 +141,44 @@
       .badge.exchange { color: var(--blue); }
 
       h1 {
-        margin: 14px 0 8px;
+        margin: 14px 0 10px;
         font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(32px, 6vw, 52px);
-        line-height: 1.05;
+        font-size: clamp(26px, 4.8vw, 42px);
+        line-height: 1.15;
         letter-spacing: 0;
       }
 
       .author {
-        margin: 0 0 18px;
+        margin: 0 0 20px;
         color: var(--muted);
-        font-size: 18px;
+        font-size: 19px;
       }
 
       .details {
         display: grid;
         grid-template-columns: max-content minmax(0, 1fr);
         gap: 8px 16px;
-        margin: 22px 0;
-        padding: 18px 0;
-        border-top: 1px solid var(--line);
+        margin: 0 0 22px;
+        padding: 16px 0;
+        border-top: none;
         border-bottom: 1px solid var(--line);
       }
 
       .details dt {
         color: var(--muted);
-        font-size: 13px;
+        font-size: 14px;
       }
 
       .details dd {
         margin: 0;
-        font-size: 14px;
+        font-size: 15px;
       }
 
       .annotation {
         margin: 0;
-        color: #4d473f;
-        font-size: 15px;
-        line-height: 1.55;
+        color: #3b3630;
+        font-size: 18px;
+        line-height: 1.65;
       }
 
       .deposit-note {
@@ -226,8 +226,8 @@
       .collection-note {
         margin: 12px 0 0;
         color: var(--muted);
-        font-size: 14px;
-        line-height: 1.4;
+        font-size: 15px;
+        line-height: 1.55;
         white-space: pre-line;
       }
 
@@ -490,10 +490,10 @@
           <div class="badges"><span class="badge exchange">🏠 Biblioteca particular</span></div>
           <h1>Сказка о потерянном времени</h1>
           <p class="author">Шварц Евгений</p>
-          <dl class="details"><dt>ISBN</dt><dd>978-5-9268-1735-2</dd><dt>Editorial</dt><dd>Речь</dd></dl>
-          <div class="local-categories"><dl><div class="local-category-detail"><dt>Edad de lectura</dt><dd>7–10 лет<small>Recomendación de la biblioteca</small></dd></div><div class="local-category-detail"><dt>Género y tema</dt><dd>Сказки и фольклор · Приключения<small>Categoría editorial</small></dd></div><div class="local-category-detail"><dt>Clasificación de la edición</dt><dd>Sin datos confirmados<small>Sin datos confirmados</small></dd></div></dl><details><summary>Base de la recomendación editorial</summary><p>La edad recomendada y la clasificación de una edición son datos distintos.</p><p>Литературная сказка или сказочная повесть с последовательным сюжетом; рекомендуем уверенным читателям младшей школы. Учебные/мифологические мотивы не заменяют художественный жанр.</p></details></div>
           <p class="annotation">Жанры: Сказки,Классика.</p>
           <div class="collection-note">Este libro pertenece a una biblioteca particular. Puedes solicitarlo en préstamo.</div>
+          <div class="local-categories"><dl><div class="local-category-detail"><dt>Edad de lectura</dt><dd>7–10 лет</dd></div><div class="local-category-detail"><dt>Género y tema</dt><dd>Сказки и фольклор · Приключения</dd></div></dl></div>
+          <dl class="details"><dt>ISBN</dt><dd>978-5-9268-1735-2</dd><dt>Editorial</dt><dd>Речь</dd></dl>
           <div class="actions"><a class="telegram-action" href="https://t.me/VLS_Biblio_bot?start=book_347" target="_blank" rel="noreferrer">Solicitar el libro por Telegram</a></div>
         </div>
       </article>
@@ -686,7 +686,6 @@
           ["ISBN", book.isbn],
           [t("book.year", "Año de publicación"), book.year],
           [t("book.publisher", "Editorial"), book.publisher],
-          [t("book.updated", "Actualizado"), book.updatedAt ? new Date(book.updatedAt).toLocaleDateString(window.BiblioI18n?.locale === "ru" ? "ru" : "es-ES") : ""],
         ].filter((detail) => detail && detail[1]);
 
         return details
@@ -797,16 +796,16 @@
               ${badgesMarkup(book)}
               <h1>${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h1>
               <p class="author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
-              <dl class="details">${detailsMarkup(book)}</dl>
-              ${window.BiblioCategories.detailMarkup(book)}
               <p class="annotation">${escapeHtml(book.annotation || t("book.noDescription", "Todavía no se ha añadido una descripción."))}</p>
               ${depositMarkup(book)}
               <div class="collection-note"><span>${collectionNoteMarkup(book)}</span>${locationNoteMarkup(book)}</div>
+              ${window.BiblioCategories.detailMarkup(book)}
+              <dl class="details">${detailsMarkup(book)}</dl>
               ${window.BiblioShelf.controlsMarkup(book, false)}
               <div class="actions">
                 ${libraryAction(book) ? `<a class="${libraryAction(book).isTelegram ? "telegram-action" : ""}" href="${escapeHtml(libraryAction(book).href)}" target="_blank" rel="noreferrer">${actionLabelMarkup(libraryAction(book))}</a>` : ""}
                 <a href="${escapeHtml(correctionUrl(book))}" target="_blank" rel="noreferrer">${escapeHtml(t("book.reportError", "Quiero informar de un error"))}</a>
-                <a href="${escapeHtml(googleSearchUrl(book))}" target="_blank" rel="noreferrer">Google</a>
+                <a href="${escapeHtml(googleSearchUrl(book))}" target="_blank" rel="noreferrer">${escapeHtml(t("book.googleSearch", "Buscar en Google"))}</a>
               </div>
             </div>
           </article>

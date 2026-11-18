@@ -78,15 +78,11 @@
     }).join(' ');
   }
   function detailMarkup(book) {
-    const group = (title, values, status, sources, age = false) => `<div class="local-category-detail"><dt>${escape(title)}</dt><dd>${escape(values.length ? values.map(value => categoryLabel(value, age)).join(' · ') : text('Нет данных', 'Sin datos'))}<small>${escape(statusLabel(status))}</small>${sourceMarkup(sources)}</dd></div>`;
-    const genreBasis = /\.py|RULES|classification\.json/.test(book.genre_basis || '') ? '' : book.genre_basis;
-    const basis = [...new Set([...logic.list(book, 'reader_age_basis'), ...(genreBasis ? [genreBasis] : [])].map(value => String(value).trim()).filter(Boolean))];
-    const research = sourceMarkup(book.research_sources);
+    const group = (title, values, age = false) => `<div class="local-category-detail"><dt>${escape(title)}</dt><dd>${escape(values.length ? values.map(value => categoryLabel(value, age)).join('\u00a0· ') : text('Нет данных', 'Sin datos'))}</dd></div>`;
     return `<section class="local-categories" aria-label="${escape(text('Возраст и жанр', 'Edad y género'))}"><dl>
-      ${group(text('Возраст читателя', 'Edad de lectura'), logic.list(book, 'reader_age_groups'), book.reader_age_status, book.reader_age_sources, true)}
-      ${group(text('Жанр и тема', 'Género y tema'), logic.list(book, 'genres'), book.genre_status, book.genre_sources)}
-      ${group(text('Маркировка издания', 'Clasificación de la edición'), logic.list(book, 'edition_age_ratings'), book.edition_rating_status, book.edition_rating_sources)}
-    </dl><details><summary>${escape(text('Основание редакционной рекомендации', 'Base de la recomendación editorial'))}</summary><p>${escape(text('Возраст читателя — рекомендация для выбора книги. Маркировка относится к конкретному изданию; 0+ не означает рекомендацию для младенцев. Редакционные рекомендации библиотеки не являются возрастной маркировкой издателя.', 'La edad de lectura es una orientación para elegir. La clasificación corresponde a una edición concreta; 0+ no significa que se recomiende a bebés. Las recomendaciones editoriales de la biblioteca no son la clasificación de la editorial.'))}</p>${basis.length ? `<p>${escape(basis.join('; '))}</p>` : ''}${research ? `<p>${escape(text('Ссылки ниже относятся к произведению или серии и не подтверждают ISBN конкретного издания.', 'Las siguientes referencias corresponden a la obra o la serie y no confirman el ISBN de esta edición.'))}</p><p class="local-research-sources">${research}</p>` : ''}</details>${book.editorial_note ? `<p class="local-editorial-note">${escape(book.editorial_note)}</p>` : ''}</section>`;
+      ${group(text('Возраст читателя', 'Edad de lectura'), logic.list(book, 'reader_age_groups'), true)}
+      ${group(text('Жанр и тема', 'Género y tema'), logic.list(book, 'genres'))}
+    </dl></section>`;
   }
   function fillFilters(books, state) {
     const labels = { age: text('Возраст читателя', 'Edad de lectura'), genre: text('Жанр и тема', 'Género y tema'), reset: text('Сбросить', 'Restablecer') };
