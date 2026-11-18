@@ -3,7 +3,7 @@
   if (window.BiblioAnalytics) return;
 
   // Replace with your real GA4 Measurement ID (e.g. "G-1A2B3C4D5E") before publishing.
-  const GA_MEASUREMENT_ID = "G-XXXXXXXXXX";
+  const GA_MEASUREMENT_ID = "G-T701DBZY2R";
   const CONSENT_KEY = "vlc_biblio_analytics_consent_v1";
   const pendingEvents = [];
   let gtagLoaded = false;

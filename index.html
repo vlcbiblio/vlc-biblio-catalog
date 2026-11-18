@@ -1108,8 +1108,8 @@
       </article>
     </section>
 
-    <script src="./data/books.js?v=20261118135407"></script>
-    <script src="./data/book-categories.js?v=262ecae78865"></script>
+    <script src="./data/books.js?v=20261118143113"></script>
+    <script src="./data/book-categories.js?v=7dbaedee8532"></script>
     <script src="./assets/category-overlay.js?v=categories-public-20261115-1"></script>
     <script src="./assets/i18n.js?v=events-2026-11-18"></script>
     <script src="./assets/analytics.js?v=analytics-1"></script>
@@ -1214,7 +1214,7 @@
       }
 
       function bookDate(book) {
-        const value = Date.parse(book.updatedAt || book.addedAt || "");
+        const value = Date.parse(book.addedAt || book.updatedAt || "");
         return Number.isNaN(value) ? 0 : value;
       }
 
@@ -1228,8 +1228,6 @@
 
       function sorted(list) {
         return [...list].sort((a, b) => {
-          const sectionOrder = sectionPriority(a) - sectionPriority(b);
-          if (sectionOrder) return sectionOrder;
           return bookDate(b) - bookDate(a);
         });
       }
