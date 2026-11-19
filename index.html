@@ -112,6 +112,10 @@
       .telegram-link:hover { text-decoration: underline; }
 
       .instagram-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 14px;
         margin-top: 8px;
       }
 
@@ -904,8 +908,7 @@
             <div>
               <h1 id="catalog-title">VLC Biblio</h1>
               <p class="subtitle" data-i18n="catalog.subtitle">
-                Catálogo abierto de libros para el fondo de la biblioteca Pilar Faus y
-                las bibliotecas particulares de los participantes.
+                Unión de bibliotecas particulares en Valencia
               </p>
             </div>
             <div class="brand-tools">
@@ -949,6 +952,10 @@
               <svg class="instagram-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6Zm9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
               <span>@vlc.biblio</span>
             </a>
+            <a class="instagram-link" href="https://www.youtube.com/@Cultura_vlc" target="_blank" rel="noreferrer" aria-label="YouTube Cultura VLC">
+              <svg class="instagram-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a2.7 2.7 0 0 0-1.9-1.9C18 4.8 12 4.8 12 4.8s-6 0-7.7.5a2.7 2.7 0 0 0-1.9 1.9A28.4 28.4 0 0 0 2 12a28.4 28.4 0 0 0 .4 4.8 2.7 2.7 0 0 0 1.9 1.9c1.7.5 7.7.5 7.7.5s6 0 7.7-.5a2.7 2.7 0 0 0 1.9-1.9A28.4 28.4 0 0 0 22 12a28.4 28.4 0 0 0-.4-4.8ZM10 15.1V8.9l5.2 3.1-5.2 3.1Z"/></svg>
+              <span>@Cultura_vlc</span>
+            </a>
           </div>
           <button class="external-browser" type="button" data-open-external-browser data-i18n="catalog.external" hidden>Abrir en el navegador externo</button>
         </div>
@@ -989,10 +996,10 @@
       <section class="content-section how-it-works" id="how-it-works" aria-labelledby="how-title">
         <h2 class="section-heading" id="how-title" data-i18n="catalog.how.title">Cómo funciona</h2>
         <ol class="steps">
-          <li><span class="step-icon" aria-hidden="true">📚</span><span data-i18n="catalog.how.1">Consulta los libros disponibles en el catálogo</span></li>
-          <li><span class="step-icon" aria-hidden="true">🎁</span><span data-i18n="catalog.how.2">Dona un libro a la biblioteca Pilar Faus</span></li>
-          <li><span class="step-icon" aria-hidden="true">🤝</span><span data-i18n="catalog.how.3">Añade tu libro y compártelo con otros lectores</span></li>
-          <li><span class="step-icon" aria-hidden="true">🤖</span><span data-i18n="catalog.how.4">Toda la gestión de los libros se realiza mediante el bot de Telegram</span></li>
+          <li><span class="step-icon" aria-hidden="true">📚</span><span data-i18n="catalog.how.1">Encuentra un libro en el catálogo de las bibliotecas particulares de los participantes</span></li>
+          <li><span class="step-icon" aria-hidden="true">📖</span><span data-i18n="catalog.how.2">Haz la solicitud en la cesta y recoge el libro: las condiciones de entrega dependen totalmente del propietario</span></li>
+          <li><span class="step-icon" aria-hidden="true">🤝</span><span data-i18n="catalog.how.3">Añade aquí libros de tu estantería para compartirlos con otros</span></li>
+          <li><span class="step-icon" aria-hidden="true">🤖</span><span data-i18n="catalog.how.4">Tanto añadir libros como intercambiarlos funciona por completo mediante el bot de Telegram</span></li>
         </ol>
       </section>
 
@@ -1004,21 +1011,20 @@
           <li><span class="step-icon" aria-hidden="true">3</span><span data-i18n="catalog.order.3">Pulsa «Solicitar por Telegram» y confirma la solicitud en el bot.</span></li>
           <li><span class="step-icon" aria-hidden="true">4</span><span data-i18n="catalog.order.4">El bot comprobará la disponibilidad y ayudará a acordar la entrega y la devolución.</span></li>
         </ol>
-        <p data-i18n="catalog.order.library">Los libros de Pilar Faus no se piden al propietario por el bot: su ficha lleva a la biblioteca pública, donde se consulta la disponibilidad y el préstamo.</p>
       </section>
 
       <section class="content-section action-cards" id="add-book" aria-label="Añadir un libro" data-i18n-aria-label="catalog.add.label">
-        <article class="action-card">
-          <span class="action-icon" aria-hidden="true">🎁</span>
-          <h3 data-i18n="catalog.donate.title">Donar un libro a la biblioteca</h3>
-          <p data-i18n="catalog.donate.text">El libro se entregará a la biblioteca pública Pilar Faus y quedará a disposición de sus lectores.</p>
-          <a class="primary-link" href="https://t.me/VLS_Biblio_bot" target="_blank" rel="noreferrer" data-i18n="catalog.donate.link">Donar un libro →</a>
-        </article>
         <article class="action-card private">
           <span class="action-icon" aria-hidden="true">🏠</span>
-          <h3 data-i18n="catalog.private.title">Añadir a una biblioteca particular</h3>
+          <h3 data-i18n="catalog.private.title">Añadir aquí libros de tu biblioteca particular</h3>
           <p data-i18n="catalog.private.text">El libro se queda contigo, pero otros participantes podrán encontrarlo en el catálogo y pedirlo prestado.</p>
           <a class="primary-link" href="https://t.me/VLS_Biblio_bot" target="_blank" rel="noreferrer" data-i18n="catalog.private.link">Añadir mi libro →</a>
+        </article>
+        <article class="action-card">
+          <span class="action-icon" aria-hidden="true">🎁</span>
+          <h3 data-i18n="catalog.donate.title">Y también puedes donar tu libro a la biblioteca pública Pilar Faus</h3>
+          <p data-i18n="catalog.donate.text">El libro se entregará a la biblioteca pública Pilar Faus y quedará a disposición de sus lectores.</p>
+          <a class="primary-link" href="https://t.me/VLS_Biblio_bot" target="_blank" rel="noreferrer" data-i18n="catalog.donate.link">Donar un libro →</a>
         </article>
       </section>
 
