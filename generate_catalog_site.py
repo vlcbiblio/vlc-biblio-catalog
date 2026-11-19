@@ -70,12 +70,21 @@ def direct_action(book):
 
 
 def deposit_markup(book):
-    if book.get("section") != "exchange" or book.get("depositEur") != 20:
+    if book.get("section") != "exchange":
         return ""
-    return '''<aside class="deposit-note" aria-label="Condiciones del depósito">
+    deposit_eur = book.get("depositEur")
+    if is_toma_source(book) or deposit_eur == 10:
+        return '''<aside class="deposit-note" aria-label="Condiciones del depósito">
+            <span class="deposit-note-icon" aria-hidden="true">↩</span>
+            <span><strong>Возвратный депозит (залог) — 10 евро</strong><small>Библиотека работает по подписке:
+1 книга на руках — 5 €/месяц, 3 книги — 10 €/месяц</small></span>
+          </aside>'''
+    if deposit_eur == 20:
+        return '''<aside class="deposit-note" aria-label="Condiciones del depósito">
             <span class="deposit-note-icon" aria-hidden="true">↩</span>
             <span><strong>Depósito reembolsable: 20 euros</strong><small>por cada libro de esta biblioteca</small></span>
           </aside>'''
+    return ""
 
 
 def is_toma_source(book):
@@ -112,9 +121,9 @@ def static_book_markup(book):
         "Este libro forma parte del catálogo de la biblioteca pública Pilar Faus. Consulta allí su disponibilidad."
     )
     if is_toma_source(book):
-        note = ('Книга в частной коллекции Библиотеки '
-                '<a href="https://t.me/toma_lib_valencia" target="_blank" rel="noreferrer">ТОМА</a>. '
-                'Вы можете запросить книгу на время.')
+        note = ('Книга в коллекции частной библиотеки '
+                '<a href="https://www.instagram.com/toma_lib_valencia/" target="_blank" rel="noreferrer">ТОМА</a>. '
+                'Выдача книг по подписке.')
     action = direct_action(book)
     action_markup = ""
     if action:
@@ -125,6 +134,13 @@ def static_book_markup(book):
     annotation = esc(book.get("annotation") or "Todavía no se ha añadido una descripción.")
     deposit = deposit_markup(book)
     deposit_line = f"\n          {deposit}" if deposit else ""
+    location_note = esc(book.get("locationNote") or ("Местоположение: Angel Guimera" if is_toma_source(book) else ""))
+    location_markup = f'<strong class="location-note">{location_note}</strong>' if location_note else ""
+    if is_toma_source(book):
+        location_line = f"\n          {location_markup}" if location_markup else ""
+        notes_block = f'\n          <div class="collection-note"><span>{note}</span></div>{deposit_line}{location_line}'
+    else:
+        notes_block = f'{deposit_line}\n          <div class="collection-note"><span>{note}</span>{location_markup}</div>'
     return f'''<section id="content">
       <article class="book">
         <div class="cover">{cover_markup}</div>
@@ -132,8 +148,7 @@ def static_book_markup(book):
           <div class="badges"><span class="badge {'exchange' if private else 'library'}">{status}</span></div>
           <h1>{title}</h1>
           <p class="author">{author}</p>
-          <p class="annotation">{annotation}</p>{deposit_line}
-          <div class="collection-note">{note}</div>
+          <p class="annotation">{annotation}</p>{notes_block}
           {static_categories_markup(book)}
           <dl class="details">{''.join(details)}</dl>
           <div class="actions">{action_markup}</div>

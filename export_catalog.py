@@ -26,9 +26,11 @@ OWNER_LOCATION_NOTES = {
         "в определённые дни и часы."
     ),
     "oyellowsparrow": "Местоположение: метро Campanar",
+    "ekailnina": "Местоположение: Angel Guimera",
 }
 OWNER_DEPOSIT_EUR = {
     "irishkakosh": 20,
+    "ekailnina": 10,
 }
 
 AUTHOR_OVERRIDES = {
@@ -345,6 +347,11 @@ def public_book(row):
         if not re.fullmatch(r"[A-Za-z0-9_]{5,32}", bot) or not re.fullmatch(r"book_[0-9]+", start):
             raise ValueError("Invalid external book order route")
         book.update(orderBot=bot, orderStart=start)
+    if book.get("orderBot") == "toma_lib_valencia_bot":
+        if "locationNote" not in book or not book["locationNote"]:
+            book["locationNote"] = "Местоположение: Angel Guimera"
+        if "depositEur" not in book:
+            book["depositEur"] = 10
     if (clean(row.get("source_cover_status")) == "missing"
             and re.fullmatch(r"notion:[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}", request_file)
             and book.get("orderBot") == "toma_lib_valencia_bot"

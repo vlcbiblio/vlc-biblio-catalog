@@ -13,9 +13,11 @@ class StaticSiteGenerationTests(unittest.TestCase):
         source = {'section': 'exchange', 'orderBot': 'toma_lib_valencia_bot',
                   'sourceUrl': 'https://funny-cannon-067.notion.site/' + 'a' * 32}
         markup = generate.static_book_markup(source)
-        self.assertIn('Книга в частной коллекции Библиотеки ', markup)
-        self.assertIn('href="https://t.me/toma_lib_valencia"', markup)
-        self.assertIn('>ТОМА</a>. Вы можете запросить книгу на время.', markup)
+        self.assertIn('Книга в коллекции частной библиотеки ', markup)
+        self.assertIn('href="https://www.instagram.com/toma_lib_valencia/"', markup)
+        self.assertIn('>ТОМА</a>. Выдача книг по подписке.', markup)
+        self.assertIn('Возвратный депозит (залог) — 10 евро', markup)
+        self.assertIn('Местоположение: Angel Guimera', markup)
         for ordinary in ({'section': 'exchange'}, {'section': 'exchange', 'orderBot': source['orderBot']},
                          dict(source, sourceUrl='https://other.notion.site/' + 'a' * 32)):
             self.assertNotIn('>ТОМА</a>', generate.static_book_markup(ordinary))

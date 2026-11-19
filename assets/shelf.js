@@ -252,10 +252,12 @@
   function locationMarkup(ids) {
     const notes = [...new Set(ids.map((id) => byId.get(id)?.locationNote).filter(Boolean))];
     const hasDeposit = ids.some((id) => byId.get(id)?.depositEur === 20);
-    if (!notes.length && !hasDeposit) return "";
+    const hasTomaTerms = ids.some((id) => byId.get(id)?.depositEur === 10 || orderBot(byId.get(id)) === "toma_lib_valencia_bot");
+    if (!notes.length && !hasDeposit && !hasTomaTerms) return "";
     return `<aside class="shelf-location" aria-label="${escape(t("terms", "Condiciones de entrega de los libros"))}">
       ${notes.map((note) => `<p>${escape(note)}</p>`).join("")}
       ${hasDeposit ? `<p>${escape(t("deposit20", "Залог за каждую книгу этой библиотеки 20 евро."))}</p>` : ""}
+      ${hasTomaTerms ? `<p>${escape(t("tomaSubscription", "Biblioteca por suscripción: 1 libro en préstamo — 5 €/mes, 3 libros — 10 €/mes."))}</p><p>${escape(t("tomaDeposit", "Depósito reembolsable: 10 euros."))}</p>` : ""}
     </aside>`;
   }
 
@@ -277,9 +279,14 @@
         if (!groups.has(key)) groups.set(key, []);
         groups.get(key).push(id);
       }
+      let privateIndex = 0;
       markup = `<p class="shelf-note">${escape(t("cartNote", "Revisa la lista y elimina lo que no necesites. Los libros de distintas personas propietarias se tramitan por separado. Añadir un libro a la cesta no lo reserva; el bot comprobará su disponibilidad y te pedirá que confirmes el envío."))}</p>`;
-      markup += Array.from(groups.values()).map((ids, index) => `<section class="shelf-group" aria-label="${escape(t("library", "Biblioteca"))} ${index + 1}"><h3>${escape(t("library", "Biblioteca"))} ${index + 1} · ${ids.length}</h3>
-        <ul class="shelf-list">${ids.map((id, number) => rowMarkup(id, number + 1)).join("")}</ul>${locationMarkup(ids)}${checkoutMarkup(ids)}</section>`).join("");
+      markup += Array.from(groups.values()).map((ids) => {
+        const isToma = ids.some((id) => orderBot(byId.get(id)) === "toma_lib_valencia_bot");
+        const title = isToma ? t("libraryToma", "Biblioteca TOMA") : `${t("library", "Biblioteca")} ${++privateIndex}`;
+        return `<section class="shelf-group" aria-label="${escape(title)}"><h3>${escape(title)} · ${ids.length}</h3>
+        <ul class="shelf-list">${ids.map((id, number) => rowMarkup(id, number + 1)).join("")}</ul>${locationMarkup(ids)}${checkoutMarkup(ids)}</section>`;
+      }).join("");
       if (unavailable.length) markup += `<section class="shelf-group"><h3>${escape(t("unavailableHeading", "No disponibles por el momento"))} · ${unavailable.length}</h3><p class="shelf-note">${escape(t("unavailableNote", "Estos libros no se incluyen en la solicitud. Puedes guardarlos en favoritos o eliminarlos de la cesta."))}</p><ul class="shelf-list">${unavailable.map((id) => rowMarkup(id)).join("")}</ul></section>`;
       if (groups.size) markup += `<p class="shelf-note">${escape(t("afterBot", "La cesta se conserva después de abrir el bot. Elimina los libros cuando hayas confirmado el pedido."))}</p>`;
     }

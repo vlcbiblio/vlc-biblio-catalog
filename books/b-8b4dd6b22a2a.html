@@ -221,6 +221,7 @@
         color: #655438;
         font-size: 13px;
         line-height: 1.4;
+        white-space: pre-line;
       }
 
       .collection-note {
@@ -505,7 +506,7 @@
             <span class="deposit-note-icon" aria-hidden="true">↩</span>
             <span><strong>Depósito reembolsable: 20 euros</strong><small>por cada libro de esta biblioteca</small></span>
           </aside>
-          <div class="collection-note">Este libro pertenece a una biblioteca particular. Puedes solicitarlo en préstamo.</div>
+          <div class="collection-note"><span>Este libro pertenece a una biblioteca particular. Puedes solicitarlo en préstamo.</span><strong class="location-note">Местоположение: Сагунто. Доступность метро на станциях Colón и Aragón в определённые дни и часы.</strong></div>
           <div class="local-categories"><dl><div class="local-category-detail"><dt>Edad de lectura</dt><dd>Взрослые</dd></div><div class="local-category-detail"><dt>Género y tema</dt><dd>Любовная проза</dd></div></dl></div>
           <dl class="details"><dt>ISBN</dt><dd>978-5-17-118450-6</dd><dt>Año de publicación</dt><dd>2021</dd><dt>Editorial</dt><dd>Издательство АСТ</dd></dl>
           <div class="actions"><a class="telegram-action" href="https://t.me/VLS_Biblio_bot?start=book_48" target="_blank" rel="noreferrer">Solicitar el libro por Telegram</a></div>
@@ -518,14 +519,14 @@
       </footer>
     </main>
 
-    <script src="./data/books.js?v=20261118145909"></script>
+    <script src="./data/books.js?v=20261119183905"></script>
     <script src="./data/book-categories.js?v=7dbaedee8532"></script>
     <script src="./assets/category-overlay.js?v=categories-public-20261115-1"></script>
-    <script src="./assets/i18n.js?v=sagunto-deposit-1"></script>
+    <script src="./assets/i18n.js?v=toma-terms-2026-11-19"></script>
     <script src="./assets/analytics.js?v=analytics-1"></script>
     <script src="./assets/category-logic.js?v=categories-public-20261115-1"></script>
     <script src="./assets/local-categories.js?v=categories-public-20261115-1"></script>
-    <script src="./assets/shelf.js?v=toma-book-batch-5"></script>
+    <script src="./assets/shelf.js?v=toma-terms-2026-11-19"></script>
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
       const botUrl = "https://t.me/VLS_Biblio_bot";
@@ -669,30 +670,52 @@
         return note;
       }
 
+      function isTomaSource(book) {
+        return Boolean(
+          book &&
+          book.section === "exchange" &&
+          book.orderBot === "toma_lib_valencia_bot" &&
+          /^https:\/\/funny-cannon-067\.notion\.site\/[0-9a-f]{32}$/.test(book.sourceUrl || "")
+        );
+      }
+
       function collectionNoteMarkup(book) {
-        const tomaSource = book.section === "exchange" && book.orderBot === "toma_lib_valencia_bot"
-          && /^https:\/\/funny-cannon-067\.notion\.site\/[0-9a-f]{32}$/.test(book.sourceUrl || "");
-        if (!tomaSource) return escapeHtml(collectionNote(book));
-        return `${escapeHtml(t("book.note.toma.before", "El libro pertenece a la colección particular de la Biblioteca "))}<a href="https://t.me/toma_lib_valencia" target="_blank" rel="noreferrer">${escapeHtml(t("book.note.toma.name", "TOMA"))}</a>${escapeHtml(t("book.note.toma.after", ". Puedes solicitarlo en préstamo."))}`;
+        if (!isTomaSource(book)) return escapeHtml(collectionNote(book));
+        return `${escapeHtml(t("book.note.toma.before", "El libro pertenece a la colección de la biblioteca particular "))}<a href="https://www.instagram.com/toma_lib_valencia/" target="_blank" rel="noreferrer">${escapeHtml(t("book.note.toma.name", "TOMA"))}</a>${escapeHtml(t("book.note.toma.after", ". Préstamo de libros por suscripción."))}`;
       }
 
       function locationNoteMarkup(book) {
-        return book.locationNote
-          ? `<strong class="location-note">${escapeHtml(book.locationNote)}</strong>`
+        const note = book.locationNote || (isTomaSource(book) ? "Местоположение: Angel Guimera" : "");
+        return note
+          ? `<strong class="location-note">${escapeHtml(note)}</strong>`
           : "";
       }
 
       function depositMarkup(book) {
-        if (book.section !== "exchange" || book.depositEur !== 20) return "";
-        return `
-          <aside class="deposit-note" aria-label="${escapeHtml(t("book.deposit.label", "Condiciones del depósito"))}">
-            <span class="deposit-note-icon" aria-hidden="true">↩</span>
-            <span>
-              <strong>${escapeHtml(t("book.deposit.title", "Depósito reembolsable: 20 euros"))}</strong>
-              <small>${escapeHtml(t("book.deposit.detail", "por cada libro de esta biblioteca"))}</small>
-            </span>
-          </aside>
-        `;
+        if (!book || book.section !== "exchange") return "";
+        if (isTomaSource(book) || book.depositEur === 10) {
+          return `
+            <aside class="deposit-note" aria-label="${escapeHtml(t("book.deposit.label", "Condiciones del depósito"))}">
+              <span class="deposit-note-icon" aria-hidden="true">↩</span>
+              <span>
+                <strong>${escapeHtml(t("book.deposit.toma.title", "Depósito reembolsable: 10 euros"))}</strong>
+                <small>${escapeHtml(t("book.deposit.toma.detail", "Biblioteca por suscripción:\n1 libro en préstamo — 5 €/mes, 3 libros — 10 €/mes"))}</small>
+              </span>
+            </aside>
+          `;
+        }
+        if (book.depositEur === 20) {
+          return `
+            <aside class="deposit-note" aria-label="${escapeHtml(t("book.deposit.label", "Condiciones del depósito"))}">
+              <span class="deposit-note-icon" aria-hidden="true">↩</span>
+              <span>
+                <strong>${escapeHtml(t("book.deposit.title", "Depósito reembolsable: 20 euros"))}</strong>
+                <small>${escapeHtml(t("book.deposit.detail", "por cada libro de esta biblioteca"))}</small>
+              </span>
+            </aside>
+          `;
+        }
+        return "";
       }
 
       function detailsMarkup(book) {
@@ -811,8 +834,9 @@
               <h1>${escapeHtml(book.title || t("book.untitled", "Sin título"))}</h1>
               <p class="author">${escapeHtml(book.author || t("book.noAuthor", "Autor no indicado"))}</p>
               <p class="annotation">${escapeHtml(book.annotation || t("book.noDescription", "Todavía no se ha añadido una descripción."))}</p>
-              ${depositMarkup(book)}
-              <div class="collection-note"><span>${collectionNoteMarkup(book)}</span>${locationNoteMarkup(book)}</div>
+              ${isTomaSource(book)
+                ? `<div class="collection-note"><span>${collectionNoteMarkup(book)}</span></div>${depositMarkup(book)}${locationNoteMarkup(book)}`
+                : `${depositMarkup(book)}<div class="collection-note"><span>${collectionNoteMarkup(book)}</span>${locationNoteMarkup(book)}</div>`}
               ${window.BiblioCategories.detailMarkup(book)}
               <dl class="details">${detailsMarkup(book)}</dl>
               ${window.BiblioShelf.controlsMarkup(book, false)}

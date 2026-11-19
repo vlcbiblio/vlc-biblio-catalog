@@ -263,8 +263,8 @@ class ShelfTests(unittest.TestCase):
         self.replace_books(changed)
         self.page.goto(self.url + 'book.html?id=1')
         note = self.page.locator('.book .collection-note span')
-        self.assertEqual(note.inner_text(), 'Книга в частной коллекции Библиотеки ТОМА. Вы можете запросить книгу на время.')
-        self.assertEqual(note.locator('a').get_attribute('href'), 'https://t.me/toma_lib_valencia')
+        self.assertEqual(note.inner_text(), 'Книга в коллекции частной библиотеки ТОМА. Выдача книг по подписке.')
+        self.assertEqual(note.locator('a').get_attribute('href'), 'https://www.instagram.com/toma_lib_valencia/')
         self.page.goto(self.url + 'book.html?id=2')
         self.assertEqual(self.page.locator('.book .collection-note span').inner_text(),
                          'Книга в частной коллекции. Вы можете запросить книгу на время.')
@@ -294,6 +294,15 @@ class ShelfTests(unittest.TestCase):
         self.page.locator('.book [data-shelf-toggle="cart"]').click()
         self.open_list()
         self.assertEqual(self.page.locator(".shelf-group").count(), 1)
+        self.assertEqual(self.page.locator(".shelf-group h3").inner_text(), "Библиотека ТОМА · 2")
+        self.assertIn(
+            "Библиотека работает по подписке: 1 книга на руках — 5 €/месяц, 3 книги — 10 €/месяц.",
+            self.page.locator(".shelf-location").inner_text(),
+        )
+        self.assertIn(
+            "Возвратный депозит (залог) — 10 евро.",
+            self.page.locator(".shelf-location").inner_text(),
+        )
         links = self.page.locator("[data-shelf-checkout]")
         self.assertEqual(links.count(), 1)
         self.assertEqual(links.get_attribute("href"),

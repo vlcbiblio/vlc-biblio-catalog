@@ -125,6 +125,14 @@ class CatalogOnlyExportTests(unittest.TestCase):
         self.assertEqual(export.location_note_for({"username": "oyellowsparrow"}, "exchange"), expected)
         self.assertEqual(export.location_note_for({"username": "oYellowSparrow"}, "library"), "")
 
+    def test_ekailnina_private_books_get_toma_location_note_and_deposit(self):
+        expected_location = "Местоположение: Angel Guimera"
+        self.assertEqual(export.location_note_for({"username": "@EkailNina"}, "exchange"), expected_location)
+        self.assertEqual(export.location_note_for({"username": "ekailnina"}, "exchange"), expected_location)
+        self.assertEqual(export.location_note_for({"username": "ekailnina"}, "library"), "")
+        self.assertEqual(export.deposit_eur_for({"username": "@EkailNina"}, "exchange"), 10)
+        self.assertEqual(export.deposit_eur_for({"username": "ekailnina"}, "library"), 0)
+
     def test_audience_uses_metadata_and_reviewed_overrides(self):
         self.assertTrue(export.ADULT_REQUEST_IDS.isdisjoint(export.CHILDREN_REQUEST_IDS))
         self.assertEqual(export.audience_for({
