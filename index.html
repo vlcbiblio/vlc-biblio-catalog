@@ -83,8 +83,9 @@
       .subtitle {
         margin: 0;
         max-width: 640px;
-        color: var(--muted);
-        font-size: 12px;
+        color: var(--ink);
+        font-size: 14px;
+        font-weight: 700;
         line-height: 1.25;
       }
 
@@ -262,7 +263,7 @@
       .section-heading {
         margin: 0 0 10px;
         font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(24px, 4vw, 34px);
+        font-size: clamp(22px, 3vw, 28px);
         line-height: 1.1;
       }
 
@@ -343,12 +344,12 @@
       .events-overview {
         grid-column: 1 / -1;
         display: grid;
-        grid-template-columns: minmax(0, 3fr) minmax(220px, 1fr);
-        gap: 12px;
+        grid-template-columns: minmax(0, 1.7fr) minmax(320px, 1fr);
+        gap: 24px;
       }
 
       .current-events { display: grid; gap: 10px; min-width: 0; }
-      .event-preview.events-archive-link { align-self: start; background: var(--paper); }
+      .event-preview.events-archive-link { align-self: stretch; background: var(--paper); }
       .events-archive-link .event-preview-title { white-space: normal; }
       .events-archive-icon { color: var(--blue); font-size: 26px; text-align: center; width: 46px; }
 
@@ -389,16 +390,16 @@
 
       .event-preview-date span,
       .event-preview-kicker {
-        font-size: 9px;
+        font-size: 11px;
         font-weight: 800;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.08em;
         text-transform: uppercase;
       }
 
       .event-preview-copy { min-width: 0; }
       .event-preview-kicker { display: block; margin-bottom: 2px; color: var(--gold); }
       .event-preview-title { display: block; overflow: hidden; font-size: 14px; line-height: 1.25; text-overflow: ellipsis; white-space: nowrap; }
-      .event-preview-meta { display: block; margin-top: 2px; color: var(--muted); font-size: 11px; line-height: 1.3; }
+      .event-preview-meta { display: block; margin-top: 2px; color: var(--muted); font-size: 12px; line-height: 1.3; }
       .event-preview-arrow { color: var(--blue); font-size: 20px; }
 
       .latest-grid {
@@ -422,7 +423,7 @@
       }
 
       .latest-cover img { width: 100%; height: 100%; object-fit: cover; }
-      .latest-card h3 { margin: 8px 0 2px; font-size: 13px; line-height: 1.25; }
+      .latest-card h3 { margin: 8px 0 2px; font-size: 14px; line-height: 1.25; }
       .latest-card p { margin: 0; color: var(--muted); font-size: 12px; }
 
       .info-panel {
@@ -472,7 +473,7 @@
       .stat span {
         display: block;
         color: var(--muted);
-        font-size: 11px;
+        font-size: 12px;
         line-height: 1.25;
       }
 
@@ -798,7 +799,7 @@
 
       .details dt {
         color: var(--muted);
-        font-size: 13px;
+        font-size: 12px;
       }
 
       .details dd {
@@ -809,7 +810,7 @@
       .dialog-annotation {
         margin: 0;
         color: #4d473f;
-        font-size: 15px;
+        font-size: 14px;
         line-height: 1.55;
       }
 
@@ -985,8 +986,7 @@
           <a class="event-preview events-archive-link" href="./events-archive.html">
             <span class="events-archive-icon" aria-hidden="true">▤</span>
             <span class="event-preview-copy">
-              <strong class="event-preview-title" data-i18n="events.archive.heading">Archivo de encuentros</strong>
-              <span class="event-preview-meta" data-i18n="events.archive.past">Encuentros anteriores</span>
+              <strong class="event-preview-title" data-i18n="events.archive.past">Encuentros anteriores</strong>
             </span>
             <span class="event-preview-arrow" aria-hidden="true">→</span>
           </a>
@@ -996,7 +996,7 @@
       <section class="content-section how-it-works" id="how-it-works" aria-labelledby="how-title">
         <h2 class="section-heading" id="how-title" data-i18n="catalog.how.title">Cómo funciona</h2>
         <ol class="steps">
-          <li><span class="step-icon" aria-hidden="true">📚</span><span data-i18n="catalog.how.1">Encuentra un libro en el catálogo de las bibliotecas particulares de los participantes</span></li>
+          <li><span class="step-icon" aria-hidden="true">📚</span><span data-i18n="catalog.how.1">Encuentra un libro en este sitio (aquí se presentan libros de colecciones privadas)</span></li>
           <li><span class="step-icon" aria-hidden="true">📖</span><span data-i18n="catalog.how.2">Haz la solicitud en la cesta y recoge el libro: las condiciones de entrega dependen totalmente del propietario</span></li>
           <li><span class="step-icon" aria-hidden="true">🤝</span><span data-i18n="catalog.how.3">Añade aquí libros de tu estantería para compartirlos con otros</span></li>
           <li><span class="step-icon" aria-hidden="true">🤖</span><span data-i18n="catalog.how.4">Tanto añadir libros como intercambiarlos funciona por completo mediante el bot de Telegram</span></li>
@@ -1006,7 +1006,7 @@
       <section class="content-section info-panel" id="ordering" aria-labelledby="ordering-title">
         <h2 class="section-heading" id="ordering-title" data-i18n="catalog.order.title">Cómo pedir un libro</h2>
         <ol class="steps">
-          <li><span class="step-icon" aria-hidden="true">1</span><span data-i18n="catalog.order.1">Abre la ficha de un libro particular disponible y añádelo a la cesta.</span></li>
+          <li><span class="step-icon" aria-hidden="true">1</span><span data-i18n="catalog.order.1">Encuentra un libro en este sitio y añádelo a la cesta.</span></li>
           <li><span class="step-icon" aria-hidden="true">2</span><span data-i18n="catalog.order.2">Revisa la cesta. Los libros de distintas personas se tramitan por separado.</span></li>
           <li><span class="step-icon" aria-hidden="true">3</span><span data-i18n="catalog.order.3">Pulsa «Solicitar por Telegram» y confirma la solicitud en el bot.</span></li>
           <li><span class="step-icon" aria-hidden="true">4</span><span data-i18n="catalog.order.4">El bot comprobará la disponibilidad y ayudará a acordar la entrega y la devolución.</span></li>
