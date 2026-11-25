@@ -451,7 +451,7 @@
 
       .stats {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: var(--summary-gap);
       }
 
@@ -964,7 +964,6 @@
         <div class="catalog-summary">
           <div class="stats" aria-label="Estadísticas del catálogo" data-i18n-aria-label="catalog.stats.label">
             <div class="stat"><strong id="totalCount">0</strong><span data-i18n="catalog.stats.total">en total</span></div>
-            <div class="stat"><strong id="libraryCount">0</strong><span data-i18n="catalog.stats.library">en la biblioteca Pilar Faus</span></div>
             <div class="stat"><strong id="exchangeCount">0</strong><span data-i18n="catalog.stats.private">particulares</span></div>
           </div>
           <div data-shelf-toolbar></div>
@@ -1367,7 +1366,6 @@
         const shown = visible.slice(0, visibleLimit);
 
         document.querySelector("#totalCount").textContent = visible.length;
-        document.querySelector("#libraryCount").textContent = visible.filter((book) => book.section === "library").length;
         document.querySelector("#exchangeCount").textContent = visible.filter((book) => book.section === "exchange").length;
 
         grid.innerHTML = shown.map(cardMarkup).join("");
