@@ -22190,7 +22190,7 @@ window.BIBLIO_BOOKS = [
     "catalogStatus": "Частная библиотека",
     "libraryKey": "user:7a1e7e68f32d",
     "sourceKind": "user",
-    "availability": "available",
+    "availability": "reserved",
     "audience": "adult",
     "cover": "https://vlcbiblio.github.io/vlc-biblio-catalog/assets/covers/private/notion-20260916/381787fd-a634-80fb-90a9-ecb093651edf.jpeg",
     "isbn": "978-5-00214-685-7",
