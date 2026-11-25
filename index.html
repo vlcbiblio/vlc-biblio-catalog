@@ -1044,12 +1044,6 @@
           <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" /></svg>
           <input class="field search" id="search" type="search" placeholder="Título, autor, ISBN o editorial" data-i18n-placeholder="catalog.search" />
         </label>
-        <label class="sr-only" for="sectionFilter" data-i18n="catalog.sections.all">Todas las secciones</label>
-        <select class="field" id="sectionFilter">
-          <option value="" data-i18n="catalog.sections.all">Todas las secciones</option>
-          <option value="library" data-i18n="catalog.sections.library">Biblioteca Pilar Faus</option>
-          <option value="exchange" data-i18n="catalog.sections.private">Biblioteca particular</option>
-        </select>
         <label class="category-filter" for="ageFilter"><span data-category-label="age">Edad de lectura</span><select class="field" id="ageFilter"></select></label>
         <label class="category-filter" for="genreFilter"><span data-category-label="genre">Género y tema</span><select class="field" id="genreFilter"></select></label>
         <button class="local-reset" id="resetCategories" type="button" data-category-label="reset">Restablecer</button>
@@ -1126,13 +1120,8 @@
     <script>
       const books = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
       const botUrl = "https://t.me/VLS_Biblio_bot";
-      const libraryMapUrl = "https://www.google.com/maps/search/?api=1&query=Biblioteca%20P%C3%BAblica%20de%20Val%C3%A8ncia%20Pilar%20Faus%2039.470374%2C-0.381743";
       const t = (key, fallback) => window.BiblioI18n?.t(key, fallback) ?? fallback;
 
-      const labels = {
-        library: t("book.library", "Biblioteca Pilar Faus"),
-        exchange: t("book.private", "Biblioteca particular"),
-      };
       const catalogStorageKey = `vlc-biblio:catalog:v1:${new URL("./", location.href).pathname}`;
       const storedCatalogState = readCatalogState();
       // Reload can copy history.state before the outgoing pagehide saves scroll.
@@ -1298,12 +1287,6 @@
             isWaitlist: true,
           };
         }
-        if (book.section === "library") {
-          return {
-            href: libraryMapUrl,
-            label: t("book.library", "Biblioteca Pilar Faus"),
-          };
-        }
         return null;
       }
 
@@ -1455,7 +1438,6 @@
       });
 
       [
-        ["#sectionFilter", "section"],
         ["#ageFilter", "age"],
         ["#genreFilter", "genre"],
       ].forEach(([selector, key]) => {
@@ -1523,7 +1505,6 @@
         openBook(initialBook, { push: false });
       } else {
         document.querySelector("#search").value = state.search;
-        document.querySelector("#sectionFilter").value = state.section;
         window.BiblioCategories.syncControls(state);
         renderLatest();
         render();
