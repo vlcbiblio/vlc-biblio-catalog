@@ -1139,7 +1139,7 @@
       const isReload = performance.getEntriesByType("navigation")[0]?.type === "reload";
       const savedCatalogState = (isReload && storedCatalogState) || history.state?.biblioCatalog || storedCatalogState;
       const state = window.BiblioCategoryLogic.readCatalogState(location.search, savedCatalogState, books);
-      const pageSize = 48;
+      const pageSize = 60;
       let visibleLimit = Number.isInteger(savedCatalogState?.visibleLimit)
         ? Math.min(books.length, Math.max(pageSize, savedCatalogState.visibleLimit))
         : pageSize;
