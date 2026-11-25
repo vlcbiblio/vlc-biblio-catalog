@@ -1649,6 +1649,40 @@
         }
       ]
     },
+    "https://basket-19.wbbasket.ru/vol3249/part324910/324910874/images/big/1.webp": {
+      "sourceBytes": 134494,
+      "variants": [
+        {
+          "bytes": 37488,
+          "height": 480,
+          "src": "./assets/covers/optimized/350c08e9d643154875c3-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 99374,
+          "height": 960,
+          "src": "./assets/covers/optimized/676f16fdc53d617aa98d-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://basket-48.wbcontent.net/vol15280/part1528074/1528074571/images/big/1.webp?picsUpdate=0": {
+      "sourceBytes": 130668,
+      "variants": [
+        {
+          "bytes": 27596,
+          "height": 480,
+          "src": "./assets/covers/optimized/4abc54f9d9f22549dc06-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 67312,
+          "height": 960,
+          "src": "./assets/covers/optimized/6501780ad9c31a6015c2-720.webp",
+          "width": 720
+        }
+      ]
+    },
     "https://belayavorona.eu/cdn/shop/files/jswlo0421y5x7uuzpwn2o2spjjb9ur9d.jpg?v=1747047850&width=1920": {
       "sourceBytes": 28327,
       "variants": [
@@ -1948,6 +1982,17 @@
         }
       ]
     },
+    "https://cdn1.ozone.ru/multimedia/books_covers/1004763335.jpg": {
+      "sourceBytes": 30227,
+      "variants": [
+        {
+          "bytes": 16958,
+          "height": 314,
+          "src": "./assets/covers/optimized/dd84a96ffbc73b03b2f3-200.webp",
+          "width": 200
+        }
+      ]
+    },
     "https://clever-publishing.co.il/cdn/shop/files/060ca288c5296d5df48c56c351b02c0e_72f561b2-1bed-49eb-98fd-cc343896ed97.jpg?v=1731405427": {
       "sourceBytes": 114675,
       "variants": [
@@ -1978,6 +2023,108 @@
           "bytes": 212576,
           "height": 941,
           "src": "./assets/covers/optimized/6c8c0a4a4a37053c5f77-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://content.img-gorod.ru/pim/products/images/11/ec/018eea0f-adaf-760e-b343-2a84e0d611ec.jpg": {
+      "sourceBytes": 155165,
+      "variants": [
+        {
+          "bytes": 38824,
+          "height": 561,
+          "src": "./assets/covers/optimized/14fe0d2dde5df956ec34-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 59482,
+          "height": 782,
+          "src": "./assets/covers/optimized/725f47f2f3b3dd205222-502.webp",
+          "width": 502
+        }
+      ]
+    },
+    "https://content.img-gorod.ru/pim/products/images/1b/74/018ee395-a77b-7d1b-afee-8d5b4b111b74.jpg": {
+      "sourceBytes": 122792,
+      "variants": [
+        {
+          "bytes": 21220,
+          "height": 465,
+          "src": "./assets/covers/optimized/efc2197ed89698a416be-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 39488,
+          "height": 751,
+          "src": "./assets/covers/optimized/e7c485838a8952f85821-581.webp",
+          "width": 581
+        }
+      ]
+    },
+    "https://content.img-gorod.ru/pim/products/images/2b/83/018edb2e-cd17-73fb-9b34-6514a1f02b83.jpg": {
+      "sourceBytes": 1345136,
+      "variants": [
+        {
+          "bytes": 45502,
+          "height": 511,
+          "src": "./assets/covers/optimized/4127ebe5e6e66656e9d7-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 132850,
+          "height": 1022,
+          "src": "./assets/covers/optimized/98a9df2078301dfb5261-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://content.img-gorod.ru/pim/products/images/69/71/018f5d82-6403-775d-ac8a-2c548f956971.jpg": {
+      "sourceBytes": 463430,
+      "variants": [
+        {
+          "bytes": 55540,
+          "height": 545,
+          "src": "./assets/covers/optimized/76b2096264f6363929c6-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 150814,
+          "height": 1091,
+          "src": "./assets/covers/optimized/418113e01b39499b582d-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://content.img-gorod.ru/pim/products/images/6c/1f/018ee363-2061-7619-9ec0-e1fdd5206c1f.jpg": {
+      "sourceBytes": 342609,
+      "variants": [
+        {
+          "bytes": 46224,
+          "height": 464,
+          "src": "./assets/covers/optimized/79d00acd75eb1f716b05-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 145730,
+          "height": 928,
+          "src": "./assets/covers/optimized/ba15c7d60a8ec2f39521-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://content.img-gorod.ru/pim/products/images/aa/28/0190a271-72dd-7d41-9947-4a6df13faa28.jpg": {
+      "sourceBytes": 1638254,
+      "variants": [
+        {
+          "bytes": 21768,
+          "height": 393,
+          "src": "./assets/covers/optimized/64c0055cc5b5c447e11b-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 57742,
+          "height": 787,
+          "src": "./assets/covers/optimized/8a1f9cd16896ce66fa15-720.webp",
           "width": 720
         }
       ]
@@ -2038,6 +2185,17 @@
         }
       ]
     },
+    "https://fantlab.ru/images/editions/big/53454": {
+      "sourceBytes": 55789,
+      "variants": [
+        {
+          "bytes": 17272,
+          "height": 267,
+          "src": "./assets/covers/optimized/ffcd15e40726a7be22cd-200.webp",
+          "width": 200
+        }
+      ]
+    },
     "https://fantlab.ru/images/editions/orig/354790": {
       "sourceBytes": 249651,
       "variants": [
@@ -2088,6 +2246,17 @@
         }
       ]
     },
+    "https://img.mdk-arbat.ru/main/50/05/5005299.jpg": {
+      "sourceBytes": 12275,
+      "variants": [
+        {
+          "bytes": 11392,
+          "height": 270,
+          "src": "./assets/covers/optimized/e00738f4ef3409168586-200.webp",
+          "width": 200
+        }
+      ]
+    },
     "https://imo10.labirint.ru/books/1002899/cover.jpg/484-0": {
       "sourceBytes": 38710,
       "variants": [
@@ -2135,6 +2304,23 @@
           "bytes": 50668,
           "height": 633,
           "src": "./assets/covers/optimized/3c3d36cf8253e79964d2-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://imo10.labirint.ru/books/1006889/cover.jpg/484-0": {
+      "sourceBytes": 32250,
+      "variants": [
+        {
+          "bytes": 25744,
+          "height": 440,
+          "src": "./assets/covers/optimized/27662611e5f934eef398-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 34932,
+          "height": 592,
+          "src": "./assets/covers/optimized/0057a7ff18c1eaa1fd04-484.webp",
           "width": 484
         }
       ]
@@ -2258,6 +2444,23 @@
         }
       ]
     },
+    "https://imo10.labirint.ru/books/284964/cover.jpg/484-0": {
+      "sourceBytes": 29118,
+      "variants": [
+        {
+          "bytes": 24184,
+          "height": 447,
+          "src": "./assets/covers/optimized/439321930819d59b8b96-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 31330,
+          "height": 601,
+          "src": "./assets/covers/optimized/063f194805fa4dd9dc63-484.webp",
+          "width": 484
+        }
+      ]
+    },
     "https://imo10.labirint.ru/books/347374/cover.jpg/484-0": {
       "sourceBytes": 36284,
       "variants": [
@@ -2271,6 +2474,23 @@
           "bytes": 39350,
           "height": 759,
           "src": "./assets/covers/optimized/690df2ec662dd25174f0-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://imo10.labirint.ru/books/354730/cover.jpg/484-0": {
+      "sourceBytes": 41586,
+      "variants": [
+        {
+          "bytes": 31604,
+          "height": 504,
+          "src": "./assets/covers/optimized/795874187a5eddbf7ef3-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 44154,
+          "height": 677,
+          "src": "./assets/covers/optimized/22ddc1ec92ffd20bd30e-484.webp",
           "width": 484
         }
       ]
@@ -2305,6 +2525,40 @@
           "bytes": 39416,
           "height": 755,
           "src": "./assets/covers/optimized/7646a290785aa0439014-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://imo10.labirint.ru/books/437294/cover.jpg/484-0": {
+      "sourceBytes": 60262,
+      "variants": [
+        {
+          "bytes": 45018,
+          "height": 511,
+          "src": "./assets/covers/optimized/52bd453f206fd6c6a745-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 66292,
+          "height": 687,
+          "src": "./assets/covers/optimized/78161cdcfdb39d88babb-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://imo10.labirint.ru/books/439034/cover.jpg/484-0": {
+      "sourceBytes": 26612,
+      "variants": [
+        {
+          "bytes": 20818,
+          "height": 495,
+          "src": "./assets/covers/optimized/95b574e9db6bc9cd3e29-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 28318,
+          "height": 665,
+          "src": "./assets/covers/optimized/31ae861e27be43c58fa9-484.webp",
           "width": 484
         }
       ]
@@ -2458,6 +2712,23 @@
           "bytes": 36218,
           "height": 755,
           "src": "./assets/covers/optimized/52f8e87ad077525ac80e-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://imo10.labirint.ru/books/512382/cover.jpg/484-0": {
+      "sourceBytes": 48392,
+      "variants": [
+        {
+          "bytes": 38790,
+          "height": 521,
+          "src": "./assets/covers/optimized/1dcc3c7e470eaff2ae14-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 52836,
+          "height": 700,
+          "src": "./assets/covers/optimized/9b86c73fc0fcc5c50a22-484.webp",
           "width": 484
         }
       ]
@@ -2666,6 +2937,108 @@
         }
       ]
     },
+    "https://imo10.labirint.ru/books/616551/cover.jpg/484-0": {
+      "sourceBytes": 53298,
+      "variants": [
+        {
+          "bytes": 42880,
+          "height": 547,
+          "src": "./assets/covers/optimized/136140ff4e7ca9f5a70e-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 58150,
+          "height": 735,
+          "src": "./assets/covers/optimized/afd3e7649ec0a1422688-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://imo10.labirint.ru/books/616552/cover.jpg/484-0": {
+      "sourceBytes": 53504,
+      "variants": [
+        {
+          "bytes": 43096,
+          "height": 547,
+          "src": "./assets/covers/optimized/02c02b8395ca4f4027c5-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 58088,
+          "height": 736,
+          "src": "./assets/covers/optimized/e522fbba91da7117752c-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://imo10.labirint.ru/books/617849/cover.jpg/484-0": {
+      "sourceBytes": 43326,
+      "variants": [
+        {
+          "bytes": 33470,
+          "height": 478,
+          "src": "./assets/covers/optimized/5c1bc5cef3a5a6dedc6c-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 47610,
+          "height": 642,
+          "src": "./assets/covers/optimized/268bceb65113e354ab2f-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://imo10.labirint.ru/books/625846/cover.jpg/484-0": {
+      "sourceBytes": 56996,
+      "variants": [
+        {
+          "bytes": 46332,
+          "height": 547,
+          "src": "./assets/covers/optimized/9ce79500269d27393dcd-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 62290,
+          "height": 735,
+          "src": "./assets/covers/optimized/8257f7fea5977a4ba980-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://imo10.labirint.ru/books/626519/cover.jpg/484-0": {
+      "sourceBytes": 20464,
+      "variants": [
+        {
+          "bytes": 17766,
+          "height": 545,
+          "src": "./assets/covers/optimized/84aa6f317cc46472fde6-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 21842,
+          "height": 733,
+          "src": "./assets/covers/optimized/d66dbedccf99da164e02-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://imo10.labirint.ru/books/628065/cover.jpg/484-0": {
+      "sourceBytes": 53518,
+      "variants": [
+        {
+          "bytes": 40176,
+          "height": 468,
+          "src": "./assets/covers/optimized/8b2ea6280ba0bfde819c-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 57700,
+          "height": 629,
+          "src": "./assets/covers/optimized/c1f65e3f5759623b4f29-484.webp",
+          "width": 484
+        }
+      ]
+    },
     "https://imo10.labirint.ru/books/630777/cover.jpg/484-0": {
       "sourceBytes": 32932,
       "variants": [
@@ -2679,6 +3052,23 @@
           "bytes": 35936,
           "height": 622,
           "src": "./assets/covers/optimized/1923b01265de12c24892-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://imo10.labirint.ru/books/637262/cover.jpg/484-0": {
+      "sourceBytes": 35086,
+      "variants": [
+        {
+          "bytes": 27692,
+          "height": 435,
+          "src": "./assets/covers/optimized/26c2cb2e18bd6dcbbc02-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 37366,
+          "height": 585,
+          "src": "./assets/covers/optimized/b434697ef4be2995377a-484.webp",
           "width": 484
         }
       ]
@@ -2700,6 +3090,23 @@
         }
       ]
     },
+    "https://imo10.labirint.ru/books/644316/cover.jpg/484-0": {
+      "sourceBytes": 59724,
+      "variants": [
+        {
+          "bytes": 47808,
+          "height": 545,
+          "src": "./assets/covers/optimized/d6fa9d5e7d666b295512-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 65394,
+          "height": 733,
+          "src": "./assets/covers/optimized/d236cb8e79ed3798eae4-484.webp",
+          "width": 484
+        }
+      ]
+    },
     "https://imo10.labirint.ru/books/644763/cover.jpg/484-0": {
       "sourceBytes": 35568,
       "variants": [
@@ -2717,6 +3124,23 @@
         }
       ]
     },
+    "https://imo10.labirint.ru/books/647786/cover.jpg/484-0": {
+      "sourceBytes": 55982,
+      "variants": [
+        {
+          "bytes": 44030,
+          "height": 548,
+          "src": "./assets/covers/optimized/463339f06a75e622f16b-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 60316,
+          "height": 737,
+          "src": "./assets/covers/optimized/7ca3d9a017738b8726aa-484.webp",
+          "width": 484
+        }
+      ]
+    },
     "https://imo10.labirint.ru/books/650730/cover.jpg/484-0": {
       "sourceBytes": 54890,
       "variants": [
@@ -2730,6 +3154,23 @@
           "bytes": 59856,
           "height": 697,
           "src": "./assets/covers/optimized/6b3dac10ea1950ae55c6-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://imo10.labirint.ru/books/651081/cover.jpg/484-0": {
+      "sourceBytes": 50496,
+      "variants": [
+        {
+          "bytes": 41098,
+          "height": 547,
+          "src": "./assets/covers/optimized/e5834d6ad31df0efad82-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 55548,
+          "height": 735,
+          "src": "./assets/covers/optimized/3db60fc1ee066f65112c-484.webp",
           "width": 484
         }
       ]
@@ -2785,6 +3226,23 @@
         }
       ]
     },
+    "https://imo10.labirint.ru/books/659406/cover.jpg/484-0": {
+      "sourceBytes": 61164,
+      "variants": [
+        {
+          "bytes": 49584,
+          "height": 547,
+          "src": "./assets/covers/optimized/00d8509d0c272ae3c94e-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 66894,
+          "height": 735,
+          "src": "./assets/covers/optimized/8efeca01ecec4daedca0-484.webp",
+          "width": 484
+        }
+      ]
+    },
     "https://imo10.labirint.ru/books/659901/cover.jpg/484-0": {
       "sourceBytes": 39248,
       "variants": [
@@ -2798,6 +3256,23 @@
           "bytes": 42214,
           "height": 761,
           "src": "./assets/covers/optimized/963c193708f4882ba20c-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://imo10.labirint.ru/books/668015/cover.jpg/484-0": {
+      "sourceBytes": 50286,
+      "variants": [
+        {
+          "bytes": 39530,
+          "height": 486,
+          "src": "./assets/covers/optimized/2d0fbea29746230b14af-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 54268,
+          "height": 654,
+          "src": "./assets/covers/optimized/fe4ee485dae4636b2099-484.webp",
           "width": 484
         }
       ]
@@ -3057,6 +3532,23 @@
         }
       ]
     },
+    "https://imo10.labirint.ru/books/734922/cover.jpg/484-0": {
+      "sourceBytes": 33790,
+      "variants": [
+        {
+          "bytes": 26804,
+          "height": 463,
+          "src": "./assets/covers/optimized/b88837565fa8538e1768-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 37052,
+          "height": 623,
+          "src": "./assets/covers/optimized/bedf58a90156ac071306-484.webp",
+          "width": 484
+        }
+      ]
+    },
     "https://imo10.labirint.ru/books/748016/cover.jpg/484-0": {
       "sourceBytes": 35622,
       "variants": [
@@ -3087,6 +3579,40 @@
           "bytes": 31076,
           "height": 677,
           "src": "./assets/covers/optimized/8fd17e17a8e1d5fb9217-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://imo10.labirint.ru/books/758978/cover.jpg/484-0": {
+      "sourceBytes": 38234,
+      "variants": [
+        {
+          "bytes": 27256,
+          "height": 443,
+          "src": "./assets/covers/optimized/b1831ab8451180bf388c-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 40766,
+          "height": 595,
+          "src": "./assets/covers/optimized/0911226dba3f1bbe6c9c-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://imo10.labirint.ru/books/769658/cover.jpg/484-0": {
+      "sourceBytes": 7086,
+      "variants": [
+        {
+          "bytes": 5722,
+          "height": 357,
+          "src": "./assets/covers/optimized/4a69ea7704f4456b730b-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 7736,
+          "height": 480,
+          "src": "./assets/covers/optimized/f0e6ac5c918581a16f10-484.webp",
           "width": 484
         }
       ]
@@ -3125,6 +3651,23 @@
         }
       ]
     },
+    "https://imo10.labirint.ru/books/788266/cover.jpg/484-0": {
+      "sourceBytes": 18436,
+      "variants": [
+        {
+          "bytes": 14720,
+          "height": 470,
+          "src": "./assets/covers/optimized/a9ceb39734ec3b47d074-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 19450,
+          "height": 632,
+          "src": "./assets/covers/optimized/b2b4c05a57371876be37-484.webp",
+          "width": 484
+        }
+      ]
+    },
     "https://imo10.labirint.ru/books/792731/cover.jpg/484-0": {
       "sourceBytes": 57102,
       "variants": [
@@ -3155,6 +3698,23 @@
           "bytes": 34482,
           "height": 647,
           "src": "./assets/covers/optimized/7480f0e86fa4167f66fc-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://imo10.labirint.ru/books/796045/cover.jpg/484-0": {
+      "sourceBytes": 37954,
+      "variants": [
+        {
+          "bytes": 30382,
+          "height": 418,
+          "src": "./assets/covers/optimized/6dc3a0145822249817a0-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 41480,
+          "height": 562,
+          "src": "./assets/covers/optimized/48b04f5b547a2f9f0d6a-484.webp",
           "width": 484
         }
       ]
@@ -3206,6 +3766,23 @@
           "bytes": 58612,
           "height": 776,
           "src": "./assets/covers/optimized/a1ebf2ef65fa9f0a877c-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://imo10.labirint.ru/books/837172/cover.jpg/484-0": {
+      "sourceBytes": 41950,
+      "variants": [
+        {
+          "bytes": 32292,
+          "height": 475,
+          "src": "./assets/covers/optimized/dce69dc4e60764fd4721-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 45378,
+          "height": 638,
+          "src": "./assets/covers/optimized/7e811c6833ec46f18a51-484.webp",
           "width": 484
         }
       ]
@@ -3274,6 +3851,40 @@
           "bytes": 34608,
           "height": 625,
           "src": "./assets/covers/optimized/6cb9fb6913e436966782-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://imo10.labirint.ru/books/910854/cover.jpg/484-0": {
+      "sourceBytes": 50854,
+      "variants": [
+        {
+          "bytes": 38918,
+          "height": 469,
+          "src": "./assets/covers/optimized/30f46f94e5d2131553c7-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 56136,
+          "height": 630,
+          "src": "./assets/covers/optimized/17aef2cc84650ef1218d-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://imo10.labirint.ru/books/911551/cover.jpg/484-0": {
+      "sourceBytes": 36624,
+      "variants": [
+        {
+          "bytes": 29134,
+          "height": 491,
+          "src": "./assets/covers/optimized/76538d1b4026a52c3fba-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 39528,
+          "height": 660,
+          "src": "./assets/covers/optimized/f124f2cdbdb2f31cce6b-484.webp",
           "width": 484
         }
       ]
@@ -3448,6 +4059,40 @@
         }
       ]
     },
+    "https://imo10.labirint.ru/books/917885/cover.jpg/484-0": {
+      "sourceBytes": 40234,
+      "variants": [
+        {
+          "bytes": 32894,
+          "height": 534,
+          "src": "./assets/covers/optimized/238a727cc1f3f6056dd5-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 44098,
+          "height": 718,
+          "src": "./assets/covers/optimized/60eb3b2daf500df1d9d7-484.webp",
+          "width": 484
+        }
+      ]
+    },
+    "https://imo10.labirint.ru/books/924370/cover.jpg/484-0": {
+      "sourceBytes": 48668,
+      "variants": [
+        {
+          "bytes": 36312,
+          "height": 545,
+          "src": "./assets/covers/optimized/d41073da9da61cad5f12-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 52706,
+          "height": 733,
+          "src": "./assets/covers/optimized/77a98de86cb367eff7da-484.webp",
+          "width": 484
+        }
+      ]
+    },
     "https://imo10.labirint.ru/books/924378/cover.jpg/484-0": {
       "sourceBytes": 46976,
       "variants": [
@@ -3567,6 +4212,23 @@
         }
       ]
     },
+    "https://imo10.labirint.ru/books/961669/cover.jpg/484-0": {
+      "sourceBytes": 35412,
+      "variants": [
+        {
+          "bytes": 28516,
+          "height": 465,
+          "src": "./assets/covers/optimized/650698626a60a5e42217-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 38742,
+          "height": 625,
+          "src": "./assets/covers/optimized/5020da6d8a2a76630243-484.webp",
+          "width": 484
+        }
+      ]
+    },
     "https://imo10.labirint.ru/books/984255/cover.jpg/484-0": {
       "sourceBytes": 35480,
       "variants": [
@@ -3581,6 +4243,102 @@
           "height": 624,
           "src": "./assets/covers/optimized/b7d69095b03537328d16-484.webp",
           "width": 484
+        }
+      ]
+    },
+    "https://ir-20.ozone.ru/multimedia/1019560175.jpg": {
+      "sourceBytes": 282356,
+      "variants": [
+        {
+          "bytes": 33666,
+          "height": 495,
+          "src": "./assets/covers/optimized/5e89f5f791840e732678-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 98582,
+          "height": 991,
+          "src": "./assets/covers/optimized/b8806710d5d6b8dd2c67-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://ir-20.ozone.ru/s3/multimedia-1-e/6998694998.jpg": {
+      "sourceBytes": 149561,
+      "variants": [
+        {
+          "bytes": 19664,
+          "height": 480,
+          "src": "./assets/covers/optimized/8c9bb3fac7aca06ad345-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 53520,
+          "height": 960,
+          "src": "./assets/covers/optimized/17e8163ebaf23505e919-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://ir-20.ozone.ru/s3/multimedia-8/6024007292.jpg": {
+      "sourceBytes": 1145588,
+      "variants": [
+        {
+          "bytes": 60018,
+          "height": 486,
+          "src": "./assets/covers/optimized/f3a8fada224da54fe291-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 190468,
+          "height": 972,
+          "src": "./assets/covers/optimized/746556faa6f4fee34877-720.webp",
+          "width": 720
+        }
+      ]
+    },
+    "https://ir-20.ozone.ru/s3/multimedia-8/6274070888.jpg": {
+      "sourceBytes": 231016,
+      "variants": [
+        {
+          "bytes": 44552,
+          "height": 520,
+          "src": "./assets/covers/optimized/89147c65e19e1618b6e5-343.webp",
+          "width": 343
+        }
+      ]
+    },
+    "https://ir-20.ozone.ru/s3/multimedia-m/6252676498.jpg": {
+      "sourceBytes": 258192,
+      "variants": [
+        {
+          "bytes": 45762,
+          "height": 563,
+          "src": "./assets/covers/optimized/abf7bd296dbd10741add-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 60860,
+          "height": 699,
+          "src": "./assets/covers/optimized/c5c6fa24ad2537071bad-447.webp",
+          "width": 447
+        }
+      ]
+    },
+    "https://ir-20.ozone.ru/s3/multimedia-s/6704355232.jpg": {
+      "sourceBytes": 1417734,
+      "variants": [
+        {
+          "bytes": 25124,
+          "height": 480,
+          "src": "./assets/covers/optimized/66cb5af886e731a397ec-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 80400,
+          "height": 960,
+          "src": "./assets/covers/optimized/4eaa98e01b36f085750e-720.webp",
+          "width": 720
         }
       ]
     },
@@ -3634,6 +4392,39 @@
         }
       ]
     },
+    "https://kniga.lv/_img/product/29/2/74/1732117200/w320_h425_cover_q70.webp": {
+      "sourceBytes": 41354,
+      "variants": [
+        {
+          "bytes": 46588,
+          "height": 425,
+          "src": "./assets/covers/optimized/21767cbcb24a617b8ebe-320.webp",
+          "width": 320
+        }
+      ]
+    },
+    "https://kniga.lv/_img/product/29/7/83/1717521445/w320_h430_cover_q70.webp": {
+      "sourceBytes": 39582,
+      "variants": [
+        {
+          "bytes": 44498,
+          "height": 430,
+          "src": "./assets/covers/optimized/34b6c5c06b10c400643e-320.webp",
+          "width": 320
+        }
+      ]
+    },
+    "https://kniga.lv/_img/product/30/4/32/1717521422/w320_h428_cover_q70.webp": {
+      "sourceBytes": 28272,
+      "variants": [
+        {
+          "bytes": 32036,
+          "height": 428,
+          "src": "./assets/covers/optimized/0aae2ab3322e8033c13a-320.webp",
+          "width": 320
+        }
+      ]
+    },
     "https://kniga.lv/_img/product/50/1/72/1717521465/w320_h340_cover_q70.webp": {
       "sourceBytes": 17372,
       "variants": [
@@ -3667,6 +4458,28 @@
         }
       ]
     },
+    "https://kniga.lv/_img/product/77/8/90/1717521480/w320_h425_cover_q70.webp": {
+      "sourceBytes": 26550,
+      "variants": [
+        {
+          "bytes": 30290,
+          "height": 425,
+          "src": "./assets/covers/optimized/e838575983d80a4b3ef3-320.webp",
+          "width": 320
+        }
+      ]
+    },
+    "https://kniga.lv/_img/product/77/8/91/1717521480/w320_h424_cover_q70.webp": {
+      "sourceBytes": 29604,
+      "variants": [
+        {
+          "bytes": 32822,
+          "height": 424,
+          "src": "./assets/covers/optimized/d57d0e6af08d2f9b5acb-320.webp",
+          "width": 320
+        }
+      ]
+    },
     "https://kniga.lv/_img/product/95/9/63/1740654676/w320_h451_cover_q70.jpg": {
       "sourceBytes": 30902,
       "variants": [
@@ -3675,6 +4488,23 @@
           "height": 451,
           "src": "./assets/covers/optimized/24d09a1a13668dff242a-320.webp",
           "width": 320
+        }
+      ]
+    },
+    "https://melik-pashaev.ru/wp-content/uploads/2021/11/musor_cover.webp": {
+      "sourceBytes": 132878,
+      "variants": [
+        {
+          "bytes": 60702,
+          "height": 470,
+          "src": "./assets/covers/optimized/48831f1efe1bec677f58-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 138472,
+          "height": 767,
+          "src": "./assets/covers/optimized/da783650571a5b3fd497-588.webp",
+          "width": 588
         }
       ]
     },
@@ -3856,6 +4686,17 @@
           "height": 761,
           "src": "./assets/covers/optimized/7e82d91be03982386721-720.webp",
           "width": 720
+        }
+      ]
+    },
+    "https://s1.livelib.ru/boocover/1000765734/200x305/2acc/bez_avtora__Korejskie_narodnye_skazki.jpg": {
+      "sourceBytes": 21719,
+      "variants": [
+        {
+          "bytes": 11996,
+          "height": 305,
+          "src": "./assets/covers/optimized/4db3a1d6f0b96e49f8b9-200.webp",
+          "width": 200
         }
       ]
     },
@@ -17647,6 +18488,17 @@
         }
       ]
     },
+    "https://www.moscowbooks.ru/image/ap/t1/384/384400/384400_w200.jpg": {
+      "sourceBytes": 10015,
+      "variants": [
+        {
+          "bytes": 8350,
+          "height": 200,
+          "src": "./assets/covers/optimized/9c6d5f76f696e097791d-159.webp",
+          "width": 159
+        }
+      ]
+    },
     "https://www.moscowbooks.ru/image/book/815/w600/i815533.jpg": {
       "sourceBytes": 115764,
       "variants": [
@@ -17678,6 +18530,23 @@
           "height": 612,
           "src": "./assets/covers/optimized/6a5907778b878693aefb-600.webp",
           "width": 600
+        }
+      ]
+    },
+    "https://zyorna.ru/assets/thumbs/b/bada7e8e40ecbbd5f4fcddeed93702f9.JPG": {
+      "sourceBytes": 62633,
+      "variants": [
+        {
+          "bytes": 36226,
+          "height": 540,
+          "src": "./assets/covers/optimized/30759618aece3fabd0b5-360.webp",
+          "width": 360
+        },
+        {
+          "bytes": 40990,
+          "height": 584,
+          "src": "./assets/covers/optimized/41427b913af52692ebcf-389.webp",
+          "width": 389
         }
       ]
     }

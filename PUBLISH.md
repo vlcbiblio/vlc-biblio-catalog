@@ -67,6 +67,28 @@ git commit -m "Update site"
 git push origin main
 ```
 
+## Обложки книг
+
+При каждой публикации, которая добавляет или меняет книги либо их обложки,
+сначала нужно сохранить локальные WebP-копии обложек. Нельзя публиковать
+обновлённый `data/books.js` с внешними адресами новых обложек без этого шага:
+
+```powershell
+cd "C:\29.Biblio\3.GitHub catalog"
+python -X utf8 export_catalog.py
+python -X utf8 optimize_covers.py
+python -X utf8 generate_catalog_site.py
+git add data/books.js assets/covers assets/i18n.js books sitemap.xml robots.txt index.html book.html
+git commit -m "Update catalog and cover assets"
+git push origin main
+```
+
+`optimize_covers.py` скачивает все отсутствующие обложки из публичных исходных
+URL, создаёт варианты в `assets/covers/optimized/` и обновляет
+`assets/covers/manifest.json`. Перед коммитом убедитесь, что у каждой книги с
+`cover` появился `coverImage`; исключение возможно только для книги, у которой
+явно разрешено отсутствие обложки.
+
 Если менялся только один файл, можно добавить только его:
 
 ```powershell

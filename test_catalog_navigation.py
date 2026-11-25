@@ -376,10 +376,14 @@ class CatalogNavigationTests(unittest.TestCase):
     def test_header_links_to_instagram_below_telegram_links(self):
         self.page.goto(self.base_url)
         instagram = self.page.get_by_role("link", name="Instagram VLC Biblio")
+        youtube = self.page.get_by_role("link", name="YouTube Cultura VLC")
 
         expect(instagram).to_be_visible()
         self.assertEqual(instagram.get_attribute("href"), "https://www.instagram.com/vlc.biblio")
         self.assertEqual(instagram.locator("svg.instagram-icon").count(), 1)
+        expect(youtube).to_be_visible()
+        self.assertEqual(youtube.get_attribute("href"), "https://www.youtube.com/@Cultura_vlc")
+        self.assertEqual(youtube.locator("svg.instagram-icon").count(), 1)
 
     def test_upcoming_and_archived_events_in_both_languages(self):
         self.page.goto(f"{self.base_url}events.html")

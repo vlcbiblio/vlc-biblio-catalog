@@ -63,6 +63,12 @@ DUPLICATE_MERGE_FIELDS = (
     "wildberries_url",
 )
 
+# This existing record was explicitly approved for the public catalog without
+# a cover; its request identity keeps the exception scoped to this one book.
+APPROVED_COVERLESS_REQUESTS = {
+    "20261019_114626_1912914052.json",
+}
+
 REQUEST_OVERRIDES = {
     "199": {
         "title": "Голодные игры. Рассвет жатвы (на испанском языке)",
@@ -289,7 +295,10 @@ def has_publishable_cover(book):
 
 def require_publishable_covers(books):
     missing = [book for book in books if not has_publishable_cover(book)
-               and book.get("coverMissingReason") != "notion-source-missing"]
+               and book.get("coverMissingReason") not in {
+                   "notion-source-missing",
+                   "user-approved-no-cover",
+               }]
     if not missing:
         return
     details = ", ".join(
@@ -357,6 +366,8 @@ def public_book(row):
             and book.get("orderBot") == "toma_lib_valencia_bot"
             and not book["cover"]):
         book["coverMissingReason"] = "notion-source-missing"
+    if request_file in APPROVED_COVERLESS_REQUESTS and not book["cover"]:
+        book["coverMissingReason"] = "user-approved-no-cover"
     return book
 
 
