@@ -1128,6 +1128,8 @@
       const isReload = performance.getEntriesByType("navigation")[0]?.type === "reload";
       const savedCatalogState = (isReload && storedCatalogState) || history.state?.biblioCatalog || storedCatalogState;
       const state = window.BiblioCategoryLogic.readCatalogState(location.search, savedCatalogState, books);
+      // The section selector was removed; discard any library filter retained by an older session or URL.
+      state.section = "";
       const pageSize = 60;
       let visibleLimit = Number.isInteger(savedCatalogState?.visibleLimit)
         ? Math.min(books.length, Math.max(pageSize, savedCatalogState.visibleLimit))
@@ -1426,6 +1428,7 @@
         clearTimeout(searchTimer);
         const snapshot = history.state?.biblioCatalog;
         Object.assign(state, window.BiblioCategoryLogic.readCatalogState(location.search, snapshot, books));
+        state.section = "";
         visibleLimit = Math.min(books.length, Math.max(pageSize, snapshot?.visibleLimit || pageSize));
         window.BiblioCategories.syncControls(state);
         render();
