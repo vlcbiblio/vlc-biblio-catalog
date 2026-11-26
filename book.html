@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="es">
+<html lang="ru">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex,follow" />
-    <title>Libro | VLC Biblio</title>
+    <title>Книга | Книги в Валенсии — VLC Biblio</title>
     <link rel="icon" type="image/png" href="./assets/favicon.png" />
     <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
     <script src="https://telegram.org/js/telegram-web-app.js?63"></script>
@@ -481,19 +481,19 @@
   </head>
   <body>
     <main class="page">
-      <a class="back" href="./" data-i18n="catalog.back">← Volver al catálogo</a>
+      <a class="back" href="./" data-i18n="catalog.back">← Назад к каталогу</a>
       <div data-shelf-toolbar></div>
       <section id="content"></section>
       <footer class="site-footer">
-        <a class="privacy-link" href="./legal.html" data-i18n="catalog.nav.legal">Aviso legal</a>
-        <a class="privacy-link" href="./privacy.html" data-i18n="catalog.nav.privacy">Privacidad</a>
+        <a class="privacy-link" href="./legal.html" data-i18n="catalog.nav.legal">Правовая информация</a>
+        <a class="privacy-link" href="./privacy.html" data-i18n="catalog.nav.privacy">Конфиденциальность</a>
       </footer>
     </main>
 
     <script src="./data/books.js?v=20261125220213"></script>
     <script src="./data/book-categories.js?v=9acbe8367426"></script>
     <script src="./assets/category-overlay.js?v=categories-public-20261115-1"></script>
-    <script src="./assets/i18n.js?v=toma-terms-2026-11-19"></script>
+    <script src="./assets/i18n.js?v=seo-ru-2026-11-26"></script>
     <script src="./assets/analytics.js?v=analytics-1"></script>
     <script src="./assets/category-logic.js?v=categories-public-20261115-1"></script>
     <script src="./assets/local-categories.js?v=categories-public-20261115-1"></script>
@@ -796,7 +796,7 @@
       }
 
       function renderBook(book) {
-        document.title = `${book.title || t("book.fallback", "Libro")} | VLC Biblio`;
+        document.title = `${book.title || t("book.fallback", "Книга")} | VLC Biblio`;
         content.innerHTML = `
           <article class="book">
             <div class="cover">${coverMarkup(book)}${window.BiblioShelf.favoriteMarkup(book)}</div>
