@@ -263,7 +263,7 @@ window.BIBLIO_BOOKS = [
     "catalogStatus": "Частная библиотека",
     "libraryKey": "user:587fb08c49c5",
     "sourceKind": "user",
-    "availability": "available",
+    "availability": "reserved",
     "audience": "adult",
     "cover": "https://melik-pashaev.ru/wp-content/uploads/2021/11/musor_cover.webp",
     "isbn": "978-5-00041-370-8",
