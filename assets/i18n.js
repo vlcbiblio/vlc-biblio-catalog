@@ -40,6 +40,7 @@
     "catalog.menu.open": "Открыть меню",
     "catalog.nav.main": "Основная навигация",
     "catalog.nav.catalog": "Каталог",
+    "catalog.nav.newYear": "Подборка к Новому году",
     "catalog.nav.donate": "Подарить книгу",
     "catalog.nav.how": "Как это работает",
     "catalog.nav.events": "Встречи",
@@ -339,6 +340,17 @@
     "shelf.afterBot": "После перехода в бот корзина сохраняется. Удалите книги из неё, когда подтвердите заказ.",
     "shelf.storageOk": "Списки хранятся в этом браузере. На другом устройстве или в другом браузере они будут отдельными.",
     "shelf.storageBlocked": "Браузер не разрешает сохранение. Списки доступны только на этой странице.",
+    "newYear.pageTitle": "Подборка книг к Новому году | VLC Biblio",
+    "newYear.kicker": "Праздничная подборка",
+    "newYear.cta": "Подборка книг к Новому году",
+    "newYear.ctaMeta": "Зимние сказки и истории с фильтром по возрасту",
+    "newYear.heading": "Подборка книг к Новому году",
+    "newYear.intro": "Новогодние, рождественские и зимние истории из каталога VLC Biblio в Валенсии. Выберите возраст читателя, чтобы быстро найти подходящие книги, и добавляйте их в корзину.",
+    "newYear.ageFilterLabel": "Фильтр по возрасту",
+    "newYear.booksLabel": "Новогодние книги",
+    "newYear.allAges": "Все возрасты",
+    "newYear.count": "Книг в подборке: {count}",
+    "newYear.empty": "В этой возрастной группе пока нет книг из новогодней подборки.",
   };
 
   const es = {
@@ -348,6 +360,7 @@
     "catalog.menu.open": "Abrir el menú",
     "catalog.nav.main": "Navegación principal",
     "catalog.nav.catalog": "Catálogo",
+    "catalog.nav.newYear": "Selección de Año Nuevo",
     "catalog.nav.donate": "Donar un libro",
     "catalog.nav.how": "Cómo funciona",
     "catalog.nav.events": "Encuentros",
@@ -416,6 +429,17 @@
     "catalog.faq.q6": "¿Cómo llegará el libro a Pilar Faus?",
     "catalog.faq.a6": "Envías la solicitud mediante el bot, el equipo revisa el libro y organiza la entrega. El estado del catálogo indicará en qué fase se encuentra.",
     "catalog.back": "← Volver al catálogo",
+    "newYear.pageTitle": "Selección de libros de Año Nuevo | VLC Biblio",
+    "newYear.kicker": "Selección festiva",
+    "newYear.cta": "Selección de libros de Año Nuevo",
+    "newYear.ctaMeta": "Cuentos e historias de invierno con filtro por edad",
+    "newYear.heading": "Selección de libros de Año Nuevo",
+    "newYear.intro": "Historias de Año Nuevo, Navidad e invierno del catálogo de VLC Biblio en València. Elige la edad de lectura para encontrar rápidamente los libros adecuados y añádelos a la cesta.",
+    "newYear.ageFilterLabel": "Filtro por edad",
+    "newYear.booksLabel": "Libros de Año Nuevo",
+    "newYear.allAges": "Todas las edades",
+    "newYear.count": "Libros en la selección: {count}",
+    "newYear.empty": "Todavía no hay libros de la selección de Año Nuevo en este grupo de edad.",
   };
 
   function t(key, fallback) {

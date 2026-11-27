@@ -91,6 +91,7 @@ class StaticSiteGenerationTests(unittest.TestCase):
             sitemap = ElementTree.parse(root / "sitemap.xml")
             locations = [item.text for item in sitemap.findall("{*}url/{*}loc")]
             self.assertEqual(locations.count(generate.book_url(self.book)), 1)
+            self.assertIn(generate.SITE_URL + "new-year.html", locations)
             self.assertIn(generate.SITE_URL + "events.html", locations)
             self.assertIn(generate.SITE_URL + "events-archive.html", locations)
             self.assertIn(generate.SITE_URL + "privacy.html", locations)
@@ -126,7 +127,7 @@ class StaticSiteGenerationTests(unittest.TestCase):
         sitemap = ElementTree.parse(root / "sitemap.xml")
         locations = {item.text for item in sitemap.findall("{*}url/{*}loc")}
         self.assertTrue(canonicals <= locations)
-        self.assertEqual(len(locations), len(books) + 5)
+        self.assertEqual(len(locations), len(books) + 6)
 
 
 if __name__ == "__main__":

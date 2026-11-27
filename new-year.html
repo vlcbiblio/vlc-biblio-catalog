@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Новогодняя и рождественская подборка книг на русском языке в Валенсии от VLC Biblio: зимние сказки и истории с фильтром по возрасту." />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="canonical" href="https://vlcbiblio.github.io/vlc-biblio-catalog/new-year.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:locale:alternate" content="es_ES" />
+    <meta property="og:site_name" content="VLC Biblio — Книги в Валенсии" />
+    <meta property="og:title" content="Подборка книг к Новому году | VLC Biblio" />
+    <meta property="og:description" content="Новогодние, рождественские и зимние книги на русском языке в Валенсии с удобным фильтром по возрасту." />
+    <meta property="og:url" content="https://vlcbiblio.github.io/vlc-biblio-catalog/new-year.html" />
+    <meta property="og:image" content="https://vlcbiblio.github.io/vlc-biblio-catalog/assets/vlc-biblio-hero.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Подборка книг к Новому году | VLC Biblio" />
+    <meta name="twitter:description" content="Новогодние, рождественские и зимние книги на русском языке в Валенсии с фильтром по возрасту." />
+    <meta name="twitter:image" content="https://vlcbiblio.github.io/vlc-biblio-catalog/assets/vlc-biblio-hero.jpg" />
+    <title data-i18n="newYear.pageTitle">Подборка книг к Новому году | VLC Biblio</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Подборка книг к Новому году | VLC Biblio",
+        "description": "Новогодние, рождественские и зимние книги на русском языке в Валенсии с фильтром по возрасту.",
+        "url": "https://vlcbiblio.github.io/vlc-biblio-catalog/new-year.html",
+        "inLanguage": "ru",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "VLC Biblio — Книги на русском в Валенсии",
+          "url": "https://vlcbiblio.github.io/vlc-biblio-catalog/"
+        }
+      }
+    </script>
+    <link rel="icon" type="image/png" href="./assets/favicon.png?v=20260922" />
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
+    <script src="https://telegram.org/js/telegram-web-app.js?63" defer></script>
+    <script src="./assets/telegram-links.js?v=1" defer></script>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f7f4ee;
+        --ink: #26231f;
+        --muted: #716b63;
+        --line: #ddd4c5;
+        --paper: #fffdf8;
+        --green: #2f6f5e;
+        --green-dark: #235547;
+        --blue: #315f86;
+        --gold: #b27728;
+        --shadow: 0 14px 36px rgba(38, 35, 31, 0.1);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      button { font: inherit; }
+
+      .page {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 24px 0 48px;
+      }
+
+      .page-tools {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px 16px;
+        margin-bottom: 18px;
+      }
+
+      .back {
+        display: inline-flex;
+        align-items: center;
+        min-height: 38px;
+        color: var(--blue);
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .back:hover { text-decoration: underline; }
+
+      .tools-right {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .language-toggle {
+        min-width: 42px;
+        min-height: 38px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: var(--paper);
+        color: var(--ink);
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .language-toggle:hover,
+      .language-toggle:focus-visible { background: rgba(49, 95, 134, 0.07); }
+
+      .back:focus-visible,
+      .language-toggle:focus-visible,
+      .age-btn:focus-visible,
+      .book:focus-visible,
+      .privacy-link:focus-visible {
+        outline: 3px solid var(--blue);
+        outline-offset: 3px;
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        padding: 24px 26px;
+        border: 1px solid rgba(47, 111, 94, 0.32);
+        border-radius: 12px;
+        background:
+          radial-gradient(circle at 92% 18%, rgba(178, 119, 40, 0.14), transparent 42%),
+          linear-gradient(135deg, rgba(47, 111, 94, 0.11), rgba(255, 253, 248, 0.96) 58%);
+        box-shadow: var(--shadow);
+      }
+
+      .hero-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin: 0 0 8px;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: rgba(47, 111, 94, 0.13);
+        color: var(--green-dark);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0 0 10px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(28px, 4.5vw, 42px);
+        line-height: 1.08;
+      }
+
+      .lead {
+        max-width: 720px;
+        margin: 0;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.55;
+      }
+
+      .filter-bar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px 18px;
+        margin: 22px 0 18px;
+        padding: 14px 16px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: var(--paper);
+      }
+
+      .age-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .age-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        min-height: 40px;
+        padding: 8px 14px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--bg);
+        color: var(--ink);
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 700;
+        transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+      }
+
+      .age-btn:hover {
+        border-color: var(--green);
+        background: rgba(47, 111, 94, 0.08);
+      }
+
+      .age-btn[aria-pressed="true"] {
+        border-color: var(--green);
+        background: var(--green);
+        color: #fff;
+      }
+
+      .age-btn-count {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 22px;
+        height: 20px;
+        padding: 0 6px;
+        border-radius: 999px;
+        background: rgba(38, 35, 31, 0.08);
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .age-btn[aria-pressed="true"] .age-btn-count {
+        background: rgba(255, 255, 255, 0.22);
+        color: #fff;
+      }
+
+      .selection-count {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+        gap: 18px;
+      }
+
+      .book {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--paper);
+        box-shadow: var(--shadow);
+        cursor: pointer;
+      }
+
+      .cover {
+        position: relative;
+        aspect-ratio: 4 / 5.7;
+        background: #e9e2d4;
+      }
+
+      .cover.is-broken { background: #eee7d8; }
+
+      .cover img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .cover-placeholder {
+        display: grid;
+        width: 100%;
+        height: 100%;
+        place-items: center;
+        padding: 18px;
+        color: var(--muted);
+        text-align: center;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 20px;
+        line-height: 1.15;
+      }
+
+      .badge {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        border-radius: 999px;
+        background: rgba(255, 253, 248, 0.94);
+        color: var(--ink);
+        padding: 5px 9px;
+        font-size: 12px;
+        font-weight: 700;
+        max-width: calc(100% - 20px);
+        line-height: 1.2;
+      }
+
+      .badge.library { color: var(--green); }
+      .badge.exchange { color: var(--blue); }
+
+      .body {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        padding: 14px;
+      }
+
+      .title {
+        margin: 0 0 5px;
+        font-size: 17px;
+        line-height: 1.2;
+      }
+
+      .book-link {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .book-link:hover { text-decoration: underline; }
+
+      .author {
+        margin: 0 0 10px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .card-action {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1px;
+        width: 100%;
+        min-height: 52px;
+        margin-top: auto;
+        border: 1px solid var(--blue);
+        border-radius: 6px;
+        color: var(--blue);
+        background: rgba(49, 95, 134, 0.06);
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.22;
+        padding: 8px 11px;
+        text-decoration: none;
+      }
+
+      .card-action:hover { background: rgba(49, 95, 134, 0.12); }
+
+      .card-action span {
+        display: block;
+        min-width: 0;
+        text-align: center;
+      }
+
+      .empty {
+        display: none;
+        border: 1px dashed var(--line);
+        border-radius: 8px;
+        padding: 36px;
+        text-align: center;
+        color: var(--muted);
+        background: rgba(255, 253, 248, 0.65);
+      }
+
+      .site-footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 16px;
+        margin-top: 36px;
+        padding-top: 18px;
+        border-top: 1px solid var(--line);
+      }
+
+      .privacy-link {
+        color: var(--blue);
+        font-size: 12px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .privacy-link:hover { text-decoration: underline; }
+
+      @media (max-width: 560px) {
+        .page { width: min(100% - 20px, 1180px); padding-top: 16px; }
+        .hero { padding: 18px; }
+        .filter-bar { padding: 12px; }
+        .age-btn { min-height: 38px; padding: 7px 12px; font-size: 13px; }
+        .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+        .body { padding: 11px; }
+        .title { font-size: 14px; }
+        .author { font-size: 12px; }
+      }
+    </style>
+    <link rel="stylesheet" href="./assets/shelf.css?v=checkout-1" />
+    <link rel="stylesheet" href="./assets/categories.css?v=categories-public-20261115-1" />
+  </head>
+  <body>
+    <main class="page">
+      <div class="page-tools">
+        <a class="back" href="./" data-i18n="catalog.back">← Назад к каталогу</a>
+        <div class="tools-right">
+          <div data-shelf-toolbar></div>
+          <button class="language-toggle" type="button" data-language-toggle aria-label="Переключить язык на испанский">ES</button>
+        </div>
+      </div>
+
+      <header class="hero">
+        <p class="hero-kicker" data-i18n="newYear.kicker">🎄 Праздничная подборка</p>
+        <h1 data-i18n="newYear.heading">Подборка книг к Новому году</h1>
+        <p class="lead" data-i18n="newYear.intro">
+          Новогодние, рождественские и зимние истории из каталога VLC Biblio в Валенсии. Выберите возраст читателя, чтобы быстро найти подходящие книги, и добавляйте их в корзину.
+        </p>
+      </header>
+
+      <section class="filter-bar" aria-label="Фильтр по возрасту" data-i18n-aria-label="newYear.ageFilterLabel">
+        <div class="age-filters" id="ageButtons" role="group" aria-label="Возраст читателя" data-i18n-aria-label="newYear.ageFilterLabel"></div>
+        <p class="selection-count" id="selectionCount" aria-live="polite"></p>
+      </section>
+
+      <section class="grid" id="grid" aria-label="Новогодние книги" data-i18n-aria-label="newYear.booksLabel"></section>
+      <p class="empty" id="empty" data-i18n="newYear.empty">В этой возрастной группе пока нет книг из новогодней подборки.</p>
+
+      <footer class="site-footer">
+        <a class="privacy-link" href="./legal.html" data-i18n="catalog.nav.legal">Правовая информация</a>
+        <a class="privacy-link" href="./privacy.html" data-i18n="catalog.nav.privacy">Конфиденциальность</a>
+      </footer>
+    </main>
+
+    <script src="./data/books.js?v=20261125220213"></script>
+    <script src="./data/book-categories.js?v=9acbe8367426"></script>
+    <script src="./assets/category-overlay.js?v=categories-public-20261115-1"></script>
+    <script src="./data/new-year-books.js?v=20261127-1"></script>
+    <script src="./assets/i18n.js?v=new-year-2026-11-27"></script>
+    <script src="./assets/analytics.js?v=analytics-1"></script>
+    <script src="./assets/category-logic.js?v=categories-public-20261115-1"></script>
+    <script src="./assets/local-categories.js?v=categories-public-20261115-1"></script>
+    <script src="./assets/shelf.js?v=toma-terms-2026-11-19"></script>
+    <script>
+      (() => {
+        "use strict";
+
+        const allBooks = Array.isArray(window.BIBLIO_BOOKS) ? window.BIBLIO_BOOKS : [];
+        const selectedIds = Array.isArray(window.BIBLIO_NEW_YEAR_BOOK_IDS) ? window.BIBLIO_NEW_YEAR_BOOK_IDS : [];
+        const booksById = new Map(allBooks.map((book) => [String(book.id), book]));
+        const newYearBooks = selectedIds.map((id) => booksById.get(String(id))).filter(Boolean);
+
+        const botUrl = "https://t.me/VLS_Biblio_bot";
+        const t = (key, fallback) => window.BiblioI18n?.t(key, fallback) ?? fallback;
+        const logic = window.BiblioCategoryLogic;
+        const categories = window.BiblioCategories;
+
+        const CANONICAL_AGES = ["0–3 года", "4–6 лет", "7–10 лет", "11–14 лет", "15–17 лет", "Взрослые"];
+        const availableAges = CANONICAL_AGES.filter((group) => newYearBooks.some((book) => logic.ageMatches(book, group)));
+
+        const ageButtons = document.querySelector("#ageButtons");
+        const selectionCount = document.querySelector("#selectionCount");
+        const grid = document.querySelector("#grid");
+        const empty = document.querySelector("#empty");
+
+        function readInitialAge() {
+          const requested = new URLSearchParams(window.location.search).get("age") || "";
+          return availableAges.includes(requested) ? requested : "";
+        }
+
+        let activeAge = readInitialAge();
+
+        function escapeHtml(value) {
+          return String(value ?? "")
+            .replaceAll("&", "&amp;")
+            .replaceAll("<", "&lt;")
+            .replaceAll(">", "&gt;")
+            .replaceAll('"', "&quot;")
+            .replaceAll("'", "&#039;");
+        }
+
+        function fallbackCover(title) {
+          return `<div class="cover-placeholder">${escapeHtml(title || t("book.fallback", "Книга"))}</div>`;
+        }
+
+        function coverMarkup(book) {
+          if (!book.cover) return fallbackCover(book.title);
+          const image = book.coverImage;
+          const responsive = image
+            ? ` srcset="${escapeHtml(image.srcset)}" sizes="(max-width: 560px) 50vw, 240px" width="${image.width}" height="${image.height}"`
+            : "";
+          return `<img src="${escapeHtml(image?.src || book.cover)}"${responsive} alt="${escapeHtml(t("book.cover", "Обложка"))}: ${escapeHtml(book.title)}" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-fallback-title="${escapeHtml(book.title || t("book.fallback", "Книга"))}" />`;
+        }
+
+        function canJoinWaitlist(book) {
+          return book.section === "exchange" && book.availability === "reserved";
+        }
+
+        function libraryAction(book) {
+          if (canJoinWaitlist(book)) {
+            return {
+              href: `${botUrl}?start=wait_${encodeURIComponent(book.requestId)}`,
+              isTelegram: true,
+              isWaitlist: true,
+            };
+          }
+          return null;
+        }
+
+        function statusLabel(book) {
+          if (book.section === "exchange") return t("book.status.private", "🏠 Частная библиотека");
+          if (book.availability === "planned") return t("book.status.planned", "🎁 Собирается для Pilar Faus");
+          if (book.availability === "transferred" || book.availability === "given") return t("book.status.transferred", "📦 Передана в Pilar Faus");
+          if (book.availability === "accepted") return t("book.status.accepted", "📚 В фонде Pilar Faus");
+          return "📍 Pilar Faus";
+        }
+
+        function bookPageUrl(book) {
+          return `./books/${encodeURIComponent(book.id)}.html`;
+        }
+
+        function cardMarkup(book) {
+          const action = libraryAction(book);
+          return `
+            <article class="book" tabindex="0" role="button" data-book-id="${escapeHtml(book.id)}" aria-label="${escapeHtml(t("book.open", "Открыть карточку"))}: ${escapeHtml(book.title)}">
+              <div class="cover">
+                ${coverMarkup(book)}
+                <span class="badge ${escapeHtml(book.section)}">${escapeHtml(statusLabel(book))}</span>
+                ${window.BiblioShelf ? window.BiblioShelf.favoriteMarkup(book) : ""}
+              </div>
+              <div class="body">
+                <h2 class="title"><a class="book-link" href="${escapeHtml(bookPageUrl(book))}">${escapeHtml(book.title || t("book.untitled", "Без названия"))}</a></h2>
+                <p class="author">${escapeHtml(book.author || t("book.noAuthor", "Автор не указан"))}</p>
+                ${categories ? categories.cardMarkup(book) : ""}
+                ${action ? `<a class="card-action telegram-action" href="${escapeHtml(action.href)}" target="_blank" rel="noreferrer"><span>${escapeHtml(t("book.waitlist", "Встать в очередь"))}</span><span>${escapeHtml(t("book.telegram", "через Телеграм"))}</span></a>` : ""}
+                ${window.BiblioShelf ? window.BiblioShelf.controlsMarkup(book, false) : ""}
+              </div>
+            </article>`;
+        }
+
+        function renderAgeButtons() {
+          const items = [
+            { value: "", label: t("newYear.allAges", "Все возрасты"), count: newYearBooks.length },
+            ...availableAges.map((age) => ({
+              value: age,
+              label: categories ? categories.categoryLabel(age, true) : age,
+              count: newYearBooks.filter((book) => logic.ageMatches(book, age)).length,
+            })),
+          ];
+
+          ageButtons.innerHTML = items
+            .map(
+              (item) => `
+                <button
+                  class="age-btn"
+                  type="button"
+                  data-age="${escapeHtml(item.value)}"
+                  aria-pressed="${item.value === activeAge ? "true" : "false"}"
+                >
+                  <span>${escapeHtml(item.label)}</span>
+                  <span class="age-btn-count">${item.count}</span>
+                </button>`
+            )
+            .join("");
+        }
+
+        function syncUrl() {
+          const url = new URL(window.location.href);
+          if (activeAge) {
+            url.searchParams.set("age", activeAge);
+          } else {
+            url.searchParams.delete("age");
+          }
+          history.replaceState(null, "", url.pathname + url.search + url.hash);
+        }
+
+        function render() {
+          const visible = activeAge
+            ? newYearBooks.filter((book) => logic.ageMatches(book, activeAge))
+            : newYearBooks;
+
+          grid.innerHTML = visible.map(cardMarkup).join("");
+          empty.style.display = visible.length ? "none" : "block";
+          selectionCount.textContent = t("newYear.count", "Книг в подборке: {count}").replace("{count}", visible.length);
+
+          ageButtons.querySelectorAll(".age-btn").forEach((btn) => {
+            btn.setAttribute("aria-pressed", btn.dataset.age === activeAge ? "true" : "false");
+          });
+        }
+
+        ageButtons.addEventListener("click", (event) => {
+          const btn = event.target.closest(".age-btn");
+          if (!btn) return;
+          activeAge = btn.dataset.age || "";
+          syncUrl();
+          render();
+        });
+
+        grid.addEventListener("click", (event) => {
+          if (event.target.closest("a, button")) return;
+          const card = event.target.closest("[data-book-id]");
+          if (!card) return;
+          const book = booksById.get(card.dataset.bookId);
+          if (book) window.location.href = bookPageUrl(book);
+        });
+
+        grid.addEventListener("keydown", (event) => {
+          if (event.key !== "Enter" && event.key !== " ") return;
+          if (event.target.closest("a, button, input")) return;
+          const card = event.target.closest("[data-book-id]");
+          if (!card) return;
+          event.preventDefault();
+          const book = booksById.get(card.dataset.bookId);
+          if (book) window.location.href = bookPageUrl(book);
+        });
+
+        grid.addEventListener(
+          "error",
+          (event) => {
+            if (event.target.tagName !== "IMG") return;
+            const container = event.target.closest(".cover");
+            if (container) container.classList.add("is-broken");
+            event.target.replaceWith(
+              document.createRange().createContextualFragment(fallbackCover(event.target.dataset.fallbackTitle))
+            );
+          },
+          true
+        );
+
+        renderAgeButtons();
+        render();
+      })();
+    </script>
+  </body>
+</html>

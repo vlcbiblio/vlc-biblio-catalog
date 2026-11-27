@@ -325,7 +325,7 @@ def write_site(root: Path, books):
         if re.fullmatch(r"\d{4}-\d{2}-\d{2}", compact(book.get("updatedAt") or book.get("addedAt"))[:10])
     ]
     home_lastmod = max(latest_dates) if latest_dates else ""
-    urls = [(SITE_URL, home_lastmod), (SITE_URL + "events.html", ""), (SITE_URL + "events-archive.html", ""), (SITE_URL + "privacy.html", ""), (SITE_URL + "legal.html", "")]
+    urls = [(SITE_URL, home_lastmod), (SITE_URL + "new-year.html", home_lastmod), (SITE_URL + "events.html", ""), (SITE_URL + "events-archive.html", ""), (SITE_URL + "privacy.html", ""), (SITE_URL + "legal.html", "")]
     urls.extend((book_url(book), compact(book.get("updatedAt") or book.get("addedAt"))[:10]) for book in books)
     sitemap_items = []
     for url, lastmod in urls:

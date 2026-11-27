@@ -468,6 +468,25 @@
       .event-preview.events-archive-link { align-self: stretch; background: var(--paper); }
       .events-archive-link .event-preview-title { white-space: normal; }
       .events-archive-icon { color: var(--blue); font-size: 26px; text-align: center; width: 46px; }
+      .event-preview.new-year-link {
+        border-color: rgba(47, 111, 94, 0.42);
+        background: linear-gradient(90deg, rgba(47, 111, 94, 0.14), rgba(178, 119, 40, 0.08) 58%, rgba(255, 253, 248, 0.92));
+      }
+      .event-preview.new-year-link:hover { border-color: var(--green); }
+      .new-year-icon {
+        display: grid;
+        width: 46px;
+        min-height: 46px;
+        place-content: center;
+        border-radius: 6px;
+        background: var(--green);
+        color: #fffdf8;
+        font-size: 22px;
+        line-height: 1;
+      }
+      .new-year-link .event-preview-kicker { color: var(--green); }
+      .new-year-link .event-preview-title { white-space: normal; }
+      .new-year-link .event-preview-arrow { color: var(--green); }
 
       .event-preview {
         display: grid;
@@ -1043,6 +1062,7 @@
                 <summary aria-label="Открыть меню" data-i18n-aria-label="catalog.menu.open">☰</summary>
                 <nav aria-label="Основная навигация" data-i18n-aria-label="catalog.nav.main">
                   <a href="#catalog" data-i18n="catalog.nav.catalog">Каталог</a>
+                  <a href="./new-year.html" data-i18n="catalog.nav.newYear">Подборка к Новому году</a>
                   <a href="#add-book" data-i18n="catalog.nav.donate">Подарить книгу</a>
                   <a href="#how-it-works" data-i18n="catalog.nav.how">Как это работает</a>
                   <a href="./events.html" data-i18n="catalog.nav.events">Встречи</a>
@@ -1094,6 +1114,15 @@
         </div>
         <div class="events-overview">
           <div class="current-events" role="group" aria-label="Актуальные мероприятия" data-i18n-aria-label="events.current">
+            <a class="event-preview new-year-link" href="./new-year.html">
+              <span class="new-year-icon" aria-hidden="true">🎄</span>
+              <span class="event-preview-copy">
+                <span class="event-preview-kicker" data-i18n="newYear.kicker">Праздничная подборка</span>
+                <strong class="event-preview-title" data-i18n="newYear.cta">Подборка книг к Новому году</strong>
+                <span class="event-preview-meta" data-i18n="newYear.ctaMeta">Зимние сказки и истории с фильтром по возрасту</span>
+              </span>
+              <span class="event-preview-arrow" aria-hidden="true">→</span>
+            </a>
           </div>
           <a class="event-preview events-archive-link" href="./events-archive.html">
             <span class="events-archive-icon" aria-hidden="true">▤</span>
@@ -1224,7 +1253,7 @@
     <script src="./data/books.js?v=20261125220213"></script>
     <script src="./data/book-categories.js?v=7beda4e6b7d5"></script>
     <script src="./assets/category-overlay.js?v=categories-public-20261115-1"></script>
-    <script src="./assets/i18n.js?v=seo-ru-2026-11-26"></script>
+    <script src="./assets/i18n.js?v=new-year-2026-11-27"></script>
     <script src="./assets/analytics.js?v=analytics-1"></script>
     <script src="./assets/category-logic.js?v=categories-public-20261115-1"></script>
     <script src="./assets/local-categories.js?v=categories-public-20261115-1"></script>
