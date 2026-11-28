@@ -19,7 +19,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "https://www.livelib.ru/book/1002027039-ya-vospityvayu-papu-mihail-baranovskij",
     "wildberriesUrl": "",
     "addedAt": "2026-11-27T16:20:02",
-    "updatedAt": "2026-11-28T16:18:36",
+    "updatedAt": "2026-11-28T16:20:51",
     "authorKey": "барановский, михаил"
   },
   {
@@ -42,7 +42,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:21",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "coverImage": {
       "src": "./assets/covers/optimized/418113e01b39499b582d-720.webp",
       "srcset": "./assets/covers/optimized/76b2096264f6363929c6-360.webp 360w, ./assets/covers/optimized/418113e01b39499b582d-720.webp 720w",
@@ -70,7 +70,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:20",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "тиммонс-браун, мэтт",
     "coverImage": {
       "src": "./assets/covers/optimized/e7c485838a8952f85821-581.webp",
@@ -99,7 +99,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:20",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "coverImage": {
       "src": "./assets/covers/optimized/7ca3d9a017738b8726aa-484.webp",
       "srcset": "./assets/covers/optimized/463339f06a75e622f16b-360.webp 360w, ./assets/covers/optimized/7ca3d9a017738b8726aa-484.webp 484w",
@@ -127,7 +127,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:20",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "coverImage": {
       "src": "./assets/covers/optimized/8efeca01ecec4daedca0-484.webp",
       "srcset": "./assets/covers/optimized/00d8509d0c272ae3c94e-360.webp 360w, ./assets/covers/optimized/8efeca01ecec4daedca0-484.webp 484w",
@@ -155,7 +155,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:20",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "тер хорст марк",
     "coverImage": {
       "src": "./assets/covers/optimized/48b04f5b547a2f9f0d6a-484.webp",
@@ -184,7 +184,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:20",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "coverImage": {
       "src": "./assets/covers/optimized/afd3e7649ec0a1422688-484.webp",
       "srcset": "./assets/covers/optimized/136140ff4e7ca9f5a70e-360.webp 360w, ./assets/covers/optimized/afd3e7649ec0a1422688-484.webp 484w",
@@ -212,7 +212,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:20",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "диккинс, рози",
     "coverImage": {
       "src": "./assets/covers/optimized/e00738f4ef3409168586-200.webp",
@@ -241,7 +241,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:20",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "coverImage": {
       "src": "./assets/covers/optimized/8257f7fea5977a4ba980-484.webp",
       "srcset": "./assets/covers/optimized/9ce79500269d27393dcd-360.webp 360w, ./assets/covers/optimized/8257f7fea5977a4ba980-484.webp 484w",
@@ -269,7 +269,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:20",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "coverImage": {
       "src": "./assets/covers/optimized/e522fbba91da7117752c-484.webp",
       "srcset": "./assets/covers/optimized/02c02b8395ca4f4027c5-360.webp 360w, ./assets/covers/optimized/e522fbba91da7117752c-484.webp 484w",
@@ -297,7 +297,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:20",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "райдт, герда",
     "coverImage": {
       "src": "./assets/covers/optimized/da783650571a5b3fd497-588.webp",
@@ -326,7 +326,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:20",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "coverImage": {
       "src": "./assets/covers/optimized/9ecf3ab014be4835d033-415.webp",
       "srcset": "./assets/covers/optimized/265320e89399dee0822c-360.webp 360w, ./assets/covers/optimized/9ecf3ab014be4835d033-415.webp 415w",
@@ -354,7 +354,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:20",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "coverImage": {
       "src": "./assets/covers/optimized/d236cb8e79ed3798eae4-484.webp",
       "srcset": "./assets/covers/optimized/d6fa9d5e7d666b295512-360.webp 360w, ./assets/covers/optimized/d236cb8e79ed3798eae4-484.webp 484w",
@@ -382,7 +382,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:20",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "хесин, виктор григорьевич",
     "coverImage": {
       "src": "./assets/covers/optimized/e838575983d80a4b3ef3-320.webp",
@@ -411,7 +411,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:20",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "coverImage": {
       "src": "./assets/covers/optimized/3db60fc1ee066f65112c-484.webp",
       "srcset": "./assets/covers/optimized/e5834d6ad31df0efad82-360.webp 360w, ./assets/covers/optimized/3db60fc1ee066f65112c-484.webp 484w",
@@ -439,7 +439,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:20",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "народное творчество",
     "coverImage": {
       "src": "./assets/covers/optimized/31ae861e27be43c58fa9-484.webp",
@@ -468,7 +468,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:19",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "coverImage": {
       "src": "./assets/covers/optimized/8a1f9cd16896ce66fa15-720.webp",
       "srcset": "./assets/covers/optimized/64c0055cc5b5c447e11b-360.webp 360w, ./assets/covers/optimized/8a1f9cd16896ce66fa15-720.webp 720w",
@@ -496,7 +496,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:19",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "высотская, ольга; барто, агния; берестов, валентин; александрова, зинаида; усачев, андрей; чуковский, корней; и другие",
     "coverImage": {
       "src": "./assets/covers/optimized/98a9df2078301dfb5261-720.webp",
@@ -525,7 +525,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:19",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "иванова, в. (составитель)",
     "coverImage": {
       "src": "./assets/covers/optimized/dd84a96ffbc73b03b2f3-200.webp",
@@ -554,7 +554,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:19",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "народное творчество",
     "coverImage": {
       "src": "./assets/covers/optimized/d57d0e6af08d2f9b5acb-320.webp",
@@ -583,7 +583,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:19",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "некрасов андрей сергеевич",
     "coverImage": {
       "src": "./assets/covers/optimized/c5c6fa24ad2537071bad-447.webp",
@@ -612,7 +612,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:19",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "паустовский, константин георгиевич; скребицкий, георгий алексеевич; ушинский, константин дмитриевич; бианки, виталий валентинович",
     "coverImage": {
       "src": "./assets/covers/optimized/41427b913af52692ebcf-389.webp",
@@ -641,7 +641,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:19",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "лагерлеф сельма",
     "coverImage": {
       "src": "./assets/covers/optimized/60eb3b2daf500df1d9d7-484.webp",
@@ -670,7 +670,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:19",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "стивенсон роберт льюис",
     "coverImage": {
       "src": "./assets/covers/optimized/89147c65e19e1618b6e5-343.webp",
@@ -699,7 +699,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:19",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "котятова, н. и.",
     "coverImage": {
       "src": "./assets/covers/optimized/b8806710d5d6b8dd2c67-720.webp",
@@ -728,7 +728,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:19",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "зощенко михаил михайлович; козлов сергей григорьевич; кушак юрий наумович",
     "coverImage": {
       "src": "./assets/covers/optimized/17aef2cc84650ef1218d-484.webp",
@@ -757,7 +757,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:19",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "маккорд, анна",
     "coverImage": {
       "src": "./assets/covers/optimized/9c6d5f76f696e097791d-159.webp",
@@ -786,7 +786,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:19",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "томас изабель",
     "coverImage": {
       "src": "./assets/covers/optimized/bedf58a90156ac071306-484.webp",
@@ -815,7 +815,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "https://www.wildberries.ru/catalog/1528074571/detail.aspx?ysclid=mww763mzgf577021767",
     "addedAt": "2026-11-25T15:45:18",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "water family",
     "coverImage": {
       "src": "./assets/covers/optimized/6501780ad9c31a6015c2-720.webp",
@@ -844,7 +844,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:18",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "никосия вероника",
     "coverImage": {
       "src": "./assets/covers/optimized/0057a7ff18c1eaa1fd04-484.webp",
@@ -873,7 +873,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "https://www.wildberries.ru/catalog/324910874/detail.aspx?ysclid=mww6xtjhiv272033438",
     "addedAt": "2026-11-25T15:45:18",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "пришвин, михаил михайлович",
     "coverImage": {
       "src": "./assets/covers/optimized/676f16fdc53d617aa98d-720.webp",
@@ -902,7 +902,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:18",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "шабутдинова лилия",
     "coverImage": {
       "src": "./assets/covers/optimized/b2b4c05a57371876be37-484.webp",
@@ -931,7 +931,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:18",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "немцова, божена; эрбен, карел яромир",
     "coverImage": {
       "src": "./assets/covers/optimized/4eaa98e01b36f085750e-720.webp",
@@ -960,7 +960,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:18",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "каспарова юлия вадимовна",
     "coverImage": {
       "src": "./assets/covers/optimized/b434697ef4be2995377a-484.webp",
@@ -989,7 +989,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:18",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "распе, рудольф эрих",
     "coverImage": {
       "src": "./assets/covers/optimized/ffcd15e40726a7be22cd-200.webp",
@@ -1018,7 +1018,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:18",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "народное творчество",
     "coverImage": {
       "src": "./assets/covers/optimized/4db3a1d6f0b96e49f8b9-200.webp",
@@ -1047,7 +1047,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:18",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "лиходед виталий григорьевич",
     "coverImage": {
       "src": "./assets/covers/optimized/9b86c73fc0fcc5c50a22-484.webp",
@@ -1076,7 +1076,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:18",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "заходер борис владимирович",
     "coverImage": {
       "src": "./assets/covers/optimized/c1f65e3f5759623b4f29-484.webp",
@@ -1105,7 +1105,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:18",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "мастерс матильда",
     "coverImage": {
       "src": "./assets/covers/optimized/0911226dba3f1bbe6c9c-484.webp",
@@ -1134,7 +1134,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:17",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "хайнз маргарет",
     "coverImage": {
       "src": "./assets/covers/optimized/17e8163ebaf23505e919-720.webp",
@@ -1163,7 +1163,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:17",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "андерсен ганс христиан",
     "coverImage": {
       "src": "./assets/covers/optimized/fe4ee485dae4636b2099-484.webp",
@@ -1192,7 +1192,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:12",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "носов николай николаевич",
     "coverImage": {
       "src": "./assets/covers/optimized/f124f2cdbdb2f31cce6b-484.webp",
@@ -1221,7 +1221,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:12",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "андрианов, павел; линдер, владимир",
     "coverImage": {
       "src": "./assets/covers/optimized/ba15c7d60a8ec2f39521-720.webp",
@@ -1250,7 +1250,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:12",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "гауф, вильгельм",
     "coverImage": {
       "src": "./assets/covers/optimized/725f47f2f3b3dd205222-502.webp",
@@ -1279,7 +1279,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:12",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "вальтер макс",
     "coverImage": {
       "src": "./assets/covers/optimized/746556faa6f4fee34877-720.webp",
@@ -1308,7 +1308,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:10",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "ракитина, елена",
     "coverImage": {
       "src": "./assets/covers/optimized/21767cbcb24a617b8ebe-320.webp",
@@ -1337,7 +1337,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:05",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "малинина екатерина владимировна; бутман илья",
     "coverImage": {
       "src": "./assets/covers/optimized/78161cdcfdb39d88babb-484.webp",
@@ -1366,7 +1366,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:05",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "колпакова ольга валерьевна",
     "coverImage": {
       "src": "./assets/covers/optimized/22ddc1ec92ffd20bd30e-484.webp",
@@ -1395,7 +1395,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:05",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "файви эрика",
     "coverImage": {
       "src": "./assets/covers/optimized/7e811c6833ec46f18a51-484.webp",
@@ -1424,7 +1424,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:04",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "фэн терри; фэн эрик; фэн девин",
     "coverImage": {
       "src": "./assets/covers/optimized/f0e6ac5c918581a16f10-484.webp",
@@ -1453,7 +1453,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:45:04",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "емец дмитрий александрович",
     "coverImage": {
       "src": "./assets/covers/optimized/77a98de86cb367eff7da-484.webp",
@@ -1482,7 +1482,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:44:59",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "петрановская людмила владимировна",
     "coverImage": {
       "src": "./assets/covers/optimized/063f194805fa4dd9dc63-484.webp",
@@ -1511,7 +1511,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:44:59",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "клок рене",
     "coverImage": {
       "src": "./assets/covers/optimized/268bceb65113e354ab2f-484.webp",
@@ -1540,7 +1540,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:44:59",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "шойнеманн фрауке",
     "coverImage": {
       "src": "./assets/covers/optimized/d66dbedccf99da164e02-484.webp",
@@ -1569,7 +1569,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:44:59",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "перро, шарль; гримм, братья; андерсен, ханс кристиан; лепренс де бомон, жанна-мари; народные сказки",
     "coverImage": {
       "src": "./assets/covers/optimized/34b6c5c06b10c400643e-320.webp",
@@ -1598,7 +1598,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:44:59",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "пушкин, александр сергеевич",
     "coverImage": {
       "src": "./assets/covers/optimized/0aae2ab3322e8033c13a-320.webp",
@@ -1627,7 +1627,7 @@ window.BIBLIO_BOOKS = [
     "livelibUrl": "",
     "wildberriesUrl": "",
     "addedAt": "2026-11-25T15:44:59",
-    "updatedAt": "2026-11-25T21:20:10",
+    "updatedAt": "2026-11-25T21:43:17",
     "authorKey": "носов николай николаевич",
     "coverImage": {
       "src": "./assets/covers/optimized/5020da6d8a2a76630243-484.webp",
